@@ -84,6 +84,10 @@
 		{
 			"Name": "Water",
 			"Enabled": true
+		},
+		{
+			"Name": "SteamSockets",
+			"Enabled": true
 		}
 	]
 }
