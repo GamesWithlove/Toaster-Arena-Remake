@@ -17,6 +17,10 @@
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/c8f61b007fb44f4abcb7b0974cebff6b"
 		},
 		{
+			"Name": "Water",
+			"Enabled": true
+		},
+		{
 			"Name": "SteamCore",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/5300c1dc33f74524bcad23bdeb9b2196"
@@ -80,10 +84,6 @@
 			"Name": "EasyFileDialog",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/bcf64fe2e00c48189d8385a9c39b6e61"
-		},
-		{
-			"Name": "Water",
-			"Enabled": true
 		},
 		{
 			"Name": "SteamSockets",
