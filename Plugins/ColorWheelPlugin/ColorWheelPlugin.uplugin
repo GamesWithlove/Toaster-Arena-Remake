@@ -1,0 +1,28 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "2020.1.4",
+	"FriendlyName": "Color Wheel",
+	"Description": "Lets you add a color wheel to your widget, comes with helper nodes like Hexadecimal conversion.",
+	"Category": "Widget",
+	"CreatedBy": "W2.Wizard",
+	"CreatedByURL": "https://w2wizard.myportfolio.com/",
+	"DocsURL": "",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/ce01648a2cde41338991bb855a624ffa",
+	"SupportURL": "https://w2wizard.myportfolio.com/contact",
+	"EngineVersion": "4.27.0",
+	"CanContainContent": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "ColorWheelPlugin",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"BlacklistPlatforms": [
+				"IOS",
+				"Android",
+				"Linux"
+			]
+		}
+	]
+}
