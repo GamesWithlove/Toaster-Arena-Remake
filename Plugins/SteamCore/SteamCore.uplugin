@@ -37,7 +37,7 @@
 		{
 			"Name": "SteamFix",
 			"Type": "Runtime",
-			"LoadingPhase": "EarliestPossible",
+			"LoadingPhase": "Default",
 			"WhitelistPlatforms": [
 				"Win64",
 				"Linux",
