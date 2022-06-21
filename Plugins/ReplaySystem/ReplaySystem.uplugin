@@ -1,0 +1,29 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "ReplaySystem",
+	"Description": "Exposes the Unreal replay system to blueprints",
+	"Category": "Replay",
+	"CreatedBy": "TareE",
+	"CreatedByURL": "https://www.oyintare.dev/",
+	"DocsURL": "https://www.oyintare.dev/replay-system-docs.html",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/1b0cbe31111d482baaf531d187651e7f",
+	"SupportURL": "",
+	"EngineVersion": "4.27.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "ReplaySystem",
+			"Type": "Runtime",
+			"LoadingPhase": "EarliestPossible",
+			"WhitelistPlatforms": [
+				"Win64",
+				"Win32",
+				"Mac",
+				"Linux"
+			]
+		}
+	]
+}
