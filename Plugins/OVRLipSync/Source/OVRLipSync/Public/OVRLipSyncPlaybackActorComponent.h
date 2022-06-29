@@ -23,7 +23,7 @@
 
 #pragma once
 
-#include "Classes/Components/AudioComponent.h"
+#include "Engine/Classes/Components/AudioComponent.h"
 #include "OVRLipSyncActorComponentBase.h"
 #include "OVRLipSyncFrame.h"
 
