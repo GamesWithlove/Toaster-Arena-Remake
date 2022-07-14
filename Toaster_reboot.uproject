@@ -98,10 +98,6 @@
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/ce01648a2cde41338991bb855a624ffa"
 		},
 		{
-			"Name": "Shadow_replay_system",
-			"Enabled": false
-		},
-		{
 			"Name": "ReplaySystem",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/1b0cbe31111d482baaf531d187651e7f"
