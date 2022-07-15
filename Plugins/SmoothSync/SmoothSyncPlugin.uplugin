@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
-	"Version": 37,
-	"VersionName": "1.37",
+	"Version": 38,
+	"VersionName": "1.38",
 	"FriendlyName": "SmoothSyncPlugin",
 	"Description": "Syncs your transforms Smoothly across the network.",
 	"Category": "Smooth Sync",

@@ -17,8 +17,8 @@
 class SmoothState;
 class NetworkState;
 
-#define FVector3f FVector
-#define FQuat4f FQuat
+typedef FVector FVector3f;
+typedef FQuat FQuat4f;
 
 /// <summary>The variables that will be synced.</summary>
 UENUM(BlueprintType)
@@ -534,7 +534,7 @@ public:
 
 	uint8 latestSentMovementMode = 0;
 
-	TMap<USmoothSync*, bool> wasRelevant;
+	TMap<AActor*, bool> wasRelevant;
 	float approximateNetworkTimeOnOwner = 0;
 	int receivedStatesCounter = 0;
 	float updatedDeltaTime = 0;
