@@ -23,7 +23,7 @@
 
 #include "OVRLipSyncActorComponentBase.h"
 
-#include "Classes/Components/SkeletalMeshComponent.h"
+#include "Components/SkeletalMeshComponent.h"
 #include "OVRLipSyncModule.h"
 
 // Sets default values for this component's properties
