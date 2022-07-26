@@ -57,6 +57,7 @@ void FOnlineAsyncTaskSteamCoreUserStatsFindLeaderboard::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -114,6 +115,7 @@ void FOnlineAsyncTaskSteamCoreUserStatsDownloadLeaderboardEntries::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -171,6 +173,7 @@ void FOnlineAsyncTaskSteamCoreUserStatsRequestGlobalStats::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -228,6 +231,7 @@ void FOnlineAsyncTaskSteamCoreUserStatsRequestGlobalAchievementPercentages::Tick
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -285,6 +289,7 @@ void FOnlineAsyncTaskSteamCoreUserStatsGetNumberOfCurrentPlayers::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -342,6 +347,7 @@ void FOnlineAsyncTaskSteamCoreUserStatsUploadLeaderboardScore::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -399,6 +405,7 @@ void FOnlineAsyncTaskSteamCoreUserStatsFindOrCreateLeaderboard::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -456,6 +463,7 @@ void FOnlineAsyncTaskSteamCoreUserStatsRequestUserStats::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -513,6 +521,7 @@ void FOnlineAsyncTaskSteamCoreUserStatsDownloadLeaderboardEntriesForUsers::Tick(
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -570,6 +579,7 @@ void FOnlineAsyncTaskSteamCoreUserStatsAttachLeaderboardUGC::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}

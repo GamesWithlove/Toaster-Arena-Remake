@@ -52,6 +52,7 @@ void FOnlineAsyncTaskSteamCoreGameServerStatsUserStatsGS::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -109,6 +110,7 @@ void FOnlineAsyncTaskSteamCoreGameServerStatsStoreUserStats::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}

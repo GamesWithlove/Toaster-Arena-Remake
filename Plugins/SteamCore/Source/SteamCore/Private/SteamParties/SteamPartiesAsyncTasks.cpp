@@ -51,6 +51,7 @@ void FOnlineAsyncTaskSteamCorePartiesJoinParty::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -114,6 +115,7 @@ void FOnlineAsyncTaskSteamCorePartiesCreateBeacon::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -170,6 +172,7 @@ void FOnlineAsyncTaskSteamCorePartiesChangeNumOpenSlots::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}

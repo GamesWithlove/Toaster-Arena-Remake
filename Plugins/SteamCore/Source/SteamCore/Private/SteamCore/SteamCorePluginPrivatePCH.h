@@ -13,6 +13,10 @@
 #include <Serialization/MemoryReader.h>
 #include <HAL/RunnableThread.h>
 #include <Misc/ConfigCacheIni.h>
+#include <Misc/DateTime.h>
+#include <Misc/FileHelper.h>
+#include <Misc/EngineVersionComparison.h>
+#include <Misc/CoreDelegates.h>
 #include <OnlineSubsystemSteam.h>
 #include <OnlineSessionSettings.h>
 #include <OnlineSubsystem.h>
@@ -26,7 +30,6 @@
 #include <OnlineSubsystemUtils/Classes/FindSessionsCallbackProxy.h>
 #include <SocketSubsystem.h>
 #include <Kismet/KismetSystemLibrary.h>
-#include <Misc/DateTime.h>
 #include <Async/Async.h>
 #include <HttpModule.h>
 #include <Interfaces/IHttpRequest.h>
@@ -34,5 +37,8 @@
 #include <AudioDevice.h>
 #include <GameFramework/PlayerState.h>
 #include <Sound/SoundWaveProcedural.h>
+#include <OnlinePingInterfaceSteam.h>
+#include <SteamSharedModule.h>
+#include <OnlineSubsystemSteamModule.h>
 
 #include "SteamCoreLogging.h"

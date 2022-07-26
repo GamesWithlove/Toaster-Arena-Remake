@@ -19,7 +19,6 @@
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Kismet/KismetStringLibrary.h"
-#include "HAL/IConsoleManager.h"
 
 
 UReplaySystemBPLibrary::UReplaySystemBPLibrary(const FObjectInitializer& ObjectInitializer)
@@ -456,7 +455,10 @@ UDemoNetDriver* UReplaySystemBPLibrary::GetDemoDriver(UObject* WorldContextObjec
 {
 	if (UWorld* World = GEngine->GetWorldFromContextObjectChecked(WorldContextObject))
 	{
-#if ENGINE_MINOR_VERSION >= 26
+		
+#if  ENGINE_MAJOR_VERSION > 4
+		return World->GetDemoNetDriver();
+#elif ENGINE_MINOR_VERSION >= 26
 		return World->GetDemoNetDriver();
 #elif ENGINE_MINOR_VERSION < 26
 		return World->DemoNetDriver;

@@ -7,8 +7,7 @@ public class SmoothSyncPlugin : ModuleRules
 	public SmoothSyncPlugin(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
-		PrecompileForTargets = PrecompileTargetsType.Any;
-
+		
 		PublicIncludePaths.AddRange(
 			new string[] {
 				// ... add public include paths required here ...

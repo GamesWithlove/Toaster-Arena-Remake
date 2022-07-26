@@ -104,7 +104,7 @@ public:
 	* @param	Ipaddress			IP address of user in string format (xxx.xxx.xxx.xxx). Only required if usersession in InitTxn was set to web.
 	*/
 	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|MicroTxn")
-	void GetUserInfo(const FOnSteamCoreWebCallback& Callback, FString Key, FString SteamId, int32 Ipaddress);
+	void GetUserInfo(const FOnSteamCoreWebCallback& Callback, FString Key, FString SteamId, FString Ipaddress);
 
 	/**
 	* Creates a new purchase. Send the order information along with the Steam ID to seed the transaction on Steam.

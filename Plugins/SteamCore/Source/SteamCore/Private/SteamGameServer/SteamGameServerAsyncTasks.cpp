@@ -52,6 +52,7 @@ void FOnlineAsyncTaskSteamCoreGameServerAssociateWithClan::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -109,6 +110,7 @@ void FOnlineAsyncTaskSteamCoreGameServerComputeNewPlayerCompatibility::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}

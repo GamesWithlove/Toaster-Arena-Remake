@@ -308,19 +308,19 @@ bool USmoothSync::shouldDeserializeMovementMode(char syncInformation)
 	}
 }
 
-bool USmoothSync::SmoothSyncTeleportClientToServer_Validate(FVector position, FVector rotation, FVector scale, float tempOwnerTime)
+bool USmoothSync::SmoothSyncTeleportClientToServer_Validate(FVector3f position, FVector3f rotation, FVector3f scale, float tempOwnerTime)
 {
 	return true;
 }
-void USmoothSync::SmoothSyncTeleportClientToServer_Implementation(FVector position, FVector rotation, FVector scale, float tempOwnerTime)
+void USmoothSync::SmoothSyncTeleportClientToServer_Implementation(FVector3f position, FVector3f rotation, FVector3f scale, float tempOwnerTime)
 {
 	SmoothSyncTeleportServerToClients(position, rotation, scale, tempOwnerTime);
 }
-bool USmoothSync::SmoothSyncTeleportServerToClients_Validate(FVector position, FVector rotation, FVector scale, float tempOwnerTime)
+bool USmoothSync::SmoothSyncTeleportServerToClients_Validate(FVector3f position, FVector3f rotation, FVector3f scale, float tempOwnerTime)
 {
 	return true;
 }
-void USmoothSync::SmoothSyncTeleportServerToClients_Implementation(FVector position, FVector rotation, FVector scale, float tempOwnerTime)
+void USmoothSync::SmoothSyncTeleportServerToClients_Implementation(FVector3f position, FVector3f rotation, FVector3f scale, float tempOwnerTime)
 {
 	if (realObjectToSync == nullptr)
 	{
@@ -333,8 +333,8 @@ void USmoothSync::SmoothSyncTeleportServerToClients_Implementation(FVector posit
 	{
 		SmoothState *teleportState = new SmoothState();
 		teleportState->copyFromSmoothSync(this);
-		teleportState->position = position;
-		teleportState->rotation = FQuat4f::MakeFromEuler(rotation);
+		teleportState->position = (FVector3f)position;
+		teleportState->rotation = FQuat4f::MakeFromEuler((FVector3f)rotation);
 		teleportState->ownerTimestamp = tempOwnerTime;
 		teleportState->teleport = true;
 
@@ -2303,7 +2303,7 @@ bool USmoothSync::shouldSendScale()
 	if (syncScale != SyncMode::NONE &&
 		(forceStateSend ||
 		(!sameVector(getScale(), lastScaleWhenStateWasSent, sendScaleThreshold) &&
-			(sendScaleThreshold == 0 || FVector::Distance(lastScaleWhenStateWasSent, getScale()) > sendScaleThreshold))))
+			(sendScaleThreshold == 0 || FVector3f::Distance(lastScaleWhenStateWasSent, getScale()) > sendScaleThreshold))))
 	{
 		return true;
 	}

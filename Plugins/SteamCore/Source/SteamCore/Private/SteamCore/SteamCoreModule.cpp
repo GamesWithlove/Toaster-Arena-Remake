@@ -67,34 +67,10 @@ void FSteamCoreModule::StartupModule()
 	UE_LOG(LogTemp, Log, TEXT("Using %s Version: %s"), *s_PluginName, *s_PluginVersion);
 	UE_LOG(LogTemp, Log, TEXT("--------------------------------------------------------------------------------"));
 
-#if UE_VERSION_NEWER_THAN(4,27,2)
-	m_Ticker = FTSTicker::GetCoreTicker().AddTicker(FTickerDelegate::CreateLambda([this](float Delta)
-	{
-		Tick(Delta);
-		
-		return true;
-	}), 0.1f);
-#else
-	m_Ticker = FTicker::GetCoreTicker().AddTicker(FTickerDelegate::CreateLambda([this](float Delta)
-	{
-		Tick(Delta);
-		
-		return true;
-	}), 0.1f);
-#endif
 }
 
 void FSteamCoreModule::ShutdownModule()
 {
-	if (m_Ticker.IsValid())
-	{
-#if UE_VERSION_NEWER_THAN(4,27,2)
-		FTSTicker::GetCoreTicker().RemoveTicker(m_Ticker);
-#else
-		FTicker::GetCoreTicker().RemoveTicker(m_Ticker);
-#endif
-	}
-	
 	if (OnlineAsyncTaskThread)
 	{
 		delete OnlineAsyncTaskThread;
@@ -142,6 +118,7 @@ void USteamCoreSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 	{
 		OnlineAsyncTaskThreadRunnable = CoreModule->OnlineAsyncTaskThreadRunnable;
 		OnlineAsyncTaskThread = CoreModule->OnlineAsyncTaskThread;
+		bInitialized = true;
 	}
 
 	if (GetUtils())
@@ -162,25 +139,22 @@ bool USteamCoreSubsystem::ShouldCreateSubsystem(UObject* Outer) const
 	{
 		return true;
 	}
-
-	bool Result = true;
-
-	if (const USteamCoreSettings* Settings = GetDefault<USteamCoreSettings>())
-	{
-		Result = (Settings->DisabledSubsystems & (1 << static_cast<int32>(SubsystemType))) == 0;
-	}
-
-	return Result;
+	
+	return true;
 }
 
 void USteamCoreSubsystem::QueueAsyncTask(class FOnlineAsyncTask* AsyncTask)
 {
+	check(GEngine && GEngine->IsInitialized());
+	check(bInitialized);
 	check(OnlineAsyncTaskThreadRunnable);
 	OnlineAsyncTaskThreadRunnable->AddToInQueue(AsyncTask);
 }
 
 void USteamCoreSubsystem::QueueAsyncOutgoingItem(class FOnlineAsyncItem* AsyncItem)
 {
+	check(GEngine && GEngine->IsInitialized());
+	check(bInitialized);
 	check(OnlineAsyncTaskThreadRunnable);
 	OnlineAsyncTaskThreadRunnable->AddToOutQueue(AsyncItem);
 }

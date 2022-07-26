@@ -17,23 +17,22 @@ class FOnlineAsyncTaskManagerSteamCore;
 class FRunnableThread;
 
 class STEAMCORE_API FSteamCoreModule : public IModuleInterface
+#if UE_VERSION_NEWER_THAN(4,27,2)
+, public FTSTickerObjectBase
+#else
+, public FTickerObjectBase
+#endif
 {
 public:
 	/** IModuleInterface implementation */
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
-	virtual bool Tick(float DeltaTime);
+	virtual bool Tick(float DeltaTime) override;
 public:
 	FOnlineAsyncTaskManagerSteamCore* OnlineAsyncTaskThreadRunnable;
 	FRunnableThread* OnlineAsyncTaskThread;
 	static FString s_PluginName;
 	static FString s_PluginVersion;
-private:
-#if UE_VERSION_NEWER_THAN(4,27,2)
-	FTSTicker::FDelegateHandle m_Ticker;
-#else
-	FDelegateHandle m_Ticker;
-#endif
 };
 
 UCLASS(abstract)
@@ -64,4 +63,7 @@ protected:
 	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
 	virtual void Deinitialize() override;
 	virtual bool ShouldCreateSubsystem(UObject* Outer) const override;
+
+private:
+	bool bInitialized = false;
 };

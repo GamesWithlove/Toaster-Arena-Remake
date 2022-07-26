@@ -19,6 +19,7 @@ class UServerFilter;
 
 DECLARE_DYNAMIC_DELEGATE_TwoParams(FOnSteamMessage, ESteamMessageType, Type, const FString&, Message);
 DECLARE_DYNAMIC_DELEGATE_OneParam(FOnHTTPResponse, const FString&, Response);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnControllerChangedCallback, bool, bIsConnected, int32, UserId);
 
 UCLASS()
 class STEAMCORE_API USteamCoreVoice : public USoundWaveProcedural
@@ -35,6 +36,27 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utilities")
 	static USteamCoreVoice* ConstructSteamCoreVoice(int32 AudioSampleRate = 24000);
+};
+
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+//		USteamCoreAsyncActionListenForControllerChange
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+UCLASS()
+class STEAMCORE_API USteamCoreAsyncActionListenForControllerChange : public USteamCoreAsyncAction
+{
+	GENERATED_BODY()
+public:
+	UPROPERTY(BlueprintAssignable)
+	FOnControllerChangedCallback OnControllerChanged;
+public:
+	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject"), Category = "SteamCore|Utilities")
+	static USteamCoreAsyncActionListenForControllerChange* ListenForControllerChange(UObject* WorldContextObject);
+public:
+	UFUNCTION()
+	void HandleCallback(bool bIsConnected, int32 PlatformUserId, int32 UserId);
+
+	virtual void Activate() override;
 };
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -343,6 +365,9 @@ public:
 	//		Utility Functions
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 public:
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities")
+	static bool GetGameEngineInitialized();
+	
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities")
 	static ESteamAccountType GetAccountType(FSteamID SteamID);
 

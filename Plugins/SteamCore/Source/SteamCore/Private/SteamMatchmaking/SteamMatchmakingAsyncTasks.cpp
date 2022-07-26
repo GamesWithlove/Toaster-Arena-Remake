@@ -52,6 +52,7 @@ void FOnlineAsyncTaskSteamCoreMatchmakingCreateLobby::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -108,6 +109,7 @@ void FOnlineAsyncTaskSteamCoreRequestLobbyList::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -164,6 +166,7 @@ void FOnlineAsyncTaskSteamCoreJoinLobby::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}

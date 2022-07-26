@@ -48,12 +48,6 @@ class STEAMCORE_API USteamCoreSettings : public UDeveloperSettings
 public:
 	USteamCoreSettings();
 public:
-	/*
-	* Disabled subsystems wont be created, SteamCore subsystem cannot be disabled
-	*/
-	UPROPERTY(config, EditAnywhere, Category = "Settings", meta = (Bitmask, BitmaskEnum = "ESteamSubsystem"))
-	int32 DisabledSubsystems;
-
 	/**
 	* Enable steam
 	* 

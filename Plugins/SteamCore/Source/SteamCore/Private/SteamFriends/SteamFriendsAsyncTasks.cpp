@@ -52,6 +52,7 @@ void FOnlineAsyncTaskSteamCoreFriendsSetPersonaName::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -117,6 +118,7 @@ void FOnlineAsyncTaskSteamCoreFriendsDownloadClanActivityCounts::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -174,6 +176,7 @@ void FOnlineAsyncTaskSteamCoreRequestClanOfficerList::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -231,6 +234,7 @@ void FOnlineAsyncTaskSteamCoreFriendsJoinClanChatRoom::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -288,6 +292,7 @@ void FOnlineAsyncTaskSteamCoreFriendsEnumerateFollowingList::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -345,6 +350,7 @@ void FOnlineAsyncTaskSteamCoreFriendsIsFollowing::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -402,6 +408,7 @@ void FOnlineAsyncTaskSteamCoreFriendsGetFollowerCount::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}

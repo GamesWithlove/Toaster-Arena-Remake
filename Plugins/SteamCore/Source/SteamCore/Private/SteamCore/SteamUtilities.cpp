@@ -5,14 +5,10 @@
 */
 
 #include "SteamCore/SteamUtilities.h"
-#include "SteamCorePluginPrivatePCH.h"
-#include "OnlineSubsystemSteamModule.h"
 #include "SteamMatchmakingServers/SteamMatchmakingServersTypes.h"
-#include "OnlinePingInterfaceSteam.h"
-#include "SteamSharedModule.h"
-#include "Misc/FileHelper.h"
-#include "Misc/EngineVersionComparison.h"
 #include "SteamMatchmakingServers/SteamMatchmakingServersAsyncTasks.h"
+
+#include "SteamCorePluginPrivatePCH.h"
 
 TArray<FOnSteamMessage> USteamUtilities::s_SteamMessageListeners;
 
@@ -51,6 +47,33 @@ USteamCoreVoice* USteamCoreVoice::ConstructSteamCoreVoice(int32 AudioSampleRate)
 	Obj->SetSampleRate(AudioSampleRate);
 
 	return Obj;
+}
+
+USteamCoreAsyncActionListenForControllerChange* USteamCoreAsyncActionListenForControllerChange::ListenForControllerChange(UObject* WorldContextObject)
+{
+	LogVerbose("");
+
+	const auto AsyncObject = NewObject<USteamCoreAsyncActionListenForControllerChange>();
+	AsyncObject->RegisterWithGameInstance(WorldContextObject->GetWorld()->GetGameInstance());
+	AsyncObject->m_WorldContextObject = WorldContextObject;
+	AsyncObject->Activate();
+
+	return AsyncObject;	
+}
+
+void USteamCoreAsyncActionListenForControllerChange::HandleCallback(bool bIsConnected, int32 PlatformUserId, int32 UserId)
+{
+	OnControllerChanged.Broadcast(bIsConnected, UserId);
+}
+
+void USteamCoreAsyncActionListenForControllerChange::Activate()
+{
+	Super::Activate();
+
+	FCoreDelegates::OnControllerConnectionChange.AddWeakLambda(this, [this](bool bIsConnected, FPlatformUserId PlatformUserId, int32 UserId)
+	{
+		HandleCallback(bIsConnected, PlatformUserId, UserId);
+	});
 }
 
 FSteamID USteamUtilities::MakeSteamID(FString Value)
@@ -163,6 +186,11 @@ bool USteamUtilities::SteamItemInstanceID_Equals(FSteamItemInstanceID A, FSteamI
 void USteamUtilities::SteamItemInstanceID_Equals_Exec(FSteamItemInstanceID A, FSteamItemInstanceID B, ESteamCoreIdentical& Result)
 {
 	Result = static_cast<uint64>(A) == static_cast<uint64>(B) ? ESteamCoreIdentical::Identical : ESteamCoreIdentical::NotIdentical;
+}
+
+bool USteamUtilities::GetGameEngineInitialized()
+{
+	return (GEngine && GEngine->IsInitialized());
 }
 
 ESteamAccountType USteamUtilities::GetAccountType(FSteamID SteamID)

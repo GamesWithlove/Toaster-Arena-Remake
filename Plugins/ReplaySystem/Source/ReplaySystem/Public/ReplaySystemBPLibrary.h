@@ -299,8 +299,7 @@ public:
 	*/
 	UFUNCTION(BlueprintCallable,Category= "ReplaySystem")
     static float GetMaxRecordHz();
-	
-
+    
 };
 
 

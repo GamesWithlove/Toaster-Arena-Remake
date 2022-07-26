@@ -25,7 +25,7 @@
 #include "AssetRegistryModule.h"
 #include "AudioDecompress.h"
 #include "AudioDevice.h"
-#include "Classes/Sound/SoundWave.h"
+#include "Sound/SoundWave.h"
 #include "Engine.h"
 #include "Framework/Commands/UIAction.h"
 #include "Framework/MultiBox/MultiBoxBuilder.h"

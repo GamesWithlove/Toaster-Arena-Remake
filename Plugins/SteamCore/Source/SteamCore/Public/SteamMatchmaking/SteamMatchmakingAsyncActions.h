@@ -176,7 +176,7 @@ public:
 	static USteamCoreFindSession* FindSteamCoreSessions(UObject* WorldContextObject, TMap<FString, FSteamSessionSearchSetting> SearchSettings, int32 MaxResults = 50, bool bUseLAN = false, ESteamSessionFindType ServerType = ESteamSessionFindType::Listen, bool bEmptyServersOnly = false, bool bSecureServersOnly = false, float Timeout = 10.f);
 
 protected:
-	TMap<FString, FSteamSessionSearchSetting> additionalSearchSettings;
+	TMap<FString, FSteamSessionSearchSetting> m_AdditionalSearchSettings;
 	TSharedPtr<class FOnlineSessionSearch> m_SearchSettings;
 	TArray<FBlueprintSessionResult> m_SearchResults;
 	int m_MaxResults;

@@ -111,7 +111,7 @@ USteamCoreWebAsyncActionGetUserAgreementInfo* USteamCoreWebAsyncActionGetUserAgr
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		USteamCoreWebAsyncActionGetUserInfo
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-USteamCoreWebAsyncActionGetUserInfo* USteamCoreWebAsyncActionGetUserInfo::GetUserInfoAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 Ipaddress)
+USteamCoreWebAsyncActionGetUserInfo* USteamCoreWebAsyncActionGetUserInfo::GetUserInfoAsync(UObject* WorldContextObject, FString Key, FString SteamId, FString Ipaddress)
 {
 	auto* GameInstance = WorldContextObject->GetWorld()->GetGameInstance();
 	auto* Subsystem = GameInstance->GetSubsystem<USteamCoreWebSubsystem>();

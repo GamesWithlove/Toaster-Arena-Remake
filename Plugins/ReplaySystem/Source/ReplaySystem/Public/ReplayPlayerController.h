@@ -33,5 +33,7 @@ public:
 	UFUNCTION(BlueprintImplementableEvent,Category="Replay")
     void OnStopSpectateActor();
 
+	
+
 	bool bIsSpectating = false;
 };

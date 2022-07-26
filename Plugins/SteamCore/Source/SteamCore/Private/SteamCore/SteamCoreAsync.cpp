@@ -26,6 +26,8 @@ void USteamCoreAsyncAction::SetReadyToDestroy()
 
 USteamCoreSubsystem* USteamCoreAsyncAction::GetInstancedSubsystem(UObject* WorldContextObject)
 {
+	checkf(GEngine && GEngine->IsInitialized(), TEXT("Game engine not initialized."));
+    	
 	if (WorldContextObject && WorldContextObject->GetWorld())
 	{
 		const auto GameInstance = WorldContextObject->GetWorld()->GetGameInstance();
@@ -46,7 +48,6 @@ FOnlineAsyncTaskSteamCore::FOnlineAsyncTaskSteamCore()
 	, m_CallbackHandle(k_uAPICallInvalid)
 	, m_AsyncTimeout(10.f)
 {
-	//AsyncTimeout = GetDefault<USteamCoreSettings>()->AsyncTaskTimeout;
 }
 
 void FOnlineAsyncTaskSteamCore::Tick()

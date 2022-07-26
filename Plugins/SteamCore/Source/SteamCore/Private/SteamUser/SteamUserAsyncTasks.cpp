@@ -51,6 +51,7 @@ void FOnlineAsyncTaskSteamCoreUserRequestEncryptedAppTicket::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -107,6 +108,7 @@ void FOnlineAsyncTaskSteamCoreUserRequestStoreAuthURL::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}

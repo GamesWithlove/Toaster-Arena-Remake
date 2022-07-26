@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "1.5.3.2",
+	"VersionName": "1.5.3.3",
 	"FriendlyName": "SteamCore",
 	"Description": "Steam/Steamworks Integration",
 	"Category": "eelDev Plugins",
@@ -10,7 +10,7 @@
 	"DocsURL": "https://eeldev.com/index.php/steamcore-plugin/",
 	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/5300c1dc33f74524bcad23bdeb9b2196",
 	"SupportURL": "https://eeldev.com",
-	"EngineVersion": "4.27.0",
+	"EngineVersion": "5.0.0",
 	"CanContainContent": true,
 	"Installed": true,
 	"Modules": [
@@ -18,7 +18,7 @@
 			"Name": "SteamCore",
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
-			"WhitelistPlatforms": [
+			"PlatformAllowList": [
 				"Win64",
 				"Linux",
 				"Mac"
@@ -28,7 +28,7 @@
 			"Name": "SteamCoreWeb",
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
-			"WhitelistPlatforms": [
+			"PlatformAllowList": [
 				"Win64",
 				"Linux",
 				"Mac"
@@ -38,7 +38,7 @@
 			"Name": "SteamFix",
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
-			"WhitelistPlatforms": [
+			"PlatformAllowList": [
 				"Win64",
 				"Linux",
 				"Mac"

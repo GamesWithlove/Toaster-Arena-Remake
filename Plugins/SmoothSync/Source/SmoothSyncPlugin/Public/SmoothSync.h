@@ -17,8 +17,8 @@
 class SmoothState;
 class NetworkState;
 
-typedef FVector FVector3f;
-typedef FQuat FQuat4f;
+//typedef FVector FVector3f;
+//typedef FQuat FQuat4f;
 
 /// <summary>The variables that will be synced.</summary>
 UENUM(BlueprintType)
@@ -716,9 +716,9 @@ public:
 	UFUNCTION(Server, unreliable, WithValidation)
 		void SmoothSyncEnableClientToServer(bool enable);
 	UFUNCTION(NetMulticast, reliable, WithValidation)
-		void SmoothSyncTeleportServerToClients(FVector position, FVector rotation, FVector scale, float tempOwnerTime);
+		void SmoothSyncTeleportServerToClients(FVector3f position, FVector3f rotation, FVector3f scale, float tempOwnerTime);
 	UFUNCTION(Server, reliable, WithValidation)
-		void SmoothSyncTeleportClientToServer(FVector position, FVector rotation, FVector scale, float tempOwnerTime);
+		void SmoothSyncTeleportClientToServer(FVector3f position, FVector3f rotation, FVector3f scale, float tempOwnerTime);
 
 
 	template <class T>

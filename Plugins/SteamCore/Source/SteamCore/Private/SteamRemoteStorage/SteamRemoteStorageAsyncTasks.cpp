@@ -52,6 +52,7 @@ void FOnlineAsyncTaskSteamCoreRemoteStorageFileWriteAsync::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -109,6 +110,7 @@ void FOnlineAsyncTaskSteamCoreRemoteStorageFileReadAsync::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -166,6 +168,7 @@ void FOnlineAsyncTaskSteamCoreRemoteStorageFileShare::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -223,6 +226,7 @@ void FOnlineAsyncTaskSteamCoreRemoteStorageUGCDownload::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -280,6 +284,7 @@ void FOnlineAsyncTaskSteamCoreRemoteStorageUGCDownloadToLocation::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}

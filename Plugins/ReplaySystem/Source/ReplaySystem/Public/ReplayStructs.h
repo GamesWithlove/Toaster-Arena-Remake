@@ -4,10 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "Camera/PlayerCameraManager.h"
+#include "Curves/CurveVector.h"
 #include "ReplayStructs.generated.h"
 
 
 class UReplayDataObject;
+class UCurveVector;
+class FNetworkGUID;
 
 USTRUCT(BlueprintType)
 struct FReplayInfo

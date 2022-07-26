@@ -118,7 +118,7 @@ private:
 class FOnlineAsyncTaskSteamCoreWebGetUserInfo : public FOnlineAsyncTaskSteamCoreWeb
 {
 public:
-	FOnlineAsyncTaskSteamCoreWebGetUserInfo(USteamCoreWebSubsystem* subsystem, const FOnSteamCoreWebCallback& Callback, FString Key, FString SteamId, int32 Ipaddress)
+	FOnlineAsyncTaskSteamCoreWebGetUserInfo(USteamCoreWebSubsystem* subsystem, const FOnSteamCoreWebCallback& Callback, FString Key, FString SteamId, FString Ipaddress)
 		: FOnlineAsyncTaskSteamCoreWeb(subsystem, Callback, SteamCoreWebMicroTxnSandboxMode() ? "ISteamMicroTxnSandbox" : "ISteamMicroTxn", "GetUserInfo", Key, 2, EVerb::GET)
 	{
 		m_RequestString.Add("steamid", SteamId);

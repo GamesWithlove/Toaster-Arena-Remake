@@ -52,6 +52,7 @@ void FOnlineAsyncTaskSteamCoreUGCStopPlaytimeTrackingForAllItems::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -119,6 +120,7 @@ void FOnlineAsyncTaskSteamCoreUGCStopPlaytimeTracking::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -186,6 +188,7 @@ void FOnlineAsyncTaskSteamCoreUGCStartPlaytimeTracking::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -243,6 +246,7 @@ void FOnlineAsyncTaskSteamCoreUGCUnsubscribeItem::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -300,6 +304,7 @@ void FOnlineAsyncTaskSteamCoreUGCSubscribeItem::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -357,6 +362,7 @@ void FOnlineAsyncTaskSteamCoreUGCRemoveItemFromFavorites::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -414,6 +420,7 @@ void FOnlineAsyncTaskSteamCoreUGCAddItemToFavorites::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -471,6 +478,7 @@ void FOnlineAsyncTaskSteamCoreUGCGetUserItemVote::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -528,6 +536,7 @@ void FOnlineAsyncTaskSteamCoreUGCSetUserItemVote::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -585,6 +594,7 @@ void FOnlineAsyncTaskSteamCoreUGCSubmitItemUpdate::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -642,6 +652,7 @@ void FOnlineAsyncTaskSteamCoreUGCCreateItem::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -699,6 +710,7 @@ void FOnlineAsyncTaskSteamCoreUGCSendQueryUGCRequest::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -756,6 +768,7 @@ void FOnlineAsyncTaskSteamCoreUGCAddAppDependency::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -813,6 +826,7 @@ void FOnlineAsyncTaskSteamCoreUGCRemoveAppDependency::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -870,6 +884,7 @@ void FOnlineAsyncTaskSteamCoreUGCAddUGCDependency::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -927,6 +942,7 @@ void FOnlineAsyncTaskSteamCoreUGCRemoveUGCDependency::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -984,6 +1000,7 @@ void FOnlineAsyncTaskSteamCoreUGCDeleteItem::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -1041,6 +1058,7 @@ void FOnlineAsyncTaskSteamCoreUGCGetAppDependencies::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -1089,6 +1107,7 @@ void FOnlineAsyncTaskSteamCoreUGCDownloadItem::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}

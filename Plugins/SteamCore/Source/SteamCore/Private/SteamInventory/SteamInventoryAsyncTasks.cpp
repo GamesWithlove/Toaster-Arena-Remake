@@ -53,6 +53,7 @@ void FOnlineAsyncTaskSteamCoreInventoryRequestEligiblePromoItemDefinitionsIDs::T
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -111,6 +112,7 @@ void FOnlineAsyncTaskSteamCoreInventoryRequestPricesResult::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -183,6 +185,7 @@ void FOnlineAsyncTaskSteamCoreInventoryStartPurchaseResult::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}

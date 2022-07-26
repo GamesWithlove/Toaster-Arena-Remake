@@ -266,7 +266,7 @@ USteamCoreFindSession* USteamCoreFindSession::FindSteamCoreSessions(UObject* Wor
 		const auto AsyncObject = NewObject<USteamCoreFindSession>();
 		AsyncObject->RegisterWithGameInstance(Subsystem->GetGameInstance());
 		AsyncObject->m_WorldContextObject = WorldContextObject;
-		AsyncObject->additionalSearchSettings = SearchSettings;
+		AsyncObject->m_AdditionalSearchSettings = SearchSettings;
 		AsyncObject->m_MaxResults = MaxResults;
 		AsyncObject->m_bUseLAN = bUseLAN;
 		AsyncObject->m_ServerType = ServerType;
@@ -316,7 +316,7 @@ void USteamCoreFindSession::Activate()
 				m_Settings.Set(SEARCH_SECURE_SERVERS_ONLY, m_bSecureServersOnly ? 1 : 0, EOnlineComparisonOp::Equals);
 			}
 
-			for (auto& Element : additionalSearchSettings)
+			for (auto& Element : m_AdditionalSearchSettings)
 			{
 				if (Element.Key.Len() == 0)
 				{

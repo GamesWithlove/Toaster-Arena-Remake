@@ -61,7 +61,7 @@ void UWebMicroTxn::GetUserAgreementInfo(const FOnSteamCoreWebCallback& Callback,
 	QueueAsyncTask(Task);
 }
 
-void UWebMicroTxn::GetUserInfo(const FOnSteamCoreWebCallback& Callback, FString Key, FString SteamId, int32 Ipaddress)
+void UWebMicroTxn::GetUserInfo(const FOnSteamCoreWebCallback& Callback, FString Key, FString SteamId, FString Ipaddress)
 {
 	FOnlineAsyncTaskSteamCoreWebGetUserInfo* Task = new FOnlineAsyncTaskSteamCoreWebGetUserInfo(this, Callback, Key, SteamId, Ipaddress);
 	QueueAsyncTask(Task);
@@ -93,5 +93,5 @@ void UWebMicroTxn::RefundTxn(const FOnSteamCoreWebCallback& Callback, FString Ke
 
 FString UWebMicroTxn::MakeTransactionID()
 {
-	return FString::Printf(TEXT("%d"), (FMath::Rand() * 9223372036854775807));
+	return FString::Printf(TEXT("%llu"), static_cast<uint64>(FMath::FRand() * static_cast<float>(9223372036854775807)));
 }

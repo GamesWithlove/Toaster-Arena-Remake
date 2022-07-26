@@ -111,6 +111,7 @@ void FOnlineAsyncTaskSteamCoreMatchmakingServersServerList::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -221,6 +222,7 @@ void FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
@@ -294,6 +296,7 @@ void FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules::Tick()
 	}
 	else
 	{
+		LogError("SteamUtilsPtr was nullptr");
 		bIsComplete = true;
 		bWasSuccessful = false;
 	}
