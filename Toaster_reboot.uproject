@@ -114,6 +114,10 @@
 				"Mac",
 				"Linux"
 			]
+		},
+		{
+			"Name": "AnimationWarping",
+			"Enabled": true
 		}
 	]
 }
