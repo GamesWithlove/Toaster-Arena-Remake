@@ -122,6 +122,10 @@
 		{
 			"Name": "StateTree",
 			"Enabled": true
+		},
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true
 		}
 	]
 }
