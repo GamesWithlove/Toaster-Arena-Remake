@@ -2594,7 +2594,15 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/DigSystem/DlgSystem.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/EasyFileDialog/EasyFileDialog.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/modio-ue4/Modio.uplugin",
 			"Type": "UFS"
 		},
 		{
