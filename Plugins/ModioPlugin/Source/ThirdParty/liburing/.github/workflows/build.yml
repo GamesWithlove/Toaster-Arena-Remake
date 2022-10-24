@@ -1,0 +1,85 @@
+name: Build test
+
+on:
+  # Trigger the workflow on push or pull requests.
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # x86-64 gcc
+          - arch: x86_64
+            cc_pkg: gcc-x86-64-linux-gnu
+            cxx_pkg: g++-x86-64-linux-gnu
+            cc: x86_64-linux-gnu-gcc
+            cxx: x86_64-linux-gnu-g++
+
+          # x86-64 clang
+          - arch: x86_64
+            cc_pkg: clang
+            cxx_pkg: clang
+            cc: clang
+            cxx: clang++
+
+          # x86 (32-bit) gcc
+          - arch: i686
+            cc_pkg: gcc-i686-linux-gnu
+            cxx_pkg: g++-i686-linux-gnu
+            cc: i686-linux-gnu-gcc
+            cxx: i686-linux-gnu-g++
+
+          # aarch64 gcc
+          - arch: aarch64
+            cc_pkg: gcc-aarch64-linux-gnu
+            cxx_pkg: g++-aarch64-linux-gnu
+            cc: aarch64-linux-gnu-gcc
+            cxx: aarch64-linux-gnu-g++
+
+          # arm (32-bit) gcc
+          - arch: arm
+            cc_pkg: gcc-arm-linux-gnueabi
+            cxx_pkg: g++-arm-linux-gnueabi
+            cc: arm-linux-gnueabi-gcc
+            cxx: arm-linux-gnueabi-g++
+
+    env:
+      FLAGS: -g -O2 -Wall -Wextra -Werror
+
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v2
+
+    - name: Install Compilers
+      run: |
+        sudo apt-get update -y;
+        sudo apt-get install -y ${{matrix.cc_pkg}} ${{matrix.cxx_pkg}};
+
+    - name: Display compiler versions
+      run: |
+        ${{matrix.cc}} --version;
+        ${{matrix.cxx}} --version;
+
+    - name: Build
+      run: |
+        ./configure --cc=${{matrix.cc}} --cxx=${{matrix.cxx}};
+        make -j$(nproc) V=1 CPPFLAGS="-Werror" CFLAGS="$FLAGS" CXXFLAGS="$FLAGS";
+
+    - name: Build nolibc
+      run: |
+        if [[ "${{matrix.arch}}" == "x86_64" ]]; then \
+            make clean; \
+            ./configure --cc=${{matrix.cc}} --cxx=${{matrix.cxx}} --nolibc; \
+            make -j$(nproc) V=1 CPPFLAGS="-Werror" CFLAGS="$FLAGS" CXXFLAGS="$FLAGS"; \
+        else \
+            echo "Skipping nolibc build, this arch doesn't support building liburing without libc"; \
+        fi;
+
+    - name: Test install command
+      run: |
+        sudo make install;
