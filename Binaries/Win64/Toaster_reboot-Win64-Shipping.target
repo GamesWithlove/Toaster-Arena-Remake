@@ -2602,7 +2602,7 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/modio-ue4/Modio.uplugin",
+			"Path": "$(ProjectDir)/Plugins/ModioPlugin/Modio.uplugin",
 			"Type": "UFS"
 		},
 		{
