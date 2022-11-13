@@ -134,12 +134,7 @@
 		},
 		{
 			"Name": "Toaster_mod_plugin",
-			"Enabled": true,
-			"SupportedTargetPlatforms": [
-				"Win64",
-				"Mac",
-				"Linux"
-			]
+			"Enabled": true
 		}
 	]
 }
