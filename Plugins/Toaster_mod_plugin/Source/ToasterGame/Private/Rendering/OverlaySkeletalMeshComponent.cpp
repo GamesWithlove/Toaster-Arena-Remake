@@ -365,6 +365,23 @@ UMaterialInterface* UOverlaySkeletalMeshComponent::GetOverlayMaterial() const
     return OverlayMaterial;
 }
 
+void UOverlaySkeletalMeshComponent::SetOverlayMaterial(UMaterialInterface* InMaterial)
+{
+    if (UMaterialInstanceDynamic* DynamicInstance = Cast<UMaterialInstanceDynamic>(InMaterial))
+    {
+        OverlayMaterial = DynamicInstance->GetBaseMaterial();
+        OverlayMaterialDynamic = DynamicInstance;
+    }
+    else
+    {
+        OverlayMaterial = InMaterial;
+        if (bAutoCreateDynamicOverlay)
+        {
+            OverlayMaterialDynamic = UMaterialInstanceDynamic::Create(OverlayMaterial, this);
+        }
+    }
+}
+
 void UOverlaySkeletalMeshComponent::GetUsedMaterials(TArray<UMaterialInterface*>& OutMaterials, bool bGetDebugMaterials /*= false*/) const
 {
     Super::GetUsedMaterials(OutMaterials, bGetDebugMaterials);
@@ -448,7 +465,7 @@ void UOverlaySkeletalMeshComponent::OnRegister()
 {
     Super::OnRegister();
 
-    if (OverlayMaterial != nullptr)
+    if (OverlayMaterial != nullptr && bAutoCreateDynamicOverlay)
     {
         OverlayMaterialDynamic = UMaterialInstanceDynamic::Create(OverlayMaterial, this);
     }

@@ -14,7 +14,7 @@ public:
     bool bAutoCreateDynamicOverlay = true;
     
     // The material to draw over top of the mesh
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(EditAnywhere)
     UMaterialInterface* OverlayMaterial;
 
     // Dynamic material pointer
@@ -28,6 +28,10 @@ public:
     // Get the overlay material
     UFUNCTION(BlueprintCallable, Category = "Rendering")
     UMaterialInterface* GetOverlayMaterial() const;
+
+    // Set the overlay material, will auto-create dynamic instance if enabled
+    UFUNCTION(BlueprintCallable, Category = "Rendering")
+    void SetOverlayMaterial(UMaterialInterface* InMaterial);
 
     void GetUsedMaterials(TArray<UMaterialInterface*>& OutMaterials, bool bGetDebugMaterials = false) const override;
     int32 GetOverlayMaterialIndex() const;

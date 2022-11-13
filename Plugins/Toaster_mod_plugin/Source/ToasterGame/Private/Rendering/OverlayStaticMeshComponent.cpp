@@ -155,6 +155,23 @@ UMaterialInterface* UOverlayStaticMeshComponent::GetOverlayMaterial() const
     return OverlayMaterial;
 }
 
+void UOverlayStaticMeshComponent::SetOverlayMaterial(UMaterialInterface* InMaterial)
+{
+    if (UMaterialInstanceDynamic* DynamicInstance = Cast<UMaterialInstanceDynamic>(InMaterial))
+    {
+        OverlayMaterial = DynamicInstance->GetBaseMaterial();
+        OverlayMaterialDynamic = DynamicInstance;
+    }
+    else
+    {
+        OverlayMaterial = InMaterial;
+        if (bAutoCreateDynamicOverlay)
+        {
+            OverlayMaterialDynamic = UMaterialInstanceDynamic::Create(OverlayMaterial, this);
+        }
+    }
+}
+
 void UOverlayStaticMeshComponent::GetUsedMaterials(TArray<UMaterialInterface*>& OutMaterials, bool bGetDebugMaterials /*= false*/) const
 {
     Super::GetUsedMaterials(OutMaterials, bGetDebugMaterials);
@@ -255,7 +272,7 @@ void UOverlayStaticMeshComponent::OnRegister()
 {
     Super::OnRegister();
 
-    if (OverlayMaterial != nullptr)
+    if (OverlayMaterial != nullptr && bAutoCreateDynamicOverlay)
     {
         OverlayMaterialDynamic = UMaterialInstanceDynamic::Create(OverlayMaterial, this);
     }
