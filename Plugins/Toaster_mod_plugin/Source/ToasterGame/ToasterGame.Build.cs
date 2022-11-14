@@ -27,6 +27,7 @@ public class ToasterGame : ModuleRules
 				"StreamingFile",
 				"RenderCore",
 				"RHI",
+				"Niagara",
 			}
 		);
 	}

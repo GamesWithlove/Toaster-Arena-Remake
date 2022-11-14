@@ -20,6 +20,11 @@ void APooledActor::BeginDestroy()
     Super::BeginDestroy();
 }
 
+void APooledActor::FinishPooledSpawning()
+{
+    OnCreatedFromPool();
+}
+
 void UActorPool::Initialize(UWorld* InWorld, TSubclassOf<APooledActor> InActorClass, int32 Count)
 {
     World = InWorld;
@@ -40,7 +45,7 @@ void UActorPool::Initialize(UWorld* InWorld, TSubclassOf<APooledActor> InActorCl
     }
 }
 
-AActor* UActorPool::AllocateFromPool(bool bReclaimIfEmpty, const FTransform& Transform)
+APooledActor* UActorPool::AllocateFromPool(bool bReclaimIfEmpty, const FTransform& Transform)
 {
     if (FreeList != nullptr)
     {
@@ -54,7 +59,6 @@ AActor* UActorPool::AllocateFromPool(bool bReclaimIfEmpty, const FTransform& Tra
 
         Actor->bPooled = false;
         Actor->SetActorTransform(Transform, false, nullptr, ETeleportType::ResetPhysics);
-        Actor->OnCreatedFromPool();
         return Actor;
     }
     else if (bReclaimIfEmpty)
@@ -117,4 +121,5 @@ void UActorPool::ReleaseToPool(APooledActor* Actor)
     Actor->bPooled = true;
     Actor->OnReturnToPool();
     Actor->SetActorTickEnabled(false);
+    Actor->SetOwner(nullptr);
 }
