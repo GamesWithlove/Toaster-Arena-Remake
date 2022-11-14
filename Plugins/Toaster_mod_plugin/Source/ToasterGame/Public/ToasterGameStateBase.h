@@ -3,6 +3,8 @@
 #include "GameFramework/GameState.h"
 #include "ToasterGameStateBase.generated.h"
 
+class APooledActor;
+
 UCLASS()
 class TOASTERGAME_API AToasterGameStateBase : public AGameStateBase
 {
@@ -19,7 +21,10 @@ public:
     TMap<TSubclassOf<APooledActor>, int32> ClientActorPoolTypes;
 
     UFUNCTION(BlueprintCallable, Category = "Actor")
-    AActor* SpawnActorFromPool(TSubclassOf<APooledActor> ActorClass, FTransform Transform, bool bReclaimIfEmpty = true);
+    APooledActor* SpawnActorFromPool(TSubclassOf<APooledActor> ActorClass, FTransform Transform, bool bReclaimIfEmpty = true);
+
+    UFUNCTION()
+    APooledActor* SpawnActorFromPoolDefer(TSubclassOf<APooledActor> ActorClass, FTransform Transform, bool bReclaimIfEmpty = true);
 
 protected:
     

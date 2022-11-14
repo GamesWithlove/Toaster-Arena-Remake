@@ -1,13 +1,22 @@
 #include "ToasterGameStateBase.h"
 #include "ActorPool.h"
 
-AActor* AToasterGameStateBase::SpawnActorFromPool(TSubclassOf<APooledActor> ActorClass, FTransform Transform, bool bReclaimIfEmpty /*= true*/)
+APooledActor* AToasterGameStateBase::SpawnActorFromPool(TSubclassOf<APooledActor> ActorClass, FTransform Transform, bool bReclaimIfEmpty /*= true*/)
+{
+    APooledActor* NewActor = SpawnActorFromPoolDefer(ActorClass, Transform, bReclaimIfEmpty);
+    if (NewActor) NewActor->FinishPooledSpawning();
+
+    return NewActor;
+}
+
+APooledActor* AToasterGameStateBase::SpawnActorFromPoolDefer(TSubclassOf<APooledActor> ActorClass, FTransform Transform, bool bReclaimIfEmpty /*= true*/)
 {
     UActorPool* Pool = GetActorPoolForClass(ActorClass);
     if (Pool == nullptr) return nullptr;
 
-    AActor* NewActor = Pool->AllocateFromPool(bReclaimIfEmpty, Transform);
-    if ( NewActor == nullptr ) return nullptr;
+    APooledActor* NewActor = Pool->AllocateFromPool(bReclaimIfEmpty, Transform);
+    if (NewActor == nullptr) return nullptr;
+
     return NewActor;
 }
 
