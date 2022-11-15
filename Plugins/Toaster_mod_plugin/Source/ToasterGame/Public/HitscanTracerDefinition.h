@@ -18,13 +18,17 @@ public:
     UPROPERTY(EditAnywhere, BlueprintReadOnly)
     float Width = 1.f;
 
+    // Length of tracer particle
+    UPROPERTY(EditAnywhere, BlueprintReadOnly)
+    float Length = 100.f;
+
     // Percentage chance of tracer effect dispatching
     UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (UIMin = 0, UIMax = 100))
     int32 ChancePercent = 100;
 
-    // Image to map onto tracer particle
+    // Material to map onto tracer particle
     UPROPERTY(EditAnywhere, BlueprintReadOnly)
-    class UTexture2D* Texture;
+    class UMaterialInterface* Material;
 
     // Sound effect this tracer makes as it flies past players
     UPROPERTY(EditAnywhere, BlueprintReadOnly)
