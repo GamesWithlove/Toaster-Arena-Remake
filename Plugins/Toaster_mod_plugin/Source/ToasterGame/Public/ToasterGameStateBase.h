@@ -40,4 +40,8 @@ protected:
 
     void BeginPlay() override;
 
+    bool ShouldUseServerPools() const;
+
+    bool ShouldUseClientPools() const;
+
 };
