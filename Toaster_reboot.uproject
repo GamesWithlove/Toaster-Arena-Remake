@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.0",
+	"EngineAssociation": "{C9E2279F-4B91-F026-1D88-6ABF3AF54AF0}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -126,6 +126,15 @@
 		{
 			"Name": "Toaster_mod_plugin",
 			"Enabled": true
+		},
+		{
+			"Name": "Bridge",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64",
+				"Mac",
+				"Linux"
+			]
 		}
 	]
 }
