@@ -261,6 +261,19 @@ FPrimitiveSceneProxy* UOverlayStaticMeshComponent::CreateSceneProxy()
     return Proxy;
 }
 
+void UOverlayStaticMeshComponent::TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+{
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+	const float CurrentOverlayValue = OverlayValue;
+
+	if (OverlayMaterialDynamic != nullptr)
+	{
+		static const FName NAME_OverlayValue(TEXT("OverlayValue"));
+		OverlayMaterialDynamic->SetScalarParameterValue(NAME_OverlayValue, CurrentOverlayValue);
+	}
+}
+
 void UOverlayStaticMeshComponent::CreateRenderState_Concurrent(FRegisterComponentContext* Context)
 {
     Super::CreateRenderState_Concurrent(Context);
@@ -283,12 +296,6 @@ void UOverlayStaticMeshComponent::SendRenderDynamicData_Concurrent()
     if (SceneProxy != nullptr)
     {   
         const float CurrentOverlayValue = OverlayValue;
-
-        if (OverlayMaterialDynamic != nullptr)
-        {
-            static const FName NAME_OverlayValue(TEXT("OverlayValue"));
-            OverlayMaterialDynamic->SetScalarParameterValue(NAME_OverlayValue, CurrentOverlayValue);
-        }
 
         FOverlayStaticMeshSceneProxy* OverlayProxy = (FOverlayStaticMeshSceneProxy*) SceneProxy;
         ENQUEUE_RENDER_COMMAND(FSendOverlayData)(

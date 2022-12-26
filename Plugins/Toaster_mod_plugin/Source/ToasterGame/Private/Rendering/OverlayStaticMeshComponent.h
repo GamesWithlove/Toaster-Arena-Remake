@@ -43,6 +43,9 @@ public:
 
     virtual FPrimitiveSceneProxy* CreateSceneProxy() override;
 
+
+	void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
 private:
     void SendRenderDynamicData_Concurrent();
 protected:
