@@ -433,6 +433,19 @@ FPrimitiveSceneProxy* UOverlaySkeletalMeshComponent::CreateSceneProxy()
     return Result;
 }
 
+void UOverlaySkeletalMeshComponent::TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
+{
+	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+	const float CurrentOverlayValue = OverlayValue;
+
+	if (OverlayMaterialDynamic != nullptr)
+	{
+		static const FName NAME_OverlayValue(TEXT("OverlayValue"));
+		OverlayMaterialDynamic->SetScalarParameterValue(NAME_OverlayValue, CurrentOverlayValue);
+	}
+}
+
 #if WITH_EDITOR
 
 bool UOverlaySkeletalMeshComponent::GetMaterialPropertyPath(int32 ElementIndex, UObject*& OutOwner, FString& OutPropertyPath, FProperty*& OutProperty)
@@ -478,12 +491,6 @@ void UOverlaySkeletalMeshComponent::SendRenderDynamicData_Concurrent()
     if (SceneProxy != nullptr)
     {   
         const float CurrentOverlayValue = OverlayValue;
-
-        if (OverlayMaterialDynamic != nullptr)
-        {
-            static const FName NAME_OverlayValue(TEXT("OverlayValue"));
-            OverlayMaterialDynamic->SetScalarParameterValue(NAME_OverlayValue, CurrentOverlayValue);
-        }
 
         FOverlaySkeletalMeshSceneProxy* OverlayProxy = (FOverlaySkeletalMeshSceneProxy*) SceneProxy;
         ENQUEUE_RENDER_COMMAND(FSendOverlayData)(
