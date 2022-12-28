@@ -1,0 +1,319 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#include "UGCRegistry.h"
+#include "UGCKit.h"
+
+
+
+bool UUGCRegistry::FindUGCPackages()
+{
+	// Now let's find all new root paths in the asset registry.
+	TArray<FString> RootPaths;
+	FPackageName::QueryRootContentPaths(RootPaths);
+
+	// Remove any plugins your game is shipping with, as well as engine and game roots. We only care about NEW paths.
+	RootPaths.Remove(TEXT("/Engine/"));
+	RootPaths.Remove(TEXT("/Game/"));
+	RootPaths.Remove(TEXT("/Paper2D/"));
+	RootPaths.Remove(TEXT("/UGCKit/"));
+
+	// Remove any other plugins you've defined in Blueprints
+	for (FName Package : PackageBlacklist)
+	{
+		RootPaths.Remove(Package.ToString());
+	}
+
+	if (RootPaths.Num() <= 0)
+	{
+		return false;
+	}
+
+	for (FString Path : RootPaths)
+	{
+		UGCPackages.Add(FName(*Path.LeftChop(1)));
+	}
+
+	return true;
+
+}
+
+bool UUGCRegistry::GetAssetsFromPackage(FName Package, TArray<FAssetData> &Assets, bool bOnlyRegisteredModTypes)
+{
+	// Load up the AssetRegistry
+	FAssetRegistryModule& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>(TEXT("AssetRegistry"));
+	IAssetRegistry& AssetRegistry = AssetRegistryModule.Get();
+
+	TArray<FAssetData> AssetList;
+	AssetRegistry.GetAssetsByPath(Package, AssetList, true);
+	if (AssetList.Num() == 0)
+	{
+		return false;
+	}
+
+	for (FAssetData Asset : AssetList)
+	{
+		const FString* ClassTextPath = Asset.TagsAndValues.Find("GeneratedClass");
+		if (ClassTextPath != NULL)
+		{
+			FString ClassPath = FPackageName::ExportTextPathToObjectPath(*ClassTextPath);
+			UClass* AssetClass = LoadObject<UClass>(NULL, *ClassPath);
+
+			// Check if it's a mod type
+			if (AssetClass)
+			{
+				if (bOnlyRegisteredModTypes)
+				{
+					for (UClass * ModClass : RegisteredModTypes)
+					{
+						if (AssetClass->IsChildOf(ModClass))
+						{
+							Assets.Add(Asset);
+							break;
+						}
+					}
+				}
+				else
+				{
+					Assets.Add(Asset);
+				}
+			}
+		}
+	}
+	return Assets.Num() > 0;
+}
+
+bool UUGCRegistry::GetMapsFromPackage(FName Package, TArray<FName> &Maps)
+{
+	// Load up the AssetRegistry
+	FAssetRegistryModule& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>(TEXT("AssetRegistry"));
+	IAssetRegistry& AssetRegistry = AssetRegistryModule.Get();
+	
+	FARFilter ARFilter;
+	TArray<FAssetData> AssetList;
+	// Add any old names to the list in case things haven't been resaved
+	ARFilter.ClassNames.Append(OldNames);
+	ARFilter.bRecursivePaths = true;
+	ARFilter.bIncludeOnlyOnDiskAssets = true;
+	ARFilter.bRecursiveClasses = true;
+
+	////////////////////////////////////////
+	// Blueprint and CPP classes of our archetypes.
+	ARFilter.ClassNames.Add(UWorld::StaticClass()->GetFName());
+	ARFilter.PackagePaths.Add(Package);
+	AssetRegistry.GetAssets(ARFilter, AssetList);
+	AssetRegistry.GetAssetsByPath(Package, AssetList, true);
+	if (AssetList.Num() == 0)
+	{
+		return false;
+	}
+
+	for (FAssetData Asset : AssetList)
+	{
+		const FString* ClassTextPath = Asset.TagsAndValues.Find("GeneratedClass");
+		if (ClassTextPath != NULL)
+		{
+			FString ClassPath = FPackageName::ExportTextPathToObjectPath(*ClassTextPath);
+			UClass* AssetClass = LoadObject<UClass>(NULL, *ClassPath);
+
+			// Check if it's a mod type
+			if (AssetClass)
+			{
+				if (bOnlyRegisteredModTypes)
+				{
+					for (UClass * ModClass : RegisteredModTypes)
+					{
+						if (AssetClass->IsChildOf(ModClass))
+						{
+							Assets.Add(Asset);
+							break;
+						}
+					}
+				}
+				else
+				{
+					Assets.Add(Asset);
+				}
+			}
+		}
+	}
+	return Assets.Num() > 0;
+}
+
+void UUGCRegistry::ShowAllPossibleOverridesForClass(UClass * ModClass, TArray<UClass*> &Overrides)
+{
+	TArray<FAssetData> PackageAssets;
+	for (FName Package : UGCPackages)
+	{
+		GetAssetsFromPackage(Package, PackageAssets, true);
+	}
+
+	for (FAssetData Asset : PackageAssets)
+	{
+		const FString* ClassTextPath = Asset.TagsAndValues.Find("GeneratedClass");
+		if (ClassTextPath != NULL)
+		{
+			FString ClassPath = FPackageName::ExportTextPathToObjectPath(*ClassTextPath);
+			UClass* AssetClass = LoadObject<UClass>(NULL, *ClassPath);
+
+			// Check if it's a mod type
+			if (AssetClass && AssetClass->IsChildOf(ModClass))
+			{
+				Overrides.Add(AssetClass);
+			}
+		}
+	}
+}
+
+UClass * UUGCRegistry::GetClassForAssetData(FAssetData Asset)
+{
+	const FString* ClassTextPath = Asset.TagsAndValues.Find("GeneratedClass");
+	if (ClassTextPath != NULL)
+	{
+		FString ClassPath = FPackageName::ExportTextPathToObjectPath(*ClassTextPath);
+		UClass* AssetClass = LoadObject<UClass>(NULL, *ClassPath);
+
+		// Check if it's a mod type
+		if (AssetClass)
+		{
+			return AssetClass;
+		}
+	}
+	return nullptr;
+}
+
+bool UUGCRegistry::ApplyAllModsInPackage(FName Package)
+{
+
+	bool success = false;
+	// Load up the AssetRegistry
+	FAssetRegistryModule& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>(TEXT("AssetRegistry"));
+	IAssetRegistry& AssetRegistry = AssetRegistryModule.Get();
+
+	TArray<FAssetData> AssetList;
+	AssetRegistry.GetAssetsByPath(Package, AssetList, true);
+	if (AssetList.Num() == 0)
+	{
+		return success;
+	}
+
+	for (FAssetData Asset : AssetList)
+	{
+		const FString* ClassTextPath = Asset.TagsAndValues.Find("GeneratedClass");
+		if (ClassTextPath != NULL)
+		{
+			FString ClassPath = FPackageName::ExportTextPathToObjectPath(*ClassTextPath);
+			UClass* AssetClass = LoadObject<UClass>(NULL, *ClassPath);
+
+			// Check if it's a mod type
+			if (AssetClass)
+			{
+				for (UClass * ModClass : RegisteredModTypes)
+				{
+					if (AssetClass->IsChildOf(ModClass))
+					{
+						success = ApplyOverridesForModClass(AssetClass) || success;
+					}
+				}
+			}
+		}
+	}
+	return success;
+}
+
+bool UUGCRegistry::ApplyOverridesForModClass(UClass * ModClass)
+{
+	// Check Actors
+	AUGCBaseActor *UGCActor = Cast<AUGCBaseActor>(ModClass->GetDefaultObject());
+	if (UGCActor != nullptr)
+	{
+		for (UClass * ClassToOverride : UGCActor->ClassesToOverride)
+		{
+			if (ClassToOverride->IsChildOf(AUGCBaseActor::StaticClass()))
+			{
+				AssignOverrideForBaseClass(ClassToOverride, UGCActor->GetClass());
+			}
+		}
+		return true;
+	}
+
+	// Check Pawns
+	AUGCBasePawn *UGCPawn = Cast<AUGCBasePawn>(ModClass->GetDefaultObject());
+	if (UGCPawn != nullptr)
+	{
+		for (UClass * ClassToOverride : UGCPawn->ClassesToOverride)
+		{
+			// Character is a subclass of Pawn, so we're looking for either
+			if (ClassToOverride->IsChildOf(AUGCBasePawn::StaticClass()) ||
+				ClassToOverride->IsChildOf(AUGCBaseCharacter::StaticClass()))
+			{
+				AssignOverrideForBaseClass(ClassToOverride, UGCPawn->GetClass());
+			}
+		}
+		return true;
+	}
+
+	// Check Characters
+	AUGCBaseCharacter *UGCCharacter = Cast<AUGCBaseCharacter>(ModClass->GetDefaultObject());
+	if (UGCCharacter != nullptr)
+	{
+		for (UClass * ClassToOverride : UGCCharacter->ClassesToOverride)
+		{
+			// Pawn is a superclass of Character, so we're looking for either
+			if (ClassToOverride->IsChildOf(AUGCBasePawn::StaticClass()) ||
+				ClassToOverride->IsChildOf(AUGCBaseCharacter::StaticClass())) 
+			{
+				AssignOverrideForBaseClass(ClassToOverride, UGCCharacter->GetClass());
+			}
+		}
+		return true;
+	}
+	return false;
+}
+
+void UUGCRegistry::AssignOverrideForBaseClass(UClass * OriginClass, UClass * OverrideClass)
+{
+	// If already registered, Update Registration
+	for (FModOverridePairing &Pairing : RegisteredOverrides)
+	{
+		if (Pairing.Origin == OriginClass)
+		{
+			Pairing.Override = OverrideClass;
+			return;
+		}
+	}
+
+	// If not, make new
+	FModOverridePairing NewPairing;
+	NewPairing.Origin = OriginClass;
+	NewPairing.Override = OverrideClass;
+	RegisteredOverrides.Add(NewPairing);
+}
+
+bool UUGCRegistry::ClearOverrideForClass(UClass *OriginClass)
+{
+	// Find Pairing, remove From Array
+	for (int i = 0; i < RegisteredOverrides.Num(); i++)
+	{
+		FModOverridePairing & Pairing = RegisteredOverrides[i];
+		if (Pairing.Origin == OriginClass)
+		{
+			RegisteredOverrides.RemoveAt(i, 1, true);
+			return true;
+		}
+	}
+
+	// Returns False if there was no pairing to begin with
+	return false;
+}
+
+UClass * UUGCRegistry::GetOverrideForClass(UClass *OriginClass)
+{
+	for (FModOverridePairing &Pairing : RegisteredOverrides)
+	{
+		if (Pairing.Origin == OriginClass)
+		{
+			return Pairing.Override;
+		}
+	}
+	return OriginClass;
+}

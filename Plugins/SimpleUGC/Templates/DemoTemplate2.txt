@@ -1,0 +1,3 @@
+Another Demo Template
+A demo mod template with customized name and description text
+50

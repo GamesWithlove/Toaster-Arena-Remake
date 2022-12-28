@@ -1,0 +1,106 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "UGCKit.h"
+#include "Public/AssetRegistryModule.h"
+#include "Public/ARFilter.h"
+#include "UGCRegistry.generated.h"
+
+/**
+ * 
+ */
+
+USTRUCT(BlueprintType)
+struct FModOverridePairing
+{
+	GENERATED_BODY()
+	UPROPERTY(BlueprintReadOnly, Category = "UGCKit|Modding")
+	UClass* Origin;
+
+	UPROPERTY(BlueprintReadOnly, Category = "UGCKit|Modding")
+	UClass* Override;
+
+	FModOverridePairing()
+	{
+		Origin = nullptr;
+		Override = nullptr;
+	}
+};
+
+
+UCLASS(BlueprintType)
+class UGCKIT_API UUGCRegistry : public UObject
+{
+	GENERATED_BODY()
+public:
+
+	//	Init
+	UUGCRegistry()
+	{
+		RegisteredModTypes.Empty();
+		RegisteredModTypes.Add(AUGCBaseActor::StaticClass());
+		RegisteredModTypes.Add(AUGCBaseCharacter::StaticClass());
+		RegisteredModTypes.Add(AUGCBaseGameMode::StaticClass());
+		RegisteredModTypes.Add(AUGCBasePawn::StaticClass());
+		RegisteredModTypes.Add(AUGCBasePlayerController::StaticClass());
+		RegisteredModTypes.Add(AUGCBaseWorldSettings::StaticClass());
+		
+	}
+
+	//	PROPERTIES
+	UPROPERTY(BlueprintReadOnly, Category = "UGCKit")
+	TArray<FName> UGCPackages;
+
+	UPROPERTY(BlueprintReadWrite, Category = "UGCKit")
+	TArray<FName> PackageBlacklist;
+
+	UPROPERTY(BlueprintReadOnly, Category = "UGCKit|Modding")
+	TArray <UClass*> RegisteredModTypes;
+
+	UPROPERTY(BlueprintReadOnly, Category = "UGCKit|Modding")
+	TArray <UClass*> PossibleModOverrides;
+
+	UPROPERTY(BlueprintReadOnly, Category = "UGCKit|Modding")
+	TArray <FModOverridePairing> RegisteredOverrides;
+
+	// This populates UGCPackages based on what is found in mounted pak files. If you're mounting new /Plugin paks at runtime, call this again to update UGCPacakges
+	UFUNCTION(BlueprintCallable, Category = "UGCKit")
+	bool FindUGCPackages();
+
+	// For querying assets in a specific package.
+	UFUNCTION(BlueprintCallable, Category = "UGCKit")
+	bool GetAssetsFromPackage(FName Package, TArray<FAssetData> &Assets, bool bOnlyRegisteredModTypes);
+
+	// Helper for Blueprints to use cached AssetData info to get an actual UClass. Mainly used in conjunction with ApplyOverrideForModClass
+	UFUNCTION(BlueprintCallable, Category = "UGCKit")
+	UClass * GetClassForAssetData(FAssetData Asset);
+	
+	// Applies entire package of mods
+	UFUNCTION(BlueprintCallable, Category = "UGCKit|Modding")
+	bool ApplyAllModsInPackage(FName Package);
+
+	// Assigns overrides for just one mod class. 
+	UFUNCTION(BlueprintCallable, Category = "UGCKit|Modding")
+	bool ApplyOverridesForModClass(UClass * ModClass);
+
+	// A manual override assignment. Not reccommended for mod packages, but useful for bug UGC drops (100 gun pack, etc)
+	UFUNCTION(BlueprintCallable, Category = "UGCKit|Modding")
+	void AssignOverrideForBaseClass(UClass * OriginClass, UClass * OverrideClass);
+
+	// Usually used with the above, this looks at all UGC Packages and provides a list of possible overrides (Give me all new guns)
+	UFUNCTION(BlueprintCallable, Category = "UGCKit|Modding")
+	void ShowAllPossibleOverridesForClass(UClass * ModClass, TArray<UClass*> &Overrides);
+
+	// Used to clear the override from the registry. To clear all, loop through RegisterredOverrides, break the struct and run the Origin into this function.
+	UFUNCTION(BlueprintCallable, Category = "UGCKit|Modding")
+	bool ClearOverrideForClass(UClass *OriginClass);
+
+	// Used in gameplay to look up what class is actually supposed to be spawned
+	UFUNCTION(BlueprintCallable, Category = "UGCKit|Modding")
+	UClass * GetOverrideForClass(UClass *OriginClass);
+
+
+
+};
