@@ -156,7 +156,8 @@ void FSimpleUGCPackager::PackagePlugin(TSharedRef<class IPlugin> Plugin, const F
 		" -basedonreleaseversion=\"%s\""
 		" -archivedirectory=\"%s\""
 		" -targetplatform=Win64"
-		" -DLCIncludeEngineContent -DLCPakPluginFile -nodebuginfo"
+		" -DLCIncludeEngineContent"
+		" -DLCPakPluginFile -nodebuginfo"
 		" -noP4"
 		" -build -cook -stage -package -pak -archive -cookall -compressed -distribution"
 		" -clientconfig=Development -serverconfig=Development"),

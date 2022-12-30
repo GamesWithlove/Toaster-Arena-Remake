@@ -70,6 +70,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Mods/Orange_GUN/Orange_GUN.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/ColorWheelPlugin/ColorWheelPlugin.uplugin",
 			"Type": "UFS"
 		},
@@ -95,6 +99,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/ReplaySystem/ReplaySystem.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/SimpleUGC/SimpleUGC.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -2346,6 +2354,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Editor/PluginBrowser/PluginBrowser.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Editor/SequencerAnimTools/SequencerAnimTools.uplugin",
 			"Type": "UFS"
 		},
@@ -2391,6 +2403,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/ChaosSolverPlugin/ChaosSolverPlugin.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/ChaosVehiclesPlugin/ChaosVehiclesPlugin.uplugin",
 			"Type": "UFS"
 		},
 		{
