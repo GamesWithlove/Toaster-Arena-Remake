@@ -1,0 +1,15 @@
+{
+	"Files": [
+		{
+			"Path": "Toaster_reboot/Mods/test/Content/test.umap",
+			"ChunkId": "b33c4710eac85be900000001"
+		}
+	],
+	"Packages": [
+		{
+			"Name": "/test/test",
+			"PackageChunkId": "b33c4710eac85be900000001"
+		}
+	],
+	"OptionalPackages": []
+}

@@ -70,7 +70,11 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Mods/Orange_GUN/Orange_GUN.uplugin",
+			"Path": "$(ProjectDir)/Mods/Golden_gun/Golden_gun.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Mods/test/test.uplugin",
 			"Type": "UFS"
 		},
 		{

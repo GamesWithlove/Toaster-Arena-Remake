@@ -1,0 +1,15 @@
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\Golden_gun\Content\Debuff_turn_gold
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\Golden_gun\Content\Debuff_turn_gold_asset
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\Golden_gun\Content\Gold_material
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\Golden_gun\Content\Gold_material_Inst
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\Golden_gun\Content\Golden_gun_data_asset
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\Golden_gun\Content\Golden_ragdoll_pose
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\Golden_gun\Content\HK_golden
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\Golden_gun\Content\HK_golden_mat
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\Golden_gun\Content\HK_golden_weapon
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\Golden_gun\Content\HK_USP_Gun_mat_BaseColor_gold
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\Golden_gun\Content\HK_USP_Gun_mat_Normal_gold
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\Golden_gun\Content\HK_USP_Gun_mat_OcclusionRoughnessMetallic_gold
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\Golden_gun\Content\NKD_physics_active_ragdoll
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\Golden_gun\Content\Turn_gold
+D:\Ue4_projects\Toaster-Arena-Remake\Mods\Golden_gun\Saved\Cooked\Windows\Toaster_reboot\Mods\test\Content\test
