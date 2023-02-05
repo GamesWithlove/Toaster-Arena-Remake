@@ -2,7 +2,7 @@
 	"BuildId": "19505902",
 	"Modules": 
 	{
-		"ToasterGame": "UnrealEditor-ToasterGame-0001.dll",
-		"ToasterGameEditor": "UnrealEditor-ToasterGameEditor-0001.dll"
+		"ToasterGame": "UnrealEditor-ToasterGame-0002.dll",
+		"ToasterGameEditor": "UnrealEditor-ToasterGameEditor-0002.dll"
 	}
 }

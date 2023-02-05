@@ -3375,6 +3375,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/In_game_inspector/In_game_inspector.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/ModioPlugin/Modio.uplugin",
 			"Type": "UFS"
 		},

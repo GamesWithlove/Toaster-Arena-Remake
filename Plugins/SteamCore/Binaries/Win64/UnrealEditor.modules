@@ -2,8 +2,8 @@
 	"BuildId": "19505902",
 	"Modules": 
 	{
-		"SteamCore": "UnrealEditor-SteamCore-0001.dll",
-		"SteamCoreWeb": "UnrealEditor-SteamCoreWeb-0001.dll",
-		"SteamFix": "UnrealEditor-SteamFix-0001.dll"
+		"SteamCore": "UnrealEditor-SteamCore-0002.dll",
+		"SteamCoreWeb": "UnrealEditor-SteamCoreWeb-0002.dll",
+		"SteamFix": "UnrealEditor-SteamFix-0002.dll"
 	}
 }
