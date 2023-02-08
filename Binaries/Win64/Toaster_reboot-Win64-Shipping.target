@@ -2318,6 +2318,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Editor/MakeCookedEditorAsDLC/MakeCookedEditorAsDLC.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Editor/ModelingToolsEditorMode/ModelingToolsEditorMode.uplugin",
 			"Type": "UFS"
 		},
