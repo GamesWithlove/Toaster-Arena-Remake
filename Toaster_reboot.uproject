@@ -144,6 +144,14 @@
 		{
 			"Name": "MakeCookedEditorAsDLC",
 			"Enabled": true
+		},
+		{
+			"Name": "GameFeatures",
+			"Enabled": true
+		},
+		{
+			"Name": "ModularGameplay",
+			"Enabled": true
 		}
 	]
 }
