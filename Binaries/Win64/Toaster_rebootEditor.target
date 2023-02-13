@@ -513,10 +513,6 @@
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-CEF3Utils.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-Chaos.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -1785,10 +1781,6 @@
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-WebBrowser.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-WidgetCarousel.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -1942,18 +1934,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/BlueprintFileUtils/Binaries/Win64/UnrealEditor-BlueprintFileUtils.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Bridge/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Bridge/Binaries/Win64/UnrealEditor-Bridge.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Bridge/Binaries/Win64/UnrealEditor-MegascansPlugin.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -2114,6 +2094,14 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Editor/AssetManagerEditor/Binaries/Win64/UnrealEditor-AssetManagerEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Editor/AssetReferenceRestrictions/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Editor/AssetReferenceRestrictions/Binaries/Win64/UnrealEditor-AssetReferenceRestrictions.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -2409,6 +2397,18 @@
 			"Type": "DynamicLibrary"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Experimental/GameFeatures/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/GameFeatures/Binaries/Win64/UnrealEditor-GameFeatures.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/GameFeatures/Binaries/Win64/UnrealEditor-GameFeaturesEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Experimental/GameplayBehaviors/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
@@ -2534,6 +2534,14 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/MeshModelingToolsetExp/Binaries/Win64/UnrealEditor-ModelingEditorUI.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/ModularGameplay/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/ModularGameplay/Binaries/Win64/UnrealEditor-ModularGameplay.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
@@ -3372,10 +3380,6 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/EasyFileDialog/EasyFileDialog.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/In_game_inspector/In_game_inspector.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -21335,10 +21339,6 @@
 			"Type": "DebugNonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/Win64/EpicWebHelper.exe",
-			"Type": "NonUFS"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/Win64/oo2tex_win64_2.9.5.dll",
 			"Type": "NonUFS"
 		},
@@ -23455,10 +23455,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Bridge/Bridge.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Cameras/CameraShakePreviewer/CameraShakePreviewer.uplugin",
 			"Type": "UFS"
 		},
@@ -23535,6 +23531,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Editor/AssetReferenceRestrictions/AssetReferenceRestrictions.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Editor/BlueprintMaterialTextureNodes/BlueprintMaterialTextureNodes.uplugin",
 			"Type": "UFS"
 		},
@@ -23580,6 +23580,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Editor/GeometryMode/GeometryMode.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Editor/MakeCookedEditorAsDLC/MakeCookedEditorAsDLC.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -23663,6 +23667,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Experimental/GameFeatures/GameFeatures.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Experimental/GameplayBehaviors/GameplayBehaviors.uplugin",
 			"Type": "UFS"
 		},
@@ -23692,6 +23700,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/MeshModelingToolsetExp/MeshModelingToolsetExp.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/ModularGameplay/ModularGameplay.uplugin",
 			"Type": "UFS"
 		},
 		{

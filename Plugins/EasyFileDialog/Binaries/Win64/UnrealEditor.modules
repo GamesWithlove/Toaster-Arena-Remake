@@ -2,6 +2,6 @@
 	"BuildId": "19505902",
 	"Modules": 
 	{
-		"EasyFileDialog": "UnrealEditor-EasyFileDialog-0002.dll"
+		"EasyFileDialog": "UnrealEditor-EasyFileDialog.dll"
 	}
 }

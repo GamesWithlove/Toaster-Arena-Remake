@@ -2,7 +2,7 @@
 	"BuildId": "19505902",
 	"Modules": 
 	{
-		"DlgSystem": "UnrealEditor-DlgSystem-0002.dll",
-		"DlgSystemEditor": "UnrealEditor-DlgSystemEditor-0002.dll"
+		"DlgSystem": "UnrealEditor-DlgSystem.dll",
+		"DlgSystemEditor": "UnrealEditor-DlgSystemEditor.dll"
 	}
 }

@@ -2,6 +2,6 @@
 	"BuildId": "19505902",
 	"Modules": 
 	{
-		"ReplaySystem": "UnrealEditor-ReplaySystem-0002.dll"
+		"ReplaySystem": "UnrealEditor-ReplaySystem.dll"
 	}
 }

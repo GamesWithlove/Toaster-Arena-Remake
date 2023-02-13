@@ -2,12 +2,12 @@
 	"BuildId": "19505902",
 	"Modules": 
 	{
-		"Modio": "UnrealEditor-Modio-0002.dll",
-		"ModioEx": "UnrealEditor-ModioEx-0002.dll",
-		"ModioTests": "UnrealEditor-ModioTests-0002.dll",
-		"ModioUI": "UnrealEditor-ModioUI-0002.dll",
-		"ModioUIEditor": "UnrealEditor-ModioUIEditor-0002.dll",
-		"MSDFSupport": "UnrealEditor-MSDFSupport-0002.dll",
-		"MSDFSupportEditor": "UnrealEditor-MSDFSupportEditor-0002.dll"
+		"Modio": "UnrealEditor-Modio.dll",
+		"ModioEx": "UnrealEditor-ModioEx.dll",
+		"ModioTests": "UnrealEditor-ModioTests.dll",
+		"ModioUI": "UnrealEditor-ModioUI.dll",
+		"ModioUIEditor": "UnrealEditor-ModioUIEditor.dll",
+		"MSDFSupport": "UnrealEditor-MSDFSupport.dll",
+		"MSDFSupportEditor": "UnrealEditor-MSDFSupportEditor.dll"
 	}
 }
