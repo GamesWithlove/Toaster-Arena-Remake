@@ -204,6 +204,10 @@
 		{
 			"Name": "Takes",
 			"Enabled": true
+		},
+		{
+			"Name": "ShadowsCodePlugin",
+			"Enabled": true
 		}
 	]
 }
