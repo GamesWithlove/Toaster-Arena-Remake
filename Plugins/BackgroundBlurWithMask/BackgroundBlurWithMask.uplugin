@@ -1,0 +1,28 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "2022.8.28",
+	"FriendlyName": "BackgroundBlurWithMask",
+	"Description": "Improved BackgroundBlur widget, so that a mask texture can be applied to control the blur effect region.",
+	"Category": "Widget",
+	"CreatedBy": "Qibo Pang",
+	"CreatedByURL": "",
+	"DocsURL": "https://www.youtube.com/watch?v=v2JhDgEjOVo",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/595231118c4e43508f006da5eed02bbd",
+	"SupportURL": "",
+	"EngineVersion": "5.0.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "BackgroundBlurWithMask",
+			"Type": "Runtime",
+			"LoadingPhase": "PostConfigInit",
+			"PlatformAllowList": [
+				"Win64",
+				"Android",
+				"IOS"
+			]
+		}
+	]
+}

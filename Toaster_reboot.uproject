@@ -208,6 +208,11 @@
 		{
 			"Name": "ShadowsCodePlugin",
 			"Enabled": true
+		},
+		{
+			"Name": "BackgroundBlurWithMask",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/595231118c4e43508f006da5eed02bbd"
 		}
 	]
 }
