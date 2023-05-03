@@ -1,0 +1,41 @@
+﻿---
+Language:                                       Cpp
+BasedOnStyle:                                   LLVM
+IndentWidth:                                    4
+TabWidth:                                       4
+UseTab:                                         ForContinuationAndIndentation
+Standard:                                       Cpp11
+AccessModifierOffset:                           -4
+AlignAfterOpenBracket:                          DontAlign
+AlignEscapedNewlines:                           Right
+AlignTrailingComments:                          true
+AllowShortCaseLabelsOnASingleLine:              true
+AllowShortFunctionsOnASingleLine:               InlineOnly
+AllowShortLambdasOnASingleLine:                 All
+BraceWrapping:
+  AfterCaseLabel: true
+  AfterClass: true
+  AfterControlStatement: true
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct: true
+  AfterUnion: true
+  AfterExternBlock: false
+  BeforeCatch: true
+  BeforeElse: true
+  BeforeLambdaBody: false
+  BeforeWhile: true
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+BreakBeforeBraces: Custom
+BreakConstructorInitializersBeforeComma:        true
+ColumnLimit:                                    0
+PointerAlignment:                               Left
+SpacesInAngles:                                 false
+CommentPragmas:                                 '^[^ ]'
+---
+Language: ObjC
+DisableFormat: true
+...
