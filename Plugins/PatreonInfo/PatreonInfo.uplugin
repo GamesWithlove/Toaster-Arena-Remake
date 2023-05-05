@@ -1,0 +1,25 @@
+{
+	"FileVersion": 3,
+	"Version": 14,
+	"VersionName": "1.2.0",
+	"FriendlyName": "Patreon Information",
+	"Description": "This plugin provides the client-side functionality to obtain Patreon information for the user. Note that you also need server-side code in order communicate with the Patreon API.",
+	"Category": "Patreon",
+	"CreatedBy": "Green Forest Games",
+	"CreatedByURL": "https://greenforestgames.eu/",
+	"DocsURL": "https://green-forest-games.github.io/patreon-info-server/",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/1888fc0031b847889a86b8e3a551f4da",
+	"SupportURL": "mailto:support@greenforestgames.eu",
+	"EngineVersion": "5.0.0",
+	"CanContainContent": false,
+	"IsBetaVersion": true,
+	"IsExperimentalVersion": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "PatreonInfo",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
