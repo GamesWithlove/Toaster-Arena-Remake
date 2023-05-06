@@ -90,10 +90,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/PatreonInfo/PatreonInfo.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(ProjectDir)/Plugins/ReplaySystem/ReplaySystem.uplugin",
 			"Type": "UFS"
 		},
@@ -2451,6 +2447,14 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/FX/Niagara/Niagara.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/PatreonInfo/PatreonInfo.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/VehicleSystemPlugin/VehicleSystemPlugin.uplugin",
 			"Type": "UFS"
 		},
 		{
