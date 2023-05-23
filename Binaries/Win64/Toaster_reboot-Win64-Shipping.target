@@ -90,6 +90,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/PakLoaderPlugin/PakLoader.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/ReplaySystem/ReplaySystem.uplugin",
 			"Type": "UFS"
 		},
