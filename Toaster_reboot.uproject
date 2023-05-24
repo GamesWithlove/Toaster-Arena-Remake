@@ -216,17 +216,17 @@
 		},
 		{
 			"Name": "PatreonInfo",
-			"Enabled": true,
+			"Enabled": false,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/1888fc0031b847889a86b8e3a551f4da"
 		},
 		{
 			"Name": "VehicleSystemPlugin",
-			"Enabled": true,
+			"Enabled": false,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/9577489aa3264ecf94142dad1bc2956c"
 		},
 		{
 			"Name": "PakLoader",
-			"Enabled": true,
+			"Enabled": false,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/fb9820b9b5c24f8ba178b2a11a61063f"
 		}
 	]
