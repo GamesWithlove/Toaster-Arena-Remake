@@ -62,22 +62,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Mods/2782089/PlatinumShotgun/PlatinumShotgun.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Mods/2788106/VideoPlayer/VideoPlayer.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Mods/2896988/Tower/Tower.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Mods/3030991/Standing-here-mgrr/Standing-here-mgrr.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(ProjectDir)/Plugins/BackgroundBlurWithMask/BackgroundBlurWithMask.uplugin",
 			"Type": "UFS"
 		},
