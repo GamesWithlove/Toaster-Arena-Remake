@@ -62,6 +62,14 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Mods/MGRR-Music-pack/MGRR-Music-pack.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Mods/VideoPlayer/VideoPlayer.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/BackgroundBlurWithMask/BackgroundBlurWithMask.uplugin",
 			"Type": "UFS"
 		},
@@ -115,6 +123,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/Toaster_mod_plugin/Toaster_mod_plugin.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/VaRest/VaRest.uplugin",
 			"Type": "UFS"
 		},
 		{
