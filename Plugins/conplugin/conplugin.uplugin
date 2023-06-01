@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "conplugin",
+	"Description": "adds a controller that has expanded functionality",
+	"Category": "Other",
+	"CreatedBy": "shadowhawk",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "conplugin",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
