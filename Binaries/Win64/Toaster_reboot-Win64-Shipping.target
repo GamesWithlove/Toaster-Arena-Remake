@@ -62,19 +62,15 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Mods/MGRR-Music-pack/MGRR-Music-pack.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Mods/VideoPlayer/VideoPlayer.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(ProjectDir)/Plugins/BackgroundBlurWithMask/BackgroundBlurWithMask.uplugin",
 			"Type": "UFS"
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/ColorWheelPlugin/ColorWheelPlugin.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/conplugin/conplugin.uplugin",
 			"Type": "UFS"
 		},
 		{
