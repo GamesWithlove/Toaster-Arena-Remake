@@ -70,11 +70,7 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Mods/Golden_gun/Golden_gun.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Mods/test/test.uplugin",
+			"Path": "$(ProjectDir)/Plugins/BackgroundBlurWithMask/BackgroundBlurWithMask.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -82,7 +78,27 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/conplugin/conplugin.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/DigSystem/DlgSystem.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/DLSS/Binaries/ThirdParty/Win64/Development/nvngx_dlss.dll",
+			"Type": "DebugNonUFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/DLSS/Binaries/ThirdParty/Win64/nvngx_dlss.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/DLSS/DLSS.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/DLSSMoviePipelineSupport/DLSSMoviePipelineSupport.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -91,6 +107,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/ModioPlugin/Modio.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/NIS/NIS.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -106,6 +126,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/ShadowsCodePlugin/ShadowsCodePlugin.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/SimpleUGC/SimpleUGC.uplugin",
 			"Type": "UFS"
 		},
@@ -118,7 +142,15 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/TA_Mocap_plugin/TA_Mocap_plugin.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/Toaster_mod_plugin/Toaster_mod_plugin.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/VaRest/VaRest.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -2298,15 +2330,15 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Bridge/Bridge.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Cameras/CameraShakePreviewer/CameraShakePreviewer.uplugin",
 			"Type": "UFS"
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Cameras/GameplayCameras/GameplayCameras.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Compositing/OpenColorIO/OpenColorIO.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -2334,7 +2366,15 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Editor/AssetReferenceRestrictions/AssetReferenceRestrictions.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Editor/BlueprintMaterialTextureNodes/BlueprintMaterialTextureNodes.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Editor/DataValidation/DataValidation.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -2351,6 +2391,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Editor/GeometryMode/GeometryMode.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Editor/MakeCookedEditorAsDLC/MakeCookedEditorAsDLC.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -2371,10 +2415,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Editor/StylusInput/StylusInput.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Enterprise/DatasmithContent/DatasmithContent.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -2422,6 +2462,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Experimental/GameFeatures/GameFeatures.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Experimental/GameplayBehaviors/GameplayBehaviors.uplugin",
 			"Type": "UFS"
 		},
@@ -2431,6 +2475,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/Landmass/Landmass.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/ModularGameplay/ModularGameplay.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -2455,14 +2503,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/FX/Niagara/Niagara.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Importers/AlembicImporter/AlembicImporter.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Media/AvfMedia/AvfMedia.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -2506,6 +2546,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/MovieScene/MovieRenderPipeline/MovieRenderPipeline.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/MovieScene/SequencerScripting/SequencerScripting.uplugin",
 			"Type": "UFS"
 		},
@@ -2538,10 +2582,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Portal/LauncherChunkInstaller/LauncherChunkInstaller.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ActorLayerUtilities/ActorLayerUtilities.uplugin",
 			"Type": "UFS"
 		},
@@ -2551,10 +2591,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/AndroidPermission/AndroidPermission.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/AppleImageUtils/AppleImageUtils.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -2606,10 +2642,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Runtime/GooglePAD/GooglePAD.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Runtime/LocationServicesBPLibrary/LocationServicesBPLibrary.uplugin",
 			"Type": "UFS"
 		},
@@ -2619,6 +2651,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/MobilePatchingUtils/MobilePatchingUtils.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/Nvidia/Reflex/Reflex.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -2639,6 +2675,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/SignificanceManager/SignificanceManager.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/SkeletalMerging/SkeletalMerging.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -2679,6 +2719,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/WindowsMoviePlayer/WindowsMoviePlayer.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/VirtualProduction/Takes/Takes.uplugin",
 			"Type": "UFS"
 		}
 	],
