@@ -1,0 +1,365 @@
+// Copyright 2022 Eidos-Montreal / Eidos-Sherbrooke
+
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+// http ://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+#include "/Engine/Public/Platform.ush"
+#include "/Engine/Private/Common.ush"
+#include "/Engine/Private/ForwardShadowingCommon.ush"
+#include "/Engine/Private/ReflectionEnvironmentShared.ush"
+#include "/Engine/Private/BRDF.ush"
+#include "/Engine/Generated/Material.ush"
+#include "/Engine/Generated/VertexFactory.ush"
+
+int4 CustomIntData0;
+float4 CustomFloatData0;
+float4 CustomFloatData1;
+float4 CustomFloatData2;
+StructuredBuffer<uint> DensityVdbBuffer;
+
+// I can't make a custom MaterialExpression from a plugin. 
+// It's far from ideal but I have to adapt and use a 
+// mix of material params, and component params.
+#define MAX_NUM_STEPS uint(CustomIntData0.x)
+#define SAMPLES_PER_PIXEL uint(CustomIntData0.y)
+#define SAMPLES_PER_PIXEL_FLOAT float(CustomIntData0.y)
+#define COLORED_TRANSMITTANCE bool(CustomIntData0.z)
+#define TEMPORAL_NOISE bool(CustomIntData0.w) 
+#define LOCAL_STEP_SIZE CustomFloatData0.x
+#define SHADOW_STEP_SIZE_MULT CustomFloatData0.y
+#define VOXEL_SIZE CustomFloatData0.z
+#define JITTER_MULT CustomFloatData0.w
+#define ANISOTROPY CustomFloatData1.x
+#define ALBEDO CustomFloatData1.y
+#define DENSITY_MULT CustomFloatData2.x
+#define VOLUME_PADDING CustomFloatData2.y
+#define AMBIENT CustomFloatData2.z
+
+#define IS_TRANSLUCENT USE_TEMPERATURE_VDB
+
+#include "/Plugin/VdbVolume/Private/VdbCommon.ush"
+#include "/Plugin/VdbVolume/Private/VdbMaterial.ush"
+
+float4 RaymarchLevelSet(
+	VdbSampler VdbSampler,
+	pnanovdb_vec3_t bbox_min,
+	pnanovdb_vec3_t bbox_max,
+	VdbRay Ray,
+	float4x4 LocalToWorld,
+	float4x4 WorldToLocal,
+	in out RandomSequence RandSequence,
+	FMaterialPixelParameters MaterialParameters)
+{
+	// ------------------------------------------------------------------------
+	// Test against volume, and update Ray start/end to fit volume
+
+	if (!CheckBounds(Ray, bbox_min - VOLUME_PADDING, bbox_max + VOLUME_PADDING))
+		return float4(0.0, 0.0, 0.0, 0.0);
+
+	// ------------------------------------------------------------------------
+	// Set up lighting
+
+	float3 Transmittance = 1.0;
+	float3 Radiance = 0.0;
+
+#if !MATERIAL_SHADINGMODEL_UNLIT
+	float3 LightDir = WorldToIndexDirection(View.DirectionalLightDirection, WorldToLocal, VdbSampler.GridBuffer, VdbSampler.Grid); // Index space
+	float3 LightCol = View.DirectionalLightColor.rgb;
+	float CosThetaPhase = dot(LightDir, Ray.Direction);
+
+	float3 EnvLight = GetSkySHDiffuseSimple(float3(0.0f, 0.0f, 0.0f)) * View.SkyLightColor.rgb; // without SH directionality
+#endif
+
+	FPixelMaterialInputs PixelMaterialInputs = (FPixelMaterialInputs)0;
+
+	// ------------------------------------------------------------------------
+	// DON'T do a first intersection test. 
+	// It's much more expensive than simply brute force raymarching...
+
+	float StartDistance = Ray.TMin;
+
+	// ------------------------------------------------------------------------
+	// Raymarch with fixed steps
+
+	float StepSize = LOCAL_STEP_SIZE / VOXEL_SIZE; // Index space
+	float RaymarchDistance = Ray.TMax - StartDistance; // Index space
+	const uint NumSteps = min(ceil(RaymarchDistance / StepSize), MAX_NUM_STEPS);
+	float StepWorldMeters = LOCAL_STEP_SIZE * CENTIMETER_TO_METER;
+
+	for (uint iStep = 0; iStep < NumSteps; ++iStep)
+	{
+		float s = StartDistance + (iStep + lerp(0.5, RandomSequence_GenerateSample1D(RandSequence), JITTER_MULT)) * StepSize;
+		pnanovdb_vec3_t iPos = pnanovdb_hdda_ray_start(Ray.Origin, s, Ray.Direction);
+
+		// Update coordinates
+		float3 WorldPos = IndexToWorldPosition(iPos, LocalToWorld, VdbSampler.GridBuffer, VdbSampler.Grid);
+		// Update Material parameters
+		UpdateMaterialParam(MaterialParameters, WorldPos, ResolvedView);
+		// Sample material
+		CalcPixelMaterialInputs(MaterialParameters, PixelMaterialInputs);
+		half3 EmissiveColor = SampleEmissive(PixelMaterialInputs);
+		half3 Displacement = SampleDisplacement(PixelMaterialInputs);
+		half3 SigmaT = SampleScattering(PixelMaterialInputs);
+		float2 DensityModifications = SampleDensityModifications(PixelMaterialInputs);
+
+		float Density = ReadValue(iPos - Displacement, VdbSampler.GridBuffer, VdbSampler.GridType, VdbSampler.Accessor) < 0.0 ? 1.0 : 0.0;
+		Density = UpdateDensity(Density, DENSITY_MULT, DensityModifications);
+
+		if (Density == 0.0) continue;
+
+		// Compute scattering and absorption coefficients
+		float3 Extinction = SigmaT * Density;
+		float3 Scattering = Extinction * ALBEDO; // aka SigmaS * Density
+#if MATERIAL_SHADINGMODEL_UNLIT
+		// ignore scattering with unlit shader
+		float3 Absorption = Extinction;
+#else
+		float3 Absorption = Extinction - Scattering; // aka SigmaA * Density
+#endif
+
+		// ------------------------------------------------------------------------
+		// Update total Radiance with all incoming ligth sources
+
+#ifdef ANALYTIC_INTEGRATION
+		Extinction = max(Extinction, 0.00000001);
+		float3 TransmittanceIntegral = (1.0 - exp(-StepWorldMeters * Extinction)) / Extinction;
+		float3 StepTransmittance = Transmittance * TransmittanceIntegral;
+#else
+		float3 StepTransmittance = Transmittance * StepWorldMeters;
+#endif
+		if (!COLORED_TRANSMITTANCE)
+		{
+			// Using average instead of float3 value, to avoid weird color shifts and be more user-friendly
+			StepTransmittance = Average(StepTransmittance);
+		}
+
+#if !MATERIAL_SHADINGMODEL_UNLIT
+		// Only support single directional lighting.
+		{
+			float3 LightTransmittance = GetLightTransmittance(
+				iPos, LightDir,
+				VdbSampler,
+				bbox_min, bbox_max,
+				SigmaT, SHADOW_STEP_SIZE_MULT,
+				LocalToWorld, RandSequence, MaterialParameters);
+			if (!COLORED_TRANSMITTANCE)
+			{
+				LightTransmittance = Average(LightTransmittance);
+			}
+			Radiance += StepTransmittance * Scattering * LightCol * LightTransmittance * PhaseHG(CosThetaPhase, ANISOTROPY);
+		}
+
+		// Ambient light contribution (skylight aka environment light)
+		#if NICER_BUT_EXPENSIVE_ENVLIGHT
+			{
+				// Random sample in entire sphere direction to capture Ambient environment
+				float2 rnd = RandomSequence_GenerateSample2D(RandSequence);
+				float3 ShadowDirection = SampleHenyeyGreenstein(0.0, rnd.x, rnd.y);
+				float3 ShadowTransmittance = GetLightTransmittance(
+					iPos, ShadowDirection,
+					VdbSampler,
+					bbox_min, bbox_max,
+					SigmaT, 2.0 * SHADOW_STEP_SIZE_MULT,
+					LocalToWorld, RandSequence, MaterialParameters);
+				if (!COLORED_TRANSMITTANCE)
+				{
+					ShadowTransmittance = Average(ShadowTransmittance);
+				}
+
+				float3 WorldDir = IndexToWorldDirection(ShadowDirection, LocalToWorld, VdbSampler.GridBuffer, VdbSampler.Grid);
+				EnvLight = GetSkySHDiffuse(WorldDir) * View.SkyLightColor.rgb;
+
+				Radiance += StepTransmittance * Scattering * EnvLight * (ShadowTransmittance + AMBIENT);
+			}
+		#else
+			Radiance += StepTransmittance * Scattering * EnvLight * (1.0 + AMBIENT);
+		#endif
+#endif
+
+		// Regular Emissive
+		Radiance += StepTransmittance * Absorption * EmissiveColor;
+
+		// Update Transmittance
+		Transmittance *= exp(-StepWorldMeters * Extinction);
+
+		if (all(Transmittance < VdbParams.Threshold))
+		{
+			Transmittance = 0.0;
+			break;
+		}
+	}
+
+	return float4(Radiance, 1.0 - Average(Transmittance));
+}
+
+float4 TraceOpaqueLevelSet(
+	VdbSampler VdbSampler,
+	float4x4 LocalToWorld,
+	float4x4 WorldToLocal,
+	float4 SvPosition,
+	FVertexFactoryInterpolantsVSToPS FactoryInterpolants)
+{
+	// ------------------------------------------------------------------------------------------------------
+	// Trace single ray
+
+	float2 Jitter = float2(0.0, 0.0);
+	VdbRay iRay = PrepareRayFromPixel(VdbSampler.GridBuffer, VdbSampler.Grid, SvPosition.xy, ResolvedView.BufferSizeAndInvSize.xy, Jitter, 0.0, WorldToLocal); // index/vdb space
+
+	ZeroCrossingHit HitResults;
+	if (!GetNextIntersection(VdbSampler, iRay, HitResults))
+	{
+		discard;
+	}
+
+	// ------------------------------------------------------------------------------------------------------
+	// Compute world normal & position
+
+	pnanovdb_vec3_t iNormal = ZeroCrossingNormal(VdbSampler.GridType, VdbSampler.GridBuffer, VdbSampler.Accessor, HitResults); // index/vdb space normal
+	pnanovdb_vec3_t wNormal = IndexToWorldDirection(iNormal, LocalToWorld, VdbSampler.GridBuffer, VdbSampler.Grid);
+
+	// This is the same as: iPos = iRay.Origin + HitResults.t_hit * iRay.Direction;
+	pnanovdb_vec3_t iPos = pnanovdb_coord_to_vec3(HitResults.ijk_hit); // index/vdb space hit position
+	pnanovdb_vec3_t wPos = IndexToWorldPosition(iPos, LocalToWorld, VdbSampler.GridBuffer, VdbSampler.Grid);
+
+	float3 TranslatedWorldPosition = wPos + LWCHackToFloat(PrimaryView.PreViewTranslation); // override world position
+
+	float4 ClipPos = mul(float4(TranslatedWorldPosition, 1.0), ResolvedView.TranslatedWorldToClip);
+	float SceneDepth = ClipPos.z / ClipPos.w;
+
+	// ------------------------------------------------------------------------------------------------------
+	// Update material properties
+
+	FactoryInterpolants.TangentToWorld2.xyz = wNormal; // override world normal
+
+	FMaterialPixelParameters MaterialParameters = GetMaterialPixelParameters(FactoryInterpolants, SvPosition);
+	FPixelMaterialInputs PixelMaterialInputs;
+
+	float4 ScreenPosition = SvPositionToResolvedScreenPosition(SvPosition);
+	CalcMaterialParametersEx(MaterialParameters, PixelMaterialInputs, SvPosition, ScreenPosition, true, TranslatedWorldPosition, TranslatedWorldPosition);
+
+	// ------------------------------------------------------------------------------------------------------
+	// Update radiance
+
+	half3 EmissiveColor = GetMaterialEmissive(PixelMaterialInputs);
+	half3 Albedo = GetMaterialBaseColor(PixelMaterialInputs) * ResolvedView.DiffuseOverrideParameter.w + ResolvedView.DiffuseOverrideParameter.xyz;
+	float3 Lighting = 0.0;
+
+#if !MATERIAL_SHADINGMODEL_UNLIT
+	// Only support single directional lighting
+	float NoL = saturate(dot(wNormal, ResolvedView.DirectionalLightDirection));
+	float3 LightColor = ResolvedView.DirectionalLightColor.rgb;
+	float3 LightDir = WorldToIndexDirection(ResolvedView.DirectionalLightDirection, WorldToLocal, VdbSampler.GridBuffer, VdbSampler.Grid); // Index space
+
+	float ShadowFactor = 1.0;
+	{
+		VdbRay ShadowRay; // Index space
+		ShadowRay.Origin = iPos + 2.0 * iNormal;
+		ShadowRay.Direction = LightDir;
+		ShadowRay.TMin = 1.0001f;
+		ShadowRay.TMax = POSITIVE_INFINITY;
+
+		if (pnanovdb_hdda_zero_crossing_improved(VdbSampler.GridType, VdbSampler.GridBuffer, VdbSampler.Accessor, ShadowRay.Origin, ShadowRay.TMin, ShadowRay.Direction, ShadowRay.TMax, HitResults.t_hit, HitResults.v0, HitResults.ijk_hit))
+			ShadowFactor = 0.0;
+	}
+
+	float3 DiffuseLighting = Diffuse_Lambert(Albedo); // No specular
+	Lighting += LightColor * NoL * DiffuseLighting * ShadowFactor;
+
+	// Ambient / environment. 
+	Lighting += Albedo * GetSkySHDiffuse(wNormal) * ResolvedView.SkyLightColor.rgb;
+#endif
+
+	return float4(Lighting + EmissiveColor, SceneDepth);
+}
+
+//-----------------------------------------------------------------------------------------------------------
+//#if PIXELSHADER
+//-----------------------------------------------------------------------------------------------------------
+
+void MainPS(in INPUT_POSITION_QUALIFIERS float4 SvPosition : SV_Position, 
+	in FVertexFactoryInterpolantsVSToPS FactoryInterpolants, 
+	out float4 OutColor0 : SV_Target0
+#if IS_TRANSLUCENT
+#else
+	, out float OutDepth : SV_Depth
+#endif
+)
+{
+	ResolvedView = ResolveView();
+
+	uint PrimId = VertexFactoryGetPrimitiveId(FactoryInterpolants);
+	float4x4 WorldToLocal = LWCHackToFloat(GetPrimitiveData(PrimId).WorldToLocal);
+	float4x4 LocalToWorld = LWCHackToFloat(GetPrimitiveData(PrimId).LocalToWorld);
+
+	VdbSampler VdbSampler = InitVdbSampler(DensityVdbBuffer);
+
+	float Exposure = ResolvedView.RealTimeReflectionCapture ? ResolvedView.RealTimeReflectionCapturePreExposure : ResolvedView.PreExposure;
+
+#if IS_TRANSLUCENT
+
+	// ------------------------------------------------------------------------
+	// Prepare variables
+
+	float4 Radiance = 0.0;
+
+	uint LinearIndex = SvPosition.y * ResolvedView.BufferSizeAndInvSize.x + SvPosition.x;
+
+	FMaterialPixelParameters MaterialParameters = GetMaterialPixelParameters(FactoryInterpolants, SvPosition);
+
+	// Global values (could be computed on CPU, and passed to shader instead)
+	pnanovdb_vec3_t bbox_min = pnanovdb_coord_to_vec3(pnanovdb_root_get_bbox_min(VdbSampler.GridBuffer, VdbSampler.Root));
+	pnanovdb_vec3_t bbox_max = pnanovdb_coord_to_vec3(pnanovdb_root_get_bbox_max(VdbSampler.GridBuffer, VdbSampler.Root));
+
+	float DeviceZ = VdbParams.SceneDepthTexture.Load(int3(SvPosition.xy, 0)).x; // backbuffer depth
+
+	// ------------------------------------------------------------------------
+	// Trace rays and accumulate
+
+	for (uint SampleIndex = 0; SampleIndex < SAMPLES_PER_PIXEL; ++SampleIndex)
+	{
+		RandomSequence RandSequence;
+		float2 Jitter = 0.0;
+
+		if (TEMPORAL_NOISE)
+		{
+			// Different seed per frame (StateFrameIndex) and even per sub-frame (Random) for inter-frame movie render queue AA
+			RandomSequence_Initialize(RandSequence, SvPosition.xy, SampleIndex, ResolvedView.StateFrameIndex + ResolvedView.Random, SAMPLES_PER_PIXEL);
+			Jitter = RandomSequence_GenerateSample2D(RandSequence) - 0.5;
+		}
+		else
+		{
+			RandomSequence_Initialize(RandSequence, LinearIndex, SampleIndex);
+			Jitter = (SampleIndex > 0) ? RandomSequence_GenerateSample2D(RandSequence) - 0.5 : 0.0;
+		}
+
+		VdbRay iRay = PrepareRayFromPixel(VdbSampler.GridBuffer, VdbSampler.Grid, SvPosition.xy, ResolvedView.BufferSizeAndInvSize.xy, Jitter, DeviceZ, WorldToLocal); // index/vdb space
+		
+		Radiance += RaymarchLevelSet(
+			VdbSampler, 
+			bbox_min, bbox_max, 
+			iRay,
+			LocalToWorld, WorldToLocal, 
+			RandSequence,
+			MaterialParameters);
+	}
+	Radiance /= SAMPLES_PER_PIXEL_FLOAT;
+
+	OutColor0 = float4(Radiance.rgb * Exposure, Radiance.a);
+
+#else
+
+	float4 Shading = TraceOpaqueLevelSet(VdbSampler, LocalToWorld, WorldToLocal, SvPosition, FactoryInterpolants);
+	OutColor0 = float4(Shading.rgb * Exposure, 1.0);
+	OutDepth = Shading.a;
+
+#endif
+}
