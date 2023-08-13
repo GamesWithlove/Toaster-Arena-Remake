@@ -1,0 +1,10 @@
+{
+	"BuildId": "19505902",
+	"Modules": 
+	{
+		"VolumeImporter": "UnrealEditor-VolumeImporter.dll",
+		"VolumeRuntime": "UnrealEditor-VolumeRuntime.dll",
+		"VolumeSequencer": "UnrealEditor-VolumeSequencer.dll",
+		"VolumeStreamer": "UnrealEditor-VolumeStreamer.dll"
+	}
+}
