@@ -1,8 +1,0 @@
-{
-	"BuildId": "19505902",
-	"Modules": 
-	{
-		"DragonIKPlugin": "UnrealEditor-DragonIKPlugin.dll",
-		"DragonIKPluginEditor": "UnrealEditor-DragonIKPluginEditor.dll"
-	}
-}
