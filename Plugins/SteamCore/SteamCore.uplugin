@@ -10,7 +10,7 @@
 	"DocsURL": "https://eeldev.com/index.php/steamcore-plugin/",
 	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/5300c1dc33f74524bcad23bdeb9b2196",
 	"SupportURL": "https://eeldev.com",
-	"EngineVersion": "5.2.1",
+	"EngineVersion": "5.2.0",
 	"CanContainContent": true,
 	"Installed": true,
 	"Modules": [
