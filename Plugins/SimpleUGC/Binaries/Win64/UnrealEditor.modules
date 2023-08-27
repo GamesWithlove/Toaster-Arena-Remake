@@ -1,8 +1,0 @@
-{
-	"BuildId": "19505902",
-	"Modules": 
-	{
-		"SimpleUGC": "UnrealEditor-SimpleUGC.dll",
-		"SimpleUGCEditor": "UnrealEditor-SimpleUGCEditor.dll"
-	}
-}

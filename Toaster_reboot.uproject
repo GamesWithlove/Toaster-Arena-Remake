@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.0",
+	"EngineAssociation": "5.2",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -85,11 +85,6 @@
 			"Enabled": true
 		},
 		{
-			"Name": "EasyFileDialog",
-			"Enabled": false,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/bcf64fe2e00c48189d8385a9c39b6e61"
-		},
-		{
 			"Name": "SteamSockets",
 			"Enabled": true
 		},
@@ -118,11 +113,6 @@
 		{
 			"Name": "ModelingToolsEditorMode",
 			"Enabled": true
-		},
-		{
-			"Name": "Modio",
-			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/1ab22ed2961a4cc19b9151bd072df998"
 		},
 		{
 			"Name": "Toaster_mod_plugin",
@@ -215,11 +205,6 @@
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/595231118c4e43508f006da5eed02bbd"
 		},
 		{
-			"Name": "PatreonInfo",
-			"Enabled": false,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/1888fc0031b847889a86b8e3a551f4da"
-		},
-		{
 			"Name": "VehicleSystemPlugin",
 			"Enabled": false,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/9577489aa3264ecf94142dad1bc2956c"
@@ -228,10 +213,6 @@
 			"Name": "PakLoader",
 			"Enabled": false,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/fb9820b9b5c24f8ba178b2a11a61063f"
-		},
-		{
-			"Name": "Reflex",
-			"Enabled": true
 		},
 		{
 			"Name": "DLSS",
