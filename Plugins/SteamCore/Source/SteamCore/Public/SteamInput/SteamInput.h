@@ -126,7 +126,7 @@ public:
 	* @param	OriginsOut				A STEAM_INPUT_MAX_ORIGINS sized array of EInputActionOrigin Handles.
 	*/
 	UFUNCTION(BlueprintCallable, Category = "SteamCore|Input")
-	int32 GetDigitalActionOrigins(FInputHandle Handle, FInputActionSetHandle ActionSetHandle, FInputDigitalActionHandle DigitalActionHandle, TArray<ESteamCoreInputActionOrigin>& OriginsOut);
+	int32 GetDigitalActionOrigins(FInputHandle Handle, FInputActionSetHandle ActionSetHandle, FInputDigitalActionHandle DigitalActionHandle, TArray<TEnumAsByte<ESteamCoreInputActionOrigin>>& OriginsOut);
 
 	/**
 	* Get the Handle of the specified Analog action.
@@ -154,7 +154,7 @@ public:
 	* @param	OriginsOut				A STEAM_INPUT_MAX_ORIGINS sized array of EInputActionOrigin Handles.
 	*/
 	UFUNCTION(BlueprintCallable, Category = "SteamCore|Input")
-	int32 GetAnalogActionOrigins(FInputHandle Handle, FInputActionSetHandle ActionSetHandle, FInputAnalogActionHandle AnalogActionHandle, TArray<ESteamCoreInputActionOrigin>& OriginsOut);
+	int32 GetAnalogActionOrigins(FInputHandle Handle, FInputActionSetHandle ActionSetHandle, FInputAnalogActionHandle AnalogActionHandle, TArray<TEnumAsByte<ESteamCoreInputActionOrigin>>& OriginsOut);
 
 	/**
 	* Get a local path to art for on-screen glyph for a particular Origin.

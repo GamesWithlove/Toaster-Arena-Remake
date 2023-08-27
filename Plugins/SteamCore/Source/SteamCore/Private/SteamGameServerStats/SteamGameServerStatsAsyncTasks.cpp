@@ -11,6 +11,7 @@
 //		FOnlineAsyncTaskSteamCoreGameServerStatsUserStatsGS
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void FOnlineAsyncTaskSteamCoreGameServerStatsUserStatsGS::Tick()
 {
 	FOnlineAsyncTaskSteamCore::Tick();
@@ -122,3 +123,4 @@ void FOnlineAsyncTaskSteamCoreGameServerStatsStoreUserStats::TriggerDelegates()
 
 	m_OnSteamCallback.ExecuteIfBound(m_CallbackResults, bWasSuccessful);
 }
+#endif

@@ -131,6 +131,8 @@ private:
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(UNetworking, OnP2PSessionRequest, P2PSessionRequest_t, OnP2PSessionRequestCallback);
 	STEAM_CALLBACK_MANUAL(UNetworking, OnP2PSessionConnectFail, P2PSessionConnectFail_t, OnP2PSessionConnectFailCallback);
+#endif
 };

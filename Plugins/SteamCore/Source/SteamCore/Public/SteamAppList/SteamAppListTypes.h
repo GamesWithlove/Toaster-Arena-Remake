@@ -25,10 +25,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamAppInstalled(const SteamAppInstalled_t& Data)
 		: AppID(Data.m_nAppID)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "AppList")
 	int32 AppID;
@@ -44,10 +46,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamAppUninstalled(const SteamAppUninstalled_t& Data)
 		: AppID(Data.m_nAppID)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "AppList")
 	int32 AppID;

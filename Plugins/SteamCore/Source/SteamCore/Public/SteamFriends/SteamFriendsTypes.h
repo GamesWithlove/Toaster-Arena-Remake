@@ -75,6 +75,7 @@ FORCEINLINE int32 operator*(ESteamFriendFlags flags)
 {
 	int32 FlagValue = 0;
 
+#if ENABLE_STEAMCORE
 	switch (flags)
 	{
 	case ESteamFriendFlags::None:
@@ -114,9 +115,24 @@ FORCEINLINE int32 operator*(ESteamFriendFlags flags)
 		FlagValue = k_EFriendFlagAll;
 		break;
 	}
+#endif
 
 	return FlagValue;
 }
+
+#if !ENABLE_STEAMCORE
+enum EUserRestriction
+{
+	k_nUserRestrictionNone		= 0
+	k_nUserRestrictionUnknown	= 1
+	k_nUserRestrictionAnyChat	= 2
+	k_nUserRestrictionVoiceChat	= 4
+	k_nUserRestrictionGroupChat	= 8
+	k_nUserRestrictionRating	= 16
+	k_nUserRestrictionGameInvites	= 32
+	k_nUserRestrictionTrading	= 64
+};
+#endif
 
 UENUM(BlueprintType, meta = (Bitflags))
 enum class ESteamUserRestriction : uint8
@@ -194,7 +210,8 @@ public:
 		  , m_iTall(0)
 	{
 	}
-
+	
+#if ENABLE_STEAMCORE
 	FAvatarImageLoaded(const AvatarImageLoaded_t& Data)
 		: SteamID(Data.m_steamID)
 		  , Image(nullptr)
@@ -203,6 +220,7 @@ public:
 		  , m_iTall(Data.m_iTall)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	FSteamID SteamID;
@@ -222,11 +240,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FFriendRichPresenceUpdate(const FriendRichPresenceUpdate_t& Data)
 		: SteamIDFriend(Data.m_steamIDFriend)
 		  , AppID(Data.m_nAppID)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	FSteamID SteamIDFriend;
@@ -241,11 +261,13 @@ struct FGameConnectedChatJoin
 public:
 	FGameConnectedChatJoin() = default;
 
+#if ENABLE_STEAMCORE
 	FGameConnectedChatJoin(const GameConnectedChatJoin_t& Data)
 		: SteamIDClanChat(Data.m_steamIDClanChat)
 		  , SteamIDUser(Data.m_steamIDUser)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	FSteamID SteamIDClanChat;
@@ -264,6 +286,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGameConnectedChatLeave(const GameConnectedChatLeave_t& Data)
 		: SteamIDClanChat(Data.m_steamIDClanChat)
 		  , SteamIDUser(Data.m_steamIDUser)
@@ -271,6 +294,7 @@ public:
 		  , bDropped(Data.m_bDropped)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	FSteamID SteamIDClanChat;
@@ -292,12 +316,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGameConnectedClanChatMsg(const GameConnectedClanChatMsg_t& Data)
 		: SteamIDUser(Data.m_steamIDUser)
 		  , SteamIDClanChat(Data.m_steamIDClanChat)
 		  , MessageID(Data.m_iMessageID)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	FSteamID SteamIDUser;
@@ -317,11 +343,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGameConnectedFriendChatMsg(const GameConnectedFriendChatMsg_t& Data)
 		: SteamIDUser(Data.m_steamIDUser)
 		  , MessageID(Data.m_iMessageID)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	FSteamID SteamIDUser;
@@ -336,11 +364,13 @@ struct FGameLobbyJoinRequested
 public:
 	FGameLobbyJoinRequested() = default;
 
+#if ENABLE_STEAMCORE
 	FGameLobbyJoinRequested(const GameLobbyJoinRequested_t& Data)
 		: SteamIDLobby(Data.m_steamIDLobby)
 		  , SteamIDFriend(Data.m_steamIDFriend)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	FSteamID SteamIDLobby;
@@ -358,10 +388,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGameOverlayActivated(const GameOverlayActivated_t& Data)
 		: bActive(Data.m_bActive > 0)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	bool bActive;
@@ -374,11 +406,13 @@ struct FGameRichPresenceJoinRequested
 public:
 	FGameRichPresenceJoinRequested() = default;
 
+#if ENABLE_STEAMCORE
 	FGameRichPresenceJoinRequested(const GameRichPresenceJoinRequested_t& Data)
 		: SteamIDFriend(Data.m_steamIDFriend)
 		  , Connect(UTF8_TO_TCHAR(Data.m_rgchConnect))
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	FSteamID SteamIDFriend;
@@ -393,11 +427,13 @@ struct FGameServerChangeRequested
 public:
 	FGameServerChangeRequested() = default;
 
+#if ENABLE_STEAMCORE
 	FGameServerChangeRequested(const GameServerChangeRequested_t& Data)
 		: Server(UTF8_TO_TCHAR(Data.m_rgchServer))
 		  , Password(UTF8_TO_TCHAR(Data.m_rgchPassword))
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	FString Server;
@@ -412,6 +448,7 @@ struct FPersonaStateChange
 public:
 	FPersonaStateChange() = default;
 
+#if ENABLE_STEAMCORE
 	FPersonaStateChange(const PersonaStateChange_t& Data)
 		: SteamID(Data.m_ulSteamID)
 	{
@@ -423,6 +460,7 @@ public:
 			}
 		}
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	FSteamID SteamID;
@@ -442,12 +480,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSetPersonaNameResponse(const SetPersonaNameResponse_t& Data)
 		: Result(_SteamResult(Data.m_result))
 		  , bSuccess(Data.m_bSuccess)
 		  , bLocalSuccess(Data.m_bLocalSuccess)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	ESteamResult Result;
@@ -467,10 +507,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FDownloadClanActivityCountsResult(const DownloadClanActivityCountsResult_t& Data)
 		: bSuccess(Data.m_bSuccess)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	bool bSuccess;
@@ -487,12 +529,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FClanOfficerListResponse(const ClanOfficerListResponse_t& Data)
 		: SteamIDClan(Data.m_steamIDClan)
 		  , Officers(Data.m_cOfficers)
 		  , bSuccess(Data.m_bSuccess > 0)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	FSteamID SteamIDClan;
@@ -512,11 +556,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FJoinClanChatRoomCompletionResult(const JoinClanChatRoomCompletionResult_t& Data)
 		: SteamIDClanChat(Data.m_steamIDClanChat)
 		  , ChatRoomEnterResponse(static_cast<ESteamChatRoomEnterResponse>(Data.m_eChatRoomEnterResponse))
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	FSteamID SteamIDClanChat;
@@ -535,12 +581,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FFriendsGetFollowerCount(const FriendsGetFollowerCount_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , SteamID(Data.m_steamID)
 		  , Count(Data.m_nCount)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	ESteamResult Result;
@@ -561,12 +609,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FFriendsIsFollowing(const FriendsIsFollowing_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , SteamID(Data.m_steamID)
 		  , bIsFollowing(Data.m_bIsFollowing)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	ESteamResult Result;
@@ -588,6 +638,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FFriendsEnumerateFollowingList(const FriendsEnumerateFollowingList_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , Results(Data.m_nResultsReturned)
@@ -598,6 +649,7 @@ public:
 			SteamIDs.Add(Data.m_rgSteamID[i]);
 		}
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Friends")
 	ESteamResult Result;

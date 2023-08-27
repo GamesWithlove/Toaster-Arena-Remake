@@ -72,14 +72,54 @@ private:
 class FOnlineAsyncTaskSteamCoreWebAppsGetAppList : public FOnlineAsyncTaskSteamCoreWeb
 {
 public:
-	FOnlineAsyncTaskSteamCoreWebAppsGetAppList(USteamCoreWebSubsystem* Subsystem, FOnSteamCoreWebCallback Callback, FString Key)
-		: FOnlineAsyncTaskSteamCoreWeb(Subsystem, Callback, "ISteamApps", "GetAppList", Key, 2)
+	FOnlineAsyncTaskSteamCoreWebAppsGetAppList(USteamCoreWebSubsystem* Subsystem, FOnSteamCoreWebAppListCallback Callback, FString Key)
+		: FOnlineAsyncTaskSteamCoreWeb(Subsystem, FOnSteamCoreWebCallback(), "ISteamApps", "GetAppList", Key, 2, EVerb::GET, true)
+		, OnSteamCoreWebAppListCallback(Callback)
 	{
 	}
 
 private:
+	FOnSteamCoreWebAppListCallback OnSteamCoreWebAppListCallback;
+	
 	FOnlineAsyncTaskSteamCoreWebAppsGetAppList() = delete;
 	virtual FString ToString() const override { return FString::Printf(TEXT("FOnlineAsyncTaskSteamCoreWebAppsGetAppList")); }
+
+	virtual void Finalize() override
+	{
+		TArray<FWebAppsGetAppList> Result;
+		
+		TSharedPtr<FJsonObject> JsonParsed;
+		const TSharedRef<TJsonReader<TCHAR>> JsonReader = TJsonReaderFactory<TCHAR>::Create(m_Response->GetContentAsString());
+
+		if (FJsonSerializer::Deserialize(JsonReader, JsonParsed))
+		{
+			if (const auto AppListArray = JsonParsed->Values["applist"])
+			{
+				for (auto It = AppListArray->AsObject()->Values.CreateConstIterator(); It; ++It)
+				{
+					if (It->Value->Type == EJson::Array)
+					{
+						TArray<TSharedPtr<FJsonValue>> ValuesAsArray = It.Value()->AsArray();
+						
+						for (const auto& Element : ValuesAsArray)
+						{
+							if (Element->Type == EJson::Object)
+							{
+								FString Appid;
+								FString ProductName;
+								Element->AsObject()->TryGetStringField("appid", Appid);	
+								Element->AsObject()->TryGetStringField("name", ProductName);	
+
+								Result.Add(FWebAppsGetAppList{Appid, ProductName});
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		OnSteamCoreWebAppListCallback.Execute(Result, bWasSuccessful);
+	};
 };
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //

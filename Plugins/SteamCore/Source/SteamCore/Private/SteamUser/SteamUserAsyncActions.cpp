@@ -15,6 +15,7 @@ USteamCoreUserAsyncActionRequestEncryptedAppTicket* USteamCoreUserAsyncActionReq
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUserAsyncActionRequestEncryptedAppTicket>();
@@ -26,6 +27,7 @@ USteamCoreUserAsyncActionRequestEncryptedAppTicket* USteamCoreUserAsyncActionReq
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -49,6 +51,7 @@ USteamCoreUserAsyncActionRequestStoreAuthURL* USteamCoreUserAsyncActionRequestSt
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUserAsyncActionRequestStoreAuthURL>();
@@ -60,6 +63,7 @@ USteamCoreUserAsyncActionRequestStoreAuthURL* USteamCoreUserAsyncActionRequestSt
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }

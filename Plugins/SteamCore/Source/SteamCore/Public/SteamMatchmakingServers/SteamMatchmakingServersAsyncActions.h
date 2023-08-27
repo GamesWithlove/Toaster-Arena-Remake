@@ -29,8 +29,6 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FOnPingServerAsyncDelegate OnCallback;
 public:
-	static class FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer* CurrentTask;
-public:
 	/**
 	* Queries an individual game servers directly via IP/Port to request an updated ping time and other details from the server.
 	*
@@ -38,8 +36,14 @@ public:
 	* @param	Port	The port of the game server you are querying, in host order.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Ping Server"), Category = "SteamCore|MatchmakingServers|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Ping Server", BlueprintInternalUseOnly="true"), Category = "SteamCore|MatchmakingServers|Async")
 	static USteamCoreMatchmakingServersAsyncActionPingServer* PingServerAsync(UObject* WorldContextObject, FString IP, int32 Port, float Timeout = 10.f);
+
+	/*
+	* Cancel all active "Server Ping" queries
+	*/
+	UFUNCTION(BlueprintCallable, Category = "SteamCore|MatchmakingServers|Async", meta = (WorldContext = "WorldContextObject"))
+	static void CancelPingQueries(UObject* WorldContextObject);
 public:
 	UFUNCTION()
 	void HandleCallback(const FGameServerItem& Data, bool bWasSuccessful);
@@ -60,15 +64,13 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FOnServerRefreshCompleteDelegate OnRefreshCompleted;
 public:
-	static class FOnlineAsyncTaskSteamCoreMatchmakingServersServerList* CurrentTask;
-public:
 	/**
 	* Request a new list of game servers from the 'FAVORITES' server list.
 	*
 	* @param	AppID	The app to request the server list of.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request Favorites  Server List"), Category = "SteamCore|MatchmakingServers|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request Favorites  Server List", BlueprintInternalUseOnly="true"), Category = "SteamCore|MatchmakingServers|Async")
 	static USteamCoreMatchmakingServersAsyncActionRequestServerList* RequestFavoritesServerListAsync(UObject* WorldContextObject, int32 AppID = 480, float Timeout = 10.f, int32 MaxResults = 50, bool bIgnoreNonResponsive = false, UServerFilter* ServerFilter = nullptr);
 
 	/**
@@ -77,7 +79,7 @@ public:
 	* @param	AppID	The app to request the server list of.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request Friends Server List"), Category = "SteamCore|MatchmakingServers|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request Friends Server List", BlueprintInternalUseOnly="true"), Category = "SteamCore|MatchmakingServers|Async")
 	static USteamCoreMatchmakingServersAsyncActionRequestServerList* RequestFriendsServerListAsync(UObject* WorldContextObject, int32 AppID = 480, float Timeout = 10.f, int32 MaxResults = 50, bool bIgnoreNonResponsive = false, UServerFilter* ServerFilter = nullptr);
 
 	/**
@@ -86,7 +88,7 @@ public:
 	* @param	AppID	The app to request the server list of.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request History Server List"), Category = "SteamCore|MatchmakingServers|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request History Server List", BlueprintInternalUseOnly="true"), Category = "SteamCore|MatchmakingServers|Async")
 	static USteamCoreMatchmakingServersAsyncActionRequestServerList* RequestHistoryServerListAsync(UObject* WorldContextObject, int32 AppID = 480, float Timeout = 10.f, int32 MaxResults = 50, bool bIgnoreNonResponsive = false, UServerFilter* ServerFilter = nullptr);
 
 	/**
@@ -95,7 +97,7 @@ public:
 	* @param	AppID	The app to request the server list of.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request Internet Server List"), Category = "SteamCore|MatchmakingServers|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request Internet Server List", BlueprintInternalUseOnly="true"), Category = "SteamCore|MatchmakingServers|Async")
 	static USteamCoreMatchmakingServersAsyncActionRequestServerList* RequestInternetServerListAsync(UObject* WorldContextObject, int32 AppID = 480, float Timeout = 10.f, int32 MaxResults = 50, bool bIgnoreNonResponsive = false, UServerFilter* ServerFilter = nullptr);
 
 	/**
@@ -104,7 +106,7 @@ public:
 	* @param	AppID	The app to request the server list of.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request LAN Server List"), Category = "SteamCore|MatchmakingServers|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request LAN Server List", BlueprintInternalUseOnly="true"), Category = "SteamCore|MatchmakingServers|Async")
 	static USteamCoreMatchmakingServersAsyncActionRequestServerList* RequestLANServerListAsync(UObject* WorldContextObject, int32 AppID = 480, float Timeout = 10.f, int32 MaxResults = 50, bool bIgnoreNonResponsive = false, UServerFilter* ServerFilter = nullptr);
 
 	/**
@@ -113,9 +115,15 @@ public:
 	* @param	AppID	The app to request the server list of.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request Spectator Server List"), Category = "SteamCore|MatchmakingServers|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request Spectator Server List", BlueprintInternalUseOnly="true"), Category = "SteamCore|MatchmakingServers|Async")
 	static USteamCoreMatchmakingServersAsyncActionRequestServerList* RequestSpectatorServerListAsync(UObject* WorldContextObject, int32 AppID = 480, float Timeout = 10.f, int32 MaxResults = 50, bool bIgnoreNonResponsive = false, UServerFilter* ServerFilter = nullptr);
 
+	/*
+	 * Cancel all active "Server List" queries
+	 */
+	UFUNCTION(BlueprintCallable, Category = "SteamCore|MatchmakingServers", meta = (WorldContext = "WorldContextObject"))
+	static void CancelServerListQueries(UObject* WorldContextObject);
+	
 private:
 	static USteamCoreMatchmakingServersAsyncActionRequestServerList* RequestServerList(UObject* WorldContextObject, ESteamServerListRequestType RequestType, int32 AppID = 480, float Timeout = 10.f, int32 MaxResults = 50, bool bIgnoreNonResponsive = false, UServerFilter* ServerFilter = nullptr);
 
@@ -136,8 +144,6 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FOnServerRuleAsyncDelegate OnCallback;
 public:
-	static class FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules* CurrentTask;
-public:
 	/**
 	* Queries an individual game servers directly via IP/Port to request the list of rules that the server is running. (See ISteamGameServer::SetKeyValue to set the rules on the server side.)
 	*
@@ -145,8 +151,14 @@ public:
 	* @param	QueryPort	The port of the game server you are querying, in host order.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Server Rules"), Category = "SteamCore|MatchmakingServers|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Server Rules", BlueprintInternalUseOnly="true"), Category = "SteamCore|MatchmakingServers|Async")
 	static USteamCoreMatchmakingServersAsyncActionServerRules* ServerRulesAsync(UObject* WorldContextObject, FString Ip, int32 QueryPort, float Timeout = 10.f);
+
+	/*
+	* Cancel all active "Server Rules" queries
+	*/
+	UFUNCTION(BlueprintCallable, Category = "SteamCore|MatchmakingServers|Async", meta = (WorldContext = "WorldContextObject"))
+	static void CancelServerRulesQueries(UObject* WorldContextObject);
 public:
 	UFUNCTION()
 	void HandleCallback(const TArray<FGameServerRule>& Data, bool bWasSuccessful);

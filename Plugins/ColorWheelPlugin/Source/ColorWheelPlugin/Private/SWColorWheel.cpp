@@ -93,27 +93,27 @@ FReply SWColorWheel::OnMouseMove(const FGeometry& MyGeometry, const FPointerEven
 
 int32 SWColorWheel::OnPaint(const FPaintArgs& Args, const FGeometry& AllottedGeometry, const FSlateRect& MyCullingRect, FSlateWindowElementList& OutDrawElements, int32 LayerId, const FWidgetStyle& InWidgetStyle, bool bParentEnabled) const
 {
-	const ESlateDrawEffect DrawEffects = ShouldBeEnabled(bParentEnabled) ? ESlateDrawEffect::None : ESlateDrawEffect::DisabledEffect;
-	const FVector2D CircleSize = AllottedGeometry.GetLocalSize() - SelectorImage->ImageSize;
-	
-	// Draw the Color Wheel image
+	const bool bIsEnabled = ShouldBeEnabled(bParentEnabled);
+	const ESlateDrawEffect DrawEffects = bIsEnabled ? ESlateDrawEffect::None : ESlateDrawEffect::DisabledEffect;
+	const FVector2f SelectorSize = SelectorImage->ImageSize;
+	const FVector2f CircleSize = AllottedGeometry.GetLocalSize() - SelectorSize;
+
 	FSlateDrawElement::MakeBox(
 		OutDrawElements,
 		LayerId,
-		AllottedGeometry.ToPaintGeometry(0.5 * SelectorImage->ImageSize, CircleSize),
+		AllottedGeometry.ToPaintGeometry(CircleSize, FSlateLayoutTransform(0.5f * SelectorSize)),
 		Image,
 		DrawEffects,
-		InWidgetStyle.GetColorAndOpacityTint() * HueCircleColorAndOpacity.Get().GetColor(InWidgetStyle) * Image->GetTint(InWidgetStyle)
+		InWidgetStyle.GetColorAndOpacityTint() * Image->GetTint(InWidgetStyle)
 	);
 
-	// Draw the Pin
 	FSlateDrawElement::MakeBox(
 		OutDrawElements,
 		LayerId + 1,
-		AllottedGeometry.ToPaintGeometry(0.5f * (AllottedGeometry.GetLocalSize() + CalcRelativePositionFromCenter() * CircleSize - SelectorImage->ImageSize), SelectorImage->ImageSize),
+		AllottedGeometry.ToPaintGeometry(SelectorSize, FSlateLayoutTransform(0.5f * (AllottedGeometry.GetLocalSize() + CalcRelativePositionFromCenter() * FVector2D(CircleSize - SelectorSize)))),
 		SelectorImage,
 		DrawEffects,
-		InWidgetStyle.GetColorAndOpacityTint() * PinColorAndOpacity.Get().GetColor(InWidgetStyle) * SelectorImage->GetTint(InWidgetStyle)
+		InWidgetStyle.GetColorAndOpacityTint() * SelectorImage->GetTint(InWidgetStyle)
 	);
 
 	return LayerId + 1;

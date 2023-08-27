@@ -12,6 +12,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		FOnlineAsyncTaskSteamCorePartiesJoinParty
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+#if ENABLE_STEAMCORE
 class STEAMCORE_API FOnlineAsyncTaskSteamCorePartiesJoinParty : public FOnlineAsyncTaskSteamCore
 {
 public:
@@ -125,3 +126,4 @@ private:
 	virtual void TriggerDelegates() override;
 	virtual FString ToString() const override { return FString::Printf(TEXT("FOnlineAsyncTaskSteamCorePartiesChangeNumOpenSlots")); }
 };
+#endif

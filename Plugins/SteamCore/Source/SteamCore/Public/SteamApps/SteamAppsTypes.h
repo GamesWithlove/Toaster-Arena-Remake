@@ -25,6 +25,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FFileDetailsResult(const FileDetailsResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , FileSize(Data.m_ulFileSize)
@@ -38,6 +39,7 @@ public:
 			}
 		}
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Apps")
 	ESteamResult Result;
@@ -59,10 +61,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FDLCInstalled(const DlcInstalled_t& Data)
 		: AppID(Data.m_nAppID)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Apps")
 	int32 AppID;

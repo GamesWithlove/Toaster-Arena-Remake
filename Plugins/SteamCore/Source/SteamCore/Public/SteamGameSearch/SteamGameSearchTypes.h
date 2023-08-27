@@ -74,6 +74,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSearchForGameProgressCallback(const SearchForGameProgressCallback_t& data)
 		: SearchID(LexToString(data.m_ullSearchID))
 		  , Result(_SteamResult(data.m_eResult))
@@ -83,6 +84,7 @@ public:
 		  , PlayersSearching(data.m_cPlayersSearching)
 	{
 	}
+#endif
 
 public:
 	// all future callbacks referencing this search will include this Search ID
@@ -119,6 +121,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSearchForGameResultCallback(const SearchForGameResultCallback_t& data)
 		: SearchID(LexToString(data.m_ullSearchID))
 		  , Result(_SteamResult(data.m_eResult))
@@ -128,6 +131,7 @@ public:
 		  , bFinalCallback(data.m_bFinalCallback)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "GameSearch")
@@ -162,11 +166,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FRequestPlayersForGameProgressCallback(const RequestPlayersForGameProgressCallback_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , SearchID(LexToString(Data.m_ullSearchID))
 	{
 	}
+#endif
 
 public:
 	// SearchID will be non-zero if this is k_EResultOK
@@ -197,6 +203,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FRequestPlayersForGameResultCallback(const RequestPlayersForGameResultCallback_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , SearchID(LexToString(Data.m_ullSearchID))
@@ -210,6 +217,7 @@ public:
 		  , UniqueGameID(LexToString(Data.m_ullUniqueGameID))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "GameSearch")
@@ -248,12 +256,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FRequestPlayersForGameFinalResultCallback(const RequestPlayersForGameFinalResultCallback_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , SearchID(LexToString(Data.m_ullSearchID))
 		  , UniqueGameID(LexToString(Data.m_ullUniqueGameID))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "GameSearch")
@@ -277,12 +287,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSubmitPlayerResultResultCallback(const SubmitPlayerResultResultCallback_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , UniqueGameID(LexToString(Data.ullUniqueGameID))
 		  , SteamIDPlayer(Data.steamIDPlayer)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "GameSearch")
@@ -307,11 +319,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FEndGameResultCallback(const EndGameResultCallback_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , UniqueGameID(LexToString(Data.ullUniqueGameID))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "GameSearch")

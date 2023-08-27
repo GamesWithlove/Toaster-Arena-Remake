@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "SteamCoreModule.h"
 #include "SteamCore/SteamCoreAsync.h"
 #include "SteamMatchmakingServersTypes.h"
 
@@ -14,11 +15,13 @@ class UServerFilter;
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		FOnlineAsyncTaskSteamCoreMatchmakingServersServerList
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+#if ENABLE_STEAMCORE
 class STEAMCORE_API FOnlineAsyncTaskSteamCoreMatchmakingServersServerList : public FOnlineAsyncTaskSteamCore, public ISteamMatchmakingServerListResponse
 {
 public:
 	FOnServerUpdated m_OnSteamCallback;
 	FOnServerRefreshCompleted m_OnServerRefreshCompleted;
+	friend class USteamCoreMatchmakingServersAsyncActionRequestServerList;
 public:
 	static HServerListRequest m_CallbackResults;
 public:
@@ -37,6 +40,15 @@ public:
 	{
 		m_OnSteamCallback.BindUFunction(AsyncObject, "HandleCallback");
 		m_OnServerRefreshCompleted.BindUFunction(AsyncObject, "HandleServerListFinished");
+
+		if (Subsystem)
+		{
+			if (Subsystem->CurrentMatchmakingServersServerList != nullptr)
+			{
+				Subsystem->CurrentMatchmakingServersServerList->CancelServerQuery();
+			}
+			Subsystem->CurrentMatchmakingServersServerList = this;
+		}
 	}
 
 	virtual ~FOnlineAsyncTaskSteamCoreMatchmakingServersServerList() override;
@@ -51,9 +63,10 @@ protected:
 	bool m_bIgnoreNonResponsive;
 	float m_ElapsedTime;
 	TWeakObjectPtr<UServerFilter> m_ServerFilter;
-private:
+protected:
 	virtual void Tick() override;
 	virtual void Finalize() override;
+	void CancelServerQuery();
 
 	virtual FString ToString() const override
 	{
@@ -72,8 +85,9 @@ class STEAMCORE_API FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer : publ
 {
 public:
 	FOnServerPing m_OnSteamCallback;
+	friend class USteamCoreMatchmakingServersAsyncActionPingServer;
 public:
-	static HServerQuery m_CallbackResults;
+	HServerQuery m_CallbackResults;
 public:
 	FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer(USteamCoreSubsystem* Subsystem, FOnServerPing Callback, FString IP, int32 Port, float Timeout = 10.f)
 		: FOnlineAsyncTaskSteamCore(Subsystem, k_uAPICallInvalid, Timeout)
@@ -81,6 +95,15 @@ public:
 		  , m_IP(IP)
 		  , m_Port(Port)
 	{
+		if (Subsystem)
+		{
+			if (Subsystem->CurrentMatchmakingServersPingServer != nullptr)
+			{
+				Subsystem->CurrentMatchmakingServersPingServer->CancelServerQuery();
+			}
+			
+			Subsystem->CurrentMatchmakingServersPingServer = this;
+		}
 	}
 
 	FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer(USteamCoreSubsystem* Subsystem, USteamCoreAsyncAction* AsyncObject, FString IP, int32 Port, float Timeout = 10.f)
@@ -89,15 +112,26 @@ public:
 		  , m_Port(Port)
 	{
 		m_OnSteamCallback.BindUFunction(AsyncObject, "HandleCallback");
+
+		if (Subsystem)
+		{
+			if (Subsystem->CurrentMatchmakingServersPingServer != nullptr)
+			{
+				Subsystem->CurrentMatchmakingServersPingServer->CancelServerQuery();
+			}
+			Subsystem->CurrentMatchmakingServersPingServer = this;
+		}
 	}
 
 private:
+	virtual ~FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer() override;
 	FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer() = delete;
 protected:
 	FString m_IP;
 	int32 m_Port;
-private:
+protected:
 	virtual void Tick() override;
+	void CancelServerQuery();
 
 	virtual FString ToString() const override
 	{
@@ -115,6 +149,7 @@ class STEAMCORE_API FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules : pub
 {
 public:
 	FOnServerRules m_OnSteamCallback;
+	friend class USteamCoreMatchmakingServersAsyncActionServerRules;
 public:
 	static HServerQuery m_CallbackResults;
 public:
@@ -124,6 +159,14 @@ public:
 		  , m_IP(IP)
 		  , m_Port(Port)
 	{
+		if (Subsystem)
+		{
+			if (Subsystem->CurrentMatchmakingServersServerRules != nullptr)
+			{
+				Subsystem->CurrentMatchmakingServersServerRules->CancelServerQuery();
+			}
+			Subsystem->CurrentMatchmakingServersServerRules = this;
+		}
 	}
 
 	FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules(USteamCoreSubsystem* Subsystem, USteamCoreAsyncAction* AsyncObject, FString IP, int32 Port, float Timeout = 10.f)
@@ -132,16 +175,27 @@ public:
 		  , m_Port(Port)
 	{
 		m_OnSteamCallback.BindUFunction(AsyncObject, "HandleCallback");
+
+		if (Subsystem)
+		{
+			if (Subsystem->CurrentMatchmakingServersServerRules != nullptr)
+			{
+				Subsystem->CurrentMatchmakingServersServerRules->CancelServerQuery();
+			}
+			Subsystem->CurrentMatchmakingServersServerRules = this;
+		}
 	}
 
 private:
+	virtual ~FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules() override;
 	FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules() = delete;
 protected:
 	FString m_IP;
 	int32 m_Port;
 	TArray<FGameServerRule> m_Rules;
-private:
+protected:
 	virtual void Tick() override;
+	void CancelServerQuery();
 
 	virtual FString ToString() const override
 	{
@@ -152,3 +206,4 @@ private:
 	virtual void RulesFailedToRespond() override;
 	virtual void RulesRefreshComplete() override;
 };
+#endif

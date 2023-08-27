@@ -11,6 +11,7 @@ void UUtils::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
 
+#if ENABLE_STEAMCORE
 	OnCheckFileSignatureCallback.Register(this, &UUtils::OnCheckFileSignature);
 	OnGamepadTextInputDismissedCallback.Register(this, &UUtils::OnGamepadTextInputDismissed);
 	OnLowBatteryPowerCallback.Register(this, &UUtils::OnLowBatteryPower);
@@ -25,15 +26,18 @@ void UUtils::Initialize(FSubsystemCollectionBase& Collection)
 		OnIPCountryCallback.SetGameserverFlag();
 		OnSteamShutdownCallback.SetGameserverFlag();
 	}
+#endif
 }
 
 void UUtils::Deinitialize()
 {
+#if ENABLE_STEAMCORE
 	OnCheckFileSignatureCallback.Unregister();
 	OnGamepadTextInputDismissedCallback.Unregister();
 	OnLowBatteryPowerCallback.Unregister();
 	OnIPCountryCallback.Unregister();
 	OnSteamShutdownCallback.Unregister();
+#endif
 
 	Super::Deinitialize();
 }
@@ -45,21 +49,44 @@ int32 UUtils::GetSecondsSinceAppActive()
 {
 	LogVeryVerbose("");
 
-	return GetUtils() ? GetUtils()->GetSecondsSinceAppActive() : 0;
+#if ENABLE_STEAMCORE
+	if (GetUtils())
+	{
+	
+		return GetUtils()->GetSecondsSinceAppActive();	
+	}
+#endif
+
+	return 0;
 }
 
 int32 UUtils::GetSecondsSinceComputerActive()
 {
 	LogVeryVerbose("");
 
-	return GetUtils() ? GetUtils()->GetSecondsSinceComputerActive() : 0;
+#if ENABLE_STEAMCORE
+	if (GetUtils())
+	{
+		return GetUtils()->GetSecondsSinceComputerActive();
+	}
+#endif
+	
+	return 0;
 }
 
 ESteamUniverse UUtils::GetConnectedUniverse()
 {
 	LogVeryVerbose("");
 
-	return GetUtils() ? static_cast<ESteamUniverse>(GetUtils()->GetConnectedUniverse()) : ESteamUniverse::Invalid;
+#if ENABLE_STEAMCORE
+	if (GetUtils())
+	{
+	
+		return static_cast<ESteamUniverse>(GetUtils()->GetConnectedUniverse());
+	}
+#endif
+
+	return ESteamUniverse::Max;
 }
 
 int32 UUtils::GetServerRealTime()
@@ -68,10 +95,12 @@ int32 UUtils::GetServerRealTime()
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		Result = GetUtils()->GetServerRealTime();
 	}
+#endif
 
 	return Result;
 }
@@ -82,10 +111,12 @@ FString UUtils::GetIPCountry()
 
 	FString Result;
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		Result = UTF8_TO_TCHAR(GetUtils()->GetIPCountry());
 	}
+#endif
 
 	return Result;
 }
@@ -96,10 +127,12 @@ int32 UUtils::GetCurrentBatteryPower()
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		Result = GetUtils()->GetCurrentBatteryPower();
 	}
+#endif
 
 	return Result;
 }
@@ -110,10 +143,12 @@ int32 UUtils::GetAppID()
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		Result = GetUtils()->GetAppID();
 	}
+#endif
 
 	return Result;
 }
@@ -122,20 +157,24 @@ void UUtils::SetOverlayNotificationPosition(ESteamNotificationPosition Notificat
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		GetUtils()->SetOverlayNotificationPosition(static_cast<ENotificationPosition>(NotificationPosition));
 	}
+#endif
 }
 
 void UUtils::SetVRHeadsetStreamingEnabled(bool bEnabled)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		GetUtils()->SetVRHeadsetStreamingEnabled(bEnabled);
 	}
+#endif
 }
 
 int32 UUtils::GetIPCCallCount()
@@ -144,10 +183,12 @@ int32 UUtils::GetIPCCallCount()
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		Result = GetUtils()->GetIPCCallCount();
 	}
+#endif
 
 	return Result;
 }
@@ -158,10 +199,12 @@ bool UUtils::IsOverlayEnabled()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		bResult = GetUtils()->IsOverlayEnabled();
 	}
+#endif
 
 	return bResult;
 }
@@ -172,11 +215,13 @@ bool UUtils::IsSteamChinaLauncher()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 #if STEAM_VERSION > 142
 	if (GetUtils())
 	{
 		bResult = GetUtils()->IsSteamChinaLauncher();
 	}
+#endif
 #endif
 
 	return bResult;
@@ -188,11 +233,31 @@ bool UUtils::InitFilterText()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 #if STEAM_VERSION > 146
 	if (GetUtils())
 	{
 		bResult = GetUtils()->InitFilterText();
 	}
+#endif
+#endif
+
+	return bResult;
+}
+
+bool UUtils::IsSteamRunningOnSteamDeck()
+{
+	LogVerbose("");
+	
+	bool bResult = false;
+
+#if ENABLE_STEAMCORE
+#if STEAM_VERSION > 151
+	if (GetUtils())
+	{
+		bResult = GetUtils()->IsSteamRunningOnSteamDeck();
+	}
+#endif
 #endif
 
 	return bResult;
@@ -204,10 +269,12 @@ bool UUtils::BOverlayNeedsPresent()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		bResult = GetUtils()->BOverlayNeedsPresent();
 	}
+#endif
 
 	return bResult;
 }
@@ -218,10 +285,12 @@ bool UUtils::ShowGamepadTextInput(ESteamGamepadTextInputMode InputMode, ESteamGa
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		bResult = GetUtils()->ShowGamepadTextInput(static_cast<EGamepadTextInputMode>(InputMode), static_cast<EGamepadTextInputLineMode>(LineInputMode), TCHAR_TO_UTF8(*Description), CharMax, TCHAR_TO_UTF8(*ExistingText));
 	}
+#endif
 
 	return bResult;
 }
@@ -232,10 +301,12 @@ int32 UUtils::GetEnteredGamepadTextLength()
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		Result = GetUtils()->GetEnteredGamepadTextLength();
 	}
+#endif
 
 	return Result;
 }
@@ -247,6 +318,7 @@ bool UUtils::GetImageRGBA(int iImage, TArray<uint8>& OutBuffer)
 	bool bResult = false;
 	OutBuffer.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		uint32 AvatarWidth = 0;
@@ -260,6 +332,7 @@ bool UUtils::GetImageRGBA(int iImage, TArray<uint8>& OutBuffer)
 			bResult = GetUtils()->GetImageRGBA(iImage, OutBuffer.GetData(), ImageSizeInBytes);
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -272,6 +345,7 @@ bool UUtils::GetImageSize(int iImage, int32& OutWidth, int32& OutHeight)
 	uint32 Width = 0;
 	uint32 Height = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		bResult = GetUtils()->GetImageSize(iImage, &Width, &Height);
@@ -279,6 +353,7 @@ bool UUtils::GetImageSize(int iImage, int32& OutWidth, int32& OutHeight)
 
 	OutWidth = Width;
 	OutHeight = Height;
+#endif
 
 	return bResult;
 }
@@ -290,6 +365,7 @@ bool UUtils::GetEnteredGamepadTextInput(FString& OutText)
 	bool bResult = false;
 	OutText.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		TArray<char> DataArray;
@@ -302,6 +378,7 @@ bool UUtils::GetEnteredGamepadTextInput(FString& OutText)
 			OutText = UTF8_TO_TCHAR(DataArray.GetData());
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -312,10 +389,12 @@ FString UUtils::GetSteamUILanguage()
 
 	FString Result;
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		Result = UTF8_TO_TCHAR(GetUtils()->GetSteamUILanguage());
 	}
+#endif
 
 	return Result;
 }
@@ -326,10 +405,12 @@ bool UUtils::IsSteamRunningInVR()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		bResult = GetUtils()->IsSteamRunningInVR();
 	}
+#endif
 
 	return bResult;
 }
@@ -340,10 +421,12 @@ bool UUtils::IsVRHeadsetStreamingEnabled()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		bResult = GetUtils()->IsVRHeadsetStreamingEnabled();
 	}
+#endif
 
 	return bResult;
 }
@@ -352,10 +435,12 @@ void UUtils::SetOverlayNotificationInset(int32 HorizontalInset, int32 VerticalIn
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		GetUtils()->SetOverlayNotificationInset(HorizontalInset, VerticalInset);
 	}
+#endif
 }
 
 bool UUtils::IsSteamInBigPictureMode()
@@ -364,10 +449,12 @@ bool UUtils::IsSteamInBigPictureMode()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		bResult = GetUtils()->IsSteamInBigPictureMode();
 	}
+#endif
 
 	return bResult;
 }
@@ -376,16 +463,19 @@ void UUtils::StartVRDashboard()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		GetUtils()->StartVRDashboard();
 	}
+#endif
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		Steam API Callbacks
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void UUtils::OnCheckFileSignature(CheckFileSignature_t* pParam)
 {
 	LogVerbose("");
@@ -440,3 +530,4 @@ void UUtils::OnSteamShutdown(SteamShutdown_t* pParam)
 		SteamShutdown.Broadcast(Data);
 	});
 }
+#endif

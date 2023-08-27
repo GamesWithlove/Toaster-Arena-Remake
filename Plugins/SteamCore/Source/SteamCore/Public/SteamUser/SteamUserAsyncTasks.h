@@ -12,6 +12,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		FOnlineAsyncTaskSteamCoreUserRequestEncryptedAppTicket
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+#if ENABLE_STEAMCORE
 class STEAMCORE_API FOnlineAsyncTaskSteamCoreUserRequestEncryptedAppTicket : public FOnlineAsyncTaskSteamCore
 {
 public:
@@ -78,3 +79,4 @@ private:
 	virtual void TriggerDelegates() override;
 	virtual FString ToString() const override { return FString::Printf(TEXT("FOnlineAsyncTaskSteamCoreUserRequestStoreAuthURL")); }
 };
+#endif

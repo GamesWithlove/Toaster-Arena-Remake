@@ -28,7 +28,7 @@ public:
 	* @param	SteamId		SteamID of user
 	* @param	AppId		AppID to check for ownership
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Check App Ownership"), Category = "SteamCoreWeb|SteamUser|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Check App Ownership", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|SteamUser|Async")
 	static USteamCoreWebAsyncActionCheckAppOwnership* CheckAppOwnershipAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId);
 };
 
@@ -47,7 +47,7 @@ public:
 	* @param	SteamId		SteamID of user
 	* @param	AppIds		Max: 100
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get App Price Info"), Category = "SteamCoreWeb|SteamUser|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get App Price Info", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|SteamUser|Async")
 	static USteamCoreWebAsyncActionGetAppPriceInfo* GetAppPriceInfoAsync(UObject* WorldContextObject, FString Key, FString SteamId, TArray<int32> AppIds);
 };
 
@@ -66,7 +66,7 @@ public:
 	* @param	SteamId			SteamID of user
 	* @param	Relationship	relationship type (ex: friend)
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Friend List"), Category = "SteamCoreWeb|SteamUser|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Friend List", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|SteamUser|Async")
 	static USteamCoreWebAsyncActionGetFriendList* GetFriendListAsync(UObject* WorldContextObject, FString Key, FString SteamId, FString Relationship);
 };
 
@@ -83,7 +83,7 @@ public:
 	*
 	* @param	Key				Steamworks Web API publisher authentication Key.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Player Bans"), Category = "SteamCoreWeb|SteamUser|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Player Bans", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|SteamUser|Async")
 	static USteamCoreWebAsyncActionGetPlayerBans* GetPlayerBansAsync(UObject* WorldContextObject, FString Key, TArray<FString> SteamIds);
 };
 
@@ -101,7 +101,7 @@ public:
 	* @param	Key				Steamworks Web API publisher authentication Key.
 	* @param	SteamIds		Max: 100
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Player Summaries"), Category = "SteamCoreWeb|SteamUser|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Player Summaries", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|SteamUser|Async")
 	static USteamCoreWebAsyncActionGetPlayerSummaries* GetPlayerSummariesAsync(UObject* WorldContextObject, FString Key, TArray<FString> SteamIds);
 };
 
@@ -119,7 +119,7 @@ public:
 	* @param	Key				Steamworks Web API publisher authentication Key.
 	* @param	SteamId			SteamID of user
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Publisher App Ownership"), Category = "SteamCoreWeb|SteamUser|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Publisher App Ownership", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|SteamUser|Async")
 	static USteamCoreWebAsyncActionGetPublisherAppOwnership* GetPublisherAppOwnershipAsync(UObject* WorldContextObject, FString Key, FString SteamId);
 };
 
@@ -140,7 +140,7 @@ public:
 	* @param	PackageRowVersion		64 - bit row version to read package changes from. The row version of data read up to will be returned for use in future calls.
 	* @param	CdKeyRowVersion			64 - bit row version to read CD Key changes from. The row version of data read up to will be returned for use in future calls.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Publisher App Ownership Changes"), Category = "SteamCoreWeb|SteamUser|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Publisher App Ownership Changes", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|SteamUser|Async")
 	static USteamCoreWebAsyncActionGetPublisherAppOwnershipChanges* GetPublisherAppOwnershipChangesAsync(UObject* WorldContextObject, FString Key, FString PackageRowVersion, FString CdKeyRowVersion);
 };
 
@@ -158,7 +158,7 @@ public:
 	* @param	Key				Steamworks Web API publisher authentication Key.
 	* @param	SteamId			SteamID of user
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get User Group List"), Category = "SteamCoreWeb|SteamUser|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get User Group List"), Category = "SteamCoreWeb|SteamUser|Async")
 	static USteamCoreWebAsyncActionGetUserGroupList* GetUserGroupListAsync(UObject* WorldContextObject, FString Key, FString SteamId);
 };
 
@@ -182,7 +182,7 @@ public:
 	* @param	thirdPartyKey		Optionally associate third party Key during grant. 'thirdpartyappid' will have to be set.
 	* @param	thirdPartyAppID		Has to be set if 'thirdpartyKey' is set.The appid associated with the 'thirdpartyKey'.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Grant Package"), Category = "SteamCoreWeb|SteamUser|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Grant Package"), Category = "SteamCoreWeb|SteamUser|Async")
 	static USteamCoreWebAsyncActionGrantPackage* GrantPackageAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 packageID, FString ipaddress, FString thirdPartyKey, int32 thirdPartyAppID);
 };
 
@@ -201,6 +201,6 @@ public:
 	* @param	VanityURL		The vanity URL to get a SteamID for
 	* @param	URLType
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Resolve Vanity URL"), Category = "SteamCoreWeb|SteamUser|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Resolve Vanity URL"), Category = "SteamCoreWeb|SteamUser|Async")
 	static USteamCoreWebAsyncActionResolveVanityURL* ResolveVanityURLAsync(UObject* WorldContextObject, FString Key, FString VanityURL, EVanityUrlType URLType);
 };

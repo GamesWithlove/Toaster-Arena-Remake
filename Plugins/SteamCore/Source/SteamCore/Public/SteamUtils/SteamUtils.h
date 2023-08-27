@@ -182,6 +182,13 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utils")
 	static bool InitFilterText();
 
+	/*
+	 * Returns true if currently running on the Steam Deck device
+	 * This function is only available in UE 5.1+
+	 */ 
+	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utils")
+	virtual bool IsSteamRunningOnSteamDeck();
+
 	/**
 	* Checks if Steam & the Steam Overlay are running in Big Picture mode.
 	*
@@ -259,9 +266,11 @@ private:
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(UUtils, OnCheckFileSignature, CheckFileSignature_t, OnCheckFileSignatureCallback);
 	STEAM_CALLBACK_MANUAL(UUtils, OnGamepadTextInputDismissed, GamepadTextInputDismissed_t, OnGamepadTextInputDismissedCallback);
 	STEAM_CALLBACK_MANUAL(UUtils, OnLowBatteryPower, LowBatteryPower_t, OnLowBatteryPowerCallback);
 	STEAM_CALLBACK_MANUAL(UUtils, OnIPCountry, IPCountry_t, OnIPCountryCallback);
 	STEAM_CALLBACK_MANUAL(UUtils, OnSteamShutdown, SteamShutdown_t, OnSteamShutdownCallback);
+#endif
 };

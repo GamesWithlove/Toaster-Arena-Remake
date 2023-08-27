@@ -62,7 +62,7 @@ public:
 	* @param	Key		Steamworks Web API publisher authentication Key.
 	*/
 	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|Apps")
-	void GetAppList(const FOnSteamCoreWebCallback& Callback, FString Key);
+	void GetAppList(const FOnSteamCoreWebAppListCallback& Callback, FString Key);
 
 	/**
 	* Get a list of cheating reports submitted for this app.

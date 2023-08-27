@@ -24,9 +24,9 @@ class USteamCoreWebSubsystem;
 class FOnlineAsyncTaskSteamCoreWeb : public FOnlineAsyncTaskBasic<class USteamCoreSubsystem>
 {
 public:
-	FOnlineAsyncTaskSteamCoreWeb(USteamCoreWebSubsystem* subsystem, const FOnSteamCoreWebCallback& Callback, FString InterfaceName, FString FunctionName, FString APIKey = "", int32 APIVersion = 1, EVerb Verb = EVerb::GET, bool bPublicURL = false)
+	FOnlineAsyncTaskSteamCoreWeb(USteamCoreWebSubsystem* Subsystem, const FOnSteamCoreWebCallback& Callback, FString InterfaceName, FString FunctionName, FString APIKey = "", int32 APIVersion = 1, EVerb Verb = EVerb::GET, bool bPublicURL = false)
 		: OnCallback(Callback)
-		, m_Subsystem(subsystem)
+		, m_Subsystem(Subsystem)
 		, bInit(false)
 		, bReceivedCallback(false)
 		, m_InterfaceName(InterfaceName)

@@ -11,6 +11,7 @@
 //		FOnlineAsyncTaskSteamCoreAppsGetFileDetails
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void FOnlineAsyncTaskSteamCoreAppsGetFileDetails::Tick()
 {
 	FOnlineAsyncTaskSteamCore::Tick();
@@ -65,3 +66,4 @@ void FOnlineAsyncTaskSteamCoreAppsGetFileDetails::TriggerDelegates()
 
 	m_OnSteamCallback.ExecuteIfBound(m_CallbackResults, bWasSuccessful);
 }
+#endif

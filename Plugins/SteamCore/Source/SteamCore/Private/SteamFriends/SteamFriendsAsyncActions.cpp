@@ -15,6 +15,7 @@ USteamCoreFriendsAsyncActionSetPersonaName* USteamCoreFriendsAsyncActionSetPerso
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreFriendsAsyncActionSetPersonaName>();
@@ -26,6 +27,7 @@ USteamCoreFriendsAsyncActionSetPersonaName* USteamCoreFriendsAsyncActionSetPerso
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -49,6 +51,7 @@ USteamCoreFriendsAsyncActionDownloadClanActivityCounts* USteamCoreFriendsAsyncAc
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreFriendsAsyncActionDownloadClanActivityCounts>();
@@ -61,6 +64,7 @@ USteamCoreFriendsAsyncActionDownloadClanActivityCounts* USteamCoreFriendsAsyncAc
 
 		return AsyncObject;
 	}
+#endif
 	
 	return nullptr;
 }
@@ -84,9 +88,9 @@ USteamCoreFriendsAsyncActionRequestClanOfficerList* USteamCoreFriendsAsyncAction
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
-
 		const auto AsyncObject = NewObject<USteamCoreFriendsAsyncActionRequestClanOfficerList>();
 		const auto Task = new FOnlineAsyncTaskSteamCoreRequestClanOfficerList(Subsystem, AsyncObject, SteamIDClan, Timeout);
 		AsyncObject->RegisterWithGameInstance(Subsystem->GetGameInstance());
@@ -96,6 +100,7 @@ USteamCoreFriendsAsyncActionRequestClanOfficerList* USteamCoreFriendsAsyncAction
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -119,6 +124,7 @@ USteamCoreFriendsAsyncActionJoinClanChatRoom* USteamCoreFriendsAsyncActionJoinCl
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreFriendsAsyncActionJoinClanChatRoom>();
@@ -130,6 +136,7 @@ USteamCoreFriendsAsyncActionJoinClanChatRoom* USteamCoreFriendsAsyncActionJoinCl
 
 		return AsyncObject;
 	}
+#endif
 	
 	return nullptr;
 }
@@ -153,6 +160,7 @@ USteamCoreFriendsAsyncActionEnumerateFollowingList* USteamCoreFriendsAsyncAction
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreFriendsAsyncActionEnumerateFollowingList>();
@@ -164,6 +172,7 @@ USteamCoreFriendsAsyncActionEnumerateFollowingList* USteamCoreFriendsAsyncAction
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -186,7 +195,8 @@ void USteamCoreFriendsAsyncActionEnumerateFollowingList::HandleCallback(const FF
 USteamCoreFriendsAsyncActionIsFollowing* USteamCoreFriendsAsyncActionIsFollowing::IsFollowingAsync(UObject* WorldContextObject, FSteamID SteamID, float Timeout)
 {
 	LogVerbose("");
-	
+
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreFriendsAsyncActionIsFollowing>();
@@ -198,6 +208,7 @@ USteamCoreFriendsAsyncActionIsFollowing* USteamCoreFriendsAsyncActionIsFollowing
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -221,6 +232,7 @@ USteamCoreFriendsAsyncActionGetFollowerCount* USteamCoreFriendsAsyncActionGetFol
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreFriendsAsyncActionGetFollowerCount>();
@@ -232,6 +244,7 @@ USteamCoreFriendsAsyncActionGetFollowerCount* USteamCoreFriendsAsyncActionGetFol
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -252,6 +265,7 @@ USteamCoreFriendsAsyncActionRequestUserInformation* USteamCoreFriendsAsyncAction
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (const USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreFriendsAsyncActionRequestUserInformation>();
@@ -264,6 +278,7 @@ USteamCoreFriendsAsyncActionRequestUserInformation* USteamCoreFriendsAsyncAction
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -274,10 +289,12 @@ void USteamCoreFriendsAsyncActionRequestUserInformation::Activate()
 
 	USteamCoreAsyncAction::Activate();
 
+#if ENABLE_STEAMCORE
 	if (!SteamFriends()->RequestUserInformation(m_SteamIDUser, m_bRequireNameOnly))
 	{
 		HandleCallback();
 	}
+#endif
 }
 
 void USteamCoreFriendsAsyncActionRequestUserInformation::HandleCallback()
@@ -292,6 +309,7 @@ void USteamCoreFriendsAsyncActionRequestUserInformation::HandleCallback()
 	});
 }
 
+#if ENABLE_STEAMCORE
 void USteamCoreFriendsAsyncActionRequestUserInformation::OnPersonaStateChange(PersonaStateChange_t* pParam)
 {
 	LogVerbose("");
@@ -302,3 +320,4 @@ void USteamCoreFriendsAsyncActionRequestUserInformation::OnPersonaStateChange(Pe
 		HandleCallback();
 	}
 }
+#endif

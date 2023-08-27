@@ -91,6 +91,8 @@ private:
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(UMusic, OnPlaybackStatusHasChanged, PlaybackStatusHasChanged_t, OnPlaybackStatusHasChangedCallback);
 	STEAM_CALLBACK_MANUAL(UMusic, OnVolumeHasChanged, VolumeHasChanged_t, OnVolumeHasChangedCallback);
+#endif
 };

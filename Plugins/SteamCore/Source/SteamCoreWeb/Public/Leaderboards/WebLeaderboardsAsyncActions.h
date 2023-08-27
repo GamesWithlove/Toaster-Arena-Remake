@@ -30,7 +30,7 @@ public:
 	* @param	AppId		appid of game
 	* @param	Name		Name of the leaderboard to delete
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Delete Leaderboard"), Category = "SteamCoreWeb|Leaderboards|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Delete Leaderboard", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Leaderboards|Async")
 	static USteamCoreWebAsyncActionDeleteLeaderboard* DeleteLeaderboardAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString Name);
 };
 
@@ -54,7 +54,7 @@ public:
 	* @param	bOnlyTrustedWrites		if this is true the leaderboard scores cannot be set by clients, and can only be set by publisher via SetLeaderboardScore WebAPI. Defaults to false.
 	* @param	bOnlyFriendsReads		if this is true the leaderboard scores can only be read for friends by clients, scores can always be read by publisher. Defaults to false.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Find or Create Leaderboard"), Category = "SteamCoreWeb|Leaderboards|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Find or Create Leaderboard", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Leaderboards|Async")
 	static USteamCoreWebAsyncActionFindOrCreateLeaderboard* FindOrCreateLeaderboardAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString Name, FString SortMethod = "Ascending", FString DisplayType = "Numeric", bool bCreateIfNotFound = false, bool bOnlyTrustedWrites = false, bool bOnlyFriendsReads = false);
 };
 
@@ -77,7 +77,7 @@ public:
 	* @param	DataRequest			type of request: RequestGlobal, RequestAroundUser, RequestFriends
 	* @param	SteamId				SteamID used for friend & around user requests
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Leaderboard Entries"), Category = "SteamCoreWeb|Leaderboards|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Leaderboard Entries", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Leaderboards|Async")
 	static USteamCoreWebAsyncActionGetLeaderboardEntries* GetLeaderboardEntriesAsync(UObject* WorldContextObject, FString Key, int32 AppId, int32 RangeStart, int32 RangeEnd, int32 LeaderboardId, int32 DataRequest, FString SteamId);
 };
 
@@ -95,7 +95,7 @@ public:
 	* @param	Key					Steamworks Web API publisher authentication Key.
 	* @param	AppId				appid of game
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Leaderboards for Game"), Category = "SteamCoreWeb|Leaderboards|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Leaderboards for Game", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Leaderboards|Async")
 	static USteamCoreWebAsyncActionGetLeaderboardsForGame* GetLeaderboardsForGameAsync(UObject* WorldContextObject, FString Key, int32 AppId);
 };
 
@@ -114,7 +114,7 @@ public:
 	* @param	AppId				appid of game
 	* @param	LeaderboardId		numeric ID of the target leaderboard. Can be retrieved from GetLeaderboardsForGame
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Reset Leaderboard"), Category = "SteamCoreWeb|Leaderboards|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Reset Leaderboard", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Leaderboards|Async")
 	static USteamCoreWebAsyncActionResetLeaderboard* ResetLeaderboardAsync(UObject* WorldContextObject, FString Key, int32 AppId, int32 LeaderboardId);
 };
 
@@ -137,6 +137,6 @@ public:
 	* @param	Details				game-specific details for how the score was earned. Up to 256 bytes.
 	* @param	ScoreMethod			update method to use. Can be "KeepBest" or "ForceUpdate"
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Set Leaderboard Score", AutoCreateRefTerm = "details"), Category = "SteamCoreWeb|Leaderboards|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Set Leaderboard Score", AutoCreateRefTerm = "details", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Leaderboards|Async")
 	static USteamCoreWebAsyncActionSetLeaderboardScore* SetLeaderboardScoreAsync(UObject* WorldContextObject, FString Key, int32 AppId, int32 LeaderboardId, FString SteamId, int32 Score, TArray<uint8> Details, FString ScoreMethod = "KeepBest");
 };

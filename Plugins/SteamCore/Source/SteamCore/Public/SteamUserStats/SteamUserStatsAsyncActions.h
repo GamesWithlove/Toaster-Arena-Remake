@@ -44,7 +44,7 @@ public:
 	* @param	LeaderboardName		The name of the leaderboard to find. Must not be longer than k_cchLeaderboardNameMax.
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Find Leaderboard"), Category = "SteamCore|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Find Leaderboard", BlueprintInternalUseOnly="true"), Category = "SteamCore|UserStats|Async")
 	static USteamCoreUserStatsAsyncActionFindLeaderboard* FindLeaderboardAsync(UObject* WorldContextObject, FString LeaderboardName, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -74,7 +74,7 @@ public:
 	* @param	RangeEnd			The last index to retrieve entries for relative to eLeaderboardDataRequest.
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Download Leaderboard Entries"), Category = "SteamCore|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Download Leaderboard Entries", BlueprintInternalUseOnly="true"), Category = "SteamCore|UserStats|Async")
 	static USteamCoreUserStatsAsyncActionDownloadLeaderboardEntries* DownloadLeaderboardEntriesAsync(UObject* WorldContextObject, FSteamLeaderboard SteamLeaderboard, ESteamLeaderboardDataRequest Request, int32 RangeStart, int32 RangeEnd, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -100,7 +100,7 @@ public:
 	* @param	HistoryDays		How many days of day-by-day history to retrieve in addition to the overall totals. The limit is 60.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request Global Stats"), Category = "SteamCore|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request Global Stats", BlueprintInternalUseOnly="true"), Category = "SteamCore|UserStats|Async")
 	static USteamCoreUserStatsAsyncActionDownloadRequestGlobalStats* RequestGlobalStatsAsync(UObject* WorldContextObject, int32 HistoryDays, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -124,7 +124,7 @@ public:
 	* 
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request Global Achievement Percentages"), Category = "SteamCore|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request Global Achievement Percentages", BlueprintInternalUseOnly="true"), Category = "SteamCore|UserStats|Async")
 	static USteamCoreUserStatsAsyncActionRequestGlobalAchievementPercentages* RequestGlobalAchievementPercentagesAsync(UObject* WorldContextObject, float Timeout = 10.f);
 
 public:
@@ -148,7 +148,7 @@ public:
 	*
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Number Of Current Players"), Category = "SteamCore|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Number Of Current Players", BlueprintInternalUseOnly="true"), Category = "SteamCore|UserStats|Async")
 	static USteamCoreUserStatsAsyncActionGetNumberOfCurrentPlayers* GetNumberOfCurrentPlayersAsync(UObject* WorldContextObject, float Timeout = 10.f);
 
 public:
@@ -179,7 +179,7 @@ public:
 	* @param	ScoreDetails			Optional: Array containing the details surrounding the unlocking of this score.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Upload Leaderboard Score", AutoCreaterefterm="scoreDetails"), Category = "SteamCore|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Upload Leaderboard Score", AutoCreaterefterm="ScoreDetails", BlueprintInternalUseOnly="true"), Category = "SteamCore|UserStats|Async")
 	static USteamCoreUserStatsAsyncActionUploadLeaderboardScore* UploadLeaderboardScoreAsync(UObject* WorldContextObject, FSteamLeaderboard SteamLeaderboard, ESteamLeaderboardUploadScoreMethod UploadScoreMethod, int32 Score, TArray<int32> ScoreDetails, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -213,7 +213,7 @@ public:
 	* @param	DisplayType			The display type (used by the Steam Community web site) of the new leaderboard if it's created.
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Find or Create Leaderboard"), Category = "SteamCore|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Find or Create Leaderboard", BlueprintInternalUseOnly="true"), Category = "SteamCore|UserStats|Async")
 	static USteamCoreUserStatsAsyncActionFindOrCreateLeaderboard* FindOrCreateLeaderboardAsync(UObject* WorldContextObject, FString LeaderboardName, ESteamLeaderboardSortMethod SortMethod, ESteamLeaderboardDisplayType DisplayType, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -241,7 +241,7 @@ public:
 	* @param	SteamID		The Steam ID of the user to request stats for.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request User Stats"), Category = "SteamCore|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request User Stats", BlueprintInternalUseOnly="true"), Category = "SteamCore|UserStats|Async")
 	static USteamCoreUserStatsAsyncActionRequestUserStats* RequestUserStatsAsync(UObject* WorldContextObject, FSteamID SteamID, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -269,7 +269,7 @@ public:
 	* @param	Users				An array of Steam IDs to get the leaderboard entries for.
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Download Leaderboard Entries for Users"), Category = "SteamCore|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Download Leaderboard Entries for Users", BlueprintInternalUseOnly="true"), Category = "SteamCore|UserStats|Async")
 	static USteamCoreUserStatsAsyncActionDownloadLeaderboardEntriesForUsers* DownloadLeaderboardEntriesForUsersAsync(UObject* WorldContextObject, FSteamLeaderboard SteamLeaderboard, TArray<FSteamID> Users, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -297,7 +297,7 @@ public:
 	* @param	Handle				Handle to a piece of user generated content that was shared using ISteamRemoteStorage::FileShare or ISteamUGC::CreateItem.
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Attach Leaderboard UGC"), Category = "SteamCore|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Attach Leaderboard UGC", BlueprintInternalUseOnly="true"), Category = "SteamCore|UserStats|Async")
 	static USteamCoreUserStatsAsyncActionAttachLeaderboardUGC* AttachLeaderboardUGCAsync(UObject* WorldContextObject, FSteamLeaderboard SteamLeaderboard, FSteamUGCHandle Handle, float Timeout = 10.f);
 public:
 	UFUNCTION()

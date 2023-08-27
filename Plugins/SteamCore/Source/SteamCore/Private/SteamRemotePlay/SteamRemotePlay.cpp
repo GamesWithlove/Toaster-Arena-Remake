@@ -11,6 +11,7 @@ void URemotePlay::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
 
+#if ENABLE_STEAMCORE
 	OnSteamRemotePlaySessionConnectedCallback.Register(this, &URemotePlay::OnSteamRemotePlaySessionConnected);
 	OnSteamRemotePlaySessionDisconnectedCallback.Register(this, &URemotePlay::OnSteamRemotePlaySessionDisconnected);
 
@@ -19,12 +20,15 @@ void URemotePlay::Initialize(FSubsystemCollectionBase& Collection)
 		OnSteamRemotePlaySessionConnectedCallback.SetGameserverFlag();
 		OnSteamRemotePlaySessionDisconnectedCallback.SetGameserverFlag();
 	}
+#endif
 }
 
 void URemotePlay::Deinitialize()
 {
+#if ENABLE_STEAMCORE
 	OnSteamRemotePlaySessionConnectedCallback.Unregister();
 	OnSteamRemotePlaySessionDisconnectedCallback.Unregister();
+#endif
 
 	Super::Deinitialize();
 }
@@ -39,10 +43,12 @@ int32 URemotePlay::GetSessionCount()
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamRemotePlay())
 	{
 		Result = SteamRemotePlay()->GetSessionCount();
 	}
+#endif
 
 	return Result;
 }
@@ -53,10 +59,12 @@ int32 URemotePlay::GetSessionID(int32 SessionIndex)
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamRemotePlay())
 	{
 		Result = SteamRemotePlay()->GetSessionID(SessionIndex);
 	}
+#endif
 
 	return Result;
 }
@@ -67,10 +75,12 @@ FSteamID URemotePlay::GetSessionSteamID(int32 SessionID)
 
 	FSteamID Result;
 
+#if ENABLE_STEAMCORE
 	if (SteamRemotePlay())
 	{
 		Result = SteamRemotePlay()->GetSessionSteamID(SessionID);
 	}
+#endif
 
 	return Result;
 }
@@ -81,10 +91,12 @@ FString URemotePlay::GetSessionClientName(int32 SessionID)
 
 	FString Result;
 
+#if ENABLE_STEAMCORE
 	if (SteamRemotePlay())
 	{
 		Result = TCHAR_TO_UTF8(SteamRemotePlay()->GetSessionClientName(SessionID));
 	}
+#endif
 
 	return Result;
 }
@@ -95,10 +107,12 @@ ESteamCoreDeviceFormFactor URemotePlay::GetSessionClientFormFactor(int32 Session
 
 	ESteamCoreDeviceFormFactor Result = ESteamCoreDeviceFormFactor::Unknown;
 
+#if ENABLE_STEAMCORE
 	if (SteamRemotePlay())
 	{
 		Result = static_cast<ESteamCoreDeviceFormFactor>(SteamRemotePlay()->GetSessionClientFormFactor(SessionID));
 	}
+#endif
 
 	return Result;
 }
@@ -109,10 +123,12 @@ bool URemotePlay::BGetSessionClientResolution(int32 SessionID, int32& Resolution
 
 	bool Result = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamRemotePlay())
 	{
 		Result = SteamRemotePlay()->BGetSessionClientResolution(SessionID, &ResolutionX, &ResolutionY);
 	}
+#endif
 
 	return Result;
 }
@@ -123,10 +139,12 @@ bool URemotePlay::BSendRemotePlayTogetherInvite(FSteamID SteamIDFriend)
 
 	bool Result = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamRemotePlay())
 	{
 		Result = SteamRemotePlay()->BSendRemotePlayTogetherInvite(SteamIDFriend);
 	}
+#endif
 
 	return Result;
 }
@@ -135,6 +153,7 @@ bool URemotePlay::BSendRemotePlayTogetherInvite(FSteamID SteamIDFriend)
 //		Steam API Callbacks
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void URemotePlay::OnSteamRemotePlaySessionConnected(SteamRemotePlaySessionConnected_t* pParam)
 {
 	LogVerbose("");
@@ -156,3 +175,4 @@ void URemotePlay::OnSteamRemotePlaySessionDisconnected(SteamRemotePlaySessionDis
 		SteamRemotePlaySessionDisconnected.Broadcast(Data);
 	});
 }
+#endif

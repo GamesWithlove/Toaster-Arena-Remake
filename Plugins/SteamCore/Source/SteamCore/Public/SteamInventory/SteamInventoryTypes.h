@@ -34,7 +34,11 @@ struct FSteamItemInstanceID
 	GENERATED_BODY()
 public:
 	FSteamItemInstanceID()
+#if ENABLE_STEAMCORE
 		: Value(k_SteamItemInstanceIDInvalid)
+#else
+		: Value(0)
+#endif
 	{
 	}
 
@@ -81,6 +85,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamItemDetails(const SteamItemDetails_t& Data)
 		: InstanceID(Data.m_itemId)
 		  , Definition(Data.m_iDefinition)
@@ -94,6 +99,7 @@ public:
 			}
 		}
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "Inventory")
@@ -116,10 +122,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamInventoryResult(const SteamInventoryResult_t& Data)
 		: Value(Data)
 	{
 	}
+#endif
 
 public:
 	operator int32() const { return Value; }
@@ -142,6 +150,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamInventoryEligiblePromoItemDefIDs(const SteamInventoryEligiblePromoItemDefIDs_t& Data)
 		: Result(_SteamResult(Data.m_result))
 		  , SteamID(Data.m_steamID)
@@ -149,6 +158,7 @@ public:
 		  , bCachedData(Data.m_bCachedData)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "Inventory")
@@ -171,11 +181,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamInventoryResultReady(const SteamInventoryResultReady_t& Data)
 		: Handle(Data.m_handle)
 		  , Result(_SteamResult(Data.m_result))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "Inventory")
@@ -191,10 +203,12 @@ struct FSteamInventoryFullUpdate
 public:
 	FSteamInventoryFullUpdate() = default;
 
+#if ENABLE_STEAMCORE
 	FSteamInventoryFullUpdate(const SteamInventoryFullUpdate_t& Data)
 		: Handle(Data.m_handle)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "Inventory")
@@ -211,11 +225,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamInventoryRequestPricesResult(const SteamInventoryRequestPricesResult_t& Data)
 		: Result(_SteamResult(Data.m_result))
 		  , Currency((strlen(Data.m_rgchCurrency) > 0) ? Data.m_rgchCurrency : "")
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "Inventory")
@@ -234,12 +250,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamInventoryStartPurchaseResult(const SteamInventoryStartPurchaseResult_t& Data)
 		: Result(_SteamResult(Data.m_result))
 		  , OrderId(LexToString(Data.m_ulOrderID))
 		  , TransactionId(LexToString(Data.m_ulTransID))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "Inventory")

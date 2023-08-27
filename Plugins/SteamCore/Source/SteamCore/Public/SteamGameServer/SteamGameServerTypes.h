@@ -25,10 +25,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGSPolicyResponse(const GSPolicyResponse_t& Data)
 		: bSecure(Data.m_bSecure > 0)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "GameServer")
 	bool bSecure;
@@ -45,6 +47,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGSClientGroupStatus(const GSClientGroupStatus_t& Data)
 		: SteamIDUser(Data.m_SteamIDUser)
 		  , SteamIDGroup(Data.m_SteamIDGroup)
@@ -52,6 +55,7 @@ public:
 		  , bOfficer(Data.m_bOfficer)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "GameServer")
 	FSteamID SteamIDUser;
@@ -73,10 +77,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FAssociateWithClanResult(const AssociateWithClanResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "GameServer")
 	ESteamResult Result;
@@ -95,6 +101,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FComputeNewPlayerCompatibilityResult(const ComputeNewPlayerCompatibilityResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , PlayersThatDontLikeCandidate(Data.m_cPlayersThatDontLikeCandidate)
@@ -103,6 +110,7 @@ public:
 		  , SteamIDCandidate(Data.m_SteamIDCandidate)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "GameServer")
 	ESteamResult Result;
@@ -123,11 +131,13 @@ struct FGSClientApprove
 public:
 	FGSClientApprove() = default;
 
+#if ENABLE_STEAMCORE
 	FGSClientApprove(const GSClientApprove_t& Data)
 		: SteamID(Data.m_SteamID)
 		  , OwnerSteamID(Data.m_OwnerSteamID)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "GameServer")
 	FSteamID SteamID;
@@ -145,12 +155,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGSClientDeny(const GSClientDeny_t& Data)
 		: SteamID(Data.m_SteamID)
 		  , DenyReason(static_cast<ESteamDenyReason>(Data.m_eDenyReason))
 		  , OptionalText(UTF8_TO_TCHAR(Data.m_rgchOptionalText))
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "GameServer")
 	FSteamID SteamID;

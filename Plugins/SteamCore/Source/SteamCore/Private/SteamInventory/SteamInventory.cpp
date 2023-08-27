@@ -12,6 +12,7 @@ void UInventory::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
 
+#if ENABLE_STEAMCORE
 	OnSteamInventoryResultReadyCallback.Register(this, &UInventory::OnSteamInventoryResultReady);
 	OnSteamInventoryFullUpdateCallback.Register(this, &UInventory::OnSteamInventoryFullUpdate);
 	OnSteamInventoryDefinitionUpdateCallback.Register(this, &UInventory::OnSteamInventoryDefinitionUpdate);
@@ -28,17 +29,20 @@ void UInventory::Initialize(FSubsystemCollectionBase& Collection)
 		OnSteamInventoryRequestPricesResultCallback.SetGameserverFlag();
 		OnSteamInventoryEligiblePromoItemDefIDsCallback.SetGameserverFlag();
 	}
+#endif
 }
 
 void UInventory::Deinitialize()
 {
+#if ENABLE_STEAMCORE
 	OnSteamInventoryResultReadyCallback.Unregister();
 	OnSteamInventoryFullUpdateCallback.Unregister();
 	OnSteamInventoryDefinitionUpdateCallback.Unregister();
 	OnSteamInventoryStartPurchaseResultCallback.Unregister();
 	OnSteamInventoryRequestPricesResultCallback.Unregister();
 	OnSteamInventoryEligiblePromoItemDefIDsCallback.Unregister();
-
+#endif
+	
 	Super::Deinitialize();
 }
 
@@ -52,10 +56,12 @@ ESteamResult UInventory::GetResultStatus(FSteamInventoryResult Handle)
 
 	ESteamResult Result = ESteamResult::AccessDenied;
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		Result = _SteamResult(GetInventory()->GetResultStatus(Handle));
 	}
+#endif
 
 	return Result;
 }
@@ -67,6 +73,7 @@ bool UInventory::GetResultItems(FSteamInventoryResult Handle, TArray<FSteamItemD
 	bool bResult = false;
 	OutItems.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		uint32 ArraySize = 0;
@@ -84,6 +91,7 @@ bool UInventory::GetResultItems(FSteamInventoryResult Handle, TArray<FSteamItemD
 			}
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -94,10 +102,12 @@ int32 UInventory::GetResultTimestamp(FSteamInventoryResult Handle)
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		Result = GetInventory()->GetResultTimestamp(Handle);
 	}
+#endif
 
 	return Result;
 }
@@ -108,10 +118,12 @@ bool UInventory::CheckResultSteamID(FSteamInventoryResult Handle, FSteamID Steam
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		bResult = GetInventory()->CheckResultSteamID(Handle, SteamIDExpected);
 	}
+#endif
 
 	return bResult;
 }
@@ -120,10 +132,12 @@ void UInventory::DestroyResult(FSteamInventoryResult Handle)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		GetInventory()->DestroyResult(Handle);
 	}
+#endif
 }
 
 bool UInventory::GetAllItems(FSteamInventoryResult& Handle)
@@ -132,6 +146,7 @@ bool UInventory::GetAllItems(FSteamInventoryResult& Handle)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		SteamInventoryResult_t Result;
@@ -139,6 +154,7 @@ bool UInventory::GetAllItems(FSteamInventoryResult& Handle)
 		bResult = GetInventory()->GetAllItems(&Result);
 		Handle = Result;
 	}
+#endif
 
 	return bResult;
 }
@@ -150,6 +166,7 @@ bool UInventory::GetItemsByID(FSteamInventoryResult& OutInventoryResult, TArray<
 	bool bResult = false;
 	OutInventoryResult = FSteamInventoryResult();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		if (GetInventory())
@@ -167,6 +184,7 @@ bool UInventory::GetItemsByID(FSteamInventoryResult& OutInventoryResult, TArray<
 			OutInventoryResult = InventoryResult;
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -179,11 +197,13 @@ bool UInventory::GetItemPrice(FSteamItemDef ItemDef, int32& OutPrice, int32& Out
 	uint64 Price = 0;
 	uint64 BasePrice = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		bResult = GetInventory()->GetItemPrice(ItemDef, &Price, &BasePrice);
 	}
-
+#endif
+	
 	OutPrice = Price;
 	OutBasePrice = BasePrice;
 
@@ -199,6 +219,7 @@ bool UInventory::GetItemsWithPrices(TArray<FSteamItemDef>& OutItemDefs, TArray<i
 	OutPrices.Empty();
 	OutBasePrices.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		if (GetInventory())
@@ -225,6 +246,7 @@ bool UInventory::GetItemsWithPrices(TArray<FSteamItemDef>& OutItemDefs, TArray<i
 			}
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -235,10 +257,12 @@ int32 UInventory::GetNumItemsWithPrices()
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		Result = GetInventory()->GetNumItemsWithPrices();
 	}
+#endif
 
 	return Result;
 }
@@ -250,6 +274,7 @@ bool UInventory::GetResultItemProperty(FSteamInventoryResult Handle, int32 ItemI
 	bool bResult = false;
 	OutValue.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		const FTCHARToUTF8 ConvertedPropertyName(*PropertyName);
@@ -268,6 +293,7 @@ bool UInventory::GetResultItemProperty(FSteamInventoryResult Handle, int32 ItemI
 			OutValue = UTF8_TO_TCHAR(DataArray.GetData());
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -279,6 +305,7 @@ bool UInventory::SerializeResult(FSteamInventoryResult Handle, TArray<uint8>& Ou
 	bool bResult = false;
 	OutBuffer.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		uint32 DataSize = 0;
@@ -290,6 +317,7 @@ bool UInventory::SerializeResult(FSteamInventoryResult Handle, TArray<uint8>& Ou
 			bResult = GetInventory()->SerializeResult(Handle, OutBuffer.GetData(), &DataSize);
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -298,11 +326,13 @@ void UInventory::StartPurchase(const FOnSteamInventoryStartPurchaseResult& Callb
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		FOnlineAsyncTaskSteamCoreInventoryStartPurchaseResult* Task = new FOnlineAsyncTaskSteamCoreInventoryStartPurchaseResult(this, Callback, ItemDefs, Quantity);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool UInventory::DeserializeResult(FSteamInventoryResult& OutResult, TArray<uint8> Buffer, bool bReservedMustBeFalse)
@@ -312,6 +342,7 @@ bool UInventory::DeserializeResult(FSteamInventoryResult& OutResult, TArray<uint
 	bool bResult = false;
 	OutResult = FSteamInventoryResult();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		SteamInventoryResult_t SteamInventoryResult;
@@ -323,6 +354,7 @@ bool UInventory::DeserializeResult(FSteamInventoryResult& OutResult, TArray<uint
 			OutResult = SteamInventoryResult;
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -334,6 +366,7 @@ bool UInventory::GenerateItems(FSteamInventoryResult& OutResult, TArray<FSteamIt
 	bool bResult = false;
 	OutResult = FSteamInventoryResult();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		SteamInventoryResult_t SteamInventoryResult;
@@ -357,6 +390,7 @@ bool UInventory::GenerateItems(FSteamInventoryResult& OutResult, TArray<FSteamIt
 			OutResult = SteamInventoryResult;
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -368,6 +402,7 @@ bool UInventory::GrantPromoItems(FSteamInventoryResult& OutResult)
 	bool bResult = false;
 	OutResult = FSteamInventoryResult();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		SteamInventoryResult_t SteamInventoryResult;
@@ -379,6 +414,7 @@ bool UInventory::GrantPromoItems(FSteamInventoryResult& OutResult)
 			OutResult = SteamInventoryResult;
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -390,6 +426,7 @@ bool UInventory::AddPromoItem(FSteamInventoryResult& OutResult, FSteamItemDef It
 	bool bResult = false;
 	OutResult = FSteamInventoryResult();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		SteamInventoryResult_t SteamInventoryResult;
@@ -401,6 +438,7 @@ bool UInventory::AddPromoItem(FSteamInventoryResult& OutResult, FSteamItemDef It
 			OutResult = SteamInventoryResult;
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -412,6 +450,7 @@ bool UInventory::AddPromoItems(FSteamInventoryResult& OutResult, TArray<FSteamIt
 	bool bResult = false;
 	OutResult = FSteamInventoryResult();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		SteamInventoryResult_t SteamInventoryResult;
@@ -431,6 +470,7 @@ bool UInventory::AddPromoItems(FSteamInventoryResult& OutResult, TArray<FSteamIt
 
 		return bResult;
 	}
+#endif
 
 	return bResult;
 }
@@ -442,6 +482,7 @@ bool UInventory::ConsumeItem(FSteamInventoryResult& OutResult, FSteamItemInstanc
 	bool bResult = false;
 	OutResult = FSteamInventoryResult();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		SteamInventoryResult_t SteamInventoryResult;
@@ -450,6 +491,7 @@ bool UInventory::ConsumeItem(FSteamInventoryResult& OutResult, FSteamItemInstanc
 
 		OutResult = SteamInventoryResult;
 	}
+#endif
 
 	return bResult;
 }
@@ -461,6 +503,7 @@ bool UInventory::ExchangeItems(FSteamInventoryResult& outResult, TArray<FSteamIt
 	bool bResult = false;
 	outResult = FSteamInventoryResult();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		TArray<SteamItemDef_t> SteamItemDefsGenerate;
@@ -494,6 +537,7 @@ bool UInventory::ExchangeItems(FSteamInventoryResult& outResult, TArray<FSteamIt
 			outResult = SteamInventoryResult;
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -504,6 +548,7 @@ bool UInventory::TransferItemQuantity(FSteamInventoryResult& OutResult, FSteamIt
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	SteamInventoryResult_t SteamInventoryResult;
 
 	if (GetInventory())
@@ -515,6 +560,7 @@ bool UInventory::TransferItemQuantity(FSteamInventoryResult& OutResult, FSteamIt
 			OutResult = SteamInventoryResult;
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -526,6 +572,7 @@ bool UInventory::TriggerItemDrop(FSteamInventoryResult& OutResult, FSteamItemDef
 	bool bResult = false;
 	OutResult = FSteamInventoryResult();
 
+#if ENABLE_STEAMCORE
 	SteamInventoryResult_t SteamInventoryResult;
 
 	if (GetInventory())
@@ -537,6 +584,7 @@ bool UInventory::TriggerItemDrop(FSteamInventoryResult& OutResult, FSteamItemDef
 			OutResult = SteamInventoryResult;
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -547,10 +595,12 @@ FSteamInventoryUpdateHandle UInventory::StartUpdateProperties()
 
 	FSteamInventoryUpdateHandle Handle;
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		Handle = GetInventory()->StartUpdateProperties();
 	}
+#endif
 
 	return Handle;
 }
@@ -562,6 +612,7 @@ bool UInventory::SubmitUpdateProperties(FSteamInventoryUpdateHandle Result, FSte
 	bool bResult = false;
 	ResultHandle = FSteamInventoryResult();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		SteamInventoryResult_t SteamInventoryResult;
@@ -573,6 +624,7 @@ bool UInventory::SubmitUpdateProperties(FSteamInventoryUpdateHandle Result, FSte
 			ResultHandle = SteamInventoryResult;
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -583,10 +635,12 @@ bool UInventory::RemoveProperty(FSteamInventoryUpdateHandle Result, FSteamItemIn
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		bResult = GetInventory()->RemoveProperty(Result, ItemID, TCHAR_TO_UTF8(*PropertyName));
 	}
+#endif
 
 	return bResult;
 }
@@ -597,6 +651,7 @@ bool UInventory::SetPropertyString(FSteamInventoryUpdateHandle Result, FSteamIte
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		const FTCHARToUTF8 ConvertedPropertyName(*PropertyName);
@@ -604,6 +659,7 @@ bool UInventory::SetPropertyString(FSteamInventoryUpdateHandle Result, FSteamIte
 
 		bResult = GetInventory()->SetProperty(Result, ItemID, ConvertedPropertyName.Get(), ConvertedValue.Get());
 	}
+#endif
 
 	return bResult;
 }
@@ -614,10 +670,12 @@ bool UInventory::SetPropertyBool(FSteamInventoryUpdateHandle Result, FSteamItemI
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		bResult = GetInventory()->SetProperty(Result, ItemID, TCHAR_TO_UTF8(*PropertyName), bValue);
 	}
+#endif
 
 	return bResult;
 }
@@ -628,10 +686,12 @@ bool UInventory::SetPropertyInt(FSteamInventoryUpdateHandle Result, FSteamItemIn
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		bResult = GetInventory()->SetProperty(Result, ItemID, TCHAR_TO_UTF8(*PropertyName), static_cast<int64>(Value));
 	}
+#endif
 
 	return bResult;
 }
@@ -642,10 +702,12 @@ bool UInventory::SetPropertyFloat(FSteamInventoryUpdateHandle Result, FSteamItem
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		bResult = GetInventory()->SetProperty(Result, ItemID, TCHAR_TO_UTF8(*PropertyName), Value);
 	}
+#endif
 
 	return bResult;
 }
@@ -656,10 +718,12 @@ bool UInventory::LoadItemDefinitions()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		bResult = GetInventory()->LoadItemDefinitions();
 	}
+#endif
 
 	return bResult;
 }
@@ -671,6 +735,7 @@ bool UInventory::GetItemDefinitionIDs(TArray<FSteamItemDef>& OutItemDefs)
 	bool bResult = false;
 	OutItemDefs.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		uint32 DataSize = 0;
@@ -689,6 +754,7 @@ bool UInventory::GetItemDefinitionIDs(TArray<FSteamItemDef>& OutItemDefs)
 			}
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -700,6 +766,7 @@ bool UInventory::GetItemDefinitionProperty(FSteamItemDef ItemDef, FString Proper
 	bool bResult = false;
 	OutValue.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		const FTCHARToUTF8 ConvertedPropertyName(*PropertyName);
@@ -720,6 +787,7 @@ bool UInventory::GetItemDefinitionProperty(FSteamItemDef ItemDef, FString Proper
 			}
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -731,6 +799,7 @@ bool UInventory::GetEligiblePromoItemDefinitionIDs(FSteamID SteamID, TArray<FSte
 	bool bResult = false;
 	OutItemDefs.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		uint32 DataSize = 0;
@@ -749,6 +818,7 @@ bool UInventory::GetEligiblePromoItemDefinitionIDs(FSteamID SteamID, TArray<FSte
 			}
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -757,28 +827,33 @@ void UInventory::RequestEligiblePromoItemDefinitionsIDs(const FOnRequestEligible
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		FOnlineAsyncTaskSteamCoreInventoryRequestEligiblePromoItemDefinitionsIDs* Task = new FOnlineAsyncTaskSteamCoreInventoryRequestEligiblePromoItemDefinitionsIDs(this, Callback, SteamID);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UInventory::RequestPrices(const FOnSteamInventoryRequestPricesResult& Callback)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetInventory())
 	{
 		FOnlineAsyncTaskSteamCoreInventoryRequestPricesResult* Task = new FOnlineAsyncTaskSteamCoreInventoryRequestPricesResult(this, Callback);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		Steam API Callbacks
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void UInventory::OnSteamInventoryResultReady(SteamInventoryResultReady_t* pParam)
 {
 	LogVerbose("");
@@ -844,3 +919,4 @@ void UInventory::OnSteamInventoryEligiblePromoItemDefIDs(SteamInventoryEligibleP
 		SteamInventoryEligiblePromoItemDefIDs.Broadcast(Data);
 	});
 }
+#endif

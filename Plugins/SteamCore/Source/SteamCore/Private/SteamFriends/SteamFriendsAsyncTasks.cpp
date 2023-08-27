@@ -11,6 +11,7 @@
 //		FOnlineAsyncTaskSteamCoreFriendsSetPersonaName
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void FOnlineAsyncTaskSteamCoreFriendsSetPersonaName::Tick()
 {
 	FOnlineAsyncTaskSteamCore::Tick();
@@ -420,3 +421,4 @@ void FOnlineAsyncTaskSteamCoreFriendsGetFollowerCount::TriggerDelegates()
 
 	m_OnSteamCallback.ExecuteIfBound(m_CallbackResults, bWasSuccessful);
 }
+#endif

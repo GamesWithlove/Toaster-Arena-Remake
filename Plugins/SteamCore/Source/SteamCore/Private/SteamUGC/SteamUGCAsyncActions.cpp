@@ -16,6 +16,7 @@ USteamCoreUGCAsyncActionStopPlaytimeTrackingForAllItems* USteamCoreUGCAsyncActio
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionStopPlaytimeTrackingForAllItems>();
@@ -27,6 +28,7 @@ USteamCoreUGCAsyncActionStopPlaytimeTrackingForAllItems* USteamCoreUGCAsyncActio
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -50,6 +52,7 @@ USteamCoreUGCAsyncActionStopPlaytimeTracking* USteamCoreUGCAsyncActionStopPlayti
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionStopPlaytimeTracking>();
@@ -61,6 +64,7 @@ USteamCoreUGCAsyncActionStopPlaytimeTracking* USteamCoreUGCAsyncActionStopPlayti
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -84,6 +88,7 @@ USteamCoreUGCAsyncActionStartPlaytimeTracking* USteamCoreUGCAsyncActionStartPlay
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionStartPlaytimeTracking>();
@@ -95,6 +100,7 @@ USteamCoreUGCAsyncActionStartPlaytimeTracking* USteamCoreUGCAsyncActionStartPlay
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -118,6 +124,7 @@ USteamCoreUGCAsyncActionUnsubscribeItem* USteamCoreUGCAsyncActionUnsubscribeItem
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionUnsubscribeItem>();
@@ -129,6 +136,7 @@ USteamCoreUGCAsyncActionUnsubscribeItem* USteamCoreUGCAsyncActionUnsubscribeItem
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -152,6 +160,7 @@ USteamCoreUGCAsyncActionSubscribeItem* USteamCoreUGCAsyncActionSubscribeItem::Su
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionSubscribeItem>();
@@ -163,6 +172,7 @@ USteamCoreUGCAsyncActionSubscribeItem* USteamCoreUGCAsyncActionSubscribeItem::Su
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -186,6 +196,7 @@ USteamCoreUGCAsyncActionRemoveItemFromFavorites* USteamCoreUGCAsyncActionRemoveI
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionRemoveItemFromFavorites>();
@@ -197,6 +208,7 @@ USteamCoreUGCAsyncActionRemoveItemFromFavorites* USteamCoreUGCAsyncActionRemoveI
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -220,6 +232,7 @@ USteamCoreUGCAsyncActionAddItemToFavorites* USteamCoreUGCAsyncActionAddItemToFav
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionAddItemToFavorites>();
@@ -231,6 +244,7 @@ USteamCoreUGCAsyncActionAddItemToFavorites* USteamCoreUGCAsyncActionAddItemToFav
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -254,6 +268,7 @@ USteamCoreUGCAsyncActionGetUserItemVote* USteamCoreUGCAsyncActionGetUserItemVote
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionGetUserItemVote>();
@@ -265,6 +280,7 @@ USteamCoreUGCAsyncActionGetUserItemVote* USteamCoreUGCAsyncActionGetUserItemVote
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -288,6 +304,7 @@ USteamCoreUGCAsyncActionSetUserItemVote* USteamCoreUGCAsyncActionSetUserItemVote
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionSetUserItemVote>();
@@ -299,6 +316,7 @@ USteamCoreUGCAsyncActionSetUserItemVote* USteamCoreUGCAsyncActionSetUserItemVote
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -322,6 +340,7 @@ USteamCoreUGCAsyncActionSubmitItemUpdate* USteamCoreUGCAsyncActionSubmitItemUpda
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionSubmitItemUpdate>();
@@ -333,6 +352,7 @@ USteamCoreUGCAsyncActionSubmitItemUpdate* USteamCoreUGCAsyncActionSubmitItemUpda
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -356,6 +376,7 @@ USteamCoreUGCAsyncActionCreateItem* USteamCoreUGCAsyncActionCreateItem::CreateIt
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionCreateItem>();
@@ -367,6 +388,7 @@ USteamCoreUGCAsyncActionCreateItem* USteamCoreUGCAsyncActionCreateItem::CreateIt
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -390,6 +412,7 @@ USteamCoreUGCAsyncActionSendQueryUGCRequest* USteamCoreUGCAsyncActionSendQueryUG
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionSendQueryUGCRequest>();
@@ -401,6 +424,7 @@ USteamCoreUGCAsyncActionSendQueryUGCRequest* USteamCoreUGCAsyncActionSendQueryUG
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -424,6 +448,7 @@ USteamCoreUGCAsyncActionAddAppDependency* USteamCoreUGCAsyncActionAddAppDependen
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionAddAppDependency>();
@@ -435,6 +460,7 @@ USteamCoreUGCAsyncActionAddAppDependency* USteamCoreUGCAsyncActionAddAppDependen
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -458,6 +484,7 @@ USteamCoreUGCAsyncActionRemoveAppDependency* USteamCoreUGCAsyncActionRemoveAppDe
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionRemoveAppDependency>();
@@ -469,6 +496,7 @@ USteamCoreUGCAsyncActionRemoveAppDependency* USteamCoreUGCAsyncActionRemoveAppDe
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -492,6 +520,7 @@ USteamCoreUGCAsyncActionAddUGCDependency* USteamCoreUGCAsyncActionAddUGCDependen
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionAddUGCDependency>();
@@ -503,6 +532,7 @@ USteamCoreUGCAsyncActionAddUGCDependency* USteamCoreUGCAsyncActionAddUGCDependen
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -526,6 +556,7 @@ USteamCoreUGCAsyncActionRemoveUGCDependency* USteamCoreUGCAsyncActionRemoveUGCDe
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionRemoveUGCDependency>();
@@ -537,6 +568,7 @@ USteamCoreUGCAsyncActionRemoveUGCDependency* USteamCoreUGCAsyncActionRemoveUGCDe
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -560,6 +592,7 @@ USteamCoreUGCAsyncActionDeleteItem* USteamCoreUGCAsyncActionDeleteItem::DeleteIt
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionDeleteItem>();
@@ -571,6 +604,7 @@ USteamCoreUGCAsyncActionDeleteItem* USteamCoreUGCAsyncActionDeleteItem::DeleteIt
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -594,6 +628,7 @@ USteamCoreUGCAsyncActionGetAppDependencies* USteamCoreUGCAsyncActionGetAppDepend
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionGetAppDependencies>();
@@ -605,6 +640,7 @@ USteamCoreUGCAsyncActionGetAppDependencies* USteamCoreUGCAsyncActionGetAppDepend
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -628,6 +664,7 @@ USteamCoreUGCAsyncActionDownloadItem* USteamCoreUGCAsyncActionDownloadItem::Down
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUGCAsyncActionDownloadItem>();
@@ -639,6 +676,7 @@ USteamCoreUGCAsyncActionDownloadItem* USteamCoreUGCAsyncActionDownloadItem::Down
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }

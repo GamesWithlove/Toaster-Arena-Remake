@@ -12,6 +12,7 @@ void UApps::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
 
+#if ENABLE_STEAMCORE
 	OnDLCInstalledCallback.Register(this, &UApps::OnDLCInstalled);
 	OnOnFileDetailsResultCallback.Register(this, &UApps::OnFileDetailsResult);
 
@@ -20,12 +21,15 @@ void UApps::Initialize(FSubsystemCollectionBase& Collection)
 		OnDLCInstalledCallback.SetGameserverFlag();
 		OnOnFileDetailsResultCallback.SetGameserverFlag();
 	}
+#endif
 }
 
 void UApps::Deinitialize()
 {
+#if ENABLE_STEAMCORE
 	OnDLCInstalledCallback.Unregister();
 	OnOnFileDetailsResultCallback.Unregister();
+#endif
 
 	Super::Deinitialize();
 }
@@ -40,10 +44,12 @@ bool UApps::BIsSubscribed()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		bResult = GetApps()->BIsSubscribed();
 	}
+#endif
 
 	return bResult;
 }
@@ -54,10 +60,12 @@ bool UApps::BIsLowViolence()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		bResult = GetApps()->BIsLowViolence();
 	}
+#endif
 
 	return bResult;
 }
@@ -68,10 +76,12 @@ bool UApps::BIsCybercafe()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		bResult = GetApps()->BIsCybercafe();
 	}
+#endif
 
 	return bResult;
 }
@@ -82,10 +92,12 @@ bool UApps::BIsVACBanned()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		bResult = GetApps()->BIsVACBanned();
 	}
+#endif
 
 	return bResult;
 }
@@ -96,10 +108,12 @@ FString UApps::GetCurrentGameLanguage()
 
 	FString Result;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		Result = UTF8_TO_TCHAR(GetApps()->GetCurrentGameLanguage());
 	}
+#endif
 
 	return Result;
 }
@@ -110,10 +124,12 @@ FString UApps::GetAvailableGameLanguages()
 
 	FString Result;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		Result = UTF8_TO_TCHAR(GetApps()->GetAvailableGameLanguages());
 	}
+#endif
 
 	return Result;
 }
@@ -124,10 +140,12 @@ bool UApps::BIsSubscribedApp(int32 AppID)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		bResult = GetApps()->BIsSubscribedApp(AppID);
 	}
+#endif
 
 	return bResult;
 }
@@ -138,10 +156,12 @@ bool UApps::BIsSubscribedFromFamilySharing()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		bResult = GetApps()->BIsSubscribedFromFamilySharing();
 	}
+#endif
 
 	return bResult;
 }
@@ -152,6 +172,7 @@ bool UApps::BIsTimedTrial(int32& SecondsAllowed, int32& SecondsPlayed)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 #if STEAM_VERSION >= 151
 	uint32 Allowed = 0;
 	uint32 Played = 0;
@@ -163,6 +184,7 @@ bool UApps::BIsTimedTrial(int32& SecondsAllowed, int32& SecondsPlayed)
 		SecondsPlayed = Played;
 	}
 #endif
+#endif
 
 	return bResult;
 }
@@ -173,10 +195,12 @@ bool UApps::BIsDlcInstalled(int32 AppID)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		bResult = GetApps()->BIsDlcInstalled(AppID);
 	}
+#endif
 
 	return bResult;
 }
@@ -187,10 +211,12 @@ int32 UApps::GetEarliestPurchaseUnixTime(int32 AppID)
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		Result = GetApps()->GetEarliestPurchaseUnixTime(AppID);
 	}
+#endif
 
 	return Result;
 }
@@ -201,10 +227,12 @@ bool UApps::BIsSubscribedFromFreeWeekend()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		bResult = GetApps()->BIsSubscribedFromFreeWeekend();
 	}
+#endif
 
 	return bResult;
 }
@@ -215,10 +243,12 @@ int32 UApps::GetDLCCount()
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		Result = GetApps()->GetDLCCount();
 	}
+#endif
 
 	return Result;
 }
@@ -232,6 +262,7 @@ bool UApps::BGetDLCDataByIndex(int32 DLC, int32& OutAppId, bool& bAvailable, FSt
 	bAvailable = false;
 	OutName.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		TArray<char> DataArray;
@@ -246,6 +277,7 @@ bool UApps::BGetDLCDataByIndex(int32 DLC, int32& OutAppId, bool& bAvailable, FSt
 			OutAppId = AppId;
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -254,20 +286,24 @@ void UApps::InstallDLC(int32 AppID)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		GetApps()->InstallDLC(AppID);
 	}
+#endif
 }
 
 void UApps::UninstallDLC(int32 AppID)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		GetApps()->UninstallDLC(AppID);
 	}
+#endif
 }
 
 bool UApps::GetCurrentBetaName(FString& OutName)
@@ -277,6 +313,7 @@ bool UApps::GetCurrentBetaName(FString& OutName)
 	bool bResult = false;
 	OutName.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		TArray<char> DataArray;
@@ -289,6 +326,7 @@ bool UApps::GetCurrentBetaName(FString& OutName)
 			OutName = UTF8_TO_TCHAR(DataArray.GetData());
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -299,10 +337,12 @@ bool UApps::MarkContentCorrupt(bool bMissingFilesOnly)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		bResult = GetApps()->MarkContentCorrupt(bMissingFilesOnly);
 	}
+#endif
 
 	return bResult;
 }
@@ -314,6 +354,7 @@ int32 UApps::GetInstalledDepots(int32 AppID, int32 MaxDepots, TArray<int32>& Out
 	int32 Result = 0;
 	OutDepots.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		TArray<DepotId_t> DataArray;
@@ -329,6 +370,7 @@ int32 UApps::GetInstalledDepots(int32 AppID, int32 MaxDepots, TArray<int32>& Out
 			}
 		}
 	}
+#endif
 
 	return Result;
 }
@@ -340,6 +382,7 @@ int UApps::GetLaunchCommandLine(FString& OutCommandline)
 	int Result = 0;
 	OutCommandline.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		TArray<char> DataArray;
@@ -349,6 +392,7 @@ int UApps::GetLaunchCommandLine(FString& OutCommandline)
 
 		OutCommandline = UTF8_TO_TCHAR(DataArray.GetData());
 	}
+#endif
 
 	return Result;
 }
@@ -360,6 +404,7 @@ int32 UApps::GetAppInstallDir(int32 AppID, FString& OutFolder)
 	int32 Result = 0;
 	OutFolder.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		TArray<char> DataArray;
@@ -372,6 +417,7 @@ int32 UApps::GetAppInstallDir(int32 AppID, FString& OutFolder)
 			OutFolder = UTF8_TO_TCHAR(DataArray.GetData());
 		}
 	}
+#endif
 
 	return Result;
 }
@@ -382,10 +428,12 @@ bool UApps::BIsAppInstalled(int32 AppID)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		bResult = GetApps()->BIsAppInstalled(AppID);
 	}
+#endif
 
 	return bResult;
 }
@@ -396,10 +444,12 @@ FSteamID UApps::GetAppOwner()
 
 	FSteamID Result;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		Result = GetApps()->GetAppOwner();
 	}
+#endif
 
 	return Result;
 }
@@ -415,11 +465,13 @@ FString UApps::GetLaunchQueryParam(FString Key)
 		return Result;
 	}
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		const FTCHARToUTF8 Converter(*Key);
 		Result = FString(UTF8_TO_TCHAR(GetApps()->GetLaunchQueryParam(Converter.Get())));
 	}
+#endif
 
 	return Result;
 }
@@ -432,6 +484,7 @@ bool UApps::GetDlcDownloadProgress(int32 AppID, int32& OutBytesDownloaded, int32
 	uint64 BytesDownloaded = 0;
 	uint64 BytesTotal = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		bResult = GetApps()->GetDlcDownloadProgress(AppID, &BytesDownloaded, &BytesTotal);
@@ -439,6 +492,7 @@ bool UApps::GetDlcDownloadProgress(int32 AppID, int32& OutBytesDownloaded, int32
 
 	OutBytesDownloaded = BytesDownloaded;
 	OutBytesTotal = BytesTotal;
+#endif
 
 	return bResult;
 }
@@ -449,10 +503,12 @@ int32 UApps::GetAppBuildId()
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		Result = GetApps()->GetAppBuildId();
 	}
+#endif
 
 	return Result;
 }
@@ -461,17 +517,20 @@ void UApps::GetFileDetails(const FOnFileDetailsResult& Callback, FString FileNam
 {
 	LogVeryVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetApps())
 	{
 		FOnlineAsyncTaskSteamCoreAppsGetFileDetails* Task = new FOnlineAsyncTaskSteamCoreAppsGetFileDetails(this, Callback, FileName);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		Steam API Callbacks
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void UApps::OnDLCInstalled(DlcInstalled_t* pParam)
 {
 	LogVerbose("");
@@ -493,3 +552,4 @@ void UApps::OnFileDetailsResult(FileDetailsResult_t* pParam)
 		FileDetailsResultDelegate.Broadcast(Data);
 	});
 }
+#endif

@@ -89,38 +89,6 @@
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/DragonIK/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/DragonIK/Binaries/Win64/UnrealEditor-DragonIKPlugin.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/DragonIK/Binaries/Win64/UnrealEditor-DragonIKPlugin.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/DragonIK/Binaries/Win64/UnrealEditor-DragonIKPluginEditor.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/DragonIK/Binaries/Win64/UnrealEditor-DragonIKPluginEditor.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EasyFileDialog/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EasyFileDialog/Binaries/Win64/UnrealEditor-EasyFileDialog.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EasyFileDialog/Binaries/Win64/UnrealEditor-EasyFileDialog.pdb",
-			"Type": "SymbolFile"
-		},
-		{
 			"Path": "$(ProjectDir)/Plugins/ModioPlugin/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
@@ -3416,14 +3384,6 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/DigSystem/DlgSystem.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/DragonIK/DragonIKPlugin.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EasyFileDialog/EasyFileDialog.uplugin",
 			"Type": "UFS"
 		},
 		{

@@ -12,6 +12,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		FOnlineAsyncTaskSteamCoreGameServerStatsUserStatsGS
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+#if ENABLE_STEAMCORE
 class STEAMCORE_API FOnlineAsyncTaskSteamCoreGameServerStatsUserStatsGS : public FOnlineAsyncTaskSteamCore
 {
 public:
@@ -62,3 +63,4 @@ private:
 	virtual void TriggerDelegates() override;
 	virtual FString ToString() const override { return FString::Printf(TEXT("FOnlineAsyncTaskSteamCoreGameServerStatsStoreUserStats")); }
 };
+#endif

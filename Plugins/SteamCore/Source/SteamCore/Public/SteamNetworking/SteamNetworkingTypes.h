@@ -54,6 +54,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamP2PSessionState(const P2PSessionState_t& Data)
 		: bConnectionActive(Data.m_bConnectionActive > 0)
 		  , bConnecting(Data.m_bConnecting > 0)
@@ -65,6 +66,7 @@ public:
 		  , RemotePort(Data.m_nRemotePort)
 	{
 	}
+#endif
 
 protected:
 	UPROPERTY(BlueprintReadWrite, Category = "Networking")
@@ -92,10 +94,12 @@ struct FP2PSessionRequest
 public:
 	FP2PSessionRequest() = default;
 
+#if ENABLE_STEAMCORE
 	FP2PSessionRequest(const P2PSessionRequest_t& Data)
 		: SteamIDRemote(Data.m_steamIDRemote)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "Networking")
@@ -112,11 +116,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FP2PSessionConnectFail(const P2PSessionConnectFail_t& Data)
 		: SteamIDRemote(Data.m_steamIDRemote)
 		  , P2PSessionError(static_cast<ESteamP2PSessionError>(Data.m_eP2PSessionError))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "Networking")

@@ -120,6 +120,22 @@ public:
 	void EnableHeartbeats(bool bActive);
 
 	/**
+	* Indicate whether you wish to be listed on the master server list
+	* and/or respond to server browser / LAN discovery packets.
+	* The server starts with this value set to false.  You should set all
+	*  relevant server parameters before enabling advertisement on the server.
+	*  	
+	*  (This function used to be named EnableHeartbeats, so if you are wondering
+	*  where that function went, it's right here.  It does the same thing as before,
+	*  the old name was just confusing.)
+	*
+	* @param	bActive		Enable (true) or disable (false) the master server updater.
+	*/
+	
+	UFUNCTION(BlueprintCallable, Category = "SteamCore|GameServer")
+	void SetAdvertiseServerActive(bool bActive);
+
+	/**
 	* Ends an auth session that was started with BeginAuthSession. This should be called when no longer playing with the specified entity.
 	*
 	* @param	SteamID		The entity to end the active auth session with.
@@ -383,10 +399,11 @@ private:
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(USteamGameServer, OnGSPolicyResponse, GSPolicyResponse_t, OnGSPolicyResponseCallback);
 	STEAM_CALLBACK_MANUAL(USteamGameServer, OnGSClientGroupStatus, GSClientGroupStatus_t, OnGSClientGroupStatusCallback);
 	STEAM_CALLBACK_MANUAL(USteamGameServer, OnGSValidateAuthTicketResponse, ValidateAuthTicketResponse_t, OnGSValidateAuthTicketResponseCallback);
 	STEAM_CALLBACK_MANUAL(USteamGameServer, OnGSClientApprove, GSClientApprove_t, OnGSClientApproveCallback);
 	STEAM_CALLBACK_MANUAL(USteamGameServer, OnGSClientDeny, GSClientDeny_t, OnGSClientDenyCallback);
+#endif
 };

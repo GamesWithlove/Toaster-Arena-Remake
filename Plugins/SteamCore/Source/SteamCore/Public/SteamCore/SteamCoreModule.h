@@ -15,6 +15,12 @@
 
 class FOnlineAsyncTaskManagerSteamCore;
 class FRunnableThread;
+class USteamCoreMatchmakingServersAsyncActionRequestServerList;
+class USteamCoreMatchmakingServersAsyncActionPingServer;
+class USteamCoreMatchmakingServersAsyncActionServerRules;
+class FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer;
+class FOnlineAsyncTaskSteamCoreMatchmakingServersServerList;
+class FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules;
 
 class STEAMCORE_API FSteamCoreModule : public IModuleInterface
 #if UE_VERSION_NEWER_THAN(4,27,2)
@@ -50,6 +56,12 @@ public:
 	FOnlineAsyncTaskManagerSteamCore* OnlineAsyncTaskThreadRunnable;
 	FRunnableThread* OnlineAsyncTaskThread;
 	ESteamSubsystem SubsystemType;
+	friend class USteamCoreMatchmakingServersAsyncActionRequestServerList;
+	friend class USteamCoreMatchmakingServersAsyncActionPingServer;
+	friend class USteamCoreMatchmakingServersAsyncActionServerRules;
+	friend class FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer;
+	friend class FOnlineAsyncTaskSteamCoreMatchmakingServersServerList;
+	friend class FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules;
 public:
 	USteamCoreSubsystem()
 		: SubsystemType(ESteamSubsystem::SteamCore)
@@ -63,7 +75,11 @@ protected:
 	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
 	virtual void Deinitialize() override;
 	virtual bool ShouldCreateSubsystem(UObject* Outer) const override;
-
+protected:
+	FOnlineAsyncTaskSteamCoreMatchmakingServersServerList* CurrentMatchmakingServersServerList; 
+	FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer* CurrentMatchmakingServersPingServer; 
+	FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules* CurrentMatchmakingServersServerRules; 
+	
 private:
 	bool bInitialized = false;
 };

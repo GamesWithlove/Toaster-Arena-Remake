@@ -43,7 +43,7 @@ public:
 	* @param	Name		The users new persona name. Can not be longer than k_cchPersonaNameMax bytes.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Set Persona Name"), Category = "SteamCore|Friends|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Set Persona Name", BlueprintInternalUseOnly="true"), Category = "SteamCore|Friends|Async")
 	static USteamCoreFriendsAsyncActionSetPersonaName* SetPersonaNameAsync(UObject* WorldContextObject, FString Name, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -69,7 +69,7 @@ public:
 	* @param	SteamIDClans	A list of steam groups to get the updated data for.
 	* @param	Timeout			How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Download Clan Activity Counts"), Category = "SteamCore|Friends|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Download Clan Activity Counts", BlueprintInternalUseOnly="true"), Category = "SteamCore|Friends|Async")
 	static USteamCoreFriendsAsyncActionDownloadClanActivityCounts* DownloadClanActivityCountsAsync(UObject* WorldContextObject, TArray<FSteamID> SteamIDClans, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -95,7 +95,7 @@ public:
 	* @param	SteamIDClan		The Steam group to get the officers list for.
 	* @param	Timeout			How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request Clan Officer List"), Category = "SteamCore|Friends|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request Clan Officer List", BlueprintInternalUseOnly="true"), Category = "SteamCore|Friends|Async")
 	static USteamCoreFriendsAsyncActionRequestClanOfficerList* RequestClanOfficerListAsync(UObject* WorldContextObject, FSteamID SteamIDClan, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -121,7 +121,7 @@ public:
 	* @param	SteamIDClan		The Steam ID of the Steam group to join.
 	* @param	Timeout			How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Join Clan Chat Room"), Category = "SteamCore|Friends|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Join Clan Chat Room", BlueprintInternalUseOnly="true"), Category = "SteamCore|Friends|Async")
 	static USteamCoreFriendsAsyncActionJoinClanChatRoom* JoinClanChatRoomAsync(UObject* WorldContextObject, FSteamID SteamIDClan, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -148,7 +148,7 @@ public:
 	* @param	StartIndex	The index to start receiving followers from. This should be 0 on the initial call.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Enumerate Following List"), Category = "SteamCore|Friends|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Enumerate Following List", BlueprintInternalUseOnly="true"), Category = "SteamCore|Friends|Async")
 	static USteamCoreFriendsAsyncActionEnumerateFollowingList* EnumerateFollowingListAsync(UObject* WorldContextObject, int32 StartIndex, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -172,7 +172,7 @@ public:
 	* @param	SteamID		The Steam ID of the check if we are following.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Is Following"), Category = "SteamCore|Friends|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Is Following", BlueprintInternalUseOnly="true"), Category = "SteamCore|Friends|Async")
 	static USteamCoreFriendsAsyncActionIsFollowing* IsFollowingAsync(UObject* WorldContextObject, FSteamID SteamID, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -196,7 +196,7 @@ public:
 	* @param	SteamID		The user to get the follower count for.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Follower Count"), Category = "SteamCore|Friends|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Follower Count", BlueprintInternalUseOnly="true"), Category = "SteamCore|Friends|Async")
 	static USteamCoreFriendsAsyncActionGetFollowerCount* GetFollowerCountAsync(UObject* WorldContextObject, FSteamID SteamID, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -221,7 +221,7 @@ public:
 	*
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request User Information (Async)"), Category = "SteamCore|Friends|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request User Information (Async)", BlueprintInternalUseOnly="true"), Category = "SteamCore|Friends|Async")
 	static USteamCoreFriendsAsyncActionRequestUserInformation* RequestUserInformationAsync(UObject* WorldContextObject, FSteamID SteamIDUser, bool bRequireNameOnly, float Timeout = 10.f);
 
 protected:
@@ -233,5 +233,7 @@ public:
 	UFUNCTION()
 	void HandleCallback();
 private:
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(USteamCoreFriendsAsyncActionRequestUserInformation, OnPersonaStateChange, PersonaStateChange_t, OnPersonaStateChangeCallback);
+#endif
 };

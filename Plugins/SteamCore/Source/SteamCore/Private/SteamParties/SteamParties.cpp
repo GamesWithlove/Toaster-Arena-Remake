@@ -11,7 +11,7 @@
 void USteamParties::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
-
+#if ENABLE_STEAMCORE
 	if (SteamParties())
 	{
 		OnJoinPartyCallback.Register(this, &USteamParties::OnJoinPartyUpdated);
@@ -31,10 +31,12 @@ void USteamParties::Initialize(FSubsystemCollectionBase& Collection)
 			OnActiveBeaconsCallback.SetGameserverFlag();
 		}
 	}
+#endif
 }
 
 void USteamParties::Deinitialize()
 {
+#if ENABLE_STEAMCORE
 	if (SteamParties())
 	{
 		OnJoinPartyCallback.Unregister();
@@ -44,6 +46,7 @@ void USteamParties::Deinitialize()
 		OnReservationNotificationCallback.Unregister();
 		OnActiveBeaconsCallback.Unregister();
 	}
+#endif
 
 	Super::Deinitialize();
 }
@@ -58,10 +61,12 @@ int32 USteamParties::GetNumActiveBeacons()
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamParties())
 	{
 		Result = SteamParties()->GetNumActiveBeacons();
 	}
+#endif
 
 	return Result;
 }
@@ -72,10 +77,12 @@ FPartyBeaconID USteamParties::GetBeaconByIndex(int32 Index)
 
 	FPartyBeaconID Result;
 
+#if ENABLE_STEAMCORE
 	if (SteamParties())
 	{
 		Result = SteamParties()->GetBeaconByIndex(Index);
 	}
+#endif
 
 	return Result;
 }
@@ -86,6 +93,7 @@ bool USteamParties::GetBeaconDetails(FPartyBeaconID BeaconId, FSteamID& SteamIDB
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamParties())
 	{
 		CSteamID Owner = {};
@@ -103,6 +111,7 @@ bool USteamParties::GetBeaconDetails(FPartyBeaconID BeaconId, FSteamID& SteamIDB
 			OutMetadata = UTF8_TO_TCHAR(MetaData.GetData());
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -111,11 +120,13 @@ void USteamParties::JoinParty(const FOnJoinParty& Callback, FPartyBeaconID Beaco
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamParties())
 	{
 		FOnlineAsyncTaskSteamCorePartiesJoinParty* Task = new FOnlineAsyncTaskSteamCorePartiesJoinParty(this, Callback, BeaconId);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool USteamParties::GetNumAvailableBeaconLocations(int32& PuNumLocations)
@@ -124,12 +135,14 @@ bool USteamParties::GetNumAvailableBeaconLocations(int32& PuNumLocations)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamParties())
 	{
 		uint32 NumLocations;
 		bResult = SteamParties()->GetNumAvailableBeaconLocations(&NumLocations);
 		PuNumLocations = NumLocations;
 	}
+#endif
 
 	return bResult;
 }
@@ -140,6 +153,7 @@ bool USteamParties::GetAvailableBeaconLocations(TArray<FSteamPartyBeaconLocation
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamParties())
 	{
 		TArray<SteamPartyBeaconLocation_t> LocationList;
@@ -155,6 +169,7 @@ bool USteamParties::GetAvailableBeaconLocations(TArray<FSteamPartyBeaconLocation
 			}
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -164,43 +179,50 @@ void USteamParties::CreateBeacon(const FOnCreateBeacon& Callback, int32 OpenSlot
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamParties())
 	{
 		FOnlineAsyncTaskSteamCorePartiesCreateBeacon* Task = new FOnlineAsyncTaskSteamCorePartiesCreateBeacon(this, Callback, OpenSlots, BeaconLocation, ConnectString, Metadata);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void USteamParties::OnReservationCompleted(FPartyBeaconID BeaconId, FSteamID SteamIDUser)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamParties())
 	{
 		SteamParties()->OnReservationCompleted(BeaconId, SteamIDUser);
 	}
+#endif
 }
 
 void USteamParties::CancelReservation(FPartyBeaconID BeaconId, FSteamID SteamIDUser)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamParties())
 	{
 		SteamParties()->CancelReservation(BeaconId, SteamIDUser);
 	}
+#endif
 }
-
 
 void USteamParties::ChangeNumOpenSlots(const FOnChangeNumOpenSlots& Callback, FPartyBeaconID BeaconId, int32 OpenSlots)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamParties())
 	{
 		FOnlineAsyncTaskSteamCorePartiesChangeNumOpenSlots* Task = new FOnlineAsyncTaskSteamCorePartiesChangeNumOpenSlots(this, Callback, BeaconId, OpenSlots);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool USteamParties::DestroyBeacon(FPartyBeaconID BeaconId)
@@ -209,10 +231,12 @@ bool USteamParties::DestroyBeacon(FPartyBeaconID BeaconId)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamParties())
 	{
 		bResult = SteamParties()->DestroyBeacon(BeaconId);
 	}
+#endif
 
 	return bResult;
 }
@@ -223,6 +247,7 @@ bool USteamParties::GetBeaconLocationData(FSteamPartyBeaconLocation BeaconLocati
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamParties())
 	{
 		TArray<char> OutString;
@@ -239,10 +264,12 @@ bool USteamParties::GetBeaconLocationData(FSteamPartyBeaconLocation BeaconLocati
 			PCHDataStringOut = UTF8_TO_TCHAR(OutString.GetData());
 		}
 	}
+#endif
 
 	return bResult;
 }
 
+#if ENABLE_STEAMCORE
 void USteamParties::OnActiveBeaconsUpdated(ActiveBeaconsUpdated_t* pParam)
 {
 	LogVerbose("");
@@ -308,3 +335,4 @@ void USteamParties::OnChangeNumOpenSlotsUpdated(ChangeNumOpenSlotsCallback_t* pP
 		ChangeNumOpenSlotsDelegate.Broadcast(Data);
 	});
 }
+#endif

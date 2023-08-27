@@ -9,6 +9,7 @@
 #include "BackgroundBlurPostProcessor.h"
 #include "BackgroundBlurShaders.h"
 #include "BackgroundBlurRenderer.h"
+#include "TextureResource.h"
 
 #define INVALID_LAYER_ID UINT_MAX
 
@@ -140,7 +141,6 @@ static bool UpdateScissorRect(
 	const FSlateClippingState* ClippingState,
 	FTexture2DRHIRef& ColorTarget,
 	const FVector2D& ViewTranslation2D,
-	bool bSwitchVerticalAxis,
 	FGraphicsPipelineStateInitializer& InGraphicsPSOInit,
 	bool bForceStateChange)
 {
@@ -165,31 +165,15 @@ static bool UpdateScissorRect(
 				const FVector2D TopLeft = FMath::Min(FMath::Max(FVector2D(ScissorRect.TopLeft) + ViewTranslation2D, FVector2D(0.0f, 0.0f)), ViewSize);
 				const FVector2D BottomRight = FMath::Min(FMath::Max(FVector2D(ScissorRect.BottomRight) + ViewTranslation2D, FVector2D(0.0f, 0.0f)), ViewSize);
 
-				if (bSwitchVerticalAxis)
+				if (TopLeft.X <= BottomRight.X && TopLeft.Y <= BottomRight.Y)
 				{
-					const int32 MinY = (ViewSize.Y - BottomRight.Y);
-					const int32 MaxY = (ViewSize.Y - TopLeft.Y);
-					ensure(TopLeft.X <= BottomRight.X && MinY <= MaxY);
-					if (TopLeft.X <= BottomRight.X && TopLeft.Y <= BottomRight.Y)
-					{
-						RHICmdList.SetScissorRect(true, TopLeft.X, MinY, BottomRight.X, MaxY);
-					}
-					else
-					{
-						RHICmdList.SetScissorRect(false, 0, 0, 0, 0);
-					}
+					RHICmdList.SetScissorRect(true, TopLeft.X, TopLeft.Y, BottomRight.X, BottomRight.Y);
 				}
 				else
 				{
-					if (TopLeft.X <= BottomRight.X && TopLeft.Y <= BottomRight.Y)
-					{
-						RHICmdList.SetScissorRect(true, TopLeft.X, TopLeft.Y, BottomRight.X, BottomRight.Y);
-					}
-					else
-					{
-						RHICmdList.SetScissorRect(false, 0, 0, 0, 0);
-					}
+					RHICmdList.SetScissorRect(false, 0, 0, 0, 0);
 				}
+				//RHICmdList.SetScissorRect(true, TopLeft.X, TopLeft.Y, BottomRight.X, BottomRight.Y);
 
 				// Disable depth/stencil testing by default
 				InGraphicsPSOInit.DepthStencilState = TStaticDepthStencilState<false, CF_Always>::GetRHI();
@@ -232,7 +216,7 @@ void FBackgroundBlurDrawer::DrawRenderThread(FRHICommandListImmediate& RHICmdLis
 
 		// Currently, BackgroundBlur for 3D widget is not supported.
 		FVector2D ViewTranslation2D = FVector2D::ZeroVector;
-		bool bSwitchVerticalAxis = RHINeedsToSwitchVerticalAxis(GShaderPlatformForFeatureLevel[GMaxRHIFeatureLevel]);
+		//bool bSwitchVerticalAxis = RHINeedsToSwitchVerticalAxis(GShaderPlatformForFeatureLevel[GMaxRHIFeatureLevel]);
 
 		FPostProcessRectParams RectParams;
 		RectParams.SourceTexture = PostProcessTexture->GetTexture2D();
@@ -247,7 +231,6 @@ void FBackgroundBlurDrawer::DrawRenderThread(FRHICommandListImmediate& RHICmdLis
 				ClippingState,
 				ColorTarget,
 				ViewTranslation2D,
-				bSwitchVerticalAxis,
 				InGraphicsPSOInit,
 				true);
 		};

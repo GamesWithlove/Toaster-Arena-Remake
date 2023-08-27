@@ -36,7 +36,7 @@ public:
 	*
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request Encrypted App Ticket"), Category = "SteamCore|User|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request Encrypted App Ticket", AutoCreateRefTerm = "DataToInclude", BlueprintInternalUseOnly="true"), Category = "SteamCore|User|Async")
 	static USteamCoreUserAsyncActionRequestEncryptedAppTicket* RequestEncryptedAppTicketAsync(UObject* WorldContextObject, TArray<uint8> DataToInclude, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -63,7 +63,7 @@ public:
 	*
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request Store Auth URL"), Category = "SteamCore|User|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request Store Auth URL", BlueprintInternalUseOnly="true"), Category = "SteamCore|User|Async")
 	static USteamCoreUserAsyncActionRequestStoreAuthURL* RequestStoreAuthURLAsync(UObject* WorldContextObject, FString RedirectURL, float Timeout = 10.f);
 public:
 	UFUNCTION()

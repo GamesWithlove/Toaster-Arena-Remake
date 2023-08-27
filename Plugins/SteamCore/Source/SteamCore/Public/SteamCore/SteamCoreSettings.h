@@ -41,7 +41,7 @@ enum class ESteamSubsystem : uint8
 
 ENUM_CLASS_FLAGS(ESteamSubsystem)
 
-UCLASS(config=Engine, defaultconfig, meta = (DisplayName = "SteamCore Plugin"))
+UCLASS(meta = (DisplayName = "SteamCore Plugin"))
 class STEAMCORE_API USteamCoreSettings : public UDeveloperSettings
 {
 	GENERATED_BODY()

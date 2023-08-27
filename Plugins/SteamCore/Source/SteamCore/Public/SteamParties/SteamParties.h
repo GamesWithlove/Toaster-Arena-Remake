@@ -184,11 +184,12 @@ private:
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(USteamParties, OnJoinPartyUpdated, JoinPartyCallback_t, OnJoinPartyCallback);
 	STEAM_CALLBACK_MANUAL(USteamParties, OnCreateBeaconUpdated, CreateBeaconCallback_t, OnCreateBeaconCallback);
 	STEAM_CALLBACK_MANUAL(USteamParties, OnReservationNotificationUpdated, ReservationNotificationCallback_t, OnReservationNotificationCallback);
 	STEAM_CALLBACK_MANUAL(USteamParties, OnChangeNumOpenSlotsUpdated, ChangeNumOpenSlotsCallback_t, OnChangeNumOpenSlotsCallback);
 	STEAM_CALLBACK_MANUAL(USteamParties, OnAvailableBeaconLocationsUpdated, AvailableBeaconLocationsUpdated_t, OnAvailableBeaconLocationsCallback);
 	STEAM_CALLBACK_MANUAL(USteamParties, OnActiveBeaconsUpdated, ActiveBeaconsUpdated_t, OnActiveBeaconsCallback);
+#endif
 };

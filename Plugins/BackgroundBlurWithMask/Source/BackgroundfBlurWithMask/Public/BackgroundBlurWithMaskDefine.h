@@ -43,7 +43,7 @@ public:
 	 * Mask material to control blur region.
 	 */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Appearance)
-		UMaterialInterface* MaskMaterial;
+		UMaterialInterface* MaskMaterial = nullptr;
 
 	/**
 	 * Mask material paint to mask texture size.

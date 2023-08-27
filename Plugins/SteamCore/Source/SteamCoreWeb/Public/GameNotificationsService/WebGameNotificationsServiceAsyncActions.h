@@ -37,7 +37,7 @@ public:
 	* @param	Users				The initial state of all Users in the session.
 	* @param	SteamId				(Optional) Steam ID to make the request on behalf of -- if specified, the user must be in the session and all Users being added to the session must be friends with the user.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Create Session"), Category = "SteamCoreWeb|GameNotificationsService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Create Session", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|GameNotificationsService|Async")
 	static USteamCoreWebAsyncActionCreateSession* CreateSessionAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString Context, FString Title, FString Users, FString SteamId);
 };
 
@@ -63,7 +63,7 @@ public:
 	* @param	Users				(Optional) A list of Users whose state will be updated to reflect the given state. If the Users are not already in the session, they will be added to it.
 	* @param	SteamId				(Optional) Steam ID to make the request on behalf of -- if specified, the user must be in the session.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Update Session"), Category = "SteamCoreWeb|GameNotificationsService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Update Session", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|GameNotificationsService|Async")
 	static USteamCoreWebAsyncActionUpdateSession* UpdateSessionAsync(UObject* WorldContextObject, FString Key, FString SessionId, int32 AppId, FString Title, FString Users, FString SteamId);
 };
 
@@ -87,7 +87,7 @@ public:
 	* @param	bIncludeAuthUserMessage		(Optional) Set whether the message for the authenticated user should be included. Defaults to false.
 	* @param	Language					(Optional) Language to localize the text in.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Enumerate Sessions for App"), Category = "SteamCoreWeb|GameNotificationsService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Enumerate Sessions for App", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|GameNotificationsService|Async")
 	static USteamCoreWebAsyncActionEnumerateSessionsForApp* EnumerateSessionsForAppAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString SteamId, bool bIncludeAllUserMessages, bool bIncludeAuthUserMessage, FString Language);
 };
 
@@ -107,7 +107,7 @@ public:
 	* @param	AppId				The appid for the sessions.
 	* @param	Language			Language to localize the text in.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Session Details for App"), Category = "SteamCoreWeb|GameNotificationsService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Session Details for App", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|GameNotificationsService|Async")
 	static USteamCoreWebAsyncActionGetSessionDetailsForApp* GetSessionDetailsForAppAsync(UObject* WorldContextObject, FString Key, FString sessions, int32 AppId, FString Language);
 };
 
@@ -130,7 +130,7 @@ public:
 	* @param	SteamId			The Steam ID to request notifications for.
 	* @param	AppId			The App ID to request notifications for.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request Notifications"), Category = "SteamCoreWeb|GameNotificationsService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request Notifications", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|GameNotificationsService|Async")
 	static USteamCoreWebAsyncActionRequestNotifications* RequestNotificationsAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId);
 };
 
@@ -150,7 +150,7 @@ public:
 	* @param	AppId				The App ID of the session to delete.
 	* @param	SteamId				(Optional) Steam ID to make the request on behalf of -- if specified, the user must be in the session.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Delete Session"), Category = "SteamCoreWeb|GameNotificationsService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Delete Session", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|GameNotificationsService|Async")
 	static USteamCoreWebAsyncActionDeleteSession* DeleteSessionAsync(UObject* WorldContextObject, FString Key, FString SessionId, int32 AppId, FString SteamId);
 };
 
@@ -169,6 +169,6 @@ public:
 	* @param	SessionId (int64)	The sessionid to delete.
 	* @param	AppId				The App ID of the session to delete.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Delete Session Batch"), Category = "SteamCoreWeb|GameNotificationsService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Delete Session Batch", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|GameNotificationsService|Async")
 	static USteamCoreWebAsyncActionDeleteSessionBatch* DeleteSessionBatchAsync(UObject* WorldContextObject, FString Key, FString SessionId, int32 AppId);
 };

@@ -11,6 +11,7 @@
 //		FOnlineAsyncTaskSteamCoreUserStatsFindLeaderboard
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void FOnlineAsyncTaskSteamCoreUserStatsFindLeaderboard::Tick()
 {
 	FOnlineAsyncTaskSteamCore::Tick();
@@ -591,3 +592,4 @@ void FOnlineAsyncTaskSteamCoreUserStatsAttachLeaderboardUGC::TriggerDelegates()
 
 	m_OnSteamCallback.ExecuteIfBound(m_CallbackResults, bWasSuccessful);
 }
+#endif

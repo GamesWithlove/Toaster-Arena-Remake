@@ -23,7 +23,7 @@ public:
 	* @param	Key			Steamworks Web API publisher authentication key.
 	* @param	AppID		The App ID to get the betas of.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get App Betas"), Category = "SteamCoreWeb|Apps|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get App Betas", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Apps|Async")
 	static USteamCoreAppsAsyncActionGetAppBetas* GetAppBetasAsync(UObject* WorldContextObject, FString Key, int32 AppID);
 };
 
@@ -44,7 +44,7 @@ public:
 	* @param	AppID		The App ID to get the build history of.
 	* @param	Count		The number of builds to retrieve, the default is 10.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get App Builds"), Category = "SteamCoreWeb|Apps|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get App Builds", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Apps|Async")
 	static USteamCoreAppsAsyncActionGetAppBuilds* GetAppBuildsAsync(UObject* WorldContextObject, FString Key, int32 AppID, int32 Count = 10);
 };
 
@@ -64,7 +64,7 @@ public:
 	* @param	Key			Steamworks Web API publisher authentication key.
 	* @param	AppID		The App ID to get the depot versions for.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get App Depot Versions"), Category = "SteamCoreWeb|Apps|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get App Depot Versions", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Apps|Async")
 	static USteamCoreAppsAsyncActionGetAppDepotVersions* GetAppDepotVersionsAsync(UObject* WorldContextObject, FString Key, int32 AppID);
 };
 
@@ -72,17 +72,38 @@ public:
 //		USteamCoreAppsAsyncActionGetAppList
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 UCLASS()
-class STEAMCOREWEB_API USteamCoreAppsAsyncActionGetAppList : public USteamCoreWebAsyncAction
+class STEAMCOREWEB_API USteamCoreAppsAsyncActionGetAppList : public UBlueprintAsyncActionBase
 {
 	GENERATED_BODY()
 public:
+	USteamCoreAppsAsyncActionGetAppList()
+	{
+		OnSteamCoreWebAppListCallback.BindUFunction(this, "HandleCallback");
+	}
+
+	virtual ~USteamCoreAppsAsyncActionGetAppList() override
+	{
+		OnSteamCoreWebAppListCallback.Unbind();
+	}
+
+	UFUNCTION()
+	virtual void HandleCallback(const TArray<FWebAppsGetAppList>& data, bool bWasSuccessful)
+	{
+		OnCallback.Broadcast(data, bWasSuccessful);
+		
+		SetReadyToDestroy();
+	};
+	
 	/**
 	* Gets the complete list of public apps.
-	*
-	* @param	Key		Steamworks Web API publisher authentication key.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get App List"), Category = "SteamCoreWeb|Apps|Async")
-	static USteamCoreAppsAsyncActionGetAppList* GetAppListAsync(UObject* WorldContextObject, FString Key);
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get App List", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Apps|Async")
+	static USteamCoreAppsAsyncActionGetAppList* GetAppListAsync(UObject* WorldContextObject);
+
+	UPROPERTY(BlueprintAssignable)
+	FOnSteamCoreWebAppListAsyncCallback OnCallback;
+	
+	FOnSteamCoreWebAppListCallback OnSteamCoreWebAppListCallback;
 };
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -107,7 +128,7 @@ public:
 	* @param	bIncludeBans		include reports that were bans
 	* @param	ReportidMin			minimum report id
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Cheating Reports"), Category = "SteamCoreWeb|Apps|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Cheating Reports", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Apps|Async")
 	static USteamCoreAppsAsyncActionGetCheatingReports* GetCheatingReportsAsync(UObject* WorldContextObject, FString Key, int32 AppID, int32 TimeBegin, int32 TimeEnd, bool bIncludeReports, bool bIncludeBans, int32 ReportidMin);
 };
 
@@ -125,7 +146,7 @@ public:
 	* @param	Key		Steamworks Web API publisher authentication key.
 	* @param	AppID		AppID of game
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Players Banned"), Category = "SteamCoreWeb|Apps|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Players Banned", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Apps|Async")
 	static USteamCoreAppsAsyncActionGetPlayersBanned* GetPlayersBannedAsync(UObject* WorldContextObject, FString Key, int32 AppID);
 };
 
@@ -144,7 +165,7 @@ public:
 	* @param	Filter		Query filter string
 	* @param	Limit		Limit number of servers in the response
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Server List"), Category = "SteamCoreWeb|Apps|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Server List", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Apps|Async")
 	static USteamCoreAppsAsyncActionGetServerList* GetServerListAsync(UObject* WorldContextObject, FString Key, FString Filter, int32 Limit);
 };
 
@@ -159,7 +180,7 @@ public:
 	/**
 	* @param	Addr	IP or IP:queryport to list
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Servers at Address"), Category = "SteamCoreWeb|Apps|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Servers at Address", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Apps|Async")
 	static USteamCoreAppsAsyncActionGetServersAtAddress* GetServersAtAddressAsync(UObject* WorldContextObject, FString Addr);
 };
 
@@ -180,7 +201,7 @@ public:
 	* @param	BetaKey			beta key, required. Use public for default branch
 	* @param	Description		optional description for this build
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Set App Build Live"), Category = "SteamCoreWeb|Apps|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Set App Build Live", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Apps|Async")
 	static USteamCoreAppsAsyncActionSetAppBuildLive* SetAppBuildLiveAsync(UObject* WorldContextObject, FString Key, int32 AppID, int32 BuildID, FString BetaKey, FString Description);
 };
 
@@ -196,6 +217,6 @@ public:
 	* @param	AppID		AppID of game
 	* @param	Version		The installed version of the game
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Up To Date Check"), Category = "SteamCoreWeb|Apps|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Up To Date Check", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Apps|Async")
 	static USteamCoreAppsAsyncActionUpToDateCheck* UpToDateCheckAsync(UObject* WorldContextObject, int32 AppID, int32 Version);
 };

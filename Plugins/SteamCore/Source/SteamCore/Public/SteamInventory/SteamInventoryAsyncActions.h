@@ -37,7 +37,7 @@ public:
 	* @param	SteamID		The Steam ID of the user to request the eligible promo items for.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request Eligible Promo Item Definitions IDs"), Category = "SteamCore|Inventory|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request Eligible Promo Item Definitions IDs", BlueprintInternalUseOnly="true"), Category = "SteamCore|Inventory|Async")
 	static USteamCoreInventoryAsyncActionRequestEligiblePromoItemDefinitionsIDs* RequestEligiblePromoItemDefinitionsIDsAsync(UObject* WorldContextObject, FSteamID SteamID, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -62,7 +62,7 @@ public:
 	*
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request Prices"), Category = "SteamCore|Inventory|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request Prices", BlueprintInternalUseOnly="true"), Category = "SteamCore|Inventory|Async")
 	static USteamCoreInventoryAsyncActionRequestPricesResult* RequestPricesAsync(UObject* WorldContextObject, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -92,7 +92,7 @@ public:
 	* @param	Quantity		The array of quantities of each item definition that the user wants to purchase.
 	* @param	Timeout			How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Start Purchase"), Category = "SteamCore|Inventory|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Start Purchase", BlueprintInternalUseOnly="true"), Category = "SteamCore|Inventory|Async")
 	static USteamCoreInventoryAsyncActionStartPurchaseResult* StartPurchaseAsync(UObject* WorldContextObject, const TArray<FSteamItemDef> ItemDefs, const TArray<int32> Quantity, float Timeout = 10.f);
 public:
 	UFUNCTION()

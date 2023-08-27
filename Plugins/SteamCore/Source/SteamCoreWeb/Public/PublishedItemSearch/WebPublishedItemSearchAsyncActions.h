@@ -33,7 +33,7 @@ public:
 	* @param	Tag						Tag to filter result set
 	* @param	UserTag					A user specific Tag
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Ranked by Publication Order", AutoCreateRefTerm = "Tag,UserTag"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Ranked by Publication Order", AutoCreateRefTerm = "Tag,UserTag", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionRankedByPublicationOrder* RankedByPublicationOrderAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, int32 StartId, int32 Count, bool bHasAppAdminAccess, int32 FileType, TArray<FString> Tag, TArray<FString> UserTag);
 };
 
@@ -59,7 +59,7 @@ public:
 	* @param	Tag						Tag to filter result set
 	* @param	UserTag					A user specific Tag
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Ranked by Trend", AutoCreateRefTerm = "Tag,UserTag"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Ranked by Trend", AutoCreateRefTerm = "Tag,UserTag", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionRankedByTrend* RankedByTrendAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, int32 StartId, int32 Count, bool bHasAppAdminAccess, int32 FileType, int32 Days, TArray<FString> Tag, TArray<FString> UserTag);
 };
 
@@ -84,7 +84,7 @@ public:
 	* @param	Tag						Tag to filter result set
 	* @param	UserTag					A user specific Tag
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Ranked by Vote", AutoCreateRefTerm = "Tag,UserTag"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Ranked by Vote", AutoCreateRefTerm = "Tag,UserTag", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionRankedByVote* RankedByVoteAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, int32 StartId, int32 Count, bool bHasAppAdminAccess, int32 FileType, TArray<FString> Tag, TArray<FString> UserTag);
 };
 
@@ -108,6 +108,6 @@ public:
 	* @param	Tag						Tag to filter result set
 	* @param	UserTag					A user specific Tag
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Result Set Summary", AutoCreateRefTerm = "Tag,UserTag"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Result Set Summary", AutoCreateRefTerm = "Tag,UserTag", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionResultSetSummary* ResultSetSummaryAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, int32 StartId, bool bHasAppAdminAccess, int32 FileType, TArray<FString> Tag, TArray<FString> UserTag);
 };

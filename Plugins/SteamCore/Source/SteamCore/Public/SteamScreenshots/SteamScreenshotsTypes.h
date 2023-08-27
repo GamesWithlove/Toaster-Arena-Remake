@@ -60,11 +60,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FScreenshotReady(const ScreenshotReady_t& Data)
 		: Handle(Data.m_hLocal)
 		  , Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Screenshots")
@@ -80,9 +82,11 @@ struct FScreenshotRequested
 public:
 	FScreenshotRequested() = default;
 
+#if ENABLE_STEAMCORE
 	FScreenshotRequested(const ScreenshotRequested_t& Data)
 	{
 	}
+#endif
 };
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //

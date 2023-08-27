@@ -8,6 +8,7 @@
 #include "SteamCore/SteamUtilities.h"
 #include "SteamCorePluginPrivatePCH.h"
 
+#if ENABLE_STEAMCORE
 HServerListRequest FOnlineAsyncTaskSteamCoreMatchmakingServersServerList::m_CallbackResults = nullptr;
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -23,19 +24,31 @@ FOnlineAsyncTaskSteamCoreMatchmakingServersServerList::FOnlineAsyncTaskSteamCore
 	, m_bIgnoreNonResponsive(bIgnoreNonResponsive)
 	, m_ServerFilter(ServerFilter)
 {
-	USteamUtilities::CancelQuery();
-	USteamUtilities::ReleaseRequest();
-
 	m_AsyncTimeout = Timeout;
+	
+	if (Subsystem)
+	{
+		if (Subsystem->CurrentMatchmakingServersServerList != nullptr)
+		{
+			Subsystem->CurrentMatchmakingServersServerList->CancelServerQuery();
+		}
+		
+		Subsystem->CurrentMatchmakingServersServerList = this;
+	}
 }
 
 FOnlineAsyncTaskSteamCoreMatchmakingServersServerList::~FOnlineAsyncTaskSteamCoreMatchmakingServersServerList()
 {
-	USteamUtilities::CancelQuery();
-	USteamUtilities::ReleaseRequest();
-
 	m_OnSteamCallback.Unbind();
 	m_OnServerRefreshCompleted.Unbind();
+
+	if (Subsystem)
+	{
+		if (Subsystem->CurrentMatchmakingServersServerList == this)
+		{
+			Subsystem->CurrentMatchmakingServersServerList = nullptr;
+		}
+	}
 }
 
 void FOnlineAsyncTaskSteamCoreMatchmakingServersServerList::Tick()
@@ -126,8 +139,22 @@ void FOnlineAsyncTaskSteamCoreMatchmakingServersServerList::Finalize()
 {
 	LogVerbose("");
 
-	USteamUtilities::CancelQuery();
-	USteamUtilities::ReleaseRequest();
+	CancelServerQuery();
+}
+
+void FOnlineAsyncTaskSteamCoreMatchmakingServersServerList::CancelServerQuery()
+{
+	LogVerbose("");
+
+	if (!bIsComplete)
+	{
+		bIsComplete = true;
+		bWasSuccessful = false;
+	}
+	
+	SteamMatchmakingServers()->CancelQuery(m_CallbackResults);
+	SteamMatchmakingServers()->ReleaseRequest(m_CallbackResults);
+	m_CallbackResults = nullptr;
 }
 
 void FOnlineAsyncTaskSteamCoreMatchmakingServersServerList::ServerResponded(HServerListRequest Request, int iServer)
@@ -178,7 +205,17 @@ void FOnlineAsyncTaskSteamCoreMatchmakingServersServerList::RefreshComplete(HSer
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-HServerQuery FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer::m_CallbackResults = k_uAPICallInvalid;
+
+FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer::~FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer()
+{
+	if (Subsystem)
+	{
+		if (Subsystem->CurrentMatchmakingServersPingServer == this)
+		{
+			Subsystem->CurrentMatchmakingServersPingServer = nullptr;
+		}
+	}
+}
 
 void FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer::Tick()
 {
@@ -228,6 +265,20 @@ void FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer::Tick()
 	}
 }
 
+void FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer::CancelServerQuery()
+{
+	LogVerbose("");
+
+	if (!bIsComplete)
+	{
+		bIsComplete = true;
+		bWasSuccessful = false;
+	}
+	
+	SteamMatchmakingServers()->CancelServerQuery(m_CallbackResults);
+	m_CallbackResults = k_uAPICallInvalid;
+}
+
 void FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer::ServerResponded(gameserveritem_t& server)
 {
 	LogVeryVerbose("");
@@ -246,6 +297,17 @@ void FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer::ServerFailedToRespon
 	bWasSuccessful = false;
 
 	m_OnSteamCallback.ExecuteIfBound(FGameServerItem(), bWasSuccessful);
+}
+
+FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules::~FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules()
+{
+	if (Subsystem)
+	{
+		if (Subsystem->CurrentMatchmakingServersServerRules == this)
+		{
+			Subsystem->CurrentMatchmakingServersServerRules = nullptr;
+		}
+	}
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -302,6 +364,20 @@ void FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules::Tick()
 	}
 }
 
+void FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules::CancelServerQuery()
+{
+	LogVerbose("");
+
+	if (!bIsComplete)
+	{
+		bIsComplete = true;
+		bWasSuccessful = false;
+	}
+	
+	SteamMatchmakingServers()->CancelServerQuery(m_CallbackResults);
+	m_CallbackResults = k_uAPICallInvalid;
+}
+
 void FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules::RulesResponded(const char* pchRule, const char* pchValue)
 {
 	LogVeryVerbose("");
@@ -323,3 +399,4 @@ void FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules::RulesRefreshComplet
 
 	m_OnSteamCallback.ExecuteIfBound(m_Rules, bWasSuccessful);
 }
+#endif

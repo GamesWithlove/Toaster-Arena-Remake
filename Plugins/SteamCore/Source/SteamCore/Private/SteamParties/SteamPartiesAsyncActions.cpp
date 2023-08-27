@@ -15,6 +15,7 @@ USteamCoreSteamPartiesAsyncActionJoinParty* USteamCoreSteamPartiesAsyncActionJoi
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreSteamPartiesAsyncActionJoinParty>();
@@ -26,6 +27,7 @@ USteamCoreSteamPartiesAsyncActionJoinParty* USteamCoreSteamPartiesAsyncActionJoi
 
 		return AsyncObject;
 	}
+#endif
 	
 	return nullptr;
 }
@@ -46,6 +48,7 @@ USteamCoreSteamPartiesAsyncActionCreateBeacon* USteamCoreSteamPartiesAsyncAction
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreSteamPartiesAsyncActionCreateBeacon>();
@@ -57,6 +60,7 @@ USteamCoreSteamPartiesAsyncActionCreateBeacon* USteamCoreSteamPartiesAsyncAction
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -77,6 +81,7 @@ USteamCoreSteamPartiesAsyncActionChangeNumOpenSlots* USteamCoreSteamPartiesAsync
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreSteamPartiesAsyncActionChangeNumOpenSlots>();
@@ -88,6 +93,7 @@ USteamCoreSteamPartiesAsyncActionChangeNumOpenSlots* USteamCoreSteamPartiesAsync
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }

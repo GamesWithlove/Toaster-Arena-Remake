@@ -43,7 +43,7 @@ public:
 	* @param	RequestId (int64)	Optional, default 0. Clients may provide a unique identifier for a request to perform at most once execution. When a requestid is resubmitted, it will not cause the work to be performed again; the response message will be the current state of items affected by the original successful execution.
 	* @param	bTradeRestriction	Optional, default 0. Set to 1 to have Steam apply market and trade cooldowns as if this was a purchased item.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Add Item"), Category = "SteamCoreWeb|InventoryService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Add Item", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|InventoryService|Async")
 	static USteamCoreWebAsyncActionAddItem* AddItemAsync(UObject* WorldContextObject, FString Key, int32 AppId, TArray<int32> ItemdefId, FString ItemPropsJson, FString SteamId, bool bNotify, FString RequestId, bool bTradeRestriction);
 };
 
@@ -66,7 +66,7 @@ public:
 	* @param	bNotify				Should notify the user that the item was added to their Steam Inventory.
 	* @param	RequestId (int64)
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Add Promo Item"), Category = "SteamCoreWeb|InventoryService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Add Promo Item", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|InventoryService|Async")
 	static USteamCoreWebAsyncActionAddPromoItem* AddPromoItemAsync(UObject* WorldContextObject, FString Key, int32 AppId, int32 ItemdefId, FString ItemPropsJson, FString SteamId, bool bNotify, FString RequestId);
 };
 
@@ -88,7 +88,7 @@ public:
 	* @param	SteamId
 	* @param	RequestId (int64)
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Consume Item"), Category = "SteamCoreWeb|InventoryService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Consume Item", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|InventoryService|Async")
 	static USteamCoreWebAsyncActionConsumeItem* ConsumeItemAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString ItemID, FString Quantity, FString SteamId, FString RequestId);
 };
 
@@ -117,7 +117,7 @@ public:
 	* @param	MaterialsQuantity	The quantity of the matching item that should be used in this recipe. This array must be the same length as materialsitemid.
 	* @param	OutputItemdefId		The ItemDef of the item to be created.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Exchange Item"), Category = "SteamCoreWeb|InventoryService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Exchange Item", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|InventoryService|Async")
 	static USteamCoreWebAsyncActionExchangeItem* ExchangeItemAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString SteamId, TArray<int32> MaterialsItemId, TArray<int32> MaterialsQuantity, FString OutputItemdefId);
 };
 
@@ -136,7 +136,7 @@ public:
 	* @param	AppId		The ID of the application associated with the item.
 	* @param	SteamId		64-bit Steam ID of the user whos inventory you are requesting.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Inventory"), Category = "SteamCoreWeb|InventoryService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Inventory", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|InventoryService|Async")
 	static USteamCoreWebAsyncActionGetInventory* GetInventoryAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString SteamId);
 };
 
@@ -158,7 +158,7 @@ public:
 	* @param	WorkshopIDs				Use to retrieve just specific itemdefs by workshopid
 	* @param	CacheMaxAgeSeconds		Allow stale data to be returned for the specified number of seconds.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Item Defs"), Category = "SteamCoreWeb|InventoryService|Async", meta = (AutoCreateRefTerm = "itemdefIDs, workshopIDs"))
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Item Defs", AutoCreateRefTerm = "ItemdefIDs, WorkshopIDs", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|InventoryService|Async")
 	static USteamCoreWebAsyncActionGetItemDefs* GetItemDefsAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString ModifiedSince, TArray<int32> ItemdefIDs, TArray<int32> WorkshopIDs, int32 CacheMaxAgeSeconds);
 };
 
@@ -175,7 +175,7 @@ public:
 	*
 	* @param	Key			Steamworks Web API publisher authentication Key.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Price Sheet"), Category = "SteamCoreWeb|InventoryService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Price Sheet", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|InventoryService|Async")
 	static USteamCoreWebAsyncActionGetPriceSheet* GetPriceSheetAsync(UObject* WorldContextObject, FString Key, int32 Currency);
 };
 
@@ -199,7 +199,7 @@ public:
 	* @param	ItemdefIDs
 	* @param	bForce
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Consolidate"), Category = "SteamCoreWeb|InventoryService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Consolidate"), Category = "SteamCoreWeb|InventoryService|Async")
 	static USteamCoreWebAsyncActionConsolidate* ConsolidateAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString SteamId, TArray<int32> ItemdefIDs, bool bForce);
 };
 
@@ -220,7 +220,7 @@ public:
 	* @param	ItemdefIDs	List of the itemdefid's to query. This should be specified as a series of parameters named 'itemdefid[0]', 'itemdefid[1]', etc.
 	* @param	bForce
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Quantity"), Category = "SteamCoreWeb|InventoryService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Quantity"), Category = "SteamCoreWeb|InventoryService|Async")
 	static USteamCoreWebAsyncActionGetQuantity* GetQuantityAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString SteamId, TArray<int32> ItemdefIDs, bool bForce);
 };
 
@@ -242,6 +242,6 @@ public:
 	* @param	Timestamp	Unix timestamp of the request. An error will be returned if the items have been modified since this request time. Must be specified in the input_json parameter.
 	* @param	Updates		The list of items and properties being modified. Must be specified in the input_json parameter.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Modify Items"), Category = "SteamCoreWeb|InventoryService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Modify Items"), Category = "SteamCoreWeb|InventoryService|Async")
 	static USteamCoreWebAsyncActionModifyItems* ModifyItemsAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString InputJson, FString SteamId, int32 Timestamp, FString Updates);
 };

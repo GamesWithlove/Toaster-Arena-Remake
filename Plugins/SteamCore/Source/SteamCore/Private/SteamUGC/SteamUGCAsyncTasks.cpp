@@ -11,6 +11,7 @@
 //		FOnlineAsyncTaskSteamCoreUGCStopPlaytimeTrackingForAllItems
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void FOnlineAsyncTaskSteamCoreUGCStopPlaytimeTrackingForAllItems::Tick()
 {
 	FOnlineAsyncTaskSteamCore::Tick();
@@ -1126,3 +1127,4 @@ void FOnlineAsyncTaskSteamCoreUGCDownloadItem::OnDownloadItemResult(DownloadItem
 	bWasSuccessful = true;
 	bIsComplete = true;
 }
+#endif

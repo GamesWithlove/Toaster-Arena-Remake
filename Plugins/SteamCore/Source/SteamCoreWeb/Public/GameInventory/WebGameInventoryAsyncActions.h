@@ -35,7 +35,7 @@ public:
 	* @param	ContextId		The context to fetch history for
 	* @param	Arguments		The arguments that were provided with the Command in the first place
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get History Command Details"), Category = "SteamCoreWeb|GameInventory|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get History Command Details", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|GameInventory|Async")
 	static USteamCoreWebAsyncActionGetHistoryCommandDetails* GetHistoryCommandDetailsAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString SteamId, FString Command, FString ContextId, FString Arguments);
 };
 
@@ -57,7 +57,7 @@ public:
 	* @param	StartTime		Start time of the history range to collect
 	* @param	EndTime			End time of the history range to collect
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get User History"), Category = "SteamCoreWeb|GameInventory|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get User History", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|GameInventory|Async")
 	static USteamCoreWebAsyncActionGetUserHistory* GetUserHistoryAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString SteamId, FString ContextId, int32 StartTime, int32 EndTime);
 };
 
@@ -78,7 +78,7 @@ public:
 	* @param	ContextId		The context to fetch history for
 	* @param	ActorId			A unique 32 bit ID for the support person executing the Command
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "History Execute Commands"), Category = "SteamCoreWeb|GameInventory|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "History Execute Commands", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|GameInventory|Async")
 	static USteamCoreWebAsyncActionHistoryExecuteCommand* HistoryExecuteCommandAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString SteamId, FString ContextId, int32 ActorId);
 };
 
@@ -98,6 +98,6 @@ public:
 	* @param	AssetId			The asset ID to operate on
 	* @param	ContextId		The context to fetch history for
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Support Get Asset History"), Category = "SteamCoreWeb|GameInventory|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Support Get Asset History", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|GameInventory|Async")
 	static USteamCoreWebAsyncActionSupportGetAssetHistory* SupportGetAssetHistoryAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString AssetId, FString ContextId);
 };

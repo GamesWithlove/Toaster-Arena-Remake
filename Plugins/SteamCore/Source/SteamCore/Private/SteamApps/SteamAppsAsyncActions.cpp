@@ -15,6 +15,7 @@ USteamCoreAppsAsyncActionGetFileDetails* USteamCoreAppsAsyncActionGetFileDetails
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreAppsAsyncActionGetFileDetails>();
@@ -27,6 +28,7 @@ USteamCoreAppsAsyncActionGetFileDetails* USteamCoreAppsAsyncActionGetFileDetails
 
 		return AsyncObject;	
 	}
+#endif
 	
 	return nullptr;
 }

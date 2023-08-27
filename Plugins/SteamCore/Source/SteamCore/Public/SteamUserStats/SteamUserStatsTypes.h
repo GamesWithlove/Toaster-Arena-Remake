@@ -88,6 +88,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamLeaderboardEntry(const LeaderboardEntry_t& Data)
 		: SteamID(Data.m_steamIDUser)
 		  , GlobalRank(Data.m_nGlobalRank)
@@ -109,6 +110,7 @@ public:
 
 		return m_Data;
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
@@ -157,6 +159,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FUserAchievementIconFetched(const UserAchievementIconFetched_t& Data)
 		: GameID(Data.m_nGameID)
 		  , AchievementName(UTF8_TO_TCHAR(Data.m_rgchAchievementName))
@@ -165,6 +168,7 @@ public:
 		  , m_nIconHandle(Data.m_nIconHandle)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
@@ -191,6 +195,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FUserAchievementStored(const UserAchievementStored_t& Data)
 		: GameID(Data.m_nGameID)
 		  , bGroupAchievement(Data.m_bGroupAchievement)
@@ -199,7 +204,8 @@ public:
 		  , MaxProgress(Data.m_nMaxProgress)
 	{
 	}
-
+#endif
+	
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
 	FSteamGameID GameID;
@@ -223,13 +229,15 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FUserStatsReceived(const UserStatsReceived_t& Data)
 		: GameID(Data.m_nGameID)
 		  , Result(_SteamResult(Data.m_eResult))
 		  , SteamID(Data.m_steamIDUser)
 	{
 	}
-
+#endif
+	
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
 	FSteamID GameID;
@@ -249,11 +257,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FUserStatsStored(const UserStatsStored_t& Data)
 		: GameID(Data.m_nGameID)
 		  , Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
@@ -269,10 +279,12 @@ struct FUserStatsUnloaded
 public:
 	FUserStatsUnloaded() = default;
 
+#if ENABLE_STEAMCORE
 	FUserStatsUnloaded(const UserStatsUnloaded_t& Data)
 		: SteamIDUser(Data.m_steamIDUser)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
@@ -289,12 +301,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FLeaderboardScoresDownloaded(const LeaderboardScoresDownloaded_t& Data)
 		: SteamLeaderboard(Data.m_hSteamLeaderboard)
 		  , SteamLeaderboardEntries(Data.m_hSteamLeaderboardEntries)
 		  , EntryCount(Data.m_cEntryCount)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
@@ -315,12 +329,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FLeaderboardScoresDownloadedForUsers(const LeaderboardScoresDownloaded_t& Data)
 		: SteamLeaderboard(Data.m_hSteamLeaderboard)
 		  , SteamLeaderboardEntries(Data.m_hSteamLeaderboardEntries)
 		  , EntryCount(Data.m_cEntryCount)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
@@ -341,12 +357,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FRequestUserStatsData(const UserStatsReceived_t& Data)
 		: GameID(Data.m_nGameID)
 		  , Result(_SteamResult(Data.m_eResult))
 		  , SteamIDUser(Data.m_steamIDUser)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
@@ -371,6 +389,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FLeaderboardScoreUploaded(const LeaderboardScoreUploaded_t& Data)
 		: bSuccess(Data.m_bSuccess > 0)
 		  , SteamLeaderboard(Data.m_hSteamLeaderboard)
@@ -380,6 +399,7 @@ public:
 		  , GlobalRankPrevious(Data.m_nGlobalRankPrevious)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
@@ -406,11 +426,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FAttachLeaderboardUGCData(const LeaderboardUGCSet_t& Data)
 		: SteamLeaderboard(Data.m_hSteamLeaderboard)
 		  , Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
@@ -429,11 +451,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FLeaderboardFindResult(const LeaderboardFindResult_t& Data)
 		: SteamLeaderboard(Data.m_hSteamLeaderboard)
 		  , bLeaderboardFound(Data.m_bLeaderboardFound > 0)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
@@ -452,11 +476,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FFindOrCreateLeaderboardData(const LeaderboardFindResult_t& Data)
 		: SteamLeaderboard(Data.m_hSteamLeaderboard)
 		  , bLeaderboardFound(Data.m_bLeaderboardFound > 0)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
@@ -477,11 +503,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FNumberOfCurrentPlayers(const NumberOfCurrentPlayers_t& Data)
 		: bSuccess(Data.m_bSuccess > 0)
 		  , Players(Data.m_cPlayers)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
@@ -500,11 +528,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGlobalAchievementPercentagesReady(const GlobalAchievementPercentagesReady_t& Data)
 		: GameID(Data.m_nGameID)
 		  , Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")
@@ -523,11 +553,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGlobalStatsReceived(const GlobalStatsReceived_t& Data)
 		: GameID(Data.m_nGameID)
 		  , Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "UserStats")

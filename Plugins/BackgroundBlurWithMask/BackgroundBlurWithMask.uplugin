@@ -10,7 +10,7 @@
 	"DocsURL": "https://www.youtube.com/watch?v=v2JhDgEjOVo",
 	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/595231118c4e43508f006da5eed02bbd",
 	"SupportURL": "",
-	"EngineVersion": "5.0.0",
+	"EngineVersion": "5.2.0",
 	"CanContainContent": true,
 	"Installed": true,
 	"Modules": [

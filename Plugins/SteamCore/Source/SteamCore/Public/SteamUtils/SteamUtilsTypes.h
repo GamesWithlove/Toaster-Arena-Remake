@@ -84,10 +84,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FCheckFileSignature(const CheckFileSignature_t& Data)
 		: CheckFileSignature(static_cast<ESteamCheckFileSignature>(Data.m_eCheckFileSignature))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Utils")
@@ -105,11 +107,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGamepadTextInputDismissed(const GamepadTextInputDismissed_t& Data)
 		: bSubmitted(Data.m_bSubmitted)
 		  , SubmittedText(Data.m_unSubmittedText)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Utils")
@@ -128,10 +132,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FLowBatteryPower(const LowBatteryPower_t& Data)
 		: MinutesBatteryLeft(Data.m_nMinutesBatteryLeft)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Utils")
@@ -145,9 +151,11 @@ struct FIPCountry
 public:
 	FIPCountry() = default;
 
+#if ENABLE_STEAMCORE
 	FIPCountry(const IPCountry_t& Data)
 	{
 	}
+#endif
 };
 
 USTRUCT(BlueprintType)
@@ -157,9 +165,11 @@ struct FSteamShutdown
 public:
 	FSteamShutdown() = default;
 
+#if ENABLE_STEAMCORE
 	FSteamShutdown(const SteamShutdown_t& Data)
 	{
 	}
+#endif
 };
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //

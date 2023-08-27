@@ -40,10 +40,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamRemotePlaySessionConnected(const SteamRemotePlaySessionConnected_t& Data)
 		: SessionID(Data.m_unSessionID)
 	{
 	}
+#endif
 
 public:
 	operator uint32() const { return SessionID; }
@@ -62,10 +64,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamRemotePlaySessionDisconnected(const SteamRemotePlaySessionDisconnected_t& Data)
 		: SessionID(Data.m_unSessionID)
 	{
 	}
+#endif
 
 public:
 	operator uint32() const { return SessionID; }

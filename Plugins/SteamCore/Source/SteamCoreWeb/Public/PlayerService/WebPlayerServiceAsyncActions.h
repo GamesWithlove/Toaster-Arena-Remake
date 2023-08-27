@@ -27,7 +27,7 @@ public:
 	* @param	SteamId		The player we're asking about
 	* @param	Count		The number of games to return (0/unset: all)
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Recently PlayedGames"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Recently PlayedGames", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionGetRecentlyPlayedGames* GetRecentlyPlayedGamesAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 Count);
 };
 
@@ -48,7 +48,7 @@ public:
 	* @param	bIncludePlayedFreeGames		Free games are excluded by default. If this is set, free games the user has played will be returned.
 	* @param	Filter						if set, restricts result set to the passed in apps
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Owned Games"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Owned Games", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionGetOwnedGames* GetOwnedGamesAsync(UObject* WorldContextObject, FString Key, FString SteamId, bool bIncludeAppInfo, bool bIncludePlayedFreeGames, TArray<int32> Filter);
 };
 
@@ -67,7 +67,7 @@ public:
 	* @param	Key							Steamworks Web API publisher authentication Key.
 	* @param	SteamId						The player we're asking about
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Steam Level"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Steam Level", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionGetSteamLevel* GetSteamLevelAsync(UObject* WorldContextObject, FString Key, FString SteamId);
 };
 
@@ -85,7 +85,7 @@ public:
 	* @param	Key				Steamworks Web API publisher authentication Key.
 	* @param	SteamId			The player we're asking about
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Badges"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Badges", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionGetBadges* GetBadgesAsync(UObject* WorldContextObject, FString Key, FString SteamId);
 };
 
@@ -104,7 +104,7 @@ public:
 	* @param	SteamId			The player we're asking about
 	* @param	BadgeId			The badge we're asking about
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Community Badge Progress"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Community Badge Progress", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionGetCommunityBadgeProgress* GetCommunityBadgeProgressAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 BadgeId);
 };
 
@@ -123,6 +123,6 @@ public:
 	* @param	SteamId			The player we're asking about
 	* @param	AppIdPlaying	The game player is currently playing
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Is Playing Shared Game"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Is Playing Shared Game", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionIsPlayingSharedGame* IsPlayingSharedGameAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppIdPlaying);
 };

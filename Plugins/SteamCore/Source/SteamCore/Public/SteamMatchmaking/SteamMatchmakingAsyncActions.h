@@ -42,7 +42,7 @@ public:
 	* @param	MaxMembers			The maximum number of players that can join this lobby. This can not be above 250.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Create Lobby"), Category = "SteamCore|Matchmaking|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Create Lobby", BlueprintInternalUseOnly="true"), Category = "SteamCore|Matchmaking|Async")
 	static USteamCoreMatchmakingAsyncActionCreateLobby* CreateLobbyAsync(UObject* WorldContextObject, ESteamLobbyType LobbyType, int32 MaxMembers, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -70,7 +70,7 @@ public:
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	* 
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request Lobby List"), Category = "SteamCore|Matchmaking|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request Lobby List", BlueprintInternalUseOnly="true"), Category = "SteamCore|Matchmaking|Async")
 	static USteamCoreMatchmakingAsyncActionRequestLobbyList* RequestLobbyListAsync(UObject* WorldContextObject, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -95,7 +95,7 @@ public:
 	* @param	SteamIDLobby	The Steam ID of the lobby to join.
 	* @param	Timeout			How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Join Lobby"), Category = "SteamCore|Matchmaking|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Join Lobby", BlueprintInternalUseOnly="true"), Category = "SteamCore|Matchmaking|Async")
 	static USteamCoreMatchmakingAsyncActionJoinLobby* JoinLobbyAsync(UObject* WorldContextObject, FSteamID SteamIDLobby, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -131,7 +131,7 @@ public:
 	*    @param bUseLobbiesVoiceChatIfAvailable		(4.27 only, Whether to create (and auto join) a voice chat room for the lobby, if the platform supports it)
 	*    @param	Timeout								How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", AutoCreateRefTerm = "sessionSettings"), Category = "SteamCore|Matchmaking|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", AutoCreateRefTerm = "SessionSettings", BlueprintInternalUseOnly="true"), Category = "SteamCore|Matchmaking|Async")
 	static USteamCoreCreateSession* CreateSteamCoreSession(UObject* WorldContextObject, TMap<FString, FSteamSessionSetting> SessionSettings, FString SessionName = "SteamCoreSession", int32 MaxPlayers = 5, bool bUseLAN = false, bool bAllowInvites = true, bool bUsesPresence = true, bool bAllowJoinViaPresence = true, bool bAllowJoinViaPresenceFriendsOnly = false, bool bAntiCheatProtected = false, bool bUsesStats = false, bool bShouldAdvertise = true, bool bUseLobbiesVoiceChatIfAvailable = true, float Timeout = 10.f);
 protected:
 	FOnlineSessionSettings m_SessionSettings;
@@ -172,7 +172,7 @@ public:
 	* @param	bSecureServersOnly		Only secure servers
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", AutoCreateRefTerm = "searchSettings"), Category = "SteamCore|Matchmaking|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", AutoCreateRefTerm = "SearchSettings", BlueprintInternalUseOnly="true"), Category = "SteamCore|Matchmaking|Async")
 	static USteamCoreFindSession* FindSteamCoreSessions(UObject* WorldContextObject, TMap<FString, FSteamSessionSearchSetting> SearchSettings, int32 MaxResults = 50, bool bUseLAN = false, ESteamSessionFindType ServerType = ESteamSessionFindType::Listen, bool bEmptyServersOnly = false, bool bSecureServersOnly = false, float Timeout = 10.f);
 
 protected:
@@ -212,7 +212,7 @@ public:
 	* Destroy an Online Session
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject"), Category = "SteamCore|Matchmaking|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", BlueprintInternalUseOnly="true"), Category = "SteamCore|Matchmaking|Async")
 	static USteamCoreDestroySession* DestroySteamCoreSession(UObject* WorldContextObject, float Timeout = 10.f);
 protected:
 	FName SessionName;
@@ -239,7 +239,7 @@ public:
 public:
 	USteamCoreUpdateSession();
 
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject"), Category = "SteamCore|Matchmaking|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", BlueprintInternalUseOnly="true"), Category = "SteamCore|Matchmaking|Async")
 	static USteamCoreUpdateSession* UpdateSteamCoreSession(UObject* WorldContextObject, TMap<FString, FSteamSessionSearchSetting> Settings, FString SessionName = "SteamCoreSession", int32 MaxPlayers = 4);
 protected:
 	UObject* m_WorldContextObject;

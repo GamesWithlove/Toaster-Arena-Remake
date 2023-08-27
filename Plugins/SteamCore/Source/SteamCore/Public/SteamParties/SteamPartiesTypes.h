@@ -47,11 +47,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamPartyBeaconLocation(const SteamPartyBeaconLocation_t& Data)
 		: Type(static_cast<ESteamPartiesBeaconLocationType>(Data.m_eType))
 		  , LocationId(LexToString(Data.m_ulLocationID))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "SteamParties")
@@ -79,6 +81,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FJoinPartyData(const JoinPartyCallback_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , BeaconID(Data.m_ulBeaconID)
@@ -86,6 +89,7 @@ public:
 		  , ConnectString(UTF8_TO_TCHAR(Data.m_rgchConnectString))
 	{
 	}
+#endif
 };
 
 USTRUCT(BlueprintType)
@@ -103,11 +107,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FCreateBeaconData(const CreateBeaconCallback_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , BeaconID(Data.m_ulBeaconID)
 	{
 	}
+#endif
 };
 
 USTRUCT(BlueprintType)
@@ -122,11 +128,13 @@ public:
 public:
 	FReservationNotificationData() = default;
 
+#if ENABLE_STEAMCORE
 	FReservationNotificationData(const ReservationNotificationCallback_t& Data)
 		: BeaconId(Data.m_ulBeaconID)
 		  , SteamIDJoiner(Data.m_steamIDJoiner)
 	{
 	}
+#endif
 };
 
 USTRUCT(BlueprintType)
@@ -142,10 +150,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FChangeNumOpenSlotsData(const ChangeNumOpenSlotsCallback_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 };
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //

@@ -12,6 +12,7 @@ void UMatchmaking::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
 
+#if ENABLE_STEAMCORE
 	OnFavoritesListAccountsUpdatedCallback.Register(this, &UMatchmaking::OnFavoritesListAccountsUpdated);
 	OnFavoritesListChangedCallback.Register(this, &UMatchmaking::OnFavoritesListChanged);
 	OnLobbyChatMsgCallback.Register(this, &UMatchmaking::OnLobbyChatMsg);
@@ -34,10 +35,12 @@ void UMatchmaking::Initialize(FSubsystemCollectionBase& Collection)
 		OnLobbyInviteCallback.SetGameserverFlag();
 		OnLobbyKickedCallback.SetGameserverFlag();
 	}
+#endif
 }
 
 void UMatchmaking::Deinitialize()
 {
+#if ENABLE_STEAMCORE
 	OnFavoritesListAccountsUpdatedCallback.Unregister();
 	OnFavoritesListChangedCallback.Unregister();
 	OnLobbyChatMsgCallback.Unregister();
@@ -47,7 +50,7 @@ void UMatchmaking::Deinitialize()
 	OnLobbyGameCreatedCallback.Unregister();
 	OnLobbyInviteCallback.Unregister();
 	OnLobbyKickedCallback.Unregister();
-
+#endif
 	Super::Deinitialize();
 }
 
@@ -60,6 +63,7 @@ int32 UMatchmaking::AddFavoriteGame(int32 AppID, FString IP, int32 ConnectionPor
 	LogVerbose("");
 
 	int32 Result = 0;
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
@@ -75,6 +79,7 @@ int32 UMatchmaking::AddFavoriteGame(int32 AppID, FString IP, int32 ConnectionPor
 
 		Result = SteamMatchmaking()->AddFavoriteGame(AppID, IpAddress.Value, ConnectionPort, QueryPort, Data, TimeLastPlayedOnServer);
 	}
+#endif
 
 	return Result;
 }
@@ -83,60 +88,71 @@ void UMatchmaking::AddRequestLobbyListCompatibleMembersFilter(FSteamID SteamIDLo
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		SteamMatchmaking()->AddRequestLobbyListCompatibleMembersFilter(SteamIDLobby);
 	}
+#endif
 }
 
 void UMatchmaking::AddRequestLobbyListDistanceFilter(ESteamLobbyDistanceFilter LobbyDistanceFilter)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		SteamMatchmaking()->AddRequestLobbyListDistanceFilter(static_cast<ELobbyDistanceFilter>(LobbyDistanceFilter));
 	}
+#endif
 }
 
 void UMatchmaking::AddRequestLobbyListFilterSlotsAvailable(int32 SlotsAvailable)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		SteamMatchmaking()->AddRequestLobbyListFilterSlotsAvailable(SlotsAvailable);
 	}
+#endif
 }
 
 void UMatchmaking::AddRequestLobbyListNearValueFilter(FString KeyToMatch, int32 ValueToBeCloseTo)
 {
 	LogVerbose("");
-
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		SteamMatchmaking()->AddRequestLobbyListNearValueFilter(TCHAR_TO_UTF8(*KeyToMatch), ValueToBeCloseTo);
 	}
+#endif
 }
 
 void UMatchmaking::AddRequestLobbyListNumericalFilter(FString KeyToMatch, int32 ValueToMatch, ESteamLobbyComparison ComparisonType)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		SteamMatchmaking()->AddRequestLobbyListNumericalFilter(TCHAR_TO_UTF8(*KeyToMatch), ValueToMatch, static_cast<ELobbyComparison>((static_cast<uint8>(ComparisonType) - 2)));
 	}
+#endif
 }
 
 void UMatchmaking::AddRequestLobbyListResultCountFilter(int32 MaxResults)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		SteamMatchmaking()->AddRequestLobbyListResultCountFilter(MaxResults);
 	}
+#endif
 }
 
 void UMatchmaking::AddRequestLobbyListStringFilter(FString KeyToMatch, FString ValueToMatch, ESteamLobbyComparison ComparisonType)
@@ -148,6 +164,7 @@ void UMatchmaking::AddRequestLobbyListStringFilter(FString KeyToMatch, FString V
 		return;
 	}
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		const FTCHARToUTF8 KeyAnsi(*KeyToMatch); 
@@ -155,17 +172,20 @@ void UMatchmaking::AddRequestLobbyListStringFilter(FString KeyToMatch, FString V
 
 		SteamMatchmaking()->AddRequestLobbyListStringFilter(KeyAnsi.Get(), ValueAnsi.Get(), static_cast<ELobbyComparison>((static_cast<uint8>(ComparisonType) - 2)));
 	}
+#endif
 }
 
 void UMatchmaking::CreateLobby(const FOnCreateLobby& Callback, ESteamLobbyType LobbyType, int32 MaxMembers)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		FOnlineAsyncTaskSteamCoreMatchmakingCreateLobby* Task = new FOnlineAsyncTaskSteamCoreMatchmakingCreateLobby(this, Callback, static_cast<ELobbyType>(LobbyType), MaxMembers);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool UMatchmaking::DeleteLobbyData(FSteamID SteamIDLobby, FString Key)
@@ -174,11 +194,13 @@ bool UMatchmaking::DeleteLobbyData(FSteamID SteamIDLobby, FString Key)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		bResult = SteamMatchmaking()->DeleteLobbyData(SteamIDLobby, TCHAR_TO_UTF8(*Key));
 	}
-
+#endif
+	
 	return bResult;
 }
 
@@ -198,6 +220,7 @@ bool UMatchmaking::GetFavoriteGame(int32 Game, int32& OutAppID, FString& OutIp, 
 	uint16 QueryPort = 0;
 	uint32 TimeLastPlayedOnServer = 0;
 	uint32 AppId = 0;
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
@@ -222,6 +245,7 @@ bool UMatchmaking::GetFavoriteGame(int32 Game, int32& OutAppID, FString& OutIp, 
 	OutQueryPort = QueryPort;
 	OutTimeLastPlayedOnServer = TimeLastPlayedOnServer;
 	OutAppID = AppId;
+#endif
 
 	return bResult;
 }
@@ -231,11 +255,13 @@ int32 UMatchmaking::GetFavoriteGameCount()
 	LogVeryVerbose("");
 
 	int32 Result = 0;
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
 		Result = SteamMatchmaking()->GetFavoriteGameCount();
 	}
+#endif
 
 	return Result;
 }
@@ -245,11 +271,13 @@ FSteamID UMatchmaking::GetLobbyByIndex(int32 Lobby)
 	LogVeryVerbose("");
 
 	FSteamID Result;
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
 		Result = SteamMatchmaking()->GetLobbyByIndex(Lobby);
 	}
+#endif
 
 	return Result;
 }
@@ -257,8 +285,10 @@ FSteamID UMatchmaking::GetLobbyByIndex(int32 Lobby)
 int32 UMatchmaking::GetLobbyChatEntry(FSteamID SteamIDLobby, int32 MessageID, FSteamID& OutSteamIDUser, FString& OutMessage, ESteamChatEntryType& OutChatEntryType)
 {
 	LogVeryVerbose("");
-
+	
 	int32 Result = 0;
+
+#if ENABLE_STEAMCORE
 	CSteamID SteamIdUser;
 	EChatEntryType ChatEntryType = k_EChatEntryTypeInvalid;
 	OutMessage.Empty();
@@ -281,6 +311,7 @@ int32 UMatchmaking::GetLobbyChatEntry(FSteamID SteamIDLobby, int32 MessageID, FS
 
 	OutChatEntryType = static_cast<ESteamChatEntryType>(ChatEntryType);
 	OutSteamIDUser = SteamIdUser;
+#endif
 
 	return Result;
 }
@@ -290,11 +321,13 @@ FString UMatchmaking::GetLobbyData(FSteamID SteamIDLobby, FString Key)
 	LogVeryVerbose("");
 
 	FString Result;
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
 		Result = UTF8_TO_TCHAR(SteamMatchmaking()->GetLobbyData(SteamIDLobby, TCHAR_TO_UTF8(*Key)));
 	}
+#endif
 
 	return Result;
 }
@@ -306,6 +339,7 @@ bool UMatchmaking::GetLobbyDataByIndex(FSteamID SteamIDLobby, int32 LobbyData, F
 	bool bResult = false;
 	OutKey.Empty();
 	OutValue.Empty();
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
@@ -327,6 +361,7 @@ bool UMatchmaking::GetLobbyDataByIndex(FSteamID SteamIDLobby, int32 LobbyData, F
 			OutValue = ValueChar;
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -336,11 +371,13 @@ int32 UMatchmaking::GetLobbyDataCount(FSteamID SteamIDLobby)
 	LogVeryVerbose("");
 
 	int32 Result = 0;
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
 		Result = SteamMatchmaking()->GetLobbyDataCount(SteamIDLobby);
 	}
+#endif
 
 	return Result;
 }
@@ -354,6 +391,7 @@ bool UMatchmaking::GetLobbyGameServer(FSteamID SteamIDLobby, FString& OutGameSer
 
 	uint32 GameServerIP = 0;
 	uint16 GameServerPort = 0;
+#if ENABLE_STEAMCORE
 	CSteamID SteamIDGameServer;
 
 	if (SteamMatchmaking())
@@ -368,6 +406,7 @@ bool UMatchmaking::GetLobbyGameServer(FSteamID SteamIDLobby, FString& OutGameSer
 
 	OutGameServerPort = GameServerPort;
 	OutSteamIDGameServer = SteamIDGameServer;
+#endif
 
 	return bResult;
 }
@@ -377,11 +416,13 @@ FSteamID UMatchmaking::GetLobbyMemberByIndex(FSteamID SteamIDLobby, int32 Member
 	LogVeryVerbose("");
 
 	FSteamID Result;
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
 		Result = SteamMatchmaking()->GetLobbyMemberByIndex(SteamIDLobby, Member);
 	}
+#endif
 
 	return Result;
 }
@@ -391,11 +432,13 @@ FString UMatchmaking::GetLobbyMemberData(FSteamID SteamIDLobby, FSteamID SteamID
 	LogVeryVerbose("");
 
 	FString Result;
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
 		Result = UTF8_TO_TCHAR(SteamMatchmaking()->GetLobbyMemberData(SteamIDLobby, SteamIDUser, TCHAR_TO_UTF8(*Key)));
 	}
+#endif
 
 	return Result;
 }
@@ -405,11 +448,13 @@ int32 UMatchmaking::GetLobbyMemberLimit(FSteamID SteamIDLobby)
 	LogVeryVerbose("");
 
 	int32 Result = 0;
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
 		Result = SteamMatchmaking()->GetLobbyMemberLimit(SteamIDLobby);
 	}
+#endif
 
 	return Result;
 }
@@ -419,11 +464,13 @@ FSteamID UMatchmaking::GetLobbyOwner(FSteamID SteamIDLobby)
 	LogVeryVerbose("");
 
 	FSteamID Result;
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
 		Result = SteamMatchmaking()->GetLobbyOwner(SteamIDLobby);
 	}
+#endif
 
 	return Result;
 }
@@ -433,11 +480,13 @@ int32 UMatchmaking::GetNumLobbyMembers(FSteamID SteamIDLobby)
 	LogVeryVerbose("");
 
 	int32 Result = 0;
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
 		Result = SteamMatchmaking()->GetNumLobbyMembers(SteamIDLobby);
 	}
+#endif
 
 	return Result;
 }
@@ -447,11 +496,13 @@ bool UMatchmaking::InviteUserToLobby(FSteamID SteamIDLobby, FSteamID SteamIDInvi
 	LogVerbose("");
 
 	bool bResult = false;
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
 		bResult = SteamMatchmaking()->InviteUserToLobby(SteamIDLobby, SteamIDInvitee);
 	}
+#endif
 
 	return bResult;
 }
@@ -460,21 +511,25 @@ void UMatchmaking::JoinLobby(const FOnJoinLobby& Callback, FSteamID SteamIDLobby
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		FOnlineAsyncTaskSteamCoreJoinLobby* Task = new FOnlineAsyncTaskSteamCoreJoinLobby(this, Callback, SteamIDLobby);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UMatchmaking::LeaveLobby(FSteamID SteamIDLobby)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		SteamMatchmaking()->LeaveLobby(SteamIDLobby);
 	}
+#endif
 }
 
 bool UMatchmaking::RemoveFavoriteGame(int32 AppID, FString IP, int32 ConnectionPort, int32 QueryPort, TArray<ESteamFavoriteFlags> Flags)
@@ -482,6 +537,7 @@ bool UMatchmaking::RemoveFavoriteGame(int32 AppID, FString IP, int32 ConnectionP
 	LogVerbose("");
 
 	bool bResult = false;
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
@@ -497,6 +553,7 @@ bool UMatchmaking::RemoveFavoriteGame(int32 AppID, FString IP, int32 ConnectionP
 
 		bResult = SteamMatchmaking()->RemoveFavoriteGame(AppID, IpAddress.Value, ConnectionPort, QueryPort, Data);
 	}
+#endif
 
 	return bResult;
 }
@@ -506,11 +563,13 @@ bool UMatchmaking::RequestLobbyData(FSteamID SteamIDLobby)
 	LogVerbose("");
 
 	bool bResult = false;
+#if ENABLE_STEAMCORE
 
 	if (SteamMatchmaking())
 	{
 		bResult = SteamMatchmaking()->RequestLobbyData(SteamIDLobby);
 	}
+#endif
 
 	return bResult;
 }
@@ -519,11 +578,13 @@ void UMatchmaking::RequestLobbyList(const FOnRequestLobbyList& Callback)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		FOnlineAsyncTaskSteamCoreRequestLobbyList* Task = new FOnlineAsyncTaskSteamCoreRequestLobbyList(this, Callback);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool UMatchmaking::SendLobbyChatMsg(FSteamID SteamIDLobby, FString Message)
@@ -532,6 +593,7 @@ bool UMatchmaking::SendLobbyChatMsg(FSteamID SteamIDLobby, FString Message)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		TArray<uint8> DataArray;
@@ -542,6 +604,7 @@ bool UMatchmaking::SendLobbyChatMsg(FSteamID SteamIDLobby, FString Message)
 
 		bResult = SteamMatchmaking()->SendLobbyChatMsg(SteamIDLobby, DataArray.GetData(), DataArray.Num());
 	}
+#endif
 
 	return bResult;
 }
@@ -552,10 +615,12 @@ bool UMatchmaking::SetLinkedLobby(FSteamID SteamIDLobby, FSteamID SteamIDLobbyDe
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		bResult = SteamMatchmaking()->SetLinkedLobby(SteamIDLobby, SteamIDLobbyDependent);
 	}
+#endif
 
 	return bResult;
 }
@@ -571,6 +636,7 @@ bool UMatchmaking::SetLobbyData(FSteamID SteamIDLobby, FString Key, FString Valu
 		return bResult;
 	}
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		const FTCHARToUTF8 ConvertedKey(*Key);
@@ -578,6 +644,7 @@ bool UMatchmaking::SetLobbyData(FSteamID SteamIDLobby, FString Key, FString Valu
 
 		bResult = SteamMatchmaking()->SetLobbyData(SteamIDLobby, ConvertedKey.Get(), ConvertedValue.Get());
 	}
+#endif
 
 	return bResult;
 }
@@ -586,6 +653,7 @@ void UMatchmaking::SetLobbyGameServer(FSteamID SteamIDLobby, FString GameServerI
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		FIPv4Address IP;
@@ -593,6 +661,7 @@ void UMatchmaking::SetLobbyGameServer(FSteamID SteamIDLobby, FString GameServerI
 
 		SteamMatchmaking()->SetLobbyGameServer(SteamIDLobby, IP.Value, GameServerPort, SteamIDGameServer);
 	}
+#endif
 }
 
 bool UMatchmaking::SetLobbyJoinable(FSteamID SteamIDLobby, bool bLobbyJoinable)
@@ -601,10 +670,12 @@ bool UMatchmaking::SetLobbyJoinable(FSteamID SteamIDLobby, bool bLobbyJoinable)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		bResult = SteamMatchmaking()->SetLobbyJoinable(SteamIDLobby, bLobbyJoinable);
 	}
+#endif
 
 	return bResult;
 }
@@ -618,6 +689,7 @@ void UMatchmaking::SetLobbyMemberData(FSteamID SteamIDLobby, FString Key, FStrin
 		return;
 	}
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		const FTCHARToUTF8 ConvertedKey(*Key);
@@ -625,6 +697,7 @@ void UMatchmaking::SetLobbyMemberData(FSteamID SteamIDLobby, FString Key, FStrin
 
 		SteamMatchmaking()->SetLobbyMemberData(SteamIDLobby, ConvertedKey.Get(), ConvertedValue.Get());
 	}
+#endif
 }
 
 bool UMatchmaking::SetLobbyMemberLimit(FSteamID SteamIDLobby, int32 MaxMembers)
@@ -633,10 +706,12 @@ bool UMatchmaking::SetLobbyMemberLimit(FSteamID SteamIDLobby, int32 MaxMembers)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		bResult = SteamMatchmaking()->SetLobbyMemberLimit(SteamIDLobby, MaxMembers);
 	}
+#endif
 
 	return bResult;
 }
@@ -647,10 +722,12 @@ bool UMatchmaking::SetLobbyOwner(FSteamID SteamIDLobby, FSteamID SteamIDNewOwner
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		bResult = SteamMatchmaking()->SetLobbyOwner(SteamIDLobby, SteamIDNewOwner);
 	}
+#endif
 
 	return bResult;
 }
@@ -661,10 +738,12 @@ bool UMatchmaking::SetLobbyType(FSteamID SteamIDLobby, ESteamLobbyType LobbyType
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamMatchmaking())
 	{
 		bResult = SteamMatchmaking()->SetLobbyType(SteamIDLobby, static_cast<ELobbyType>(LobbyType));
 	}
+#endif
 
 	return bResult;
 }
@@ -672,6 +751,8 @@ bool UMatchmaking::SetLobbyType(FSteamID SteamIDLobby, ESteamLobbyType LobbyType
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		Steam API Callbacks
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+
+#if ENABLE_STEAMCORE
 
 void UMatchmaking::OnFavoritesListAccountsUpdated(FavoritesListAccountsUpdated_t* pParam)
 {
@@ -771,3 +852,5 @@ void UMatchmaking::OnLobbyKicked(LobbyKicked_t* pParam)
 		LobbyKicked.Broadcast(Data);
 	});
 }
+
+#endif

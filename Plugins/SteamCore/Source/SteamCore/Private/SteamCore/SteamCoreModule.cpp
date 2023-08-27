@@ -94,6 +94,7 @@ bool FSteamCoreModule::Tick(float DeltaTime)
 		OnlineAsyncTaskThreadRunnable->GameTick();
 	}
 
+#if ENABLE_STEAMCORE
 	if (!bSteamHook)
 	{
 		if (GetUtils())
@@ -103,6 +104,7 @@ bool FSteamCoreModule::Tick(float DeltaTime)
 			bSteamHook = true;
 		}
 	}
+#endif
 
 	return true;
 }
@@ -121,10 +123,12 @@ void USteamCoreSubsystem::Initialize(FSubsystemCollectionBase& Collection)
 		bInitialized = true;
 	}
 
+#if ENABLE_STEAMCORE
 	if (GetUtils())
 	{
 		GetUtils()->SetWarningMessageHook(SteamworksWarningMessageHook);
 	}
+#endif
 }
 
 void USteamCoreSubsystem::Deinitialize()
@@ -135,6 +139,10 @@ void USteamCoreSubsystem::Deinitialize()
 
 bool USteamCoreSubsystem::ShouldCreateSubsystem(UObject* Outer) const
 {
+#if !ENABLE_STEAMCORE
+	return false;
+#endif
+	
 	if (SubsystemType == ESteamSubsystem::SteamCore)
 	{
 		return true;

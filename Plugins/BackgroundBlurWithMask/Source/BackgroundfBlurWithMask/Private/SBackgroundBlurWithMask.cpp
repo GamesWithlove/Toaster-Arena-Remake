@@ -2,6 +2,8 @@
 
 #include "SBackgroundBlurWithMask.h"
 #include "Render/BackgroundBlurDrawer.h"
+#include "Slate/SGameLayerManager.h"
+#include "Engine/GameViewportClient.h"
 
 static int32 bAllowBackgroundBlur = 1;
 //static FAutoConsoleVariableRef CVarSlateAllowBackgroundBlurWidgets(TEXT("Slate.AllowBackgroundBlurWidgets"), bAllowBackgroundBlur, TEXT("If 0, no background blur widgets will be rendered"));
@@ -144,7 +146,7 @@ int32 SBackgroundBlurWithMask::OnPaint(const FPaintArgs& Args, const FGeometry& 
 	const bool bUsingLowQualityFallbackBrush = IsUsingLowQualityFallbackBrush();
 
 	int32 PostFXLayerId = LayerId;
-	if (bAllowBackgroundBlur && AllottedGeometry.GetLocalSize() > FVector2D::ZeroVector)
+	if (bAllowBackgroundBlur && AllottedGeometry.GetLocalSize().GetMin() > 0)
 	{
 		if (!bUsingLowQualityFallbackBrush)
 		{

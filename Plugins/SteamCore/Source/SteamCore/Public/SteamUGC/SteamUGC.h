@@ -918,6 +918,8 @@ protected:
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(UUGC, OnDownloadItemResult, DownloadItemResult_t, OnDownloadItemResultCallback);
 	STEAM_CALLBACK_MANUAL(UUGC, OnItemInstalled, ItemInstalled_t, OnItemInstalledCallback);
+#endif
 };

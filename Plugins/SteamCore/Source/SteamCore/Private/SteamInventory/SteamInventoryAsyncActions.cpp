@@ -16,6 +16,7 @@ USteamCoreInventoryAsyncActionRequestEligiblePromoItemDefinitionsIDs* USteamCore
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreInventoryAsyncActionRequestEligiblePromoItemDefinitionsIDs>();
@@ -27,6 +28,7 @@ USteamCoreInventoryAsyncActionRequestEligiblePromoItemDefinitionsIDs* USteamCore
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -50,6 +52,7 @@ USteamCoreInventoryAsyncActionRequestPricesResult* USteamCoreInventoryAsyncActio
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreInventoryAsyncActionRequestPricesResult>();
@@ -61,7 +64,8 @@ USteamCoreInventoryAsyncActionRequestPricesResult* USteamCoreInventoryAsyncActio
 
 		return AsyncObject;
 	}
-
+#endif
+	
 	return nullptr;
 }
 
@@ -81,6 +85,7 @@ USteamCoreInventoryAsyncActionStartPurchaseResult* USteamCoreInventoryAsyncActio
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreInventoryAsyncActionStartPurchaseResult>();
@@ -92,6 +97,7 @@ USteamCoreInventoryAsyncActionStartPurchaseResult* USteamCoreInventoryAsyncActio
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }

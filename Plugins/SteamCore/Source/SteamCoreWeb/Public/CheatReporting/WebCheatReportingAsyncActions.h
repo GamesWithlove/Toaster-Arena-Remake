@@ -42,7 +42,7 @@ public:
 	* @param	SuspicionStartTime	(Optional) Extra information indicating how far back the game thinks is interesting for this user. Unix epoch time (time since Jan 1st, 1970).
 	* @param	Severity			(Optional) Level of severity of bad action being reported. Scale set by developer.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Report Player Cheating"), Category = "SteamCoreWeb|CheatReporting|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Report Player Cheating", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|CheatReporting|Async")
 	static USteamCoreWebAsyncActionReportPlayerCheating* ReportPlayerCheatingAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString SteamId, FString SteamIdReporter, FString AppData, bool bHeuristic, bool bDetection, bool bPlayerReport, bool bNoReportID, int32 GameMode, int32 SuspicionStartTime, int32 Severity);
 };
 
@@ -67,7 +67,7 @@ public:
 	* @param	Duration			Ban duration requested in seconds. (duration 0 will issue infinite - less than a year is a suspension and not visible on profile)
 	* @param	bDelayBan			Delay the ban according to default ban delay rules.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request Player Game Ban"), Category = "SteamCoreWeb|CheatReporting|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request Player Game Ban", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|CheatReporting|Async")
 	static USteamCoreWebAsyncActionRequestPlayerGameBan* RequestPlayerGameBanAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, FString ReportID, FString CheatDescription, int32 Duration, bool bDelayBan);
 };
 
@@ -88,7 +88,7 @@ public:
 	* @param	SteamId			The Steam ID of the user to remove the game ban on.
 	* @param	AppId			The App ID for the game.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Remove Player Game Ban"), Category = "SteamCoreWeb|CheatReporting|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Remove Player Game Ban", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|CheatReporting|Async")
 	static USteamCoreWebAsyncActionRemovePlayerGameBan* RemovePlayerGameBanAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId);
 };
 
@@ -114,7 +114,7 @@ public:
 	* @param	bIncludeBans		(Optional) Include ban requests? If false includereports must be true.
 	* @param	SteamId				(Optional) Query just for this Steam ID.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Cheating Reports"), Category = "SteamCoreWeb|CheatReporting|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Cheating Reports", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|CheatReporting|Async")
 	static USteamCoreWebAsyncActionGetCheatingReports* GetCheatingReportsAsync(UObject* WorldContextObject, FString Key, int32 AppId, int32 TimeEnd, int32 TimeBegin, FString ReportIdmin, bool bIncludeReports, bool bIncludeBans, FString SteamId);
 };
 
@@ -145,7 +145,7 @@ public:
 	* @param	CheatParam1	(int64)		Extra cheat data.
 	* @param	CheatParam2	(int64)		Extra cheat data.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Report Cheat Data"), Category = "SteamCoreWeb|CheatReporting|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Report Cheat Data", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|CheatReporting|Async")
 	static USteamCoreWebAsyncActionReportCheatData* ReportCheatDataAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, FString PathAndFileName, FString WebCheatURL, FString TimeNow, FString TimeStarted, FString TimeStopped, FString CheatName, int32 GameProcessId, int32 CheatProcessId, FString CheatParam1, FString CheatParam2);
 };
 
@@ -171,7 +171,7 @@ public:
 	* @param	AppId				The App ID for the game.
 	* @param	SessionId (int64)	The Session ID that was obtained from the call to StartSecureMultiplayerSession.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Request VAC Status for User"), Category = "SteamCoreWeb|CheatReporting|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Request VAC Status for User", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|CheatReporting|Async")
 	static USteamCoreWebAsyncActionRequestVacStatusForUser* RequestVacStatusForUserAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, FString SessionId);
 };
 
@@ -190,7 +190,7 @@ public:
 	* @param	SteamId			The Steam ID of the user.
 	* @param	AppId			The App ID for the game.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Start Secure Multiplayer Session"), Category = "SteamCoreWeb|CheatReporting|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Start Secure Multiplayer Session", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|CheatReporting|Async")
 	static USteamCoreWebAsyncActionStartSecureMultiplayerSession* StartSecureMultiplayerSessionAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId);
 };
 
@@ -210,6 +210,6 @@ public:
 	* @param	AppId				The App ID for the game.
 	* @param	SessionId (int64)	The Session ID that was obtained from the call to StartSecureMultiplayerSession.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "End Secure Multiplayer Session"), Category = "SteamCoreWeb|CheatReporting|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "End Secure Multiplayer Session", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|CheatReporting|Async")
 	static USteamCoreWebAsyncActionEndSecureMultiplayerSession* EndSecureMultiplayerSessionAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, FString SessionId);
 };

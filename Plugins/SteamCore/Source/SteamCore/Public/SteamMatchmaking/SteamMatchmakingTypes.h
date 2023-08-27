@@ -65,6 +65,18 @@ enum class ESteamLobbyDistanceFilter : uint8
 	Worldwide = 3
 };
 
+#if !ENABLE_STEAMCORE
+enum EChatMemberStateChange
+{
+	// Specific to joining / leaving the chatroom
+	k_EChatMemberStateChangeEntered			= 0x0001,		// This user has joined or is joining the chat room
+	k_EChatMemberStateChangeLeft			= 0x0002,		// This user has left or is leaving the chat room
+	k_EChatMemberStateChangeDisconnected	= 0x0004,		// User disconnected without leaving the chat first
+	k_EChatMemberStateChangeKicked			= 0x0008,		// User kicked
+	k_EChatMemberStateChangeBanned			= 0x0010,		// User kicked and banned
+};
+#endif
+
 UENUM(BlueprintType, meta = (Bitflags))
 enum class ESteamChatMemberStateChange : uint8
 {
@@ -101,11 +113,12 @@ public:
 		: Result(ESteamResult::None)
 	{
 	}
-
+#if ENABLE_STEAMCORE
 	FFavoritesListAccountsUpdated(const FavoritesListAccountsUpdated_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Matchmaking")
@@ -125,6 +138,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FFavoritesListChanged(const FavoritesListChanged_t& Data)
 		: IP(FIPv4Address(Data.m_nIP).ToString())
 		  , QueryPort(Data.m_nQueryPort)
@@ -146,6 +160,7 @@ public:
 			Flags.Add(ESteamFavoriteFlags::History);
 		}
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Matchmaking")
@@ -175,6 +190,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FLobbyChatMsg(const LobbyChatMsg_t& Data)
 		: SteamIDLobby(Data.m_ulSteamIDLobby)
 		  , SteamIDUser(Data.m_ulSteamIDUser)
@@ -182,6 +198,7 @@ public:
 		  , ChatID(Data.m_iChatID)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Matchmaking")
@@ -201,6 +218,7 @@ struct FLobbyChatUpdate
 public:
 	FLobbyChatUpdate() = default;
 
+#if ENABLE_STEAMCORE
 	FLobbyChatUpdate(const LobbyChatUpdate_t& Data)
 		: SteamIDLobby(Data.m_ulSteamIDLobby)
 		  , SteamIDUserChanged(Data.m_ulSteamIDUserChanged)
@@ -214,6 +232,7 @@ public:
 			}
 		}
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Matchmaking")
@@ -236,12 +255,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FLobbyDataUpdate(const LobbyDataUpdate_t& Data)
 		: SteamIDLobby(Data.m_ulSteamIDLobby)
 		  , SteamIDMember(Data.m_ulSteamIDMember)
 		  , bSuccess(Data.m_bSuccess > 0)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Matchmaking")
@@ -263,12 +284,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FLobbyEnterData(const LobbyEnter_t& Data)
 		: SteamIDLobby(Data.m_ulSteamIDLobby)
 		  , bLocked(Data.m_bLocked)
 		  , ChatRoomEnterResponse(static_cast<ESteamChatRoomEnterResponse>(Data.m_EChatRoomEnterResponse))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Matchmaking")
@@ -289,6 +312,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FLobbyGameCreated(const LobbyGameCreated_t& Data)
 		: SteamIDLobby(Data.m_ulSteamIDLobby)
 		  , SteamIDGameServer(Data.m_ulSteamIDGameServer)
@@ -296,6 +320,7 @@ public:
 		  , Port(Data.m_usPort)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Matchmaking")
@@ -315,12 +340,14 @@ struct FLobbyInviteData
 public:
 	FLobbyInviteData() = default;
 
+#if ENABLE_STEAMCORE
 	FLobbyInviteData(const LobbyInvite_t& Data)
 		: SteamIDUser(Data.m_ulSteamIDUser)
 		  , SteamIDLobby(Data.m_ulSteamIDLobby)
 		  , GameID(Data.m_ulGameID)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Matchmaking")
@@ -341,12 +368,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FLobbyKickedData(const LobbyKicked_t& Data)
 		: SteamIDLobby(Data.m_ulSteamIDLobby)
 		  , SteamIDAdmin(Data.m_ulSteamIDAdmin)
 		  , bKickedDueToDisconnect(Data.m_bKickedDueToDisconnect > 0)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Matchmaking")
@@ -367,10 +396,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FLobbyMatchList(const LobbyMatchList_t& Data)
 		: LobbiesMatching(Data.m_nLobbiesMatching)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Matchmaking")
@@ -387,11 +418,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FCreateLobbyData(const LobbyCreated_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , SteamIDLobby(Data.m_ulSteamIDLobby)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Matchmaking")
@@ -412,6 +445,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FJoinLobbyData(const LobbyEnter_t& Data)
 		: SteamIDLobby(Data.m_ulSteamIDLobby)
 		  , bLocked(Data.m_bLocked)
@@ -419,6 +453,7 @@ public:
 		  , m_rgfChatPermissions(Data.m_rgfChatPermissions)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Matchmaking")
@@ -430,7 +465,7 @@ public:
 
 	uint32 m_rgfChatPermissions; // Permissions of the current user - unused always 0
 };
-
+ 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		Delegate declarations
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //

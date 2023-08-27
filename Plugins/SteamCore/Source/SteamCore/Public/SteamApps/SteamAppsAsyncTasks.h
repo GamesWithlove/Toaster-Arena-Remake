@@ -12,6 +12,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		FOnlineAsyncTaskSteamCoreAppsGetFileDetails
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+#if ENABLE_STEAMCORE
 class STEAMCORE_API FOnlineAsyncTaskSteamCoreAppsGetFileDetails : public FOnlineAsyncTaskSteamCore
 {
 public:
@@ -43,3 +44,4 @@ private:
 	virtual void TriggerDelegates() override;
 	virtual FString ToString() const override { return FString::Printf(TEXT("FOnlineAsyncTaskSteamCoreAppsGetFileDetails")); }
 };
+#endif

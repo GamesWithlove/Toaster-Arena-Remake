@@ -76,6 +76,8 @@ private:
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(UVideo, OnGetOPFSettingsResult, GetOPFSettingsResult_t, OnGetOPFSettingsResultCallback);
 	STEAM_CALLBACK_MANUAL(UVideo, OnGetVideoURLResult, GetVideoURLResult_t, OnGetVideoURLResultCallback);
+#endif
 };

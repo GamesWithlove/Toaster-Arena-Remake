@@ -46,7 +46,7 @@ void UWebApps::GetAppDepotVersions(const FOnSteamCoreWebCallback& Callback, FStr
 	QueueAsyncTask(Task);
 }
 
-void UWebApps::GetAppList(const FOnSteamCoreWebCallback& Callback, FString Key)
+void UWebApps::GetAppList(const FOnSteamCoreWebAppListCallback& Callback, FString Key)
 {
 	FOnlineAsyncTaskSteamCoreWebAppsGetAppList* Task = new FOnlineAsyncTaskSteamCoreWebAppsGetAppList(this, Callback, Key);
 	QueueAsyncTask(Task);

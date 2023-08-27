@@ -576,9 +576,11 @@ private:
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(UUserStats, OnUserAchievementIconFetched, UserAchievementIconFetched_t, OnUserAchievementIconFetchedCallback);
 	STEAM_CALLBACK_MANUAL(UUserStats, OnUserStatsReceived, UserStatsReceived_t, OnUserStatsReceivedCallback);
 	STEAM_CALLBACK_MANUAL(UUserStats, OnUserStatsStored, UserStatsStored_t, OnUserStatsStoredCallback);
 	STEAM_CALLBACK_MANUAL(UUserStats, OnUserAchievementStored, UserAchievementStored_t, OnUserAchievementStoredCallback);
 	STEAM_CALLBACK_MANUAL(UUserStats, OnUserStatsUnloaded, UserStatsUnloaded_t, OnUserStatsUnloadedCallback);
+#endif
 };

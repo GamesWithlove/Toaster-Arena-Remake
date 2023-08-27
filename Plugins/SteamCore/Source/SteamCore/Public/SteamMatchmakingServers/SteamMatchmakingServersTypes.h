@@ -166,16 +166,22 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Filters")
 	TMap<FString, FString> GetFilters();
 
+#if ENABLE_STEAMCORE
 	MatchMakingKeyValuePair_t* GetFiltersPtr() const { return Filters; }
+#endif
 	int32 GetNumFilters() const { return NumFilters; }
 private:
 	bool CanAddFilter() const { return NumFilters < MaxFilters; }
+#if ENABLE_STEAMCORE
 	int32 GetKeySize() const { return sizeof(Filters[NumFilters].m_szKey); }
 	int32 GetValueSize() const { return sizeof(Filters[NumFilters].m_szValue); }
+#endif
 private:
 	int32 MaxFilters;
 	int32 NumFilters;
+#if ENABLE_STEAMCORE
 	MatchMakingKeyValuePair_t* Filters;
+#endif
 };
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -206,6 +212,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamServerAddr(const servernetadr_t& data, CSteamID steamAddr)
 		: IP(FIPv4Address(data.GetIP()).ToString())
 		  , Port(data.GetConnectionPort())
@@ -214,6 +221,7 @@ public:
 		  , SteamP2PAddr(LexToString(steamAddr.ConvertToUint64()))
 	{
 	}
+#endif
 
 protected:
 	UPROPERTY(BlueprintReadWrite, Category = "MatchmakingServers")
@@ -248,6 +256,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGameServerItem(gameserveritem_t* Data)
 		: SteamServerAddr(Data->m_NetAdr, Data->m_steamID)
 		  , Ping(Data->m_nPing)
@@ -257,12 +266,12 @@ public:
 		  , ServerVersion(Data->m_nServerVersion)
 		  , bPassword(Data->m_bPassword)
 		  , bSecure(Data->m_bSecure)
+		  , m_steamID(Data->m_steamID)
 		  , m_NetAdr(Data->m_NetAdr)
 		  , m_ulTimeLastPlayed(Data->m_ulTimeLastPlayed)
 		  , m_nAppID(Data->m_nAppID)
 		  , m_bDoNotRefresh(Data->m_bDoNotRefresh)
 		  , bHadSuccessfulResponse(Data->m_bHadSuccessfulResponse)
-		  , m_steamID(Data->m_steamID)
 	{
 		const FUTF8ToTCHAR m_ServerName(Data->GetName());
 		const FUTF8ToTCHAR m_MapName(Data->m_szMap);
@@ -274,6 +283,7 @@ public:
 		GameDescription = FString(m_GameDescription.Length(), m_GameDescription.Get());
 		GameTags = FString(m_GameTags.Length(), m_GameTags.Get());
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "MatchmakingServers")
@@ -301,12 +311,14 @@ public:
 	UPROPERTY(BlueprintReadWrite, Category = "MatchmakingServers")
 	bool bSecure;
 
+#if ENABLE_STEAMCORE
+	CSteamID m_steamID;
 	servernetadr_t m_NetAdr;
+#endif
 	uint32 m_ulTimeLastPlayed;
 	uint32 m_nAppID;
 	bool m_bDoNotRefresh;
 	bool bHadSuccessfulResponse;
-	CSteamID m_steamID;
 };
 
 USTRUCT(BlueprintType)

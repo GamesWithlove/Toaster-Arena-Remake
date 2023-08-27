@@ -27,7 +27,7 @@ public:
 	* @param	SteamId		SteamID of user
 	* @param	AppId		AppId of product
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Enumerate User Published Files"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Enumerate User Published Files"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionEnumerateUserPublishedFiles* EnumerateUserPublishedFilesAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId);
 };
 
@@ -47,7 +47,7 @@ public:
 	* @param	AppId		AppId of product
 	* @param	ListType	EUCMListType
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = ""), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Enumerate User Subscribed Files"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionEnumerateUserSubscribedFiles* EnumerateUserSubscribedFilesAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, int32 ListType);
 };
 
@@ -65,7 +65,7 @@ public:
 	*
 	* @param	PublishedFileIds		collection ids to get the details for
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Collection Details"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Collection Details", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionGetCollectionDetails* GetCollectionDetailsAsync(UObject* WorldContextObject, TArray<FString> PublishedFileIds);
 };
 
@@ -82,7 +82,7 @@ public:
 	*
 	* @param	publishedFileIDs		collection ids to get the details for
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Published File Details"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Published File Details", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionGetPublishedFileDetails* GetPublishedFileDetailsAsync(UObject* WorldContextObject, FString PublishedFileIds);
 };
 
@@ -102,7 +102,7 @@ public:
 	* @param	UGCID	 		ID of UGC file to get info for
 	* @param	AppId			AppId of product
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get UGC File Details"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get UGC File Details", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionGetUGCFileDetails* GetUGCFileDetailsAsync(UObject* WorldContextObject, FString Key, FString SteamId, FString UGCID, int32 AppId);
 };
 
@@ -123,7 +123,7 @@ public:
 	* @param	AppId			AppId of product
 	* @param	bUsed			New state of flag
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Set UGC Used By GC"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Set UGC Used By GC", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionSetUGCUsedByGC* SetUGCUsedByGCAsync(UObject* WorldContextObject, FString Key, FString SteamId, FString UGCID, int32 AppId, bool bUsed);
 };
 
@@ -143,7 +143,7 @@ public:
 	* @param	AppId					AppId of product
 	* @param	PublishedFileIds			published file id to subscribe to
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Subscribe Published File"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Subscribe Published File", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionSubscribePublishedFile* SubscribePublishedFileAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, FString PublishedFileIds);
 };
 
@@ -163,6 +163,6 @@ public:
 	* @param	AppId					AppId of product
 	* @param	PublishedFileIds			published file id to unsubscribe from
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Unsubscribe Published File"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Unsubscribe Published File", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionUnsubscribePublishedFile* UnsubscribePublishedFileAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, FString PublishedFileIds);
 };

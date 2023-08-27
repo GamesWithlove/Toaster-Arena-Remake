@@ -36,7 +36,7 @@ public:
 	* @param	FileName	The absolute path and name to the file.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get File Details"), Category = "SteamCore|Apps|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get File Details", BlueprintInternalUseOnly="true"), Category = "SteamCore|Apps|Async")
 	static USteamCoreAppsAsyncActionGetFileDetails* GetFileDetailsAsync(UObject* WorldContextObject, FString FileName, float Timeout = 10.f);
 public:
 	UFUNCTION()

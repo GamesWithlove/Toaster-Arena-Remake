@@ -9,6 +9,7 @@
 #include "SteamMatchmakingServers/SteamMatchmakingServersAsyncTasks.h"
 
 #include "SteamCorePluginPrivatePCH.h"
+#include "Interfaces/OnlineIdentityInterface.h"
 
 TArray<FOnSteamMessage> USteamUtilities::s_SteamMessageListeners;
 
@@ -116,9 +117,12 @@ FSteamUGCHandle USteamUtilities::MakeUGCHandle(FString Value)
 
 FSteamInventoryUpdateHandle USteamUtilities::MakeInventoryUpdateHandle(FString Value)
 {
+#if ENABLE_STEAMCORE
 	uint64 TempId = 0;
 	LexFromString(TempId, *Value);
 	return FSteamInventoryUpdateHandle(TempId);
+#endif
+	return FSteamInventoryUpdateHandle();
 }
 
 FSteamTicketHandle USteamUtilities::MakeTicketHandle(FString Value)
@@ -150,7 +154,11 @@ FString USteamUtilities::BreakTicketHandle(FSteamTicketHandle Handle)
 
 bool USteamUtilities::IsValid(FSteamID SteamID)
 {
+#if ENABLE_STEAMCORE
 	return CSteamID(SteamID.GetValue()).IsValid();
+#else
+	return false;
+#endif
 }
 
 bool USteamUtilities::IsPublishedFileIDValid(FPublishedFileID PublishedFileId)
@@ -195,17 +203,29 @@ bool USteamUtilities::GetGameEngineInitialized()
 
 ESteamAccountType USteamUtilities::GetAccountType(FSteamID SteamID)
 {
+#if ENABLE_STEAMCORE
 	return static_cast<ESteamAccountType>((CSteamID(SteamID.GetValue())).GetEAccountType());
+#else
+	return ESteamAccountType::Invalid;
+#endif
 }
 
 bool USteamUtilities::IsLobby(FSteamID SteamID)
 {
+#if ENABLE_STEAMCORE
 	return CSteamID(SteamID.GetValue()).IsLobby();
+#else
+	return false;
+#endif
 }
 
 bool USteamUtilities::IsSteamAvailable()
 {
+#if ENABLE_STEAMCORE
 	return SteamAPI_Init();
+#else
+	return false;
+#endif
 }
 
 UServerFilter* USteamUtilities::ConstructServerFilter(UObject* WorldContextObject)
@@ -270,23 +290,6 @@ void USteamUtilities::GetPublicIp(const FOnHTTPResponse& Callback)
 	}
 }
 
-void USteamUtilities::ReleaseRequest()
-{
-	if (FOnlineAsyncTaskSteamCoreMatchmakingServersServerList::m_CallbackResults != nullptr)
-	{
-		SteamMatchmakingServers()->ReleaseRequest(FOnlineAsyncTaskSteamCoreMatchmakingServersServerList::m_CallbackResults);
-		FOnlineAsyncTaskSteamCoreMatchmakingServersServerList::m_CallbackResults = nullptr;
-	}
-}
-
-void USteamUtilities::CancelQuery()
-{
-	if (FOnlineAsyncTaskSteamCoreMatchmakingServersServerList::m_CallbackResults != nullptr)
-	{
-		SteamMatchmakingServers()->CancelQuery(FOnlineAsyncTaskSteamCoreMatchmakingServersServerList::m_CallbackResults);
-	}
-}
-
 FSteamID USteamUtilities::GetSteamIdFromPlayerState(APlayerState* PlayerState)
 {
 	FSteamID SteamId;
@@ -320,12 +323,29 @@ FString USteamUtilities::BP_BytesToString(TArray<uint8> Array)
 
 bool USteamUtilities::IsSteamServerInitialized()
 {
+#if ENABLE_STEAMCORE
 	if (SteamGameServerUtils() && SteamGameServer())
 	{
 		return SteamGameServer()->BLoggedOn();
 	}
+#endif
 
 	return false;
+}
+
+TArray<uint8> USteamUtilities::K2_HexToBytes(FString String)
+{
+	TArray<uint8> Array;
+	Array.SetNum(String.Len());
+
+	HexToBytes(String, Array.GetData());
+	
+	return Array;
+}
+
+FString USteamUtilities::K2_HexToString(TArray<uint8> Array)
+{
+	return BytesToHex(Array.GetData(), Array.Num());
 }
 
 TArray<uint8> USteamUtilities::ReadFileToBytes(const FString& AbsoluteFilePath)
@@ -362,50 +382,73 @@ bool USteamUtilities::WriteBytesToFile(bool bOverwriteIfExists, const FString& A
 	return false;
 }
 
+bool USteamUtilities::K2_IsPlayerInSession(int32 LocalUserNum)
+{
+#if ENABLE_STEAMCORE
+	const FOnlineSubsystemSteam* SteamSubsystem = static_cast<FOnlineSubsystemSteam*>(IOnlineSubsystem::Get(STEAM_SUBSYSTEM));
+
+	if (SteamSubsystem && SteamSubsystem->GetSessionInterface())
+	{
+		const FUniqueNetIdPtr UserId = SteamSubsystem->GetIdentityInterface()->GetUniquePlayerId(LocalUserNum);
+		return SteamSubsystem->GetSessionInterface()->IsPlayerInSession(NAME_GameSession, *UserId);
+	}
+#endif
+
+	return false;
+}
+
 bool USteamUtilities::IsUsingP2PRelays()
 {
+#if ENABLE_STEAMCORE
 	FOnlineSubsystemSteam* SteamSubsystem = static_cast<FOnlineSubsystemSteam*>(IOnlineSubsystem::Get(STEAM_SUBSYSTEM));
 
 	if (SteamSubsystem && SteamSubsystem->GetPingInterface())
 	{
 		return SteamSubsystem->GetPingInterface()->IsUsingP2PRelays();
 	}
+#endif
 
 	return false;
 }
 
 FHostPingData USteamUtilities::GetHostPingData()
 {
+#if ENABLE_STEAMCORE
 	FOnlineSubsystemSteam* SteamSubsystem = static_cast<FOnlineSubsystemSteam*>(IOnlineSubsystem::Get(STEAM_SUBSYSTEM));
 
 	if (SteamSubsystem && SteamSubsystem->GetPingInterface())
 	{
 		return FHostPingData(SteamSubsystem->GetPingInterface()->GetHostPingData());
 	}
+#endif
 
 	return FHostPingData();
 }
 
 int32 USteamUtilities::GetPingFromHostData(const FHostPingData& Data)
 {
+#if ENABLE_STEAMCORE
 	FOnlineSubsystemSteam* SteamSubsystem = static_cast<FOnlineSubsystemSteam*>(IOnlineSubsystem::Get(STEAM_SUBSYSTEM));
 
 	if (SteamSubsystem && SteamSubsystem->GetPingInterface())
 	{
 		return SteamSubsystem->GetPingInterface()->GetPingFromHostData(Data);
 	}
+#endif
 
 	return 0;
 }
 
 bool USteamUtilities::IsRecalculatingPing()
 {
+#if ENABLE_STEAMCORE
 	FOnlineSubsystemSteam* SteamSubsystem = static_cast<FOnlineSubsystemSteam*>(IOnlineSubsystem::Get(STEAM_SUBSYSTEM));
 
 	if (SteamSubsystem && SteamSubsystem->GetPingInterface())
 	{
 		return SteamSubsystem->GetPingInterface()->IsRecalculatingPing();
 	}
+#endif
 
 	return false;
 }

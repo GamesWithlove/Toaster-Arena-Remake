@@ -146,7 +146,7 @@ private:
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(USteamGameSearch, OnSearchForGameProgressUpdated, SearchForGameProgressCallback_t, OnSearchForGameProgressCallback);
 	STEAM_CALLBACK_MANUAL(USteamGameSearch, OnSearchForGameResultUpdated, SearchForGameResultCallback_t, OnSearchForGameResultCallback);
 	STEAM_CALLBACK_MANUAL(USteamGameSearch, OnRequestPlayersForGameProgressUpdated, RequestPlayersForGameProgressCallback_t, OnRequestPlayersForGameProgressCallback);
@@ -154,4 +154,5 @@ private:
 	STEAM_CALLBACK_MANUAL(USteamGameSearch, OnRequestPlayersForGameFinalResultUpdated, RequestPlayersForGameFinalResultCallback_t, OnRequestPlayersForGameFinalResultCallback);
 	STEAM_CALLBACK_MANUAL(USteamGameSearch, OnSubmitPlayerResultResultUpdated, SubmitPlayerResultResultCallback_t, OnSubmitPlayerResultResultCallback);
 	STEAM_CALLBACK_MANUAL(USteamGameSearch, OnEndGameResultUpdated, EndGameResultCallback_t, OnEndGameResultCallback);
+#endif
 };

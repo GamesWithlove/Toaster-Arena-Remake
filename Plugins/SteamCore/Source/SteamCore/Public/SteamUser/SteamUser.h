@@ -313,6 +313,7 @@ private:
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(UUser, OnClientGameServerDeny, ClientGameServerDeny_t, OnClientGameServerDenyCallbackCallback);
 	STEAM_CALLBACK_MANUAL(UUser, OnGameWebCallback, GameWebCallback_t, OnGameWebCallbackCallback);
 	STEAM_CALLBACK_MANUAL(UUser, OnGetAuthSessionTicketResponse, GetAuthSessionTicketResponse_t, OnGetAuthSessionTicketResponseCallback);
@@ -324,4 +325,5 @@ private:
 	STEAM_CALLBACK_MANUAL(UUser, OnSteamServersDisconnected, SteamServersDisconnected_t, OnSteamServersDisconnectedCallback);
 	STEAM_CALLBACK_MANUAL(UUser, OnValidateAuthTicketResponse, ValidateAuthTicketResponse_t, OnValidateAuthTicketResponseCallback);
 	STEAM_CALLBACK_MANUAL(UUser, OnEncryptedAppTicketResponse, EncryptedAppTicketResponse_t, OnEncryptedAppTicketResponseCallback);
+#endif
 };

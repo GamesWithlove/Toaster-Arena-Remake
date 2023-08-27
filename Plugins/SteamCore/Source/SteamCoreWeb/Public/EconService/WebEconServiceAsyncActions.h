@@ -36,7 +36,7 @@ public:
 	* @param	bIncludeFailed			Include Failed
 	* @param	bIncludeTotal			If set, the total number of trades the account has participated in will be included in the response
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Trade History"), Category = "SteamCoreWeb|EconService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Trade History", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|EconService|Async")
 	static USteamCoreWebAsyncActionGetTradeHistory* GetTradeHistoryAsync(UObject* WorldContextObject, FString Key, int32 MaxTrades, int32 StartAfterTime, FString StartAfterTradeId, bool bNavigatingBack, bool bGetDescriptions, FString Language, bool bIncludeFailed, bool bIncludeTotal);
 };
 
@@ -56,7 +56,7 @@ public:
 	* @param	AppId			App to clear cache for.
 	* @param	ContextId		Context to clear cache for.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Flush Inventory Cache"), Category = "SteamCoreWeb|EconService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Flush Inventory Cache", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|EconService|Async")
 	static USteamCoreWebAsyncActionFlushInventoryCache* FlushInventoryCacheAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, FString ContextId);
 };
 
@@ -74,7 +74,7 @@ public:
 	* @param	Key						Steamworks Web API publisher authentication Key.
 	* @param
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Flush Asset Appearance Cache"), Category = "SteamCoreWeb|EconService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Flush Asset Appearance Cache", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|EconService|Async")
 	static USteamCoreWebAsyncActionFlushAssetAppearanceCache* FlushAssetAppearanceCacheAsync(UObject* WorldContextObject, FString Key, int32 AppId);
 };
 
@@ -92,7 +92,7 @@ public:
 	* @param	Key						Steamworks Web API publisher authentication Key.
 	* @param
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Flush Context Cache"), Category = "SteamCoreWeb|EconService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Flush Context Cache", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|EconService|Async")
 	static USteamCoreWebAsyncActionFlushContextCache* FlushContextCacheAsync(UObject* WorldContextObject, FString Key, int32 AppId);
 };
 
@@ -116,7 +116,7 @@ public:
 	* @param	bHistoricalOnly			Indicates we should only return offers which are not active.
 	* @param	TimeHistoricalCutoff	When active_only is set, offers updated since this time will also be returned
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Trade Offers"), Category = "SteamCoreWeb|EconService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Trade Offers", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|EconService|Async")
 	static USteamCoreWebAsyncActionGetTradeOffers* GetTradeOffersAsync(UObject* WorldContextObject, FString Key, bool bGetSentOffers, bool bGetReceivedOffers, bool bGetDescriptions, FString Language, bool bActiveOnly, bool bHistoricalOnly, int32 TimeHistoricalCutoff);
 };
 
@@ -134,7 +134,7 @@ public:
 	* @param	Key						Steamworks Web API publisher authentication Key.
 	* @param
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Trade Offer"), Category = "SteamCoreWeb|EconService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Trade Offer", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|EconService|Async")
 	static USteamCoreWebAsyncActionGetTradeOffer* GetTradeOfferAsync(UObject* WorldContextObject, FString Key, FString TradeOfferId, FString Language);
 };
 
@@ -152,7 +152,7 @@ public:
 	* @param	Key						Steamworks Web API publisher authentication Key.
 	* @param	TimeLastVisit			The time the user last visited. If not passed, will use the time the user last visited the trade offer page.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Trade Offers Summary"), Category = "SteamCoreWeb|EconService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Trade Offers Summary", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|EconService|Async")
 	static USteamCoreWebAsyncActionGetTradeOffersSummary* GetTradeOffersSummaryAsync(UObject* WorldContextObject, FString Key, int32 TimeLastVisit);
 };
 
@@ -170,7 +170,7 @@ public:
 	* @param	Key						Steamworks Web API publisher authentication Key.
 	* @param	TradeOfferId
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Decline Trade Offer"), Category = "SteamCoreWeb|EconService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Decline Trade Offer", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|EconService|Async")
 	static USteamCoreWebAsyncActionDeclineTradeOffer* DeclineTradeOfferAsync(UObject* WorldContextObject, FString Key, FString TradeOfferId);
 };
 
@@ -188,6 +188,6 @@ public:
 	* @param	Key					Steamworks Web API publisher authentication Key.
 	* @param	TradeOfferId
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Cancel Trade Offer"), Category = "SteamCoreWeb|EconService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Cancel Trade Offer"), Category = "SteamCoreWeb|EconService|Async")
 	static USteamCoreWebAsyncActionCancelTradeOffer* CancelTradeOfferAsync(UObject* WorldContextObject, FString Key, FString TradeOfferId);
 };

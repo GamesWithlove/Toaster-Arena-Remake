@@ -344,9 +344,10 @@ private:
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(URemoteStorage, OnRemoteStorageUnsubscribePublishedFileResult, RemoteStorageUnsubscribePublishedFileResult_t, OnRemoteStorageUnsubscribePublishedFileResultCallback);
 	STEAM_CALLBACK_MANUAL(URemoteStorage, OnRemoteStorageSubscribePublishedFileResult, RemoteStorageSubscribePublishedFileResult_t, OnRemoteStorageSubscribePublishedFileResultCallback);
 	STEAM_CALLBACK_MANUAL(URemoteStorage, OnRemoteStoragePublishedFileUnsubscribed, RemoteStoragePublishedFileUnsubscribed_t, OnRemoteStoragePublishedFileUnsubscribedCallback);
 	STEAM_CALLBACK_MANUAL(URemoteStorage, OnRemoteStoragePublishedFileSubscribed, RemoteStoragePublishedFileSubscribed_t, OnRemoteStoragePublishedFileSubscribedCallback);
+#endif
 };

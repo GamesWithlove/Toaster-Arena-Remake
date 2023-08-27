@@ -14,18 +14,6 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		Steam Utilities Class
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-template <typename TEnum>
-static FORCEINLINE FString GetSteamCoreWebEnumAsString(const FString& name, TEnum val)
-{
-	const UEnum* EnumPtr = FindObject<UEnum>(ANY_PACKAGE, *name, true);
-	if (!EnumPtr)
-	{
-		return "";
-	}
-
-	return EnumPtr->GetNameStringByValue(static_cast<int64>(val));
-}
-
 UCLASS(abstract)
 class STEAMCOREWEB_API USteamWebUtilities : public UBlueprintFunctionLibrary
 {
@@ -45,7 +33,7 @@ public:
 	* @param	JSONString		JsonString from Steam WEB Api
 	* @param	key				The key that contains the value (NOT case sensitive)
 	*/
-	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|Utilities", meta = (ExpandEnumAsExecs = result))
+	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|Utilities", meta = (ExpandEnumAsExecs = Result))
 	static void FindJsonString(const FString& JSONString, FString Key, FString& Value, ESteamJsonResult& Result);
 
 	/**
@@ -54,7 +42,7 @@ public:
 	* @param	JSONString		JsonString from Steam WEB Api
 	* @param	key				The key that contains the value (NOT case sensitive)
 	*/
-	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|Utilities", meta = (ExpandEnumAsExecs = result))
+	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|Utilities", meta = (ExpandEnumAsExecs = Result))
 	static void FindJsonStrings(const FString& JSONString, FString Key, TArray<FString>& Values, ESteamJsonResult& Result);
 
 	/**
@@ -63,7 +51,7 @@ public:
 	* @param	JSONString		JsonString from Steam WEB Api
 	* @param	key				The key that contains the value (NOT case sensitive)
 	*/
-	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|Utilities", meta = (ExpandEnumAsExecs = result))
+	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|Utilities", meta = (ExpandEnumAsExecs = Result))
 	static void FindJsonBool(const FString& JSONString, FString Key, bool& bValue, ESteamJsonResult& Result);
 
 	/**
@@ -72,7 +60,7 @@ public:
 	* @param	JSONString		JsonString from Steam WEB Api
 	* @param	key				The key that contains the value (NOT case sensitive)
 	*/
-	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|Utilities", meta = (ExpandEnumAsExecs = result))
+	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|Utilities", meta = (ExpandEnumAsExecs = Result))
 	static void FindJsonBools(const FString& JSONString, FString Key, TArray<bool>& bValues, ESteamJsonResult& Result);
 
 	/**
@@ -81,7 +69,7 @@ public:
 	* @param	JSONString		JsonString from Steam WEB Api
 	* @param	key				The key that contains the value (NOT case sensitive)
 	*/
-	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|Utilities", meta = (ExpandEnumAsExecs = result))
+	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|Utilities", meta = (ExpandEnumAsExecs = Result))
 	static void FindJsonNumber(const FString& JSONString, FString Key, int32& Value, ESteamJsonResult& Result);
 
 	/**
@@ -90,7 +78,7 @@ public:
 	* @param	JSONString		JsonString from Steam WEB Api
 	* @param	key				The key that contains the value (NOT case sensitive)
 	*/
-	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|Utilities", meta = (ExpandEnumAsExecs = result))
+	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|Utilities", meta = (ExpandEnumAsExecs = Result))
 	static void FindJsonNumbers(const FString& JSONString, FString Key, TArray<int32>& Values, ESteamJsonResult& Result);
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCoreWeb|Utilities")

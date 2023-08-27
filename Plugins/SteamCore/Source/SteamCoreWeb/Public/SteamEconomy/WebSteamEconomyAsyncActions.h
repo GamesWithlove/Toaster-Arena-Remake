@@ -28,7 +28,7 @@ public:
 	* @param	SteamId				SteamID of user attempting to initiate a trade
 	* @param	TargetId (int64)	SteamID of user that is the target of the trade invitation
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Can Trade"), Category = "SteamCoreWeb|SteamEconomy|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Can Trade", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|SteamEconomy|Async")
 	static USteamCoreWebAsyncActionCanTrade* CanTradeAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString SteamId, FString TargetId);
 };
 
@@ -49,7 +49,7 @@ public:
 	* @param	TxnId		The transaction ID
 	* @param	Language	The local Language for the user
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Finalize Asset Transaction"), Category = "SteamCoreWeb|SteamEconomy|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Finalize Asset Transaction", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|SteamEconomy|Async")
 	static USteamCoreWebAsyncActionFinalizeAssetTransaction* FinalizeAssetTransactionAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString SteamId, FString TxnId, FString Language);
 };
 
@@ -71,7 +71,7 @@ public:
 	* @param	ClassId			Class ID of the nth class.
 	* @param	InstanceId		Instance ID of the nth class.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Asset Class Info"), Category = "SteamCoreWeb|SteamEconomy|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Asset Class Info", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|SteamEconomy|Async")
 	static USteamCoreWebAsyncActionGetAssetClassInfo* GetAssetClassInfoAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString Language, int32 ClassCount, FString ClassId, FString InstanceId);
 };
 
@@ -91,7 +91,7 @@ public:
 	* @param	Currency		The currency to filter for
 	* @param	Language		The user's local Language
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Asset Prices"), Category = "SteamCoreWeb|SteamEconomy|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Asset Prices", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|SteamEconomy|Async")
 	static USteamCoreWebAsyncActionGetAssetPrices* GetAssetPricesAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString Currency, FString Language);
 };
 
@@ -111,7 +111,7 @@ public:
 	* @param	AppId				The app to get exported items from.
 	* @param	ContextId (int64)	The context in the app to get exported items from.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Exported Assets for User"), Category = "SteamCoreWeb|SteamEconomy|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Exported Assets for User", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|SteamEconomy|Async")
 	static USteamCoreWebAsyncActionGetExportedAssetsForUser* GetExportedAssetsForUserAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, FString ContextId);
 };
 
@@ -129,7 +129,7 @@ public:
 	* @param	Key				Steamworks Web API publisher authentication Key.
 	* @param	AppId			The app ID the user is buying assets for
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Market Prices"), Category = "SteamCoreWeb|SteamEconomy|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Market Prices", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|SteamEconomy|Async")
 	static USteamCoreWebAsyncActionGetMarketPrices* GetMarketPricesAsync(UObject* WorldContextObject, FString Key, int32 AppId);
 };
 
@@ -155,7 +155,7 @@ public:
 	* @param	Referer				The referring URL
 	* @param	bClientAuth			If true (default is false), the authorization will appear in the user's steam client overlay, rather than as a web page - useful for stores that are embedded in products.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Start Asset Transaction"), Category = "SteamCoreWeb|SteamEconomy|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Start Asset Transaction"), Category = "SteamCoreWeb|SteamEconomy|Async")
 	static USteamCoreWebAsyncActionStartAssetTransaction* StartAssetTransactionAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString SteamId, FString AssetId, int32 AssetQuantity, FString Currency, FString Language, FString Ipaddress, FString Referer, bool bClientAuth);
 };
 
@@ -175,6 +175,6 @@ public:
 	* @param	SteamId1		SteamID of first user in the trade
 	* @param	SteamId2		SteamID of second user in the trade
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Start Trade"), Category = "SteamCoreWeb|SteamEconomy|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Start Trade"), Category = "SteamCoreWeb|SteamEconomy|Async")
 	static USteamCoreWebAsyncActionStartTrade* StartTradeAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString SteamId1, FString SteamId2);
 };

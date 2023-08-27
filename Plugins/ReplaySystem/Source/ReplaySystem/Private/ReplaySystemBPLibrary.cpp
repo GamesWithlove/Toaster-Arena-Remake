@@ -385,7 +385,12 @@ UReplayDataObject* UReplaySystemBPLibrary::CreateReplayDataObject()
 
 float UReplaySystemBPLibrary::MsToSeconds(const int32 MS)
 {
+#if  ENGINE_MAJOR_VERSION <= 4
 	const float MsAsFloat = UKismetMathLibrary::Conv_IntToFloat(MS);
+#else
+	const float MsAsFloat = UKismetMathLibrary::Conv_IntToDouble(MS);
+#endif
+	
 	const float MsAsSeconds = MsAsFloat / 1000;
 	return MsAsSeconds;
 }
@@ -474,7 +479,12 @@ void UReplaySystemBPLibrary::SetMaxRecordHz(UObject* WorldContextObject, float H
 	{
 		if (UGameplayStatics::GetPlayerController(World, 0))
 		{
+#if  ENGINE_MAJOR_VERSION <= 4
 			FString Command = "demo.recordhz " + UKismetStringLibrary::Conv_FloatToString(Hz);
+#else
+			FString Command = "demo.recordhz " + FString::SanitizeFloat(Hz);
+#endif
+			
 
 			UGameplayStatics::GetPlayerController(World, 0)->ConsoleCommand(Command);
 		}

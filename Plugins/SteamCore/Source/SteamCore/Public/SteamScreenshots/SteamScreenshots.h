@@ -131,6 +131,8 @@ private:
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(UScreenshots, OnScreenshotReady, ScreenshotReady_t, OnScreenshotReadyCallback);
 	STEAM_CALLBACK_MANUAL(UScreenshots, OnScreenshotRequested, ScreenshotRequested_t, OnScreenshotRequestedCallback);
+#endif
 };

@@ -17,7 +17,6 @@
 DECLARE_LOG_CATEGORY_EXTERN(SteamCoreWebLog, Log, All);
 
 DECLARE_DYNAMIC_DELEGATE_TwoParams(FOnSteamCoreWebCallback, const FString&, data, bool, bWasSuccessful);
-
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnSteamCoreWebAsyncCallback, const FString&, data, bool, bWasSuccessful);
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -343,3 +342,17 @@ public:
 	operator FString() const { return RequestURL; }
 	const TCHAR* operator*() const { return *RequestURL; }
 };
+
+USTRUCT(BlueprintType)
+struct FWebAppsGetAppList
+{
+	GENERATED_BODY()
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Data")
+	FString AppId;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Data")
+	FString Name;
+};
+
+DECLARE_DYNAMIC_DELEGATE_TwoParams(FOnSteamCoreWebAppListCallback, const TArray<FWebAppsGetAppList>&, Data, bool, bWasSuccessful);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnSteamCoreWebAppListAsyncCallback, const TArray<FWebAppsGetAppList>&, data, bool, bWasSuccessful);

@@ -10,7 +10,7 @@
 void UNetworking::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
-
+#if ENABLE_STEAMCORE
 	OnP2PSessionRequestCallback.Register(this, &UNetworking::OnP2PSessionRequest);
 	OnP2PSessionConnectFailCallback.Register(this, &UNetworking::OnP2PSessionConnectFail);
 
@@ -19,12 +19,15 @@ void UNetworking::Initialize(FSubsystemCollectionBase& Collection)
 		OnP2PSessionRequestCallback.SetGameserverFlag();
 		OnP2PSessionConnectFailCallback.SetGameserverFlag();
 	}
+#endif
 }
 
 void UNetworking::Deinitialize()
 {
+#if ENABLE_STEAMCORE
 	OnP2PSessionRequestCallback.Unregister();
 	OnP2PSessionConnectFailCallback.Unregister();
+#endif
 
 	Super::Deinitialize();
 }
@@ -38,10 +41,12 @@ bool UNetworking::AcceptP2PSessionWithUser(FSteamID SteamIDRemote)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetNetworking())
 	{
 		bResult = GetNetworking()->AcceptP2PSessionWithUser(SteamIDRemote);
 	}
+#endif
 
 	return bResult;
 }
@@ -52,10 +57,12 @@ bool UNetworking::AllowP2PPacketRelay(bool bAllow)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetNetworking())
 	{
 		bResult = GetNetworking()->AllowP2PPacketRelay(bAllow);
 	}
+#endif
 
 	return bResult;
 }
@@ -66,10 +73,12 @@ bool UNetworking::CloseP2PChannelWithUser(FSteamID SteamIDRemote, int32 Channel)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetNetworking())
 	{
 		bResult = GetNetworking()->CloseP2PChannelWithUser(SteamIDRemote, Channel);
 	}
+#endif
 
 	return bResult;
 }
@@ -80,10 +89,12 @@ bool UNetworking::CloseP2PSessionWithUser(FSteamID SteamIDRemote)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetNetworking())
 	{
 		bResult = GetNetworking()->CloseP2PSessionWithUser(SteamIDRemote);
 	}
+#endif
 
 	return bResult;
 }
@@ -95,6 +106,7 @@ bool UNetworking::GetP2PSessionState(FSteamID SteamIDRemote, FSteamP2PSessionSta
 	bool bResult = false;
 	ConnectionState = FSteamP2PSessionState();
 
+#if ENABLE_STEAMCORE
 	if (GetNetworking())
 	{
 		P2PSessionState_t SessionState;
@@ -106,6 +118,7 @@ bool UNetworking::GetP2PSessionState(FSteamID SteamIDRemote, FSteamP2PSessionSta
 			ConnectionState = SessionState;
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -119,6 +132,7 @@ bool UNetworking::IsP2PPacketAvailable(int32& OutMessageSize, int32 Channel)
 	OutMessageSize = 0;
 	uint32 MessageSize = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetNetworking())
 	{
 		bResult = GetNetworking()->IsP2PPacketAvailable(&MessageSize, Channel);
@@ -129,6 +143,7 @@ bool UNetworking::IsP2PPacketAvailable(int32& OutMessageSize, int32 Channel)
 		}
 	}
 
+#endif
 
 	return bResult;
 }
@@ -141,6 +156,7 @@ bool UNetworking::ReadP2PPacket(TArray<uint8>& Data, FSteamID& OutSteamIdRemote,
 	Data.Empty();
 	OutSteamIdRemote = FSteamID();
 
+#if ENABLE_STEAMCORE
 	if (GetNetworking())
 	{
 		Data.SetNum(MessageSize);
@@ -160,6 +176,7 @@ bool UNetworking::ReadP2PPacket(TArray<uint8>& Data, FSteamID& OutSteamIdRemote,
 			Data.Empty();
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -170,10 +187,12 @@ bool UNetworking::SendP2PPacket(FSteamID SteamIDRemote, TArray<uint8> Data, ESte
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetNetworking())
 	{
 		bResult = GetNetworking()->SendP2PPacket(SteamIDRemote, Data.GetData(), Data.Num(), static_cast<EP2PSend>(P2PSendType), Channel);
 	}
+#endif
 
 	return bResult;
 }
@@ -182,6 +201,7 @@ bool UNetworking::SendP2PPacket(FSteamID SteamIDRemote, TArray<uint8> Data, ESte
 //		Steam API Callbacks
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void UNetworking::OnP2PSessionRequest(P2PSessionRequest_t* pParam)
 {
 	LogVerbose("");
@@ -203,3 +223,4 @@ void UNetworking::OnP2PSessionConnectFail(P2PSessionConnectFail_t* pParam)
 		OnP2PSessionConnectFailDelegate.Broadcast(Data);
 	});
 }
+#endif

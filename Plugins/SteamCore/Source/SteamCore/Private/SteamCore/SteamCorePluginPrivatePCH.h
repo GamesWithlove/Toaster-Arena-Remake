@@ -4,6 +4,8 @@
 * Official SteamCore Documentation: https://eeldev.com
 */
 
+#pragma once
+
 #include <CoreMinimal.h>
 #include <Engine/Texture2D.h>
 #include <Engine/Engine.h>
@@ -17,7 +19,6 @@
 #include <Misc/FileHelper.h>
 #include <Misc/EngineVersionComparison.h>
 #include <Misc/CoreDelegates.h>
-#include <OnlineSubsystemSteam.h>
 #include <OnlineSessionSettings.h>
 #include <OnlineSubsystem.h>
 #include <Interfaces/OnlineSessionInterface.h>
@@ -37,8 +38,15 @@
 #include <AudioDevice.h>
 #include <GameFramework/PlayerState.h>
 #include <Sound/SoundWaveProcedural.h>
+#if ENABLE_STEAMCORE
+#include <OnlineSubsystemSteam.h>
 #include <OnlinePingInterfaceSteam.h>
 #include <SteamSharedModule.h>
 #include <OnlineSubsystemSteamModule.h>
+#endif
+
+#if UE_VERSION_NEWER_THAN(5,1,0)
+#include <Online/OnlineSessionNames.h>
+#endif
 
 #include "SteamCoreLogging.h"

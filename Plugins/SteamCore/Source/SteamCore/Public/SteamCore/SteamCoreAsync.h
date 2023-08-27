@@ -18,7 +18,14 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnFailure);
 class STEAMCORE_API FOnlineAsyncTaskSteamCore : public FOnlineAsyncTaskBasic<class USteamCoreSubsystem>
 {
 public:
-	FOnlineAsyncTaskSteamCore(USteamCoreSubsystem* Subsystem, const SteamAPICall_t Handle, float Timeout = 10.f)
+	FOnlineAsyncTaskSteamCore(
+		USteamCoreSubsystem* Subsystem,
+#if ENABLE_STEAMCORE
+		const SteamAPICall_t Handle,
+#else
+		uint64_t Handle,
+#endif
+		float Timeout = 10.f)
 		: FOnlineAsyncTaskBasic(Subsystem)
 		, bInit(false)
 		, bTimedOut(false)
@@ -28,7 +35,14 @@ public:
 	{
 		
 	}
-	FOnlineAsyncTaskSteamCore(USteamCoreSubsystem* Subsystem, const SteamAPICall_t Handle, USteamCoreAsyncAction* AsyncObject = nullptr, float Timeout = 10.f)
+	FOnlineAsyncTaskSteamCore(USteamCoreSubsystem* Subsystem,
+#if ENABLE_STEAMCORE
+		const SteamAPICall_t Handle,
+#else
+		uint64_t Handle,
+#endif
+		USteamCoreAsyncAction* AsyncObject = nullptr,
+		float Timeout = 10.f)
 		: FOnlineAsyncTaskBasic(Subsystem)
 		, bInit(false)
 		, bTimedOut(false)
@@ -47,7 +61,11 @@ private:
 public:
 	bool bInit;
 	bool bTimedOut;
+#if ENABLE_STEAMCORE
 	SteamAPICall_t m_CallbackHandle;
+#else
+	uint64_t m_CallbackHandle;
+#endif
 	USteamCoreAsyncAction* m_AsyncObject;
 protected:
 	virtual void Tick() override;
@@ -60,11 +78,12 @@ class STEAMCORE_API FOnlineAsyncTaskManagerSteamCore : public FOnlineAsyncTaskMa
 {
 public:
 	FOnlineAsyncTaskManagerSteamCore()
+		: SteamCoreSubsystem(nullptr)
 	{
 	}
 
-	FOnlineAsyncTaskManagerSteamCore(class USteamCoreSubsystem* subsystem)
-		: SteamCoreSubsystem(subsystem)
+	FOnlineAsyncTaskManagerSteamCore(class USteamCoreSubsystem* Subsystem)
+		: SteamCoreSubsystem(Subsystem)
 	{
 	}
 

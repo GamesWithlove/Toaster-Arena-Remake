@@ -34,9 +34,11 @@ struct FPlaybackStatusHasChanged
 public:
 	FPlaybackStatusHasChanged() = default;
 
+#if ENABLE_STEAMCORE
 	FPlaybackStatusHasChanged(const PlaybackStatusHasChanged_t& Data)
 	{
 	}
+#endif
 };
 
 USTRUCT(BlueprintType)
@@ -49,10 +51,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FVolumeHasChanged(const VolumeHasChanged_t& Data)
 		: Volume(Data.m_flNewVolume)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "MatchmakingServers")

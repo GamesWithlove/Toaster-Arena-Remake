@@ -221,6 +221,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamUGCDetails(const SteamUGCDetails_t& data)
 		: PublishedFileID(data.m_nPublishedFileId)
 		  , Result(_SteamResult(data.m_eResult))
@@ -251,6 +252,7 @@ public:
 		FString m_Tags = UTF8_TO_TCHAR(data.m_rgchTags);
 		m_Tags.ParseIntoArray(Tags, TEXT(","), true);
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -318,12 +320,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FCreateItemResult(const CreateItemResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , PublishedFileID(Data.m_nPublishedFileId)
 		  , bUserNeedsToAcceptWorkshopLegalAgreement(Data.m_bUserNeedsToAcceptWorkshopLegalAgreement)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -345,12 +349,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FUserFavoriteItemsListChanged(const UserFavoriteItemsListChanged_t& Data)
 		: PublishedFileID(Data.m_nPublishedFileId)
 		  , Result(_SteamResult(Data.m_eResult))
 		  , bWasAddRequest(Data.m_bWasAddRequest)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -371,10 +377,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FStartPlaytimeTrackingResult(const StartPlaytimeTrackingResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -391,10 +399,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FStopPlaytimeTrackingResult(const StopPlaytimeTrackingResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -414,6 +424,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGetUserItemVoteResult(const GetUserItemVoteResult_t& Data)
 		: PublishedFileID(Data.m_nPublishedFileId)
 		  , Result(_SteamResult(Data.m_eResult))
@@ -422,6 +433,7 @@ public:
 		  , bVoteSkipped(Data.m_bVoteSkipped)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -447,12 +459,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSetUserItemVoteResult(const SetUserItemVoteResult_t& Data)
 		: PublishedFileID(Data.m_nPublishedFileId)
 		  , Result(_SteamResult(Data.m_eResult))
 		  , bVoteUp(Data.m_bVoteUp)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -516,12 +530,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSubmitItemUpdateResult(const SubmitItemUpdateResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , bUserNeedsToAcceptWorkshopLegalAgreement(Data.m_bUserNeedsToAcceptWorkshopLegalAgreement)
 		  , PublishedFileID(Data.m_nPublishedFileId)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -542,11 +558,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FItemInstalled(const ItemInstalled_t& Data)
 		: AppID(Data.m_unAppID)
 		  , PublishedFileID(Data.m_nPublishedFileId)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -566,12 +584,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FDownloadItemResult(const DownloadItemResult_t& Data)
 		: AppID(Data.m_unAppID)
 		  , PublishedFileID(Data.m_nPublishedFileId)
 		  , Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -595,6 +615,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamUGCQueryCompleted(const SteamUGCQueryCompleted_t& Data)
 		: Handle(Data.m_handle)
 		  , Result(_SteamResult(Data.m_eResult))
@@ -603,6 +624,7 @@ public:
 		  , bCachedData(Data.m_bCachedData)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -629,12 +651,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FAddAppDependencyResult(const AddAppDependencyResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , PublishedFileID(Data.m_nPublishedFileId)
 		  , AppID(Data.m_nAppID)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -656,12 +680,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FRemoveAppDependencyResult(const RemoveAppDependencyResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , PublishedFileID(Data.m_nPublishedFileId)
 		  , AppID(Data.m_nAppID)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -682,12 +708,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FAddUGCDependencyResult(const AddUGCDependencyResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , PublishedFileId(Data.m_nPublishedFileId)
 		  , ChildPublishedFileId(Data.m_nChildPublishedFileId)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -708,12 +736,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FRemoveUGCDependencyResult(const RemoveUGCDependencyResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , PublishedFileId(Data.m_nPublishedFileId)
 		  , ChildPublishedFileId(Data.m_nChildPublishedFileId)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -734,11 +764,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FUGCDeleteItemResult(const DeleteItemResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , PublishedFileId(Data.m_nPublishedFileId)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")
@@ -759,6 +791,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGetAppDependenciesResult(const GetAppDependenciesResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , PublishedFileID(Data.m_nPublishedFileId)
@@ -770,6 +803,7 @@ public:
 			AppIDs.Add(Data.m_rgAppIDs[i]);
 		}
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")

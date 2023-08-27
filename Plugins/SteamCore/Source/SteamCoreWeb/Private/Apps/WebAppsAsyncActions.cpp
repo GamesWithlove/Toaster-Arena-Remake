@@ -71,15 +71,14 @@ USteamCoreAppsAsyncActionGetAppDepotVersions* USteamCoreAppsAsyncActionGetAppDep
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		USteamCoreAppsAsyncActionGetAppList
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-USteamCoreAppsAsyncActionGetAppList* USteamCoreAppsAsyncActionGetAppList::GetAppListAsync(UObject* WorldContextObject, FString Key)
+USteamCoreAppsAsyncActionGetAppList* USteamCoreAppsAsyncActionGetAppList::GetAppListAsync(UObject* WorldContextObject)
 {
 	auto* GameInstance = WorldContextObject->GetWorld()->GetGameInstance();
 	auto* Subsystem = GameInstance->GetSubsystem<USteamCoreWebSubsystem>();
 
 	auto* AsyncObject = NewObject<USteamCoreAppsAsyncActionGetAppList>();
-	auto* Task = new FOnlineAsyncTaskSteamCoreWebAppsGetAppList(Subsystem, AsyncObject->OnCallbackInternal, Key);
+	auto* Task = new FOnlineAsyncTaskSteamCoreWebAppsGetAppList(Subsystem, AsyncObject->OnSteamCoreWebAppListCallback, "");
 	AsyncObject->RegisterWithGameInstance(GameInstance);
-	AsyncObject->m_WorldContextObject = WorldContextObject;
 	Subsystem->QueueAsyncTask(Task);
 	AsyncObject->Activate();
 

@@ -12,17 +12,23 @@ UServerFilter::UServerFilter()
 	: MaxFilters(100)
 	, NumFilters(0)
 {
+#if ENABLE_STEAMCORE
 	Filters = new MatchMakingKeyValuePair_t[MaxFilters];
+#endif
 }
 
 UServerFilter::~UServerFilter()
 {
+#if ENABLE_STEAMCORE
 	delete[] Filters;
+#endif
 }
 
 void UServerFilter::AddFilterMap(FString Value)
 {
 	LogVerbose("");
+
+#if ENABLE_STEAMCORE
 
 	if (CanAddFilter())
 	{
@@ -35,12 +41,14 @@ void UServerFilter::AddFilterMap(FString Value)
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterGameDataAnd(FString Value)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "gamedataand", GetKeySize());
@@ -52,12 +60,14 @@ void UServerFilter::AddFilterGameDataAnd(FString Value)
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterGameDataOr(FString Value)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "gamedataor", GetKeySize());
@@ -69,12 +79,14 @@ void UServerFilter::AddFilterGameDataOr(FString Value)
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterGameDataNor(FString Value)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "gamedatanor", GetKeySize());
@@ -86,12 +98,14 @@ void UServerFilter::AddFilterGameDataNor(FString Value)
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterGameTagsAnd(FString Value)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "gametagsand", GetKeySize());
@@ -103,12 +117,14 @@ void UServerFilter::AddFilterGameTagsAnd(FString Value)
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterGameTagsNor(FString Value)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "gametagsnor", GetKeySize());
@@ -120,12 +136,14 @@ void UServerFilter::AddFilterGameTagsNor(FString Value)
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterAnd(FString Value)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "and", GetKeySize());
@@ -137,12 +155,14 @@ void UServerFilter::AddFilterAnd(FString Value)
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterOr(FString Value)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "or", GetKeySize());
@@ -154,12 +174,14 @@ void UServerFilter::AddFilterOr(FString Value)
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterNand(FString Value)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "nand", GetKeySize());
@@ -171,12 +193,14 @@ void UServerFilter::AddFilterNand(FString Value)
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterNor(FString Value)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "nor", GetKeySize());
@@ -188,12 +212,14 @@ void UServerFilter::AddFilterNor(FString Value)
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterGameAddr(FString Value)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "gameaddr", GetKeySize());
@@ -205,12 +231,14 @@ void UServerFilter::AddFilterGameAddr(FString Value)
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterDedicated()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "dedicated", GetKeySize());
@@ -222,12 +250,14 @@ void UServerFilter::AddFilterDedicated()
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterSecure()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "secure", GetKeySize());
@@ -239,12 +269,14 @@ void UServerFilter::AddFilterSecure()
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterNotFull()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "notfull", GetKeySize());
@@ -256,12 +288,14 @@ void UServerFilter::AddFilterNotFull()
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterHasPlayers()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "hasplayers", GetKeySize());
@@ -273,12 +307,14 @@ void UServerFilter::AddFilterHasPlayers()
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterNoPlayers()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "noplayers", GetKeySize());
@@ -290,12 +326,14 @@ void UServerFilter::AddFilterNoPlayers()
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterLinux()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "linux", GetKeySize());
@@ -307,12 +345,14 @@ void UServerFilter::AddFilterLinux()
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterVersion(FString Value)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "version_match", GetKeySize());
@@ -324,12 +364,14 @@ void UServerFilter::AddFilterVersion(FString Value)
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterName(FString Value)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "name_match", GetKeySize());
@@ -341,12 +383,14 @@ void UServerFilter::AddFilterName(FString Value)
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterWhitelisted()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "white", GetKeySize());
@@ -358,12 +402,14 @@ void UServerFilter::AddFilterWhitelisted()
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterNotAppId(FString Value)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "napp", GetKeySize());
@@ -375,12 +421,14 @@ void UServerFilter::AddFilterNotAppId(FString Value)
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterProxy()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "proxy", GetKeySize());
@@ -392,12 +440,14 @@ void UServerFilter::AddFilterProxy()
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 void UServerFilter::AddFilterPassword()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (CanAddFilter())
 	{
 		FCStringAnsi::Strncpy(Filters[NumFilters].m_szKey, "password", GetKeySize());
@@ -409,18 +459,21 @@ void UServerFilter::AddFilterPassword()
 	{
 		LogError("AddFilter is exceeding max filters!");
 	}
+#endif
 }
 
 TMap<FString, FString> UServerFilter::GetFilters()
 {
 	LogVeryVerbose("");
 
-	TMap<FString, FString> outFilters;
+	TMap<FString, FString> OutFilters;
+#if ENABLE_STEAMCORE
 
 	for (int32 i = 0; i < NumFilters; i++)
 	{
-		outFilters.Add(Filters[i].m_szKey, Filters[i].m_szValue);
+		OutFilters.Add(Filters[i].m_szKey, Filters[i].m_szValue);
 	}
 
-	return outFilters;
+#endif
+	return OutFilters;
 }

@@ -7,7 +7,6 @@
 #include "SteamMatchmaking/SteamMatchmakingAsyncActions.h"
 #include "SteamMatchmaking/SteamMatchmakingAsyncTasks.h"
 #include "SteamCorePluginPrivatePCH.h"
-#include <../Private/SteamSessionKeys.h>
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		USteamCoreMatchmakingAsyncActionCreateLobby
@@ -16,6 +15,7 @@ USteamCoreMatchmakingAsyncActionCreateLobby* USteamCoreMatchmakingAsyncActionCre
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreMatchmakingAsyncActionCreateLobby>();
@@ -28,6 +28,7 @@ USteamCoreMatchmakingAsyncActionCreateLobby* USteamCoreMatchmakingAsyncActionCre
 		return AsyncObject;
 	}
 
+#endif
 	return nullptr;
 }
 
@@ -50,6 +51,7 @@ USteamCoreMatchmakingAsyncActionRequestLobbyList* USteamCoreMatchmakingAsyncActi
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreMatchmakingAsyncActionRequestLobbyList>();
@@ -61,6 +63,7 @@ USteamCoreMatchmakingAsyncActionRequestLobbyList* USteamCoreMatchmakingAsyncActi
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -84,6 +87,7 @@ USteamCoreMatchmakingAsyncActionJoinLobby* USteamCoreMatchmakingAsyncActionJoinL
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreMatchmakingAsyncActionJoinLobby>();
@@ -95,6 +99,7 @@ USteamCoreMatchmakingAsyncActionJoinLobby* USteamCoreMatchmakingAsyncActionJoinL
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -179,7 +184,7 @@ USteamCoreCreateSession* USteamCoreCreateSession::CreateSteamCoreSession(UObject
 		Setting.AdvertisementType = EOnlineDataAdvertisementType::ViaOnlineService;
 		Setting.Data.SetValue(*SessionName);
 
-		AsyncObject->m_SessionSettings.Set(STEAMKEY_OWNINGUSERNAME, Setting);
+		AsyncObject->m_SessionSettings.Set(STEAMCOREKEY_OWNINGUSERNAME, Setting);
 
 		return AsyncObject;
 	}
@@ -399,7 +404,7 @@ void USteamCoreFindSession::OnCompleted(bool bSuccessful)
 					FBlueprintSessionResult BPResult;
 					BPResult.OnlineResult = Element;
 					FString CustomSessionName;
-					BPResult.OnlineResult.Session.SessionSettings.Get(STEAMKEY_OWNINGUSERNAME, CustomSessionName);
+					BPResult.OnlineResult.Session.SessionSettings.Get(STEAMCOREKEY_OWNINGUSERNAME, CustomSessionName);
 
 					if (CustomSessionName.Len() > 0)
 					{
@@ -412,10 +417,12 @@ void USteamCoreFindSession::OnCompleted(bool bSuccessful)
 
 						if (LobbyId.IsValid())
 						{
+#if ENABLE_STEAMCORE
 							if (ISteamMatchmaking* Matchmaking = SteamMatchmaking())
 							{
 								BPResult.OnlineResult.Session.NumOpenPublicConnections = (Matchmaking->GetLobbyMemberLimit(LobbyId) - Matchmaking->GetNumLobbyMembers(LobbyId));
 							}
+#endif
 						}
 					}
 
@@ -608,7 +615,7 @@ USteamCoreUpdateSession* USteamCoreUpdateSession::UpdateSteamCoreSession(UObject
 				FOnlineSessionSetting Setting;
 				Setting.AdvertisementType = EOnlineDataAdvertisementType::ViaOnlineService;
 				Setting.Data.SetValue(*SessionName);
-				SessionSettings->Set(STEAMKEY_OWNINGUSERNAME, Setting);
+				SessionSettings->Set(STEAMCOREKEY_OWNINGUSERNAME, Setting);
 				
 				SessionSettings->NumPublicConnections = MaxPlayers;
 			}

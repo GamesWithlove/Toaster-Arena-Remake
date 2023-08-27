@@ -847,6 +847,7 @@ private:
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(UFriends, OnAvatarImageLoaded, AvatarImageLoaded_t, OnAvatarImageLoadedCallback);
 	STEAM_CALLBACK_MANUAL(UFriends, OnFriendRichPresenceUpdate, FriendRichPresenceUpdate_t, OnFriendRichPresenceUpdateCallback);
 	STEAM_CALLBACK_MANUAL(UFriends, OnGameConnectedChatJoin, GameConnectedChatJoin_t, OnGameConnectedChatJoinCallback);
@@ -862,7 +863,7 @@ private:
 	STEAM_CALLBACK_MANUAL(UFriends, OnJoinClanChatRoomCompletionResult, JoinClanChatRoomCompletionResult_t, OnJoinClanChatRoomCompletionResultCallback);
 	STEAM_CALLBACK_MANUAL(UFriends, OnClanOfficerListResponse, ClanOfficerListResponse_t, OnClanOfficerListResponseCallback);
 	STEAM_CALLBACK_MANUAL(UFriends, OnDownloadClanActivityCountsResult, DownloadClanActivityCountsResult_t, OnDownloadClanActivityCountsResultCallback);
-
+#endif
 private:
 	/**
 	* Get friend avatar

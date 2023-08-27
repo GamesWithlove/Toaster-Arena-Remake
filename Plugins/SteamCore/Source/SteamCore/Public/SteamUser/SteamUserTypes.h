@@ -53,6 +53,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FClientGameServerDeny(const ClientGameServerDeny_t& Data)
 		: AppID(Data.m_uAppID)
 		  , GameServerIP(FIPv4Address(Data.m_unGameServerIP).ToString())
@@ -61,6 +62,7 @@ public:
 		  , Reason(static_cast<ESteamDenyReason>(Data.m_uReason))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "User")
@@ -82,10 +84,12 @@ struct FGameWebCallback
 public:
 	FGameWebCallback() = default;
 
+#if ENABLE_STEAMCORE
 	FGameWebCallback(const GameWebCallback_t& Data)
 		: URL(UTF8_TO_TCHAR(Data.m_szURL))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "User")
@@ -101,11 +105,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGetAuthSessionTicketResponse(const GetAuthSessionTicketResponse_t& Data)
 		: AuthTicket(Data.m_hAuthTicket)
 		  , Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "User")
@@ -123,10 +129,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FIPCFailure(const IPCFailure_t& Data)
 		: FailureType(static_cast<ESteamFailureType>(Data.m_eFailureType))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "User")
@@ -140,9 +148,11 @@ struct FLicensesUpdated
 public:
 	FLicensesUpdated() = default;
 
+#if ENABLE_STEAMCORE
 	FLicensesUpdated(const LicensesUpdated_t& Data)
 	{
 	}
+#endif
 };
 
 USTRUCT(BlueprintType)
@@ -154,12 +164,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FMicroTxnAuthorizationResponse(const MicroTxnAuthorizationResponse_t& Data)
 		: AppID(Data.m_unAppID)
 		  , OrderID(LexToString(Data.m_ulOrderID))
 		  , bAuthorized(Data.m_bAuthorized > 0)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "User")
@@ -177,9 +189,11 @@ struct FSteamServersConnected
 public:
 	FSteamServersConnected() = default;
 
+#if ENABLE_STEAMCORE
 	FSteamServersConnected(const SteamServersConnected_t& Data)
 	{
 	}
+#endif
 };
 
 USTRUCT(BlueprintType)
@@ -191,11 +205,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamServerConnectFailure(const SteamServerConnectFailure_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , bStillRetrying(Data.m_bStillRetrying)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "User")
@@ -213,10 +229,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamServersDisconnected(const SteamServersDisconnected_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "User")
@@ -232,10 +250,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FEncryptedAppTicketResponse(const EncryptedAppTicketResponse_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "User")
@@ -249,10 +269,12 @@ struct FStoreAuthURLResponse
 public:
 	FStoreAuthURLResponse() = default;
 
+#if ENABLE_STEAMCORE
 	FStoreAuthURLResponse(const StoreAuthURLResponse_t& Data)
 		: URL(UTF8_TO_TCHAR(Data.m_szURL))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "User")

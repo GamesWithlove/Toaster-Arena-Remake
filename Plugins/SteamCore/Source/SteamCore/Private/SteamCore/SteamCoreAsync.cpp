@@ -45,7 +45,12 @@ FOnlineAsyncTaskSteamCore::FOnlineAsyncTaskSteamCore()
 	: FOnlineAsyncTaskBasic(nullptr)
 	, bInit(false)
 	, bTimedOut(false)
+#if ENABLE_STEAMCORE
 	, m_CallbackHandle(k_uAPICallInvalid)
+#else
+	, m_CallbackHandle(0)
+#endif
+	, m_AsyncObject(nullptr)
 	, m_AsyncTimeout(10.f)
 {
 }

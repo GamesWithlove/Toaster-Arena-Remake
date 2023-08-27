@@ -48,11 +48,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGetOPFSettingsResult(const GetOPFSettingsResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , AppID(Data.m_unVideoAppID)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Video")
@@ -72,12 +74,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGetVideoURLResult(const GetVideoURLResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , AppID(Data.m_unVideoAppID)
 		  , URL(UTF8_TO_TCHAR(Data.m_rgchURL))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Video")

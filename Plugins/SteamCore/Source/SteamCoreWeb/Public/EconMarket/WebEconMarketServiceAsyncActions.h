@@ -29,7 +29,7 @@ public:
 	* @param	Key			Steamworks Web API publisher authentication Key.
 	* @param	SteamId		The SteamID of the user to check
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Market Eligibility"), Category = "SteamCoreWeb|EconMarketService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Market Eligibility", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|EconMarketService|Async")
 	static USteamCoreWebAsyncActionGetMarketEligibility* GetMarketEligibilityAsync(UObject* WorldContextObject, FString Key, FString SteamId);
 };
 
@@ -49,7 +49,7 @@ public:
 	* @param	SteamId			The SteamID of the user whose listings should be canceled
 	* @param	bSynchronous	Whether or not to wait until all listings have been canceled before returning the response
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Cancel App Listings for User"), Category = "SteamCoreWeb|EconMarketService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Cancel App Listings for User", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|EconMarketService|Async")
 	static USteamCoreWebAsyncActionCancelAppListingsForUser* CancelAppListingsForUserAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString SteamId, bool bSynchronous);
 };
 
@@ -68,7 +68,7 @@ public:
 	* @param	AppId				The app that's asking. Must match the app of the listing and must belong to the publisher group that owns the API Key making the request
 	* @param	ListingId (int64)	The identifier of the listing to get information for
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Asset ID"), Category = "SteamCoreWeb|EconMarketService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Asset ID", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|EconMarketService|Async")
 	static USteamCoreWebAsyncActionGetAssetID* GetAssetIDAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString ListingId);
 };
 
@@ -90,6 +90,6 @@ public:
 	* @param	FilterAppID			If present, the app ID to limit results to
 	* @param	ECurrency			If present, prices returned will be represented in this currency
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Popular"), Category = "SteamCoreWeb|EconMarketService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Popular", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|EconMarketService|Async")
 	static USteamCoreWebAsyncActionGetPopular* GetPopularAsync(UObject* WorldContextObject, FString Key, FString Language, int32 Rows, int32 Start, int32 FilterAppID, int32 ECurrency);
 };

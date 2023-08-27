@@ -11,6 +11,7 @@
 //		FOnlineAsyncTaskSteamCorePartiesJoinParty
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void FOnlineAsyncTaskSteamCorePartiesJoinParty::Tick()
 {
 	FOnlineAsyncTaskSteamCore::Tick();
@@ -184,3 +185,4 @@ void FOnlineAsyncTaskSteamCorePartiesChangeNumOpenSlots::TriggerDelegates()
 
 	m_OnSteamCallback.ExecuteIfBound(m_CallbackResults, bWasSuccessful);
 }
+#endif

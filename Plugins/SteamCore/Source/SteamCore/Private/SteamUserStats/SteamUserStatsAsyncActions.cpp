@@ -15,6 +15,7 @@ USteamCoreUserStatsAsyncActionFindLeaderboard* USteamCoreUserStatsAsyncActionFin
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUserStatsAsyncActionFindLeaderboard>();
@@ -28,6 +29,7 @@ USteamCoreUserStatsAsyncActionFindLeaderboard* USteamCoreUserStatsAsyncActionFin
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -51,6 +53,7 @@ USteamCoreUserStatsAsyncActionDownloadLeaderboardEntries* USteamCoreUserStatsAsy
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUserStatsAsyncActionDownloadLeaderboardEntries>();
@@ -62,6 +65,7 @@ USteamCoreUserStatsAsyncActionDownloadLeaderboardEntries* USteamCoreUserStatsAsy
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -85,6 +89,7 @@ USteamCoreUserStatsAsyncActionDownloadRequestGlobalStats* USteamCoreUserStatsAsy
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUserStatsAsyncActionDownloadRequestGlobalStats>();
@@ -96,6 +101,7 @@ USteamCoreUserStatsAsyncActionDownloadRequestGlobalStats* USteamCoreUserStatsAsy
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -119,6 +125,7 @@ USteamCoreUserStatsAsyncActionRequestGlobalAchievementPercentages* USteamCoreUse
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUserStatsAsyncActionRequestGlobalAchievementPercentages>();
@@ -130,6 +137,7 @@ USteamCoreUserStatsAsyncActionRequestGlobalAchievementPercentages* USteamCoreUse
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -153,6 +161,7 @@ USteamCoreUserStatsAsyncActionGetNumberOfCurrentPlayers* USteamCoreUserStatsAsyn
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUserStatsAsyncActionGetNumberOfCurrentPlayers>();
@@ -166,6 +175,7 @@ USteamCoreUserStatsAsyncActionGetNumberOfCurrentPlayers* USteamCoreUserStatsAsyn
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -189,6 +199,7 @@ USteamCoreUserStatsAsyncActionUploadLeaderboardScore* USteamCoreUserStatsAsyncAc
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUserStatsAsyncActionUploadLeaderboardScore>();
@@ -200,6 +211,7 @@ USteamCoreUserStatsAsyncActionUploadLeaderboardScore* USteamCoreUserStatsAsyncAc
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -223,6 +235,7 @@ USteamCoreUserStatsAsyncActionFindOrCreateLeaderboard* USteamCoreUserStatsAsyncA
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUserStatsAsyncActionFindOrCreateLeaderboard>();
@@ -234,6 +247,7 @@ USteamCoreUserStatsAsyncActionFindOrCreateLeaderboard* USteamCoreUserStatsAsyncA
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -257,6 +271,7 @@ USteamCoreUserStatsAsyncActionRequestUserStats* USteamCoreUserStatsAsyncActionRe
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUserStatsAsyncActionRequestUserStats>();
@@ -268,6 +283,7 @@ USteamCoreUserStatsAsyncActionRequestUserStats* USteamCoreUserStatsAsyncActionRe
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -291,6 +307,7 @@ USteamCoreUserStatsAsyncActionDownloadLeaderboardEntriesForUsers* USteamCoreUser
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUserStatsAsyncActionDownloadLeaderboardEntriesForUsers>();
@@ -302,6 +319,7 @@ USteamCoreUserStatsAsyncActionDownloadLeaderboardEntriesForUsers* USteamCoreUser
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -325,6 +343,7 @@ USteamCoreUserStatsAsyncActionAttachLeaderboardUGC* USteamCoreUserStatsAsyncActi
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
 		const auto AsyncObject = NewObject<USteamCoreUserStatsAsyncActionAttachLeaderboardUGC>();
@@ -336,6 +355,7 @@ USteamCoreUserStatsAsyncActionAttachLeaderboardUGC* USteamCoreUserStatsAsyncActi
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }

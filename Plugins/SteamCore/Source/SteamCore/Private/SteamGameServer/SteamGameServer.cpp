@@ -11,7 +11,7 @@
 void USteamGameServer::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
-
+#if ENABLE_STEAMCORE
 	OnGSPolicyResponseCallback.Register(this, &USteamGameServer::OnGSPolicyResponse);
 	OnGSClientGroupStatusCallback.Register(this, &USteamGameServer::OnGSClientGroupStatus);
 	OnGSValidateAuthTicketResponseCallback.Register(this, &USteamGameServer::OnGSValidateAuthTicketResponse);
@@ -26,16 +26,18 @@ void USteamGameServer::Initialize(FSubsystemCollectionBase& Collection)
 		OnGSClientApproveCallback.SetGameserverFlag();
 		OnGSClientDenyCallback.SetGameserverFlag();
 	}
+#endif
 }
 
 void USteamGameServer::Deinitialize()
 {
+#if ENABLE_STEAMCORE
 	OnGSPolicyResponseCallback.Unregister();
 	OnGSClientGroupStatusCallback.Unregister();
 	OnGSValidateAuthTicketResponseCallback.Unregister();
 	OnGSClientApproveCallback.Unregister();
 	OnGSClientDenyCallback.Unregister();
-
+#endif
 	Super::Deinitialize();
 }
 
@@ -62,11 +64,13 @@ void USteamGameServer::AssociateWithClan(const FOnAssociateWithClan& Callback, F
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		FOnlineAsyncTaskSteamCoreGameServerAssociateWithClan* Task = new FOnlineAsyncTaskSteamCoreGameServerAssociateWithClan(this, Callback, SteamIDClan);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 ESteamBeginAuthSessionResult USteamGameServer::BeginAuthSession(TArray<uint8> Ticket, FSteamID SteamID)
@@ -80,10 +84,12 @@ ESteamBeginAuthSessionResult USteamGameServer::BeginAuthSession(TArray<uint8> Ti
 
 	ESteamBeginAuthSessionResult Result = ESteamBeginAuthSessionResult::InvalidTicket;
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		Result = static_cast<ESteamBeginAuthSessionResult>(SteamGameServer()->BeginAuthSession(Ticket.GetData(), Ticket.Num(), SteamID));
 	}
+#endif
 
 	return Result;
 }
@@ -104,10 +110,12 @@ bool USteamGameServer::BLoggedOn()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		bResult = SteamGameServer()->BLoggedOn();
 	}
+#endif
 
 	return bResult;
 }
@@ -123,11 +131,13 @@ bool USteamGameServer::BSecure()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		bResult = SteamGameServer()->BSecure();
 	}
-
+#endif
+	
 	return bResult;
 }
 
@@ -142,11 +152,13 @@ bool USteamGameServer::BUpdateUserData(FSteamID SteamIDUser, FString PlayerName,
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		bResult = SteamGameServer()->BUpdateUserData(SteamIDUser, TCHAR_TO_UTF8(*PlayerName), Score);
 	}
-
+#endif
+	
 	return bResult;
 }
 
@@ -159,10 +171,12 @@ void USteamGameServer::CancelAuthTicket(FSteamTicketHandle TicketHandle)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->CancelAuthTicket(TicketHandle);
 	}
+#endif
 }
 
 void USteamGameServer::ClearAllKeyValues()
@@ -174,10 +188,12 @@ void USteamGameServer::ClearAllKeyValues()
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->ClearAllKeyValues();
 	}
+#endif
 }
 
 void USteamGameServer::ComputeNewPlayerCompatibility(const FOnComputeNewPlayerCompatibility& Callback, FSteamID SteamIDNewPlayer)
@@ -189,11 +205,13 @@ void USteamGameServer::ComputeNewPlayerCompatibility(const FOnComputeNewPlayerCo
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		FOnlineAsyncTaskSteamCoreGameServerComputeNewPlayerCompatibility* Task = new FOnlineAsyncTaskSteamCoreGameServerComputeNewPlayerCompatibility(this, Callback, SteamIDNewPlayer);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 FSteamID USteamGameServer::CreateUnauthenticatedUserConnection()
@@ -207,11 +225,13 @@ FSteamID USteamGameServer::CreateUnauthenticatedUserConnection()
 
 	FSteamID Result;
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		Result = SteamGameServer()->CreateUnauthenticatedUserConnection();
 	}
-
+#endif
+	
 	return Result;
 }
 
@@ -224,10 +244,37 @@ void USteamGameServer::EnableHeartbeats(bool bActive)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
+#if UE_VERSION_NEWER_THAN(5,0,3)
+		SteamGameServer()->SetAdvertiseServerActive(bActive);
+#else
 		SteamGameServer()->EnableHeartbeats(bActive);
+#endif
 	}
+#endif
+}
+
+void USteamGameServer::SetAdvertiseServerActive(bool bActive)
+{
+	if (!IsRunningDedicatedServer())
+	{
+		LogError("This function can only be called on a Dedicated Server!");
+	}
+
+	LogVerbose("");
+
+#if ENABLE_STEAMCORE
+	if (SteamGameServer())
+	{
+#if UE_VERSION_NEWER_THAN(5,0,3)
+		SteamGameServer()->SetAdvertiseServerActive(bActive);
+#else
+		SteamGameServer()->EnableHeartbeats(bActive);
+#endif
+	}
+#endif
 }
 
 void USteamGameServer::EndAuthSession(FSteamID SteamID)
@@ -239,10 +286,12 @@ void USteamGameServer::EndAuthSession(FSteamID SteamID)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->EndAuthSession(SteamID);
 	}
+#endif
 }
 
 void USteamGameServer::ForceHeartbeat()
@@ -254,10 +303,16 @@ void USteamGameServer::ForceHeartbeat()
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
+#if UE_VERSION_NEWER_THAN(5,0,3)
+	LogWarning("ForceHeartbeat is deprecated and should not be used");
+#else
 	if (SteamGameServer())
 	{
 		SteamGameServer()->ForceHeartbeat();
 	}
+#endif
+#endif
 }
 
 FSteamTicketHandle USteamGameServer::GetAuthSessionTicket(TArray<uint8>& Ticket)
@@ -272,13 +327,15 @@ FSteamTicketHandle USteamGameServer::GetAuthSessionTicket(TArray<uint8>& Ticket)
 	FSteamTicketHandle TicketHandle;
 	Ticket.Empty();
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		uint32 TicketSize = 0;
 		TicketHandle = SteamGameServer()->GetAuthSessionTicket(Ticket.GetData(), 8192, &TicketSize);
 		Ticket.SetNum(TicketSize);
 	}
-
+#endif
+	
 	return TicketHandle;
 }
 
@@ -293,6 +350,7 @@ FString USteamGameServer::GetServerPublicIP()
 
 	FString Result = FString("INVALID");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 #if STEAM_VERSION > 146
@@ -301,7 +359,8 @@ FString USteamGameServer::GetServerPublicIP()
 		Result = FIPv4Address(SteamGameServer()->GetPublicIP()).ToString();
 #endif
 	}
-
+#endif
+	
 	return Result;
 }
 
@@ -316,11 +375,13 @@ FSteamID USteamGameServer::GetServerSteamID()
 
 	FSteamID Result;
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		Result = FSteamID(SteamGameServer()->GetSteamID().ConvertToUint64());
 	}
-
+#endif
+	
 	return Result;
 }
 
@@ -333,10 +394,12 @@ void USteamGameServer::LogOff()
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->LogOff();
 	}
+#endif
 }
 
 void USteamGameServer::LogOn(FString Token)
@@ -348,10 +411,12 @@ void USteamGameServer::LogOn(FString Token)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->LogOn(TCHAR_TO_UTF8(*Token));
 	}
+#endif
 }
 
 void USteamGameServer::LogOnAnonymous()
@@ -363,10 +428,12 @@ void USteamGameServer::LogOnAnonymous()
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->LogOnAnonymous();
 	}
+#endif
 }
 
 bool USteamGameServer::RequestUserGroupStatus(FSteamID SteamIDUser, FSteamID SteamIDGroup)
@@ -380,11 +447,13 @@ bool USteamGameServer::RequestUserGroupStatus(FSteamID SteamIDUser, FSteamID Ste
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		bResult = SteamGameServer()->RequestUserGroupStatus(SteamIDUser, SteamIDGroup);
 	}
-
+#endif
+	
 	return bResult;
 }
 
@@ -397,10 +466,12 @@ void USteamGameServer::SetBotPlayerCount(int32 Botplayers)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetBotPlayerCount(Botplayers);
 	}
+#endif
 }
 
 void USteamGameServer::SetDedicatedServer(bool bDedicated)
@@ -412,10 +483,12 @@ void USteamGameServer::SetDedicatedServer(bool bDedicated)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetDedicatedServer(bDedicated);
 	}
+#endif
 }
 
 void USteamGameServer::SetGameData(FString GameData)
@@ -427,10 +500,12 @@ void USteamGameServer::SetGameData(FString GameData)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetGameData(TCHAR_TO_UTF8(*GameData));
 	}
+#endif
 }
 
 void USteamGameServer::SetGameDescription(FString GameDescription)
@@ -442,10 +517,12 @@ void USteamGameServer::SetGameDescription(FString GameDescription)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetGameDescription(TCHAR_TO_UTF8(*GameDescription));
 	}
+#endif
 }
 
 void USteamGameServer::SetGameTags(FString GameTags)
@@ -457,10 +534,12 @@ void USteamGameServer::SetGameTags(FString GameTags)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetGameTags(TCHAR_TO_UTF8(*GameTags));
 	}
+#endif
 }
 
 void USteamGameServer::SetHeartbeatInterval(int32 HeartbeatInterval)
@@ -472,10 +551,16 @@ void USteamGameServer::SetHeartbeatInterval(int32 HeartbeatInterval)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
+#if UE_VERSION_NEWER_THAN(5,0,3)
+	LogWarning("SetHeartbeatInterval is deprecated and should not be used");
+#else
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetHeartbeatInterval(HeartbeatInterval);
 	}
+#endif
+#endif
 }
 
 void USteamGameServer::SetKeyValue(FString Key, FString Value)
@@ -492,6 +577,7 @@ void USteamGameServer::SetKeyValue(FString Key, FString Value)
 		return;
 	}
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		const FTCHARToUTF8 KeyChar(*Key);
@@ -499,6 +585,7 @@ void USteamGameServer::SetKeyValue(FString Key, FString Value)
 
 		SteamGameServer()->SetKeyValue(KeyChar.Get(), ValueChar.Get());
 	}
+#endif
 }
 
 void USteamGameServer::SetMapName(FString MapName)
@@ -510,10 +597,12 @@ void USteamGameServer::SetMapName(FString MapName)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetMapName(TCHAR_TO_UTF8(*MapName));
 	}
+#endif
 }
 
 void USteamGameServer::SetMaxPlayerCount(int32 PlayersMax)
@@ -525,10 +614,12 @@ void USteamGameServer::SetMaxPlayerCount(int32 PlayersMax)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetMaxPlayerCount(PlayersMax);
 	}
+#endif
 }
 
 void USteamGameServer::SetModDir(FString ModDir)
@@ -540,10 +631,12 @@ void USteamGameServer::SetModDir(FString ModDir)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetModDir(TCHAR_TO_UTF8(*ModDir));
 	}
+#endif
 }
 
 void USteamGameServer::SetPasswordProtected(bool bPasswordProtected)
@@ -555,10 +648,12 @@ void USteamGameServer::SetPasswordProtected(bool bPasswordProtected)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetPasswordProtected(bPasswordProtected);
 	}
+#endif
 }
 
 void USteamGameServer::SetProduct(FString Product)
@@ -570,10 +665,12 @@ void USteamGameServer::SetProduct(FString Product)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetProduct(TCHAR_TO_UTF8(*Product));
 	}
+#endif
 }
 
 void USteamGameServer::SetRegion(FString Region)
@@ -585,10 +682,12 @@ void USteamGameServer::SetRegion(FString Region)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetRegion(TCHAR_TO_UTF8(*Region));
 	}
+#endif
 }
 
 void USteamGameServer::SetServerName(FString ServerName)
@@ -600,10 +699,12 @@ void USteamGameServer::SetServerName(FString ServerName)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetServerName(TCHAR_TO_UTF8(*ServerName));
 	}
+#endif
 }
 
 void USteamGameServer::SetSpectatorPort(int32 SpectatorPort)
@@ -615,10 +716,12 @@ void USteamGameServer::SetSpectatorPort(int32 SpectatorPort)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetSpectatorPort(SpectatorPort);
 	}
+#endif
 }
 
 void USteamGameServer::SetSpectatorServerName(FString SpectatorServerName)
@@ -630,10 +733,12 @@ void USteamGameServer::SetSpectatorServerName(FString SpectatorServerName)
 
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		SteamGameServer()->SetSpectatorServerName(TCHAR_TO_UTF8(*SpectatorServerName));
 	}
+#endif
 }
 
 ESteamUserHasLicenseForAppResult USteamGameServer::UserHasLicenseForApp(FSteamID SteamID, int32 AppID)
@@ -647,11 +752,13 @@ ESteamUserHasLicenseForAppResult USteamGameServer::UserHasLicenseForApp(FSteamID
 
 	ESteamUserHasLicenseForAppResult Result = ESteamUserHasLicenseForAppResult::DoesNotHaveLicense;
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		Result = static_cast<ESteamUserHasLicenseForAppResult>(SteamGameServer()->UserHasLicenseForApp(SteamID, AppID));
 	}
-
+#endif
+	
 	return Result;
 }
 
@@ -666,11 +773,13 @@ bool USteamGameServer::WasRestartRequested()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamGameServer())
 	{
 		bResult = SteamGameServer()->WasRestartRequested();
 	}
-
+#endif
+	
 	return bResult;
 }
 
@@ -678,6 +787,7 @@ bool USteamGameServer::WasRestartRequested()
 //		Steam API Callbacks
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void USteamGameServer::OnGSPolicyResponse(GSPolicyResponse_t* pParam)
 {
 	if (!IsRunningDedicatedServer())
@@ -757,3 +867,4 @@ void USteamGameServer::OnGSClientDeny(GSClientDeny_t* pParam)
 		GSClientDeny.Broadcast(Data);
 	});
 }
+#endif

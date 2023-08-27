@@ -8,7 +8,7 @@
 void USteamGameSearch::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
-
+#if ENABLE_STEAMCORE
 	if (SteamGameSearch())
 	{
 		OnSearchForGameProgressCallback.Register(this, &USteamGameSearch::OnSearchForGameProgressUpdated);
@@ -30,10 +30,12 @@ void USteamGameSearch::Initialize(FSubsystemCollectionBase& Collection)
 			OnEndGameResultCallback.SetGameserverFlag();
 		}
 	}
+#endif
 }
 
 void USteamGameSearch::Deinitialize()
 {
+#if ENABLE_STEAMCORE
 	if (SteamGameSearch())
 	{
 		OnSearchForGameProgressCallback.Unregister();
@@ -44,6 +46,7 @@ void USteamGameSearch::Deinitialize()
 		OnSubmitPlayerResultResultCallback.Unregister();
 		OnEndGameResultCallback.Unregister();
 	}
+#endif
 
 	Super::Deinitialize();
 }
@@ -56,6 +59,7 @@ ESteamGameSearchErrorCode USteamGameSearch::AddGameSearchParams(FString KeyToFin
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
 
 	if (SteamGameSearch())
@@ -79,70 +83,81 @@ ESteamGameSearchErrorCode USteamGameSearch::AddGameSearchParams(FString KeyToFin
 	}
 
 	return static_cast<ESteamGameSearchErrorCode>(Result);
+#endif
+	return ESteamGameSearchErrorCode::Invalid;
 }
 
 ESteamGameSearchErrorCode USteamGameSearch::SearchForGameWithLobby(FSteamID SteamIDLobby, int32 PlayerMin, int32 PlayerMax)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
 
 	if (SteamGameSearch())
 	{
 		Result = SteamGameSearch()->SearchForGameWithLobby(SteamIDLobby, PlayerMin, PlayerMax);
 	}
-
 	return static_cast<ESteamGameSearchErrorCode>(Result);
+#endif
+	return ESteamGameSearchErrorCode::Invalid;
 }
 
 ESteamGameSearchErrorCode USteamGameSearch::SearchForGameSolo(int32 PlayerMin, int32 PlayerMax)
 {
 	LogVerbose("");
-
+#if ENABLE_STEAMCORE
 	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
 
 	if (SteamGameSearch())
 	{
 		Result = SteamGameSearch()->SearchForGameSolo(PlayerMin, PlayerMax);
 	}
-
 	return static_cast<ESteamGameSearchErrorCode>(Result);
+#endif
+	
+	return ESteamGameSearchErrorCode::Invalid;
 }
 
 ESteamGameSearchErrorCode USteamGameSearch::AcceptGame()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
 
 	if (SteamGameSearch())
 	{
 		Result = SteamGameSearch()->AcceptGame();
 	}
-
 	return static_cast<ESteamGameSearchErrorCode>(Result);
+#endif
+
+	return ESteamGameSearchErrorCode::Invalid;
 }
 
 ESteamGameSearchErrorCode USteamGameSearch::DeclineGame()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
-
 	if (SteamGameSearch())
 	{
 		Result = SteamGameSearch()->DeclineGame();
 	}
-
 	return static_cast<ESteamGameSearchErrorCode>(Result);
+#endif
+	
+	return ESteamGameSearchErrorCode::Invalid;
 }
 
 ESteamGameSearchErrorCode USteamGameSearch::RetrieveConnectionDetails(FSteamID SteamIDHost, FString& ConnectionDetails, int32 NumConnectionDetails)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
-
 	if (SteamGameSearch())
 	{
 		char* ConnectionDetailsChar = nullptr;
@@ -153,28 +168,34 @@ ESteamGameSearchErrorCode USteamGameSearch::RetrieveConnectionDetails(FSteamID S
 			ConnectionDetails = FString(ConnectionDetailsChar);
 		}
 	}
-
 	return static_cast<ESteamGameSearchErrorCode>(Result);
+#endif
+
+	return ESteamGameSearchErrorCode::Invalid;
 }
 
 ESteamGameSearchErrorCode USteamGameSearch::EndGameSearch()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
-
 	if (SteamGameSearch())
 	{
 		Result = SteamGameSearch()->EndGameSearch();
 	}
-
 	return static_cast<ESteamGameSearchErrorCode>(Result);
+#endif
+	
+	return ESteamGameSearchErrorCode::Invalid;
 }
 
 ESteamGameSearchErrorCode USteamGameSearch::SetGameHostParams(FString Key, TArray<FString> Values)
 {
-	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
+	LogVerbose("");
 
+#if ENABLE_STEAMCORE
+	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
 	if (SteamGameSearch())
 	{
 		TArray<char> CharValues;
@@ -194,85 +215,113 @@ ESteamGameSearchErrorCode USteamGameSearch::SetGameHostParams(FString Key, TArra
 
 		Result = SteamGameSearch()->SetGameHostParams(TCHAR_TO_UTF8(*Key), CharValues.GetData());
 	}
-
 	return static_cast<ESteamGameSearchErrorCode>(Result);
+#endif
+	
+	return ESteamGameSearchErrorCode::Invalid;
 }
 
 ESteamGameSearchErrorCode USteamGameSearch::SetConnectionDetails(FString ConnectionDetails)
 {
+	LogVerbose("");
+	
+#if ENABLE_STEAMCORE
 	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
-
 	if (SteamGameSearch())
 	{
 		Result = SteamGameSearch()->SetConnectionDetails(TCHAR_TO_UTF8(*ConnectionDetails), 1);
 	}
-
 	return static_cast<ESteamGameSearchErrorCode>(Result);
+#endif
+	
+	return ESteamGameSearchErrorCode::Invalid;
 }
 
 ESteamGameSearchErrorCode USteamGameSearch::RequestPlayersForGame(int32 PlayerMin, int32 PlayerMax, int32 MaxTeamSize)
 {
-	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
+	LogVerbose("");
 
+#if ENABLE_STEAMCORE
+	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
 	if (SteamGameSearch())
 	{
 		Result = SteamGameSearch()->RequestPlayersForGame(PlayerMin, PlayerMax, MaxTeamSize);
 	}
-
 	return static_cast<ESteamGameSearchErrorCode>(Result);
+#endif
+
+	return ESteamGameSearchErrorCode::Invalid;
 }
 
 ESteamGameSearchErrorCode USteamGameSearch::HostConfirmGameStart(FString UniqueGameID)
 {
-	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
+	LogVerbose("");
 
+#if ENABLE_STEAMCORE
+	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
 	if (SteamGameSearch())
 	{
 		Result = SteamGameSearch()->HostConfirmGameStart(FCString::Atoi64(*UniqueGameID));
 	}
-
 	return static_cast<ESteamGameSearchErrorCode>(Result);
+#endif
+
+	return ESteamGameSearchErrorCode::Invalid;
 }
 
 ESteamGameSearchErrorCode USteamGameSearch::CancelRequestPlayersForGame()
 {
+	LogVerbose("");
+	
+#if ENABLE_STEAMCORE
 	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
-
 	if (SteamGameSearch())
 	{
 		Result = SteamGameSearch()->CancelRequestPlayersForGame();
 	}
-
 	return static_cast<ESteamGameSearchErrorCode>(Result);
+#endif
+
+	return ESteamGameSearchErrorCode::Invalid;
 }
 
 ESteamGameSearchErrorCode USteamGameSearch::SubmitPlayerResult(FString UniqueGameID, FSteamID SteamIDPlayer, ESteamPlayerResult PlayerResult)
 {
-	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
+	LogVerbose("");
 
+#if ENABLE_STEAMCORE
+	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
 	if (SteamGameSearch())
 	{
 		Result = SteamGameSearch()->SubmitPlayerResult(FCString::Atoi64(*UniqueGameID), SteamIDPlayer, static_cast<EPlayerResult_t>(PlayerResult));
 	}
-
 	return static_cast<ESteamGameSearchErrorCode>(Result);
+#endif
+
+	return ESteamGameSearchErrorCode::Invalid;
 }
 
 ESteamGameSearchErrorCode USteamGameSearch::EndGame(FString UniqueGameID)
 {
+	LogVerbose("");
+	
+#if ENABLE_STEAMCORE
 	EGameSearchErrorCode_t Result = k_EGameSearchErrorCode_Failed_Unknown_Error;
-
 	if (SteamGameSearch())
 	{
 		Result = SteamGameSearch()->EndGame(FCString::Atoi64(*UniqueGameID));
 	}
-
 	return static_cast<ESteamGameSearchErrorCode>(Result);
+#endif
+
+	return ESteamGameSearchErrorCode::Invalid;
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		Steam API Callbacks
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+
+#if ENABLE_STEAMCORE
 
 void USteamGameSearch::OnEndGameResultUpdated(EndGameResultCallback_t* pParam)
 {
@@ -350,3 +399,4 @@ void USteamGameSearch::OnSearchForGameProgressUpdated(SearchForGameProgressCallb
 		SearchForGameProgressDelegate.Broadcast(Data);
 	});
 }
+#endif

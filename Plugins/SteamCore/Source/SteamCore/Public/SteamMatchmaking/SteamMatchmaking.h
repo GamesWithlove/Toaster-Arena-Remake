@@ -472,6 +472,7 @@ private:
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(UMatchmaking, OnFavoritesListAccountsUpdated, FavoritesListAccountsUpdated_t, OnFavoritesListAccountsUpdatedCallback);
 	STEAM_CALLBACK_MANUAL(UMatchmaking, OnFavoritesListChanged, FavoritesListChanged_t, OnFavoritesListChangedCallback);
 	STEAM_CALLBACK_MANUAL(UMatchmaking, OnLobbyChatMsg, LobbyChatMsg_t, OnLobbyChatMsgCallback);
@@ -481,4 +482,5 @@ private:
 	STEAM_CALLBACK_MANUAL(UMatchmaking, OnLobbyGameCreated, LobbyGameCreated_t, OnLobbyGameCreatedCallback);
 	STEAM_CALLBACK_MANUAL(UMatchmaking, OnLobbyInvite, LobbyInvite_t, OnLobbyInviteCallback);
 	STEAM_CALLBACK_MANUAL(UMatchmaking, OnLobbyKicked, LobbyKicked_t, OnLobbyKickedCallback);
+#endif
 };

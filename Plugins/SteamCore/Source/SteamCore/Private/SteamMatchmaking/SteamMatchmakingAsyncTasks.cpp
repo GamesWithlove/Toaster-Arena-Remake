@@ -11,6 +11,7 @@
 //		FOnlineAsyncTaskSteamCoreMatchmakingCreateLobby
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void FOnlineAsyncTaskSteamCoreMatchmakingCreateLobby::Tick()
 {
 	FOnlineAsyncTaskSteamCore::Tick();
@@ -178,3 +179,4 @@ void FOnlineAsyncTaskSteamCoreJoinLobby::TriggerDelegates()
 
 	m_OnSteamCallback.ExecuteIfBound(m_CallbackResults, bWasSuccessful);
 }
+#endif

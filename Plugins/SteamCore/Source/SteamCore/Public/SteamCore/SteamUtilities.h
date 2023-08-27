@@ -7,6 +7,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "TextureResource.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "Sound/SoundWaveProcedural.h"
 #include "SteamCore/SteamTypes.h"
@@ -50,7 +51,7 @@ public:
 	UPROPERTY(BlueprintAssignable)
 	FOnControllerChangedCallback OnControllerChanged;
 public:
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject"), Category = "SteamCore|Utilities")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", BlueprintInternalUseOnly="true"), Category = "SteamCore|Utilities")
 	static USteamCoreAsyncActionListenForControllerChange* ListenForControllerChange(UObject* WorldContextObject);
 public:
 	UFUNCTION()
@@ -63,18 +64,6 @@ public:
 //		Steam Utilities Class
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
-template <typename TEnum>
-static FORCEINLINE FString GetSteamCoreEnumAsString(const FString& Name, TEnum Val)
-{
-	const UEnum* EnumPtr = FindObject<UEnum>(ANY_PACKAGE, *Name, true);
-	if (!EnumPtr)
-	{
-		return "";
-	}
-
-	return EnumPtr->GetNameStringByValue(static_cast<int64>(Val));
-}
-
 static FORCEINLINE UTexture2D* GetSteamTexture(const int ImageData)
 {
 	UTexture2D* Texture = nullptr;
@@ -82,6 +71,7 @@ static FORCEINLINE UTexture2D* GetSteamTexture(const int ImageData)
 	uint32 Width = 0;
 	uint32 Height = 0;
 
+#if ENABLE_STEAMCORE
 	SteamUtils()->GetImageSize(ImageData, &Width, &Height);
 
 	if (Width > 0 && Height > 0)
@@ -109,6 +99,7 @@ static FORCEINLINE UTexture2D* GetSteamTexture(const int ImageData)
 
 		delete[] RGBA;
 	}
+#endif
 
 	return Texture;
 }
@@ -303,34 +294,34 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities", meta = (DisplayName = "Is Valid"))
 	static bool IsPublishedFileIDValid(FPublishedFileID PublishedFileId);
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Is Valid (Exec)", ExpandEnumAsExecs = "result"), Category = "SteamCore|Utilities")
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Is Valid (Exec)", ExpandEnumAsExecs = "Result"), Category = "SteamCore|Utilities")
 	static void IsPublishedFileIDValid_Exec(const FPublishedFileID Handle, ESteamCoreValid& Result) { Result = Handle.IsValid() ? ESteamCoreValid::Valid : ESteamCoreValid::NotValid; }
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Is Valid (Exec)", ExpandEnumAsExecs = "result"), Category = "SteamCore|Utilities")
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Is Valid (Exec)", ExpandEnumAsExecs = "Result"), Category = "SteamCore|Utilities")
 	static void IsSteamIDValid_Exec(const FSteamID SteamID, ESteamCoreValid& Result) { Result = SteamID.IsValid() ? ESteamCoreValid::Valid : ESteamCoreValid::NotValid; }
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, meta = (DisplayName = "Is Valid"), Category = "SteamCore|Utilities")
 	static bool IsGameIDValid(const FSteamGameID GameID) { return GameID.IsValid(); }
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Is Valid (Exec)", ExpandEnumAsExecs = "result"), Category = "SteamCore|Utilities")
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Is Valid (Exec)", ExpandEnumAsExecs = "Result"), Category = "SteamCore|Utilities")
 	static void IsGameIDValid_Exec(const FSteamGameID GameID, ESteamCoreValid& Result) { Result = GameID.IsValid() ? ESteamCoreValid::Valid : ESteamCoreValid::NotValid; }
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, meta = (DisplayName = "Is Valid"), Category = "SteamCore|Utilities")
 	static bool IsUGCHandleValid(const FSteamUGCHandle Handle) { return Handle.IsValid(); }
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Is Valid (Exec)", ExpandEnumAsExecs = "result"), Category = "SteamCore|Utilities")
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Is Valid (Exec)", ExpandEnumAsExecs = "Result"), Category = "SteamCore|Utilities")
 	static void IsUGCHandleValid_Exec(const FSteamUGCHandle Handle, ESteamCoreValid& Result) { Result = Handle.IsValid() ? ESteamCoreValid::Valid : ESteamCoreValid::NotValid; }
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, meta = (DisplayName = "Is Valid"), Category = "SteamCore|Utilities")
 	static bool IsSteamTicketHandleValid(const FSteamTicketHandle Handle) { return Handle.IsValid(); }
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Is Valid (Exec)", ExpandEnumAsExecs = "result"), Category = "SteamCore|Utilities")
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Is Valid (Exec)", ExpandEnumAsExecs = "Result"), Category = "SteamCore|Utilities")
 	static void IsSteamTicketHandleValid_Exec(const FSteamTicketHandle Handle, ESteamCoreValid& Result) { Result = Handle.IsValid() ? ESteamCoreValid::Valid : ESteamCoreValid::NotValid; }
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, meta = (DisplayName = "Is Valid"), Category = "SteamCore|Utilities")
 	static bool IsSteamInventoryUpdateHandleValid(const FSteamInventoryUpdateHandle Handle) { return Handle.IsValid(); }
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Is Valid (Exec)", ExpandEnumAsExecs = "result"), Category = "SteamCore|Utilities")
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Is Valid (Exec)", ExpandEnumAsExecs = "Result"), Category = "SteamCore|Utilities")
 	static void IsSteamInventoryUpdateHandleValid_Exec(const FSteamInventoryUpdateHandle Handle, ESteamCoreValid& Result) { Result = Handle.IsValid() ? ESteamCoreValid::Valid : ESteamCoreValid::NotValid; }
 
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -340,7 +331,7 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities", meta = (CompactNodeTitle = "==", Keywords = "equal == identical"))
 	static bool Equal(FSteamID A, FSteamID B);
 
-	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utilities", meta = (Keywords = "equal == identical", ExpandEnumAsExecs = "result"))
+	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utilities", meta = (Keywords = "equal == identical", ExpandEnumAsExecs = "Result"))
 	static void Equal_Exec(FSteamID A, const FSteamID b, ESteamCoreIdentical& Result) { Result = A == b ? ESteamCoreIdentical::Identical : ESteamCoreIdentical::NotIdentical; }
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities", meta = (CompactNodeTitle = "!=", Keywords = "not equal != not identical"))
@@ -349,7 +340,7 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities", meta = (CompactNodeTitle = "==", Keywords = "equal == identical"))
 	static bool PublishedFileID_Equals(FPublishedFileID A, FPublishedFileID B);
 
-	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utilities", meta = (Keywords = "equal == identical", ExpandEnumAsExecs = "result"))
+	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utilities", meta = (Keywords = "equal == identical", ExpandEnumAsExecs = "Result"))
 	static void PublishedFileID_Equals_Exec(FPublishedFileID A, FPublishedFileID B, ESteamCoreIdentical& Result) { Result = A == B ? ESteamCoreIdentical::Identical : ESteamCoreIdentical::NotIdentical; }
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities", meta = (CompactNodeTitle = "!=", Keywords = "not equal != not identical"))
@@ -358,7 +349,7 @@ public:
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities", meta = (CompactNodeTitle = "==", Keywords = "equal == identical"))
 	static bool SteamItemInstanceID_Equals(struct FSteamItemInstanceID A, struct FSteamItemInstanceID B);
 
-	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utilities", meta = (Keywords = "equal == identical", ExpandEnumAsExecs = "result"))
+	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utilities", meta = (Keywords = "equal == identical", ExpandEnumAsExecs = "Result"))
 	static void SteamItemInstanceID_Equals_Exec(struct FSteamItemInstanceID A, struct FSteamItemInstanceID B, ESteamCoreIdentical& Result);
 
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -394,25 +385,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utilities")
 	static void GetPublicIp(const FOnHTTPResponse& Callback);
 
-	/*
-	 * Releases the asynchronous request object and cancels any pending query on it if there's a pending query in progress.
-	 * RefreshComplete callback is not posted when request is released.
-	 */
-	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utilities")
-	static void ReleaseRequest();
-
-	/*
-	 *Cancel an request which is operation on the given list type.  You should call this to cancel
-	 * any in-progress requests before destructing a callback object that may have been passed
-	 * to one of the above list request calls.  Not doing so may result in a crash when a callback
-	 * occurs on the destructed object.
-	 *
-	 * Canceling a query does not release the allocated request handle.
-	 * The request handle must be released using ReleaseRequest( hRequest )
-	 */
-	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utilities")
-	static void CancelQuery();
-
 	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utilities")
 	static FSteamID GetSteamIdFromPlayerState(APlayerState* PlayerState);
 
@@ -425,6 +397,12 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utilities")
 	static bool IsSteamServerInitialized();
 
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities", meta = (DisplayName = "Hex to Bytes"))
+	static TArray<uint8> K2_HexToBytes(FString String);
+	
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities", meta = (DisplayName = "Hex to String"))
+	static FString K2_HexToString(TArray<uint8> Array);
+	
 	/*
 	 * Reads a binary file and returns an array of uint8
 	 */
@@ -436,6 +414,14 @@ public:
 	 */
 	UFUNCTION(BlueprintCallable, Category = "SteamCore|Utilities")
 	static bool WriteBytesToFile(bool bOverwriteIfExists, const FString& AbsoluteFilePath, const TArray<uint8>& DataBuffer);
+
+	/**
+	 * Determine if the player is registered in the specified session
+	 *
+	 * @return true if the player is registered in the session
+	 */
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities", meta = (DisplayName = "Is Player In Session"))
+	static bool K2_IsPlayerInSession(int32 LocalUserNum);
 
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 	//		Ping Utilities

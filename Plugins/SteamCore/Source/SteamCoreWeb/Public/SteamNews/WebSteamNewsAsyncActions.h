@@ -30,7 +30,7 @@ public:
 	* @param	Feeds			# of posts to retrieve (default 20)
 	* @param	Count			List of feed names to return news for
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get News for App", AutoCreateRefTerm = "feeds"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get News for App", AutoCreateRefTerm = "feeds", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionGetNewsForApp* GetNewsForAppAsync(UObject* WorldContextObject, int32 AppId, int32 MaxLength, TArray<FString> Feeds, int32 EndDate = 1549795233, int32 Count = 20);
 };
 
@@ -52,6 +52,6 @@ public:
 	* @param	Feeds			# of posts to retrieve (default 20)
 	* @param	Count			List of feed names to return news for
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get News for App Authed", AutoCreateRefTerm = "feeds"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get News for App Authed", AutoCreateRefTerm = "feeds", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionGetNewsForAppAuthed* GetNewsForAppAuthedAsync(UObject* WorldContextObject, FString Key, int32 AppId, int32 MaxLength, TArray<FString> Feeds, int32 EndDate = 1549795233, int32 Count = 20);
 };

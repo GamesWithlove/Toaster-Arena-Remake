@@ -22,6 +22,7 @@ struct FSteamNetworkPingLocation
 public:
 	FSteamNetworkPingLocation() = default;
 
+#if ENABLE_STEAMCORE
 	FSteamNetworkPingLocation(const SteamNetworkPingLocation_t& Val)
 	{
 		char* Data = new char[k_cchMaxSteamNetworkingPingLocationString];
@@ -29,8 +30,10 @@ public:
 		Location = UTF8_TO_TCHAR(Data);
 		delete[] Data;
 	}
+#endif
 
 public:
+#if ENABLE_STEAMCORE
 	operator SteamNetworkPingLocation_t()
 	{
 		SteamNetworkPingLocation_t Data;
@@ -44,6 +47,7 @@ public:
 		SteamNetworkingUtils()->ParsePingLocationString(TCHAR_TO_UTF8(*Location), Data);
 		return Data;
 	}
+#endif
 
 protected:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "NetworkingUtils")

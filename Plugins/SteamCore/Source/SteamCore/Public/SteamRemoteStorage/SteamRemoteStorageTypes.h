@@ -83,10 +83,12 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FRemoteStorageFileWriteAsyncComplete(const RemoteStorageFileWriteAsyncComplete_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "RemoteStorage")
@@ -102,10 +104,13 @@ public:
 		: Result(ESteamResult::None)
 		  , Offset(0)
 		  , Read(0)
+#if ENABLE_STEAMCORE
 		  , m_hFileReadAsync(0)
+#endif
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FRemoteStorageFileReadAsyncComplete(const RemoteStorageFileReadAsyncComplete_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , Offset(Data.m_nOffset)
@@ -113,6 +118,7 @@ public:
 		  , m_hFileReadAsync(Data.m_hFileReadAsync)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "RemoteStorage")
@@ -122,7 +128,9 @@ public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "RemoteStorage")
 	int32 Read;
 
+#if ENABLE_STEAMCORE
 	SteamAPICall_t m_hFileReadAsync;
+#endif
 };
 
 USTRUCT(BlueprintType)
@@ -135,12 +143,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FRemoteStorageFileShareResult(const RemoteStorageFileShareResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , File(Data.m_hFile)
 		  , Filename(Data.m_rgchFilename)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "RemoteStorage")
@@ -161,11 +171,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FRemoteStorageUnsubscribePublishedFileResult(const RemoteStorageUnsubscribePublishedFileResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , PublishedFileId(Data.m_nPublishedFileId)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "RemoteStorage")
@@ -184,11 +196,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FRemoteStoragePublishedFileUnsubscribed(const RemoteStoragePublishedFileUnsubscribed_t& Data)
 		: PublishedFileId(Data.m_nPublishedFileId)
 		  , AppID(Data.m_nAppID)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "RemoteStorage")
@@ -207,11 +221,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FRemoteStoragePublishedFileSubscribed(const RemoteStoragePublishedFileSubscribed_t& Data)
 		: PublishedFileId(Data.m_nPublishedFileId)
 		  , AppID(Data.m_nAppID)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "RemoteStorage")
@@ -232,6 +248,7 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FRemoteStorageDownloadUGCResult(const RemoteStorageDownloadUGCResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , FileHandle(Data.m_hFile)
@@ -241,6 +258,7 @@ public:
 		  , SteamIDOwner(Data.m_ulSteamIDOwner)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "RemoteStorage")

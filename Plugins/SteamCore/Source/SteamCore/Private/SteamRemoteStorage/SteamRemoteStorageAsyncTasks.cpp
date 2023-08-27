@@ -11,6 +11,8 @@
 //		FOnlineAsyncTaskSteamCoreRemoteStorageFileWriteAsync
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
+
 void FOnlineAsyncTaskSteamCoreRemoteStorageFileWriteAsync::Tick()
 {
 	FOnlineAsyncTaskSteamCore::Tick();
@@ -296,3 +298,4 @@ void FOnlineAsyncTaskSteamCoreRemoteStorageUGCDownloadToLocation::TriggerDelegat
 
 	m_OnSteamCallback.ExecuteIfBound(m_CallbackResults, bWasSuccessful);
 }
+#endif

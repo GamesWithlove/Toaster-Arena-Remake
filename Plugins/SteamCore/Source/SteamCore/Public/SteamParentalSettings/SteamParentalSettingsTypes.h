@@ -45,7 +45,9 @@ struct FSteamParentalSettingsChanged
 public:
 	FSteamParentalSettingsChanged() = default;
 
-	FSteamParentalSettingsChanged(const SteamParentalSettingsChanged_t& data)
+#if ENABLE_STEAMCORE
+	FSteamParentalSettingsChanged(const SteamParentalSettingsChanged_t& Data)
 	{
 	}
+#endif
 };

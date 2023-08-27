@@ -32,6 +32,6 @@ public:
 	* @param	BroadcastId		
 	* @param	FrameData		
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Post Game Data Frame"), Category = "SteamCoreWeb|Broadcast|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Post Game Data Frame", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|Broadcast|Async")
 	static USteamCoreWebAsyncActionPostGameDataFrame* PostGameDataFrameAsync(UObject* WorldContextObject, FString Key, int32 AppID, FString SteamID, FString BroadcastId, FString FrameData);
 };

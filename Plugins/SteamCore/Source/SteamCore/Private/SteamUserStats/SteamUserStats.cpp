@@ -12,6 +12,7 @@ void UUserStats::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
 
+#if ENABLE_STEAMCORE
 	OnUserAchievementIconFetchedCallback.Register(this, &UUserStats::OnUserAchievementIconFetched);
 	OnUserStatsReceivedCallback.Register(this, &UUserStats::OnUserStatsReceived);
 	OnUserStatsStoredCallback.Register(this, &UUserStats::OnUserStatsStored);
@@ -28,16 +29,19 @@ void UUserStats::Initialize(FSubsystemCollectionBase& Collection)
 		OnUserStatsUnloadedCallback.SetGameserverFlag();
 		OnUserAchievementIconFetchedCallback.SetGameserverFlag();
 	}
+#endif
 }
 
 void UUserStats::Deinitialize()
 {
+#if ENABLE_STEAMCORE
 	OnUserAchievementIconFetchedCallback.Unregister();
 	OnUserStatsReceivedCallback.Unregister();
 	OnUserStatsStoredCallback.Unregister();
 	OnUserAchievementStoredCallback.Unregister();
 	OnUserStatsUnloadedCallback.Unregister();
 	OnUserAchievementIconFetchedCallback.Unregister();
+#endif
 
 	Super::Deinitialize();
 }
@@ -50,11 +54,13 @@ void UUserStats::AttachLeaderboardUGC(const FOnAttachLeaderboardUGC& Callback, F
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		FOnlineAsyncTaskSteamCoreUserStatsAttachLeaderboardUGC* Task = new FOnlineAsyncTaskSteamCoreUserStatsAttachLeaderboardUGC(this, Callback, SteamLeaderboard, Handle);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool UUserStats::ClearAchievement(FString Name)
@@ -63,10 +69,12 @@ bool UUserStats::ClearAchievement(FString Name)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->ClearAchievement(TCHAR_TO_UTF8(*Name));
 	}
+#endif
 
 	return bResult;
 }
@@ -75,44 +83,52 @@ void UUserStats::DownloadLeaderboardEntries(const FOnDownloadLeaderboardEntries&
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		FOnlineAsyncTaskSteamCoreUserStatsDownloadLeaderboardEntries* Task = new FOnlineAsyncTaskSteamCoreUserStatsDownloadLeaderboardEntries(this, Callback, SteamLeaderboard, DataRequest, RangeStart, RangeEnd);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUserStats::DownloadLeaderboardEntriesForUsers(const FOnDownloadLeaderboardEntriesForUsers& Callback, FSteamLeaderboard SteamLeaderboard, TArray<FSteamID> Users)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		FOnlineAsyncTaskSteamCoreUserStatsDownloadLeaderboardEntriesForUsers* Task = new FOnlineAsyncTaskSteamCoreUserStatsDownloadLeaderboardEntriesForUsers(this, Callback, SteamLeaderboard, Users);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUserStats::FindLeaderboard(const FOnFindLeaderboard& Callback, FString LeaderboardName)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		FOnlineAsyncTaskSteamCoreUserStatsFindLeaderboard* Task = new FOnlineAsyncTaskSteamCoreUserStatsFindLeaderboard(this, Callback, LeaderboardName);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUserStats::FindOrCreateLeaderboard(const FOnFindOrCreateLeaderboard& Callback, FString LeaderboardName, ESteamLeaderboardSortMethod SortMethod, ESteamLeaderboardDisplayType DisplayType)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		FOnlineAsyncTaskSteamCoreUserStatsFindOrCreateLeaderboard* Task = new FOnlineAsyncTaskSteamCoreUserStatsFindOrCreateLeaderboard(this, Callback, LeaderboardName, SortMethod, DisplayType);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool UUserStats::GetAchievement(FString Name, bool& bAchieved)
@@ -122,10 +138,12 @@ bool UUserStats::GetAchievement(FString Name, bool& bAchieved)
 	bool bResult = false;
 	bAchieved = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->GetAchievement(TCHAR_TO_UTF8(*Name), &bAchieved);
 	}
+#endif
 
 	return bResult;
 }
@@ -137,10 +155,12 @@ bool UUserStats::GetAchievementAchievedPercent(FString Name, float& OutPercent)
 	bool bResult = false;
 	OutPercent = 0.0f;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->GetAchievementAchievedPercent(TCHAR_TO_UTF8(*Name), &OutPercent);
 	}
+#endif
 
 	return bResult;
 }
@@ -153,6 +173,7 @@ bool UUserStats::GetAchievementAndUnlockTime(FString Name, bool& bAchieved, int3
 	bAchieved = false;
 	OutUnlockTime = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		uint32 UnlockTime = 0;
@@ -161,6 +182,8 @@ bool UUserStats::GetAchievementAndUnlockTime(FString Name, bool& bAchieved, int3
 
 		OutUnlockTime = UnlockTime;
 	}
+#endif
+	
 	return bResult;
 }
 
@@ -172,9 +195,11 @@ FString UUserStats::GetAchievementDisplayAttribute(FString Name, FString Key)
 
 	if (Name.Len() == 0 || Key.Len() == 0)
 	{
+	
 		return Result;
 	}
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		const FTCHARToUTF8 ConvertedName(*Name);
@@ -182,6 +207,7 @@ FString UUserStats::GetAchievementDisplayAttribute(FString Name, FString Key)
 
 		Result = UTF8_TO_TCHAR(SteamUserStats()->GetAchievementDisplayAttribute(ConvertedName.Get(), ConvertedKey.Get()));
 	}
+#endif
 
 	return Result;
 }
@@ -192,11 +218,13 @@ UTexture2D* UUserStats::GetAchievementIcon(FString Name)
 
 	UTexture2D* Texture = nullptr;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		const int ImageData = SteamUserStats()->GetAchievementIcon(TCHAR_TO_UTF8(*Name));
 		Texture = GetSteamTexture(ImageData);
 	}
+#endif
 
 	return Texture;
 }
@@ -209,6 +237,7 @@ bool UUserStats::GetDownloadedLeaderboardEntry(FSteamLeaderboardEntries Leaderbo
 	OutLeaderboardEntry = FSteamLeaderboardEntry();
 	OutDetails.Empty();
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		OutDetails.SetNum(Details.Num());
@@ -222,6 +251,7 @@ bool UUserStats::GetDownloadedLeaderboardEntry(FSteamLeaderboardEntries Leaderbo
 			OutLeaderboardEntry = LeaderboardEntry;
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -232,10 +262,12 @@ FString UUserStats::GetAchievementName(int32 Achievement)
 
 	FString Result;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		Result = UTF8_TO_TCHAR(SteamUserStats()->GetAchievementName(Achievement));
 	}
+#endif
 
 	return Result;
 }
@@ -247,12 +279,14 @@ bool UUserStats::GetGlobalStatInt(FString StatName, int32& OutData)
 	bool bResult = false;
 	OutData = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		int64 pData;
 		bResult = SteamUserStats()->GetGlobalStat(TCHAR_TO_UTF8(*StatName), &pData);
 		OutData = pData;
 	}
+#endif
 
 	return bResult;
 }
@@ -264,12 +298,14 @@ bool UUserStats::GetGlobalStatFloat(FString StatName, float& OutData)
 	bool bResult = false;
 	OutData = 0.0f;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		double pData;
 		bResult = SteamUserStats()->GetGlobalStat(TCHAR_TO_UTF8(*StatName), &pData);
 		OutData = pData;
 	}
+#endif
 
 	return bResult;
 }
@@ -281,6 +317,7 @@ int32 UUserStats::GetGlobalStatHistoryInt(FString StatName, int32 HistoryDays, T
 	int32 Result = 0;
 	OutData.Empty();
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		TArray<int64> pData;
@@ -293,6 +330,7 @@ int32 UUserStats::GetGlobalStatHistoryInt(FString StatName, int32 HistoryDays, T
 			OutData.Add(Element);
 		}
 	}
+#endif
 
 	return Result;
 }
@@ -304,6 +342,7 @@ int32 UUserStats::GetGlobalStatHistoryFloat(FString StatName, int32 HistoryDays,
 	int32 Result = 0;
 	OutData.Empty();
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats() && HistoryDays > 0)
 	{
 		TArray<double> DataArray;
@@ -316,6 +355,7 @@ int32 UUserStats::GetGlobalStatHistoryFloat(FString StatName, int32 HistoryDays,
 			OutData.Add(Element);
 		}
 	}
+#endif
 
 	return Result;
 }
@@ -328,11 +368,13 @@ bool UUserStats::GetAchievementProgressLimits(FString Name, int32& MinProgress, 
 	MinProgress = 0;
 	MaxProgress = 0;
 
+#if ENABLE_STEAMCORE
 #if STEAM_VERSION >= 151
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->GetAchievementProgressLimits(TCHAR_TO_UTF8(*Name), &MinProgress, &MaxProgress);
 	}
+#endif
 #endif
 
 	return bResult;
@@ -346,11 +388,13 @@ bool UUserStats::GetAchievementProgressLimitsFloat(FString Name, float& MinProgr
 	MinProgress = 0.0f;
 	MaxProgress = 0.0f;
 
+#if ENABLE_STEAMCORE
 #if STEAM_VERSION >= 151
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->GetAchievementProgressLimits(TCHAR_TO_UTF8(*Name), &MinProgress, &MaxProgress);
 	}
+#endif
 #endif
 
 	return bResult;
@@ -362,10 +406,12 @@ ESteamLeaderboardDisplayType UUserStats::GetLeaderboardDisplayType(FSteamLeaderb
 
 	ESteamLeaderboardDisplayType Result = ESteamLeaderboardDisplayType::None;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		Result = static_cast<ESteamLeaderboardDisplayType>(SteamUserStats()->GetLeaderboardDisplayType(SteamLeaderboard));
 	}
+#endif
 
 	return Result;
 }
@@ -376,10 +422,12 @@ int32 UUserStats::GetLeaderboardEntryCount(FSteamLeaderboard SteamLeaderboard)
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		Result = SteamUserStats()->GetLeaderboardEntryCount(SteamLeaderboard);
 	}
+#endif
 
 	return Result;
 }
@@ -390,10 +438,12 @@ FString UUserStats::GetLeaderboardName(FSteamLeaderboard SteamLeaderboard)
 
 	FString Result;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		Result = UTF8_TO_TCHAR(SteamUserStats()->GetLeaderboardName(SteamLeaderboard));
 	}
+#endif
 
 	return Result;
 }
@@ -404,10 +454,12 @@ ESteamLeaderboardSortMethod UUserStats::GetLeaderboardSortMethod(FSteamLeaderboa
 
 	ESteamLeaderboardSortMethod Result = ESteamLeaderboardSortMethod::None;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		Result = static_cast<ESteamLeaderboardSortMethod>(SteamUserStats()->GetLeaderboardSortMethod(SteamLeaderboard));
 	}
+#endif
 
 	return Result;
 }
@@ -422,6 +474,7 @@ int32 UUserStats::GetMostAchievedAchievementInfo(FString& Name, float& OutPercen
 	OutPercent = 0.0f;
 	bAchieved = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		TArray<char> DataArray;
@@ -431,6 +484,7 @@ int32 UUserStats::GetMostAchievedAchievementInfo(FString& Name, float& OutPercen
 
 		Name = UTF8_TO_TCHAR(DataArray.GetData());
 	}
+#endif
 
 	return Result;
 }
@@ -445,6 +499,7 @@ int32 UUserStats::GetNextMostAchievedAchievementInfo(int32 IteratorPrevious, FSt
 	OutPercent = 0.0f;
 	bAchieved = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		TArray<char> DataArray;
@@ -454,6 +509,7 @@ int32 UUserStats::GetNextMostAchievedAchievementInfo(int32 IteratorPrevious, FSt
 
 		Name = UTF8_TO_TCHAR(DataArray.GetData());
 	}
+#endif
 
 	return Result;
 }
@@ -464,10 +520,12 @@ int32 UUserStats::GetNumAchievements()
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		Result = SteamUserStats()->GetNumAchievements();
 	}
+#endif
 
 	return Result;
 }
@@ -476,11 +534,13 @@ void UUserStats::GetNumberOfCurrentPlayers(const FOnGetNumberOfCurrentPlayers& C
 {
 	LogVeryVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		FOnlineAsyncTaskSteamCoreUserStatsGetNumberOfCurrentPlayers* Task = new FOnlineAsyncTaskSteamCoreUserStatsGetNumberOfCurrentPlayers(this, Callback);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool UUserStats::GetUserStatInteger(FSteamID SteamIDUser, FString Name, int32& OutData)
@@ -491,10 +551,12 @@ bool UUserStats::GetUserStatInteger(FSteamID SteamIDUser, FString Name, int32& O
 
 	OutData = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->GetUserStat(SteamIDUser, TCHAR_TO_UTF8(*Name), &OutData);
 	}
+#endif
 
 	return bResult;
 }
@@ -506,10 +568,12 @@ bool UUserStats::GetUserStatFloat(FSteamID SteamIDUser, FString Name, float& Out
 	bool bResult = false;
 	OutData = 0.0f;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->GetUserStat(SteamIDUser, TCHAR_TO_UTF8(*Name), &OutData);
 	}
+#endif
 
 	return bResult;
 }
@@ -521,10 +585,12 @@ bool UUserStats::GetUserAchievement(FSteamID SteamIDUser, FString Name, bool& bA
 	bool bResult = false;
 	bAchieved = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->GetUserAchievement(SteamIDUser, TCHAR_TO_UTF8(*Name), &bAchieved);
 	}
+#endif
 
 	return bResult;
 }
@@ -538,12 +604,14 @@ bool UUserStats::GetUserAchievementAndUnlockTime(FSteamID SteamIDUser, FString N
 	OutUnlockTime = 0;
 	uint32 UnlockTime = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		SteamUserStats()->GetUserAchievementAndUnlockTime(SteamIDUser, TCHAR_TO_UTF8(*Name), &bAchieved, &UnlockTime);
 	}
 
 	OutUnlockTime = UnlockTime;
+#endif
 
 	return bResult;
 }
@@ -555,10 +623,12 @@ bool UUserStats::GetStatInt(FString Name, int32& OutData)
 	bool bResult = false;
 	OutData = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->GetStat(TCHAR_TO_UTF8(*Name), &OutData);
 	}
+#endif
 
 	return bResult;
 }
@@ -570,10 +640,12 @@ bool UUserStats::GetStatFloat(FString Name, float& OutData)
 	bool bResult = false;
 	OutData = 0.0f;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->GetStat(TCHAR_TO_UTF8(*Name), &OutData);
 	}
+#endif
 
 	return bResult;
 }
@@ -584,10 +656,12 @@ bool UUserStats::IndicateAchievementProgress(FString Name, int32 CurrentProgress
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->IndicateAchievementProgress(TCHAR_TO_UTF8(*Name), CurrentProgress, MaxProgress);
 	}
+#endif
 
 	return bResult;
 }
@@ -598,10 +672,12 @@ bool UUserStats::RequestCurrentStats()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->RequestCurrentStats();
 	}
+#endif
 
 	return bResult;
 }
@@ -610,33 +686,39 @@ void UUserStats::RequestGlobalAchievementPercentages(const FOnRequestGlobalAchie
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		FOnlineAsyncTaskSteamCoreUserStatsRequestGlobalAchievementPercentages* Task = new FOnlineAsyncTaskSteamCoreUserStatsRequestGlobalAchievementPercentages(this, Callback);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUserStats::RequestGlobalStats(const FOnRequestGlobalStats& Callback, int32 HistoryDays)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		FOnlineAsyncTaskSteamCoreUserStatsRequestGlobalStats* Task = new FOnlineAsyncTaskSteamCoreUserStatsRequestGlobalStats(this, Callback, HistoryDays);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUserStats::RequestUserStats(const FOnRequestUserStats& Callback, FSteamID SteamID)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		FOnlineAsyncTaskSteamCoreUserStatsRequestUserStats* Task = new FOnlineAsyncTaskSteamCoreUserStatsRequestUserStats(this, Callback, SteamID);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool UUserStats::ResetAllStats(bool bAchievementsToo)
@@ -645,10 +727,12 @@ bool UUserStats::ResetAllStats(bool bAchievementsToo)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->ResetAllStats(bAchievementsToo);
 	}
+#endif
 
 	return bResult;
 }
@@ -659,10 +743,12 @@ bool UUserStats::SetAchievement(FString Name)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->SetAchievement(TCHAR_TO_UTF8(*Name));
 	}
+#endif
 
 	return bResult;
 }
@@ -673,10 +759,12 @@ bool UUserStats::SetStatInt(FString Name, int32 Data)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->SetStat(TCHAR_TO_UTF8(*Name), Data);
 	}
+#endif
 
 	return bResult;
 }
@@ -687,10 +775,12 @@ bool UUserStats::SetStatFloat(FString Name, float Data)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->SetStat(TCHAR_TO_UTF8(*Name), Data);
 	}
+#endif
 
 	return bResult;
 }
@@ -701,10 +791,12 @@ bool UUserStats::StoreStats()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->StoreStats();
 	}
+#endif
 
 	return bResult;
 }
@@ -715,10 +807,12 @@ bool UUserStats::UpdateAvgRateStat(FString Name, float CountThisSession, float S
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		bResult = SteamUserStats()->UpdateAvgRateStat(TCHAR_TO_UTF8(*Name), CountThisSession, SessionLength);
 	}
+#endif
 
 	return bResult;
 }
@@ -727,17 +821,20 @@ void UUserStats::UploadLeaderboardScore(const FOnUploadLeaderboardScore& Callbac
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUserStats())
 	{
 		FOnlineAsyncTaskSteamCoreUserStatsUploadLeaderboardScore* Task = new FOnlineAsyncTaskSteamCoreUserStatsUploadLeaderboardScore(this, Callback, SteamLeaderboard, UploadScoreMethod, Score, ScoreDetails);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		Steam API Callbacks
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void UUserStats::OnUserStatsReceived(UserStatsReceived_t* pParam)
 {
 	LogVerbose("");
@@ -793,3 +890,4 @@ void UUserStats::OnUserAchievementIconFetched(UserAchievementIconFetched_t* pPar
 		UserAchievementIconFetched.Broadcast(Data);
 	});
 }
+#endif

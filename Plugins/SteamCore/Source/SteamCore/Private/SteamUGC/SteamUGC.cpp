@@ -15,6 +15,7 @@ void UUGC::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
 
+#if ENABLE_STEAMCORE
 	OnDownloadItemResultCallback.Register(this, &UUGC::OnDownloadItemResult);
 	OnItemInstalledCallback.Register(this, &UUGC::OnItemInstalled);
 
@@ -23,12 +24,15 @@ void UUGC::Initialize(FSubsystemCollectionBase& Collection)
 		OnDownloadItemResultCallback.SetGameserverFlag();
 		OnItemInstalledCallback.SetGameserverFlag();
 	}
+#endif
 }
 
 void UUGC::Deinitialize()
 {
+#if ENABLE_STEAMCORE
 	OnDownloadItemResultCallback.Unregister();
 	OnItemInstalledCallback.Unregister();
+#endif
 
 	Super::Deinitialize();
 }
@@ -41,22 +45,26 @@ void UUGC::AddAppDependency(const FOnAddAppDependencyResult& Callback, FPublishe
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCAddAppDependency* Task = new FOnlineAsyncTaskSteamCoreUGCAddAppDependency(this, Callback, PublishedFileID, AppId);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUGC::AddDependency(const FOnAddUGCDependencyResult& Callback, FPublishedFileID PublishedFileID, FPublishedFileID ChildPublishedFileID)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCAddUGCDependency* Task = new FOnlineAsyncTaskSteamCoreUGCAddUGCDependency(this, Callback, PublishedFileID, ChildPublishedFileID);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool UUGC::AddExcludedTag(FUGCQueryHandle Handle, FString TagName)
@@ -65,10 +73,12 @@ bool UUGC::AddExcludedTag(FUGCQueryHandle Handle, FString TagName)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->AddExcludedTag(Handle, TCHAR_TO_UTF8(*TagName));
 	}
+#endif
 
 	return bResult;
 }
@@ -81,9 +91,11 @@ bool UUGC::AddItemKeyValueTag(FUGCUpdateHandle Handle, FString Key, FString Valu
 
 	if (Key.Len() == 0 || Value.Len() == 0)
 	{
+	
 		return bResult;
 	}
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		const FTCHARToUTF8 ConvertedKey(*Key);
@@ -91,6 +103,7 @@ bool UUGC::AddItemKeyValueTag(FUGCUpdateHandle Handle, FString Key, FString Valu
 
 		bResult = GetUGC()->AddItemKeyValueTag(Handle, ConvertedKey.Get(), ConvertedValue.Get());
 	}
+#endif
 
 	return bResult;
 }
@@ -101,10 +114,12 @@ bool UUGC::AddItemPreviewFile(FUGCUpdateHandle Handle, FString PreviewFile, ESte
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->AddItemPreviewFile(Handle, TCHAR_TO_UTF8(*PreviewFile), static_cast<EItemPreviewType>(Type));
 	}
+#endif
 
 	return bResult;
 }
@@ -115,10 +130,12 @@ bool UUGC::AddItemPreviewVideo(FUGCUpdateHandle Handle, FString VideoID)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->AddItemPreviewVideo(Handle, TCHAR_TO_UTF8(*VideoID));
 	}
+#endif
 
 	return bResult;
 }
@@ -127,11 +144,13 @@ void UUGC::AddItemToFavorites(const FOnAddItemToFavorites& Callback, int32 AppId
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCAddItemToFavorites* Task = new FOnlineAsyncTaskSteamCoreUGCAddItemToFavorites(this, Callback, AppId, PublishedFileID);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool UUGC::AddRequiredKeyValueTag(FUGCQueryHandle Handle, FString Key, FString Value)
@@ -142,9 +161,11 @@ bool UUGC::AddRequiredKeyValueTag(FUGCQueryHandle Handle, FString Key, FString V
 
 	if (Key.Len() == 0 || Value.Len() == 0)
 	{
+	
 		return bResult;
 	}
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		const FTCHARToUTF8 ConvertedKey(*Key);
@@ -152,6 +173,7 @@ bool UUGC::AddRequiredKeyValueTag(FUGCQueryHandle Handle, FString Key, FString V
 
 		bResult = GetUGC()->AddRequiredKeyValueTag(Handle, ConvertedKey.Get(), ConvertedValue.Get());
 	}
+#endif
 
 	return bResult;
 }
@@ -162,10 +184,12 @@ bool UUGC::AddRequiredTag(FUGCQueryHandle Handle, FString TagName)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->AddRequiredTag(Handle, TCHAR_TO_UTF8(*TagName));
 	}
+#endif
 
 	return bResult;
 }
@@ -176,6 +200,7 @@ bool UUGC::AddRequiredTagGroup(FUGCQueryHandle Handle, TArray<FString> TagGroups
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 #if STEAM_VERSION > 150
 	if (GetUGC())
 	{
@@ -193,6 +218,7 @@ bool UUGC::AddRequiredTagGroup(FUGCQueryHandle Handle, TArray<FString> TagGroups
 		bResult = GetUGC()->AddRequiredTagGroup(Handle, Arr.GetData());
 	}
 #endif
+#endif
 
 	return bResult;
 }
@@ -203,10 +229,12 @@ bool UUGC::BInitWorkshopForGameServer(int32 WorkshopDepotID, FString Folder)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->BInitWorkshopForGameServer(WorkshopDepotID, TCHAR_TO_UTF8(*Folder));
 	}
+#endif
 
 	return bResult;
 }
@@ -215,26 +243,38 @@ void UUGC::CreateItem(const FOnCreateItem& Callback, int32 ConsumerAppID, ESteam
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCCreateItem* Task = new FOnlineAsyncTaskSteamCoreUGCCreateItem(this, Callback, ConsumerAppID, FileType);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 FUGCQueryHandle UUGC::CreateQueryAllUGCRequest(ESteamUGCQuery QueryType, ESteamUGCMatchingUGCType FileType, int32 CreatorAppID, int32 ConsumerAppID, int32 Page)
 {
 	LogVerbose("");
 
-	return GetUGC() ? FUGCQueryHandle(GetUGC()->CreateQueryAllUGCRequest(static_cast<EUGCQuery>(QueryType), (FileType == ESteamUGCMatchingUGCType::All ? k_EUGCMatchingUGCType_All : static_cast<EUGCMatchingUGCType>(FileType)), CreatorAppID, ConsumerAppID, Page)) : FUGCQueryHandle();
+	FUGCQueryHandle Result = {};
+	
+#if ENABLE_STEAMCORE
+	if (GetUGC())
+	{
+		Result = GetUGC()->CreateQueryAllUGCRequest(static_cast<EUGCQuery>(QueryType), (FileType == ESteamUGCMatchingUGCType::All ? k_EUGCMatchingUGCType_All : static_cast<EUGCMatchingUGCType>(FileType)), CreatorAppID, ConsumerAppID, Page);
+	}
+#endif
+
+	return Result;
 }
 
 FUGCQueryHandle UUGC::CreateQueryUGCDetailsRequest(TArray<FPublishedFileID> PublishedFileIDs)
 {
 	LogVerbose("");
 
-	FUGCQueryHandle Handle = 0;
+	FUGCQueryHandle Handle = {};
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		const int32 Size = PublishedFileIDs.Num();
@@ -249,6 +289,7 @@ FUGCQueryHandle UUGC::CreateQueryUGCDetailsRequest(TArray<FPublishedFileID> Publ
 
 		Handle = GetUGC()->CreateQueryUGCDetailsRequest(DataArray.GetData(), Size);
 	}
+#endif
 
 	return Handle;
 }
@@ -257,12 +298,14 @@ FUGCQueryHandle UUGC::CreateQueryUserUGCRequest(FSteamID SteamID, ESteamUserUGCL
 {
 	LogVerbose("");
 
-	FUGCQueryHandle Handle = 0;
+	FUGCQueryHandle Handle = {};
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		Handle = GetUGC()->CreateQueryUserUGCRequest(SteamID, static_cast<EUserUGCList>(ListType), (MatchingUGCType == ESteamUGCMatchingUGCType::All ? k_EUGCMatchingUGCType_All : static_cast<EUGCMatchingUGCType>(MatchingUGCType)), static_cast<EUserUGCListSortOrder>(SortOrder), CreatorAppID, ConsumerAppID, Page);
 	}
+#endif
 
 	return Handle;
 }
@@ -271,11 +314,13 @@ void UUGC::DeleteItem(const FOnDeleteItemResult& Callback, FPublishedFileID Publ
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCDeleteItem* Task = new FOnlineAsyncTaskSteamCoreUGCDeleteItem(this, Callback, PublishedFileID);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool UUGC::DownloadItem(FPublishedFileID PublishedFileID, bool bHighPriority)
@@ -284,10 +329,12 @@ bool UUGC::DownloadItem(FPublishedFileID PublishedFileID, bool bHighPriority)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->DownloadItem(PublishedFileID, bHighPriority);
 	}
+#endif
 
 	return bResult;
 }
@@ -296,11 +343,13 @@ void UUGC::GetAppDependencies(const FOnGetAppDependenciesResult& Callback, FPubl
 {
 	LogVeryVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCGetAppDependencies* Task = new FOnlineAsyncTaskSteamCoreUGCGetAppDependencies(this, Callback, PublishedFileID);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool UUGC::GetItemDownloadInfo(FPublishedFileID PublishedFileID, int32& OutBytesDownloaded, int32& OutBytesTotal)
@@ -312,11 +361,13 @@ bool UUGC::GetItemDownloadInfo(FPublishedFileID PublishedFileID, int32& OutBytes
 	uint64 BytesDownloaded = 0;
 	uint64 BytesTotal = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->GetItemDownloadInfo(PublishedFileID, &BytesDownloaded, &BytesTotal);
 	}
-
+#endif
+	
 	OutBytesDownloaded = BytesDownloaded;
 	OutBytesTotal = BytesTotal;
 
@@ -332,6 +383,7 @@ bool UUGC::GetItemInstallInfo(FPublishedFileID PublishedFileID, int32& OutSizeOn
 	uint32 TimeStamp = 0;
 	uint64 SizeOnDisk = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		TArray<char> Path;
@@ -341,7 +393,8 @@ bool UUGC::GetItemInstallInfo(FPublishedFileID PublishedFileID, int32& OutSizeOn
 
 		OutFolder = UTF8_TO_TCHAR(Path.GetData());
 	}
-
+#endif
+	
 	OutSizeOnDisk = SizeOnDisk;
 	OutTimeStamp = TimeStamp;
 
@@ -354,6 +407,7 @@ int32 UUGC::GetItemState(FPublishedFileID PublishedFileID, TArray<ESteamItemStat
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		Result = GetUGC()->GetItemState(PublishedFileID);
@@ -393,6 +447,7 @@ int32 UUGC::GetItemState(FPublishedFileID PublishedFileID, TArray<ESteamItemStat
 			States.Add(ESteamItemState::Subscribed);
 		}
 	}
+#endif
 
 	return Result;
 }
@@ -406,11 +461,13 @@ ESteamItemUpdateStatus UUGC::GetItemUpdateProgress(FUGCUpdateHandle Handle, int3
 	uint64 BytesProcessed = 0;
 	uint64 BytesTotal = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		Result = static_cast<ESteamItemUpdateStatus>(GetUGC()->GetItemUpdateProgress(Handle, &BytesProcessed, &BytesTotal));
 	}
-
+#endif
+	
 	OutBytesProcessed = BytesProcessed;
 	OutBytesTotal = BytesTotal;
 
@@ -423,10 +480,12 @@ int32 UUGC::GetNumSubscribedItems()
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		Result = GetUGC()->GetNumSubscribedItems();
 	}
+#endif
 
 	return Result;
 }
@@ -437,6 +496,7 @@ bool UUGC::GetQueryUGCAdditionalPreview(FUGCQueryHandle Handle, int32 Index, int
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	EItemPreviewType ItemPreviewType = k_EItemPreviewType_Image;
 
 	if (GetUGC())
@@ -457,6 +517,7 @@ bool UUGC::GetQueryUGCAdditionalPreview(FUGCQueryHandle Handle, int32 Index, int
 	}
 
 	OutPreviewType = static_cast<ESteamItemPreviewType>(ItemPreviewType);
+#endif
 
 	return bResult;
 }
@@ -468,6 +529,7 @@ bool UUGC::GetQueryUGCChildren(FUGCQueryHandle Handle, int32 Index, TArray<FPubl
 	bool bResult = false;
 	OutPublishedFileIDs.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		TArray<PublishedFileId_t> DataArray;
@@ -483,6 +545,7 @@ bool UUGC::GetQueryUGCChildren(FUGCQueryHandle Handle, int32 Index, TArray<FPubl
 			}
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -495,6 +558,7 @@ bool UUGC::GetQueryUGCKeyValueTag(FUGCQueryHandle Handle, int32 Index, int32 Key
 	OutKey.Empty();
 	OutValue.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		TArray<char> Key;
@@ -511,6 +575,7 @@ bool UUGC::GetQueryUGCKeyValueTag(FUGCQueryHandle Handle, int32 Index, int32 Key
 			OutValue = UTF8_TO_TCHAR(Value.GetData());
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -522,6 +587,7 @@ bool UUGC::GetQueryUGCMetadata(FUGCQueryHandle Handle, int32 Index, FString& Out
 	bool bResult = false;
 	OutMetaData.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		TArray<char> DataArray;
@@ -534,6 +600,7 @@ bool UUGC::GetQueryUGCMetadata(FUGCQueryHandle Handle, int32 Index, FString& Out
 			OutMetaData = UTF8_TO_TCHAR(DataArray.GetData());
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -544,10 +611,12 @@ int32 UUGC::GetQueryUGCNumAdditionalPreviews(FUGCQueryHandle Handle, int32 Index
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		Result = GetUGC()->GetQueryUGCNumAdditionalPreviews(Handle, Index);
 	}
+#endif
 
 	return Result;
 }
@@ -558,10 +627,12 @@ int32 UUGC::GetQueryUGCNumKeyValueTags(FUGCQueryHandle Handle, int32 Index)
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		Result = GetUGC()->GetQueryUGCNumKeyValueTags(Handle, Index);
 	}
+#endif
 
 	return Result;
 }
@@ -573,6 +644,7 @@ bool UUGC::GetQueryUGCPreviewURL(FUGCQueryHandle Handle, int32 Index, FString& O
 	bool bResult = false;
 	OutUrl.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		TArray<char> DataArray;
@@ -585,6 +657,7 @@ bool UUGC::GetQueryUGCPreviewURL(FUGCQueryHandle Handle, int32 Index, FString& O
 			OutUrl = UTF8_TO_TCHAR(DataArray.GetData());
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -596,6 +669,7 @@ bool UUGC::GetQueryUGCResult(FUGCQueryHandle Handle, int32 Index, FSteamUGCDetai
 	bool bResult = false;
 	OutDetails = FSteamUGCDetails();
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		SteamUGCDetails_t Details;
@@ -607,6 +681,7 @@ bool UUGC::GetQueryUGCResult(FUGCQueryHandle Handle, int32 Index, FSteamUGCDetai
 			OutDetails = Details;
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -617,11 +692,13 @@ int32 UUGC::GetQueryUGCNumTags(FUGCQueryHandle Handle, int32 Index)
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 #if STEAM_VERSION >= 150
 	if (GetUGC())
 	{
 		Result = GetUGC()->GetQueryUGCNumTags(Handle, Index);
 	}
+#endif
 #endif
 
 	return Result;
@@ -634,6 +711,7 @@ bool UUGC::GetQueryUGCTag(FUGCQueryHandle Handle, int32 Index, int32 IndexTag, F
 	bool bResult = false;
 	Value.Empty();
 
+#if ENABLE_STEAMCORE
 #if STEAM_VERSION >= 150
 	if (GetUGC())
 	{
@@ -648,6 +726,7 @@ bool UUGC::GetQueryUGCTag(FUGCQueryHandle Handle, int32 Index, int32 IndexTag, F
 		}
 	}
 #endif
+#endif
 
 	return bResult;
 }
@@ -659,6 +738,7 @@ bool UUGC::GetQueryUGCTagDisplayName(FUGCQueryHandle Handle, int32 Index, int32 
 	bool bResult = false;
 	Value.Empty();
 
+#if ENABLE_STEAMCORE
 #if STEAM_VERSION >= 150
 	if (GetUGC())
 	{
@@ -673,6 +753,7 @@ bool UUGC::GetQueryUGCTagDisplayName(FUGCQueryHandle Handle, int32 Index, int32 
 		}
 	}
 #endif
+#endif
 
 	return bResult;
 }
@@ -684,12 +765,14 @@ bool UUGC::GetQueryUGCStatistic(FUGCQueryHandle Handle, int32 Index, ESteamItemS
 	bool bResult = false;
 	uint64 StatValue = 0;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->GetQueryUGCStatistic(Handle, Index, static_cast<EItemStatistic>(StatType), &StatValue);
 	}
 
 	OutStatValue = LexToString(StatValue);
+#endif
 
 	return bResult;
 }
@@ -702,6 +785,7 @@ int32 UUGC::GetSubscribedItems(TArray<FPublishedFileID>& OutPublishedFileIDs, in
 
 	OutPublishedFileIDs.Empty();
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		TArray<PublishedFileId_t> DataArray;
@@ -714,6 +798,7 @@ int32 UUGC::GetSubscribedItems(TArray<FPublishedFileID>& OutPublishedFileIDs, in
 			OutPublishedFileIDs.Add(DataArray[i]);
 		}
 	}
+#endif
 
 	return Result;
 }
@@ -722,11 +807,13 @@ void UUGC::GetUserItemVote(const FOnGetUserItemVote& Callback, FPublishedFileID 
 {
 	LogVeryVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCGetUserItemVote* Task = new FOnlineAsyncTaskSteamCoreUGCGetUserItemVote(this, Callback, PublishedFileID);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool UUGC::ReleaseQueryUGCRequest(FUGCQueryHandle Handle)
@@ -735,10 +822,12 @@ bool UUGC::ReleaseQueryUGCRequest(FUGCQueryHandle Handle)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->ReleaseQueryUGCRequest(Handle);
 	}
+#endif
 
 	return bResult;
 }
@@ -747,33 +836,39 @@ void UUGC::RemoveAppDependency(const FOnRemoveAppDependencyResult& Callback, FPu
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCRemoveAppDependency* Task = new FOnlineAsyncTaskSteamCoreUGCRemoveAppDependency(this, Callback, PublishedFileID, AppId);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUGC::RemoveDependency(const FOnRemoveUGCDependencyResult& Callback, FPublishedFileID ParentPublishedFileID, FPublishedFileID ChildPublishedFileID)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCRemoveUGCDependency* Task = new FOnlineAsyncTaskSteamCoreUGCRemoveUGCDependency(this, Callback, ParentPublishedFileID, ChildPublishedFileID);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUGC::RemoveItemFromFavorites(const FOnRemoveItemFromFavorites& Callback, int32 AppId, FPublishedFileID PublishedFileID)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCRemoveItemFromFavorites* Task = new FOnlineAsyncTaskSteamCoreUGCRemoveItemFromFavorites(this, Callback, AppId, PublishedFileID);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool UUGC::RemoveItemKeyValueTags(FUGCUpdateHandle Handle, FString Key)
@@ -782,10 +877,12 @@ bool UUGC::RemoveItemKeyValueTags(FUGCUpdateHandle Handle, FString Key)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->RemoveItemKeyValueTags(Handle, TCHAR_TO_UTF8(*Key));
 	}
+#endif
 
 	return bResult;
 }
@@ -796,10 +893,12 @@ bool UUGC::RemoveItemPreview(FUGCUpdateHandle Handle, int32 Index)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->RemoveItemPreview(Handle, Index);
 	}
+#endif
 
 	return bResult;
 }
@@ -808,11 +907,13 @@ void UUGC::SendQueryUGCRequest(const FOnSendQueryUGCRequest& Callback, FUGCQuery
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCSendQueryUGCRequest* Data = new FOnlineAsyncTaskSteamCoreUGCSendQueryUGCRequest(this, Callback, Handle);
 		QueueAsyncTask(Data);
 	}
+#endif
 }
 
 bool UUGC::SetAllowCachedResponse(FUGCQueryHandle Handle, int32 MaxAgeSeconds)
@@ -821,10 +922,12 @@ bool UUGC::SetAllowCachedResponse(FUGCQueryHandle Handle, int32 MaxAgeSeconds)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetAllowCachedResponse(Handle, MaxAgeSeconds);
 	}
+#endif
 
 	return bResult;
 }
@@ -835,10 +938,12 @@ bool UUGC::SetAllowLegacyUpload(FUGCUpdateHandle Handle, bool bAllowLegacyUpload
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetAllowLegacyUpload(Handle, bAllowLegacyUpload);
 	}
+#endif
 
 	return bResult;
 }
@@ -849,10 +954,12 @@ bool UUGC::SetCloudFileNameFilter(FUGCQueryHandle Handle, FString MatchCloudFile
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetCloudFileNameFilter(Handle, TCHAR_TO_UTF8(*MatchCloudFileName));
 	}
+#endif
 
 	return bResult;
 }
@@ -863,10 +970,12 @@ bool UUGC::SetItemContent(FUGCUpdateHandle Handle, FString ContentFolder)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetItemContent(Handle, TCHAR_TO_UTF8(*ContentFolder));
 	}
+#endif
 
 	return bResult;
 }
@@ -877,10 +986,12 @@ bool UUGC::SetItemDescription(FUGCUpdateHandle Handle, FString Description)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetItemDescription(Handle, TCHAR_TO_UTF8(*Description));
 	}
+#endif
 
 	return bResult;
 }
@@ -891,10 +1002,12 @@ bool UUGC::SetItemMetadata(FUGCUpdateHandle Handle, FString MetaData)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetItemMetadata(Handle, TCHAR_TO_UTF8(*MetaData));
 	}
+#endif
 
 	return bResult;
 }
@@ -905,10 +1018,12 @@ bool UUGC::SetItemPreview(FUGCUpdateHandle Handle, FString PreviewFile)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetItemPreview(Handle, TCHAR_TO_UTF8(*PreviewFile));
 	}
+#endif
 
 	return bResult;
 }
@@ -919,6 +1034,7 @@ bool UUGC::SetItemTags(FUGCUpdateHandle Handle, TArray<FString> Tags)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		TArray<char*> Strings;
@@ -941,6 +1057,7 @@ bool UUGC::SetItemTags(FUGCUpdateHandle Handle, TArray<FString> Tags)
 			delete[] Strings[i];
 		}
 	}
+#endif
 
 	return bResult;
 }
@@ -951,10 +1068,12 @@ bool UUGC::SetItemTitle(FUGCUpdateHandle Handle, FString Title)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetItemTitle(Handle, TCHAR_TO_UTF8(*Title));
 	}
+#endif
 
 	return bResult;
 }
@@ -965,10 +1084,12 @@ bool UUGC::SetItemUpdateLanguage(FUGCUpdateHandle Handle, FString Language)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetItemUpdateLanguage(Handle, TCHAR_TO_UTF8(*Language));
 	}
+#endif
 
 	return bResult;
 }
@@ -979,10 +1100,12 @@ bool UUGC::SetItemVisibility(FUGCUpdateHandle Handle, ESteamRemoteStoragePublish
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetItemVisibility(Handle, static_cast<ERemoteStoragePublishedFileVisibility>(Visibility));
 	}
+#endif
 
 	return bResult;
 }
@@ -993,10 +1116,12 @@ bool UUGC::SetLanguage(FUGCQueryHandle Handle, FString Language)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetLanguage(Handle, TCHAR_TO_UTF8(*Language));
 	}
+#endif
 
 	return bResult;
 }
@@ -1007,10 +1132,12 @@ bool UUGC::SetMatchAnyTag(FUGCQueryHandle Handle, bool bMatchAnyTag)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetMatchAnyTag(Handle, bMatchAnyTag);
 	}
+#endif
 
 	return bResult;
 }
@@ -1021,10 +1148,12 @@ bool UUGC::SetRankedByTrendDays(FUGCQueryHandle Handle, int32 Days)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetRankedByTrendDays(Handle, Days);
 	}
+#endif
 
 	return bResult;
 }
@@ -1035,10 +1164,12 @@ bool UUGC::SetReturnAdditionalPreviews(FUGCQueryHandle Handle, bool bReturnAddit
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetReturnAdditionalPreviews(Handle, bReturnAdditionalPreviews);
 	}
+#endif
 
 	return bResult;
 }
@@ -1049,10 +1180,12 @@ bool UUGC::SetReturnChildren(FUGCQueryHandle Handle, bool bReturnChildren)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetReturnChildren(Handle, bReturnChildren);
 	}
+#endif
 
 	return bResult;
 }
@@ -1063,10 +1196,12 @@ bool UUGC::SetReturnKeyValueTags(FUGCQueryHandle Handle, bool bReturnKeyValueTag
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetReturnKeyValueTags(Handle, bReturnKeyValueTags);
 	}
+#endif
 
 	return bResult;
 }
@@ -1077,10 +1212,12 @@ bool UUGC::SetReturnLongDescription(FUGCQueryHandle Handle, bool bReturnLongDesc
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetReturnLongDescription(Handle, bReturnLongDescription);
 	}
+#endif
 
 	return bResult;
 }
@@ -1091,10 +1228,12 @@ bool UUGC::SetReturnMetadata(FUGCQueryHandle Handle, bool bReturnMetadata)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetReturnMetadata(Handle, bReturnMetadata);
 	}
+#endif
 
 	return bResult;
 }
@@ -1105,10 +1244,12 @@ bool UUGC::SetReturnOnlyIDs(FUGCQueryHandle Handle, bool bReturnOnlyIDs)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetReturnOnlyIDs(Handle, bReturnOnlyIDs);
 	}
+#endif
 
 	return bResult;
 }
@@ -1119,10 +1260,12 @@ bool UUGC::SetReturnPlaytimeStats(FUGCQueryHandle Handle, int32 Days)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetReturnPlaytimeStats(Handle, Days);
 	}
+#endif
 
 	return bResult;
 }
@@ -1133,10 +1276,12 @@ bool UUGC::SetReturnTotalOnly(FUGCQueryHandle Handle, bool bReturnTotalOnly)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetReturnTotalOnly(Handle, bReturnTotalOnly);
 	}
+#endif
 
 	return bResult;
 }
@@ -1147,10 +1292,12 @@ bool UUGC::SetSearchText(FUGCQueryHandle Handle, FString SearchText)
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->SetSearchText(Handle, TCHAR_TO_UTF8(*SearchText));
 	}
+#endif
 
 	return bResult;
 }
@@ -1159,94 +1306,117 @@ void UUGC::SetUserItemVote(const FOnSetUserItemVote& Callback, FPublishedFileID 
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCSetUserItemVote* Task = new FOnlineAsyncTaskSteamCoreUGCSetUserItemVote(this, Callback, bVoteUp, PublishedFileID);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 FUGCUpdateHandle UUGC::StartItemUpdate(int32 ConsumerAppID, FPublishedFileID PublishedFileID)
 {
 	LogVerbose("");
 
-	return GetUGC() ? FUGCUpdateHandle(GetUGC()->StartItemUpdate(ConsumerAppID, PublishedFileID)) : FUGCUpdateHandle();
+#if ENABLE_STEAMCORE
+	if (GetUGC())
+	{
+		return FUGCUpdateHandle(GetUGC()->StartItemUpdate(ConsumerAppID, PublishedFileID));
+	}
+#endif
+
+	return FUGCUpdateHandle();
 }
 
 void UUGC::StartPlaytimeTracking(const FOnStartPlaytimeTracking& Callback, TArray<FPublishedFileID> PublishedFileID)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCStartPlaytimeTracking* Task = new FOnlineAsyncTaskSteamCoreUGCStartPlaytimeTracking(this, Callback, PublishedFileID);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUGC::StopPlaytimeTracking(const FOnStopPlaytimeTracking& Callback, TArray<FPublishedFileID> PublishedFileIDs)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCStopPlaytimeTracking* Task = new FOnlineAsyncTaskSteamCoreUGCStopPlaytimeTracking(this, Callback, PublishedFileIDs);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUGC::StopPlaytimeTrackingForAllItems(const FOnStopPlaytimeTrackingForAllItems& Callback)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCStopPlaytimeTrackingForAllItems* Task = new FOnlineAsyncTaskSteamCoreUGCStopPlaytimeTrackingForAllItems(this, Callback);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUGC::SubmitItemUpdate(const FOnSubmitItemUpdate& Callback, FUGCUpdateHandle Handle, FString ChangeNote)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCSubmitItemUpdate* Task = new FOnlineAsyncTaskSteamCoreUGCSubmitItemUpdate(this, Callback, Handle, ChangeNote);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUGC::SubscribeItem(const FOnSubscribeItem& Callback, FPublishedFileID PublishedFileID)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCSubscribeItem* Task = new FOnlineAsyncTaskSteamCoreUGCSubscribeItem(this, Callback, PublishedFileID);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUGC::SuspendDownloads(bool bSuspend)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		GetUGC()->SuspendDownloads(bSuspend);
 	}
+#endif
 }
 
 void UUGC::UnsubscribeItem(const FOnUnsubscribeItem& Callback, FPublishedFileID PublishedFileID)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		FOnlineAsyncTaskSteamCoreUGCUnsubscribeItem* Task = new FOnlineAsyncTaskSteamCoreUGCUnsubscribeItem(this, Callback, PublishedFileID);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 bool UUGC::UpdateItemPreviewFile(FUGCUpdateHandle Handle, int32 Index, FString PreviewFile)
@@ -1255,10 +1425,12 @@ bool UUGC::UpdateItemPreviewFile(FUGCUpdateHandle Handle, int32 Index, FString P
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->UpdateItemPreviewFile(Handle, Index, TCHAR_TO_UTF8(*PreviewFile));
 	}
+#endif
 
 	return bResult;
 }
@@ -1269,10 +1441,12 @@ bool UUGC::UpdateItemPreviewVideo(FUGCUpdateHandle Handle, int32 Index, FString 
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (GetUGC())
 	{
 		bResult = GetUGC()->UpdateItemPreviewVideo(Handle, Index, TCHAR_TO_UTF8(*PreviewVideo));
 	}
+#endif
 
 	return bResult;
 }
@@ -1281,6 +1455,7 @@ bool UUGC::UpdateItemPreviewVideo(FUGCUpdateHandle Handle, int32 Index, FString 
 //		Steam API Callbacks
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void UUGC::OnItemInstalled(ItemInstalled_t* pParam)
 {
 	LogVerbose("");
@@ -1302,3 +1477,4 @@ void UUGC::OnDownloadItemResult(DownloadItemResult_t* pParam)
 		DownloadItemResult.Broadcast(Data);
 	});
 }
+#endif

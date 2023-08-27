@@ -36,7 +36,7 @@ public:
 	* @param	BeaconId		Beacon ID for the party you wish to join.
 	* @param	Timeout			How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Join Party"), Category = "SteamCore|SteamParties|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Join Party", BlueprintInternalUseOnly="true"), Category = "SteamCore|SteamParties|Async")
 	static USteamCoreSteamPartiesAsyncActionJoinParty* JoinPartyAsync(UObject* WorldContextObject, FPartyBeaconID BeaconId, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -67,7 +67,7 @@ public:
 	* @param	Metadata				Additional game metadata that can be set on the beacon, and is exposed via ISteamParties::GetBeaconDetails.
 	* @param	Timeout					How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Create Beacon"), Category = "SteamCore|SteamParties|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Create Beacon", BlueprintInternalUseOnly="true"), Category = "SteamCore|SteamParties|Async")
 	static USteamCoreSteamPartiesAsyncActionCreateBeacon* CreateBeaconAsync(UObject* WorldContextObject, int32 OpenSlots, FSteamPartyBeaconLocation BeaconLocation, FString ConnectString, FString Metadata, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -95,7 +95,7 @@ public:
 	* @param	OpenSlots		Number of reservation slots to create for the beacon. Normally, this is the size of your desired party minus one (for the current user).
 	* @param	Timeout			How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Change Num Open Slots"), Category = "SteamCore|SteamParties|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Change Num Open Slots", BlueprintInternalUseOnly="true"), Category = "SteamCore|SteamParties|Async")
 	static USteamCoreSteamPartiesAsyncActionChangeNumOpenSlots* ChangeNumOpenSlotsAsync(UObject* WorldContextObject, FPartyBeaconID BeaconId, int32 OpenSlots, float Timeout = 10.f);
 public:
 	UFUNCTION()

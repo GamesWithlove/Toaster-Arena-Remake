@@ -25,7 +25,7 @@ public:
 	*
 	* @param	GameId		GameID to retrieve the achievement percentages for
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Global Achievement Percentages for App"), Category = "SteamCoreWeb|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Global Achievement Percentages for App", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|UserStats|Async")
 	static USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp* GetGlobalAchievementPercentagesForAppAsync(UObject* WorldContextObject, FString GameId);
 };
 
@@ -45,7 +45,7 @@ public:
 	* @param	StartDate		Start date for daily totals (unix epoch timestamp)
 	* @param	EndDate			End date for daily totals (unix epoch timestamp)
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Global Stats for Game"), Category = "SteamCoreWeb|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Global Stats for Game", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|UserStats|Async")
 	static USteamCoreWebAsyncActionGetGlobalStatsForGame* GetGlobalStatsForGameAsync(UObject* WorldContextObject, int32 AppId, TArray<FString> Names, int32 StartDate, int32 EndDate);
 };
 
@@ -64,7 +64,7 @@ public:
 	*
 	* @param	AppId			AppID that we're getting user count for
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Number of Current Players"), Category = "SteamCoreWeb|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Number of Current Players", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|UserStats|Async")
 	static USteamCoreWebAsyncActionGetNumberOfCurrentPlayers* GetNumberOfCurrentPlayersAsync(UObject* WorldContextObject, int32 AppId);
 };
 
@@ -84,7 +84,7 @@ public:
 	* @param	AppId			AppID to get achievements for
 	* @param	language		Language to return strings for
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Player Achievements"), Category = "SteamCoreWeb|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Player Achievements", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|UserStats|Async")
 	static USteamCoreWebAsyncActionGetPlayerAchievements* GetPlayerAchievementsAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, FString language = "english");
 };
 
@@ -103,7 +103,7 @@ public:
 	* @param	AppId			AppID to get achievements for
 	* @param	language		Language to return strings for
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Schema for Game"), Category = "SteamCoreWeb|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Schema for Game", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|UserStats|Async")
 	static USteamCoreWebAsyncActionGetSchemaForGame* GetSchemaForGameAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, FString language = "english");
 };
 
@@ -122,7 +122,7 @@ public:
 	* @param	SteamId			SteamId of user
 	* @param	AppId			AppID to get achievements for
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get User Stats for Game"), Category = "SteamCoreWeb|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get User Stats for Game", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|UserStats|Async")
 	static USteamCoreWebAsyncActionGetUserStatsForGame* GetUserStatsForGameAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId);
 };
 
@@ -143,6 +143,6 @@ public:
 	* @param	Names			Names of stat or achievement to set
 	* @param	Values			Values to set
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Set User Stats for Game"), Category = "SteamCoreWeb|UserStats|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Set User Stats for Game", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|UserStats|Async")
 	static USteamCoreWebAsyncActionSetUserStatsForGame* SetUserStatsForGameAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId, TArray<FString> Names, TArray<int32> Values);
 };

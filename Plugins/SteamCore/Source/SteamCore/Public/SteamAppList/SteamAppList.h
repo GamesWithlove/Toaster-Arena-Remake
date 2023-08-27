@@ -68,7 +68,8 @@ private:
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(UAppList, OnSteamAppInstalled, SteamAppInstalled_t, OnSteamAppInstalledCallback);
 	STEAM_CALLBACK_MANUAL(UAppList, OnSteamAppUninstalled, SteamAppUninstalled_t, OnSteamAppUninstalledCallback);
+#endif
 };

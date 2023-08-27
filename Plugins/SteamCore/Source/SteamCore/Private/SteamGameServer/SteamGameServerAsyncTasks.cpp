@@ -11,6 +11,7 @@
 //		FOnlineAsyncTaskSteamCoreGameServerFindOrCreateLeaderboard
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void FOnlineAsyncTaskSteamCoreGameServerAssociateWithClan::Tick()
 {
 	FOnlineAsyncTaskSteamCore::Tick();
@@ -122,3 +123,4 @@ void FOnlineAsyncTaskSteamCoreGameServerComputeNewPlayerCompatibility::TriggerDe
 
 	m_OnSteamCallback.ExecuteIfBound(m_CallbackResults, bWasSuccessful);
 }
+#endif

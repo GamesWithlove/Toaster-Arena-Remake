@@ -24,11 +24,14 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGSStatsReceived(const GSStatsReceived_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , SteamIDUser(Data.m_steamIDUser)
 	{
 	}
+#endif
+	
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "GameServer")
 	ESteamResult Result;
@@ -46,11 +49,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FGSStatsStored(const GSStatsStored_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , SteamIDUser(Data.m_steamIDUser)
 	{
 	}
+#endif
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "GameServer")
 	ESteamResult Result;
@@ -65,10 +70,13 @@ struct FGSStatsUnloaded
 public:
 	FGSStatsUnloaded() = default;
 
+#if ENABLE_STEAMCORE
 	FGSStatsUnloaded(const GSStatsUnloaded_t& Data)
 		: SteamIDUser(Data.m_steamIDUser)
 	{
 	}
+#endif
+	
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "GameServer")
 	FSteamID SteamIDUser;

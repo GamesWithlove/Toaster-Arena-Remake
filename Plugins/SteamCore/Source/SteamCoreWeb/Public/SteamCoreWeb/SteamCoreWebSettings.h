@@ -29,7 +29,7 @@ public:
 	/**
 	* Disabled subsystems wont be created, SteamCoreWeb subsystem cannot be disabled
 	*/
-	UPROPERTY(config, EditAnywhere, Category = "Settings", meta = (Bitmask, BitmaskEnum = "ESubsystemWeb"))
+	UPROPERTY(config, EditAnywhere, Category = "Settings", meta = (Bitmask, BitmaskEnum = "/Script/SteamCoreWeb.ESubsystemWeb"))
 	int32 DisabledSubsystems;
 
 	/**

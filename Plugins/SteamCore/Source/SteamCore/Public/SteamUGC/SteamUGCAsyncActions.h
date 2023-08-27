@@ -50,7 +50,7 @@ public:
 	*
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Stop Playtime Tracking For All Items"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Stop Playtime Tracking For All Items", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionStopPlaytimeTrackingForAllItems* StopPlaytimeTrackingForAllItemsAsync(UObject* WorldContextObject, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -75,7 +75,7 @@ public:
 	* @param	PublishedFileIDs	The array of workshop items you want to stop tracking. (Maximum of 100 items.)
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Stop Playtime Tracking"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Stop Playtime Tracking", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionStopPlaytimeTracking* StopPlaytimeTrackingAsync(UObject* WorldContextObject, TArray<FPublishedFileID> PublishedFileIDs, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -100,7 +100,7 @@ public:
 	* @param	PublishedFileIDs		The array of workshop items you want to start tracking. (Maximum of 100 items.)
 	* @param	Timeout					How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Start Playtime Tracking"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Start Playtime Tracking", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionStartPlaytimeTracking* StartPlaytimeTrackingAsync(UObject* WorldContextObject, TArray<FPublishedFileID> PublishedFileIDs, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -124,7 +124,7 @@ public:
 	* @param	PublishedFileIDs		The workshop item to unsubscribe from.
 	* @param	Timeout					How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Unsubscribe Item"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Unsubscribe Item", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionUnsubscribeItem* UnsubscribeItemAsync(UObject* WorldContextObject, FPublishedFileID PublishedFileIDs, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -148,7 +148,7 @@ public:
 	* @param	PublishedFileIDs		The workshop item to subscribe to.
 	* @param	Timeout					How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Subscribe Item"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Subscribe Item", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionSubscribeItem* SubscribeItemAsync(UObject* WorldContextObject, FPublishedFileID PublishedFileIDs, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -173,7 +173,7 @@ public:
 	* @param	PublishedFileID			The workshop item to remove from the users favorites list.
 	* @param	Timeout					How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Remove Item from Favorites"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Remove Item from Favorites", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionRemoveItemFromFavorites* RemoveItemFromFavoritesAsync(UObject* WorldContextObject, int32 AppId, FPublishedFileID PublishedFileID, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -198,7 +198,7 @@ public:
 	* @param	PublishedFileID		The workshop item to add to the users favorites list.
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Add Item to Favorites"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Add Item to Favorites", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionAddItemToFavorites* AddItemToFavoritesAsync(UObject* WorldContextObject, int32 AppId, FPublishedFileID PublishedFileID, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -222,7 +222,7 @@ public:
 	* @param	PublishedFileID		The workshop item ID to get the users vote.
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get User Item Vote"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get User Item Vote", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionGetUserItemVote* GetUserItemVoteAsync(UObject* WorldContextObject, FPublishedFileID PublishedFileID, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -247,7 +247,7 @@ public:
 	* @param	bVoteUp				Vote up (true) or down (false)?
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Set User Item Vote"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Set User Item Vote", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionSetUserItemVote* SetUserItemVoteAsync(UObject* WorldContextObject, FPublishedFileID PublishedFileID, bool bVoteUp, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -273,7 +273,7 @@ public:
 	* @param	ChangeNote		A brief description of the changes made. (Optional, set to NULL for no change note)
 	* @param	Timeout			How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Submit Item Update"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Submit Item Update", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionSubmitItemUpdate* SubmitItemUpdateAsync(UObject* WorldContextObject, FUGCUpdateHandle Handle, FString ChangeNote, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -298,7 +298,7 @@ public:
 	* @param	FileType			The type of UGC to create.
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Create Item"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Create Item", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionCreateItem* CreateItemAsync(UObject* WorldContextObject, int32 ConsumerAppID, ESteamWorkshopFileType FileType, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -324,7 +324,7 @@ public:
 	* @param	Handle		The UGC query request handle to send.
 	* @param	Timeout		How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Send Query UGC Request"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Send Query UGC Request", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionSendQueryUGCRequest* SendQueryUGCRequestAsync(UObject* WorldContextObject, FUGCQueryHandle Handle, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -352,7 +352,7 @@ public:
 	* @param	AppId				The required app/dlc.
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Add App Dependency"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Add App Dependency", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionAddAppDependency* AddAppDependencyAsync(UObject* WorldContextObject, FPublishedFileID PublishedFileID, int32 AppId, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -377,7 +377,7 @@ public:
 	* @param	AppId				The app/dlc.
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Remove App Dependency"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Remove App Dependency", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionRemoveAppDependency* RemoveAppDependencyAsync(UObject* WorldContextObject, FPublishedFileID PublishedFileID, int32 AppId, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -405,7 +405,7 @@ public:
 	* @param	ChildPublishedFileID	The dependency to add to the parent.
 	* @param	Timeout					How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Add Dependency"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Add Dependency", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionAddUGCDependency* AddDependencyAsync(UObject* WorldContextObject, FPublishedFileID PublishedFileID, FPublishedFileID ChildPublishedFileID, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -430,7 +430,7 @@ public:
 	* @param	ChildPublishedFileID		The dependency to remove from the parent.
 	* @param	Timeout						How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Remove Dependency"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Remove Dependency", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionRemoveUGCDependency* RemoveDependencyAsync(UObject* WorldContextObject, FPublishedFileID PublishedFileID, FPublishedFileID ChildPublishedFileID, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -454,7 +454,7 @@ public:
 	* @param	PublishedFileID		The item to delete.
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Delete Item"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Delete Item", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionDeleteItem* DeleteItemAsync(UObject* WorldContextObject, FPublishedFileID PublishedFileID, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -480,7 +480,7 @@ public:
 	* @param	PublishedFileID		The workshop item to get app dependencies for.
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get App Dependencies"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get App Dependencies", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionGetAppDependencies* GetAppDependenciesAsync(UObject* WorldContextObject, FPublishedFileID PublishedFileID, float Timeout = 10.f);
 public:
 	UFUNCTION()
@@ -512,7 +512,7 @@ public:
 	* @param	bHighPriority		Start the download in high priority mode, pausing any existing in-progress Steam downloads and immediately begin downloading this workshop item.
 	* @param	Timeout				How long we wait for this function to finish before aborting
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Download Item"), Category = "SteamCore|UGC|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Download Item", BlueprintInternalUseOnly="true"), Category = "SteamCore|UGC|Async")
 	static USteamCoreUGCAsyncActionDownloadItem* DownloadItemAsync(UObject* WorldContextObject, FPublishedFileID PublishedFileID, bool bHighPriority, float Timeout = 10.f);
 public:
 	UFUNCTION()

@@ -11,8 +11,10 @@
 //		FOnlineAsyncTaskSteamCoreUserRequestEncryptedAppTicket
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void FOnlineAsyncTaskSteamCoreUserRequestEncryptedAppTicket::Tick()
 {
+
 	FOnlineAsyncTaskSteamCore::Tick();
 
 	ISteamUtils* SteamUtilsPtr = IsRunningDedicatedServer() ? SteamGameServerUtils() : SteamUtils();
@@ -120,3 +122,4 @@ void FOnlineAsyncTaskSteamCoreUserRequestStoreAuthURL::TriggerDelegates()
 
 	m_OnSteamCallback.ExecuteIfBound(m_CallbackResults, bWasSuccessful);
 }
+#endif

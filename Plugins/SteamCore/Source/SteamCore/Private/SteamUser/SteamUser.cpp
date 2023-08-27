@@ -12,6 +12,7 @@ void UUser::Initialize(FSubsystemCollectionBase& Collection)
 {
 	Super::Initialize(Collection);
 
+#if ENABLE_STEAMCORE
 	OnClientGameServerDenyCallbackCallback.Register(this, &UUser::OnClientGameServerDeny);
 	OnGameWebCallbackCallback.Register(this, &UUser::OnGameWebCallback);
 	OnGetAuthSessionTicketResponseCallback.Register(this, &UUser::OnGetAuthSessionTicketResponse);
@@ -38,10 +39,12 @@ void UUser::Initialize(FSubsystemCollectionBase& Collection)
 		OnValidateAuthTicketResponseCallback.SetGameserverFlag();
 		OnEncryptedAppTicketResponseCallback.SetGameserverFlag();
 	}
+#endif
 }
 
 void UUser::Deinitialize()
 {
+#if ENABLE_STEAMCORE
 	OnClientGameServerDenyCallbackCallback.Unregister();
 	OnGameWebCallbackCallback.Unregister();
 	OnGetAuthSessionTicketResponseCallback.Unregister();
@@ -53,6 +56,7 @@ void UUser::Deinitialize()
 	OnSteamServersDisconnectedCallback.Unregister();
 	OnValidateAuthTicketResponseCallback.Unregister();
 	OnEncryptedAppTicketResponseCallback.Unregister();
+#endif
 
 	Super::Deinitialize();
 }
@@ -65,6 +69,7 @@ void UUser::AdvertiseGame(FSteamID SteamIDGameServer, FString ServerIP, int32 Se
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		FIPv4Address IP;
@@ -72,6 +77,7 @@ void UUser::AdvertiseGame(FSteamID SteamIDGameServer, FString ServerIP, int32 Se
 
 		SteamUser()->AdvertiseGame(SteamIDGameServer, IP.Value, ServerPort);
 	}
+#endif
 }
 
 ESteamBeginAuthSessionResult UUser::BeginAuthSession(TArray<uint8> Ticket, FSteamID SteamID)
@@ -80,10 +86,12 @@ ESteamBeginAuthSessionResult UUser::BeginAuthSession(TArray<uint8> Ticket, FStea
 
 	ESteamBeginAuthSessionResult Result = ESteamBeginAuthSessionResult::InvalidTicket;
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		Result = static_cast<ESteamBeginAuthSessionResult>(SteamUser()->BeginAuthSession(Ticket.GetData(), Ticket.Num(), SteamID));
 	}
+#endif
 
 	return Result;
 }
@@ -94,10 +102,12 @@ bool UUser::BIsBehindNAT()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		bResult = SteamUser()->BIsBehindNAT();
 	}
+#endif
 
 	return bResult;
 }
@@ -108,10 +118,12 @@ bool UUser::BIsPhoneIdentifying()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		bResult = SteamUser()->BIsPhoneIdentifying();
 	}
+#endif
 
 	return bResult;
 }
@@ -122,10 +134,12 @@ bool UUser::BIsPhoneRequiringVerification()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		bResult = SteamUser()->BIsPhoneRequiringVerification();
 	}
+#endif
 
 	return bResult;
 }
@@ -136,10 +150,12 @@ bool UUser::BIsPhoneVerified()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		bResult = SteamUser()->BIsPhoneVerified();
 	}
+#endif
 
 	return bResult;
 }
@@ -150,10 +166,12 @@ bool UUser::BIsTwoFactorEnabled()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		bResult = SteamUser()->BIsTwoFactorEnabled();
 	}
+#endif
 
 	return bResult;
 }
@@ -164,10 +182,12 @@ bool UUser::BLoggedOn()
 
 	bool bResult = false;
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		bResult = SteamUser()->BLoggedOn();
 	}
+#endif
 
 	return bResult;
 }
@@ -176,10 +196,12 @@ void UUser::CancelAuthTicket(FSteamTicketHandle TicketHandle)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		SteamUser()->CancelAuthTicket(TicketHandle);
 	}
+#endif
 }
 
 ESteamVoiceResult UUser::DecompressVoice(const TArray<uint8>& CompressedBuffer, int32 DesiredSampleRate, TArray<uint8>& DestBuffer)
@@ -189,6 +211,7 @@ ESteamVoiceResult UUser::DecompressVoice(const TArray<uint8>& CompressedBuffer, 
 	ESteamVoiceResult Result = ESteamVoiceResult::NotInitialized;
 	DestBuffer.Empty();
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		uint32 BytesWritten = 0;
@@ -208,6 +231,7 @@ ESteamVoiceResult UUser::DecompressVoice(const TArray<uint8>& CompressedBuffer, 
 
 		//LogVerbose("Bytes Written: %d, destBuffer: %d", BytesWritten, destBuffer.Num());
 	}
+#endif
 
 	return Result;
 }
@@ -216,10 +240,12 @@ void UUser::EndAuthSession(FSteamID SteamID)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		SteamUser()->EndAuthSession(SteamID);
 	}
+#endif
 }
 
 FSteamTicketHandle UUser::GetAuthSessionTicket(TArray<uint8>& OutTicket)
@@ -229,6 +255,7 @@ FSteamTicketHandle UUser::GetAuthSessionTicket(TArray<uint8>& OutTicket)
 	FSteamTicketHandle Result;
 	OutTicket.Empty();
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		uint32 TicketSize = 0;
@@ -237,6 +264,7 @@ FSteamTicketHandle UUser::GetAuthSessionTicket(TArray<uint8>& OutTicket)
 
 		OutTicket.SetNum(TicketSize);
 	}
+#endif
 
 	return Result;
 }
@@ -249,6 +277,7 @@ ESteamVoiceResult UUser::GetAvailableVoice(int32& OutCompressedBytes, int32& Out
 	uint32 CompressedBytes = 0;
 	uint32 UncompressedBytes = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		Result = static_cast<ESteamVoiceResult>(SteamUser()->GetAvailableVoice(&CompressedBytes, &UncompressedBytes, UncompressedVoiceDesiredSampleRate));
@@ -256,6 +285,7 @@ ESteamVoiceResult UUser::GetAvailableVoice(int32& OutCompressedBytes, int32& Out
 
 	OutCompressedBytes = CompressedBytes;
 	OutUncompressedBytes = UncompressedBytes;
+#endif
 
 	return Result;
 }
@@ -267,6 +297,7 @@ bool UUser::GetEncryptedAppTicket(TArray<uint8>& OutTicket)
 	bool bResult = false;
 	OutTicket.Empty();
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		uint32 TicketSize = 0;
@@ -274,6 +305,7 @@ bool UUser::GetEncryptedAppTicket(TArray<uint8>& OutTicket)
 		bResult = SteamUser()->GetEncryptedAppTicket(OutTicket.GetData(), OutTicket.Num(), &TicketSize);
 		OutTicket.SetNum(TicketSize);
 	}
+#endif
 
 	return bResult;
 }
@@ -284,10 +316,12 @@ int32 UUser::GetGameBadgeLevel(int32 Series, bool bFoil)
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		Result = SteamUser()->GetGameBadgeLevel(Series, bFoil);
 	}
+#endif
 
 	return Result;
 }
@@ -298,10 +332,12 @@ int32 UUser::GetPlayerSteamLevel()
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		Result = SteamUser()->GetPlayerSteamLevel();
 	}
+#endif
 
 	return Result;
 }
@@ -312,10 +348,12 @@ FSteamID UUser::GetSteamID()
 
 	FSteamID Result;
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		Result = FSteamID(SteamUser()->GetSteamID());
 	}
+#endif
 
 	return Result;
 }
@@ -328,6 +366,7 @@ ESteamVoiceResult UUser::GetVoice(TArray<uint8>& OutDestBuffer, int32& OutBytesW
 	OutDestBuffer.Empty();
 	uint32 BytesWritten = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		// get the required buffer size
@@ -341,6 +380,7 @@ ESteamVoiceResult UUser::GetVoice(TArray<uint8>& OutDestBuffer, int32& OutBytesW
 	}
 
 	OutBytesWritten = BytesWritten;
+#endif
 
 	return Result;
 }
@@ -351,10 +391,12 @@ int32 UUser::GetVoiceOptimalSampleRate()
 
 	int32 Result = 0;
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		Result = SteamUser()->GetVoiceOptimalSampleRate();
 	}
+#endif
 
 	return Result;
 }
@@ -363,42 +405,50 @@ void UUser::RequestEncryptedAppTicket(const FOnRequestEncryptedAppTicket& Callba
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		FOnlineAsyncTaskSteamCoreUserRequestEncryptedAppTicket* Task = new FOnlineAsyncTaskSteamCoreUserRequestEncryptedAppTicket(this, Callback, DataToInclude);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUser::RequestStoreAuthURL(const FOnStoreAuthURLResponse& Callback, FString RedirectURL)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		FOnlineAsyncTaskSteamCoreUserRequestStoreAuthURL* Task = new FOnlineAsyncTaskSteamCoreUserRequestStoreAuthURL(this, Callback, RedirectURL);
 		QueueAsyncTask(Task);
 	}
+#endif
 }
 
 void UUser::StartVoiceRecording()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		SteamUser()->StartVoiceRecording();
 	}
+#endif
 }
 
 void UUser::StopVoiceRecording()
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		SteamUser()->StopVoiceRecording();
 	}
+#endif
 }
 
 ESteamUserHasLicenseForAppResult UUser::UserHasLicenseForApp(FSteamID SteamID, int32 AppID)
@@ -407,10 +457,12 @@ ESteamUserHasLicenseForAppResult UUser::UserHasLicenseForApp(FSteamID SteamID, i
 
 	ESteamUserHasLicenseForAppResult Result = ESteamUserHasLicenseForAppResult::NoAuth;
 
+#if ENABLE_STEAMCORE
 	if (SteamUser())
 	{
 		Result = static_cast<ESteamUserHasLicenseForAppResult>(SteamUser()->UserHasLicenseForApp(SteamID, AppID));
 	}
+#endif
 
 	return Result;
 }
@@ -419,6 +471,7 @@ ESteamUserHasLicenseForAppResult UUser::UserHasLicenseForApp(FSteamID SteamID, i
 //		Steam API Callbacks
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void UUser::OnClientGameServerDeny(ClientGameServerDeny_t* pParam)
 {
 	LogVerbose("");
@@ -539,3 +592,4 @@ void UUser::OnEncryptedAppTicketResponse(EncryptedAppTicketResponse_t* pParam)
 		EncryptedAppTicketResponse.Broadcast(Data);
 	});
 }
+#endif

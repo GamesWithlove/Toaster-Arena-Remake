@@ -10,7 +10,7 @@
 	"DocsURL": "https://replay.oyintare.dev/",
 	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/1b0cbe31111d482baaf531d187651e7f",
 	"SupportURL": "",
-	"EngineVersion": "5.0.0",
+	"EngineVersion": "5.2.0",
 	"CanContainContent": true,
 	"Installed": true,
 	"Modules": [

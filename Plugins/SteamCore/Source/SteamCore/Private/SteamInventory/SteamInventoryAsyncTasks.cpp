@@ -11,6 +11,7 @@
 //		FOnlineAsyncTaskSteamCoreInventoryRequestEligiblePromoItemDefinitionsIDs
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
+#if ENABLE_STEAMCORE
 void FOnlineAsyncTaskSteamCoreInventoryRequestEligiblePromoItemDefinitionsIDs::Tick()
 {
 	FOnlineAsyncTaskSteamCore::Tick();
@@ -197,3 +198,4 @@ void FOnlineAsyncTaskSteamCoreInventoryStartPurchaseResult::TriggerDelegates()
 
 	m_OnSteamCallback.ExecuteIfBound(m_CallbackResults, bWasSuccessful);
 }
+#endif

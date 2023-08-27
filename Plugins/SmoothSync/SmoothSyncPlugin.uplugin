@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
-	"Version": 38,
-	"VersionName": "1.38",
+	"Version": 41,
+	"VersionName": "1.41",
 	"FriendlyName": "SmoothSyncPlugin",
 	"Description": "Syncs your transforms Smoothly across the network.",
 	"Category": "Smooth Sync",
@@ -9,8 +9,8 @@
 	"CreatedByURL": "http://noblewhale.com",
 	"DocsURL": "http://noblewhale.com/smoothsyncunreal",
 	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/c8f61b007fb44f4abcb7b0974cebff6b",
-	"SupportURL": "https://forums.unrealengine.com/unreal-engine/marketplace/1492482-smooth-sync-sync-your-transforms-smoothly-across-the-network",
-	"EngineVersion": "5.0.0",
+	"SupportURL": "https://forums.unrealengine.com/t/smooth-sync-sync-your-transforms-smoothly-across-the-network/112583",
+	"EngineVersion": "5.2.0",
 	"CanContainContent": true,
 	"Installed": true,
 	"Modules": [
@@ -22,7 +22,8 @@
 				"Win64",
 				"Android",
 				"Linux",
-				"Mac"
+				"Mac",
+				"IOS"
 			]
 		}
 	]

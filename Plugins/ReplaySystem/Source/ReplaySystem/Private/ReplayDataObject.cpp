@@ -670,7 +670,13 @@ FString UReplayDataObject::SaveReplayMetaDataToString()
 	for (FReplayFloatData Data : floatData)
 	{
 		FString DataName = Data.Name;
+
+#if  ENGINE_MAJOR_VERSION <= 4
 		FString DataValue = UKismetStringLibrary::Conv_FloatToString(Data.Value);
+#else
+		FString DataValue = FString::SanitizeFloat(Data.Value);
+#endif
+		
 		
 		FloatArray.Add(DataName + DataValuesSeperator + DataValue);
 	}
@@ -872,7 +878,13 @@ bool UReplayDataObject::LoadReplayMetaDataFromString(FString StringDataToParse)
 				FString Value;
 				UKismetStringLibrary::Split(DataItem,DataValuesSeperator,Name, Value);
 				LoadedData.Name = Name;
+
+#if  ENGINE_MAJOR_VERSION <= 4
 				LoadedData.Value = UKismetStringLibrary::Conv_StringToFloat(Value);
+#else
+				LexFromString(LoadedData.Value,*Value);
+#endif
+				
 				
 				AddFloatData(LoadedData.Name,LoadedData.Value);
 			}

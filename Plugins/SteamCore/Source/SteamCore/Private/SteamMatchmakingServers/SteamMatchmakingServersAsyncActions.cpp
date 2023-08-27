@@ -12,25 +12,16 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		USteamCoreMatchmakingServersAsyncActionPingServer
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-FOnlineAsyncTaskSteamCoreMatchmakingServersPingServer* USteamCoreMatchmakingServersAsyncActionPingServer::CurrentTask = nullptr;
-
 USteamCoreMatchmakingServersAsyncActionPingServer* USteamCoreMatchmakingServersAsyncActionPingServer::PingServerAsync(UObject* WorldContextObject, FString IP, int32 Port, float Timeout)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
-		if (CurrentTask != nullptr)
+		if (Subsystem->CurrentMatchmakingServersPingServer != nullptr)
 		{
-			if (CurrentTask->m_CallbackResults != k_uAPICallInvalid)
-			{
-				CurrentTask->bIsComplete = true;
-				CurrentTask->bWasSuccessful = false;
-
-				LogVerbose("PingServer had an active search query, cancelling the old one.");
-
-				CurrentTask = nullptr;
-			}
+			Subsystem->CurrentMatchmakingServersPingServer->CancelServerQuery();
 		}
 
 		const auto AsyncObject = NewObject<USteamCoreMatchmakingServersAsyncActionPingServer>();
@@ -42,8 +33,19 @@ USteamCoreMatchmakingServersAsyncActionPingServer* USteamCoreMatchmakingServersA
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
+}
+
+void USteamCoreMatchmakingServersAsyncActionPingServer::CancelPingQueries(UObject* WorldContextObject)
+{
+#if ENABLE_STEAMCORE
+	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
+	{
+		Subsystem->CurrentMatchmakingServersPingServer->CancelServerQuery();
+	}
+#endif
 }
 
 void USteamCoreMatchmakingServersAsyncActionPingServer::HandleCallback(const FGameServerItem& Data, bool bWasSuccessful)
@@ -62,30 +64,20 @@ void USteamCoreMatchmakingServersAsyncActionPingServer::HandleCallback(const FGa
 //		USteamCoreMatchmakingServersAsyncActionRequestServerList
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 
-FOnlineAsyncTaskSteamCoreMatchmakingServersServerList* USteamCoreMatchmakingServersAsyncActionRequestServerList::CurrentTask = nullptr;
-
 USteamCoreMatchmakingServersAsyncActionRequestServerList* USteamCoreMatchmakingServersAsyncActionRequestServerList::RequestServerList(UObject* WorldContextObject, ESteamServerListRequestType RequestType, int32 AppID, float Timeout, int32 MaxResults, bool bIgnoreNonResponsive, UServerFilter* ServerFilter)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
-		if (CurrentTask != nullptr)
+		if (Subsystem->CurrentMatchmakingServersServerList != nullptr)
 		{
-			if (CurrentTask->m_CallbackResults != nullptr)
-			{
-				CurrentTask->bIsComplete = true;
-				CurrentTask->bWasSuccessful = false;
-
-				LogVerbose("RequestServerList had an active search query, cancelling the old one.");
-				
-				CurrentTask = nullptr;
-			}
+			Subsystem->CurrentMatchmakingServersServerList->CancelServerQuery();
 		}
 
 		const auto AsyncObject = NewObject<USteamCoreMatchmakingServersAsyncActionRequestServerList>();
 		const auto Task = new FOnlineAsyncTaskSteamCoreMatchmakingServersServerList(Subsystem, AsyncObject, AppID, Timeout, MaxResults, RequestType, bIgnoreNonResponsive, ServerFilter);
-		CurrentTask = Task;
 		AsyncObject->RegisterWithGameInstance(Subsystem->GetGameInstance());
 		AsyncObject->m_WorldContextObject = WorldContextObject;
 		Subsystem->QueueAsyncTask(Task);
@@ -93,6 +85,7 @@ USteamCoreMatchmakingServersAsyncActionRequestServerList* USteamCoreMatchmakingS
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
 }
@@ -148,28 +141,32 @@ USteamCoreMatchmakingServersAsyncActionRequestServerList* USteamCoreMatchmakingS
 	return RequestServerList(WorldContextObject, ESteamServerListRequestType::History, AppID, Timeout, MaxResults, bIgnoreNonResponsive, ServerFilter);
 }
 
+void USteamCoreMatchmakingServersAsyncActionRequestServerList::CancelServerListQueries(UObject* WorldContextObject)
+{
+#if ENABLE_STEAMCORE
+	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
+	{
+		if (Subsystem->CurrentMatchmakingServersServerList != nullptr)
+		{
+			Subsystem->CurrentMatchmakingServersServerList->CancelServerQuery();
+		}
+	}
+#endif
+}
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		USteamCoreMatchmakingServersAsyncActionServerRules
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-FOnlineAsyncTaskSteamCoreMatchmakingServersServerRules* USteamCoreMatchmakingServersAsyncActionServerRules::CurrentTask = nullptr;
-
 USteamCoreMatchmakingServersAsyncActionServerRules* USteamCoreMatchmakingServersAsyncActionServerRules::ServerRulesAsync(UObject* WorldContextObject, FString Ip, int32 QueryPort, float Timeout)
 {
 	LogVerbose("");
 
+#if ENABLE_STEAMCORE
 	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
 	{
-		if (CurrentTask != nullptr)
+		if (Subsystem->CurrentMatchmakingServersServerRules != nullptr)
 		{
-			if (CurrentTask->m_CallbackResults != k_uAPICallInvalid)
-			{
-				CurrentTask->bIsComplete = true;
-				CurrentTask->bWasSuccessful = false;
-
-				LogVerbose("ServerRules had an active search query, cancelling the old one.");
-				
-				CurrentTask = nullptr;
-			}
+			Subsystem->CurrentMatchmakingServersServerRules->CancelServerQuery();
 		}
 
 		const auto AsyncObject = NewObject<USteamCoreMatchmakingServersAsyncActionServerRules>();
@@ -181,8 +178,22 @@ USteamCoreMatchmakingServersAsyncActionServerRules* USteamCoreMatchmakingServers
 
 		return AsyncObject;
 	}
+#endif
 
 	return nullptr;
+}
+
+void USteamCoreMatchmakingServersAsyncActionServerRules::CancelServerRulesQueries(UObject* WorldContextObject)
+{
+#if ENABLE_STEAMCORE
+	if (USteamCoreSubsystem* Subsystem = GetInstancedSubsystem(WorldContextObject))
+	{
+		if (Subsystem->CurrentMatchmakingServersServerRules != nullptr)
+		{
+			Subsystem->CurrentMatchmakingServersServerRules->CancelServerQuery();
+		}
+	}
+#endif
 }
 
 void USteamCoreMatchmakingServersAsyncActionServerRules::HandleCallback(const TArray<FGameServerRule>& Data, bool bWasSuccessful)

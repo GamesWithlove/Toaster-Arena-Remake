@@ -32,6 +32,6 @@ public:
 	* @param	Description		Narrative from user
 	* @param	Gid				GID of related record (depends on content type)
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Report Abuse"), Category = "SteamCoreWeb|PlayerService|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Report Abuse", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|PlayerService|Async")
 	static USteamCoreWebAsyncActionReportAbuse* ReportAbuseAsync(UObject* WorldContextObject, FString Key, FString SteamIdActor, FString SteamIdTarget, int32 AppId, int32 AbuseType, int32 ContentType, FString Description, FString Gid);
 };

@@ -346,6 +346,7 @@ enum class ESteamResult : uint8
 	// item can't be removed
 };
 
+#if ENABLE_STEAMCORE
 static ESteamResult _SteamResult(EResult result)
 {
 	switch (result)
@@ -695,7 +696,9 @@ static ESteamResult _SteamResult(EResult result)
 		return ESteamResult::None;
 		break;
 	}
+	return ESteamResult::None;
 }
+#endif
 
 UENUM(BlueprintType)
 enum class ESteamChatRoomEnterResponse : uint8
@@ -752,7 +755,7 @@ enum class ESteamAccountType : uint8
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		Structs 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-USTRUCT(BlueprintType, meta = (HasNativeMake = "SteamCore.SteamUtilities.MakeSteamID", HasNativeBreak = "SteamCore.SteamUtilities.BreakSteamID"))
+USTRUCT(BlueprintType, meta = (HasNativeMake = "/Script/SteamCore.SteamUtilities:MakeSteamID", HasNativeBreak = "/Script/SteamCore.SteamUtilities:BreakSteamID"))
 struct STEAMCORE_API FSteamID
 {
 	GENERATED_BODY()
@@ -767,31 +770,47 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamID(const CSteamID* Data)
 		: m_Value(Data->ConvertToUint64())
 	{
 	}
+#endif
 
+#if ENABLE_STEAMCORE
 	FSteamID(const CSteamID& Data)
 		: m_Value(Data.ConvertToUint64())
 	{
 	}
+#endif
 
 public:
 	operator uint64() const { return m_Value; }
 	operator uint64() { return m_Value; }
-	operator CSteamID() const { return CSteamID(m_Value); }
+#if ENABLE_STEAMCORE
+	operator CSteamID() const
+	{
+		return CSteamID(m_Value);
+	}
 	void operator=(const CSteamID& Data) { m_Value = Data.ConvertToUint64(); }
+#endif
 	bool operator==(const FSteamID& Data) { return Data == m_Value; }
 	bool operator!=(const FSteamID& Data) { return Data != m_Value; }
 public:
 	uint64 GetValue() const { return m_Value; }
-	bool IsValid() const { return CSteamID(m_Value).IsValid(); }
+	bool IsValid() const
+	{
+#if ENABLE_STEAMCORE
+		return CSteamID(m_Value).IsValid();
+#else
+		return false;
+#endif
+	}
 private:
 	uint64 m_Value;
 };
 
-USTRUCT(BlueprintType, meta = (HasNativeMake = "SteamCore.SteamUtilities.MakeSteamGameID", HasNativeBreak = "SteamCore.SteamUtilities.BreakSteamGameID"))
+USTRUCT(BlueprintType, meta = (HasNativeMake = "/Script/SteamCore.SteamUtilities:MakeSteamGameID", HasNativeBreak = "/Script/SteamCore.SteamUtilities:BreakSteamGameID"))
 struct STEAMCORE_API FSteamGameID
 {
 	GENERATED_BODY()
@@ -806,25 +825,36 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamGameID(const CGameID& Data)
 		: m_Value(Data.ToUint64())
 	{
 	}
+#endif
 
 public:
 	operator uint64() const { return m_Value; }
 	operator uint64() { return m_Value; }
+#if ENABLE_STEAMCORE
 	operator CGameID() const { return CGameID(m_Value); }
 	void operator=(const CGameID& Data) { m_Value = Data.ToUint64(); }
 	bool operator==(const CGameID& Data) { return Data.ToUint64() == m_Value; }
+#endif
 public:
 	uint64 GetValue() const { return m_Value; }
-	bool IsValid() const { return CGameID(m_Value).IsValid(); }
+	bool IsValid() const
+	{
+#if ENABLE_STEAMCORE
+	return CGameID(m_Value).IsValid();
+#else
+	return false;
+#endif
+	}
 private:
 	uint64 m_Value;
 };
 
-USTRUCT(BlueprintType, meta = (HasNativeMake = "SteamCore.SteamUtilities.MakeUGCHandle", HasNativeBreak = "SteamCore.SteamUtilities.BreakUGCHandle"))
+USTRUCT(BlueprintType, meta = (HasNativeMake = "/Script/SteamCore.SteamUtilities:MakeUGCHandle", HasNativeBreak = "/Script/SteamCore.SteamUtilities:BreakUGCHandle"))
 struct STEAMCORE_API FSteamUGCHandle
 {
 	GENERATED_BODY()
@@ -842,31 +872,51 @@ public:
 public:
 	operator uint64() const { return m_Value; }
 public:
-	bool IsValid() const { return m_Value != k_UGCHandleInvalid; }
+	bool IsValid() const
+	{
+#if ENABLE_STEAMCORE
+		return m_Value != k_UGCHandleInvalid;
+#else
+		return false;
+#endif
+	}
 private:
 	uint64 m_Value;
 };
 
-USTRUCT(BlueprintType, meta = (HasNativeMake = "SteamCore.SteamUtilities.MakeInventoryUpdateHandle", HasNativeBreak = "SteamCore.SteamUtilities.BreakInventoryUpdateHandle"))
+USTRUCT(BlueprintType, meta = (HasNativeMake = "/Script/SteamCore.SteamUtilities:MakeInventoryUpdateHandle", HasNativeBreak = "/Script/SteamCore.SteamUtilities:BreakInventoryUpdateHandle"))
 struct STEAMCORE_API FSteamInventoryUpdateHandle
 {
 	GENERATED_BODY()
 public:
 	FSteamInventoryUpdateHandle()
+#if ENABLE_STEAMCORE
 		: m_Value(k_SteamInventoryUpdateHandleInvalid)
+#else
+		: m_Value(0)
+#endif
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FSteamInventoryUpdateHandle(const SteamInventoryUpdateHandle_t& Data)
 		: m_Value(Data)
 	{
 	}
+#endif
 
 public:
 	operator uint64() const { return m_Value; }
 	operator uint64() { return m_Value; }
 public:
-	bool IsValid() const { return m_Value != k_SteamInventoryUpdateHandleInvalid; }
+	bool IsValid() const
+	{
+#if ENABLE_STEAMCORE
+		return m_Value != k_SteamInventoryUpdateHandleInvalid;
+#else
+	return false;
+#endif
+	}
 private:
 	uint64 m_Value;
 };
@@ -890,7 +940,15 @@ public:
 public:
 	operator uint32() const { return m_Value; }
 public:
-	bool IsValid() const { return m_Value != k_HAuthTicketInvalid; }
+	bool IsValid() const
+	{
+#if ENABLE_STEAMCORE
+		return m_Value != k_HAuthTicketInvalid;
+#else
+	return false;
+#endif
+	}
+	
 private:
 	uint32 m_Value;
 };
@@ -905,12 +963,14 @@ public:
 	{
 	}
 
-	FValidateAuthTicketResponse(const ValidateAuthTicketResponse_t& data)
-		: SteamID(data.m_SteamID)
-		  , AuthSessionResponse(static_cast<ESteamAuthSessionResponse>(data.m_eAuthSessionResponse))
-		  , OwnerSteamID(data.m_OwnerSteamID)
+#if ENABLE_STEAMCORE
+	FValidateAuthTicketResponse(const ValidateAuthTicketResponse_t& Data)
+		: SteamID(Data.m_SteamID)
+		  , AuthSessionResponse(static_cast<ESteamAuthSessionResponse>(Data.m_eAuthSessionResponse))
+		  , OwnerSteamID(Data.m_OwnerSteamID)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "GameServer")
@@ -921,7 +981,7 @@ public:
 	FSteamID OwnerSteamID;
 };
 
-USTRUCT(BlueprintType, meta = (HasNativeMake = "SteamCore.SteamUtilities.MakePublishedFileID", HasNativeBreak = "SteamCore.SteamUtilities.BreakPublishedFileID"))
+USTRUCT(BlueprintType, meta = (HasNativeMake = "/Script/SteamCore.SteamUtilities:MakePublishedFileID", HasNativeBreak = "/Script/SteamCore.SteamUtilities:BreakPublishedFileID"))
 struct FPublishedFileID
 {
 	GENERATED_BODY()
@@ -956,11 +1016,13 @@ public:
 	{
 	}
 
+#if ENABLE_STEAMCORE
 	FRemoteStorageSubscribePublishedFileResult(const RemoteStorageSubscribePublishedFileResult_t& Data)
 		: Result(_SteamResult(Data.m_eResult))
 		  , PublishedFileID(Data.m_nPublishedFileId)
 	{
 	}
+#endif
 
 public:
 	UPROPERTY(BlueprintReadWrite, Category = "UGC")

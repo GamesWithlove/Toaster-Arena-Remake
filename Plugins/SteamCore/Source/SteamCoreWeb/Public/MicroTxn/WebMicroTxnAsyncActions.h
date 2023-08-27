@@ -35,7 +35,7 @@ public:
 	* @param	AppId				App ID of the game the agreement is for.
 	* @param	NextProcessDate		Date that next recurring payment should be initiated. Format is YYYYMMDD. Date can only be adjusted forward indicating you want to add time to the subscription. If the date exceeds the end date of the subscription, the end date will be extended.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Adjust Agreement"), Category = "SteamCoreWeb|MicroTxn|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Adjust Agreement", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|MicroTxn|Async")
 	static USteamCoreWebAsyncActionAdjustAgreement* AdjustAgreementAsync(UObject* WorldContextObject, FString Key, FString SteamId, FString AgreementId, int32 AppId, FString NextProcessDate);
 };
 
@@ -55,7 +55,7 @@ public:
 	* @param	AgreementId			Unique 64-bit Steam billing agreement ID.
 	* @param	AppId				App ID of the game the agreement is for.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Cancel Agreement"), Category = "SteamCoreWeb|MicroTxn|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Cancel Agreement", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|MicroTxn|Async")
 	static USteamCoreWebAsyncActionCancelAgreement* CancelAgreementAsync(UObject* WorldContextObject, FString Key, FString SteamId, FString AgreementId, int32 AppId);
 };
 
@@ -79,7 +79,7 @@ public:
 	* @param	OrderId				Unique 64-bit ID for order
 	* @param	AppId				App ID for game.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Finalize Txn"), Category = "SteamCoreWeb|MicroTxn|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Finalize Txn", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|MicroTxn|Async")
 	static USteamCoreWebAsyncActionFinalizeTxn* FinalizeTxnAsync(UObject* WorldContextObject, FString Key, FString OrderId, int32 AppId);
 };
 
@@ -100,7 +100,7 @@ public:
 	* @param	Type				Report type (One of: "GAMESALES", "STEAMSTORESALES", "SETTLEMENT")
 	* @param	MaxResults			Maximum number of results to return in report. (Default is 1000 if no value is set)
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get Report"), Category = "SteamCoreWeb|MicroTxn|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get Report", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|MicroTxn|Async")
 	static USteamCoreWebAsyncActionGetReport* GetReportAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString Time = "2010-01-01T00:00:00Z", FString Type = "GAMESALES", int32 MaxResults = 1000);
 };
 
@@ -119,7 +119,7 @@ public:
 	* @param	SteamId				Steam ID of the client.
 	* @param	AppId				App ID for game.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get User Agreement Info"), Category = "SteamCoreWeb|MicroTxn|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get User Agreement Info", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|MicroTxn|Async")
 	static USteamCoreWebAsyncActionGetUserAgreementInfo* GetUserAgreementInfoAsync(UObject* WorldContextObject, FString Key, FString SteamId, int32 AppId);
 };
 
@@ -141,7 +141,7 @@ public:
 	* @param	SteamId				Steam ID of the client.
 	* @param	Ipaddress			IP address of user in string format (xxx.xxx.xxx.xxx). Only required if usersession in InitTxn was set to web.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Get User Info"), Category = "SteamCoreWeb|MicroTxn|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Get User Info", BlueprintInternalUseOnly="true"), Category = "SteamCoreWeb|MicroTxn|Async")
 	static USteamCoreWebAsyncActionGetUserInfo* GetUserInfoAsync(UObject* WorldContextObject, FString Key, FString SteamId, FString Ipaddress);
 };
 
@@ -194,7 +194,7 @@ public:
 	* @param	BundleDesc			Description of bundle.
 	* @param	BundleCategory		Optional category grouping for bundle.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Init Txn", AutoCreateRefTerm = "category, associatedBundle, billingType, startDate, endDate, period, frequency, recurringAmt, bundleCount, bundleID, bundleQty, bundleDesc, bundleCategory"), Category = "SteamCoreWeb|MicroTxn|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Init Txn", BlueprintInternalUseOnly="true", AutoCreateRefTerm = "category, associatedBundle, billingType, startDate, endDate, period, frequency, recurringAmt, bundleCount, bundleID, bundleQty, bundleDesc, bundleCategory"), Category = "SteamCoreWeb|MicroTxn|Async")
 	static USteamCoreWebAsyncActionInitTxn* InitTxnAsync(UObject* WorldContextObject, FString Key, FString OrderId, FString SteamId, int32 AppId, FString Language, FString Currency, FString UserSession, FString Ipaddress, TArray<int32> ItemID, TArray<int32> Quantity, TArray<FString> Amount, TArray<FString> Description, TArray<FString> Category, TArray<int32> AssociatedBundle, TArray<FString> BillingType, TArray<FString> StartDate, TArray<FString> EndDate, TArray<FString> Period, TArray<int32> Frequency, TArray<FString> RecurringAmt, TArray<int32> BundleCount, TArray<int32> BundleId, TArray<int32> BundleQty, TArray<FString> BundleDesc, TArray<FString> BundleCategory);
 };
 
@@ -220,7 +220,7 @@ public:
 	* @param	Amount			Total cost (in cents). This value corresponds to an initial one-time amount to be immediately charged to a user.
 	* @param	Currency		ISO 4217 currency code of prices
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Process Agreement"), Category = "SteamCoreWeb|MicroTxn|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Process Agreement"), Category = "SteamCoreWeb|MicroTxn|Async")
 	static USteamCoreWebAsyncActionProcessAgreement* ProcessAgreementAsync(UObject* WorldContextObject, FString Key, FString OrderId, FString SteamId, FString AgreementId, int32 AppId, int32 Amount, FString Currency);
 };
 
@@ -240,7 +240,7 @@ public:
 	* @param	OrderId				Unique 64-bit ID for order.
 	* @param	TransId				Unique 64-bit Steam transaction ID.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Query Txn"), Category = "SteamCoreWeb|MicroTxn|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Query Txn"), Category = "SteamCoreWeb|MicroTxn|Async")
 	static USteamCoreWebAsyncActionQueryTxn* QueryTxnAsync(UObject* WorldContextObject, FString Key, int32 AppId, FString OrderId, FString TransId);
 };
 
@@ -260,6 +260,6 @@ public:
 	* @param	OrderId				Unique 64-bit ID for order.
 	* @param	transID				Unique 64-bit Steam transaction ID.
 	*/
-	UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true", WorldContext = "WorldContextObject", DisplayName = "Refund Txn"), Category = "SteamCoreWeb|MicroTxn|Async")
+	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", DisplayName = "Refund Txn"), Category = "SteamCoreWeb|MicroTxn|Async")
 	static USteamCoreWebAsyncActionRefundTxn* RefundTxnAsync(UObject* WorldContextObject, FString Key, FString OrderId, int32 AppId);
 };

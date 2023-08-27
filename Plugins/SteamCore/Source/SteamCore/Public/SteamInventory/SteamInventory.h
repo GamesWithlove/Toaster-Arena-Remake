@@ -450,10 +450,13 @@ private:
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 	//		Steam API Callbacks
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+
+#if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(UInventory, OnSteamInventoryDefinitionUpdate, SteamInventoryDefinitionUpdate_t, OnSteamInventoryDefinitionUpdateCallback);
 	STEAM_CALLBACK_MANUAL(UInventory, OnSteamInventoryEligiblePromoItemDefIDs, SteamInventoryEligiblePromoItemDefIDs_t, OnSteamInventoryEligiblePromoItemDefIDsCallback);
 	STEAM_CALLBACK_MANUAL(UInventory, OnSteamInventoryResultReady, SteamInventoryResultReady_t, OnSteamInventoryResultReadyCallback);
 	STEAM_CALLBACK_MANUAL(UInventory, OnSteamInventoryFullUpdate, SteamInventoryFullUpdate_t, OnSteamInventoryFullUpdateCallback);
 	STEAM_CALLBACK_MANUAL(UInventory, OnSteamInventoryStartPurchaseResult, SteamInventoryStartPurchaseResult_t, OnSteamInventoryStartPurchaseResultCallback);
 	STEAM_CALLBACK_MANUAL(UInventory, OnSteamInventoryRequestPricesResult, SteamInventoryRequestPricesResult_t, OnSteamInventoryRequestPricesResultCallback);
+#endif
 };
