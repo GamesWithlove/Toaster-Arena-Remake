@@ -11,8 +11,13 @@ public class DlgSystemEditor : ModuleRules
 		// https://docs.unrealengine.com/latest/INT/Programming/UnrealBuildSystem/IWYUReferenceGuide/index.html
 		// https://docs.unrealengine.com/latest/INT/Programming/UnrealBuildSystem/Configuration/
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+
+#if UE_5_2_OR_LATER
+		IWYUSupport = IWYUSupport.Full;
+#else
 		bEnforceIWYU = true;
-		//MinFilesUsingPrecompiledHeaderOverride = 1;
+#endif
+
 		// bUseUnity = false;
 
 		//if ((Target.Platform == UnrealTargetPlatform.Win32 || Target.Platform == UnrealTargetPlatform.Win64)
@@ -22,22 +27,6 @@ public class DlgSystemEditor : ModuleRules
 		//}
 
 		// Docs see https://docs.unrealengine.com/latest/INT/Programming/UnrealBuildSystem/ModuleFiles/
-
-		PublicIncludePaths.AddRange(
-			new string[] {
-				Path.Combine(ModuleDirectory, "Public")
-				// ... add public include paths required here ...
-			});
-
-
-		string PrivateDirectory = Path.Combine(ModuleDirectory, "Private");
-		PrivateIncludePaths.AddRange(
-			new string[] {
-				PrivateDirectory,
-				Path.Combine(PrivateDirectory, "Commandlets")
-				// ... add other private include paths required here ...
-			});
-
 
 		PublicDependencyModuleNames.AddRange(
 			new string[] {
