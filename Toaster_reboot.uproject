@@ -111,10 +111,6 @@
 			"Enabled": true
 		},
 		{
-			"Name": "ModelingToolsEditorMode",
-			"Enabled": true
-		},
-		{
 			"Name": "Toaster_mod_plugin",
 			"Enabled": true
 		},
@@ -238,7 +234,31 @@
 			]
 		},
 		{
-			"Name": "HDRIBackdrop",
+			"Name": "ChaosEditor",
+			"Enabled": false
+		},
+		{
+			"Name": "EditorScriptingUtilities",
+			"Enabled": true
+		},
+		{
+			"Name": "AndroidFileServer",
+			"Enabled": false
+		},
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true
+		},
+		{
+			"Name": "ScriptableToolsEditorMode",
+			"Enabled": true
+		},
+		{
+			"Name": "ScriptableToolsFramework",
+			"Enabled": true
+		},
+		{
+			"Name": "StaticMeshEditorModeling",
 			"Enabled": true
 		}
 	]
