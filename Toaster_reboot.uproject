@@ -260,6 +260,10 @@
 		{
 			"Name": "StaticMeshEditorModeling",
 			"Enabled": true
+		},
+		{
+			"Name": "NiagaraFluids",
+			"Enabled": true
 		}
 	]
 }
