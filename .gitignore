@@ -51,3 +51,4 @@ DerivedDataCache/*
 Plugins/EditorDiscordRichPresence
 Content/modloading.log
 Content/modloading.log
+*.log
