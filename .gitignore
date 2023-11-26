@@ -49,3 +49,6 @@ Plugins/*/Intermediate/*
 # Cache files for the editor to use
 DerivedDataCache/*
 Plugins/EditorDiscordRichPresence
+Content/modloading.log
+Content/modloading.log
+*.log
