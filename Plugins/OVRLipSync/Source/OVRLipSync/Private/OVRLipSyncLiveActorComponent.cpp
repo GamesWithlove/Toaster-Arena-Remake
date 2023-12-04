@@ -23,7 +23,8 @@
 
 #include "OVRLipSyncLiveActorComponent.h"
 
-
+#include "AndroidPermissionCallbackProxy.h"
+#include "AndroidPermissionFunctionLibrary.h"
 #include "OVRLipSyncContextWrapper.h"
 #include "Voice/Public/VoiceModule.h"
 
@@ -78,11 +79,27 @@ void UOVRLipSyncActorComponent::Start()
 		Stop();
 	}
 
+#if PLATFORM_ANDROID
+	FString AudioPermission = TEXT("android.permission.RECORD_AUDIO");
+	if (!UAndroidPermissionFunctionLibrary::CheckPermission(AudioPermission))
+	{
+		UE_LOG(LogOvrLipSync, Log, TEXT("Asking for record audio permission..."));
+		TArray<FString> PermissionsToCheck;
+		PermissionsToCheck.Add(AudioPermission);
+		UAndroidPermissionCallbackProxy *PermCallback =
+			UAndroidPermissionFunctionLibrary::AcquirePermissions(PermissionsToCheck);
+		if (PermCallback != nullptr)
+		{
+			PermCallback->OnPermissionsGrantedDelegate.BindUFunction(this, "PermissionCallback");
+		}
+	}
 	else
 	{
-
 		StartVoiceCapture();
 	}
+#else
+	StartVoiceCapture();
+#endif
 }
 
 void UOVRLipSyncActorComponent::PermissionCallback(const TArray<FString> &Permissions, const TArray<bool> &GrantResults)

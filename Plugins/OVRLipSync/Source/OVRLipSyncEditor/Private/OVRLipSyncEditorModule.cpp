@@ -22,7 +22,7 @@
  ******************************************************************************/
 #include "ContentBrowserModule.h"
 
-#include "AssetRegistryModule.h"
+#include "AssetRegistry/AssetRegistryModule.h"
 #include "AudioDecompress.h"
 #include "AudioDevice.h"
 #include "Sound/SoundWave.h"
@@ -75,7 +75,7 @@ bool DecompressSoundWave(USoundWave *SoundWave)
 
 bool OVRLipSyncProcessSoundWave(const FAssetData &SoundWaveAsset, bool UseOfflineModel = false)
 {
-	auto ObjectPath = SoundWaveAsset.ObjectPath.ToString();
+	auto ObjectPath = SoundWaveAsset.GetObjectPathString();
 	auto SoundWave = FindObject<USoundWave>(NULL, *ObjectPath);
 	if (!SoundWave)
 	{
@@ -91,7 +91,7 @@ bool OVRLipSyncProcessSoundWave(const FAssetData &SoundWaveAsset, bool UseOfflin
 
 	auto SequenceName = FString::Printf(TEXT("%s_LipSyncSequence"), *SoundWaveAsset.AssetName.ToString());
 	auto SequencePath = FString::Printf(TEXT("%s_LipSyncSequence"), *SoundWaveAsset.PackageName.ToString());
-	auto SequencePackage = CreatePackage(NULL, *SequencePath);
+	auto SequencePackage = CreatePackage(*SequencePath);
 	auto Sequence = NewObject<UOVRLipSyncFrameSequence>(SequencePackage, *SequenceName, RF_Public | RF_Standalone);
 
 	auto NumChannels = SoundWave->NumChannels;
@@ -194,7 +194,7 @@ TSharedRef<FExtender> OVRLipSyncContextMenuExtender(const TArray<FAssetData> &Se
 	TArray<FAssetData> SelectedSoundWaveAssets;
 	for (auto &Asset : SelectedAssets)
 	{
-		if (Asset.AssetClass.ToString().Contains(TEXT("SoundWave")))
+		if (Asset.AssetClassPath.ToString().Contains(TEXT("SoundWave")))
 		{
 			SelectedSoundWaveAssets.Add(Asset);
 		}

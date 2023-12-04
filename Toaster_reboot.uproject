@@ -42,22 +42,20 @@
 			"Name": "OpenXREyeTracker",
 			"Enabled": false,
 			"SupportedTargetPlatforms": [
-				"Win32",
 				"Win64",
 				"Linux",
-				"HoloLens",
-				"Android"
+				"Android",
+				"HoloLens"
 			]
 		},
 		{
 			"Name": "OpenXRHandTracking",
 			"Enabled": false,
 			"SupportedTargetPlatforms": [
-				"Win32",
 				"Win64",
 				"Linux",
-				"HoloLens",
-				"Android"
+				"Android",
+				"HoloLens"
 			]
 		},
 		{
@@ -253,12 +251,25 @@
 			"Enabled": true
 		},
 		{
+			"Name": "AndroidPermission",
+			"Enabled": true
+		},
+		{
 			"Name": "Bridge",
 			"Enabled": false,
 			"SupportedTargetPlatforms": [
 				"Win64",
 				"Mac",
 				"Linux"
+			]
+		},
+		{
+			"Name": "OpenXRMsftHandInteraction",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Win64",
+				"Android",
+				"HoloLens"
 			]
 		}
 	]

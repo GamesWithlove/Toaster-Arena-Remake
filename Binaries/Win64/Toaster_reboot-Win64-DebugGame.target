@@ -151,6 +151,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/AndroidPermission/AndroidPermission.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/BackgroundBlurWithMask/BackgroundBlurWithMask.uplugin",
 			"Type": "UFS"
 		},
@@ -3159,10 +3163,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/FX/NiagaraFluids/NiagaraFluids.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/FX/Niagara/Niagara.uplugin",
 			"Type": "UFS"
 		},
@@ -3244,10 +3244,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ActorLayerUtilities/ActorLayerUtilities.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Runtime/AndroidPermission/AndroidPermission.uplugin",
 			"Type": "UFS"
 		},
 		{
