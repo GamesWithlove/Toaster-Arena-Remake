@@ -271,6 +271,10 @@
 				"Android",
 				"HoloLens"
 			]
+		},
+		{
+			"Name": "JsonBlueprintUtilities",
+			"Enabled": true
 		}
 	]
 }
