@@ -143,6 +143,10 @@
 			"Type": "NonUFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/AndroidPermission/AndroidPermission.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/BackgroundBlurWithMask/BackgroundBlurWithMask.uplugin",
 			"Type": "UFS"
 		},
@@ -3131,6 +3135,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/JsonBlueprintUtilities/JsonBlueprintUtilities.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Media/ImgMedia/ImgMedia.uplugin",
 			"Type": "UFS"
 		},
@@ -3207,10 +3215,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Runtime/AndroidPermission/AndroidPermission.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ArchVisCharacter/ArchVisCharacter.uplugin",
 			"Type": "UFS"
 		},
@@ -3244,6 +3248,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ExampleDeviceProfileSelector/ExampleDeviceProfileSelector.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/GameplayStateTree/GameplayStateTree.uplugin",
 			"Type": "UFS"
 		},
 		{
