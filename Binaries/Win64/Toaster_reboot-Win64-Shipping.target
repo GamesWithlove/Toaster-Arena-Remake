@@ -171,10 +171,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/ReplaySystem/ReplaySystem.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(ProjectDir)/Plugins/ShadowsCodePlugin/ShadowsCodePlugin.uplugin",
 			"Type": "UFS"
 		},
@@ -3136,6 +3132,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/JsonBlueprintUtilities/JsonBlueprintUtilities.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/ReplaySystem/ReplaySystem.uplugin",
 			"Type": "UFS"
 		},
 		{
