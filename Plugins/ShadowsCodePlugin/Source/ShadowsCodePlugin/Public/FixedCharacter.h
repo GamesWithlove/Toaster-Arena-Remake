@@ -3,11 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+//#include "Perception/AISightTargetInterface.h"
 #include "GameFramework/Character.h"
 #include "FixedCharacter.generated.h"
 
 UCLASS()
-class SHADOWSCODEPLUGIN_API AFixedCharacter : public ACharacter //, public IAISightTargetInterface
+class SHADOWSCODEPLUGIN_API AFixedCharacter : public ACharacter  //,public IAISightTargetInterface 
 {
 	GENERATED_BODY()
 
@@ -16,25 +17,23 @@ public:
 	AFixedCharacter();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI")
-		FName AIPerceptionSocketLocationSocket = (TEXT("None"));
-
-	// Override for AI Perception "Eye" Location
-	void GetActorEyesViewPoint(FVector& Location, FRotator& Rotation) const override;
-
-	// AI Eyes function
-	UFUNCTION(BlueprintImplementableEvent, Category = AI)
-		FTransform GetAIEyesTransform() const;
+	FName AIPerceptionSocketLocationSocket = (TEXT("None"));
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 
-public:	
+
+
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	//Sight stuff
+	//virtual bool CanBeSeenFrom(const FVector& ObserverLocation, FVector& OutSeenLocation, int32& NumberOfLoSChecksPerformed, float& OutSightStrength, const AActor* IgnoreActor = nullptr, const bool* bWasVisible = nullptr, int32* UserData = nullptr) const;
+
 
 };
