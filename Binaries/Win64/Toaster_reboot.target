@@ -167,6 +167,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/EditorDiscordRichPresence.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/OVRLipSync/OVRLipSync.uplugin",
 			"Type": "UFS"
 		},
@@ -176,6 +180,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/PakLoaderPlugin/PakLoader.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/ReplaySystem/ReplaySystem.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -2951,6 +2959,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Bridge/Bridge.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Cameras/CameraShakePreviewer/CameraShakePreviewer.uplugin",
 			"Type": "UFS"
 		},
@@ -3168,10 +3180,6 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/JsonBlueprintUtilities/JsonBlueprintUtilities.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/ReplaySystem/ReplaySystem.uplugin",
 			"Type": "UFS"
 		},
 		{

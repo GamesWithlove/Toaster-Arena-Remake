@@ -159,6 +159,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/EditorDiscordRichPresence.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/OVRLipSync/OVRLipSync.uplugin",
 			"Type": "UFS"
 		},
