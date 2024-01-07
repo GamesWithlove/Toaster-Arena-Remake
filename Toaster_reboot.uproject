@@ -270,6 +270,10 @@
 		{
 			"Name": "GameplayStateTree",
 			"Enabled": true
+		},
+		{
+			"Name": "EditorDiscordRichPresence",
+			"Enabled": true
 		}
 	]
 }
