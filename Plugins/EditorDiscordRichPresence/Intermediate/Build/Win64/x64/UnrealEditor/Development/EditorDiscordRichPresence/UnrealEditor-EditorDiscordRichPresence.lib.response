@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-EditorDiscordRichPresence.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"D:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Module.EditorDiscordRichPresence.cpp.obj"
+"D:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Default.rc2.res"
+/OUT:"D:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\UnrealEditor-EditorDiscordRichPresence.lib"

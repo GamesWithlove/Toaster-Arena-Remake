@@ -1,0 +1,22 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.EditorDiscordRichPresence.cpp.obj": [
+			"EditorDiscordRichPresence.cpp.obj",
+			"achievement_manager.cpp.obj",
+			"activity_manager.cpp.obj",
+			"application_manager.cpp.obj",
+			"core.cpp.obj",
+			"image_manager.cpp.obj",
+			"lobby_manager.cpp.obj",
+			"network_manager.cpp.obj",
+			"overlay_manager.cpp.obj",
+			"relationship_manager.cpp.obj",
+			"storage_manager.cpp.obj",
+			"store_manager.cpp.obj",
+			"types.cpp.obj",
+			"user_manager.cpp.obj",
+			"voice_manager.cpp.obj"
+		]
+	}
+}
