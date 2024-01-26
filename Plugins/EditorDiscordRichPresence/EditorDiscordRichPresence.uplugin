@@ -1,0 +1,23 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.1.0",
+	"FriendlyName": "EditorDiscordRichPresence",
+	"Description": "Adds Discord Rich Presence to Unreal Editor. Windows only ATM.",
+	"Category": "Other",
+	"CreatedBy": "Dane Nurse",
+	"CreatedByURL": "https://twitter.com/DaneNurse",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EngineVersion": "5.2.0",
+	"CanContainContent": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "EditorDiscordRichPresence",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit"
+		}
+	]
+}
