@@ -23,16 +23,19 @@
 
 #include "OVRLipSyncLiveActorComponent.h"
 
-
+#include "AndroidPermissionCallbackProxy.h"
+#include "AndroidPermissionFunctionLibrary.h"
 #include "OVRLipSyncContextWrapper.h"
 #include "Voice/Public/VoiceModule.h"
 
 #include <Core.h>
 #include <algorithm>
 
-#ifndef DEFAULT_DEVICE_NAME
-#define DEFAULT_DEVICE_NAME TEXT("Default Device")
-#endif
+// This isn't being used anymore in StartVoiceCapture()
+//
+ //#ifndef DEFAULT_DEVICE_NAME
+//#define DEFAULT_DEVICE_NAME TEXT("Default Device")
+//#endif
 
 // Convert OVRLipSyncProviderKind enum to OVRLipSync
 ovrLipSyncContextProvider ContextProviderFromProviderKind(OVRLipSyncProviderKind Kind)
@@ -78,11 +81,27 @@ void UOVRLipSyncActorComponent::Start()
 		Stop();
 	}
 
+#if PLATFORM_ANDROID
+	FString AudioPermission = TEXT("android.permission.RECORD_AUDIO");
+	if (!UAndroidPermissionFunctionLibrary::CheckPermission(AudioPermission))
+	{
+		UE_LOG(LogOvrLipSync, Log, TEXT("Asking for record audio permission..."));
+		TArray<FString> PermissionsToCheck;
+		PermissionsToCheck.Add(AudioPermission);
+		UAndroidPermissionCallbackProxy *PermCallback =
+			UAndroidPermissionFunctionLibrary::AcquirePermissions(PermissionsToCheck);
+		if (PermCallback != nullptr)
+		{
+			PermCallback->OnPermissionsGrantedDelegate.AddUFunction(this, "PermissionCallback");
+		}
+	}
 	else
 	{
-
 		StartVoiceCapture();
 	}
+#else
+	StartVoiceCapture();
+#endif
 }
 
 void UOVRLipSyncActorComponent::PermissionCallback(const TArray<FString> &Permissions, const TArray<bool> &GrantResults)
@@ -102,7 +121,7 @@ void UOVRLipSyncActorComponent::PermissionCallback(const TArray<FString> &Permis
 
 void UOVRLipSyncActorComponent::StartVoiceCapture()
 {
-	VoiceCapture = FVoiceModule::Get().CreateVoiceCapture(DEFAULT_DEVICE_NAME, SampleRate, 1);
+	VoiceCapture = FVoiceModule::Get().CreateVoiceCapture("", SampleRate, 1);
 	if (!VoiceCapture)
 	{
 		UE_LOG(LogOvrLipSync, Error, TEXT("Can't create voice capture."));

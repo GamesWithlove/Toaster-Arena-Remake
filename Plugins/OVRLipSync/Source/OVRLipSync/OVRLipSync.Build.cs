@@ -28,6 +28,7 @@ public class OVRLipSync : ModuleRules
 {
     public OVRLipSync(ReadOnlyTargetRules Target) : base(Target)
     {
+        PrivateDependencyModuleNames.AddRange(new string[] {"AndroidPermission"});
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
         string BaseDirectory = Path.GetFullPath(Path.Combine(ModuleDirectory, "..", ".."));
