@@ -252,7 +252,7 @@
 		},
 		{
 			"Name": "AndroidPermission",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "OpenXRMsftHandInteraction",
@@ -278,6 +278,25 @@
 		{
 			"Name": "Volumetrics",
 			"Enabled": true
+		},
+		{
+			"Name": "AndroidMedia",
+			"Enabled": false
+		},
+		{
+			"Name": "AndroidMoviePlayer",
+			"Enabled": false
+		},
+		{
+			"Name": "OnlineSubsystemGooglePlay",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Android"
+			]
+		},
+		{
+			"Name": "SpeedTreeImporter",
+			"Enabled": false
 		}
 	]
 }
