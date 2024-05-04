@@ -297,6 +297,18 @@
 		{
 			"Name": "SpeedTreeImporter",
 			"Enabled": false
+		},
+		{
+			"Name": "AndroidDeviceProfileSelector",
+			"Enabled": false
+		},
+		{
+			"Name": "ArchVisCharacter",
+			"Enabled": false
+		},
+		{
+			"Name": "ChangelistReview",
+			"Enabled": false
 		}
 	]
 }
