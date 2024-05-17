@@ -309,6 +309,10 @@
 		{
 			"Name": "ChangelistReview",
 			"Enabled": false
+		},
+		{
+			"Name": "WebBrowserWidget",
+			"Enabled": true
 		}
 	]
 }
