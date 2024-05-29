@@ -45,15 +45,15 @@ public:
 
 	SmoothState();
 	~SmoothState();
-	SmoothState(SmoothState &state);
-	SmoothState(SmoothState *state);
-	SmoothState(USmoothSync &smoothSyncScript);
-	SmoothState(USmoothSync *smoothSyncScript);
-	void Lerp(SmoothState *targetState, SmoothState *start, SmoothState *end, float t);
+	SmoothState(SmoothState& state);
+	SmoothState(SmoothState* state);
+	SmoothState(USmoothSync& smoothSyncScript);
+	SmoothState(USmoothSync* smoothSyncScript);
+	void Lerp(SmoothState* targetState, SmoothState* start, SmoothState* end, float t);
 
 	void defaultTheVariables();
-	void copyFromSmoothSync(USmoothSync *smoothSyncScript);
-	void copyFromState(SmoothState *state);
+	void copyFromSmoothSync(USmoothSync* smoothSyncScript);
+	void copyFromState(SmoothState* state);
 
 	FVector3f rebasedPosition(FIntVector localWorldOrigin);
 };
