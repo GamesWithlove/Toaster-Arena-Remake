@@ -55,7 +55,7 @@ private:
 
 	TArray<float> ownerTimeOffsets;
 	float averageOwnerTimeOffset = 0;
-	
+
 	int samePositionSentCount = 0;
 	int sameRotationSentCount = 0;
 	bool wasAttachedLastTick = false;
@@ -86,7 +86,7 @@ public:
 	/// Measured in seconds.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Important)
-		float interpolationBackTime = .1f;
+	float interpolationBackTime = .1f;
 
 	/// <summary>Enable lag compensation to adjust synced actor's network time using estimated latency.</summary>
 	/// <remarks>
@@ -109,11 +109,11 @@ public:
 	/// Unlimited - Allow extrapolation forever. 
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Extrapolation)
-		ExtrapolationMode extrapolationMode = ExtrapolationMode::LIMITED;
+	ExtrapolationMode extrapolationMode = ExtrapolationMode::LIMITED;
 
 	/// <summary>Whether or not to have an extrapolation time limit.</summary>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Extrapolation)
-		bool useExtrapolationTimeLimit = true;
+	bool useExtrapolationTimeLimit = true;
 
 	/// <summary>How much time into the future a non-owned object is allowed to extrapolate.</summary>
 	/// <remarks>
@@ -123,11 +123,11 @@ public:
 	/// Measured in seconds.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Extrapolation)
-		float extrapolationTimeLimit = 1.0f;
+	float extrapolationTimeLimit = 1.0f;
 
 	/// <summary>Whether or not to have an extrapolation distance limit.</summary>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Extrapolation)
-		bool useExtrapolationDistanceLimit = false;
+	bool useExtrapolationDistanceLimit = false;
 
 	/// <summary>How much distance into the future a non-owned object is allowed to extrapolate.</summary>
 	/// <remarks>
@@ -137,7 +137,7 @@ public:
 	/// Measured in distance units.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Extrapolation)
-		float extrapolationDistanceLimit = 100.0f;
+	float extrapolationDistanceLimit = 100.0f;
 
 	/// <summary>The position won't send unless one of its Vector values has changed this much.</summary>
 	/// <remarks>
@@ -150,7 +150,7 @@ public:
 	/// Measured in distance units.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Thresholds)
-		float sendPositionThreshold = 0.0f;
+	float sendPositionThreshold = 0.0f;
 
 	/// <summary>The rotation won't send unless one of its Vector values has changed this much.</summary>
 	/// <remarks>
@@ -163,7 +163,7 @@ public:
 	/// Measured in degrees.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Thresholds)
-		float sendRotationThreshold = 0.0f;
+	float sendRotationThreshold = 0.0f;
 
 	/// <summary>The scale won't send unless one of its Vector values it changed this much.</summary>
 	/// <remarks>
@@ -176,7 +176,7 @@ public:
 	/// Measured in distance units.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Thresholds)
-		float sendScaleThreshold = 0.0f;
+	float sendScaleThreshold = 0.0f;
 
 	/// <summary>The velocity won't send unless one of its Vector values changed this much.</summary>
 	/// <remarks>
@@ -189,7 +189,7 @@ public:
 	/// Measured in velocity units.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Thresholds)
-		float sendVelocityThreshold = 0.0f;
+	float sendVelocityThreshold = 0.0f;
 
 	/// <summary>The angular velocity won't send unless one of its Vector values changed this much.</summary>
 	/// <remarks>
@@ -202,7 +202,7 @@ public:
 	/// Measured in radians per second.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Thresholds)
-		float sendAngularVelocityThreshold = 0.0f;
+	float sendAngularVelocityThreshold = 0.0f;
 
 	/// <summary>The position won't be set on non-owned objects unless it changed this much.</summary>
 	/// <remarks>
@@ -215,7 +215,7 @@ public:
 	/// Measured in distance units.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Thresholds)
-		float receivedPositionThreshold = 0.0f;
+	float receivedPositionThreshold = 0.0f;
 
 	/// <summary>The rotation won't be set on non-owned objects unless it changed this much.</summary>
 	/// <remarks>
@@ -228,7 +228,7 @@ public:
 	/// Measured in degrees.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Thresholds)
-		float receivedRotationThreshold = 0.0f;
+	float receivedRotationThreshold = 0.0f;
 
 	/// <summary>If a synced object's position is more than positionSnapThreshold units from the target position, it will jump to the target position immediately instead of lerping.</summary>
 	/// <remarks>
@@ -237,7 +237,7 @@ public:
 	/// Measured in distance units.
 	/// </summary>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Thresholds)
-		float positionSnapThreshold = 500;
+	float positionSnapThreshold = 500;
 
 	/// <summary>If a synced object's rotation is more than rotationSnapThreshold from the target rotation, it will jump to the target rotation immediately instead of lerping.</summary>
 	/// <remarks>
@@ -246,7 +246,7 @@ public:
 	/// Measured in degrees.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Thresholds)
-		float rotationSnapThreshold = 100;
+	float rotationSnapThreshold = 100;
 
 	/// <summary>If a synced object's scale is more than scaleSnapThreshold units from the target scale, it will jump to the target scale immediately instead of lerping.</summary>
 	/// <remarks>
@@ -255,7 +255,7 @@ public:
 	/// Measured in distance units.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Thresholds)
-		float scaleSnapThreshold = 3;
+	float scaleSnapThreshold = 3;
 
 	/// <summary>How much to smooth owner time.</summary>
 	/// <remarks>
@@ -267,7 +267,7 @@ public:
 	/// Note that this option is not used when latency compensation is enabled. Use the options in Time Sync instead.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Important, meta = (ClampMin = "0.0", ClampMax = "5.0", UIMin = "0.0", UIMax = "5.0"))
-		float timeSmoothing = 2.0f;
+	float timeSmoothing = 2.0f;
 
 	/// <summary>How fast to lerp the position to the target SmoothState. 0 is never, 1 is instant.</summary>
 	/// <remarks>
@@ -275,7 +275,7 @@ public:
 	/// Higher values mean more responsive but maybe jerky or stuttery movement.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Important, meta = (ClampMin = "0.0", ClampMax = "1.0", UIMin = "0.0", UIMax = "1.0"))
-		float positionLerpSpeed = .85f;
+	float positionLerpSpeed = .85f;
 
 	/// <summary>How fast to lerp the rotation to the target State. 0 is never, 1 is instant..</summary>
 	/// <remarks>
@@ -283,7 +283,7 @@ public:
 	/// Higher values mean more responsive but maybe jerky or stuttery movement.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Important, meta = (ClampMin = "0.0", ClampMax = "1.0", UIMin = "0.0", UIMax = "1.0"))
-		float rotationLerpSpeed = .85f;
+	float rotationLerpSpeed = .85f;
 
 	/// <summary>How fast to lerp the scale to the target State. 0 is never, 1 is instant.</summary>
 	/// <remarks>
@@ -291,7 +291,7 @@ public:
 	/// Higher values mean more responsive but maybe jerky or stuttery movement.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Important, meta = (ClampMin = "0.0", ClampMax = "1.0", UIMin = "0.0", UIMax = "1.0"))
-		float scaleLerpSpeed = .85f;
+	float scaleLerpSpeed = .85f;
 
 	/// <summary>Position sync mode</summary>
 	/// <remarks>
@@ -299,7 +299,7 @@ public:
 	/// For objects that don't move, use SyncMode.NONE
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SyncModes)
-		SyncMode syncPosition = SyncMode::XYZ;
+	SyncMode syncPosition = SyncMode::XYZ;
 
 	/// <summary>Rotation sync mode</summary>
 	/// <remarks>
@@ -307,7 +307,7 @@ public:
 	/// For objects that don't rotate, use SyncMode.NONE
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SyncModes)
-		SyncMode syncRotation = SyncMode::XYZ;
+	SyncMode syncRotation = SyncMode::XYZ;
 
 	/// <summary>Scale sync mode</summary>
 	/// <remarks>
@@ -315,88 +315,89 @@ public:
 	/// For objects that don't scale, use SyncMode.NONE
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SyncModes)
-		SyncMode syncScale = SyncMode::XYZ;
+	SyncMode syncScale = SyncMode::XYZ;
 
 	/// <summary>Velocity sync mode</summary>
 	/// <remarks>
 	/// Fine tune how velocity is synced.
+	/// Syncs Primitive (if simulating physics), Movement, or CharacterMovement Components as well as allows for more accurate extrapolation.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SyncModes)
-		SyncMode syncVelocity = SyncMode::XYZ;
+	SyncMode syncVelocity = SyncMode::XYZ;
 
 	/// <summary>Angular velocity sync mode</summary>
 	/// <remarks>
 	/// Fine tune how angular velocity is synced. 
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SyncModes)
-		SyncMode syncAngularVelocity = SyncMode::XYZ;
+	SyncMode syncAngularVelocity = SyncMode::XYZ;
 
 	///	<summary>Sync Movement Mode (animations)</summary>
 	/// <remarks>
 	/// Syncs Unreal's Movement Mode (animations) for Characters.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = SyncModes)
-		bool syncMovementMode = true;
+	bool syncMovementMode = true;
 
 	/// <summary>Compress position floats when sending over the network.</summary>
 	/// <remarks>
 	/// Convert position floats sent over the network to Halfs, which use half as much bandwidth but are also half as precise.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Compression)
-		bool isPositionCompressed = false;
+	bool isPositionCompressed = false;
 
 	/// <summary>Compress rotation floats when sending over the network.</summary>
 	/// <remarks>
 	/// Convert rotation floats sent over the network to Halfs, which use half as much bandwidth but are also half as precise.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Compression)
-		bool isRotationCompressed = false;
+	bool isRotationCompressed = false;
 
 	/// <summary>Compress scale floats when sending over the network.</summary>
 	/// <remarks>
 	/// Convert scale floats sent over the network to Halfs, which use half as much bandwidth but are also half as precise.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Compression)
-		bool isScaleCompressed = false;
+	bool isScaleCompressed = false;
 
 	/// <summary>Compress velocity floats when sending over the network.</summary>
 	/// <remarks>
 	/// Convert velocity floats sent over the network to Halfs, which use half as much bandwidth but are also half as precise.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Compression)
-		bool isVelocityCompressed = false;
+	bool isVelocityCompressed = false;
 
 	/// <summary>Compress angular velocity floats when sending over the network.</summary>
 	/// <remarks>
 	/// Convert angular velocity floats sent over the network to Halfs, which use half as much bandwidth but are also half as precise.
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Compression)
-		bool isAngularVelocityCompressed = false;
+	bool isAngularVelocityCompressed = false;
 
 	/// <summary>How many times per second to send network updates.</summary>
 	/// <remarks>Keep in mind this can be limited by Unreal's Net Update Frequency.</remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Important)
-		float sendRate = 30;
+	float sendRate = 30;
 
 	/// <summary>Whether or not to sync origin for Origin Rebasing.</summary>
 	/// <remarks>You will need this only if your levels are very large. This requires an extra byte when syncing.</remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Important)
-		bool isUsingOriginRebasing = false;
+	bool isUsingOriginRebasing = false;
 
 	/// <summary>Send the origin with every update. Costs extra but fixes issues with network relevancy.</summary>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Important)
-		bool alwaysSendOrigin = false;
+	bool alwaysSendOrigin = false;
 
 	/// <summary>Sync changes in owernship.</summary>
 	/// <remarks>
 	/// Sends an extra byte with each network state that allows clients to handle ownership changes
 	/// </remarks>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Important)
-		bool syncOwnershipChange = false;
+	bool syncOwnershipChange = false;
 
 	/// <summary>Non-owners keep a list of recent States received over the network for interpolating.</summary>
 	/// <remarks>Index 0 is the newest received State.</remarks>
-	SmoothState **stateBuffer;
+	SmoothState** stateBuffer;
 
 	/// <summary>
 	/// Uses a State buffer of at least 30 for ease of use, or a buffer size in relation 
@@ -445,7 +446,7 @@ public:
 	FVector3f lastAngularVelocityWhenStateWasSent = FVector3f::ZeroVector;
 
 	/// <summary>Gets assigned to the real object to sync.</summary>
-	AActor *realObjectToSync;
+	AActor* realObjectToSync;
 
 	/// <summary>Gets assigned to the movement component on the actor.</summary>
 	UMovementComponent* movementComponent;
@@ -462,10 +463,10 @@ public:
 	/// <summary>Gets assigned to the real transform to sync. Use SetSceneComponentToSync() method to set it up. If
 	/// this variable is not assigned, SmoothSync will sync the actor.</summary>
 	UPROPERTY(BlueprintReadWrite, Category = Important)
-		USceneComponent *realComponentToSync;
+	USceneComponent* realComponentToSync;
 
 	/// <summary>SmoothState when extrapolation ended.</summary>
-	SmoothState *extrapolationEndState;
+	SmoothState* extrapolationEndState;
 
 	/// <summary>Time when extrapolation ended.</summary>
 	float extrapolationStopTime;
@@ -511,15 +512,15 @@ public:
 	/// <summary>
 	/// SmoothState we fill up to better organize the data before sending it out.
 	/// </summary>
-	SmoothState *sendingTempState;
+	SmoothState* sendingTempState;
 
 	/// <summary>
 	/// Gets filled each frame with a SmoothState to move towards
 	/// </summary>
-	SmoothState *targetTempState;
+	SmoothState* targetTempState;
 
 	/// <summary> Used to check if low FPS causes us to skip a teleport State. </summary>
-	SmoothState *latestEndStateUsed;
+	SmoothState* latestEndStateUsed;
 
 	/// <summary> Used to check if we should be sending a "JustStartedMoving" State. If we are teleporting, don't send one. </summary>
 	FVector3f latestTeleportedFromPosition;
@@ -530,7 +531,7 @@ public:
 	/// <summary>
 	/// Reference to the Primitive Component.
 	/// </summary>
-	UPrimitiveComponent *primitiveComponent;
+	UPrimitiveComponent* primitiveComponent;
 
 	uint8 latestSentMovementMode = 0;
 
@@ -571,11 +572,11 @@ public:
 
 	/// <summary>Actor will come to positional rest if it stops moving by this amount. Used to smooth out stops and starts.</summary>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Thresholds)
-		float atRestPositionThreshold = .05f;
+	float atRestPositionThreshold = .05f;
 
 	/// <summary>Actor will come to rotational rest if it stops rotating by this amount. Used to smooth out stops and starts.</summary>
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Thresholds)
-		float atRestRotationThreshold = .1f;
+	float atRestRotationThreshold = .1f;
 
 	/// <summary> Used to know when the owner has changed. Not an identifier. Only sent from Server. </summary>
 	uint8 ownerChangeIndicator = 1;
@@ -637,10 +638,10 @@ public:
 
 	void checkIfOwnerHasChanged(SmoothState* newState);
 	void applyInterpolationOrExtrapolation();
-	void interpolate(float interpolationTimeLocal, SmoothState *targetState);
-	bool extrapolate(float interpolationTimeLocal, SmoothState *targetState, bool& shouldSetPosition);
-	void addState(SmoothState *state);
-	void addTeleportState(SmoothState *state);
+	void interpolate(float interpolationTimeLocal, SmoothState* targetState);
+	bool extrapolate(float interpolationTimeLocal, SmoothState* targetState, bool& shouldSetPosition);
+	void addState(SmoothState* state);
+	void addTeleportState(SmoothState* state);
 	void setPosition(FVector3f position, bool teleport);
 	void setRotation(const FQuat4f& rotation, bool teleport);
 	void setScale(FVector3f scale);
@@ -677,29 +678,29 @@ public:
 
 	/// Clear the state buffer. You will call this on all unowned Actor instances on ownership changes.
 	UFUNCTION(BlueprintCallable, Category = "SmoothSync")
-		void clearBuffer();
+	void clearBuffer();
 
 	void stopEasing();
 
 	/// Teleport the player so that position will not be interpolated on non-owners. Use teleport() on the owner and 
 	/// the Actor will jump to the current owner's position on non-owners. 
 	UFUNCTION(BlueprintCallable, Category = "SmoothSync")
-		void teleport();
+	void teleport();
 
 	/// Used to turn Smooth Sync on and off. True to enable Smooth Sync. False to disable Smooth Sync.
 	///	Will automatically send RPCs across the network. Is meant to be called on the owned version of the Actor.
 	UFUNCTION(BlueprintCallable, Category = "SmoothSync")
-		void enableSmoothSync(bool enable);
+	void enableSmoothSync(bool enable);
 
 	/// Forces the SmoothState (Transform) to be sent on owned objects the next time it goes through TickComponent(). 
 	/// The SmoothState (Transform) will get sent next frame regardless of all limitations.
 	UFUNCTION(BlueprintCallable, Category = "SmoothSync")
-		void forceStateSendNextFrame();
+	void forceStateSendNextFrame();
 
 	/// Used to set the transform that you want to sync on this SmoothSync. If this is not called, SmoothSync will sync the actor. 
 	/// Must have one SmoothSync for each Transform that you want to sync. 
 	UFUNCTION(BlueprintCallable, Category = "SmoothSync")
-		void setSceneComponentToSync(USceneComponent *theComponent);
+	void setSceneComponentToSync(USceneComponent* theComponent);
 
 	void internalEnableSmoothSync(bool enable);
 	void resetFlags();
@@ -707,18 +708,18 @@ public:
 	bool sameVector(FVector3f one, FVector3f two, float threshold);
 
 	UFUNCTION(NetMulticast, unreliable, WithValidation)
-		void ServerSendsTransformToEveryone(const TArray<uint8>&  value);
+	void ServerSendsTransformToEveryone(const TArray<uint8>& value);
 	UFUNCTION(Server, unreliable, WithValidation)
-		void ClientSendsTransformToServer(const TArray<uint8>&  value);
+	void ClientSendsTransformToServer(const TArray<uint8>& value);
 
 	UFUNCTION(NetMulticast, unreliable, WithValidation)
-		void SmoothSyncEnableServerToClients(bool enable);
+	void SmoothSyncEnableServerToClients(bool enable);
 	UFUNCTION(Server, unreliable, WithValidation)
-		void SmoothSyncEnableClientToServer(bool enable);
+	void SmoothSyncEnableClientToServer(bool enable);
 	UFUNCTION(NetMulticast, reliable, WithValidation)
-		void SmoothSyncTeleportServerToClients(FVector3f position, FVector3f rotation, FVector3f scale, float tempOwnerTime);
+	void SmoothSyncTeleportServerToClients(FVector3f position, FVector3f rotation, FVector3f scale, float tempOwnerTime);
 	UFUNCTION(Server, reliable, WithValidation)
-		void SmoothSyncTeleportClientToServer(FVector3f position, FVector3f rotation, FVector3f scale, float tempOwnerTime);
+	void SmoothSyncTeleportClientToServer(FVector3f position, FVector3f rotation, FVector3f scale, float tempOwnerTime);
 
 
 	template <class T>
@@ -726,7 +727,7 @@ public:
 	template <class T>
 	void readFromBuffer(T* thing);
 
-	void SerializeState(SmoothState *sendingState);
+	void SerializeState(SmoothState* sendingState);
 	char encodeSyncInformation(bool sendPositionFlag, bool sendRotationFlag, bool sendScaleFlag, bool sendVelocityFlag, bool sendAngularVelocityFlag, bool atPositionalRestFlag, bool atRotationalRestFlag, bool sendMovementModeFlag);
 	bool shouldDeserializePosition(char syncInformation);
 	bool shouldDeserializeRotation(char syncInformation);
@@ -740,8 +741,8 @@ public:
 	void ResetAtRestState();
 	AController* GetOwningController();
 
-	void shouldTeleport(SmoothState *start, SmoothState *end, float interpolationTimeLocal, float *t);
-	
+	void shouldTeleport(SmoothState* start, SmoothState* end, float interpolationTimeLocal, float* t);
+
 	/// <summary>
 	/// Adjust estimated owner time based on average difference between local and owner time
 	/// </summary>
@@ -765,8 +766,8 @@ public:
 	/// </remarks>
 	void AddOwnerTimeOffset(float newOwnerTime);
 
-	virtual bool ReplicateSubobjects(class UActorChannel * Channel, class FOutBunch * Bunch, FReplicationFlags * RepFlags) override;
-	
+	virtual bool ReplicateSubobjects(class UActorChannel* Channel, class FOutBunch* Bunch, FReplicationFlags* RepFlags) override;
+
 protected:
 
 	virtual void BeginPlay() override;

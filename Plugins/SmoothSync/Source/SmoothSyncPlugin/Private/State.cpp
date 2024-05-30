@@ -25,7 +25,7 @@ SmoothState::SmoothState()
 /// <summary>
 /// Returns a Lerped state that is between two States in time.
 /// </summary>
-void SmoothState::Lerp(SmoothState *targetState, SmoothState *start, SmoothState *end, float t)
+void SmoothState::Lerp(SmoothState* targetState, SmoothState* start, SmoothState* end, float t)
 {
 	targetState->position = FMath::Lerp(start->position, end->position, t);
 	targetState->rotation = FMath::Lerp(start->rotation, end->rotation, t);
@@ -52,7 +52,7 @@ void SmoothState::defaultTheVariables()
 	movementMode = MOVE_None;
 }
 
-void SmoothState::copyFromSmoothSync(USmoothSync *smoothSyncScript)
+void SmoothState::copyFromSmoothSync(USmoothSync* smoothSyncScript)
 {
 #ifdef TimeSync
 	if (smoothSyncScript->enableLagCompensation)
@@ -81,7 +81,7 @@ void SmoothState::copyFromSmoothSync(USmoothSync *smoothSyncScript)
 	rotation = smoothSyncScript->getRotation();
 	scale = smoothSyncScript->getScale();
 
-	if (smoothSyncScript->isSimulatingPhysics || 
+	if (smoothSyncScript->isSimulatingPhysics ||
 		(smoothSyncScript->characterMovementComponent != nullptr) ||
 		(smoothSyncScript->movementComponent != nullptr))
 	{
@@ -100,7 +100,7 @@ void SmoothState::copyFromSmoothSync(USmoothSync *smoothSyncScript)
 	origin = smoothSyncScript->GetWorld()->OriginLocation;
 }
 
-void SmoothState::copyFromState(SmoothState *state)
+void SmoothState::copyFromState(SmoothState* state)
 {
 	ownerTimestamp = state->ownerTimestamp;
 	position = state->position;
