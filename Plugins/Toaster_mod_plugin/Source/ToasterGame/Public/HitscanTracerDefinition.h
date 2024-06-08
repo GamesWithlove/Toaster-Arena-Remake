@@ -33,4 +33,10 @@ public:
     // Sound effect this tracer makes as it flies past players
     UPROPERTY(EditAnywhere, BlueprintReadOnly)
     class USoundBase* Sound;
+
+    // Particle class to use on as tracer
+    UPROPERTY(EditAnywhere, BlueprintReadOnly)
+    class UNiagaraSystem* Tracer;
+
+
 };

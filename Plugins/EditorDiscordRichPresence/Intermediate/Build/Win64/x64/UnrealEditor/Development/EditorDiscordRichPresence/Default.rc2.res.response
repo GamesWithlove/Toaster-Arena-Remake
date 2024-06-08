@@ -72,5 +72,5 @@
 /DPROJECT_COPYRIGHT_STRING="Fill out your copyright notice in the Description page of Project Settings."
 /DPROJECT_PRODUCT_NAME="Toaster Arena"
 /DPROJECT_PRODUCT_IDENTIFIER=Toaster_reboot
-/fo "D:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Default.rc2.res"
+/fo "E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Default.rc2.res"
 "..\Build\Windows\Resources\Default.rc2"
