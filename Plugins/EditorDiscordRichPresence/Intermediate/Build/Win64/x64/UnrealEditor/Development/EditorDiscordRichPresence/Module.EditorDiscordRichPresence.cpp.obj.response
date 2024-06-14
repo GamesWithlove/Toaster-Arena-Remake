@@ -1,6 +1,6 @@
-D:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Module.EditorDiscordRichPresence.cpp
+E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Module.EditorDiscordRichPresence.cpp
 /I .
-/I D:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Source\EditorDiscordRichPresence\Private
+/I E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Source\EditorDiscordRichPresence\Private
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\UnrealEd\UHT
 /I Programs\UnrealLightmass\Public
 /I Editor\UnrealEd\Classes
@@ -273,8 +273,8 @@ D:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermedi
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AIModule\UHT
 /I Runtime\AIModule\Public
 /I Runtime\AIModule\Classes
-/I D:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Source
-/I D:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Source\EditorDiscordRichPresence\Public
+/I E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Source
+/I E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Source\EditorDiscordRichPresence\Public
 /external:W0
 /external:I ThirdParty\mimalloc\include
 /external:I ThirdParty\LibTiff\Source\Win64
@@ -284,12 +284,12 @@ D:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermedi
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
-/FI"D:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h"
-/FI"D:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Definitions.EditorDiscordRichPresence.h"
-/Yu"D:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h"
-/Fp"D:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.pch"
-/Fo"D:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Module.EditorDiscordRichPresence.cpp.obj"
-/sourceDependencies D:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Module.EditorDiscordRichPresence.cpp.dep.json
+/FI"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h"
+/FI"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Definitions.EditorDiscordRichPresence.h"
+/Yu"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h"
+/Fp"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.pch"
+/Fo"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Module.EditorDiscordRichPresence.cpp.obj"
+/sourceDependencies E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Module.EditorDiscordRichPresence.cpp.dep.json
 /Zc:inline
 /nologo
 /Oi
