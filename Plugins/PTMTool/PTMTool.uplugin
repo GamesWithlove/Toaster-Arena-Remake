@@ -1,0 +1,28 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.2.5",
+	"FriendlyName": "Blueprint Property Transfer Manager",
+	"Description": "Simple Editor Tool to help streamline transfering properties between unrelated Blueprints in Unreal Editor.",
+	"Category": "SYNAPTECH",
+	"CreatedBy": "(C) Bruno Xavier Leite",
+	"CreatedByURL": "http://brunoxavierleite.wordpress.com",
+	"DocsURL": "https://forums.unrealengine.com/community/community-content-tools-and-tutorials/1543449-property-transfer-tool",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/946185f2400d4be9b8d4190e95df86c8",
+	"SupportURL": "mailto:bruno_xavier_@msn.com",
+	"EngineVersion": "5.2.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "PTMTool",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit",
+			"PlatformAllowList": [
+				"Win64",
+				"Linux",
+				"Mac"
+			]
+		}
+	]
+}
