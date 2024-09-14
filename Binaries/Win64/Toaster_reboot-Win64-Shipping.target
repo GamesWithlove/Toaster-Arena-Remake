@@ -3031,10 +3031,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/PTMTool/PTMTool.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Media/ImgMedia/ImgMedia.uplugin",
 			"Type": "UFS"
 		},
