@@ -2,11 +2,11 @@
 /D_WIN64
 /l 0x409
 /I "."
-/I "D:\VisualStudio2022\VC\Tools\MSVC\14.38.33130\INCLUDE"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\ucrt"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
+/I "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\INCLUDE"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\ucrt"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\shared"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\um"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.26100.0\winrt"
 /DIS_PROGRAM=0
 /DUE_EDITOR=1
 /DUSE_SHADER_COMPILER_WORKER_TRACE=0
@@ -72,5 +72,5 @@
 /DPROJECT_COPYRIGHT_STRING="Fill out your copyright notice in the Description page of Project Settings."
 /DPROJECT_PRODUCT_NAME="Toaster Arena"
 /DPROJECT_PRODUCT_IDENTIFIER=Toaster_reboot
-/fo "E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Default.rc2.res"
+/fo "I:\Unreal Projects\Unreal Projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Default.rc2.res"
 "..\Build\Windows\Resources\Default.rc2"
