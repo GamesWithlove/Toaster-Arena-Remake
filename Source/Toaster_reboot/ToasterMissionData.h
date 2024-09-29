@@ -9,10 +9,9 @@
 #include "ToasterMissionData.generated.h"
 
 USTRUCT(BlueprintType)
-struct TOASTER_REBOOT_API FToasterMissionData : public FTableRowBase
-{
-public:
-    GENERATED_USTRUCT_BODY()
+struct TOASTER_REBOOT_API FToasterMissionData : public FTableRowBase {
+
+	GENERATED_USTRUCT_BODY()
     
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mission Data")
     TSoftObjectPtr<UTexture2D> MissionThumbnail;

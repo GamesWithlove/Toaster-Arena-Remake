@@ -6,7 +6,7 @@
 /NAME:"UnrealEditor-EditorDiscordRichPresence.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"I:\Unreal Projects\Unreal Projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.obj"
-"I:\Unreal Projects\Unreal Projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Module.EditorDiscordRichPresence.cpp.obj"
-"I:\Unreal Projects\Unreal Projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Default.rc2.res"
-/OUT:"I:\Unreal Projects\Unreal Projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\UnrealEditor-EditorDiscordRichPresence.lib"
+"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Module.EditorDiscordRichPresence.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\Default.rc2.res"
+/OUT:"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EditorDiscordRichPresence\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorDiscordRichPresence\UnrealEditor-EditorDiscordRichPresence.lib"
