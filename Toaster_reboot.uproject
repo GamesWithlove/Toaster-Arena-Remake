@@ -94,7 +94,7 @@
 		},
 		{
 			"Name": "ReplaySystem",
-			"Enabled": true,
+			"Enabled": false,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/1b0cbe31111d482baaf531d187651e7f"
 		},
 		{
