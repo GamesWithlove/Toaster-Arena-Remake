@@ -30,6 +30,9 @@ struct TOASTER_REBOOT_API FToasterWidgetData
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
 	ETextTransformPolicy TransformPolicy;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
+	int32 Index;
+
 	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
 	//EHorizTextAligment HorizTextAligment;
 
