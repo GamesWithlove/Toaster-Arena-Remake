@@ -360,6 +360,10 @@
 		{
 			"Name": "PlatformCrypto",
 			"Enabled": false
+		},
+		{
+			"Name": "VirtualHeightfieldMesh",
+			"Enabled": true
 		}
 	]
 }
