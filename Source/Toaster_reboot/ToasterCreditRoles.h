@@ -16,4 +16,5 @@ enum class EToasterCreditRoles : uint8
 	DEVROLE_09 UMETA(DisplayName = "Sound Production"),
 	DEVROLE_10 UMETA(DisplayName = "Music Production"),
 	DEVROLE_11 UMETA(DisplayName = "Voice Acting"),
+	DEVROLE_12 UMETA(DisplayName = "Licensed Assets"),
 };
