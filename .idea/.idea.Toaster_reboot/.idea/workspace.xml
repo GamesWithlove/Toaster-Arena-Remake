@@ -7,21 +7,9 @@
     <projectFile>Intermediate/ProjectFiles/Toaster_reboot.vcxproj</projectFile>
     <projectFile>Intermediate/ProjectFiles/UE5.vcxproj</projectFile>
   </component>
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1294312-e34b-4581-9f35-e04768080ed3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Chars/components/Health_system/Health_system.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Chars/components/Health_system/Health_system.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/DataAsset_Function.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/DataAsset_Function.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Game_systems/Main_pc.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Game_systems/Main_pc.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Game_systems/Respawn_pawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Game_systems/Respawn_pawn.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Widgets/InGame/HUD/Components/WBP_ScopeHUD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Widgets/InGame/HUD/Components/WBP_ScopeHUD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Widgets/Menus/Customisation/WBP_Modules.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Widgets/Menus/Customisation/WBP_Modules.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Widgets/Menus/Options/Components/WBP_KeybindSlot.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Widgets/Menus/Options/Components/WBP_KeybindSlot.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Widgets/Menus/Options/WBP_Options.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Widgets/Menus/Options/WBP_Options.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Widgets/Menus/RCON/Rcon_main_menu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Widgets/Menus/RCON/Rcon_main_menu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Widgets/_WidgetManager/Widgets/SHARED/WBP_WidgetBlurBase.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Widgets/_WidgetManager/Widgets/SHARED/WBP_WidgetBlurBase.uasset" afterDir="false" />
+    <list default="true" id="d8c8bb47-15b7-4fdd-a068-cf0bf5070a75" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Toaster_reboot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Toaster_reboot/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Toaster_reboot.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Toaster_reboot.uproject" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,10 +20,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
-}</component>
-  <component name="ProjectId" id="2pPi2wXe0g1eF76DPpZFRpreMxL" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2pRAgq6KFKrRxYBeeY6oHxESXEv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -483,13 +472,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e1294312-e34b-4581-9f35-e04768080ed3" name="Changes" comment="" />
-      <created>1732673910048</created>
+      <changelist id="d8c8bb47-15b7-4fdd-a068-cf0bf5070a75" name="Changes" comment="" />
+      <created>1732718628865</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1732673910048</updated>
-      <workItem from="1732673910049" duration="3000" />
-      <workItem from="1732673941716" duration="813000" />
+      <updated>1732718628865</updated>
+      <workItem from="1732718630006" duration="419000" />
     </task>
     <servers />
   </component>

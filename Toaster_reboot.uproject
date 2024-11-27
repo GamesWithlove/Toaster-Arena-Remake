@@ -274,7 +274,7 @@
 		},
 		{
 			"Name": "EditorDiscordRichPresence",
-			"Enabled": false
+			"Enabled": true
 		},
 		{
 			"Name": "Volumetrics",
