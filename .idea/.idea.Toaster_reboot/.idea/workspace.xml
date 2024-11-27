@@ -13,16 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8c8bb47-15b7-4fdd-a068-cf0bf5070a75" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Toaster_reboot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Toaster_reboot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AI_systems/Controllers/AI_controller_base/AI_Base_controller.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AI_systems/Controllers/AI_controller_base/AI_Base_controller.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Chars/characters/base_character/SingleplayerEnemies/BP_AI_S_Ally_Pirate_shotgun_Shields.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Chars/characters/base_character/SingleplayerEnemies/BP_AI_S_Ally_Pirate_shotgun_Shields.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Chars/characters/base_character/root/Character_base.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Chars/characters/base_character/root/Character_base.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/DataAsset_Function.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/DataAsset_Function.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Game_systems/Respawn_pawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Game_systems/Respawn_pawn.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Map_scripting/AI_spawnner_Simple.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Map_scripting/AI_spawnner_Simple.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Widgets/Menus/RCON/Rcon_main_menu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Widgets/Menus/RCON/Rcon_main_menu.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Maps/Event_maps/NewShootingRange/LVL_ShootingRangeNew.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Event_maps/NewShootingRange/LVL_ShootingRangeNew.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Models/General_Hero/Props/Rail/MI_Rail.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Models/General_Hero/Props/Rail/MI_Rail.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toaster_reboot.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Toaster_reboot.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Technical_maps/LVL_Menu.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Technical_maps/LVL_Menu.umap" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -501,6 +492,7 @@
       <workItem from="1732720325465" duration="359000" />
       <workItem from="1732721658420" duration="678000" />
       <workItem from="1732730616748" duration="587000" />
+      <workItem from="1732739322232" duration="867000" />
     </task>
     <servers />
   </component>
