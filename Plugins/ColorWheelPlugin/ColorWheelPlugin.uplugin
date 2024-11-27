@@ -1,0 +1,28 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "2023.1.1",
+	"FriendlyName": "Color Wheel",
+	"Description": "Simple no-nonsense bloated color wheel.",
+	"Category": "Widget",
+	"CreatedBy": "W2Wizard",
+	"CreatedByURL": "https://w2wizard.myportfolio.com/",
+	"DocsURL": "",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/ce01648a2cde41338991bb855a624ffa",
+	"SupportURL": "https://portfolio.w2wizard.dev/",
+	"EngineVersion": "5.5.0",
+	"CanContainContent": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "ColorWheelPlugin",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault",
+			"PlatformDenyList": [
+				"IOS",
+				"Android",
+				"Linux"
+			]
+		}
+	]
+}

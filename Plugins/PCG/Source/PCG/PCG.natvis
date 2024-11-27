@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+  
+  <!-- Copyright Epic Games, Inc. All Rights Reserved. -->
+  
+  <Type Name="UPCGPin">
+    <DisplayString Condition="Edges.ArrayNum==0">Name={Properties.Label}, Type={Properties.AllowedTypes}</DisplayString>
+    <DisplayString Condition="Edges.ArrayNum &gt; 0">Name={Properties.Label}, Type={Properties.AllowedTypes}, Edges={Edges.ArrayNum}</DisplayString>
+  </Type>
+
+  <Type Name="FPCGSelectionKey">
+    <DisplayString Condition="Selection==EPCGActorSelection::ByPath">ByPath={ObjectPath}, ExtraDep={OptionalExtraDependency}</DisplayString>
+    <DisplayString Condition="Selection==EPCGActorSelection::ByTag">ByTag={Tag}, ExtraDep={OptionalExtraDependency}</DisplayString>
+    <DisplayString Condition="Selection==EPCGActorSelection::ByClass">ByClass={SelectionClass}, ExtraDep={OptionalExtraDependency}</DisplayString>
+    <DisplayString Condition="ActorFilter!=EPCGActorFilter::AllWorldActors">{ActorFilter}, ExtraDep={OptionalExtraDependency}</DisplayString>
+  </Type>
+
+</AutoVisualizer>

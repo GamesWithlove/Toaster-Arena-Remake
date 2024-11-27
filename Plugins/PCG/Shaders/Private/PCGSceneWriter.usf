@@ -1,0 +1,81 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+// Scene writer - used to inject final instance data into the GPU Scene. Dispatched in the scene update timeline.
+
+#include "/Engine/Private/Common.ush"
+#include "/Engine/Private/GPUScene/GPUSceneWriter.ush"
+#include "/Engine/Public/Platform.ush"
+
+uint InPrimitiveIndex;
+uint InNumInstancesAllocatedInGPUScene;
+uint InInstanceOffset;
+StructuredBuffer<uint4> InInstanceData;
+StructuredBuffer<uint> InInstanceCustomFloatData;
+StructuredBuffer<uint> InWriteCounters;
+uint InPrimitiveId;
+uint InCustomDataCount;
+uint InPayloadDataFlags;
+
+void CullInstance(uint InstanceId)
+{
+	// This will minimally initialize the instance data such that it will be ignored and culled
+	WriteInstancePrimitiveIdAndFlags(InstanceId, InPrimitiveId, INSTANCE_SCENE_DATA_FLAG_HIDDEN);
+}
+
+[numthreads(NUM_THREADS_PER_GROUP, 1, 1)]
+void SceneWriter_CS(const uint ThreadId : SV_DispatchThreadID)
+{
+	const uint LocalInstanceId = ThreadId;
+	if (LocalInstanceId >= InNumInstancesAllocatedInGPUScene)
+	{
+		return;
+	}
+
+	// Retrieve the primitive data
+	FPrimitiveSceneData PrimitiveData = GetPrimitiveData(InPrimitiveId);
+	
+	const uint InstanceId = PrimitiveData.InstanceSceneDataOffset + LocalInstanceId;
+	
+	// Cull any instances at tail end (assume all valid instances are written).
+	if (LocalInstanceId >= InWriteCounters[InPrimitiveIndex])
+	{
+		CullInstance(InstanceId);
+		return;
+	}
+	
+	const uint StrideFloat4s = 3;
+	float4x4 LocalToWorld;
+	LocalToWorld[0] = asfloat(InInstanceData[(InInstanceOffset + LocalInstanceId) * StrideFloat4s + 0]);
+	LocalToWorld[1] = asfloat(InInstanceData[(InInstanceOffset + LocalInstanceId) * StrideFloat4s + 1]);
+	LocalToWorld[2] = asfloat(InInstanceData[(InInstanceOffset + LocalInstanceId) * StrideFloat4s + 2]);
+	LocalToWorld[3] = float4(0.0f, 0.0f, 0.0f, 1.0f);
+	LocalToWorld = transpose(LocalToWorld);
+
+	InitializeInstanceSceneDataWS(
+		InstanceId,
+		InPrimitiveId,
+		LocalInstanceId,
+ 		InPayloadDataFlags,
+ 		InCustomDataCount,
+ 		/*RandomId=*/0.0f,
+		DFFromTileOffset(LWCPromote(LocalToWorld))
+	);
+
+	const FDFMatrix Transform = MakeDFMatrix4x3(PrimitiveData.PositionHigh*0.0, LocalToWorld);
+	WriteInstanceLocalToWorld(InstanceId, InPrimitiveId, Transform, false);
+
+	FInstancePayloadDataOffsets PayloadOffsets = GetInstancePayloadDataOffsets(InPrimitiveId, InPayloadDataFlags, LocalInstanceId);
+
+	const uint NumCustomFloat4s = (InCustomDataCount + 3) / 4;
+	for (uint Float4Index = 0; Float4Index < NumCustomFloat4s; ++Float4Index)
+	{
+		const uint BaseIndex = (InInstanceOffset + LocalInstanceId) * InCustomDataCount + Float4Index * 4;
+
+		uint4 CustomData;
+		CustomData[0] = InInstanceCustomFloatData[BaseIndex];
+		CustomData[1] = InInstanceCustomFloatData[BaseIndex + 1];
+		CustomData[2] = InInstanceCustomFloatData[BaseIndex + 2];
+		CustomData[3] = InInstanceCustomFloatData[BaseIndex + 3];
+		WriteInstanceCustomData(PayloadOffsets, Float4Index, asfloat(CustomData));
+	}
+}

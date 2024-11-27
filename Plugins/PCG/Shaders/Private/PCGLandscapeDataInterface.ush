@@ -1,0 +1,47 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+Texture2D {DataInterfaceName}_HeightTexture;
+SamplerState {DataInterfaceName}_HeightTextureSampler;
+float3 {DataInterfaceName}_HeightTextureLWCTile;
+float4x4 {DataInterfaceName}_HeightTextureWorldToUvTransform;
+float4 {DataInterfaceName}_HeightTextureUvScaleBias;
+float2 {DataInterfaceName}_HeightTextureWorldGridSize;
+float3 {DataInterfaceName}_SystemLWCTile;
+
+float2 GetHeightTextureUv_{DataInterfaceName}(float3 InWorldPos)
+{
+	const FLWCVector4 LwcWorldPos = MakeLWCVector4({DataInterfaceName}_SystemLWCTile, float4(InWorldPos, 1.0f));
+	const FLWCInverseMatrix LwcWorldToUv = MakeLWCInverseMatrix({DataInterfaceName}_HeightTextureLWCTile, {DataInterfaceName}_HeightTextureWorldToUvTransform);
+
+	float2 Uv = LWCMultiply(LwcWorldPos, LwcWorldToUv).xy;
+	Uv = Uv * {DataInterfaceName}_HeightTextureUvScaleBias.xy + {DataInterfaceName}_HeightTextureUvScaleBias.zw;
+
+	return Uv;
+}
+
+float GetHeight_{DataInterfaceName}(float3 InWorldPos)
+{
+	const float2 Uv = GetHeightTextureUv_{DataInterfaceName}(InWorldPos);
+
+	return {DataInterfaceName}_HeightTexture.SampleLevel({DataInterfaceName}_HeightTextureSampler, Uv, 0).x;
+}
+
+float3 GetNormal_{DataInterfaceName}(float3 InWorldPos)
+{
+	float3 Pos1 = InWorldPos;
+	float3 Pos2 = InWorldPos + float3(0, {DataInterfaceName}_HeightTextureWorldGridSize.y, 0);
+	float3 Pos3 = InWorldPos + float3({DataInterfaceName}_HeightTextureWorldGridSize.x, 0, 0);
+
+	const float2 Uv1 = GetHeightTextureUv_{DataInterfaceName}(Pos1);
+	const float2 Uv2 = GetHeightTextureUv_{DataInterfaceName}(Pos2);
+	const float2 Uv3 = GetHeightTextureUv_{DataInterfaceName}(Pos3);
+
+	Pos1.z = {DataInterfaceName}_HeightTexture.SampleLevel({DataInterfaceName}_HeightTextureSampler, Uv1, 0).x;
+	Pos2.z = {DataInterfaceName}_HeightTexture.SampleLevel({DataInterfaceName}_HeightTextureSampler, Uv2, 0).x;
+	Pos3.z = {DataInterfaceName}_HeightTexture.SampleLevel({DataInterfaceName}_HeightTextureSampler, Uv3, 0).x;
+
+	const float3 DeltaX = Pos2 - Pos1;
+	const float3 DeltaY = Pos3 - Pos1;
+
+	return normalize(cross(DeltaY, DeltaX));
+}

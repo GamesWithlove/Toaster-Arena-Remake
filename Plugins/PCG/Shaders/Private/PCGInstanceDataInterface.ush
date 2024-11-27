@@ -1,0 +1,60 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+#include "/Engine/Private/Common.ush"
+
+#define MAX_PRIMITIVES 256 // Should be the same as MAX_PRIMITIVE_COMPONENTS_PER_SPAWNER
+
+uint4 {DataInterfaceName}_PrimitiveParameters[MAX_PRIMITIVES]; // (NumInstancesAllocated, InstanceOffset, Unused, Unused)
+
+uint {DataInterfaceName}_NumPrimitives;
+uint {DataInterfaceName}_NumInstancesAllPrimitives;
+uint {DataInterfaceName}_NumCustomFloatsPerInstance;
+
+RWStructuredBuffer<uint4> {DataInterfaceName}_InstanceData;
+RWStructuredBuffer<uint> {DataInterfaceName}_InstanceCustomFloatData;
+RWStructuredBuffer<uint> {DataInterfaceName}_WriteCounters;
+
+uint InstanceData_GetNumPrimitives_{DataInterfaceName}()
+{
+	return {DataInterfaceName}_NumPrimitives;
+}
+
+uint InstanceData_GetNumInstancesAllPrimitives_{DataInterfaceName}()
+{
+	return {DataInterfaceName}_NumInstancesAllPrimitives;
+}
+
+int InstanceData_GetIndexToWriteTo_{DataInterfaceName}(uint InPrimitiveIndex)
+{
+	uint ValueBefore;
+	InterlockedAdd({DataInterfaceName}_WriteCounters[InPrimitiveIndex], 1u, ValueBefore);
+
+	const uint NumInstancesAllocated = {DataInterfaceName}_PrimitiveParameters[InPrimitiveIndex][0];
+	if (ValueBefore >= NumInstancesAllocated)
+	{
+		// All instances for this primitive have been written to.
+		return -1;
+	}
+
+	const uint InstanceOffset = {DataInterfaceName}_PrimitiveParameters[InPrimitiveIndex][1];
+	return (int)(ValueBefore + InstanceOffset);
+}
+
+void InstanceData_WriteInstanceLocalToWorld_{DataInterfaceName}(uint InInstanceIndex, float4x4 InLocalToRelativeWorld)
+{
+	InLocalToRelativeWorld = transpose(InLocalToRelativeWorld);
+	const uint StrideUint4s = 3;
+	{DataInterfaceName}_InstanceData[InInstanceIndex * StrideUint4s + 0] = asuint(InLocalToRelativeWorld[0]);
+	{DataInterfaceName}_InstanceData[InInstanceIndex * StrideUint4s + 1] = asuint(InLocalToRelativeWorld[1]);
+	{DataInterfaceName}_InstanceData[InInstanceIndex * StrideUint4s + 2] = asuint(InLocalToRelativeWorld[2]);
+}
+
+void InstanceData_WriteCustomFloat_{DataInterfaceName}(uint InInstanceIndex, uint InCustomFloatIndex, float InValue)
+{
+	{DataInterfaceName}_InstanceCustomFloatData[{DataInterfaceName}_NumCustomFloatsPerInstance * InInstanceIndex + InCustomFloatIndex] = asuint(InValue);
+}
+
+void InstanceData_WriteCustomFloatRaw_{DataInterfaceName}(uint InInstanceIndex, uint InCustomFloatIndex, uint InValueAsUint)
+{
+	{DataInterfaceName}_InstanceCustomFloatData[{DataInterfaceName}_NumCustomFloatsPerInstance * InInstanceIndex + InCustomFloatIndex] = InValueAsUint;
+}

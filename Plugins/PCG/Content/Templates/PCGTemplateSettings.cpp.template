@@ -1,0 +1,69 @@
+%COPYRIGHT_LINE%
+
+%MY_HEADER_INCLUDE_DIRECTIVE%
+#include "PCGContext.h"
+
+#define LOCTEXT_NAMESPACE "%UNPREFIXED_CLASS_NAME%Element"
+
+#if WITH_EDITOR
+// The label the node is known as internally.
+FName U%UNPREFIXED_CLASS_NAME%Settings::GetDefaultNodeName() const
+{
+	return FName(TEXT("%UNPREFIXED_CLASS_NAME%"));
+}
+
+// Default node name shown in the graph editor. Include spaces.
+FText U%UNPREFIXED_CLASS_NAME%Settings::GetDefaultNodeTitle() const
+{
+	return LOCTEXT("NodeTitle", "%UNPREFIXED_CLASS_NAME%");
+}
+
+// Default tooltip for the node
+FText U%UNPREFIXED_CLASS_NAME%Settings::GetNodeTooltipText() const
+{
+	return LOCTEXT("NodeTooltip", "Add tooltip here.");
+}
+#endif //WITH_EDITOR
+
+// Input/Output pin setup with specific properties, including:
+// Pin data type, allowing singular or multiple inputs per pin, and creating multiple in/out pins.
+TArray<FPCGPinProperties> U%UNPREFIXED_CLASS_NAME%Settings::InputPinProperties() const
+{
+	return Super::InputPinProperties();
+}
+
+TArray<FPCGPinProperties> U%UNPREFIXED_CLASS_NAME%Settings::OutputPinProperties() const
+{
+	return Super::OutputPinProperties();
+}
+
+// Creates the Element to be used for ExecuteInternal.
+FPCGElementPtr U%UNPREFIXED_CLASS_NAME%Settings::CreateElement() const
+{
+	return MakeShared<F%UNPREFIXED_CLASS_NAME%Element>();
+}
+
+/*
+* Processing function for this node. 
+* Context holds the InputData, containing the input data collection for this node 
+* and the OutputData, the output data collection to write to as output.
+* Returns true if the processing is done. 
+* Returning false will call back this function at next tick, and will call it until it returns true.
+* Settings contains all the setup options for this node, and if a property was marked PCG_Overridable, 
+* "Context->GetInputSettings" will contain the overridden value for this property if it is overridden
+*/ 
+bool F%UNPREFIXED_CLASS_NAME%Element::ExecuteInternal(FPCGContext* Context) const
+{
+	TRACE_CPUPROFILER_EVENT_SCOPE(F%UNPREFIXED_CLASS_NAME%Element::Execute);
+
+	check(Context);
+
+	const U%UNPREFIXED_CLASS_NAME%Settings* Settings = Context->GetInputSettings<U%UNPREFIXED_CLASS_NAME%Settings>();
+	check(Settings);
+
+	Context->OutputData = Context->InputData;
+
+	return true;
+}
+
+#undef LOCTEXT_NAMESPACE

@@ -1,0 +1,23 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+Texture2D {DataInterfaceName}_Texture;
+SamplerState {DataInterfaceName}_Sampler;
+
+float2 GetTexCoords_{DataInterfaceName}(float2 WorldPos, float2 Min, float2 Max)
+{
+	// Inverse lerp
+	const float2 Pos = WorldPos - Min;
+	const float2 Extents = Max - Min;
+
+	if (!all(Extents))
+	{
+		return (float2)0;
+	}
+
+	return Pos / Extents;
+}
+
+float4 Sample_{DataInterfaceName}(float2 TexCoords)
+{
+	return {DataInterfaceName}_Texture.SampleLevel({DataInterfaceName}_Sampler, TexCoords, 0);
+}
