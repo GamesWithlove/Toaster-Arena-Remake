@@ -7,10 +7,22 @@
     <projectFile>Intermediate/ProjectFiles/Toaster_reboot.vcxproj</projectFile>
     <projectFile>Intermediate/ProjectFiles/UE5.vcxproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d8c8bb47-15b7-4fdd-a068-cf0bf5070a75" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Toaster_reboot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Toaster_reboot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toaster_reboot.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Toaster_reboot.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/AI_systems/Controllers/AI_controller_base/AI_Base_controller.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/AI_systems/Controllers/AI_controller_base/AI_Base_controller.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Chars/characters/base_character/SingleplayerEnemies/BP_AI_S_Ally_Pirate_shotgun_Shields.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Chars/characters/base_character/SingleplayerEnemies/BP_AI_S_Ally_Pirate_shotgun_Shields.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Chars/characters/base_character/root/Character_base.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Chars/characters/base_character/root/Character_base.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/DataAsset_Function.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/DataAsset_Function.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Game_systems/Respawn_pawn.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Game_systems/Respawn_pawn.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Map_scripting/AI_spawnner_Simple.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Map_scripting/AI_spawnner_Simple.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Widgets/Menus/RCON/Rcon_main_menu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Widgets/Menus/RCON/Rcon_main_menu.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Event_maps/NewShootingRange/LVL_ShootingRangeNew.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Event_maps/NewShootingRange/LVL_ShootingRangeNew.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Models/General_Hero/Props/Rail/MI_Rail.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Models/General_Hero/Props/Rail/MI_Rail.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toaster_reboot.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Toaster_reboot.sln.DotSettings.user" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,28 +32,36 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://C:/Unreal/UE_5.5/Engine/Source/Runtime/Core/Public/Containers/UnrealString.h.inl" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://C:/Unreal/UE_5.5/Engine/Source/Runtime/Engine/Classes/AI/Navigation/NavigationElement.h" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2pRAgq6KFKrRxYBeeY6oHxESXEv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "ue5.5-upgrade",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;C++ Project.Toaster_reboot.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;ue5.5-upgrade&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="C++ Project.Toaster_reboot">
     <configuration name="Toaster_reboot" type="CppProject" factoryName="C++ Project">
       <configuration_1>
@@ -477,7 +497,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732718628865</updated>
-      <workItem from="1732718630006" duration="419000" />
+      <workItem from="1732718630006" duration="526000" />
+      <workItem from="1732720325465" duration="359000" />
+      <workItem from="1732721658420" duration="678000" />
+      <workItem from="1732730616748" duration="587000" />
     </task>
     <servers />
   </component>

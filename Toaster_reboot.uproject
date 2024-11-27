@@ -313,7 +313,7 @@
 		},
 		{
 			"Name": "PCG",
-			"Enabled": false
+			"Enabled": true
 		},
 		{
 			"Name": "PTMTool",
@@ -385,6 +385,10 @@
 				"Mac",
 				"Linux"
 			]
+		},
+		{
+			"Name": "PCGExternalDataInterop",
+			"Enabled": true
 		}
 	]
 }

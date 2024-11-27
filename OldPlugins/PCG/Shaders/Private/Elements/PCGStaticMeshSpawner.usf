@@ -1,0 +1,192 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+
+// Static mesh spawner kernel. Selects a primitive either using a primitive cumulative distribution function (CDF) or by an attribute, and packs attributes in custom floats.
+// Passes through points to output.
+
+// When spawning by attribute, we don't know in advance how many instances of each mesh will be spawned, so the worst case NumPoints * NumPrims is allocated in the GPU Scene.
+
+#include "/Engine/Private/ComputeShaderUtils.ush"
+#include "/Engine/Private/Quaternion.ush"
+#include "/Plugin/PCG/Private/PCGShaderUtils.ush"
+
+// TODO: should be code-gen'd from PCGComputeCommon.h
+#define MAX_NUM_ATTRS 128
+#define NUM_RESERVED_ATTRS 32
+
+void CopyAttributesToOutput(uint In_DataIndex, uint In_ElementIndex, uint Out_DataIndex, uint Out_ElementIndex);
+
+[numthreads(64, 1, 1)]
+void Main(uint3 GroupId : SV_GroupID, uint GroupIndex : SV_GroupIndex)
+{
+	// Mark the kernel as having executed. Must run before we early out via thread index, because the kernel is still 'executed' even if the number of
+	// threads to iterate on is zero. Even if GetNumThreads() returns 0, the kernel will still have been dispatched on a single thread to set this flag.
+	if (all(GroupId == 0) && GroupIndex == 0)
+	{
+		Out_SetAsExecutedInternal();
+	}
+
+	const uint ThreadIndex = GetUnWrappedDispatchThreadId(GroupId, GroupIndex, 64);
+	if (ThreadIndex >= InstanceData_GetNumInstancesAllPrimitives())
+	{
+		return;
+	}
+
+	uint In_DataIndex, In_ElementIndex;
+	if (!In_GetThreadData(ThreadIndex, In_DataIndex, In_ElementIndex))
+	{
+		return;
+	}
+
+	const int NumPrimitives = InstanceData_GetNumPrimitives();
+
+	uint PrimitiveIndex = 0;
+
+	if (NumPrimitives > 1)
+	{
+		const uint SelectorAttributeId = SMSpawner_GetSelectorAttributeId();
+		
+		if (SelectorAttributeId != (uint)-1)
+		{
+			// Select using string key
+			const int MeshStringKey = In_GetStringKey(In_DataIndex, In_ElementIndex, SelectorAttributeId);
+			PrimitiveIndex = SMSpawner_GetPrimitiveIndexFromStringKey(MeshStringKey);
+		}
+		else
+		{
+			// Randomly select a primitive by inverting the cumulative distribution function.
+			
+			// Exactly matches UPCGBlueprintHelpers::GetRandomStreamFromPoint - three seeds passed in to consecutive arguments of ComputeSeed
+			// (argument count & order matters).
+			const uint SeedPoint = In_GetSeed(In_DataIndex, In_ElementIndex);
+			const uint SeedSettings = GetSettingsSeed();
+			const uint SeedComponent = GetComponentSeed();
+			uint Seed = ComputeSeed(SeedPoint, SeedSettings, SeedComponent);
+
+			const float RandomDraw = FRand(Seed);
+
+			for (; PrimitiveIndex < uint(NumPrimitives) - 1; ++PrimitiveIndex)
+			{
+				if (RandomDraw < SMSpawner_GetPrimitiveSelectionCDF(PrimitiveIndex))
+				{
+					break;
+				}
+			}
+		}
+	}
+
+	uint Out_DataIndex, Out_ElementIndex;
+	if (!Out_GetThreadData(ThreadIndex, Out_DataIndex, Out_ElementIndex))
+	{
+		// Should never happen.
+		return;
+	}
+
+	if (In_IsPointRemoved(In_DataIndex, In_ElementIndex))
+	{
+		// Propagate the 'Removed' status to the output point if input point is removed. Otherwise, this point will not be culled.
+		Out_RemovePoint(Out_DataIndex, Out_ElementIndex);
+
+		return;
+	}
+
+	// Get instance index to write to. Will return a negative value if we have saturated instances for this primitive, in which case we will not push the data.
+	const int InstanceIndexInt = InstanceData_GetIndexToWriteTo(PrimitiveIndex);
+
+	// Write instance transform, only if not culled by primitive instance index
+	if(InstanceIndexInt >= 0)
+	{
+		const uint InstanceIndex = InstanceIndexInt;
+		const float4x4 Transform = In_GetPointTransform(In_DataIndex, In_ElementIndex);
+		InstanceData_WriteInstanceLocalToWorld(InstanceIndex, transpose(Transform));
+
+		// Write instance custom float data.
+		const uint NumAttributes = SMSpawner_GetNumAttributes();
+		for (uint AttributeIndex = 0; AttributeIndex < NumAttributes; ++AttributeIndex)
+		{
+			const uint4 AttributeIdOffsetStride = SMSpawner_GetAttributeIdOffsetStride(AttributeIndex);
+			const uint AttributeId = AttributeIdOffsetStride[0];
+			const uint AttributeOffset = AttributeIdOffsetStride[1];
+			const uint AttributeStride = AttributeIdOffsetStride[2];
+
+			for (uint FloatIndex = 0; FloatIndex < AttributeStride; ++FloatIndex)
+			{
+				const uint AttributeValueAddress = In_GetElementAddressInternal(In_DataIndex, In_ElementIndex, AttributeId);
+				// Assumes floating point data. TODO add type information and deal with different types in different ways?
+				InstanceData_WriteCustomFloatRaw(InstanceIndex, AttributeOffset + FloatIndex, In_LoadBufferInternal(AttributeValueAddress + 4 * FloatIndex));
+			}
+		}
+	}
+
+	// Write output point data (pass through).
+	Out_SetPosition(Out_DataIndex, Out_ElementIndex, In_GetPosition(In_DataIndex, In_ElementIndex));
+	Out_SetRotation(Out_DataIndex, Out_ElementIndex, In_GetRotation(In_DataIndex, In_ElementIndex));
+	Out_SetScale(Out_DataIndex, Out_ElementIndex, In_GetScale(In_DataIndex, In_ElementIndex));
+	Out_SetColor(Out_DataIndex, Out_ElementIndex, In_GetColor(In_DataIndex, In_ElementIndex));
+	Out_SetSeed(Out_DataIndex, Out_ElementIndex, In_GetSeed(In_DataIndex, In_ElementIndex));
+	Out_SetDensity(Out_DataIndex, Out_ElementIndex, In_GetDensity(In_DataIndex, In_ElementIndex));
+	Out_SetSteepness(Out_DataIndex, Out_ElementIndex, In_GetSteepness(In_DataIndex, In_ElementIndex));
+
+	// Either apply SM bounds to points or pass bounds through.
+	if (SMSpawner_ShouldApplyBounds())
+	{
+		Out_SetBoundsMin(Out_DataIndex, Out_ElementIndex, SMSpawner_GetPrimitiveMeshBoundsMin(PrimitiveIndex));
+		Out_SetBoundsMax(Out_DataIndex, Out_ElementIndex, SMSpawner_GetPrimitiveMeshBoundsMax(PrimitiveIndex));
+	}
+	else
+	{
+		Out_SetBoundsMin(Out_DataIndex, Out_ElementIndex, In_GetBoundsMin(In_DataIndex, In_ElementIndex));
+		Out_SetBoundsMax(Out_DataIndex, Out_ElementIndex, In_GetBoundsMax(In_DataIndex, In_ElementIndex));
+	}
+
+	CopyAttributesToOutput(In_DataIndex, In_ElementIndex, Out_DataIndex, Out_ElementIndex);
+
+	if (SMSpawner_GetSelectedMeshAttributeId() != (uint)-1)
+	{
+		const int OutputMeshStringKey = SMSpawner_GetPrimitiveStringKey(PrimitiveIndex);
+		Out_SetStringKey(Out_DataIndex, Out_ElementIndex, SMSpawner_GetSelectedMeshAttributeId(), OutputMeshStringKey);
+	}
+}
+
+// TODO pass in attribute IDs to copy.
+void CopyAttributesToOutput(uint In_DataIndex, uint In_ElementIndex, uint Out_DataIndex, uint Out_ElementIndex)
+{
+	const uint NumAttributes = Out_GetDataNumAttributesInternal(Out_DataIndex);
+	uint NumAttributesProcessed = 0;
+	
+	for (int AttributeId = NUM_RESERVED_ATTRS; AttributeId < MAX_NUM_ATTRS; ++AttributeId)
+	{
+		const uint Out_Stride = Out_GetAttributeStrideInternal(Out_DataIndex, AttributeId);
+		
+		if (Out_Stride == 0)
+		{
+			// No output attribute to write to.
+			continue;
+		}
+		
+		const uint In_Stride = In_GetAttributeStrideInternal(In_DataIndex, AttributeId);
+		const uint Out_ElementAddress = Out_GetElementAddressInternal(Out_DataIndex, Out_ElementIndex, AttributeId);
+		
+		if (In_Stride == Out_Stride)
+		{
+			const uint In_ElementAddress = In_GetElementAddressInternal(In_DataIndex, In_ElementIndex, AttributeId);
+			
+			for (uint Offset = 0; Offset < Out_Stride; Offset += 4)
+			{
+				Out_StoreBufferInternal(Out_ElementAddress + Offset, In_LoadBufferInternal(In_ElementAddress + Offset));
+			}
+		}
+		else
+		{
+			for (uint Offset = 0; Offset < Out_Stride; Offset += 4)
+			{
+				// Initialize output data (only header part of buffer will be initialized).
+				Out_StoreBufferInternal(Out_ElementAddress + Offset, 0u);
+			}
+		}
+		
+		if (++NumAttributesProcessed >= NumAttributes)
+		{
+			break; // We can early-out when we've looked at all the possible attributes
+		}
+	}
+}
