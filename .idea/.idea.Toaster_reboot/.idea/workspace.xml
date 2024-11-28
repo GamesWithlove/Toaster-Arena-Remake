@@ -13,7 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="28a9f18f-bd4a-4d1d-bf26-b18bffaf4334" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Toaster_reboot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Toaster_reboot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toaster_reboot.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/Toaster_reboot.uproject" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://C:/Unreal/UE_5.5/Engine/Source/Runtime/Engine/Classes/Sound/SoundWave.h" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="Toolset" />
@@ -486,6 +488,9 @@
       <updated>1732751055108</updated>
       <workItem from="1732751056820" duration="913000" />
       <workItem from="1732752098335" duration="2004000" />
+      <workItem from="1732806346593" duration="1524000" />
+      <workItem from="1732810975654" duration="89000" />
+      <workItem from="1732811895588" duration="61000" />
     </task>
     <servers />
   </component>
