@@ -389,6 +389,10 @@
 		{
 			"Name": "PCGExternalDataInterop",
 			"Enabled": true
+		},
+		{
+			"Name": "Mutable",
+			"Enabled": true
 		}
 	]
 }
