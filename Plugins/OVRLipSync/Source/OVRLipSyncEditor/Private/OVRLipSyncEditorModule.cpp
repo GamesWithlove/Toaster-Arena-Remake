@@ -58,7 +58,7 @@ bool DecompressSoundWave(USoundWave *SoundWave)
 
 	AudioDevice->StopAllSounds(true);
 	auto OriginalDecompressionType = SoundWave->DecompressionType;
-//	SoundWave->DecompressionType = DTYPE_Native;
+	SoundWave->DecompressionType = DTYPE_Xenon;
 //	if (SoundWave->InitAudioResource(AudioDevice->GetRuntimeFormat(SoundWave)))
 	{
 #if UE_VERSION_OLDER_THAN(4, 22, 0)
