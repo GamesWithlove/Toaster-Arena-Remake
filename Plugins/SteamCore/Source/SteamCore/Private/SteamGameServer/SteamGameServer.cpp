@@ -328,12 +328,21 @@ FSteamTicketHandle USteamGameServer::GetAuthSessionTicket(TArray<uint8>& Ticket)
 	Ticket.Empty();
 
 #if ENABLE_STEAMCORE
+#if UE_VERSION_OLDER_THAN(5,4,0)
 	if (SteamGameServer())
 	{
 		uint32 TicketSize = 0;
 		TicketHandle = SteamGameServer()->GetAuthSessionTicket(Ticket.GetData(), 8192, &TicketSize);
 		Ticket.SetNum(TicketSize);
 	}
+#else
+	if (SteamGameServer())
+	{
+		uint32 TicketSize = 0;
+		TicketHandle = SteamGameServer()->GetAuthSessionTicket(Ticket.GetData(), 8192, &TicketSize, nullptr);
+		Ticket.SetNum(TicketSize);
+	}
+#endif
 #endif
 	
 	return TicketHandle;

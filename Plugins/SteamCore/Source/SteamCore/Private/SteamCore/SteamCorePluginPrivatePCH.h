@@ -28,7 +28,11 @@
 #include <Interfaces/IPv4/IPv4Address.h>
 #include <TimerManager.h>
 #include <Net/OnlineBlueprintCallProxyBase.h>
+#if UE_VERSION_NEWER_THAN(5,2,1)
+#include <FindSessionsCallbackProxy.h>
+#else
 #include <OnlineSubsystemUtils/Classes/FindSessionsCallbackProxy.h>
+#endif
 #include <SocketSubsystem.h>
 #include <Kismet/KismetSystemLibrary.h>
 #include <Async/Async.h>

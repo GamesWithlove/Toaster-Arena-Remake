@@ -256,6 +256,7 @@ FSteamTicketHandle UUser::GetAuthSessionTicket(TArray<uint8>& OutTicket)
 	OutTicket.Empty();
 
 #if ENABLE_STEAMCORE
+#if UE_VERSION_OLDER_THAN(5,4,0)
 	if (SteamUser())
 	{
 		uint32 TicketSize = 0;
@@ -264,6 +265,16 @@ FSteamTicketHandle UUser::GetAuthSessionTicket(TArray<uint8>& OutTicket)
 
 		OutTicket.SetNum(TicketSize);
 	}
+#else
+	if (SteamUser())
+	{
+		uint32 TicketSize = 0;
+		OutTicket.SetNum(8192);
+		Result = SteamUser()->GetAuthSessionTicket(OutTicket.GetData(), 8192, &TicketSize, nullptr);
+
+		OutTicket.SetNum(TicketSize);
+	}
+#endif
 #endif
 
 	return Result;

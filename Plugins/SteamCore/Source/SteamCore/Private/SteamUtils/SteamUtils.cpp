@@ -370,8 +370,11 @@ bool UUtils::GetEnteredGamepadTextInput(FString& OutText)
 	{
 		TArray<char> DataArray;
 		uint32 Length = GetUtils()->GetEnteredGamepadTextLength();
-
+		LogVerbose("GetEnteredGamepadTextLength (%i)", Length);
+		
+		DataArray.SetNum(Length);
 		bResult = GetUtils()->GetEnteredGamepadTextInput(DataArray.GetData(), Length);
+		LogVerbose("GetEnteredGamepadTextInput result: (%d), DataArray length: (%i)", bResult, DataArray.Num());
 
 		if (bResult)
 		{

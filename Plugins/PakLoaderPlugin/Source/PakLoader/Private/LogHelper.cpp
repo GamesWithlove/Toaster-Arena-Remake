@@ -1,4 +1,4 @@
-// Copyright (C) 2019-2023 Blue Mountains GmbH. All Rights Reserved.
+// Copyright (C) 2019-2024 Blue Mountains GmbH. All Rights Reserved.
 
 #include "LogHelper.h"
 #include "PakLoaderModule.h"

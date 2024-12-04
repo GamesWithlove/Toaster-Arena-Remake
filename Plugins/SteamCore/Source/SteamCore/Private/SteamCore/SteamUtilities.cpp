@@ -121,8 +121,9 @@ FSteamInventoryUpdateHandle USteamUtilities::MakeInventoryUpdateHandle(FString V
 	uint64 TempId = 0;
 	LexFromString(TempId, *Value);
 	return FSteamInventoryUpdateHandle(TempId);
-#endif
+#else
 	return FSteamInventoryUpdateHandle();
+#endif
 }
 
 FSteamTicketHandle USteamUtilities::MakeTicketHandle(FString Value)
@@ -389,7 +390,7 @@ bool USteamUtilities::K2_IsPlayerInSession(int32 LocalUserNum)
 
 	if (SteamSubsystem && SteamSubsystem->GetSessionInterface())
 	{
-		const FUniqueNetIdPtr UserId = SteamSubsystem->GetIdentityInterface()->GetUniquePlayerId(LocalUserNum);
+		const auto UserId = SteamSubsystem->GetIdentityInterface()->GetUniquePlayerId(LocalUserNum);
 		return SteamSubsystem->GetSessionInterface()->IsPlayerInSession(NAME_GameSession, *UserId);
 	}
 #endif

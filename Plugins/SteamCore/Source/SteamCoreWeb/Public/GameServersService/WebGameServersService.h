@@ -101,10 +101,10 @@ public:
 	* @param	Key				Steamworks Web API publisher authentication Key.
 	* @param	SteamId			
 	* @param	bBanned			
-	* @param	banSeconds		
+	* @param	BanSeconds		
 	*/
 	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|GameServersService")
-	void SetBanStatus(const FOnSteamCoreWebCallback& Callback, FString Key, FString SteamId, bool bBanned, int32 banSeconds);
+	void SetBanStatus(const FOnSteamCoreWebCallback& Callback, FString Key, FString SteamId, bool bBanned, int32 BanSeconds);
 
 	/**
 	* Gets a list of server SteamIDs given a list of IPs
@@ -113,7 +113,7 @@ public:
 	* @param	ServerIp
 	*/
 	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|GameServersService")
-	void GetServerSteamIDsByIP(const FOnSteamCoreWebCallback& Callback, FString Key, FString ServerIp);
+	void GetServerSteamIdsByIP(const FOnSteamCoreWebCallback& Callback, FString Key, FString ServerIp);
 
 	/**
 	* Gets a list of server IP addresses given a list of SteamIDs
@@ -122,5 +122,5 @@ public:
 	* @param	ServerSteamId
 	*/
 	UFUNCTION(BlueprintCallable, Category = "SteamCoreWeb|GameServersService")
-	void GetServerIPsBySteamID(const FOnSteamCoreWebCallback& Callback, FString Key, FString ServerSteamId);
+	void GetServerIPsBySteamId(const FOnSteamCoreWebCallback& Callback, FString Key, FString ServerSteamId);
 };

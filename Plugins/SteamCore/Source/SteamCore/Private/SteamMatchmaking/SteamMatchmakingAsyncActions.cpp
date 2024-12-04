@@ -164,11 +164,7 @@ USteamCoreCreateSession* USteamCoreCreateSession::CreateSteamCoreSession(UObject
 			FOnlineSessionSetting Setting;
 			Setting.AdvertisementType = EOnlineDataAdvertisementType::ViaOnlineService;
 
-			if (Element.Value.m_Data.IsType<bool>())
-			{
-				Setting.Data.SetValue(Element.Value.m_Data.Get<bool>() ? 1 : 0);
-			}
-			else if (Element.Value.m_Data.IsType<int32>())
+			if (Element.Value.m_Data.IsType<int32>())
 			{
 				Setting.Data.SetValue(Element.Value.m_Data.Get<int32>());
 			}
@@ -381,11 +377,6 @@ void USteamCoreFindSession::OnCompleted(bool bSuccessful)
 
 						switch (SettingsElement.Value.Data.GetType())
 						{
-						case EOnlineKeyValuePairDataType::Bool:
-							bool bValue;
-							SettingsElement.Value.Data.GetValue(bValue);
-							Setting.m_Data.Set<bool>(bValue);
-							break;
 						case EOnlineKeyValuePairDataType::Int32:
 							int32 IntValue;
 							SettingsElement.Value.Data.GetValue(IntValue);
@@ -506,23 +497,7 @@ void USteamCoreDestroySession::OnCompleted(FName sessionName, bool bWasSuccessfu
 		}
 	}
 
-	if (!IsInGameThread())
-	{
-		FFunctionGraphTask::CreateAndDispatchWhenReady([=]()
-		{
-			if (bWasSuccessful)
-			{
-				OnSuccess.Broadcast();
-			}
-			else
-			{
-				OnFailure.Broadcast();
-			}
-
-			SetReadyToDestroy();
-		}, TStatId(), nullptr, ENamedThreads::GameThread);
-	}
-	else
+	AsyncTask(ENamedThreads::GameThread, [this, bWasSuccessful]()
 	{
 		if (bWasSuccessful)
 		{
@@ -534,7 +509,7 @@ void USteamCoreDestroySession::OnCompleted(FName sessionName, bool bWasSuccessfu
 		}
 
 		SetReadyToDestroy();
-	}
+	});
 }
 
 USteamCoreUpdateSession::USteamCoreUpdateSession()
@@ -542,7 +517,7 @@ USteamCoreUpdateSession::USteamCoreUpdateSession()
 {
 }
 
-USteamCoreUpdateSession* USteamCoreUpdateSession::UpdateSteamCoreSession(UObject* WorldContextObject, TMap<FString, FSteamSessionSearchSetting> Settings, FString SessionName, int32 MaxPlayers)
+USteamCoreUpdateSession* USteamCoreUpdateSession::UpdateSteamCoreSession(UObject* WorldContextObject, TMap<FString, FSteamSessionSetting> Settings, FString SessionName, int32 MaxPlayers)
 {
 	LogVerbose("");
 

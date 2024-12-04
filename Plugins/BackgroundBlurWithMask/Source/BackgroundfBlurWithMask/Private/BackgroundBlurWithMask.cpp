@@ -248,39 +248,47 @@ void UBackgroundBlurWithMask::Tick(float DeltaTime)
 
 void UBackgroundBlurWithMask::RedrawMaskMaterial()
 {
-	if (!MaskMaterialRenderTarget)
-	{
-		MaskMaterialRenderTarget = NewObject<UTextureRenderTarget2D>();
-		MaskMaterialRenderTarget->ClearColor = FLinearColor::Transparent;
-		MaskMaterialRenderTarget->TargetGamma = 0.0f;// 2.2f;
-		MaskMaterialRenderTarget->SRGB = false;
-
-		FIntPoint RenderTargetSize = MaskMaterialSetting.ToTextureSize;
-		MaskMaterialRenderTarget->InitCustomFormat(RenderTargetSize.X, RenderTargetSize.Y, EPixelFormat::PF_B8G8R8A8, false);
-		
-		//MaskMaterialRenderTarget = LoadObject<UTextureRenderTarget2D>(nullptr, TEXT("/BackgroundBlurWithMask/RT_Test.RT_Test"), nullptr, LOAD_None, nullptr);
-		/*if (MaskMaterialRenderTarget)
-		{
-			MaskMaterialRenderTarget->ResizeTarget(RenderTargetSize.X, RenderTargetSize.Y);
-		}*/
-		
-		if (MyBackgroundBlur.IsValid() && bUseMaskMaterial)
-		{
-			MyBackgroundBlur->SetMaskTexture(MaskMaterialRenderTarget);
-			MyBackgroundBlur->SetMaskRevertAlpha(true);
-		}
-	}
-
 	UWorld* World = GEngine->GetWorldFromContextObject(this, EGetWorldErrorMode::ReturnNull);
-	if (MaskMaterialRenderTarget 
-		&& MaskMaterialSetting.MaskMaterial 
-		&& World)
+	if (World)
 	{
-		// Clear
-		UKismetRenderingLibrary::ClearRenderTarget2D(this, MaskMaterialRenderTarget, FLinearColor::Black);
+		if (!MaskMaterialRenderTarget)
+		{
+			//MaskMaterialRenderTarget = NewObject<UTextureRenderTarget2D>();
+			//MaskMaterialRenderTarget->ClearColor = FLinearColor::Transparent;
+			//MaskMaterialRenderTarget->TargetGamma = 0.0f;// 2.2f;
+			//MaskMaterialRenderTarget->SRGB = false;
 
-		// Draw
-		UKismetRenderingLibrary::DrawMaterialToRenderTarget(this, MaskMaterialRenderTarget, MaskMaterialSetting.MaskMaterial);
+			FIntPoint RenderTargetSize = MaskMaterialSetting.ToTextureSize;
+			//MaskMaterialRenderTarget->InitCustomFormat(RenderTargetSize.X, RenderTargetSize.Y, EPixelFormat::PF_B8G8R8A8, false);
+
+			//MaskMaterialRenderTarget = LoadObject<UTextureRenderTarget2D>(nullptr, TEXT("/BackgroundBlurWithMask/RT_Test.RT_Test"), nullptr, LOAD_None, nullptr);
+			/*if (MaskMaterialRenderTarget)
+			{
+				MaskMaterialRenderTarget->ResizeTarget(RenderTargetSize.X, RenderTargetSize.Y);
+			}*/
+			MaskMaterialRenderTarget = UKismetRenderingLibrary::CreateRenderTarget2D(this, RenderTargetSize.X, RenderTargetSize.Y, ETextureRenderTargetFormat::RTF_RGBA8, FLinearColor::Transparent, false, false);
+
+
+			if (MaskMaterialRenderTarget && MyBackgroundBlur.IsValid() && bUseMaskMaterial)
+			{
+				MyBackgroundBlur->SetMaskTexture(MaskMaterialRenderTarget);
+				MyBackgroundBlur->SetMaskRevertAlpha(true);
+			}
+			else
+			{
+				MaskMaterialRenderTarget = nullptr;
+			}
+		}
+
+		if (MaskMaterialRenderTarget
+			&& MaskMaterialSetting.MaskMaterial)
+		{
+			// Clear
+			UKismetRenderingLibrary::ClearRenderTarget2D(this, MaskMaterialRenderTarget, FLinearColor::Black);
+
+			// Draw
+			UKismetRenderingLibrary::DrawMaterialToRenderTarget(this, MaskMaterialRenderTarget, MaskMaterialSetting.MaskMaterial);
+		}
 	}
 }
 

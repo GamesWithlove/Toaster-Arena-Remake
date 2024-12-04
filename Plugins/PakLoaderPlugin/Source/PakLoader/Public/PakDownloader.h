@@ -1,4 +1,4 @@
-// Copyright (C) 2019-2023 Blue Mountains GmbH. All Rights Reserved.
+// Copyright (C) 2019-2024 Blue Mountains GmbH. All Rights Reserved.
 
 #pragma once
 
@@ -42,6 +42,8 @@ protected:
 private:
 	void HandleDownloadComplete(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded);
 	void HandleDownloadProgress(FHttpRequestPtr InRequest, int32 bytesSent, int32 bytesReceived);
+
+	static bool IsHttpUrl(const FString& URL);
 
 	FString SaveFilePath;
 };

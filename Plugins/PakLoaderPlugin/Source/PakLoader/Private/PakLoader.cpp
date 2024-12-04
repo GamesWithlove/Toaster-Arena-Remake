@@ -1,4 +1,4 @@
-// Copyright (C) 2019-2023 Blue Mountains GmbH. All Rights Reserved.
+// Copyright (C) 2019-2024 Blue Mountains GmbH. All Rights Reserved.
 
 #include "PakLoader.h"
 #include "PakLoaderModule.h"
@@ -390,15 +390,14 @@ void FPakLoader::LoadAssetRegistryFile(const FString &AssetRegistryFile)
 		{
 			SerializedAssetData.Seek(0);
 
-			static const FName AssetRegistryModuleName(TEXT("AssetRegistry"));
-			FAssetRegistryModule& AssetRegistryModule = FModuleManager::LoadModuleChecked<FAssetRegistryModule>(AssetRegistryModuleName);
+			IAssetRegistry& AssetRegistry = FModuleManager::LoadModuleChecked<FAssetRegistryModule>(AssetRegistryConstants::ModuleName).Get();
 
 #if ENGINE_MINOR_VERSION >= 27 || ENGINE_MAJOR_VERSION == 5
 			FAssetRegistryState PakState;
 			PakState.Load(SerializedAssetData);
-			AssetRegistryModule.Get().AppendState(PakState);
+			AssetRegistry.AppendState(PakState);
 #else
-			AssetRegistryModule.Get().Serialize(SerializedAssetData);
+			AssetRegistry.Serialize(SerializedAssetData);
 #endif
 		}
 	}

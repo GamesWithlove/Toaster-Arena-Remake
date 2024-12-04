@@ -9,9 +9,13 @@
 #include "SteamMatchmakingTypes.h"
 #include "SteamCore/SteamCoreAsync.h"
 #include "Net/OnlineBlueprintCallProxyBase.h"
-#include "Public/OnlineSessionSettings.h"
+#include <OnlineSessionSettings.h>
 #include "Interfaces/OnlineSessionInterface.h"
-#include "OnlineSubsystemUtils/Classes/FindSessionsCallbackProxy.h"
+#if UE_VERSION_NEWER_THAN(5,2,1)
+#include <FindSessionsCallbackProxy.h>
+#else
+#include <OnlineSubsystemUtils/Classes/FindSessionsCallbackProxy.h>
+#endif
 #include "SteamMatchmakingAsyncActions.generated.h"
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -240,7 +244,7 @@ public:
 	USteamCoreUpdateSession();
 
 	UFUNCTION(BlueprintCallable, meta = (WorldContext = "WorldContextObject", BlueprintInternalUseOnly="true"), Category = "SteamCore|Matchmaking|Async")
-	static USteamCoreUpdateSession* UpdateSteamCoreSession(UObject* WorldContextObject, TMap<FString, FSteamSessionSearchSetting> Settings, FString SessionName = "SteamCoreSession", int32 MaxPlayers = 4);
+	static USteamCoreUpdateSession* UpdateSteamCoreSession(UObject* WorldContextObject, TMap<FString, FSteamSessionSetting> Settings, FString SessionName = "SteamCoreSession", int32 MaxPlayers = 4);
 protected:
 	UObject* m_WorldContextObject;
 private:

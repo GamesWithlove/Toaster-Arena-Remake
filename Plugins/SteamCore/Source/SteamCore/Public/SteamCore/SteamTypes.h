@@ -11,7 +11,11 @@
 #include "OnlineSubsystemNames.h"
 #include "OnlineSubsystemTypes.h"
 #include <Misc/TVariant.h>
+#if UE_VERSION_NEWER_THAN(5,2,1)
 #include <FindSessionsCallbackProxy.h>
+#else
+#include <OnlineSubsystemUtils/Classes/FindSessionsCallbackProxy.h>
+#endif
 #include "SteamTypes.generated.h"
 
 DECLARE_LOG_CATEGORY_EXTERN(LogSteamCore, Log, All);
@@ -32,7 +36,6 @@ enum class ESteamAttributeType : uint8
 {
 	NOT_SET,
 	INTEGER,
-	BOOL,
 	STRING
 };
 
@@ -696,7 +699,6 @@ static ESteamResult _SteamResult(EResult result)
 		return ESteamResult::None;
 		break;
 	}
-	return ESteamResult::None;
 }
 #endif
 
@@ -1061,11 +1063,6 @@ public:
 	FSteamSessionSetting()
 	{
 	};
-
-	FSteamSessionSetting(bool bValue)
-	{
-		m_Data.Set<bool>(bValue);
-	}
 
 	FSteamSessionSetting(int32 Value)
 	{

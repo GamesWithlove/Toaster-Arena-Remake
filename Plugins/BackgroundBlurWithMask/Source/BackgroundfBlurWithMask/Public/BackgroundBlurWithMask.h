@@ -166,6 +166,6 @@ protected:
 	TSharedPtr<class SBackgroundBlurWithMask> MyBackgroundBlur;
 
 	UPROPERTY(Transient)
-		UTextureRenderTarget2D* MaskMaterialRenderTarget = nullptr;
+		TObjectPtr<UTextureRenderTarget2D> MaskMaterialRenderTarget = nullptr;
 
 };

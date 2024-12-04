@@ -1,10 +1,10 @@
-// Copyright (C) 2019-2023 Blue Mountains GmbH. All Rights Reserved.
+// Copyright (C) 2019-2024 Blue Mountains GmbH. All Rights Reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "IPlatformFilePak.h"
-#include "HAL/PlatformFileManager.h"
+#include "HAL/PlatformFilemanager.h"
 #include "Runtime/Launch/Resources/Version.h"
 #include "Misc/PackageName.h"
 

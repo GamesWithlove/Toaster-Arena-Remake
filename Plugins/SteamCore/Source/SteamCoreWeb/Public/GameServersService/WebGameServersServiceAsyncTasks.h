@@ -156,33 +156,33 @@ private:
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		FOnlineAsyncTaskSteamCoreWebGetServerSteamIDsByIP
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-class FOnlineAsyncTaskSteamCoreWebGetServerSteamIDsByIP : public FOnlineAsyncTaskSteamCoreWeb
+class FOnlineAsyncTaskSteamCoreWebGetServerSteamIdsByIP : public FOnlineAsyncTaskSteamCoreWeb
 {
 public:
-	FOnlineAsyncTaskSteamCoreWebGetServerSteamIDsByIP(USteamCoreWebSubsystem* Subsystem, const FOnSteamCoreWebCallback& Callback, FString Key, FString serverIP)
+	FOnlineAsyncTaskSteamCoreWebGetServerSteamIdsByIP(USteamCoreWebSubsystem* Subsystem, const FOnSteamCoreWebCallback& Callback, FString Key, FString serverIP)
 		: FOnlineAsyncTaskSteamCoreWeb(Subsystem, Callback, "IGameServersService", "GetServerSteamIDsByIP", Key, 1, EVerb::GET)
 	{
 		m_RequestString.AddStringField("server_ips", serverIP);
 	}
 
 private:
-	FOnlineAsyncTaskSteamCoreWebGetServerSteamIDsByIP() = delete;
+	FOnlineAsyncTaskSteamCoreWebGetServerSteamIdsByIP() = delete;
 	virtual FString ToString() const override { return FString::Printf(TEXT("FOnlineAsyncTaskSteamCoreWebGetServerSteamIDsByIP")); }
 };
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		FOnlineAsyncTaskSteamCoreWebGetServerIPsBySteamID
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
-class FOnlineAsyncTaskSteamCoreWebGetServerIPsBySteamID : public FOnlineAsyncTaskSteamCoreWeb
+class FOnlineAsyncTaskSteamCoreWebGetServerIPsBySteamId : public FOnlineAsyncTaskSteamCoreWeb
 {
 public:
-	FOnlineAsyncTaskSteamCoreWebGetServerIPsBySteamID(USteamCoreWebSubsystem* Subsystem, const FOnSteamCoreWebCallback& Callback, FString Key, FString serverSteamID)
+	FOnlineAsyncTaskSteamCoreWebGetServerIPsBySteamId(USteamCoreWebSubsystem* Subsystem, const FOnSteamCoreWebCallback& Callback, FString Key, FString serverSteamID)
 		: FOnlineAsyncTaskSteamCoreWeb(Subsystem, Callback, "IGameServersService", "GetServerIPsBySteamID", Key, 1, EVerb::GET)
 	{
 		m_RequestString.AddStringField("server_steamids", serverSteamID);
 	}
 
 private:
-	FOnlineAsyncTaskSteamCoreWebGetServerIPsBySteamID() = delete;
+	FOnlineAsyncTaskSteamCoreWebGetServerIPsBySteamId() = delete;
 	virtual FString ToString() const override { return FString::Printf(TEXT("FOnlineAsyncTaskSteamCoreWebGetServerIPsBySteamID")); }
 };

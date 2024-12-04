@@ -163,6 +163,8 @@ public:
 			return;
 		}
 		bool bHasEntry = Str.Len() > 0;
+		FString ModifiedValue = InValue;
+		ModifiedValue = ModifiedValue.Replace(TEXT(" "), TEXT("%20"));
 		Str.Append(FString::Printf(TEXT("%s%s=%s"), bHasEntry ? TEXT("&") : TEXT("?"), *InKey, *InValue));
 	}
 
@@ -222,7 +224,9 @@ public:
 		bool bHasEntry = Str.Len() > 0;
 		for (int32 i = 0; i < Data.Num(); i++)
 		{
-			Str.Append(FString::Printf(TEXT("%s%s[%i]=%s"), bHasEntry ? TEXT("&") : TEXT("?"), *InKey, i, *Data[i]));
+			FString ModifiedValue = Data[i];
+			ModifiedValue = ModifiedValue.Replace(TEXT(" "), TEXT("%20"));
+			Str.Append(FString::Printf(TEXT("%s%s[%i]=%s"), bHasEntry ? TEXT("&") : TEXT("?"), *InKey, i, *ModifiedValue));
 		}
 	}
 

@@ -1,4 +1,4 @@
-// Copyright (C) 2017-2022 eelDev AB
+// Copyright (C) 2017-2023 eelDev AB
 
 using UnrealBuildTool;
 
@@ -14,9 +14,9 @@ public class SteamCore : ModuleRules
 		bool bDisableSteamCore = false;
 		bool bSupportedPlatform = Target.Platform == UnrealTargetPlatform.Linux || Target.Platform == UnrealTargetPlatform.Win64 || Target.Platform == UnrealTargetPlatform.Mac;
 
-		PublicDependencyModuleNames.AddRange(new[] { "Core", "CoreUObject", "Engine", "OnlineSubsystem", "OnlineSubsystemUtils", "Networking", "Sockets", "Projects", });
+		PublicDependencyModuleNames.AddRange(new[] { "Core", "CoreUObject", "Engine", "OnlineSubsystem", "OnlineSubsystemUtils", "Networking", "Sockets", "Projects", "CoreOnline" });
 		PrivateDependencyModuleNames.AddRange(new[] { "HTTP" });
-		
+
 		if (bSupportedPlatform && !bDisableSteamCore)
 		{
 			PublicDefinitions.Add("ENABLE_STEAMCORE=1");
@@ -29,7 +29,11 @@ public class SteamCore : ModuleRules
 			PublicDefinitions.Add("ENABLE_STEAMCORE=0");
 		}
 
-		if (Target.Version.MinorVersion == 27)
+		if (Target.Version.MinorVersion == 26)
+		{
+			PublicDefinitions.Add("STEAM_VERSION=147");
+		}
+		else if (Target.Version.MinorVersion == 27)
 		{
 			if (Target.Platform == UnrealTargetPlatform.Mac)
 			{
@@ -59,16 +63,10 @@ public class SteamCore : ModuleRules
 		{
 			PublicDefinitions.Add("STEAM_VERSION=151");
 		}
-		
+
 		if (Target.Version.MajorVersion == 5 && Target.Version.MinorVersion >= 2)
 		{
-			PrivateDependencyModuleNames.AddRange
-			(
-				new[]
-				{
-					"AudioExtensions"
-				}
-			);
+			PrivateDependencyModuleNames.AddRange(new[] { "AudioExtensions" });
 		}
 
 		PublicDependencyModuleNames.Add("DeveloperSettings");

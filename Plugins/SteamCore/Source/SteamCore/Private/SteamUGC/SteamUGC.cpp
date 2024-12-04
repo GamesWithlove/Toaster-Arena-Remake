@@ -18,11 +18,16 @@ void UUGC::Initialize(FSubsystemCollectionBase& Collection)
 #if ENABLE_STEAMCORE
 	OnDownloadItemResultCallback.Register(this, &UUGC::OnDownloadItemResult);
 	OnItemInstalledCallback.Register(this, &UUGC::OnItemInstalled);
-
+#if UE_VERSION_NEWER_THAN(5,0,3)
+	OnUserSubscribedItemsListChangedCallback.Register(this, &UUGC::OnUserSubscribedItemsListChanged);
+#endif
 	if (IsRunningDedicatedServer())
 	{
 		OnDownloadItemResultCallback.SetGameserverFlag();
 		OnItemInstalledCallback.SetGameserverFlag();
+#if UE_VERSION_NEWER_THAN(5,0,3)
+		OnUserSubscribedItemsListChangedCallback.SetGameserverFlag();
+#endif
 	}
 #endif
 }
@@ -32,6 +37,9 @@ void UUGC::Deinitialize()
 #if ENABLE_STEAMCORE
 	OnDownloadItemResultCallback.Unregister();
 	OnItemInstalledCallback.Unregister();
+#if UE_VERSION_NEWER_THAN(5,0,3)
+	OnUserSubscribedItemsListChangedCallback.Unregister();
+#endif
 #endif
 
 	Super::Deinitialize();
@@ -1477,4 +1485,18 @@ void UUGC::OnDownloadItemResult(DownloadItemResult_t* pParam)
 		DownloadItemResult.Broadcast(Data);
 	});
 }
+
+#if UE_VERSION_NEWER_THAN(5,0,3)
+void UUGC::OnUserSubscribedItemsListChanged(UserSubscribedItemsListChanged_t* pParam)
+{
+	LogVerbose("");
+
+	auto Data = *pParam;
+	AsyncTask(ENamedThreads::GameThread, [this, Data]()
+	{
+		UserSubscribedItemsListChanged.Broadcast(Data);
+	});
+}
+#endif
+
 #endif

@@ -25,6 +25,8 @@ public:
 	FOnItemInstalled ItemInstalled;
 	UPROPERTY(BlueprintAssignable, Category = "SteamCore|UGC|Delegates")
 	FOnDownloadItemResult DownloadItemResult;
+	UPROPERTY(BlueprintAssignable, Category = "SteamCore|UGC|Delegates")
+	FOnUserSubscribedItemsListChanged UserSubscribedItemsListChanged;
 
 public:
 	// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -921,5 +923,8 @@ protected:
 #if ENABLE_STEAMCORE
 	STEAM_CALLBACK_MANUAL(UUGC, OnDownloadItemResult, DownloadItemResult_t, OnDownloadItemResultCallback);
 	STEAM_CALLBACK_MANUAL(UUGC, OnItemInstalled, ItemInstalled_t, OnItemInstalledCallback);
+#if UE_VERSION_NEWER_THAN(5,0,3)
+	STEAM_CALLBACK_MANUAL(UUGC, OnUserSubscribedItemsListChanged, UserSubscribedItemsListChanged_t, OnUserSubscribedItemsListChangedCallback);
+#endif
 #endif
 };

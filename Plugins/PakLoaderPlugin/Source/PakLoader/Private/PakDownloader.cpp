@@ -1,4 +1,4 @@
-// Copyright (C) 2019-2023 Blue Mountains GmbH. All Rights Reserved.
+// Copyright (C) 2019-2024 Blue Mountains GmbH. All Rights Reserved.
 
 #include "PakDownloader.h"
 #include "HttpModule.h"
@@ -16,6 +16,8 @@ UAsyncPakDownloader::UAsyncPakDownloader(const FObjectInitializer& ObjectInitial
 
 UAsyncPakDownloader* UAsyncPakDownloader::DownloadPak(const FString &URL, const FString &SavePath)
 {
+	checkf(IsHttpUrl(URL), TEXT("Url passed to DownloadPak does not start with http:// or https://. Since UE 5.3 this is required."));
+
 	UAsyncPakDownloader* DownloadTask = NewObject<UAsyncPakDownloader>();
 	DownloadTask->StartDownload(URL, SavePath);
 
@@ -25,9 +27,10 @@ UAsyncPakDownloader* UAsyncPakDownloader::DownloadPak(const FString &URL, const 
 void UAsyncPakDownloader::StartDownload(const FString &URL, const FString &SavePath)
 {
 	SaveFilePath = SavePath;
-
+	
 	// If the user did not specify a filename, try to extract it from the download URL.
-	if (SaveFilePath.Len() > 1 && FPaths::GetCleanFilename(SaveFilePath).Len() == 0)
+	const FString SaveFilePathCleanFilename = FPaths::GetCleanFilename(SaveFilePath);
+	if (SaveFilePath.Len() > 1 && (SaveFilePathCleanFilename.Len() == 0 || !SaveFilePathCleanFilename.Contains(".")))
 	{
 		const FString DownloadFileName = FPaths::GetCleanFilename(URL);
 
@@ -80,4 +83,10 @@ void UAsyncPakDownloader::HandleDownloadProgress(FHttpRequestPtr InRequest, int3
 	{
 		OnProgress.Broadcast(0, 0, TEXT(""), bytesReceived);
 	}
+}
+
+bool UAsyncPakDownloader::IsHttpUrl(const FString& URL)
+{
+	const FString Lower = URL.ToLower();
+	return Lower.StartsWith("http://") || Lower.StartsWith("https://");
 }

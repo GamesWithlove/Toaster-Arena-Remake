@@ -818,6 +818,31 @@ public:
 	int32 TotalNumAppDependencies;
 };
 
+USTRUCT(BlueprintType)
+struct FUserSubscribedItemsListChanged
+{
+	GENERATED_BODY()
+
+public:
+	FUserSubscribedItemsListChanged()
+		: AppID(0)
+	{
+	}
+
+#if ENABLE_STEAMCORE
+#if UE_VERSION_NEWER_THAN(5,0,3)
+	FUserSubscribedItemsListChanged(const UserSubscribedItemsListChanged_t& Data)
+		: AppID(Data.m_nAppID)
+	{
+	}
+#endif
+#endif
+
+public:
+	UPROPERTY(BlueprintReadWrite, Category = "UGC")
+	int32 AppID;
+};
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
 //		Delegate declarations
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
@@ -841,5 +866,6 @@ DECLARE_DYNAMIC_DELEGATE_TwoParams(FOnStopPlaytimeTracking, const FStopPlaytimeT
 DECLARE_DYNAMIC_DELEGATE_TwoParams(FOnStopPlaytimeTrackingForAllItems, const FStopPlaytimeTrackingResult&, Data, bool, bWasSuccessful);
 DECLARE_DYNAMIC_DELEGATE_TwoParams(FOnUnsubscribeItem, const FRemoteStorageSubscribePublishedFileResult&, Data, bool, bWasSuccessful);
 DECLARE_DYNAMIC_DELEGATE_TwoParams(FOnDownloadItem, const FDownloadItemResult&, Data, bool, bWasSuccessful);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnUserSubscribedItemsListChanged, const FUserSubscribedItemsListChanged&, Data);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnDownloadItemResult, const FDownloadItemResult&, Data);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnItemInstalled, const FItemInstalled&, Data);

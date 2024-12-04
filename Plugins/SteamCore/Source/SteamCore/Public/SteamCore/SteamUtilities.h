@@ -146,12 +146,6 @@ public:
 	static FSteamTicketHandle MakeTicketHandle(FString Value);
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities", meta = (NativeMakeFunc))
-	static FSteamSessionSetting MakeBool(const bool bValue)
-	{
-		return FSteamSessionSetting(bValue);
-	};
-
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities", meta = (NativeMakeFunc))
 	static FSteamSessionSetting MakeString(const FString Value)
 	{
 		return FSteamSessionSetting(Value);
@@ -164,12 +158,6 @@ public:
 	};
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities", meta = (NativeMakeFunc))
-	static FSteamSessionSearchSetting MakeSearchBool(const bool bValue)
-	{
-		return FSteamSessionSearchSetting(bValue);
-	};
-
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities", meta = (NativeMakeFunc))
 	static FSteamSessionSearchSetting MakeSearchString(const FString Value)
 	{
 		return FSteamSessionSearchSetting(Value);
@@ -179,26 +167,6 @@ public:
 	static FSteamSessionSearchSetting MakeSearchInteger(const ESteamComparisonOp ComparisonOperator, const int32 Value)
 	{
 		return FSteamSessionSearchSetting(ComparisonOperator, Value);
-	};
-
-	/*
-	* Function for getting a Bool attribute from session settings
-	* the function will return false if the string was not found or is not a bool
-	*/
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities")
-	static bool GetBool(FSteamSessionSetting Settings, FString& Key, bool& OutValue)
-	{
-		Key.Empty();
-
-		if (Settings.m_Data.IsType<bool>())
-		{
-			Key = Settings.m_Key;
-			OutValue = Settings.m_Data.Get<bool>();
-
-			return true;
-		}
-
-		return false;
 	};
 
 	/*
@@ -242,7 +210,7 @@ public:
 	};
 
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "SteamCore|Utilities")
-		static ESteamAttributeType GetType(FSteamSessionSetting Settings)
+	static ESteamAttributeType GetType(FSteamSessionSetting Settings)
 	{
 		ESteamAttributeType Result = ESteamAttributeType::NOT_SET;
 
@@ -253,10 +221,6 @@ public:
 		else if (Settings.m_Data.IsType<FString>())
 		{
 			Result = ESteamAttributeType::STRING;
-		}
-		else if (Settings.m_Data.IsType<bool>())
-		{
-			Result = ESteamAttributeType::BOOL;
 		}
 
 		return Result;

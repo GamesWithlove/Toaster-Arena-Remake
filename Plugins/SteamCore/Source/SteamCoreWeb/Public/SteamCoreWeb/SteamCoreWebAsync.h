@@ -13,7 +13,7 @@
 #include "SteamCoreWeb/SteamCoreWebSettings.h"
 #include "SteamCoreWeb/SteamCoreWeb.h"
 #include "Interfaces/IHttpRequest.h"
-#include "Online/HTTP/Public/HttpModule.h"
+#include <HttpModule.h>
 #include "Runtime/Launch/Resources/Version.h"
 #include "SteamCoreWebAsync.generated.h"
 
