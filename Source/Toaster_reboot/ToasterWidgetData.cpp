@@ -5,11 +5,29 @@
 
 FToasterWidgetData::FToasterWidgetData()
 {
+	ClickedSound(nullptr),
+	
+	Index(0),
+	
+	IsDisabled(false),
+	IsBackButton(false),
+	IsDropDown(false),
+	CanLaunchURL(false),
+	ScaleButtonOnHover(false),
+	UseIcon(false),
+	UseIconDivider(false),
+	OverrideIconSize(false),
+	UseButtonDividers(false),
+	UseButtonBackground(false),
+	UseButtonBorders(false),
+	
+	IconHeightOverride(0),
+	IconWidthOverride(0),
+	
 	FontSize = 18;
 	UseTextGradient = true;
-
-	ETextTransformPolicy::ToUpper;
-	//EHorizontalAlignment::HAlign_Center;
+	Typeface = EToasterFontTypes::FONT_01;
+	TransformPolicy = ETextTransformPolicy::ToUpper;
 }
 
 FToasterWidgetData::~FToasterWidgetData()
