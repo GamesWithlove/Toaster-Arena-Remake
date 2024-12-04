@@ -26,7 +26,7 @@ FToasterWidgetData::FToasterWidgetData()
 	
 	FontSize = 18;
 	UseTextGradient = true;
-	Typeface = EToasterFontTypes::FONT_01;
+	Typeface = EToasterFontTypes::Font_01;
 	TransformPolicy = ETextTransformPolicy::ToUpper;
 }
 
