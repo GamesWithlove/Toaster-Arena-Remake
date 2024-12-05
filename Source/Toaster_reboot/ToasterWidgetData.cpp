@@ -20,14 +20,13 @@ FToasterWidgetData::FToasterWidgetData()
 	UseButtonDividers(false),
 	UseButtonBackground(false),
 	UseButtonBorders(false),
-	
-	IconHeightOverride(0),
-	IconWidthOverride(0),
-	
+	IconHeightOverride(0);
+	IconWidthOverride(0);
 	FontSize = 18;
-	UseTextGradient = true;
-	Typeface = EToasterFontTypes::Font_01;
+	UseTextGradient = true,
+	Typeface = EToasterFontTypes::Font_01,
 	TransformPolicy = ETextTransformPolicy::ToUpper;
+
 }
 
 FToasterWidgetData::~FToasterWidgetData()

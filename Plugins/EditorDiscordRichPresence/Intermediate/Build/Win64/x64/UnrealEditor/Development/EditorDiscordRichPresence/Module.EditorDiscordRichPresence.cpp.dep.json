@@ -1,5 +1,5 @@
 {
-    "Version": "1.2",
+    "Version": "1.1",
     "Data": {
         "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\editordiscordrichpresence\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\editordiscordrichpresence\\module.editordiscordrichpresence.cpp",
         "ProvidedModule": "",
@@ -1502,7 +1502,6 @@
             "d:\\unreal engine\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealedmessages\\uht\\fileservermessages.generated.h",
             "d:\\unreal engine\\ue_5.2\\engine\\source\\editor\\unrealed\\public\\editoranalytics.h",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\editordiscordrichpresence\\source\\editordiscordrichpresence\\public\\discord-files\\achievement_manager.cpp",
-            "d:\\visualstudio2022\\vc\\tools\\msvc\\14.38.33130\\include\\memory",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\editordiscordrichpresence\\source\\editordiscordrichpresence\\public\\discord-files\\activity_manager.cpp",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\editordiscordrichpresence\\source\\editordiscordrichpresence\\public\\discord-files\\application_manager.cpp",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\editordiscordrichpresence\\source\\editordiscordrichpresence\\public\\discord-files\\core.cpp",
