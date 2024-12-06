@@ -6010,18 +6010,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/Binaries/Win64/UnrealEditor-EditorDiscordRichPresence.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/Binaries/Win64/UnrealEditor-EditorDiscordRichPresence.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(ProjectDir)/Plugins/OVRLipSync/Binaries/Win64/UnrealEditor-OVRLipSync.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -27341,14 +27329,6 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/DigSystem/DlgSystem.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/Binaries/ThirdParty/Discord/x64/Release/discord_game_sdk.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/EditorDiscordRichPresence.uplugin",
 			"Type": "UFS"
 		},
 		{

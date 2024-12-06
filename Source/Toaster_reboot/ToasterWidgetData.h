@@ -1,11 +1,11 @@
-// Copyright TEKHaven. All Rights Reserved.
+// Copyright AMONGUS HAPPYMEAL. All Rights Reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "ToasterFontTypes.h"
 #include "ToasterWidgetData.generated.h"
-class USoundCue;
+
 /**
  * 
  */
@@ -29,7 +29,7 @@ UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties"
 EToasterFontTypes Typeface; // Add your own class here, and define in the constructor below in line 98
 
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Icon")
-USoundCue* ClickedSound;
+class USoundCue* ClickedSound;
  
 
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
@@ -38,8 +38,9 @@ ETextTransformPolicy TransformPolicy; // Add your own class here, and define in 
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
 int32 Index;
 
-UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
-EHorizTextAligment HorizTextAligment;
+    //Commented this thing because it gives compilation issues, not sure why 
+//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
+//EHorizTextAligment HorizTextAligment;
 
 // Button switchers
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
