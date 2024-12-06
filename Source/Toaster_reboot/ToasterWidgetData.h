@@ -1,14 +1,19 @@
-// Copyright AMONGUS HAPPYMEAL. All Rights Reserved.
-
 #pragma once
 
 #include "CoreMinimal.h"
-#include "ToasterFontTypes.h"
+//#include "ToasterFontTypes.h"
 #include "ToasterWidgetData.generated.h"
 
-/**
- * 
- */
+UENUM(BlueprintType)
+enum class EToasterFontTypes : uint8
+{
+    Font_01 UMETA(DisplayName = "Regular"),
+    Font_02 UMETA(DisplayName = "Medium"),
+    Font_03 UMETA(DisplayName = "Bold"),
+    Font_04 UMETA(DisplayName = "Light"),
+    Font_05 UMETA(DisplayName = "Extralight"),
+};
+
 USTRUCT(BlueprintType)
 struct FToasterWidgetData
 {
@@ -26,14 +31,13 @@ UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties"
 int32 FontSize;
 
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
-EToasterFontTypes Typeface; // Add your own class here, and define in the constructor below in line 98
+EToasterFontTypes Typeface; 
 
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Icon")
 class USoundCue* ClickedSound;
- 
-
+    
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
-ETextTransformPolicy TransformPolicy; // Add your own class here, and define in the constructor below in line 98
+ETextTransformPolicy TransformPolicy; 
 
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
 int32 Index;
@@ -100,8 +104,9 @@ UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|URL")
 FString URLString;
 
     FToasterWidgetData()
-        : Text(FText::FromString(TEXT("HI IM A TEXT IN THIS TEXT VARIABLE FOR A BUTTON XD"))),
-          FontSize(0),
+        : Text(FText::FromString(TEXT("Button"))),
+          FontSize(18),
+          Typeface(EToasterFontTypes::Font_01),
           ClickedSound(),
           Index(0),
           IsDisabled(false),
@@ -120,7 +125,7 @@ FString URLString;
           IconHeightOverride(0.0f),
           IconWidthOverride(0.0f),
           DividersMargin(0.0f),
-          URLString(TEXT("URLHERE"))
+          URLString(TEXT("URL"))
     {
     }
 };
