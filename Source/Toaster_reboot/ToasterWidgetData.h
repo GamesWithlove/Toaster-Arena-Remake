@@ -1,7 +1,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-//#include "ToasterFontTypes.h"
 #include "ToasterWidgetData.generated.h"
 
 UENUM(BlueprintType)
@@ -107,6 +106,7 @@ FString URLString;
         : Text(FText::FromString(TEXT("Button"))),
           FontSize(18),
           Typeface(EToasterFontTypes::Font_01),
+          TransformPolicy(ETextTransformPolicy::None),
           ClickedSound(),
           Index(0),
           IsDisabled(false),
