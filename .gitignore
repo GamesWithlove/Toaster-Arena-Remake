@@ -50,6 +50,7 @@ Saved/*
 Intermediate/*
 Plugins/*/Intermediate/*
 Plugins/*
+Plugins
 Binaries/*
 
 # Cache files for the editor to use
@@ -59,6 +60,5 @@ Content/modloading.log
 Content/modloading.log
 *.log
 Content/modloading.log
-/Plugins
 /.idea
-/Binaries
+
