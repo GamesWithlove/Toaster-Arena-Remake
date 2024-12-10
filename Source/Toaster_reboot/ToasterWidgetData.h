@@ -1,17 +1,18 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CommonUI/Public/CommonTextBlock.h"
 #include "ToasterWidgetData.generated.h"
 
-UENUM(BlueprintType)
-enum class EToasterFontTypes : uint8
-{
-    Font_01 UMETA(DisplayName = "Regular"),
-    Font_02 UMETA(DisplayName = "Medium"),
-    Font_03 UMETA(DisplayName = "Bold"),
-    Font_04 UMETA(DisplayName = "Light"),
-    Font_05 UMETA(DisplayName = "Extralight"),
-};
+// UENUM(BlueprintType)
+// enum class EToasterFontTypes : uint8
+// {
+//     Font_01 UMETA(DisplayName = "Regular"),
+//     Font_02 UMETA(DisplayName = "Medium"),
+//     Font_03 UMETA(DisplayName = "Bold"),
+//     Font_04 UMETA(DisplayName = "Light"),
+//     Font_05 UMETA(DisplayName = "Extralight"),
+// };
 
 USTRUCT(BlueprintType)
 struct FToasterWidgetData
@@ -23,14 +24,14 @@ public:
 
 // BUTTONS
 
+UPROPERTY(EditAnywhere, BlueprintReadWrite)
+UCommonTextStyle* TextBlock = nullptr;
+
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
 FText Text;
 
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
 int32 FontSize;
-
-UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
-EToasterFontTypes Typeface; 
 
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Icon")
 class USoundCue* ClickedSound;
@@ -105,7 +106,6 @@ FString URLString;
     FToasterWidgetData()
         : Text(FText::FromString(TEXT("Button"))),
           FontSize(18),
-          Typeface(EToasterFontTypes::Font_01),
           TransformPolicy(ETextTransformPolicy::None),
           ClickedSound(),
           Index(0),
