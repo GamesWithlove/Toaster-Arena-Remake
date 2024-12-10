@@ -21,11 +21,11 @@ struct FToasterWidgetData
     GENERATED_BODY()
 
 public:
-
-// BUTTONS
+    
+// Define Common Text style
 
 UPROPERTY(EditAnywhere, BlueprintReadWrite)
-UCommonTextStyle* TextBlock = nullptr;
+TSoftClassPtr<UCommonTextStyle> TextBlockStyle;
 
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Button Style|Properties")
 FText Text;
