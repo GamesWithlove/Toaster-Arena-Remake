@@ -1,8 +1,0 @@
-{
-	"BuildId": "25360045",
-	"Modules": 
-	{
-		"PCG": "UnrealEditor-PCG-Win64-DebugGame.dll",
-		"PCGEditor": "UnrealEditor-PCGEditor-Win64-DebugGame.dll"
-	}
-}
