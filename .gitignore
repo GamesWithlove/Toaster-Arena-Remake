@@ -49,7 +49,7 @@ Saved/*
 # Compiled source files for the engine to use
 Intermediate/*
 Plugins/*/Intermediate/*
-
+Plugins/*
 Binaries/*
 
 # Cache files for the editor to use
