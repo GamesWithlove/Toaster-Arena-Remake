@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataTable.h"
-#include "UObject/NoExportTypes.h"
 #include "Engine/Texture2D.h"
 #include "ToasterMissionData.generated.h"
 
