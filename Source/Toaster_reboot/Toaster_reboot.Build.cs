@@ -10,6 +10,12 @@ public class Toaster_reboot : ModuleRules
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "AIModule", "UMG", "CommonUI", });
 
+		PublicIncludePaths.AddRange(collection:new string[]
+		{
+			System.IO.Path.Combine(ModuleDirectory)
+			
+		});
+		
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
 		// Uncomment if you are using Slate UI
