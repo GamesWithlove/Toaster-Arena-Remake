@@ -49,6 +49,9 @@ Saved/*
 # Compiled source files for the engine to use
 Intermediate/*
 Plugins/*/Intermediate/*
+Plugins/*
+Plugins
+Binaries/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
@@ -57,6 +60,8 @@ Content/modloading.log
 Content/modloading.log
 *.log
 Content/modloading.log
-/Plugins
 /.idea
-/Binaries
+
+Image.png
+String.txt
+Toaster_reboot.uproject
