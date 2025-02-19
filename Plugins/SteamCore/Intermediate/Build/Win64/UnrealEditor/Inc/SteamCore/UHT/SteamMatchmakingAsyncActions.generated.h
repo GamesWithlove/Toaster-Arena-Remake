@@ -1,0 +1,653 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "SteamMatchmaking/SteamMatchmakingAsyncActions.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+ struct FSteamSessionSearchSetting;
+ struct FSteamSessionSetting;
+class UObject;
+class USteamCoreCreateSession;
+class USteamCoreDestroySession;
+class USteamCoreFindSession;
+class USteamCoreMatchmakingAsyncActionCreateLobby;
+class USteamCoreMatchmakingAsyncActionJoinLobby;
+class USteamCoreMatchmakingAsyncActionRequestLobbyList;
+class USteamCoreUpdateSession;
+enum class ESteamLobbyType : uint8;
+enum class ESteamSessionFindType : uint8;
+struct FCreateLobbyData;
+struct FJoinLobbyData;
+struct FLobbyMatchList;
+struct FSteamID;
+struct FSteamSessionResult;
+#ifdef STEAMCORE_SteamMatchmakingAsyncActions_generated_h
+#error "SteamMatchmakingAsyncActions.generated.h already included, missing '#pragma once' in SteamMatchmakingAsyncActions.h"
+#endif
+#define STEAMCORE_SteamMatchmakingAsyncActions_generated_h
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_24_DELEGATE \
+STEAMCORE_API void FOnRequestLobbyListAsyncDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnRequestLobbyListAsyncDelegate, FLobbyMatchList const& Data, bool bWasSuccessful);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_25_DELEGATE \
+STEAMCORE_API void FOnCreateLobbyAsyncDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnCreateLobbyAsyncDelegate, FCreateLobbyData const& Data, bool bWasSuccessful);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_26_DELEGATE \
+STEAMCORE_API void FOnJoinLobbyAsyncDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnJoinLobbyAsyncDelegate, FJoinLobbyData const& Data, bool bWasSuccessful);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execCreateLobbyAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execCreateLobbyAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreMatchmakingAsyncActionCreateLobby(); \
+	friend struct Z_Construct_UClass_USteamCoreMatchmakingAsyncActionCreateLobby_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreMatchmakingAsyncActionCreateLobby, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreMatchmakingAsyncActionCreateLobby)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreMatchmakingAsyncActionCreateLobby(); \
+	friend struct Z_Construct_UClass_USteamCoreMatchmakingAsyncActionCreateLobby_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreMatchmakingAsyncActionCreateLobby, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreMatchmakingAsyncActionCreateLobby)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreMatchmakingAsyncActionCreateLobby(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreMatchmakingAsyncActionCreateLobby) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreMatchmakingAsyncActionCreateLobby); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreMatchmakingAsyncActionCreateLobby); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreMatchmakingAsyncActionCreateLobby(USteamCoreMatchmakingAsyncActionCreateLobby&&); \
+	NO_API USteamCoreMatchmakingAsyncActionCreateLobby(const USteamCoreMatchmakingAsyncActionCreateLobby&); \
+public: \
+	NO_API virtual ~USteamCoreMatchmakingAsyncActionCreateLobby();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreMatchmakingAsyncActionCreateLobby(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreMatchmakingAsyncActionCreateLobby(USteamCoreMatchmakingAsyncActionCreateLobby&&); \
+	NO_API USteamCoreMatchmakingAsyncActionCreateLobby(const USteamCoreMatchmakingAsyncActionCreateLobby&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreMatchmakingAsyncActionCreateLobby); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreMatchmakingAsyncActionCreateLobby); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreMatchmakingAsyncActionCreateLobby) \
+	NO_API virtual ~USteamCoreMatchmakingAsyncActionCreateLobby();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_34_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_37_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreMatchmakingAsyncActionCreateLobby>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execRequestLobbyListAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execRequestLobbyListAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreMatchmakingAsyncActionRequestLobbyList(); \
+	friend struct Z_Construct_UClass_USteamCoreMatchmakingAsyncActionRequestLobbyList_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreMatchmakingAsyncActionRequestLobbyList, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreMatchmakingAsyncActionRequestLobbyList)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreMatchmakingAsyncActionRequestLobbyList(); \
+	friend struct Z_Construct_UClass_USteamCoreMatchmakingAsyncActionRequestLobbyList_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreMatchmakingAsyncActionRequestLobbyList, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreMatchmakingAsyncActionRequestLobbyList)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreMatchmakingAsyncActionRequestLobbyList(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreMatchmakingAsyncActionRequestLobbyList) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreMatchmakingAsyncActionRequestLobbyList); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreMatchmakingAsyncActionRequestLobbyList); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreMatchmakingAsyncActionRequestLobbyList(USteamCoreMatchmakingAsyncActionRequestLobbyList&&); \
+	NO_API USteamCoreMatchmakingAsyncActionRequestLobbyList(const USteamCoreMatchmakingAsyncActionRequestLobbyList&); \
+public: \
+	NO_API virtual ~USteamCoreMatchmakingAsyncActionRequestLobbyList();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreMatchmakingAsyncActionRequestLobbyList(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreMatchmakingAsyncActionRequestLobbyList(USteamCoreMatchmakingAsyncActionRequestLobbyList&&); \
+	NO_API USteamCoreMatchmakingAsyncActionRequestLobbyList(const USteamCoreMatchmakingAsyncActionRequestLobbyList&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreMatchmakingAsyncActionRequestLobbyList); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreMatchmakingAsyncActionRequestLobbyList); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreMatchmakingAsyncActionRequestLobbyList) \
+	NO_API virtual ~USteamCoreMatchmakingAsyncActionRequestLobbyList();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_59_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_62_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreMatchmakingAsyncActionRequestLobbyList>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execJoinLobbyAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execJoinLobbyAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreMatchmakingAsyncActionJoinLobby(); \
+	friend struct Z_Construct_UClass_USteamCoreMatchmakingAsyncActionJoinLobby_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreMatchmakingAsyncActionJoinLobby, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreMatchmakingAsyncActionJoinLobby)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreMatchmakingAsyncActionJoinLobby(); \
+	friend struct Z_Construct_UClass_USteamCoreMatchmakingAsyncActionJoinLobby_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreMatchmakingAsyncActionJoinLobby, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreMatchmakingAsyncActionJoinLobby)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreMatchmakingAsyncActionJoinLobby(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreMatchmakingAsyncActionJoinLobby) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreMatchmakingAsyncActionJoinLobby); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreMatchmakingAsyncActionJoinLobby); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreMatchmakingAsyncActionJoinLobby(USteamCoreMatchmakingAsyncActionJoinLobby&&); \
+	NO_API USteamCoreMatchmakingAsyncActionJoinLobby(const USteamCoreMatchmakingAsyncActionJoinLobby&); \
+public: \
+	NO_API virtual ~USteamCoreMatchmakingAsyncActionJoinLobby();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreMatchmakingAsyncActionJoinLobby(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreMatchmakingAsyncActionJoinLobby(USteamCoreMatchmakingAsyncActionJoinLobby&&); \
+	NO_API USteamCoreMatchmakingAsyncActionJoinLobby(const USteamCoreMatchmakingAsyncActionJoinLobby&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreMatchmakingAsyncActionJoinLobby); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreMatchmakingAsyncActionJoinLobby); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreMatchmakingAsyncActionJoinLobby) \
+	NO_API virtual ~USteamCoreMatchmakingAsyncActionJoinLobby();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_87_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_90_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreMatchmakingAsyncActionJoinLobby>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execCreateSteamCoreSession);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execCreateSteamCoreSession);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreCreateSession(); \
+	friend struct Z_Construct_UClass_USteamCoreCreateSession_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreCreateSession, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreCreateSession)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreCreateSession(); \
+	friend struct Z_Construct_UClass_USteamCoreCreateSession_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreCreateSession, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreCreateSession)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreCreateSession(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreCreateSession) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreCreateSession); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreCreateSession); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreCreateSession(USteamCoreCreateSession&&); \
+	NO_API USteamCoreCreateSession(const USteamCoreCreateSession&); \
+public: \
+	NO_API virtual ~USteamCoreCreateSession();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreCreateSession(USteamCoreCreateSession&&); \
+	NO_API USteamCoreCreateSession(const USteamCoreCreateSession&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreCreateSession); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreCreateSession); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreCreateSession) \
+	NO_API virtual ~USteamCoreCreateSession();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_112_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_115_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreCreateSession>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_152_DELEGATE \
+STEAMCORE_API void FFindSteamSessionsResultDelegate_DelegateWrapper(const FMulticastScriptDelegate& FindSteamSessionsResultDelegate, TArray<FSteamSessionResult> const& Results);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnCompleted); \
+	DECLARE_FUNCTION(execFindSteamCoreSessions);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnCompleted); \
+	DECLARE_FUNCTION(execFindSteamCoreSessions);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFindSession(); \
+	friend struct Z_Construct_UClass_USteamCoreFindSession_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFindSession, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFindSession)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFindSession(); \
+	friend struct Z_Construct_UClass_USteamCoreFindSession_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFindSession, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFindSession)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFindSession(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFindSession) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFindSession); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFindSession); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFindSession(USteamCoreFindSession&&); \
+	NO_API USteamCoreFindSession(const USteamCoreFindSession&); \
+public: \
+	NO_API virtual ~USteamCoreFindSession();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFindSession(USteamCoreFindSession&&); \
+	NO_API USteamCoreFindSession(const USteamCoreFindSession&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFindSession); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFindSession); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreFindSession) \
+	NO_API virtual ~USteamCoreFindSession();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_157_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_160_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreFindSession>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnCompleted); \
+	DECLARE_FUNCTION(execDestroySteamCoreSession);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnCompleted); \
+	DECLARE_FUNCTION(execDestroySteamCoreSession);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreDestroySession(); \
+	friend struct Z_Construct_UClass_USteamCoreDestroySession_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreDestroySession, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreDestroySession)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreDestroySession(); \
+	friend struct Z_Construct_UClass_USteamCoreDestroySession_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreDestroySession, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreDestroySession)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreDestroySession(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreDestroySession) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreDestroySession); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreDestroySession); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreDestroySession(USteamCoreDestroySession&&); \
+	NO_API USteamCoreDestroySession(const USteamCoreDestroySession&); \
+public: \
+	NO_API virtual ~USteamCoreDestroySession();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreDestroySession(USteamCoreDestroySession&&); \
+	NO_API USteamCoreDestroySession(const USteamCoreDestroySession&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreDestroySession); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreDestroySession); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreDestroySession) \
+	NO_API virtual ~USteamCoreDestroySession();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_204_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_207_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreDestroySession>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execOnCompleted); \
+	DECLARE_FUNCTION(execUpdateSteamCoreSession);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execOnCompleted); \
+	DECLARE_FUNCTION(execUpdateSteamCoreSession);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreUpdateSession(); \
+	friend struct Z_Construct_UClass_USteamCoreUpdateSession_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreUpdateSession, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreUpdateSession)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreUpdateSession(); \
+	friend struct Z_Construct_UClass_USteamCoreUpdateSession_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreUpdateSession, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreUpdateSession)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreUpdateSession(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreUpdateSession) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreUpdateSession); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreUpdateSession); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreUpdateSession(USteamCoreUpdateSession&&); \
+	NO_API USteamCoreUpdateSession(const USteamCoreUpdateSession&); \
+public: \
+	NO_API virtual ~USteamCoreUpdateSession();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_ENHANCED_CONSTRUCTORS \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreUpdateSession(USteamCoreUpdateSession&&); \
+	NO_API USteamCoreUpdateSession(const USteamCoreUpdateSession&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreUpdateSession); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreUpdateSession); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreUpdateSession) \
+	NO_API virtual ~USteamCoreUpdateSession();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_236_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h_239_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreUpdateSession>();
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamMatchmaking_SteamMatchmakingAsyncActions_h
+
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

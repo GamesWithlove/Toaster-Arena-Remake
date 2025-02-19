@@ -1,0 +1,16 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.ShadowsCodePlugin.cpp.obj": [
+			"EngineFunctions.gen.cpp.obj",
+			"FixedCharacter.gen.cpp.obj",
+			"ShadowsCodePlugin.init.gen.cpp.obj",
+			"VersionGrabber_TA.gen.cpp.obj",
+			"dummy.cpp.obj",
+			"EngineFunctions.cpp.obj",
+			"FixedCharacter.cpp.obj",
+			"ShadowsCodePlugin.cpp.obj",
+			"VersionGrabber_TA.cpp.obj"
+		]
+	}
+}

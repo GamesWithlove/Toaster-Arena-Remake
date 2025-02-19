@@ -1,0 +1,24 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\androidpermission\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\androidpermission\\module.androidpermission.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\ue4_projects\\toaster-arena-remake\\intermediate\\build\\win64\\x64\\toaster_rebooteditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\androidpermission\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\androidpermission\\definitions.androidpermission.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\androidpermission\\intermediate\\build\\win64\\unrealeditor\\inc\\androidpermission\\uht\\androidpermission.init.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\androidpermission\\source\\androidpermission\\private\\androidpermission.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\androidpermission\\source\\androidpermission\\public\\androidpermission.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\androidpermission\\source\\androidpermission\\classes\\androidpermissionfunctionlibrary.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\androidpermission\\intermediate\\build\\win64\\unrealeditor\\inc\\androidpermission\\uht\\androidpermissionfunctionlibrary.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\androidpermission\\source\\androidpermission\\classes\\androidpermissioncallbackproxy.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\androidpermission\\intermediate\\build\\win64\\unrealeditor\\inc\\androidpermission\\uht\\androidpermissioncallbackproxy.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\androidpermission\\source\\androidpermission\\private\\androidpermissioncallbackproxy.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\androidpermission\\intermediate\\build\\win64\\unrealeditor\\inc\\androidpermission\\uht\\androidpermissioncallbackproxy.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\androidpermission\\source\\androidpermission\\private\\androidpermissionfunctionlibrary.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\androidpermission\\intermediate\\build\\win64\\unrealeditor\\inc\\androidpermission\\uht\\androidpermissionfunctionlibrary.gen.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

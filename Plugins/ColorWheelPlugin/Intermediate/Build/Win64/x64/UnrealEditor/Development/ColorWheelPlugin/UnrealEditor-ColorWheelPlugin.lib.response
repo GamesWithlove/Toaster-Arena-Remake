@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-ColorWheelPlugin.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\ColorWheelPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\ColorWheelPlugin\Module.ColorWheelPlugin.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\ColorWheelPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\ColorWheelPlugin\Default.rc2.res"
+/OUT:"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\ColorWheelPlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\ColorWheelPlugin\UnrealEditor-ColorWheelPlugin.lib"

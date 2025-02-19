@@ -1,0 +1,38 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\shadowscodeplugin\\module.shadowscodeplugin.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\ue4_projects\\toaster-arena-remake\\intermediate\\build\\win64\\x64\\toaster_rebooteditor\\debuggame\\engine\\sharedpch.engine.nonoptimized.shadowerrors.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\intermediate\\build\\win64\\x64\\unrealeditor\\debuggame\\shadowscodeplugin\\definitions.shadowscodeplugin.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\shadowscodeplugin\\uht\\enginefunctions.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\public\\enginefunctions.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\shadowscodeplugin\\uht\\enginefunctions.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\shadowscodeplugin\\uht\\fixedcharacter.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\public\\fixedcharacter.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\gameframework\\character.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\gameframework\\charactermovementreplication.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\source\\runtime\\experimental\\iris\\core\\public\\iris\\serialization\\irisobjectreferencepackagemap.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\iriscore\\uht\\irisobjectreferencepackagemap.generated.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementreplication.generated.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rootmotionsource.generated.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\shadowscodeplugin\\uht\\fixedcharacter.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\shadowscodeplugin\\uht\\shadowscodeplugin.init.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\shadowscodeplugin\\uht\\versiongrabber_ta.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\public\\versiongrabber_ta.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\shadowscodeplugin\\uht\\versiongrabber_ta.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\private\\dummy.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\public\\dummy.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\private\\enginefunctions.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\private\\fixedcharacter.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\private\\shadowscodeplugin.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\public\\shadowscodeplugin.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\private\\versiongrabber_ta.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-SmoothSyncPlugin-Win64-DebugGame.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\SmoothSync\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\SmoothSyncPlugin\Module.SmoothSyncPlugin.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\SmoothSync\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\SmoothSyncPlugin\Default.rc2.res"
+/OUT:"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\SmoothSync\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\SmoothSyncPlugin\UnrealEditor-SmoothSyncPlugin-Win64-DebugGame.lib"

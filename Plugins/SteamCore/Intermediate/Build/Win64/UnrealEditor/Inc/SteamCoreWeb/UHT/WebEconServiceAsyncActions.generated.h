@@ -1,0 +1,796 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "EconService/WebEconServiceAsyncActions.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UObject;
+class USteamCoreWebAsyncActionCancelTradeOffer;
+class USteamCoreWebAsyncActionDeclineTradeOffer;
+class USteamCoreWebAsyncActionFlushAssetAppearanceCache;
+class USteamCoreWebAsyncActionFlushContextCache;
+class USteamCoreWebAsyncActionFlushInventoryCache;
+class USteamCoreWebAsyncActionGetTradeHistory;
+class USteamCoreWebAsyncActionGetTradeOffer;
+class USteamCoreWebAsyncActionGetTradeOffers;
+class USteamCoreWebAsyncActionGetTradeOffersSummary;
+#ifdef STEAMCOREWEB_WebEconServiceAsyncActions_generated_h
+#error "WebEconServiceAsyncActions.generated.h already included, missing '#pragma once' in WebEconServiceAsyncActions.h"
+#endif
+#define STEAMCOREWEB_WebEconServiceAsyncActions_generated_h
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetTradeHistoryAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetTradeHistoryAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetTradeHistory(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetTradeHistory_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetTradeHistory, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetTradeHistory)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetTradeHistory(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetTradeHistory_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetTradeHistory, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetTradeHistory)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetTradeHistory(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetTradeHistory) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetTradeHistory); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetTradeHistory); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetTradeHistory(USteamCoreWebAsyncActionGetTradeHistory&&); \
+	NO_API USteamCoreWebAsyncActionGetTradeHistory(const USteamCoreWebAsyncActionGetTradeHistory&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionGetTradeHistory();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetTradeHistory(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetTradeHistory(USteamCoreWebAsyncActionGetTradeHistory&&); \
+	NO_API USteamCoreWebAsyncActionGetTradeHistory(const USteamCoreWebAsyncActionGetTradeHistory&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetTradeHistory); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetTradeHistory); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetTradeHistory) \
+	NO_API virtual ~USteamCoreWebAsyncActionGetTradeHistory();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_21_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_24_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionGetTradeHistory>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execFlushInventoryCacheAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execFlushInventoryCacheAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionFlushInventoryCache(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionFlushInventoryCache_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionFlushInventoryCache, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionFlushInventoryCache)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionFlushInventoryCache(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionFlushInventoryCache_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionFlushInventoryCache, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionFlushInventoryCache)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionFlushInventoryCache(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionFlushInventoryCache) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionFlushInventoryCache); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionFlushInventoryCache); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionFlushInventoryCache(USteamCoreWebAsyncActionFlushInventoryCache&&); \
+	NO_API USteamCoreWebAsyncActionFlushInventoryCache(const USteamCoreWebAsyncActionFlushInventoryCache&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionFlushInventoryCache();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionFlushInventoryCache(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionFlushInventoryCache(USteamCoreWebAsyncActionFlushInventoryCache&&); \
+	NO_API USteamCoreWebAsyncActionFlushInventoryCache(const USteamCoreWebAsyncActionFlushInventoryCache&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionFlushInventoryCache); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionFlushInventoryCache); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionFlushInventoryCache) \
+	NO_API virtual ~USteamCoreWebAsyncActionFlushInventoryCache();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_46_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_49_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionFlushInventoryCache>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execFlushAssetAppearanceCacheAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execFlushAssetAppearanceCacheAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionFlushAssetAppearanceCache(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionFlushAssetAppearanceCache_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionFlushAssetAppearanceCache, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionFlushAssetAppearanceCache)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionFlushAssetAppearanceCache(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionFlushAssetAppearanceCache_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionFlushAssetAppearanceCache, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionFlushAssetAppearanceCache)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionFlushAssetAppearanceCache(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionFlushAssetAppearanceCache) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionFlushAssetAppearanceCache); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionFlushAssetAppearanceCache); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionFlushAssetAppearanceCache(USteamCoreWebAsyncActionFlushAssetAppearanceCache&&); \
+	NO_API USteamCoreWebAsyncActionFlushAssetAppearanceCache(const USteamCoreWebAsyncActionFlushAssetAppearanceCache&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionFlushAssetAppearanceCache();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionFlushAssetAppearanceCache(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionFlushAssetAppearanceCache(USteamCoreWebAsyncActionFlushAssetAppearanceCache&&); \
+	NO_API USteamCoreWebAsyncActionFlushAssetAppearanceCache(const USteamCoreWebAsyncActionFlushAssetAppearanceCache&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionFlushAssetAppearanceCache); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionFlushAssetAppearanceCache); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionFlushAssetAppearanceCache) \
+	NO_API virtual ~USteamCoreWebAsyncActionFlushAssetAppearanceCache();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_66_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_69_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionFlushAssetAppearanceCache>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execFlushContextCacheAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execFlushContextCacheAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionFlushContextCache(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionFlushContextCache_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionFlushContextCache, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionFlushContextCache)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionFlushContextCache(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionFlushContextCache_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionFlushContextCache, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionFlushContextCache)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionFlushContextCache(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionFlushContextCache) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionFlushContextCache); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionFlushContextCache); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionFlushContextCache(USteamCoreWebAsyncActionFlushContextCache&&); \
+	NO_API USteamCoreWebAsyncActionFlushContextCache(const USteamCoreWebAsyncActionFlushContextCache&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionFlushContextCache();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionFlushContextCache(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionFlushContextCache(USteamCoreWebAsyncActionFlushContextCache&&); \
+	NO_API USteamCoreWebAsyncActionFlushContextCache(const USteamCoreWebAsyncActionFlushContextCache&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionFlushContextCache); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionFlushContextCache); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionFlushContextCache) \
+	NO_API virtual ~USteamCoreWebAsyncActionFlushContextCache();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_84_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_87_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionFlushContextCache>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetTradeOffersAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetTradeOffersAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetTradeOffers(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetTradeOffers_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetTradeOffers, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetTradeOffers)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetTradeOffers(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetTradeOffers_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetTradeOffers, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetTradeOffers)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetTradeOffers(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetTradeOffers) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetTradeOffers); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetTradeOffers); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetTradeOffers(USteamCoreWebAsyncActionGetTradeOffers&&); \
+	NO_API USteamCoreWebAsyncActionGetTradeOffers(const USteamCoreWebAsyncActionGetTradeOffers&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionGetTradeOffers();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetTradeOffers(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetTradeOffers(USteamCoreWebAsyncActionGetTradeOffers&&); \
+	NO_API USteamCoreWebAsyncActionGetTradeOffers(const USteamCoreWebAsyncActionGetTradeOffers&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetTradeOffers); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetTradeOffers); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetTradeOffers) \
+	NO_API virtual ~USteamCoreWebAsyncActionGetTradeOffers();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_102_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_105_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionGetTradeOffers>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetTradeOfferAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetTradeOfferAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetTradeOffer(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetTradeOffer_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetTradeOffer, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetTradeOffer)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetTradeOffer(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetTradeOffer_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetTradeOffer, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetTradeOffer)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetTradeOffer(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetTradeOffer) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetTradeOffer); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetTradeOffer); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetTradeOffer(USteamCoreWebAsyncActionGetTradeOffer&&); \
+	NO_API USteamCoreWebAsyncActionGetTradeOffer(const USteamCoreWebAsyncActionGetTradeOffer&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionGetTradeOffer();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetTradeOffer(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetTradeOffer(USteamCoreWebAsyncActionGetTradeOffer&&); \
+	NO_API USteamCoreWebAsyncActionGetTradeOffer(const USteamCoreWebAsyncActionGetTradeOffer&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetTradeOffer); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetTradeOffer); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetTradeOffer) \
+	NO_API virtual ~USteamCoreWebAsyncActionGetTradeOffer();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_126_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_129_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionGetTradeOffer>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetTradeOffersSummaryAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetTradeOffersSummaryAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetTradeOffersSummary(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetTradeOffersSummary_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetTradeOffersSummary, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetTradeOffersSummary)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetTradeOffersSummary(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetTradeOffersSummary_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetTradeOffersSummary, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetTradeOffersSummary)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetTradeOffersSummary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetTradeOffersSummary) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetTradeOffersSummary); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetTradeOffersSummary); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetTradeOffersSummary(USteamCoreWebAsyncActionGetTradeOffersSummary&&); \
+	NO_API USteamCoreWebAsyncActionGetTradeOffersSummary(const USteamCoreWebAsyncActionGetTradeOffersSummary&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionGetTradeOffersSummary();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetTradeOffersSummary(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetTradeOffersSummary(USteamCoreWebAsyncActionGetTradeOffersSummary&&); \
+	NO_API USteamCoreWebAsyncActionGetTradeOffersSummary(const USteamCoreWebAsyncActionGetTradeOffersSummary&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetTradeOffersSummary); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetTradeOffersSummary); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetTradeOffersSummary) \
+	NO_API virtual ~USteamCoreWebAsyncActionGetTradeOffersSummary();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_144_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_147_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionGetTradeOffersSummary>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execDeclineTradeOfferAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execDeclineTradeOfferAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionDeclineTradeOffer(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionDeclineTradeOffer_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionDeclineTradeOffer, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionDeclineTradeOffer)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionDeclineTradeOffer(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionDeclineTradeOffer_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionDeclineTradeOffer, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionDeclineTradeOffer)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionDeclineTradeOffer(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionDeclineTradeOffer) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionDeclineTradeOffer); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionDeclineTradeOffer); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionDeclineTradeOffer(USteamCoreWebAsyncActionDeclineTradeOffer&&); \
+	NO_API USteamCoreWebAsyncActionDeclineTradeOffer(const USteamCoreWebAsyncActionDeclineTradeOffer&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionDeclineTradeOffer();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionDeclineTradeOffer(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionDeclineTradeOffer(USteamCoreWebAsyncActionDeclineTradeOffer&&); \
+	NO_API USteamCoreWebAsyncActionDeclineTradeOffer(const USteamCoreWebAsyncActionDeclineTradeOffer&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionDeclineTradeOffer); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionDeclineTradeOffer); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionDeclineTradeOffer) \
+	NO_API virtual ~USteamCoreWebAsyncActionDeclineTradeOffer();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_162_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_165_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionDeclineTradeOffer>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execCancelTradeOfferAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execCancelTradeOfferAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionCancelTradeOffer(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionCancelTradeOffer_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionCancelTradeOffer, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionCancelTradeOffer)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionCancelTradeOffer(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionCancelTradeOffer_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionCancelTradeOffer, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionCancelTradeOffer)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionCancelTradeOffer(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionCancelTradeOffer) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionCancelTradeOffer); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionCancelTradeOffer); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionCancelTradeOffer(USteamCoreWebAsyncActionCancelTradeOffer&&); \
+	NO_API USteamCoreWebAsyncActionCancelTradeOffer(const USteamCoreWebAsyncActionCancelTradeOffer&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionCancelTradeOffer();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionCancelTradeOffer(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionCancelTradeOffer(USteamCoreWebAsyncActionCancelTradeOffer&&); \
+	NO_API USteamCoreWebAsyncActionCancelTradeOffer(const USteamCoreWebAsyncActionCancelTradeOffer&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionCancelTradeOffer); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionCancelTradeOffer); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionCancelTradeOffer) \
+	NO_API virtual ~USteamCoreWebAsyncActionCancelTradeOffer();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_180_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h_183_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionCancelTradeOffer>();
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_EconService_WebEconServiceAsyncActions_h
+
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

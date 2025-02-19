@@ -1,0 +1,194 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "PublishedItemVoting/WebPublishedItemVotingAsyncActions.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UObject;
+class USteamCoreWebAsyncActionItemVoteSummary;
+class USteamCoreWebAsyncActionUserVoteSummary;
+#ifdef STEAMCOREWEB_WebPublishedItemVotingAsyncActions_generated_h
+#error "WebPublishedItemVotingAsyncActions.generated.h already included, missing '#pragma once' in WebPublishedItemVotingAsyncActions.h"
+#endif
+#define STEAMCOREWEB_WebPublishedItemVotingAsyncActions_generated_h
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execItemVoteSummaryAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execItemVoteSummaryAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionItemVoteSummary(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionItemVoteSummary_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionItemVoteSummary, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionItemVoteSummary)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionItemVoteSummary(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionItemVoteSummary_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionItemVoteSummary, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionItemVoteSummary)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionItemVoteSummary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionItemVoteSummary) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionItemVoteSummary); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionItemVoteSummary); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionItemVoteSummary(USteamCoreWebAsyncActionItemVoteSummary&&); \
+	NO_API USteamCoreWebAsyncActionItemVoteSummary(const USteamCoreWebAsyncActionItemVoteSummary&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionItemVoteSummary();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionItemVoteSummary(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionItemVoteSummary(USteamCoreWebAsyncActionItemVoteSummary&&); \
+	NO_API USteamCoreWebAsyncActionItemVoteSummary(const USteamCoreWebAsyncActionItemVoteSummary&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionItemVoteSummary); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionItemVoteSummary); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionItemVoteSummary) \
+	NO_API virtual ~USteamCoreWebAsyncActionItemVoteSummary();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_18_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_21_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionItemVoteSummary>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execUserVoteSummaryAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execUserVoteSummaryAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionUserVoteSummary(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionUserVoteSummary_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionUserVoteSummary, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionUserVoteSummary)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionUserVoteSummary(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionUserVoteSummary_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionUserVoteSummary, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionUserVoteSummary)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionUserVoteSummary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionUserVoteSummary) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionUserVoteSummary); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionUserVoteSummary); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionUserVoteSummary(USteamCoreWebAsyncActionUserVoteSummary&&); \
+	NO_API USteamCoreWebAsyncActionUserVoteSummary(const USteamCoreWebAsyncActionUserVoteSummary&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionUserVoteSummary();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionUserVoteSummary(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionUserVoteSummary(USteamCoreWebAsyncActionUserVoteSummary&&); \
+	NO_API USteamCoreWebAsyncActionUserVoteSummary(const USteamCoreWebAsyncActionUserVoteSummary&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionUserVoteSummary); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionUserVoteSummary); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionUserVoteSummary) \
+	NO_API virtual ~USteamCoreWebAsyncActionUserVoteSummary();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_38_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h_41_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionUserVoteSummary>();
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemVoting_WebPublishedItemVotingAsyncActions_h
+
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

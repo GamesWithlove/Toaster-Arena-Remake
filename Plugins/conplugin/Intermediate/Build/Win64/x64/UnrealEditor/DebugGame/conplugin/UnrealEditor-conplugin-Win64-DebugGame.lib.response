@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-conplugin-Win64-DebugGame.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\conplugin\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\conplugin\Module.conplugin.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\conplugin\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\conplugin\Default.rc2.res"
+/OUT:"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\conplugin\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\conplugin\UnrealEditor-conplugin-Win64-DebugGame.lib"

@@ -1,0 +1,624 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "SteamUserStats/WebUserStatsAsyncActions.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UObject;
+class USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp;
+class USteamCoreWebAsyncActionGetGlobalStatsForGame;
+class USteamCoreWebAsyncActionGetNumberOfCurrentPlayers;
+class USteamCoreWebAsyncActionGetPlayerAchievements;
+class USteamCoreWebAsyncActionGetSchemaForGame;
+class USteamCoreWebAsyncActionGetUserStatsForGame;
+class USteamCoreWebAsyncActionSetUserStatsForGame;
+#ifdef STEAMCOREWEB_WebUserStatsAsyncActions_generated_h
+#error "WebUserStatsAsyncActions.generated.h already included, missing '#pragma once' in WebUserStatsAsyncActions.h"
+#endif
+#define STEAMCOREWEB_WebUserStatsAsyncActions_generated_h
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetGlobalAchievementPercentagesForAppAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetGlobalAchievementPercentagesForAppAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp(USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp&&); \
+	NO_API USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp(const USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp(USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp&&); \
+	NO_API USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp(const USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp) \
+	NO_API virtual ~USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_18_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_21_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionGetGlobalAchievementPercentagesForApp>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetGlobalStatsForGameAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetGlobalStatsForGameAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetGlobalStatsForGame(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetGlobalStatsForGame_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetGlobalStatsForGame, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetGlobalStatsForGame)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetGlobalStatsForGame(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetGlobalStatsForGame_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetGlobalStatsForGame, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetGlobalStatsForGame)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetGlobalStatsForGame(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetGlobalStatsForGame) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetGlobalStatsForGame); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetGlobalStatsForGame); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetGlobalStatsForGame(USteamCoreWebAsyncActionGetGlobalStatsForGame&&); \
+	NO_API USteamCoreWebAsyncActionGetGlobalStatsForGame(const USteamCoreWebAsyncActionGetGlobalStatsForGame&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionGetGlobalStatsForGame();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetGlobalStatsForGame(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetGlobalStatsForGame(USteamCoreWebAsyncActionGetGlobalStatsForGame&&); \
+	NO_API USteamCoreWebAsyncActionGetGlobalStatsForGame(const USteamCoreWebAsyncActionGetGlobalStatsForGame&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetGlobalStatsForGame); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetGlobalStatsForGame); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetGlobalStatsForGame) \
+	NO_API virtual ~USteamCoreWebAsyncActionGetGlobalStatsForGame();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_35_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_38_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionGetGlobalStatsForGame>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetNumberOfCurrentPlayersAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetNumberOfCurrentPlayersAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetNumberOfCurrentPlayers(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetNumberOfCurrentPlayers_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetNumberOfCurrentPlayers, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetNumberOfCurrentPlayers)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetNumberOfCurrentPlayers(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetNumberOfCurrentPlayers_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetNumberOfCurrentPlayers, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetNumberOfCurrentPlayers)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetNumberOfCurrentPlayers(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetNumberOfCurrentPlayers) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetNumberOfCurrentPlayers); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetNumberOfCurrentPlayers); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetNumberOfCurrentPlayers(USteamCoreWebAsyncActionGetNumberOfCurrentPlayers&&); \
+	NO_API USteamCoreWebAsyncActionGetNumberOfCurrentPlayers(const USteamCoreWebAsyncActionGetNumberOfCurrentPlayers&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionGetNumberOfCurrentPlayers();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetNumberOfCurrentPlayers(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetNumberOfCurrentPlayers(USteamCoreWebAsyncActionGetNumberOfCurrentPlayers&&); \
+	NO_API USteamCoreWebAsyncActionGetNumberOfCurrentPlayers(const USteamCoreWebAsyncActionGetNumberOfCurrentPlayers&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetNumberOfCurrentPlayers); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetNumberOfCurrentPlayers); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetNumberOfCurrentPlayers) \
+	NO_API virtual ~USteamCoreWebAsyncActionGetNumberOfCurrentPlayers();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_55_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_58_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionGetNumberOfCurrentPlayers>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetPlayerAchievementsAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetPlayerAchievementsAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetPlayerAchievements(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetPlayerAchievements_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetPlayerAchievements, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetPlayerAchievements)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetPlayerAchievements(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetPlayerAchievements_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetPlayerAchievements, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetPlayerAchievements)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetPlayerAchievements(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetPlayerAchievements) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetPlayerAchievements); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetPlayerAchievements); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetPlayerAchievements(USteamCoreWebAsyncActionGetPlayerAchievements&&); \
+	NO_API USteamCoreWebAsyncActionGetPlayerAchievements(const USteamCoreWebAsyncActionGetPlayerAchievements&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionGetPlayerAchievements();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetPlayerAchievements(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetPlayerAchievements(USteamCoreWebAsyncActionGetPlayerAchievements&&); \
+	NO_API USteamCoreWebAsyncActionGetPlayerAchievements(const USteamCoreWebAsyncActionGetPlayerAchievements&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetPlayerAchievements); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetPlayerAchievements); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetPlayerAchievements) \
+	NO_API virtual ~USteamCoreWebAsyncActionGetPlayerAchievements();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_74_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_77_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionGetPlayerAchievements>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetSchemaForGameAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetSchemaForGameAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetSchemaForGame(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetSchemaForGame_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetSchemaForGame, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetSchemaForGame)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetSchemaForGame(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetSchemaForGame_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetSchemaForGame, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetSchemaForGame)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetSchemaForGame(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetSchemaForGame) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetSchemaForGame); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetSchemaForGame); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetSchemaForGame(USteamCoreWebAsyncActionGetSchemaForGame&&); \
+	NO_API USteamCoreWebAsyncActionGetSchemaForGame(const USteamCoreWebAsyncActionGetSchemaForGame&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionGetSchemaForGame();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetSchemaForGame(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetSchemaForGame(USteamCoreWebAsyncActionGetSchemaForGame&&); \
+	NO_API USteamCoreWebAsyncActionGetSchemaForGame(const USteamCoreWebAsyncActionGetSchemaForGame&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetSchemaForGame); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetSchemaForGame); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetSchemaForGame) \
+	NO_API virtual ~USteamCoreWebAsyncActionGetSchemaForGame();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_94_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_97_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionGetSchemaForGame>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetUserStatsForGameAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetUserStatsForGameAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetUserStatsForGame(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetUserStatsForGame_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetUserStatsForGame, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetUserStatsForGame)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetUserStatsForGame(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetUserStatsForGame_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetUserStatsForGame, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetUserStatsForGame)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetUserStatsForGame(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetUserStatsForGame) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetUserStatsForGame); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetUserStatsForGame); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetUserStatsForGame(USteamCoreWebAsyncActionGetUserStatsForGame&&); \
+	NO_API USteamCoreWebAsyncActionGetUserStatsForGame(const USteamCoreWebAsyncActionGetUserStatsForGame&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionGetUserStatsForGame();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetUserStatsForGame(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetUserStatsForGame(USteamCoreWebAsyncActionGetUserStatsForGame&&); \
+	NO_API USteamCoreWebAsyncActionGetUserStatsForGame(const USteamCoreWebAsyncActionGetUserStatsForGame&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetUserStatsForGame); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetUserStatsForGame); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetUserStatsForGame) \
+	NO_API virtual ~USteamCoreWebAsyncActionGetUserStatsForGame();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_113_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_116_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionGetUserStatsForGame>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execSetUserStatsForGameAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execSetUserStatsForGameAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionSetUserStatsForGame(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionSetUserStatsForGame_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionSetUserStatsForGame, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionSetUserStatsForGame)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionSetUserStatsForGame(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionSetUserStatsForGame_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionSetUserStatsForGame, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionSetUserStatsForGame)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionSetUserStatsForGame(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionSetUserStatsForGame) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionSetUserStatsForGame); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionSetUserStatsForGame); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionSetUserStatsForGame(USteamCoreWebAsyncActionSetUserStatsForGame&&); \
+	NO_API USteamCoreWebAsyncActionSetUserStatsForGame(const USteamCoreWebAsyncActionSetUserStatsForGame&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionSetUserStatsForGame();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionSetUserStatsForGame(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionSetUserStatsForGame(USteamCoreWebAsyncActionSetUserStatsForGame&&); \
+	NO_API USteamCoreWebAsyncActionSetUserStatsForGame(const USteamCoreWebAsyncActionSetUserStatsForGame&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionSetUserStatsForGame); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionSetUserStatsForGame); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionSetUserStatsForGame) \
+	NO_API virtual ~USteamCoreWebAsyncActionSetUserStatsForGame();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_132_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h_135_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionSetUserStatsForGame>();
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_SteamUserStats_WebUserStatsAsyncActions_h
+
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
