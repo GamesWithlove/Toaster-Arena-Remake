@@ -368,6 +368,10 @@
 		{
 			"Name": "EditorDiscordRichPresence",
 			"Enabled": true
+		},
+		{
+			"Name": "GameFeatures",
+			"Enabled": true
 		}
 	]
 }
