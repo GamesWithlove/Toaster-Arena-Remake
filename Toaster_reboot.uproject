@@ -122,10 +122,6 @@
 			"Enabled": true
 		},
 		{
-			"Name": "ModularGameplay",
-			"Enabled": true
-		},
-		{
 			"Name": "AppleImageUtils",
 			"Enabled": false
 		},
@@ -367,10 +363,6 @@
 		},
 		{
 			"Name": "EditorDiscordRichPresence",
-			"Enabled": true
-		},
-		{
-			"Name": "GameFeatures",
 			"Enabled": true
 		}
 	]
