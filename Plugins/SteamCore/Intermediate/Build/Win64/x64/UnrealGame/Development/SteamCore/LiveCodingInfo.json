@@ -1,0 +1,149 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.SteamCore.1_of_16.cpp.obj": [
+			"SteamAppList.gen.cpp.obj",
+			"SteamAppListTypes.gen.cpp.obj",
+			"SteamApps.gen.cpp.obj",
+			"SteamAppsAsyncActions.gen.cpp.obj",
+			"SteamAppsTypes.gen.cpp.obj",
+			"SteamCore.init.gen.cpp.obj",
+			"SteamCoreAsync.gen.cpp.obj",
+			"SteamCoreGameMode.gen.cpp.obj",
+			"SteamCoreModule.gen.cpp.obj",
+			"SteamCoreSettings.gen.cpp.obj",
+			"SteamFriends.gen.cpp.obj"
+		],
+		"Module.SteamCore.2_of_16.cpp.obj": [
+			"SteamFriendsAsyncActions.gen.cpp.obj",
+			"SteamFriendsTypes.gen.cpp.obj"
+		],
+		"Module.SteamCore.3_of_16.cpp.obj": [
+			"SteamGameSearch.gen.cpp.obj",
+			"SteamGameSearchTypes.gen.cpp.obj",
+			"SteamGameServer.gen.cpp.obj",
+			"SteamGameServerStats.gen.cpp.obj"
+		],
+		"Module.SteamCore.4_of_16.cpp.obj": [
+			"SteamGameServerStatsTypes.gen.cpp.obj",
+			"SteamGameServerTypes.gen.cpp.obj",
+			"SteamInput.gen.cpp.obj",
+			"SteamInputTypes.gen.cpp.obj"
+		],
+		"Module.SteamCore.5_of_16.cpp.obj": [
+			"SteamInventory.gen.cpp.obj",
+			"SteamInventoryAsyncActions.gen.cpp.obj",
+			"SteamInventoryTypes.gen.cpp.obj"
+		],
+		"Module.SteamCore.6_of_16.cpp.obj": [
+			"SteamMatchmaking.gen.cpp.obj",
+			"SteamMatchmakingAsyncActions.gen.cpp.obj"
+		],
+		"Module.SteamCore.7_of_16.cpp.obj": [
+			"SteamMatchmakingServers.gen.cpp.obj",
+			"SteamMatchmakingServersAsyncActions.gen.cpp.obj",
+			"SteamMatchmakingServersTypes.gen.cpp.obj",
+			"SteamMatchmakingTypes.gen.cpp.obj"
+		],
+		"Module.SteamCore.8_of_16.cpp.obj": [
+			"SteamMusic.gen.cpp.obj",
+			"SteamMusicTypes.gen.cpp.obj",
+			"SteamNetworking.gen.cpp.obj",
+			"SteamNetworkingTypes.gen.cpp.obj",
+			"SteamNetworkingUtils.gen.cpp.obj",
+			"SteamNetworkingUtilsTypes.gen.cpp.obj",
+			"SteamParentalSettings.gen.cpp.obj",
+			"SteamParentalSettingsTypes.gen.cpp.obj",
+			"SteamParties.gen.cpp.obj",
+			"SteamPartiesAsyncActions.gen.cpp.obj"
+		],
+		"Module.SteamCore.9_of_16.cpp.obj": [
+			"SteamPartiesTypes.gen.cpp.obj",
+			"SteamRemotePlay.gen.cpp.obj",
+			"SteamRemotePlayTypes.gen.cpp.obj",
+			"SteamRemoteStorage.gen.cpp.obj",
+			"SteamRemoteStorageTypes.gen.cpp.obj"
+		],
+		"Module.SteamCore.10_of_16.cpp.obj": [
+			"SteamScreenshots.gen.cpp.obj",
+			"SteamScreenshotsTypes.gen.cpp.obj",
+			"SteamTypes.gen.cpp.obj",
+			"SteamUGC.gen.cpp.obj"
+		],
+		"Module.SteamCore.11_of_16.cpp.obj": [
+			"SteamUGCAsyncActions.gen.cpp.obj"
+		],
+		"Module.SteamCore.12_of_16.cpp.obj": [
+			"SteamUGCTypes.gen.cpp.obj",
+			"SteamUser.gen.cpp.obj"
+		],
+		"Module.SteamCore.13_of_16.cpp.obj": [
+			"SteamUserAsyncActions.gen.cpp.obj",
+			"SteamUserStats.gen.cpp.obj",
+			"SteamUserStatsAsyncActions.gen.cpp.obj"
+		],
+		"Module.SteamCore.14_of_16.cpp.obj": [
+			"SteamUserStatsTypes.gen.cpp.obj",
+			"SteamUserTypes.gen.cpp.obj",
+			"SteamUtilities.gen.cpp.obj"
+		],
+		"Module.SteamCore.15_of_16.cpp.obj": [
+			"SteamUtils.gen.cpp.obj",
+			"SteamUtilsTypes.gen.cpp.obj",
+			"SteamVideo.gen.cpp.obj",
+			"SteamVideoTypes.gen.cpp.obj",
+			"SteamAppList.cpp.obj",
+			"SteamApps.cpp.obj",
+			"SteamAppsAsyncActions.cpp.obj",
+			"SteamAppsAsyncTasks.cpp.obj",
+			"SteamCoreAsync.cpp.obj",
+			"SteamCoreGameMode.cpp.obj",
+			"SteamCoreModule.cpp.obj",
+			"SteamCoreSettings.cpp.obj",
+			"SteamUtilities.cpp.obj",
+			"SteamFriends.cpp.obj",
+			"SteamFriendsAsyncActions.cpp.obj",
+			"SteamFriendsAsyncTasks.cpp.obj",
+			"SteamGameSearch.cpp.obj",
+			"SteamGameServerStats.cpp.obj",
+			"SteamGameServerStatsAsyncTasks.cpp.obj",
+			"SteamGameServer.cpp.obj",
+			"SteamGameServerAsyncTasks.cpp.obj",
+			"SteamInput.cpp.obj",
+			"SteamInventory.cpp.obj"
+		],
+		"Module.SteamCore.16_of_16.cpp.obj": [
+			"SteamInventoryAsyncActions.cpp.obj",
+			"SteamInventoryAsyncTasks.cpp.obj",
+			"SteamMatchmakingServers.cpp.obj",
+			"SteamMatchmakingServersAsyncActions.cpp.obj",
+			"SteamMatchmakingServersAsyncTasks.cpp.obj",
+			"SteamMatchmakingServersTypes.cpp.obj",
+			"SteamMatchmaking.cpp.obj",
+			"SteamMatchmakingAsyncActions.cpp.obj",
+			"SteamMatchmakingAsyncTasks.cpp.obj",
+			"SteamMusic.cpp.obj",
+			"SteamNetworkingUtils.cpp.obj",
+			"SteamNetworking.cpp.obj",
+			"SteamParentalSettings.cpp.obj",
+			"SteamParties.cpp.obj",
+			"SteamPartiesAsyncActions.cpp.obj",
+			"SteamPartiesAsyncTasks.cpp.obj",
+			"SteamRemotePlay.cpp.obj",
+			"SteamRemoteStorage.cpp.obj",
+			"SteamRemoteStorageAsyncTasks.cpp.obj",
+			"SteamScreenshots.cpp.obj",
+			"SteamUGC.cpp.obj",
+			"SteamUGCAsyncActions.cpp.obj",
+			"SteamUGCAsyncTasks.cpp.obj",
+			"SteamUserStats.cpp.obj",
+			"SteamUserStatsAsyncActions.cpp.obj",
+			"SteamUserStatsAsyncTasks.cpp.obj",
+			"SteamUser.cpp.obj",
+			"SteamUserAsyncActions.cpp.obj",
+			"SteamUserAsyncTasks.cpp.obj",
+			"SteamUtils.cpp.obj",
+			"SteamVideo.cpp.obj"
+		]
+	}
+}

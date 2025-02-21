@@ -1,0 +1,23 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.ToasterGame.cpp.obj": [
+			"ActorPool.gen.cpp.obj",
+			"HitscanImpactDefinition.gen.cpp.obj",
+			"HitscanTracerDefinition.gen.cpp.obj",
+			"PakFileManager.gen.cpp.obj",
+			"ToasterGame.init.gen.cpp.obj",
+			"ToasterGameModeBase.gen.cpp.obj",
+			"ToasterGameplayStatics.gen.cpp.obj",
+			"ToasterGameStateBase.gen.cpp.obj",
+			"ActorPool.cpp.obj",
+			"HitscanImpactDefinition.cpp.obj",
+			"HitscanTracerDefinition.cpp.obj",
+			"PakFileManager.cpp.obj",
+			"ToasterGameModeBase.cpp.obj",
+			"ToasterGameModule.cpp.obj",
+			"ToasterGameplayStatics.cpp.obj",
+			"ToasterGameStateBase.cpp.obj"
+		]
+	}
+}
