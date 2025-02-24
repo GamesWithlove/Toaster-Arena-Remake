@@ -220,10 +220,6 @@
 			]
 		},
 		{
-			"Name": "ChaosEditor",
-			"Enabled": false
-		},
-		{
 			"Name": "EditorScriptingUtilities",
 			"Enabled": true
 		},
