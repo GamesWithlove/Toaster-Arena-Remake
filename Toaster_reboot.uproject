@@ -362,16 +362,6 @@
 			"Enabled": true
 		},
 		{
-			"Name": "LevelBookmarks",
-			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/b4a88d66c795480fb803a0f4f8b1907e"
-		},
-		{
-			"Name": "AutoSizeComments",
-			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/ae89a2c4ab384de0a3f213b23de324f3"
-		},
-		{
 			"Name": "SkinnedDecalComponent",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/05b6b0f2f8f049aaa469a1da4e09275c"
