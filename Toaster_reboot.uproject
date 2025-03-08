@@ -360,6 +360,11 @@
 		{
 			"Name": "EditorDiscordRichPresence",
 			"Enabled": true
+		},
+		{
+			"Name": "SkinnedDecalComponent",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/05b6b0f2f8f049aaa469a1da4e09275c"
 		}
 	]
 }
