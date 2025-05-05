@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-PCGEditor.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\PCG\Intermediate\Build\Win64\x64\UnrealEditor\Development\PCGEditor\Module.PCGEditor.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\PCG\Intermediate\Build\Win64\x64\UnrealEditor\Development\PCGEditor\Default.rc2.res"
+/OUT:"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\PCG\Intermediate\Build\Win64\x64\UnrealEditor\Development\PCGEditor\UnrealEditor-PCGEditor.lib"

@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-OVRLipSync-Win64-DebugGame.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\OVRLipSync\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\OVRLipSync\Module.OVRLipSync.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\OVRLipSync\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\OVRLipSync\Default.rc2.res"
+/OUT:"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\OVRLipSync\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\OVRLipSync\UnrealEditor-OVRLipSync-Win64-DebugGame.lib"

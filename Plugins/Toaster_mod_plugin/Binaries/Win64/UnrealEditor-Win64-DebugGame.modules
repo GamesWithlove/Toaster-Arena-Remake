@@ -1,0 +1,8 @@
+{
+	"BuildId": "25360045",
+	"Modules": 
+	{
+		"ToasterGame": "UnrealEditor-ToasterGame-Win64-DebugGame.dll",
+		"ToasterGameEditor": "UnrealEditor-ToasterGameEditor-Win64-DebugGame.dll"
+	}
+}

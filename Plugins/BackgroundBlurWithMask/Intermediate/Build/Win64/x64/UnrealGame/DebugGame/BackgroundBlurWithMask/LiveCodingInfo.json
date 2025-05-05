@@ -1,0 +1,21 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.BackgroundBlurWithMask.cpp.obj": [
+			"BackgroundBlurWithMask.gen.cpp.obj",
+			"BackgroundBlurWithMask.init.gen.cpp.obj",
+			"BackgroundBlurWithMaskDefine.gen.cpp.obj",
+			"BackgroundBlurWithMaskSlot.gen.cpp.obj",
+			"BackgroundBlurWithMask.cpp.obj",
+			"BackgroundBlurWithMaskDefine.cpp.obj",
+			"BackgroundBlurWithMaskModule.cpp.obj",
+			"BackgroundBlurWithMaskSlot.cpp.obj",
+			"BackgroundBlurDrawer.cpp.obj",
+			"BackgroundBlurPostProcessor.cpp.obj",
+			"BackgroundBlurPostProcessResource.cpp.obj",
+			"BackgroundBlurRenderer.cpp.obj",
+			"BackgroundBlurShaders.cpp.obj",
+			"SBackgroundBlurWithMask.cpp.obj"
+		]
+	}
+}

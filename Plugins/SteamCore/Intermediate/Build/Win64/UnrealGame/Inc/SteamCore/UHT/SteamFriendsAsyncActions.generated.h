@@ -1,0 +1,766 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "SteamFriends/SteamFriendsAsyncActions.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UObject;
+class USteamCoreFriendsAsyncActionDownloadClanActivityCounts;
+class USteamCoreFriendsAsyncActionEnumerateFollowingList;
+class USteamCoreFriendsAsyncActionGetFollowerCount;
+class USteamCoreFriendsAsyncActionIsFollowing;
+class USteamCoreFriendsAsyncActionJoinClanChatRoom;
+class USteamCoreFriendsAsyncActionRequestClanOfficerList;
+class USteamCoreFriendsAsyncActionRequestUserInformation;
+class USteamCoreFriendsAsyncActionSetPersonaName;
+struct FClanOfficerListResponse;
+struct FDownloadClanActivityCountsResult;
+struct FFriendsEnumerateFollowingList;
+struct FFriendsGetFollowerCount;
+struct FFriendsIsFollowing;
+struct FJoinClanChatRoomCompletionResult;
+struct FSetPersonaNameResponse;
+struct FSteamID;
+#ifdef STEAMCORE_SteamFriendsAsyncActions_generated_h
+#error "SteamFriendsAsyncActions.generated.h already included, missing '#pragma once' in SteamFriendsAsyncActions.h"
+#endif
+#define STEAMCORE_SteamFriendsAsyncActions_generated_h
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_17_DELEGATE \
+STEAMCORE_API void FOnSetPersonaNameAsyncDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnSetPersonaNameAsyncDelegate, FSetPersonaNameResponse const& data, bool bWasSuccessful);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_18_DELEGATE \
+STEAMCORE_API void FOnDownloadClanActivityCountsAsyncDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnDownloadClanActivityCountsAsyncDelegate, FDownloadClanActivityCountsResult const& data, bool bWasSuccessful);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_19_DELEGATE \
+STEAMCORE_API void FOnRequestClanOfficerListAsyncDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnRequestClanOfficerListAsyncDelegate, FClanOfficerListResponse const& data, bool bWasSuccessful);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_20_DELEGATE \
+STEAMCORE_API void FOnJoinClanChatRoomAsyncDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnJoinClanChatRoomAsyncDelegate, FJoinClanChatRoomCompletionResult const& data, bool bWasSuccessful);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_21_DELEGATE \
+STEAMCORE_API void FOnEnumerateFollowingListAsyncDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnEnumerateFollowingListAsyncDelegate, FFriendsEnumerateFollowingList const& data, bool bWasSuccessful);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_22_DELEGATE \
+STEAMCORE_API void FOnIsFollowingAsyncDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnIsFollowingAsyncDelegate, FFriendsIsFollowing const& data, bool bWasSuccessful);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_23_DELEGATE \
+STEAMCORE_API void FOnGetFollowerCountAsyncDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnGetFollowerCountAsyncDelegate, FFriendsGetFollowerCount const& data, bool bWasSuccessful);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_24_DELEGATE \
+STEAMCORE_API void FOnRequestUserInformationAsyncDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnRequestUserInformationAsyncDelegate);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execSetPersonaNameAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execSetPersonaNameAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionSetPersonaName(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionSetPersonaName_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionSetPersonaName, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionSetPersonaName)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionSetPersonaName(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionSetPersonaName_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionSetPersonaName, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionSetPersonaName)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionSetPersonaName(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionSetPersonaName) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionSetPersonaName); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionSetPersonaName); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionSetPersonaName(USteamCoreFriendsAsyncActionSetPersonaName&&); \
+	NO_API USteamCoreFriendsAsyncActionSetPersonaName(const USteamCoreFriendsAsyncActionSetPersonaName&); \
+public: \
+	NO_API virtual ~USteamCoreFriendsAsyncActionSetPersonaName();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionSetPersonaName(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionSetPersonaName(USteamCoreFriendsAsyncActionSetPersonaName&&); \
+	NO_API USteamCoreFriendsAsyncActionSetPersonaName(const USteamCoreFriendsAsyncActionSetPersonaName&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionSetPersonaName); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionSetPersonaName); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionSetPersonaName) \
+	NO_API virtual ~USteamCoreFriendsAsyncActionSetPersonaName();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_29_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_32_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreFriendsAsyncActionSetPersonaName>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execDownloadClanActivityCountsAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execDownloadClanActivityCountsAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionDownloadClanActivityCounts(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionDownloadClanActivityCounts_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionDownloadClanActivityCounts, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionDownloadClanActivityCounts)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionDownloadClanActivityCounts(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionDownloadClanActivityCounts_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionDownloadClanActivityCounts, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionDownloadClanActivityCounts)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionDownloadClanActivityCounts(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionDownloadClanActivityCounts) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionDownloadClanActivityCounts); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionDownloadClanActivityCounts); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionDownloadClanActivityCounts(USteamCoreFriendsAsyncActionDownloadClanActivityCounts&&); \
+	NO_API USteamCoreFriendsAsyncActionDownloadClanActivityCounts(const USteamCoreFriendsAsyncActionDownloadClanActivityCounts&); \
+public: \
+	NO_API virtual ~USteamCoreFriendsAsyncActionDownloadClanActivityCounts();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionDownloadClanActivityCounts(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionDownloadClanActivityCounts(USteamCoreFriendsAsyncActionDownloadClanActivityCounts&&); \
+	NO_API USteamCoreFriendsAsyncActionDownloadClanActivityCounts(const USteamCoreFriendsAsyncActionDownloadClanActivityCounts&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionDownloadClanActivityCounts); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionDownloadClanActivityCounts); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionDownloadClanActivityCounts) \
+	NO_API virtual ~USteamCoreFriendsAsyncActionDownloadClanActivityCounts();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_56_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_59_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreFriendsAsyncActionDownloadClanActivityCounts>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execRequestClanOfficerListAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execRequestClanOfficerListAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionRequestClanOfficerList(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionRequestClanOfficerList_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionRequestClanOfficerList, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionRequestClanOfficerList)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionRequestClanOfficerList(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionRequestClanOfficerList_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionRequestClanOfficerList, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionRequestClanOfficerList)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionRequestClanOfficerList(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionRequestClanOfficerList) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionRequestClanOfficerList); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionRequestClanOfficerList); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionRequestClanOfficerList(USteamCoreFriendsAsyncActionRequestClanOfficerList&&); \
+	NO_API USteamCoreFriendsAsyncActionRequestClanOfficerList(const USteamCoreFriendsAsyncActionRequestClanOfficerList&); \
+public: \
+	NO_API virtual ~USteamCoreFriendsAsyncActionRequestClanOfficerList();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionRequestClanOfficerList(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionRequestClanOfficerList(USteamCoreFriendsAsyncActionRequestClanOfficerList&&); \
+	NO_API USteamCoreFriendsAsyncActionRequestClanOfficerList(const USteamCoreFriendsAsyncActionRequestClanOfficerList&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionRequestClanOfficerList); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionRequestClanOfficerList); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionRequestClanOfficerList) \
+	NO_API virtual ~USteamCoreFriendsAsyncActionRequestClanOfficerList();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_82_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_85_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreFriendsAsyncActionRequestClanOfficerList>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execJoinClanChatRoomAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execJoinClanChatRoomAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionJoinClanChatRoom(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionJoinClanChatRoom_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionJoinClanChatRoom, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionJoinClanChatRoom)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionJoinClanChatRoom(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionJoinClanChatRoom_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionJoinClanChatRoom, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionJoinClanChatRoom)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionJoinClanChatRoom(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionJoinClanChatRoom) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionJoinClanChatRoom); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionJoinClanChatRoom); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionJoinClanChatRoom(USteamCoreFriendsAsyncActionJoinClanChatRoom&&); \
+	NO_API USteamCoreFriendsAsyncActionJoinClanChatRoom(const USteamCoreFriendsAsyncActionJoinClanChatRoom&); \
+public: \
+	NO_API virtual ~USteamCoreFriendsAsyncActionJoinClanChatRoom();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionJoinClanChatRoom(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionJoinClanChatRoom(USteamCoreFriendsAsyncActionJoinClanChatRoom&&); \
+	NO_API USteamCoreFriendsAsyncActionJoinClanChatRoom(const USteamCoreFriendsAsyncActionJoinClanChatRoom&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionJoinClanChatRoom); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionJoinClanChatRoom); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionJoinClanChatRoom) \
+	NO_API virtual ~USteamCoreFriendsAsyncActionJoinClanChatRoom();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_108_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_111_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreFriendsAsyncActionJoinClanChatRoom>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execEnumerateFollowingListAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execEnumerateFollowingListAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionEnumerateFollowingList(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionEnumerateFollowingList_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionEnumerateFollowingList, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionEnumerateFollowingList)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionEnumerateFollowingList(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionEnumerateFollowingList_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionEnumerateFollowingList, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionEnumerateFollowingList)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionEnumerateFollowingList(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionEnumerateFollowingList) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionEnumerateFollowingList); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionEnumerateFollowingList); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionEnumerateFollowingList(USteamCoreFriendsAsyncActionEnumerateFollowingList&&); \
+	NO_API USteamCoreFriendsAsyncActionEnumerateFollowingList(const USteamCoreFriendsAsyncActionEnumerateFollowingList&); \
+public: \
+	NO_API virtual ~USteamCoreFriendsAsyncActionEnumerateFollowingList();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionEnumerateFollowingList(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionEnumerateFollowingList(USteamCoreFriendsAsyncActionEnumerateFollowingList&&); \
+	NO_API USteamCoreFriendsAsyncActionEnumerateFollowingList(const USteamCoreFriendsAsyncActionEnumerateFollowingList&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionEnumerateFollowingList); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionEnumerateFollowingList); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionEnumerateFollowingList) \
+	NO_API virtual ~USteamCoreFriendsAsyncActionEnumerateFollowingList();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_134_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_137_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreFriendsAsyncActionEnumerateFollowingList>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execIsFollowingAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execIsFollowingAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionIsFollowing(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionIsFollowing_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionIsFollowing, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionIsFollowing)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionIsFollowing(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionIsFollowing_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionIsFollowing, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionIsFollowing)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionIsFollowing(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionIsFollowing) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionIsFollowing); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionIsFollowing); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionIsFollowing(USteamCoreFriendsAsyncActionIsFollowing&&); \
+	NO_API USteamCoreFriendsAsyncActionIsFollowing(const USteamCoreFriendsAsyncActionIsFollowing&); \
+public: \
+	NO_API virtual ~USteamCoreFriendsAsyncActionIsFollowing();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionIsFollowing(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionIsFollowing(USteamCoreFriendsAsyncActionIsFollowing&&); \
+	NO_API USteamCoreFriendsAsyncActionIsFollowing(const USteamCoreFriendsAsyncActionIsFollowing&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionIsFollowing); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionIsFollowing); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionIsFollowing) \
+	NO_API virtual ~USteamCoreFriendsAsyncActionIsFollowing();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_161_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_164_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreFriendsAsyncActionIsFollowing>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execGetFollowerCountAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execGetFollowerCountAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionGetFollowerCount(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionGetFollowerCount_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionGetFollowerCount, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionGetFollowerCount)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionGetFollowerCount(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionGetFollowerCount_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionGetFollowerCount, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionGetFollowerCount)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionGetFollowerCount(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionGetFollowerCount) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionGetFollowerCount); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionGetFollowerCount); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionGetFollowerCount(USteamCoreFriendsAsyncActionGetFollowerCount&&); \
+	NO_API USteamCoreFriendsAsyncActionGetFollowerCount(const USteamCoreFriendsAsyncActionGetFollowerCount&); \
+public: \
+	NO_API virtual ~USteamCoreFriendsAsyncActionGetFollowerCount();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionGetFollowerCount(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionGetFollowerCount(USteamCoreFriendsAsyncActionGetFollowerCount&&); \
+	NO_API USteamCoreFriendsAsyncActionGetFollowerCount(const USteamCoreFriendsAsyncActionGetFollowerCount&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionGetFollowerCount); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionGetFollowerCount); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionGetFollowerCount) \
+	NO_API virtual ~USteamCoreFriendsAsyncActionGetFollowerCount();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_185_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_188_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreFriendsAsyncActionGetFollowerCount>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execRequestUserInformationAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execHandleCallback); \
+	DECLARE_FUNCTION(execRequestUserInformationAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionRequestUserInformation(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionRequestUserInformation_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionRequestUserInformation, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionRequestUserInformation)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreFriendsAsyncActionRequestUserInformation(); \
+	friend struct Z_Construct_UClass_USteamCoreFriendsAsyncActionRequestUserInformation_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreFriendsAsyncActionRequestUserInformation, USteamCoreAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCore"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreFriendsAsyncActionRequestUserInformation)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionRequestUserInformation(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionRequestUserInformation) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionRequestUserInformation); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionRequestUserInformation); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionRequestUserInformation(USteamCoreFriendsAsyncActionRequestUserInformation&&); \
+	NO_API USteamCoreFriendsAsyncActionRequestUserInformation(const USteamCoreFriendsAsyncActionRequestUserInformation&); \
+public: \
+	NO_API virtual ~USteamCoreFriendsAsyncActionRequestUserInformation();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreFriendsAsyncActionRequestUserInformation(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreFriendsAsyncActionRequestUserInformation(USteamCoreFriendsAsyncActionRequestUserInformation&&); \
+	NO_API USteamCoreFriendsAsyncActionRequestUserInformation(const USteamCoreFriendsAsyncActionRequestUserInformation&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreFriendsAsyncActionRequestUserInformation); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreFriendsAsyncActionRequestUserInformation); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreFriendsAsyncActionRequestUserInformation) \
+	NO_API virtual ~USteamCoreFriendsAsyncActionRequestUserInformation();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_209_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h_212_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCORE_API UClass* StaticClass<class USteamCoreFriendsAsyncActionRequestUserInformation>();
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCore_Public_SteamFriends_SteamFriendsAsyncActions_h
+
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

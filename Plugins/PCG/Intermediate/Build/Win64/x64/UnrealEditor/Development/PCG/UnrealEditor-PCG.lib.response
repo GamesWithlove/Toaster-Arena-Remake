@@ -1,0 +1,16 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-PCG.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\PCG\Intermediate\Build\Win64\x64\UnrealEditor\Development\PCG\Module.PCG.1_of_5.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\PCG\Intermediate\Build\Win64\x64\UnrealEditor\Development\PCG\Module.PCG.2_of_5.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\PCG\Intermediate\Build\Win64\x64\UnrealEditor\Development\PCG\Module.PCG.3_of_5.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\PCG\Intermediate\Build\Win64\x64\UnrealEditor\Development\PCG\Module.PCG.4_of_5.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\PCG\Intermediate\Build\Win64\x64\UnrealEditor\Development\PCG\Module.PCG.5_of_5.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\PCG\Intermediate\Build\Win64\x64\UnrealEditor\Development\PCG\Default.rc2.res"
+/OUT:"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\PCG\Intermediate\Build\Win64\x64\UnrealEditor\Development\PCG\UnrealEditor-PCG.lib"

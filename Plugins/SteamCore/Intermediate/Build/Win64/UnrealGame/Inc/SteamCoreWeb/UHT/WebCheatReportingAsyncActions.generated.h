@@ -1,0 +1,710 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "CheatReporting/WebCheatReportingAsyncActions.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UObject;
+class USteamCoreWebAsyncActionEndSecureMultiplayerSession;
+class USteamCoreWebAsyncActionGetCheatingReports;
+class USteamCoreWebAsyncActionRemovePlayerGameBan;
+class USteamCoreWebAsyncActionReportCheatData;
+class USteamCoreWebAsyncActionReportPlayerCheating;
+class USteamCoreWebAsyncActionRequestPlayerGameBan;
+class USteamCoreWebAsyncActionRequestVacStatusForUser;
+class USteamCoreWebAsyncActionStartSecureMultiplayerSession;
+#ifdef STEAMCOREWEB_WebCheatReportingAsyncActions_generated_h
+#error "WebCheatReportingAsyncActions.generated.h already included, missing '#pragma once' in WebCheatReportingAsyncActions.h"
+#endif
+#define STEAMCOREWEB_WebCheatReportingAsyncActions_generated_h
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execReportPlayerCheatingAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execReportPlayerCheatingAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionReportPlayerCheating(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionReportPlayerCheating_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionReportPlayerCheating, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionReportPlayerCheating)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionReportPlayerCheating(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionReportPlayerCheating_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionReportPlayerCheating, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionReportPlayerCheating)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionReportPlayerCheating(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionReportPlayerCheating) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionReportPlayerCheating); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionReportPlayerCheating); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionReportPlayerCheating(USteamCoreWebAsyncActionReportPlayerCheating&&); \
+	NO_API USteamCoreWebAsyncActionReportPlayerCheating(const USteamCoreWebAsyncActionReportPlayerCheating&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionReportPlayerCheating();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionReportPlayerCheating(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionReportPlayerCheating(USteamCoreWebAsyncActionReportPlayerCheating&&); \
+	NO_API USteamCoreWebAsyncActionReportPlayerCheating(const USteamCoreWebAsyncActionReportPlayerCheating&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionReportPlayerCheating); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionReportPlayerCheating); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionReportPlayerCheating) \
+	NO_API virtual ~USteamCoreWebAsyncActionReportPlayerCheating();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_22_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_25_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionReportPlayerCheating>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execRequestPlayerGameBanAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execRequestPlayerGameBanAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionRequestPlayerGameBan(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionRequestPlayerGameBan_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionRequestPlayerGameBan, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionRequestPlayerGameBan)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionRequestPlayerGameBan(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionRequestPlayerGameBan_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionRequestPlayerGameBan, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionRequestPlayerGameBan)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionRequestPlayerGameBan(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionRequestPlayerGameBan) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionRequestPlayerGameBan); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionRequestPlayerGameBan); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionRequestPlayerGameBan(USteamCoreWebAsyncActionRequestPlayerGameBan&&); \
+	NO_API USteamCoreWebAsyncActionRequestPlayerGameBan(const USteamCoreWebAsyncActionRequestPlayerGameBan&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionRequestPlayerGameBan();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionRequestPlayerGameBan(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionRequestPlayerGameBan(USteamCoreWebAsyncActionRequestPlayerGameBan&&); \
+	NO_API USteamCoreWebAsyncActionRequestPlayerGameBan(const USteamCoreWebAsyncActionRequestPlayerGameBan&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionRequestPlayerGameBan); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionRequestPlayerGameBan); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionRequestPlayerGameBan) \
+	NO_API virtual ~USteamCoreWebAsyncActionRequestPlayerGameBan();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_52_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_55_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionRequestPlayerGameBan>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execRemovePlayerGameBanAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execRemovePlayerGameBanAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionRemovePlayerGameBan(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionRemovePlayerGameBan_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionRemovePlayerGameBan, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionRemovePlayerGameBan)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionRemovePlayerGameBan(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionRemovePlayerGameBan_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionRemovePlayerGameBan, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionRemovePlayerGameBan)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionRemovePlayerGameBan(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionRemovePlayerGameBan) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionRemovePlayerGameBan); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionRemovePlayerGameBan); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionRemovePlayerGameBan(USteamCoreWebAsyncActionRemovePlayerGameBan&&); \
+	NO_API USteamCoreWebAsyncActionRemovePlayerGameBan(const USteamCoreWebAsyncActionRemovePlayerGameBan&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionRemovePlayerGameBan();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionRemovePlayerGameBan(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionRemovePlayerGameBan(USteamCoreWebAsyncActionRemovePlayerGameBan&&); \
+	NO_API USteamCoreWebAsyncActionRemovePlayerGameBan(const USteamCoreWebAsyncActionRemovePlayerGameBan&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionRemovePlayerGameBan); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionRemovePlayerGameBan); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionRemovePlayerGameBan) \
+	NO_API virtual ~USteamCoreWebAsyncActionRemovePlayerGameBan();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_77_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_80_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionRemovePlayerGameBan>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetCheatingReportsAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetCheatingReportsAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetCheatingReports(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetCheatingReports_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetCheatingReports, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetCheatingReports)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetCheatingReports(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetCheatingReports_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetCheatingReports, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetCheatingReports)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetCheatingReports(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetCheatingReports) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetCheatingReports); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetCheatingReports); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetCheatingReports(USteamCoreWebAsyncActionGetCheatingReports&&); \
+	NO_API USteamCoreWebAsyncActionGetCheatingReports(const USteamCoreWebAsyncActionGetCheatingReports&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionGetCheatingReports();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetCheatingReports(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetCheatingReports(USteamCoreWebAsyncActionGetCheatingReports&&); \
+	NO_API USteamCoreWebAsyncActionGetCheatingReports(const USteamCoreWebAsyncActionGetCheatingReports&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetCheatingReports); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetCheatingReports); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetCheatingReports) \
+	NO_API virtual ~USteamCoreWebAsyncActionGetCheatingReports();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_98_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_101_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionGetCheatingReports>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execReportCheatDataAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execReportCheatDataAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionReportCheatData(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionReportCheatData_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionReportCheatData, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionReportCheatData)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionReportCheatData(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionReportCheatData_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionReportCheatData, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionReportCheatData)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionReportCheatData(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionReportCheatData) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionReportCheatData); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionReportCheatData); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionReportCheatData(USteamCoreWebAsyncActionReportCheatData&&); \
+	NO_API USteamCoreWebAsyncActionReportCheatData(const USteamCoreWebAsyncActionReportCheatData&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionReportCheatData();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionReportCheatData(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionReportCheatData(USteamCoreWebAsyncActionReportCheatData&&); \
+	NO_API USteamCoreWebAsyncActionReportCheatData(const USteamCoreWebAsyncActionReportCheatData&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionReportCheatData); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionReportCheatData); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionReportCheatData) \
+	NO_API virtual ~USteamCoreWebAsyncActionReportCheatData();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_124_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_127_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionReportCheatData>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execRequestVacStatusForUserAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execRequestVacStatusForUserAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionRequestVacStatusForUser(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionRequestVacStatusForUser_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionRequestVacStatusForUser, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionRequestVacStatusForUser)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionRequestVacStatusForUser(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionRequestVacStatusForUser_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionRequestVacStatusForUser, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionRequestVacStatusForUser)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionRequestVacStatusForUser(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionRequestVacStatusForUser) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionRequestVacStatusForUser); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionRequestVacStatusForUser); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionRequestVacStatusForUser(USteamCoreWebAsyncActionRequestVacStatusForUser&&); \
+	NO_API USteamCoreWebAsyncActionRequestVacStatusForUser(const USteamCoreWebAsyncActionRequestVacStatusForUser&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionRequestVacStatusForUser();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionRequestVacStatusForUser(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionRequestVacStatusForUser(USteamCoreWebAsyncActionRequestVacStatusForUser&&); \
+	NO_API USteamCoreWebAsyncActionRequestVacStatusForUser(const USteamCoreWebAsyncActionRequestVacStatusForUser&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionRequestVacStatusForUser); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionRequestVacStatusForUser); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionRequestVacStatusForUser) \
+	NO_API virtual ~USteamCoreWebAsyncActionRequestVacStatusForUser();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_155_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_158_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionRequestVacStatusForUser>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execStartSecureMultiplayerSessionAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execStartSecureMultiplayerSessionAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionStartSecureMultiplayerSession(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionStartSecureMultiplayerSession_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionStartSecureMultiplayerSession, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionStartSecureMultiplayerSession)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionStartSecureMultiplayerSession(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionStartSecureMultiplayerSession_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionStartSecureMultiplayerSession, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionStartSecureMultiplayerSession)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionStartSecureMultiplayerSession(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionStartSecureMultiplayerSession) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionStartSecureMultiplayerSession); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionStartSecureMultiplayerSession); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionStartSecureMultiplayerSession(USteamCoreWebAsyncActionStartSecureMultiplayerSession&&); \
+	NO_API USteamCoreWebAsyncActionStartSecureMultiplayerSession(const USteamCoreWebAsyncActionStartSecureMultiplayerSession&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionStartSecureMultiplayerSession();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionStartSecureMultiplayerSession(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionStartSecureMultiplayerSession(USteamCoreWebAsyncActionStartSecureMultiplayerSession&&); \
+	NO_API USteamCoreWebAsyncActionStartSecureMultiplayerSession(const USteamCoreWebAsyncActionStartSecureMultiplayerSession&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionStartSecureMultiplayerSession); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionStartSecureMultiplayerSession); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionStartSecureMultiplayerSession) \
+	NO_API virtual ~USteamCoreWebAsyncActionStartSecureMultiplayerSession();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_181_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_184_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionStartSecureMultiplayerSession>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execEndSecureMultiplayerSessionAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execEndSecureMultiplayerSessionAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionEndSecureMultiplayerSession(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionEndSecureMultiplayerSession_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionEndSecureMultiplayerSession, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionEndSecureMultiplayerSession)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionEndSecureMultiplayerSession(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionEndSecureMultiplayerSession_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionEndSecureMultiplayerSession, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionEndSecureMultiplayerSession)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionEndSecureMultiplayerSession(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionEndSecureMultiplayerSession) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionEndSecureMultiplayerSession); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionEndSecureMultiplayerSession); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionEndSecureMultiplayerSession(USteamCoreWebAsyncActionEndSecureMultiplayerSession&&); \
+	NO_API USteamCoreWebAsyncActionEndSecureMultiplayerSession(const USteamCoreWebAsyncActionEndSecureMultiplayerSession&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionEndSecureMultiplayerSession();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionEndSecureMultiplayerSession(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionEndSecureMultiplayerSession(USteamCoreWebAsyncActionEndSecureMultiplayerSession&&); \
+	NO_API USteamCoreWebAsyncActionEndSecureMultiplayerSession(const USteamCoreWebAsyncActionEndSecureMultiplayerSession&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionEndSecureMultiplayerSession); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionEndSecureMultiplayerSession); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionEndSecureMultiplayerSession) \
+	NO_API virtual ~USteamCoreWebAsyncActionEndSecureMultiplayerSession();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_200_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h_203_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionEndSecureMultiplayerSession>();
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_CheatReporting_WebCheatReportingAsyncActions_h
+
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

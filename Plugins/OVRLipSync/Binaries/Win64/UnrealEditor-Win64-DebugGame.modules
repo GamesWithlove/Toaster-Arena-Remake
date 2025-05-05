@@ -1,0 +1,8 @@
+{
+	"BuildId": "25360045",
+	"Modules": 
+	{
+		"OVRLipSync": "UnrealEditor-OVRLipSync-Win64-DebugGame.dll",
+		"OVRLipSyncEditor": "UnrealEditor-OVRLipSyncEditor-Win64-DebugGame.dll"
+	}
+}

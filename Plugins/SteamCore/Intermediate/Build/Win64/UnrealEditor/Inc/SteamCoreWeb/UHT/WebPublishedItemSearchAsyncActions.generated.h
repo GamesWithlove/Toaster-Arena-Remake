@@ -1,0 +1,366 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "PublishedItemSearch/WebPublishedItemSearchAsyncActions.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UObject;
+class USteamCoreWebAsyncActionRankedByPublicationOrder;
+class USteamCoreWebAsyncActionRankedByTrend;
+class USteamCoreWebAsyncActionRankedByVote;
+class USteamCoreWebAsyncActionResultSetSummary;
+#ifdef STEAMCOREWEB_WebPublishedItemSearchAsyncActions_generated_h
+#error "WebPublishedItemSearchAsyncActions.generated.h already included, missing '#pragma once' in WebPublishedItemSearchAsyncActions.h"
+#endif
+#define STEAMCOREWEB_WebPublishedItemSearchAsyncActions_generated_h
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execRankedByPublicationOrderAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execRankedByPublicationOrderAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionRankedByPublicationOrder(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionRankedByPublicationOrder_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionRankedByPublicationOrder, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionRankedByPublicationOrder)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionRankedByPublicationOrder(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionRankedByPublicationOrder_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionRankedByPublicationOrder, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionRankedByPublicationOrder)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionRankedByPublicationOrder(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionRankedByPublicationOrder) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionRankedByPublicationOrder); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionRankedByPublicationOrder); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionRankedByPublicationOrder(USteamCoreWebAsyncActionRankedByPublicationOrder&&); \
+	NO_API USteamCoreWebAsyncActionRankedByPublicationOrder(const USteamCoreWebAsyncActionRankedByPublicationOrder&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionRankedByPublicationOrder();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionRankedByPublicationOrder(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionRankedByPublicationOrder(USteamCoreWebAsyncActionRankedByPublicationOrder&&); \
+	NO_API USteamCoreWebAsyncActionRankedByPublicationOrder(const USteamCoreWebAsyncActionRankedByPublicationOrder&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionRankedByPublicationOrder); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionRankedByPublicationOrder); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionRankedByPublicationOrder) \
+	NO_API virtual ~USteamCoreWebAsyncActionRankedByPublicationOrder();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_18_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_21_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionRankedByPublicationOrder>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execRankedByTrendAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execRankedByTrendAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionRankedByTrend(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionRankedByTrend_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionRankedByTrend, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionRankedByTrend)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionRankedByTrend(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionRankedByTrend_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionRankedByTrend, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionRankedByTrend)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionRankedByTrend(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionRankedByTrend) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionRankedByTrend); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionRankedByTrend); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionRankedByTrend(USteamCoreWebAsyncActionRankedByTrend&&); \
+	NO_API USteamCoreWebAsyncActionRankedByTrend(const USteamCoreWebAsyncActionRankedByTrend&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionRankedByTrend();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionRankedByTrend(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionRankedByTrend(USteamCoreWebAsyncActionRankedByTrend&&); \
+	NO_API USteamCoreWebAsyncActionRankedByTrend(const USteamCoreWebAsyncActionRankedByTrend&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionRankedByTrend); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionRankedByTrend); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionRankedByTrend) \
+	NO_API virtual ~USteamCoreWebAsyncActionRankedByTrend();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_43_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_46_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionRankedByTrend>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execRankedByVoteAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execRankedByVoteAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionRankedByVote(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionRankedByVote_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionRankedByVote, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionRankedByVote)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionRankedByVote(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionRankedByVote_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionRankedByVote, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionRankedByVote)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionRankedByVote(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionRankedByVote) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionRankedByVote); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionRankedByVote); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionRankedByVote(USteamCoreWebAsyncActionRankedByVote&&); \
+	NO_API USteamCoreWebAsyncActionRankedByVote(const USteamCoreWebAsyncActionRankedByVote&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionRankedByVote();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionRankedByVote(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionRankedByVote(USteamCoreWebAsyncActionRankedByVote&&); \
+	NO_API USteamCoreWebAsyncActionRankedByVote(const USteamCoreWebAsyncActionRankedByVote&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionRankedByVote); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionRankedByVote); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionRankedByVote) \
+	NO_API virtual ~USteamCoreWebAsyncActionRankedByVote();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_69_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_72_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionRankedByVote>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execResultSetSummaryAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execResultSetSummaryAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionResultSetSummary(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionResultSetSummary_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionResultSetSummary, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionResultSetSummary)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionResultSetSummary(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionResultSetSummary_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionResultSetSummary, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionResultSetSummary)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionResultSetSummary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionResultSetSummary) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionResultSetSummary); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionResultSetSummary); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionResultSetSummary(USteamCoreWebAsyncActionResultSetSummary&&); \
+	NO_API USteamCoreWebAsyncActionResultSetSummary(const USteamCoreWebAsyncActionResultSetSummary&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionResultSetSummary();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionResultSetSummary(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionResultSetSummary(USteamCoreWebAsyncActionResultSetSummary&&); \
+	NO_API USteamCoreWebAsyncActionResultSetSummary(const USteamCoreWebAsyncActionResultSetSummary&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionResultSetSummary); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionResultSetSummary); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionResultSetSummary) \
+	NO_API virtual ~USteamCoreWebAsyncActionResultSetSummary();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_94_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h_97_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionResultSetSummary>();
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_PublishedItemSearch_WebPublishedItemSearchAsyncActions_h
+
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

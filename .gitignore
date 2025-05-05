@@ -9,6 +9,7 @@
 *.exe
 *.pak
 *.pdb
+*.pch
 
 # Log files
 *.log
@@ -48,10 +49,10 @@ Saved/*
 
 # Compiled source files for the engine to use
 Intermediate/*
-Plugins/*/Intermediate/*
-Plugins/*
-Plugins
-Binaries/*
+# Plugins/*/Intermediate/*
+# Plugins/*
+# Plugins
+# Binaries/*
 
 # Cache files for the editor to use
 DerivedDataCache/*

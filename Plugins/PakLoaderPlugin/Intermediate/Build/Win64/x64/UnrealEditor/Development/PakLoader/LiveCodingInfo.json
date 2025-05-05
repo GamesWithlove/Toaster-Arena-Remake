@@ -1,0 +1,15 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.PakLoader.cpp.obj": [
+			"PakDownloader.gen.cpp.obj",
+			"PakLoader.init.gen.cpp.obj",
+			"PakLoaderLibrary.gen.cpp.obj",
+			"LogHelper.cpp.obj",
+			"PakDownloader.cpp.obj",
+			"PakLoader.cpp.obj",
+			"PakLoaderLibrary.cpp.obj",
+			"PakLoaderModule.cpp.obj"
+		]
+	}
+}

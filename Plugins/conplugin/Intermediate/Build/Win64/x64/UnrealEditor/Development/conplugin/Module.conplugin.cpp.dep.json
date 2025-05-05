@@ -1,0 +1,20 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\conplugin\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\conplugin\\module.conplugin.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\ue4_projects\\toaster-arena-remake\\intermediate\\build\\win64\\x64\\toaster_rebooteditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\conplugin\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\conplugin\\definitions.conplugin.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\conplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\conplugin\\uht\\conplugin.init.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\conplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\conplugin\\uht\\expandedpc.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\conplugin\\source\\conplugin\\public\\expandedpc.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\conplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\conplugin\\uht\\expandedpc.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\conplugin\\source\\conplugin\\private\\conplugin.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\conplugin\\source\\conplugin\\public\\conplugin.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\conplugin\\source\\conplugin\\private\\expandedpc.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
