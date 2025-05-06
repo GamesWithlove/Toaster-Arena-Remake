@@ -66,6 +66,30 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/Win64/LinuxArm64/UnrealEditor-LinuxArm64TargetPlatform.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/LinuxArm64/UnrealEditor-LinuxArm64TargetPlatform.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/LinuxArm64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/Linux/UnrealEditor-LinuxTargetPlatform.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/Linux/UnrealEditor-LinuxTargetPlatform.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/Linux/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/Win64/OpenImageDenoise.dll",
 			"Type": "RequiredResource"
 		},
@@ -6159,6 +6183,18 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/PakLoaderPlugin/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/QuickMergeSkeletalMesh/Binaries/Win64/UnrealEditor-QuickMergeSkeletalMesh.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/QuickMergeSkeletalMesh/Binaries/Win64/UnrealEditor-QuickMergeSkeletalMesh.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/QuickMergeSkeletalMesh/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -27440,6 +27476,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/BlueprintExtraMath/BlueprintExtraMath.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/ColorWheelPlugin/ColorWheelPlugin.uplugin",
 			"Type": "UFS"
 		},
@@ -27469,6 +27509,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/PakLoaderPlugin/PakLoader.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/QuickMergeSkeletalMesh/QuickMergeSkeletalMesh.uplugin",
 			"Type": "UFS"
 		},
 		{

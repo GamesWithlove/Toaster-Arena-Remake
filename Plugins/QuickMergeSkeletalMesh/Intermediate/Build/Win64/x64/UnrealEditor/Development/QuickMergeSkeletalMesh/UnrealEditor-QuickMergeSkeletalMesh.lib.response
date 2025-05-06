@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-QuickMergeSkeletalMesh.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\QuickMergeSkeletalMesh\Intermediate\Build\Win64\x64\UnrealEditor\Development\QuickMergeSkeletalMesh\Module.QuickMergeSkeletalMesh.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\QuickMergeSkeletalMesh\Intermediate\Build\Win64\x64\UnrealEditor\Development\QuickMergeSkeletalMesh\Default.rc2.res"
+/OUT:"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\QuickMergeSkeletalMesh\Intermediate\Build\Win64\x64\UnrealEditor\Development\QuickMergeSkeletalMesh\UnrealEditor-QuickMergeSkeletalMesh.lib"
