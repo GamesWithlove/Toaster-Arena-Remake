@@ -53,6 +53,7 @@ Intermediate/*
 # Plugins/*
 # Plugins
 # Binaries/*
+Content/Export/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
