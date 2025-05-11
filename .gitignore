@@ -66,7 +66,7 @@ Content/modloading.log
 
 Image.png
 String.txt
-Toaster_reboot.uproject
-*.uproject
-DefaultEditorPerProjectUserSettings.ini
-Config\DefaultEditorPerProjectUserSettings.ini
+# Toaster_reboot.uproject
+# *.uproject
+# DefaultEditorPerProjectUserSettings.ini
+# Config\DefaultEditorPerProjectUserSettings.ini
