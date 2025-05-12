@@ -6122,15 +6122,23 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/Binaries/Win64/UnrealEditor-EditorDiscordRichPresence.dll",
+			"Path": "$(ProjectDir)/Plugins/LowEntryExtStdLib/Binaries/Win64/UnrealEditor-LowEntryExtendedStandardLibrary.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/Binaries/Win64/UnrealEditor-EditorDiscordRichPresence.pdb",
+			"Path": "$(ProjectDir)/Plugins/LowEntryExtStdLib/Binaries/Win64/UnrealEditor-LowEntryExtendedStandardLibrary.pdb",
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/Binaries/Win64/UnrealEditor.modules",
+			"Path": "$(ProjectDir)/Plugins/LowEntryExtStdLib/Binaries/Win64/UnrealEditor-LowEntryExtendedStandardLibraryEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/LowEntryExtStdLib/Binaries/Win64/UnrealEditor-LowEntryExtendedStandardLibraryEditor.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/LowEntryExtStdLib/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -27488,11 +27496,7 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/Binaries/ThirdParty/Discord/x64/Release/discord_game_sdk.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/EditorDiscordRichPresence.uplugin",
+			"Path": "$(ProjectDir)/Plugins/LowEntryExtStdLib/LowEntryExtStdLib.uplugin",
 			"Type": "UFS"
 		},
 		{
