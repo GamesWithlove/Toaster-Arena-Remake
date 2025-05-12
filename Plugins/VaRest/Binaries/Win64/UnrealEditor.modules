@@ -1,0 +1,8 @@
+{
+	"BuildId": "25360045",
+	"Modules": 
+	{
+		"VaRest": "UnrealEditor-VaRest.dll",
+		"VaRestEditor": "UnrealEditor-VaRestEditor.dll"
+	}
+}
