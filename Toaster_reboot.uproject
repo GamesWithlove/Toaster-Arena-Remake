@@ -360,6 +360,16 @@
 		{
 			"Name": "EditorDiscordRichPresence",
 			"Enabled": false
+		},
+		{
+			"Name": "LowEntryExtStdLib",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/846c2ad08f164f45b0335ecebf85361e"
+		},
+		{
+			"Name": "QuickMergeSkeletalMesh",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/46b05d77fa164177918c5476a26bc408"
 		}
 	]
 }
