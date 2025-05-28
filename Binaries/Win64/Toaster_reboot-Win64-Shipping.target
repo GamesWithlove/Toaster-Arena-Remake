@@ -3339,6 +3339,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/QuickMergeSkeletalMesh/QuickMergeSkeletalMesh.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/ShadowsCodePlugin/ShadowsCodePlugin.uplugin",
 			"Type": "UFS"
 		},
