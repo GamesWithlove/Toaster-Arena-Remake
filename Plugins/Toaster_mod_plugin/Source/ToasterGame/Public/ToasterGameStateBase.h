@@ -13,11 +13,11 @@ class TOASTERGAME_API AToasterGameStateBase : public AGameStateBase
 public:
 
     // Actors that are meant to be spawned on the server
-    UPROPERTY(EditAnywhere, Category = "Actor Pools")
+    UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Actor Pools")
     TMap<TSubclassOf<APooledActor>, int32> ServerActorPoolTypes;
 
     // Actors that are meant to be spawned on the client
-    UPROPERTY(EditAnywhere, Category = "Actor Pools")
+    UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Actor Pools")
     TMap<TSubclassOf<APooledActor>, int32> ClientActorPoolTypes;
 
     UFUNCTION(BlueprintCallable, Category = "Actor")
@@ -25,11 +25,19 @@ public:
 
     UFUNCTION()
     APooledActor* SpawnActorFromPoolDefer(TSubclassOf<APooledActor> ActorClass, FTransform Transform, bool bReclaimIfEmpty = true);
-
-protected:
     
+    UFUNCTION(BlueprintCallable, Category = "Actor")
     void InitActorPools();
 
+    
+
+protected:
+    //void InitActorPools();
+    
+
+ 
+
+    
     class UActorPool* GetActorPoolForClass(TSubclassOf<APooledActor> ActorClass);
 
     UPROPERTY()

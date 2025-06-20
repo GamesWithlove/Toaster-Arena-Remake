@@ -77,7 +77,7 @@ UActorPool* AToasterGameStateBase::GetActorPoolForClass(TSubclassOf<APooledActor
 void AToasterGameStateBase::BeginPlay()
 {
     Super::BeginPlay();
-    InitActorPools();
+    //InitActorPools();
 }
 
 bool AToasterGameStateBase::ShouldUseServerPools() const

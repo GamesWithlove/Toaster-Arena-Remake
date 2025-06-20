@@ -18,12 +18,14 @@ class APooledActor;
 #define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_SPARSE_DATA
 #define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execInitActorPools); \
 	DECLARE_FUNCTION(execSpawnActorFromPoolDefer); \
 	DECLARE_FUNCTION(execSpawnActorFromPool);
 
 
 #define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execInitActorPools); \
 	DECLARE_FUNCTION(execSpawnActorFromPoolDefer); \
 	DECLARE_FUNCTION(execSpawnActorFromPool);
 

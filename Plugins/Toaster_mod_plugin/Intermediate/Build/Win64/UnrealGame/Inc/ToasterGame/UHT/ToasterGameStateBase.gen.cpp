@@ -18,6 +18,13 @@ void EmptyLinkFunctionForGeneratedCodeToasterGameStateBase() {}
 	TOASTERGAME_API UClass* Z_Construct_UClass_UActorPool_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_ToasterGame();
 // End Cross Module References
+	DEFINE_FUNCTION(AToasterGameStateBase::execInitActorPools)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->InitActorPools();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AToasterGameStateBase::execSpawnActorFromPoolDefer)
 	{
 		P_GET_OBJECT(UClass,Z_Param_ActorClass);
@@ -42,10 +49,34 @@ void EmptyLinkFunctionForGeneratedCodeToasterGameStateBase() {}
 	{
 		UClass* Class = AToasterGameStateBase::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "InitActorPools", &AToasterGameStateBase::execInitActorPools },
 			{ "SpawnActorFromPool", &AToasterGameStateBase::execSpawnActorFromPool },
 			{ "SpawnActorFromPoolDefer", &AToasterGameStateBase::execSpawnActorFromPoolDefer },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AToasterGameStateBase_InitActorPools_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AToasterGameStateBase_InitActorPools_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Actor" },
+		{ "ModuleRelativePath", "Public/ToasterGameStateBase.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AToasterGameStateBase_InitActorPools_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AToasterGameStateBase, nullptr, "InitActorPools", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AToasterGameStateBase_InitActorPools_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AToasterGameStateBase_InitActorPools_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AToasterGameStateBase_InitActorPools()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AToasterGameStateBase_InitActorPools_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AToasterGameStateBase_SpawnActorFromPool_Statics
 	{
@@ -192,6 +223,7 @@ void EmptyLinkFunctionForGeneratedCodeToasterGameStateBase() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_ToasterGame,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AToasterGameStateBase_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AToasterGameStateBase_InitActorPools, "InitActorPools" }, // 52672889
 		{ &Z_Construct_UFunction_AToasterGameStateBase_SpawnActorFromPool, "SpawnActorFromPool" }, // 479967345
 		{ &Z_Construct_UFunction_AToasterGameStateBase_SpawnActorFromPoolDefer, "SpawnActorFromPoolDefer" }, // 1028413483
 	};
@@ -213,7 +245,7 @@ void EmptyLinkFunctionForGeneratedCodeToasterGameStateBase() {}
 		{ "ToolTip", "Actors that are meant to be spawned on the server" },
 	};
 #endif
-	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ServerActorPoolTypes = { "ServerActorPoolTypes", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AToasterGameStateBase, ServerActorPoolTypes), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ServerActorPoolTypes_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ServerActorPoolTypes_MetaData)) };
+	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ServerActorPoolTypes = { "ServerActorPoolTypes", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AToasterGameStateBase, ServerActorPoolTypes), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ServerActorPoolTypes_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ServerActorPoolTypes_MetaData)) };
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ClientActorPoolTypes_ValueProp = { "ClientActorPoolTypes", nullptr, (EPropertyFlags)0x0000000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 1, METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ClientActorPoolTypes_Key_KeyProp = { "ClientActorPoolTypes_Key", nullptr, (EPropertyFlags)0x0004000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UClass_UClass, Z_Construct_UClass_APooledActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
@@ -224,7 +256,7 @@ void EmptyLinkFunctionForGeneratedCodeToasterGameStateBase() {}
 		{ "ToolTip", "Actors that are meant to be spawned on the client" },
 	};
 #endif
-	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ClientActorPoolTypes = { "ClientActorPoolTypes", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AToasterGameStateBase, ClientActorPoolTypes), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ClientActorPoolTypes_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ClientActorPoolTypes_MetaData)) };
+	const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ClientActorPoolTypes = { "ClientActorPoolTypes", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AToasterGameStateBase, ClientActorPoolTypes), EMapPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ClientActorPoolTypes_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ClientActorPoolTypes_MetaData)) };
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ServerActorPools_ValueProp = { "ServerActorPools", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 1, Z_Construct_UClass_UActorPool_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AToasterGameStateBase_Statics::NewProp_ServerActorPools_Key_KeyProp = { "ServerActorPools_Key", nullptr, (EPropertyFlags)0x0004000000000000, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UClass_UClass, Z_Construct_UClass_APooledActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
@@ -293,9 +325,9 @@ void EmptyLinkFunctionForGeneratedCodeToasterGameStateBase() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AToasterGameStateBase, AToasterGameStateBase::StaticClass, TEXT("AToasterGameStateBase"), &Z_Registration_Info_UClass_AToasterGameStateBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AToasterGameStateBase), 3538278635U) },
+		{ Z_Construct_UClass_AToasterGameStateBase, AToasterGameStateBase::StaticClass, TEXT("AToasterGameStateBase"), &Z_Registration_Info_UClass_AToasterGameStateBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AToasterGameStateBase), 2359829889U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_2396889818(TEXT("/Script/ToasterGame"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_1072945019(TEXT("/Script/ToasterGame"),
 		Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
