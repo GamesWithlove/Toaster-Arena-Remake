@@ -66,6 +66,30 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/Win64/LinuxArm64/UnrealEditor-LinuxArm64TargetPlatform.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/LinuxArm64/UnrealEditor-LinuxArm64TargetPlatform.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/LinuxArm64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/Linux/UnrealEditor-LinuxTargetPlatform.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/Linux/UnrealEditor-LinuxTargetPlatform.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/Linux/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/Win64/OpenImageDenoise.dll",
 			"Type": "RequiredResource"
 		},
@@ -6098,15 +6122,23 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/Binaries/Win64/UnrealEditor-EditorDiscordRichPresence-Win64-DebugGame.dll",
+			"Path": "$(ProjectDir)/Plugins/LowEntryExtStdLib/Binaries/Win64/UnrealEditor-LowEntryExtendedStandardLibrary-Win64-DebugGame.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/Binaries/Win64/UnrealEditor-EditorDiscordRichPresence-Win64-DebugGame.pdb",
+			"Path": "$(ProjectDir)/Plugins/LowEntryExtStdLib/Binaries/Win64/UnrealEditor-LowEntryExtendedStandardLibrary-Win64-DebugGame.pdb",
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/Binaries/Win64/UnrealEditor-Win64-DebugGame.modules",
+			"Path": "$(ProjectDir)/Plugins/LowEntryExtStdLib/Binaries/Win64/UnrealEditor-LowEntryExtendedStandardLibraryEditor-Win64-DebugGame.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/LowEntryExtStdLib/Binaries/Win64/UnrealEditor-LowEntryExtendedStandardLibraryEditor-Win64-DebugGame.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/LowEntryExtStdLib/Binaries/Win64/UnrealEditor-Win64-DebugGame.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -6159,6 +6191,18 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/PakLoaderPlugin/Binaries/Win64/UnrealEditor-Win64-DebugGame.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/QuickMergeSkeletalMesh/Binaries/Win64/UnrealEditor-QuickMergeSkeletalMesh-Win64-DebugGame.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/QuickMergeSkeletalMesh/Binaries/Win64/UnrealEditor-QuickMergeSkeletalMesh-Win64-DebugGame.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/QuickMergeSkeletalMesh/Binaries/Win64/UnrealEditor-Win64-DebugGame.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -27440,6 +27484,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/BlueprintExtraMath/BlueprintExtraMath.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/ColorWheelPlugin/ColorWheelPlugin.uplugin",
 			"Type": "UFS"
 		},
@@ -27448,11 +27496,7 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/Binaries/ThirdParty/Discord/x64/Release/discord_game_sdk.dll",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EditorDiscordRichPresence/EditorDiscordRichPresence.uplugin",
+			"Path": "$(ProjectDir)/Plugins/LowEntryExtStdLib/LowEntryExtStdLib.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -27469,6 +27513,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/PakLoaderPlugin/PakLoader.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/QuickMergeSkeletalMesh/QuickMergeSkeletalMesh.uplugin",
 			"Type": "UFS"
 		},
 		{
