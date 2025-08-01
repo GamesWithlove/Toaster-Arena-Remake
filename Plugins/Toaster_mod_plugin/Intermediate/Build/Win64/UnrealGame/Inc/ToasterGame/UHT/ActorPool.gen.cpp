@@ -140,6 +140,11 @@ void EmptyLinkFunctionForGeneratedCodeActorPool() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_bPooledobject_MetaData[];
+#endif
+		static void NewProp_bPooledobject_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_bPooledobject;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MyActorPool_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_MyActorPool;
@@ -172,6 +177,17 @@ void EmptyLinkFunctionForGeneratedCodeActorPool() {}
 	};
 #endif
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APooledActor_Statics::NewProp_bPooledobject_MetaData[] = {
+		{ "Category", "PooledActor" },
+		{ "ModuleRelativePath", "Public/ActorPool.h" },
+	};
+#endif
+	void Z_Construct_UClass_APooledActor_Statics::NewProp_bPooledobject_SetBit(void* Obj)
+	{
+		((APooledActor*)Obj)->bPooledobject = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_APooledActor_Statics::NewProp_bPooledobject = { "bPooledobject", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(APooledActor), &Z_Construct_UClass_APooledActor_Statics::NewProp_bPooledobject_SetBit, METADATA_PARAMS(Z_Construct_UClass_APooledActor_Statics::NewProp_bPooledobject_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APooledActor_Statics::NewProp_bPooledobject_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APooledActor_Statics::NewProp_MyActorPool_MetaData[] = {
 		{ "ModuleRelativePath", "Public/ActorPool.h" },
 	};
@@ -194,6 +210,7 @@ void EmptyLinkFunctionForGeneratedCodeActorPool() {}
 	}
 	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_APooledActor_Statics::NewProp_bPooled = { "bPooled", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(APooledActor), &Z_Construct_UClass_APooledActor_Statics::NewProp_bPooled_SetBit, METADATA_PARAMS(Z_Construct_UClass_APooledActor_Statics::NewProp_bPooled_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APooledActor_Statics::NewProp_bPooled_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APooledActor_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APooledActor_Statics::NewProp_bPooledobject,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APooledActor_Statics::NewProp_MyActorPool,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APooledActor_Statics::NewProp_NextActor,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APooledActor_Statics::NewProp_bPooled,
@@ -332,10 +349,10 @@ void EmptyLinkFunctionForGeneratedCodeActorPool() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ActorPool_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APooledActor, APooledActor::StaticClass, TEXT("APooledActor"), &Z_Registration_Info_UClass_APooledActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APooledActor), 975025606U) },
+		{ Z_Construct_UClass_APooledActor, APooledActor::StaticClass, TEXT("APooledActor"), &Z_Registration_Info_UClass_APooledActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APooledActor), 1312683357U) },
 		{ Z_Construct_UClass_UActorPool, UActorPool::StaticClass, TEXT("UActorPool"), &Z_Registration_Info_UClass_UActorPool, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UActorPool), 496659220U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ActorPool_h_1120416394(TEXT("/Script/ToasterGame"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ActorPool_h_3578757549(TEXT("/Script/ToasterGame"),
 		Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ActorPool_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ActorPool_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

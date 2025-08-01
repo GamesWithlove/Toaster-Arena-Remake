@@ -4,10 +4,17 @@ bool APooledActor::IsPooled() const
 {
     return bPooled;
 }
-
+//Return object to pool only if marked as pooled else we actually destroy it
 void APooledActor::K2_DestroyActor()
 {
-    MyActorPool->ReleaseToPool(this);
+    if (bPooledobject)
+    {
+        MyActorPool->ReleaseToPool(this);
+    }
+    else
+    {
+    Super::K2_DestroyActor();
+    }
 }
 
 void APooledActor::LifeSpanExpired()

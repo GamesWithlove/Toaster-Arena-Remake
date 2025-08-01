@@ -9,6 +9,8 @@ class TOASTERGAME_API APooledActor : public AActor
 {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintReadWrite,EditAnywhere, Category = "Default")
+    bool bPooledobject = true;
 
     UFUNCTION(BlueprintImplementableEvent, Category = "Pooling")
     void OnCreatedFromPool();

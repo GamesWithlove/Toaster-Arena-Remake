@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeToasterGame_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x7006E5CA,
+				0x05497C05,
 				0xFFFFDBD4,
 				METADATA_PARAMS(nullptr, 0)
 			};
@@ -25,5 +25,5 @@ void EmptyLinkFunctionForGeneratedCodeToasterGame_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_ToasterGame.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_ToasterGame(Z_Construct_UPackage__Script_ToasterGame, TEXT("/Script/ToasterGame"), Z_Registration_Info_UPackage__Script_ToasterGame, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x7006E5CA, 0xFFFFDBD4));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_ToasterGame(Z_Construct_UPackage__Script_ToasterGame, TEXT("/Script/ToasterGame"), Z_Registration_Info_UPackage__Script_ToasterGame, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x05497C05, 0xFFFFDBD4));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
