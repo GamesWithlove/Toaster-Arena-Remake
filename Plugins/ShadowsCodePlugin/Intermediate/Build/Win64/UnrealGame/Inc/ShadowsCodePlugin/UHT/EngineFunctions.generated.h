@@ -9,6 +9,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UAnimMontage;
 class UObject;
 #ifdef SHADOWSCODEPLUGIN_EngineFunctions_generated_h
 #error "EngineFunctions.generated.h already included, missing '#pragma once' in EngineFunctions.h"
@@ -18,11 +19,15 @@ class UObject;
 #define FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_EngineFunctions_h_15_SPARSE_DATA
 #define FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_EngineFunctions_h_15_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execValidateMontage); \
+	DECLARE_FUNCTION(execGetBoneTransformFromMontage); \
 	DECLARE_FUNCTION(execK2_IsTearingDown);
 
 
 #define FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_EngineFunctions_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execValidateMontage); \
+	DECLARE_FUNCTION(execGetBoneTransformFromMontage); \
 	DECLARE_FUNCTION(execK2_IsTearingDown);
 
 

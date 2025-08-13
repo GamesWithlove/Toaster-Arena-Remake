@@ -178,7 +178,7 @@ void EmptyLinkFunctionForGeneratedCodeActorPool() {}
 #endif
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APooledActor_Statics::NewProp_bPooledobject_MetaData[] = {
-		{ "Category", "PooledActor" },
+		{ "Category", "Default" },
 		{ "ModuleRelativePath", "Public/ActorPool.h" },
 	};
 #endif
@@ -349,10 +349,10 @@ void EmptyLinkFunctionForGeneratedCodeActorPool() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ActorPool_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_APooledActor, APooledActor::StaticClass, TEXT("APooledActor"), &Z_Registration_Info_UClass_APooledActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APooledActor), 1312683357U) },
+		{ Z_Construct_UClass_APooledActor, APooledActor::StaticClass, TEXT("APooledActor"), &Z_Registration_Info_UClass_APooledActor, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(APooledActor), 238454057U) },
 		{ Z_Construct_UClass_UActorPool, UActorPool::StaticClass, TEXT("UActorPool"), &Z_Registration_Info_UClass_UActorPool, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UActorPool), 496659220U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ActorPool_h_3578757549(TEXT("/Script/ToasterGame"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ActorPool_h_1049210865(TEXT("/Script/ToasterGame"),
 		Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ActorPool_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ActorPool_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

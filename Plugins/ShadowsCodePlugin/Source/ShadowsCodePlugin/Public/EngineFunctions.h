@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Animation/AnimMontage.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "EngineFunctions.generated.h"
 
@@ -19,4 +20,31 @@ class SHADOWSCODEPLUGIN_API UEngineFunctions : public UBlueprintFunctionLibrary
 		isTearingDown = caller->GetWorld()->bIsTearingDown;
 	}
 	
+
+	//Validate if montage has same bones
+	UFUNCTION(BluePrintCallable,BlueprintPure, Category = "SkeletalMisc", meta = (DisplayName = "ValidateMontageBones",HidePin = "target", DefaultToSelf = "EngineFunctions"))
+		static bool ValidateMontage(UAnimMontage* Montage, USkeleton* VSkeleton)
+		{
+			bool bvalid = false;
+			USkeleton* TargetSkeleton = Montage->GetSkeleton();
+			
+			if (TargetSkeleton == VSkeleton)
+			{
+				UE_LOG(LogTemp, Log, TEXT("Montage uses the target skeleton."));
+				bvalid = true;
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("Montage skeleton does not match."));
+				bvalid = false;
+			}
+
+			return bvalid;
+		
+		}
+
+
+	
+
+
 };
