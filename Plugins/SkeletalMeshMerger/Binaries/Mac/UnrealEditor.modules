@@ -1,0 +1,8 @@
+{
+	"BuildId": "25360045",
+	"Modules": 
+	{
+		"RuntimeMerger": "UnrealEditor-RuntimeMerger.dylib",
+		"SkeletalMeshMerger": "UnrealEditor-SkeletalMeshMerger.dylib"
+	}
+}
