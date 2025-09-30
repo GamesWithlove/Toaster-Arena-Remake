@@ -370,6 +370,11 @@
 			"Name": "QuickMergeSkeletalMesh",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/46b05d77fa164177918c5476a26bc408"
+		},
+		{
+			"Name": "SkeletalMeshMerger",
+			"Enabled": false,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/c64f52f6fa974f1daca7a416397001de"
 		}
 	]
 }
