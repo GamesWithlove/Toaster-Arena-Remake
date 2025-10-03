@@ -375,6 +375,10 @@
 			"Name": "SkeletalMeshMerger",
 			"Enabled": false,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/c64f52f6fa974f1daca7a416397001de"
+		},
+		{
+			"Name": "PhysicsControl",
+			"Enabled": true
 		}
 	]
 }
