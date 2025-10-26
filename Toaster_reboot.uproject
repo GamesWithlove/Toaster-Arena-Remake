@@ -383,6 +383,11 @@
 		{
 			"Name": "RawInput",
 			"Enabled": true
+		},
+		{
+			"Name": "KB_Multi_Thread_E",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/61e5b2f5c9164a13906bf074a8af56d9"
 		}
 	]
 }
