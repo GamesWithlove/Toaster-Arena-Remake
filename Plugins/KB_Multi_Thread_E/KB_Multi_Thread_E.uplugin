@@ -1,0 +1,26 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Multi Thread Extension",
+	"Description": "This plugin enables multi threading with any blueprint code. Simple to use and optimized to fit every need.",
+	"Category": "Blueprint Library Extension",
+	"CreatedBy": "Kibibyte",
+	"CreatedByURL": "https://www.youtube.com/@kibibytecompany",
+	"DocsURL": "https://kibibytecompany.com/Plugins/Multi-Thread-Extension/",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/61e5b2f5c9164a13906bf074a8af56d9",
+	"SupportURL": "https://discord.gg/UfYfuFAVae",
+	"EngineVersion": "5.2.0",
+	"CanContainContent": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "KB_Multi_Thread_E",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64"
+			]
+		}
+	]
+}
