@@ -4566,6 +4566,26 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Experimental/PhysicsControl/Binaries/Win64/UnrealEditor-PhysicsControl.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/PhysicsControl/Binaries/Win64/UnrealEditor-PhysicsControl.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/PhysicsControl/Binaries/Win64/UnrealEditor-PhysicsControlVisualizer.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/PhysicsControl/Binaries/Win64/UnrealEditor-PhysicsControlVisualizer.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/PhysicsControl/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Experimental/PlanarCutPlugin/Binaries/Win64/UnrealEditor-PlanarCut.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -4607,6 +4627,18 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/PythonScriptPlugin/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/RawInput/Binaries/Win64/UnrealEditor-RawInput.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/RawInput/Binaries/Win64/UnrealEditor-RawInput.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/RawInput/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -6119,6 +6151,18 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/DigSystem/Binaries/Win64/UnrealEditor-Win64-DebugGame.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KB_Multi_Thread_E/Binaries/Win64/UnrealEditor-KB_Multi_Thread_E-Win64-DebugGame.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KB_Multi_Thread_E/Binaries/Win64/UnrealEditor-KB_Multi_Thread_E-Win64-DebugGame.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KB_Multi_Thread_E/Binaries/Win64/UnrealEditor-Win64-DebugGame.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -27196,6 +27240,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Experimental/PhysicsControl/PhysicsControl.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Experimental/PlanarCutPlugin/PlanarCut.uplugin",
 			"Type": "UFS"
 		},
@@ -27205,6 +27253,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/PythonScriptPlugin/PythonScriptPlugin.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/RawInput/RawInput.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -27493,6 +27545,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/DigSystem/DlgSystem.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KB_Multi_Thread_E/KB_Multi_Thread_E.uplugin",
 			"Type": "UFS"
 		},
 		{

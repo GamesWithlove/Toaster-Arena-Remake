@@ -3015,6 +3015,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Experimental/PhysicsControl/PhysicsControl.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Experimental/PlanarCutPlugin/PlanarCut.uplugin",
 			"Type": "UFS"
 		},
@@ -3024,6 +3028,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/PythonScriptPlugin/PythonScriptPlugin.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/RawInput/RawInput.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -3348,6 +3356,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/DigSystem/DlgSystem.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KB_Multi_Thread_E/KB_Multi_Thread_E.uplugin",
 			"Type": "UFS"
 		},
 		{
