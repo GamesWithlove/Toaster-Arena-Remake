@@ -4630,6 +4630,18 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Experimental/RawInput/Binaries/Win64/UnrealEditor-RawInput.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/RawInput/Binaries/Win64/UnrealEditor-RawInput.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/RawInput/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Experimental/ScriptableToolsEditorMode/Binaries/Win64/UnrealEditor-ScriptableToolsEditorMode.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -6139,6 +6151,18 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/DigSystem/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KB_Multi_Thread_E/Binaries/Win64/UnrealEditor-KB_Multi_Thread_E.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KB_Multi_Thread_E/Binaries/Win64/UnrealEditor-KB_Multi_Thread_E.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KB_Multi_Thread_E/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -27232,6 +27256,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Experimental/RawInput/RawInput.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Experimental/ScriptableToolsEditorMode/ScriptableToolsEditorMode.uplugin",
 			"Type": "UFS"
 		},
@@ -27517,6 +27545,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/DigSystem/DlgSystem.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/KB_Multi_Thread_E/KB_Multi_Thread_E.uplugin",
 			"Type": "UFS"
 		},
 		{
