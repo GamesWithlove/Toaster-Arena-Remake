@@ -3155,6 +3155,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Runtime/AnimationBudgetAllocator/AnimationBudgetAllocator.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Runtime/AssetTags/AssetTags.uplugin",
 			"Type": "UFS"
 		},

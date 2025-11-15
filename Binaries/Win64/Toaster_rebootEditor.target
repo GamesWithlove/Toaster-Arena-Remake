@@ -5410,6 +5410,18 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Runtime/AnimationBudgetAllocator/Binaries/Win64/UnrealEditor-AnimationBudgetAllocator.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/AnimationBudgetAllocator/Binaries/Win64/UnrealEditor-AnimationBudgetAllocator.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/AnimationBudgetAllocator/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Runtime/AssetTags/Binaries/Win64/UnrealEditor-AssetTags.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -27397,6 +27409,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ActorLayerUtilities/ActorLayerUtilities.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/AnimationBudgetAllocator/AnimationBudgetAllocator.uplugin",
 			"Type": "UFS"
 		},
 		{
