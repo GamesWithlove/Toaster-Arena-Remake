@@ -1,0 +1,36 @@
+{
+	"FileVersion": 3,
+	"Version": 365,
+	"VersionName": "3.65",
+	"FriendlyName": "RealTimeImport",
+	"Description": "",
+	"Category": "Importers",
+	"CreatedBy": "Socke",
+	"CreatedByURL": "",
+	"DocsURL": "https://virtualbird.de/ue4Doku/RealTimeImport/",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/5625d7b404e44200bb2f9cdb7dcf1c6a",
+	"SupportURL": "mailto:unrealmarketplace@virtualbird.de",
+	"EngineVersion": "5.2.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "RealTimeImport",
+			"Type": "Runtime",
+			"LoadingPhase": "PreLoadingScreen",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux",
+				"Android",
+				"IOS"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ProceduralMeshComponent",
+			"Enabled": true
+		}
+	]
+}

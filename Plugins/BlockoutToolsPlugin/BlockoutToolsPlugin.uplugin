@@ -1,0 +1,35 @@
+{
+	"FileVersion": 3,
+	"Version": 15,
+	"VersionName": "1.52",
+	"FriendlyName": "Blockout Tools",
+	"Description": "A lightweight set of tools to quickly block out levels.",
+	"Category": "Level Design",
+	"CreatedBy": "Dmitry Karpukhin",
+	"CreatedByURL": "com.epicgames.launcher://ue/marketplace/profile/Dmitry+Karpukhin",
+	"DocsURL": "https://dmkarpukhin.com/blockout-tools-plugin/documentation/",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/d337b97aca8947a893526964e179acfd",
+	"SupportURL": "mailto:skxdoom@gmail.com",
+	"EngineVersion": "5.2.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "BlockoutToolsPlugin",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"Linux",
+				"Android",
+				"IOS"
+			]
+		},
+		{
+			"Name": "BlockoutToolsEditorPlugin",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit"
+		}
+	]
+}

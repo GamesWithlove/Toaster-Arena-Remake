@@ -1,0 +1,29 @@
+{
+	"FileVersion": 3,
+	"Version": 60,
+	"VersionName": "1.60",
+	"FriendlyName": "Easy Multi Save",
+	"Description": "Easy Multi Save is a all-in-one save and load solution for projects of any kind.",
+	"Category": "Michael Hegemann",
+	"CreatedBy": "Michael Hegemann",
+	"CreatedByURL": "https://twitter.com/HegiDev",
+	"DocsURL": "https://goo.gl/Y3Bf2x",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/7232621c23174bbbbb64c7bfb6583f6f",
+	"SupportURL": "mailto:hegidev@gmail.com",
+	"EngineVersion": "5.2.0",
+	"CanContainContent": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "EasyMultiSave",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Linux",
+				"Mac",
+				"IOS"
+			]
+		}
+	]
+}
