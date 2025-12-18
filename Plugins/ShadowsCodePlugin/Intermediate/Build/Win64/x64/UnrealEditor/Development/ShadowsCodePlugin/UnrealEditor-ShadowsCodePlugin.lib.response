@@ -8,5 +8,6 @@
 /NODEFAULTLIB
 "E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_0.h.obj"
 "E:\Ue4_projects\Toaster-Arena-Remake\Plugins\ShadowsCodePlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\ShadowsCodePlugin\Module.ShadowsCodePlugin.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\ShadowsCodePlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\ShadowsCodePlugin\VersionGrabber_TA.cpp.obj"
 "E:\Ue4_projects\Toaster-Arena-Remake\Plugins\ShadowsCodePlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\ShadowsCodePlugin\Default.rc2.res"
 /OUT:"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\ShadowsCodePlugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\ShadowsCodePlugin\UnrealEditor-ShadowsCodePlugin.lib"

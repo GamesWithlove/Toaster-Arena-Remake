@@ -16,5 +16,7 @@ class SHADOWSCODEPLUGIN_API UVersionGrabber_TA : public UBlueprintFunctionLibrar
 	GENERATED_BODY()
 		UFUNCTION(Blueprintpure, meta = (DisplayName = "Game Version", CompactnodeTittle = "GameVersion"), Category = "System Information")
 		static FString GetProjectVersion();
+		UFUNCTION(Blueprintpure, meta = (DisplayName = "HardwareID", CompactnodeTittle = "HardwareID"), Category = "System Information")
+		static FString GetHardwareID();
 	
 };

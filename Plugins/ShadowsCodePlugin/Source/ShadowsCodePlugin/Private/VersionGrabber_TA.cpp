@@ -3,7 +3,8 @@
 
 #include "VersionGrabber_TA.h"
 
-FString UVersionGrabber_TA::GetProjectVersion() {
+FString UVersionGrabber_TA::GetProjectVersion()
+{
 	FString GameVersion;
 	GConfig->GetString(
 		TEXT("/Script/EngineSettings.GeneralProjectSettings"),
@@ -12,5 +13,10 @@ FString UVersionGrabber_TA::GetProjectVersion() {
 		GGameIni);
 
 	return GameVersion;
+}
+	
 
+FString UVersionGrabber_TA::GetHardwareID(){
+	// ensure empty MAC addresses don't return a hash of zero bytes.
+	return FPlatformMisc::GetHashedMacAddressString();
 }

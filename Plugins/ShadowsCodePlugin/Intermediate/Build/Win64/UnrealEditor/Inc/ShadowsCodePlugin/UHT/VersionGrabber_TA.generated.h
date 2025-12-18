@@ -17,11 +17,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_SPARSE_DATA
 #define FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execGetHardwareID); \
 	DECLARE_FUNCTION(execGetProjectVersion);
 
 
 #define FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execGetHardwareID); \
 	DECLARE_FUNCTION(execGetProjectVersion);
 
 

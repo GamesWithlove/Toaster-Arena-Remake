@@ -14,6 +14,13 @@ void EmptyLinkFunctionForGeneratedCodeVersionGrabber_TA() {}
 	SHADOWSCODEPLUGIN_API UClass* Z_Construct_UClass_UVersionGrabber_TA_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_ShadowsCodePlugin();
 // End Cross Module References
+	DEFINE_FUNCTION(UVersionGrabber_TA::execGetHardwareID)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(FString*)Z_Param__Result=UVersionGrabber_TA::GetHardwareID();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UVersionGrabber_TA::execGetProjectVersion)
 	{
 		P_FINISH;
@@ -25,9 +32,45 @@ void EmptyLinkFunctionForGeneratedCodeVersionGrabber_TA() {}
 	{
 		UClass* Class = UVersionGrabber_TA::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "GetHardwareID", &UVersionGrabber_TA::execGetHardwareID },
 			{ "GetProjectVersion", &UVersionGrabber_TA::execGetProjectVersion },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UVersionGrabber_TA_GetHardwareID_Statics
+	{
+		struct VersionGrabber_TA_eventGetHardwareID_Parms
+		{
+			FString ReturnValue;
+		};
+		static const UECodeGen_Private::FStrPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_UVersionGrabber_TA_GetHardwareID_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(VersionGrabber_TA_eventGetHardwareID_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UVersionGrabber_TA_GetHardwareID_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UVersionGrabber_TA_GetHardwareID_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UVersionGrabber_TA_GetHardwareID_Statics::Function_MetaDataParams[] = {
+		{ "Category", "System Information" },
+		{ "CompactnodeTittle", "HardwareID" },
+		{ "DisplayName", "HardwareID" },
+		{ "ModuleRelativePath", "Public/VersionGrabber_TA.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UVersionGrabber_TA_GetHardwareID_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UVersionGrabber_TA, nullptr, "GetHardwareID", nullptr, nullptr, sizeof(Z_Construct_UFunction_UVersionGrabber_TA_GetHardwareID_Statics::VersionGrabber_TA_eventGetHardwareID_Parms), Z_Construct_UFunction_UVersionGrabber_TA_GetHardwareID_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UVersionGrabber_TA_GetHardwareID_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14042401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UVersionGrabber_TA_GetHardwareID_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UVersionGrabber_TA_GetHardwareID_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UVersionGrabber_TA_GetHardwareID()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UVersionGrabber_TA_GetHardwareID_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_UVersionGrabber_TA_GetProjectVersion_Statics
 	{
@@ -84,6 +127,7 @@ void EmptyLinkFunctionForGeneratedCodeVersionGrabber_TA() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_ShadowsCodePlugin,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UVersionGrabber_TA_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UVersionGrabber_TA_GetHardwareID, "GetHardwareID" }, // 4205077127
 		{ &Z_Construct_UFunction_UVersionGrabber_TA_GetProjectVersion, "GetProjectVersion" }, // 3327067968
 	};
 #if WITH_METADATA
@@ -131,9 +175,9 @@ void EmptyLinkFunctionForGeneratedCodeVersionGrabber_TA() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UVersionGrabber_TA, UVersionGrabber_TA::StaticClass, TEXT("UVersionGrabber_TA"), &Z_Registration_Info_UClass_UVersionGrabber_TA, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UVersionGrabber_TA), 4072472881U) },
+		{ Z_Construct_UClass_UVersionGrabber_TA, UVersionGrabber_TA::StaticClass, TEXT("UVersionGrabber_TA"), &Z_Registration_Info_UClass_UVersionGrabber_TA, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UVersionGrabber_TA), 1339496061U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_2441047300(TEXT("/Script/ShadowsCodePlugin"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_3801411295(TEXT("/Script/ShadowsCodePlugin"),
 		Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
