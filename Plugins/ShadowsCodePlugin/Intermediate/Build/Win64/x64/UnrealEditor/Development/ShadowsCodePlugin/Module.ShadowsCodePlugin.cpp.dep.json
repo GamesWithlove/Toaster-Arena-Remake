@@ -29,7 +29,8 @@
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\private\\enginefunctions.cpp",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\private\\fixedcharacter.cpp",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\private\\shadowscodeplugin.cpp",
-            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\public\\shadowscodeplugin.h"
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\public\\shadowscodeplugin.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\private\\versiongrabber_ta.cpp"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
