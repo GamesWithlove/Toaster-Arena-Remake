@@ -16,15 +16,16 @@ void UAsyncActionNode::Activate()
 }
 
 //====================================================================================
-
+//Constructor
 BP_NonAbandonableTask::BP_NonAbandonableTask(UAsyncActionNode* BP_TaskInstance)
 {
 	CallingObject = BP_TaskInstance;
 }
-
+//Destructor
 BP_NonAbandonableTask::~BP_NonAbandonableTask()
 {
-	CallingObject->FinishedWork.Broadcast();
+	//CallBacktoGameThread();
+	CallingObject->FinishedWorkThreaded.Broadcast();
 	CallingObject->SetReadyToDestroy();
 }
 
@@ -32,3 +33,19 @@ void BP_NonAbandonableTask::DoWork()
 {
 	CallingObject->MultiThreadedWork.Broadcast();
 }
+
+/*void BP_NonAbandonableTask::CallBacktoGameThread()
+{
+	AsyncTask(ENamedThreads::GameThread,[this]()
+
+		{
+
+			CallingObject->WaitUntilFinished.Broadcast();
+
+		}
+
+	);
+
+
+}
+*/

@@ -3351,6 +3351,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/BlockoutToolsPlugin/BlockoutToolsPlugin.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/BlueprintExtraMath/BlueprintExtraMath.uplugin",
 			"Type": "UFS"
 		},
@@ -3360,6 +3364,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/DigSystem/DlgSystem.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EasyMultiSave/EasyMultiSave.uplugin",
 			"Type": "UFS"
 		},
 		{

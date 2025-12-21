@@ -18,7 +18,10 @@ public:
 		FTaskOutput MultiThreadedWork;
 	
 		UPROPERTY(BlueprintAssignable)
-		FTaskOutput FinishedWork;
+		FTaskOutput FinishedWorkThreaded;
+
+		//UPROPERTY(BlueprintAssignable)
+		//FTaskOutput WaitUntilFinished;
 
 		UFUNCTION(BlueprintCallable, meta = (BlueprintInternalUseOnly = "true"))
 		static UAsyncActionNode* MultiThreadedNode();
@@ -42,4 +45,5 @@ public:
 		
 		UAsyncActionNode* CallingObject = nullptr;
 		void DoWork();
+		//void CallBacktoGameThread();
 };
