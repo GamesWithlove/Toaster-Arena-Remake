@@ -10,6 +10,7 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class UAnimMontage;
+class UAnimSequenceBase;
 class UObject;
 class USkeleton;
 #ifdef SHADOWSCODEPLUGIN_EngineFunctions_generated_h
@@ -20,12 +21,14 @@ class USkeleton;
 #define FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_EngineFunctions_h_16_SPARSE_DATA
 #define FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_EngineFunctions_h_16_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execValidateAnimSequence); \
 	DECLARE_FUNCTION(execValidateMontage); \
 	DECLARE_FUNCTION(execK2_IsTearingDown);
 
 
 #define FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_EngineFunctions_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execValidateAnimSequence); \
 	DECLARE_FUNCTION(execValidateMontage); \
 	DECLARE_FUNCTION(execK2_IsTearingDown);
 

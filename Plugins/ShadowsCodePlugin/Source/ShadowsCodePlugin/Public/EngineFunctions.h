@@ -44,6 +44,32 @@ class SHADOWSCODEPLUGIN_API UEngineFunctions : public UBlueprintFunctionLibrary
 		}
 
 
+	//Validate if AnimSequence Base has same bones
+	UFUNCTION(BluePrintCallable,BlueprintPure, Category = "SkeletalMisc", meta = (DisplayName = "ValidatAnimSequenceBones",HidePin = "target", DefaultToSelf = "EngineFunctions"))
+	static bool ValidateAnimSequence(UAnimSequenceBase* SequenceBase, USkeleton* VSkeleton)
+	{
+		bool bvalid = false;
+		USkeleton* TargetSkeleton = SequenceBase->GetSkeleton();
+			
+		if (TargetSkeleton == VSkeleton)
+		{
+			UE_LOG(LogTemp, Log, TEXT("Montage uses the target skeleton."));
+			bvalid = true;
+		}
+		else
+		{
+			UE_LOG(LogTemp, Warning, TEXT("Montage skeleton does not match."));
+			bvalid = false;
+		}
+
+		return bvalid;
+		
+	}
+	
+
+	
+	
+
 	
 
 

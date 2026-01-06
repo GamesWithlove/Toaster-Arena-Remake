@@ -11,12 +11,22 @@ void EmptyLinkFunctionForGeneratedCodeEngineFunctions() {}
 // Cross Module References
 	COREUOBJECT_API UClass* Z_Construct_UClass_UObject_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimMontage_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_UAnimSequenceBase_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UBlueprintFunctionLibrary();
 	ENGINE_API UClass* Z_Construct_UClass_USkeleton_NoRegister();
 	SHADOWSCODEPLUGIN_API UClass* Z_Construct_UClass_UEngineFunctions();
 	SHADOWSCODEPLUGIN_API UClass* Z_Construct_UClass_UEngineFunctions_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_ShadowsCodePlugin();
 // End Cross Module References
+	DEFINE_FUNCTION(UEngineFunctions::execValidateAnimSequence)
+	{
+		P_GET_OBJECT(UAnimSequenceBase,Z_Param_SequenceBase);
+		P_GET_OBJECT(USkeleton,Z_Param_VSkeleton);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(bool*)Z_Param__Result=UEngineFunctions::ValidateAnimSequence(Z_Param_SequenceBase,Z_Param_VSkeleton);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UEngineFunctions::execValidateMontage)
 	{
 		P_GET_OBJECT(UAnimMontage,Z_Param_Montage);
@@ -40,6 +50,7 @@ void EmptyLinkFunctionForGeneratedCodeEngineFunctions() {}
 		UClass* Class = UEngineFunctions::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "K2_IsTearingDown", &UEngineFunctions::execK2_IsTearingDown },
+			{ "ValidateAnimSequence", &UEngineFunctions::execValidateAnimSequence },
 			{ "ValidateMontage", &UEngineFunctions::execValidateMontage },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -86,6 +97,57 @@ void EmptyLinkFunctionForGeneratedCodeEngineFunctions() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEngineFunctions_K2_IsTearingDown_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics
+	{
+		struct EngineFunctions_eventValidateAnimSequence_Parms
+		{
+			UAnimSequenceBase* SequenceBase;
+			USkeleton* VSkeleton;
+			bool ReturnValue;
+		};
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_SequenceBase;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_VSkeleton;
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::NewProp_SequenceBase = { "SequenceBase", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(EngineFunctions_eventValidateAnimSequence_Parms, SequenceBase), Z_Construct_UClass_UAnimSequenceBase_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::NewProp_VSkeleton = { "VSkeleton", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(EngineFunctions_eventValidateAnimSequence_Parms, VSkeleton), Z_Construct_UClass_USkeleton_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((EngineFunctions_eventValidateAnimSequence_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(EngineFunctions_eventValidateAnimSequence_Parms), &Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::NewProp_SequenceBase,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::NewProp_VSkeleton,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::Function_MetaDataParams[] = {
+		{ "Category", "SkeletalMisc" },
+		{ "Comment", "//Validate if AnimSequence Base has same bones\n" },
+		{ "DefaultToSelf", "EngineFunctions" },
+		{ "DisplayName", "ValidatAnimSequenceBones" },
+		{ "HidePin", "target" },
+		{ "ModuleRelativePath", "Public/EngineFunctions.h" },
+		{ "ToolTip", "Validate if AnimSequence Base has same bones" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UEngineFunctions, nullptr, "ValidateAnimSequence", nullptr, nullptr, sizeof(Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::EngineFunctions_eventValidateAnimSequence_Parms), Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14042401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -161,6 +223,7 @@ void EmptyLinkFunctionForGeneratedCodeEngineFunctions() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UEngineFunctions_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UEngineFunctions_K2_IsTearingDown, "K2_IsTearingDown" }, // 3938519319
+		{ &Z_Construct_UFunction_UEngineFunctions_ValidateAnimSequence, "ValidateAnimSequence" }, // 2083133548
 		{ &Z_Construct_UFunction_UEngineFunctions_ValidateMontage, "ValidateMontage" }, // 14155222
 	};
 #if WITH_METADATA
@@ -208,9 +271,9 @@ void EmptyLinkFunctionForGeneratedCodeEngineFunctions() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_EngineFunctions_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UEngineFunctions, UEngineFunctions::StaticClass, TEXT("UEngineFunctions"), &Z_Registration_Info_UClass_UEngineFunctions, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEngineFunctions), 3574122737U) },
+		{ Z_Construct_UClass_UEngineFunctions, UEngineFunctions::StaticClass, TEXT("UEngineFunctions"), &Z_Registration_Info_UClass_UEngineFunctions, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UEngineFunctions), 2114846507U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_EngineFunctions_h_1773589701(TEXT("/Script/ShadowsCodePlugin"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_EngineFunctions_h_3918642072(TEXT("/Script/ShadowsCodePlugin"),
 		Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_EngineFunctions_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_EngineFunctions_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
