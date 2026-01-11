@@ -12,12 +12,12 @@
 		"MajorVersion": 5,
 		"MinorVersion": 2,
 		"PatchVersion": 1,
-		"Changelist": 26001984,
+		"Changelist": 0,
 		"CompatibleChangelist": 25360045,
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
-		"BranchName": "++UE5+Release-5.2",
-		"BuildId": "25360045"
+		"BranchName": "UE5",
+		"BuildId": "9338a67e-edb3-46c5-abd9-94bcc10b75a7"
 	},
 	"BuildProducts": [
 		{
@@ -1583,7 +1583,15 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Content/Slate/Old/Tiles/DottedCircleBox_L.psd",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Content/Slate/Old/Tiles/DottedCircleBox_LR.png",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Old/Tiles/DottedCircleBox_LR.psd",
 			"Type": "UFS"
 		},
 		{
@@ -1596,6 +1604,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Content/Slate/Old/Tiles/DottedCircleBox_R.png",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Old/Tiles/DottedCircleBox_R.psd",
 			"Type": "UFS"
 		},
 		{
@@ -1687,6 +1699,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Content/Slate/Old/Tiles/SquareBox_T.psd",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Content/Slate/Old/Tiles/SquigglyBox.png",
 			"Type": "UFS"
 		},
@@ -1708,6 +1724,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Content/Slate/Old/Tiles/pin/pin.png",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Old/Tiles/pin/pin.psd",
 			"Type": "UFS"
 		},
 		{
@@ -1736,6 +1756,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Content/Slate/Old/Tiles/pin/ping.png",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Old/Tiles/pin/reitment.psd",
 			"Type": "UFS"
 		},
 		{
