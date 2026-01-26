@@ -6270,6 +6270,18 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/EasyFileDialog/Binaries/Win64/UnrealEditor-EasyFileDialog.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EasyFileDialog/Binaries/Win64/UnrealEditor-EasyFileDialog.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/EasyFileDialog/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/EasyMultiSave/Binaries/Win64/UnrealEditor-EasyMultiSave.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -6471,6 +6483,26 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/conplugin/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/glTFRuntime/Binaries/Win64/UnrealEditor-glTFRuntime.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/glTFRuntime/Binaries/Win64/UnrealEditor-glTFRuntime.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/glTFRuntime/Binaries/Win64/UnrealEditor-glTFRuntimeEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/glTFRuntime/Binaries/Win64/UnrealEditor-glTFRuntimeEditor.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/glTFRuntime/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		}
 	],
@@ -29500,6 +29532,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/EasyFileDialog/EasyFileDialog.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/EasyMultiSave/EasyMultiSave.uplugin",
 			"Type": "UFS"
 		},
@@ -29553,6 +29589,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/conplugin/conplugin.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/glTFRuntime/glTFRuntime.uplugin",
 			"Type": "UFS"
 		},
 		{
