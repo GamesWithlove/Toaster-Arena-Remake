@@ -18,7 +18,7 @@
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
 		"BranchName": "UE5",
-		"BuildId": "07ed99f6-ba71-41d9-8732-e51e63420620"
+		"BuildId": "28fbef41-9f9e-4a97-bbbc-aade555ef018"
 	},
 	"BuildProducts": [
 		{
@@ -6267,18 +6267,6 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/DigSystem/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EasyFileDialog/Binaries/Win64/UnrealEditor-EasyFileDialog.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EasyFileDialog/Binaries/Win64/UnrealEditor-EasyFileDialog.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EasyFileDialog/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -29529,10 +29517,6 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/DigSystem/DlgSystem.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/EasyFileDialog/EasyFileDialog.uplugin",
 			"Type": "UFS"
 		},
 		{

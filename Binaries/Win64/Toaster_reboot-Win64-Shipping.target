@@ -17,7 +17,7 @@
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
 		"BranchName": "UE5",
-		"BuildId": "58a3c0e4-1c04-451a-a97b-3443660db853"
+		"BuildId": "2083adbf-882e-418f-9fe2-a60d7263d4ad"
 	},
 	"BuildProducts": [
 		{
@@ -3412,6 +3412,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/conplugin/conplugin.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/glTFRuntime/glTFRuntime.uplugin",
 			"Type": "UFS"
 		},
 		{
