@@ -17,7 +17,7 @@
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
 		"BranchName": "UE5",
-		"BuildId": "2083adbf-882e-418f-9fe2-a60d7263d4ad"
+		"BuildId": "99a0646c-5f23-4262-a9d7-2e974c051929"
 	},
 	"BuildProducts": [
 		{
@@ -2907,6 +2907,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Editor/PluginBrowser/PluginBrowser.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Editor/SequencerAnimTools/SequencerAnimTools.uplugin",
 			"Type": "UFS"
 		},
@@ -3392,6 +3396,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/ShadowsCodePlugin/ShadowsCodePlugin.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/SimpleUGC/SimpleUGC.uplugin",
 			"Type": "UFS"
 		},
 		{

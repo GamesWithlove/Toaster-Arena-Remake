@@ -6390,6 +6390,26 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/SimpleUGC/Binaries/Win64/UnrealEditor-SimpleUGC.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/SimpleUGC/Binaries/Win64/UnrealEditor-SimpleUGC.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/SimpleUGC/Binaries/Win64/UnrealEditor-SimpleUGCEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/SimpleUGC/Binaries/Win64/UnrealEditor-SimpleUGCEditor.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/SimpleUGC/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/SmoothSync/Binaries/Win64/UnrealEditor-SmoothSyncPlugin.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -29553,6 +29573,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/ShadowsCodePlugin/ShadowsCodePlugin.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/SimpleUGC/SimpleUGC.uplugin",
 			"Type": "UFS"
 		},
 		{
