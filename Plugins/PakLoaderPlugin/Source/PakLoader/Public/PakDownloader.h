@@ -9,7 +9,7 @@
 #include "Runtime/Launch/Resources/Version.h"
 #include "PakDownloader.generated.h"
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FDownloadPakDelegate, int32, HttpResponseCode, int32, ContentLength, const FString, SavePath, int32, BytesReceived);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_FourParams(FDownloadPakDelegate, int32, HttpResponseCode, int64, ContentLength, const FString, SavePath, int64, BytesReceived);
 
 UCLASS()
 class PAKLOADER_API UAsyncPakDownloader : public UBlueprintAsyncActionBase
@@ -40,10 +40,18 @@ protected:
 	void StartDownload(const FString &URL, const FString &SavePath);
 
 private:
+	void HandleHeaderReceived(FHttpRequestPtr InSourceHttpRequest, const FString& InHeaderName, const FString& InHeaderValue);
 	void HandleDownloadComplete(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded);
-	void HandleDownloadProgress(FHttpRequestPtr InRequest, int32 bytesSent, int32 bytesReceived);
+#if ENGINE_MINOR_VERSION >= 4 && ENGINE_MAJOR_VERSION == 5
+	void HandleDownloadProgress(FHttpRequestPtr InRequest, uint64 BytesSent, uint64 BytesReceived);
+#else
+	void HandleDownloadProgress(FHttpRequestPtr InRequest, int32 BytesSent, int32 BytesReceived);
+#endif
 
 	static bool IsHttpUrl(const FString& URL);
 
 	FString SaveFilePath;
+
+	// Save the content length from header and pass it to on progress delegate.
+	int64 HeaderContentLength = 0;
 };

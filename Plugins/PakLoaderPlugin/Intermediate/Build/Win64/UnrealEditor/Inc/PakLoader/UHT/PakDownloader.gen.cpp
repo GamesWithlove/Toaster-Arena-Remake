@@ -20,17 +20,17 @@ void EmptyLinkFunctionForGeneratedCodePakDownloader() {}
 		struct _Script_PakLoader_eventDownloadPakDelegate_Parms
 		{
 			int32 HttpResponseCode;
-			int32 ContentLength;
+			int64 ContentLength;
 			FString SavePath;
-			int32 BytesReceived;
+			int64 BytesReceived;
 		};
 		static const UECodeGen_Private::FIntPropertyParams NewProp_HttpResponseCode;
-		static const UECodeGen_Private::FIntPropertyParams NewProp_ContentLength;
+		static const UECodeGen_Private::FInt64PropertyParams NewProp_ContentLength;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_SavePath_MetaData[];
 #endif
 		static const UECodeGen_Private::FStrPropertyParams NewProp_SavePath;
-		static const UECodeGen_Private::FIntPropertyParams NewProp_BytesReceived;
+		static const UECodeGen_Private::FInt64PropertyParams NewProp_BytesReceived;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -38,14 +38,14 @@ void EmptyLinkFunctionForGeneratedCodePakDownloader() {}
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature_Statics::NewProp_HttpResponseCode = { "HttpResponseCode", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(_Script_PakLoader_eventDownloadPakDelegate_Parms, HttpResponseCode), METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature_Statics::NewProp_ContentLength = { "ContentLength", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(_Script_PakLoader_eventDownloadPakDelegate_Parms, ContentLength), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FInt64PropertyParams Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature_Statics::NewProp_ContentLength = { "ContentLength", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int64, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(_Script_PakLoader_eventDownloadPakDelegate_Parms, ContentLength), METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature_Statics::NewProp_SavePath_MetaData[] = {
 		{ "NativeConst", "" },
 	};
 #endif
 	const UECodeGen_Private::FStrPropertyParams Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature_Statics::NewProp_SavePath = { "SavePath", nullptr, (EPropertyFlags)0x0010000000000082, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(_Script_PakLoader_eventDownloadPakDelegate_Parms, SavePath), METADATA_PARAMS(Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature_Statics::NewProp_SavePath_MetaData, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature_Statics::NewProp_SavePath_MetaData)) };
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature_Statics::NewProp_BytesReceived = { "BytesReceived", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(_Script_PakLoader_eventDownloadPakDelegate_Parms, BytesReceived), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FInt64PropertyParams Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature_Statics::NewProp_BytesReceived = { "BytesReceived", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int64, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(_Script_PakLoader_eventDownloadPakDelegate_Parms, BytesReceived), METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature_Statics::NewProp_HttpResponseCode,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature_Statics::NewProp_ContentLength,
@@ -67,14 +67,14 @@ void EmptyLinkFunctionForGeneratedCodePakDownloader() {}
 		}
 		return ReturnFunction;
 	}
-void FDownloadPakDelegate_DelegateWrapper(const FMulticastScriptDelegate& DownloadPakDelegate, int32 HttpResponseCode, int32 ContentLength, const FString& SavePath, int32 BytesReceived)
+void FDownloadPakDelegate_DelegateWrapper(const FMulticastScriptDelegate& DownloadPakDelegate, int32 HttpResponseCode, int64 ContentLength, const FString& SavePath, int64 BytesReceived)
 {
 	struct _Script_PakLoader_eventDownloadPakDelegate_Parms
 	{
 		int32 HttpResponseCode;
-		int32 ContentLength;
+		int64 ContentLength;
 		FString SavePath;
-		int32 BytesReceived;
+		int64 BytesReceived;
 	};
 	_Script_PakLoader_eventDownloadPakDelegate_Parms Parms;
 	Parms.HttpResponseCode=HttpResponseCode;
@@ -206,19 +206,19 @@ void FDownloadPakDelegate_DelegateWrapper(const FMulticastScriptDelegate& Downlo
 		{ "ModuleRelativePath", "Public/PakDownloader.h" },
 	};
 #endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnSuccess = { "OnSuccess", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UAsyncPakDownloader, OnSuccess), Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnSuccess_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnSuccess_MetaData)) }; // 2466967125
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnSuccess = { "OnSuccess", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UAsyncPakDownloader, OnSuccess), Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnSuccess_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnSuccess_MetaData)) }; // 891757220
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnFail_MetaData[] = {
 		{ "ModuleRelativePath", "Public/PakDownloader.h" },
 	};
 #endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnFail = { "OnFail", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UAsyncPakDownloader, OnFail), Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnFail_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnFail_MetaData)) }; // 2466967125
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnFail = { "OnFail", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UAsyncPakDownloader, OnFail), Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnFail_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnFail_MetaData)) }; // 891757220
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnProgress_MetaData[] = {
 		{ "ModuleRelativePath", "Public/PakDownloader.h" },
 	};
 #endif
-	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnProgress = { "OnProgress", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UAsyncPakDownloader, OnProgress), Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnProgress_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnProgress_MetaData)) }; // 2466967125
+	const UECodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnProgress = { "OnProgress", nullptr, (EPropertyFlags)0x0010000010080000, UECodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UAsyncPakDownloader, OnProgress), Z_Construct_UDelegateFunction_PakLoader_DownloadPakDelegate__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnProgress_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnProgress_MetaData)) }; // 891757220
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UAsyncPakDownloader_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnSuccess,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UAsyncPakDownloader_Statics::NewProp_OnFail,
@@ -261,9 +261,9 @@ void FDownloadPakDelegate_DelegateWrapper(const FMulticastScriptDelegate& Downlo
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UAsyncPakDownloader, UAsyncPakDownloader::StaticClass, TEXT("UAsyncPakDownloader"), &Z_Registration_Info_UClass_UAsyncPakDownloader, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAsyncPakDownloader), 493524367U) },
+		{ Z_Construct_UClass_UAsyncPakDownloader, UAsyncPakDownloader::StaticClass, TEXT("UAsyncPakDownloader"), &Z_Registration_Info_UClass_UAsyncPakDownloader, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UAsyncPakDownloader), 2382034174U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_4162970585(TEXT("/Script/PakLoader"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_455819961(TEXT("/Script/PakLoader"),
 		Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

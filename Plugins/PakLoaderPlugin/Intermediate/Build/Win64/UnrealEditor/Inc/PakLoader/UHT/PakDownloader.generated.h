@@ -16,7 +16,7 @@ class UAsyncPakDownloader;
 #define PAKLOADER_PakDownloader_generated_h
 
 #define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_12_DELEGATE \
-PAKLOADER_API void FDownloadPakDelegate_DelegateWrapper(const FMulticastScriptDelegate& DownloadPakDelegate, int32 HttpResponseCode, int32 ContentLength, const FString& SavePath, int32 BytesReceived);
+PAKLOADER_API void FDownloadPakDelegate_DelegateWrapper(const FMulticastScriptDelegate& DownloadPakDelegate, int32 HttpResponseCode, int64 ContentLength, const FString& SavePath, int64 BytesReceived);
 
 
 #define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_SPARSE_DATA

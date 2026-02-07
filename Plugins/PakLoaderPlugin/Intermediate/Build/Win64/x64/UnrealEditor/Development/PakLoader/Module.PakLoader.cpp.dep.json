@@ -18,6 +18,9 @@
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloaderplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\pakloader\\uht\\pakloaderlibrary.gen.cpp",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloaderplugin\\source\\pakloader\\public\\pakloaderlibrary.h",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloaderplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\pakloader\\uht\\pakloaderlibrary.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloaderplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\pakloader\\uht\\pakloadersubsystem.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloaderplugin\\source\\pakloader\\public\\pakloadersubsystem.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloaderplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\pakloader\\uht\\pakloadersubsystem.generated.h",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloaderplugin\\source\\pakloader\\private\\loghelper.cpp",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloaderplugin\\source\\pakloader\\public\\loghelper.h",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloaderplugin\\source\\pakloader\\public\\pakloadermodule.h",
@@ -40,7 +43,8 @@
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloaderplugin\\source\\pakloader\\private\\pakloaderlibrary.cpp",
             "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\engine\\classes\\materials\\materialinstanceconstant.h",
             "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\materialinstanceconstant.generated.h",
-            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloaderplugin\\source\\pakloader\\private\\pakloadermodule.cpp"
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloaderplugin\\source\\pakloader\\private\\pakloadermodule.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloaderplugin\\source\\pakloader\\private\\pakloadersubsystem.cpp"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

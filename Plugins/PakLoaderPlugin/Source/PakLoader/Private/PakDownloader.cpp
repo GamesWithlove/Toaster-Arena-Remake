@@ -47,11 +47,24 @@ void UAsyncPakDownloader::StartDownload(const FString &URL, const FString &SaveP
 	auto HttpRequest = FHttpModule::Get().CreateRequest();
 #endif
 
+	HttpRequest->OnHeaderReceived().BindUObject(this, &UAsyncPakDownloader::HandleHeaderReceived);
 	HttpRequest->OnProcessRequestComplete().BindUObject(this, &UAsyncPakDownloader::HandleDownloadComplete);
+#if ENGINE_MINOR_VERSION >= 4 && ENGINE_MAJOR_VERSION == 5
+	HttpRequest->OnRequestProgress64().BindUObject(this, &UAsyncPakDownloader::HandleDownloadProgress);
+#else
 	HttpRequest->OnRequestProgress().BindUObject(this, &UAsyncPakDownloader::HandleDownloadProgress);
+#endif
 	HttpRequest->SetURL(URL);
 	HttpRequest->SetVerb(TEXT("GET"));
 	HttpRequest->ProcessRequest();
+}
+
+void UAsyncPakDownloader::HandleHeaderReceived(FHttpRequestPtr InSourceHttpRequest, const FString& InHeaderName, const FString& InHeaderValue)
+{
+	if (InHeaderName == "Content-Length")
+	{
+		HeaderContentLength = FCString::Atoi64(*InHeaderValue);
+	}
 }
 
 void UAsyncPakDownloader::HandleDownloadComplete(FHttpRequestPtr HttpRequest, FHttpResponsePtr HttpResponse, bool bSucceeded)
@@ -77,11 +90,19 @@ void UAsyncPakDownloader::HandleDownloadComplete(FHttpRequestPtr HttpRequest, FH
 	OnFail.Broadcast(HttpResponseCode, 0, TEXT(""), 0);
 }
 
-void UAsyncPakDownloader::HandleDownloadProgress(FHttpRequestPtr InRequest, int32 bytesSent, int32 bytesReceived)
+#if ENGINE_MINOR_VERSION >= 4 && ENGINE_MAJOR_VERSION == 5
+void UAsyncPakDownloader::HandleDownloadProgress(FHttpRequestPtr InRequest, uint64 BytesSent, uint64 BytesReceived)
+#else
+void UAsyncPakDownloader::HandleDownloadProgress(FHttpRequestPtr InRequest, int32 BytesSent, int32 BytesReceived)
+#endif
 {
 	if (InRequest.IsValid())
 	{
-		OnProgress.Broadcast(0, 0, TEXT(""), bytesReceived);
+#if ENGINE_MINOR_VERSION >= 4 && ENGINE_MAJOR_VERSION == 5
+		OnProgress.Broadcast(0, HeaderContentLength, TEXT(""), static_cast<int64>(BytesReceived));
+#else
+		OnProgress.Broadcast(0, HeaderContentLength, TEXT(""), BytesReceived);
+#endif
 	}
 }
 

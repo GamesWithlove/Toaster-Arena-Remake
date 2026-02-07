@@ -205,6 +205,8 @@ bool FPakLoader::MountPakFileEasy(const FString& PakFilename)
 	TArray<FString> Files;
 #if ENGINE_MINOR_VERSION <= 25 && ENGINE_MAJOR_VERSION <= 4
 	Pak->FindFilesAtPath(Files, *Pak->GetMountPoint(), true, false, true);
+#elif ENGINE_MAJOR_VERSION >=5 && ENGINE_MINOR_VERSION >= 4
+	Pak->FindPrunedFilesAtPath(*Pak->GetMountPoint(), Files, true, false, true);
 #else
 	Pak->FindPrunedFilesAtPath(Files, *Pak->GetMountPoint(), true, false, true);
 #endif
@@ -281,6 +283,8 @@ bool FPakLoader::GetRootPathAndContentPathForPak(const FPakFile& PakFile, FStrin
 
 #if ENGINE_MINOR_VERSION <= 25 && ENGINE_MAJOR_VERSION <= 4
 	PakFile.FindFilesAtPath(Files, *PakFile.GetMountPoint(), true, false, true);
+#elif ENGINE_MAJOR_VERSION >=5 && ENGINE_MINOR_VERSION >= 4
+	PakFile.FindPrunedFilesAtPath(*PakFile.GetMountPoint(), Files, true, false, true);
 #else
 	PakFile.FindPrunedFilesAtPath(Files, *PakFile.GetMountPoint(), true, false, true);
 #endif
