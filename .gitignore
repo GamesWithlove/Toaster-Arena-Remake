@@ -10,6 +10,7 @@
 /Releases
 /Mods
 /Plugins/*/Intermediate
+/Exports
 
 #################################
 # Visual Studio Generated Files #

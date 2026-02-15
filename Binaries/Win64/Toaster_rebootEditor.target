@@ -6482,6 +6482,18 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/VictoryPlugin/Binaries/Win64/UnrealEditor-VictoryBPLibrary.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/VictoryPlugin/Binaries/Win64/UnrealEditor-VictoryBPLibrary.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/VictoryPlugin/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/conplugin/Binaries/Win64/UnrealEditor-conplugin.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -29593,6 +29605,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/VaRest/VaRest.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/VictoryPlugin/VictoryBPLibrary.uplugin",
 			"Type": "UFS"
 		},
 		{
