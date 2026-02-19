@@ -4881,7 +4881,7 @@
 			{
 				"index": 2
 			},
-			"emissiveFactor": [ 5, 5, 5, 5 ]
+			"emissiveFactor": [ 5, 5, 5 ]
 		},
 		{
 			"name": "MaterialInstanceDynamic_0",
@@ -4904,7 +4904,7 @@
 			{
 				"index": -1
 			},
-			"emissiveFactor": [ 0, 0, 0, 0 ]
+			"emissiveFactor": [ 0, 0, 0 ]
 		},
 		{
 			"name": "Visor_mat_14",
@@ -4921,7 +4921,7 @@
 			{
 				"index": 72
 			},
-			"emissiveFactor": [ 1, 1, 1, 1 ]
+			"emissiveFactor": [ 1, 1, 1 ]
 		},
 		{
 			"name": "Armor_mat_15",
@@ -4944,7 +4944,7 @@
 			{
 				"index": 77
 			},
-			"emissiveFactor": [ 5, 5, 5, 5 ]
+			"emissiveFactor": [ 5, 5, 5 ]
 		},
 		{
 			"name": "Icon_mat_16",
@@ -4968,7 +4968,7 @@
 			{
 				"index": 82
 			},
-			"emissiveFactor": [ 5, 5, 5, 5 ]
+			"emissiveFactor": [ 5, 5, 5 ]
 		},
 		{
 			"name": "Face_Stuff_17",
@@ -4994,7 +4994,7 @@
 			{
 				"index": 87
 			},
-			"emissiveFactor": [ 15, 15, 15, 15 ]
+			"emissiveFactor": [ 15, 15, 15 ]
 		},
 		{
 			"name": "MI_SharkTailOrganic_12",
@@ -5017,7 +5017,7 @@
 			{
 				"index": 62
 			},
-			"emissiveFactor": [ 5, 5, 5, 5 ]
+			"emissiveFactor": [ 5, 5, 5 ]
 		},
 		{
 			"name": "MI_SharkTailMechanic_13",
@@ -5040,7 +5040,7 @@
 			{
 				"index": 67
 			},
-			"emissiveFactor": [ 10, 10, 10, 10 ]
+			"emissiveFactor": [ 10, 10, 10 ]
 		},
 		{
 			"name": "Body_3",
@@ -5063,7 +5063,7 @@
 			{
 				"index": 17
 			},
-			"emissiveFactor": [ 5, 5, 5, 5 ]
+			"emissiveFactor": [ 5, 5, 5 ]
 		},
 		{
 			"name": "MI_FingerlessGlove_4",
@@ -5086,7 +5086,7 @@
 			{
 				"index": 22
 			},
-			"emissiveFactor": [ 0, 0, 0, 0 ]
+			"emissiveFactor": [ 0, 0, 0 ]
 		},
 		{
 			"name": "Body_5",
@@ -5109,7 +5109,7 @@
 			{
 				"index": 27
 			},
-			"emissiveFactor": [ 5, 5, 5, 5 ]
+			"emissiveFactor": [ 5, 5, 5 ]
 		},
 		{
 			"name": "MI_FingerlessGlove_6",
@@ -5132,7 +5132,7 @@
 			{
 				"index": 32
 			},
-			"emissiveFactor": [ 10, 10, 10, 10 ]
+			"emissiveFactor": [ 10, 10, 10 ]
 		},
 		{
 			"name": "Raven_Armor_Mat_7",
@@ -5155,7 +5155,7 @@
 			{
 				"index": 37
 			},
-			"emissiveFactor": [ 5, 5, 5, 5 ]
+			"emissiveFactor": [ 5, 5, 5 ]
 		},
 		{
 			"name": "Armor_mat_8",
@@ -5178,7 +5178,7 @@
 			{
 				"index": 42
 			},
-			"emissiveFactor": [ 15, 15, 15, 15 ]
+			"emissiveFactor": [ 15, 15, 15 ]
 		},
 		{
 			"name": "Claws_9",
@@ -5204,7 +5204,7 @@
 			{
 				"index": 47
 			},
-			"emissiveFactor": [ 15, 15, 15, 15 ]
+			"emissiveFactor": [ 15, 15, 15 ]
 		},
 		{
 			"name": "Body_10",
@@ -5227,7 +5227,7 @@
 			{
 				"index": 52
 			},
-			"emissiveFactor": [ 5, 5, 5, 5 ]
+			"emissiveFactor": [ 5, 5, 5 ]
 		},
 		{
 			"name": "Body_11",
@@ -5250,7 +5250,7 @@
 			{
 				"index": 57
 			},
-			"emissiveFactor": [ 5, 5, 5, 5 ]
+			"emissiveFactor": [ 5, 5, 5 ]
 		},
 		{
 			"name": "MI_BeachPartyBody_1",
@@ -5273,7 +5273,7 @@
 			{
 				"index": 7
 			},
-			"emissiveFactor": [ 5, 5, 5, 5 ]
+			"emissiveFactor": [ 5, 5, 5 ]
 		},
 		{
 			"name": "MI_Bikiny_2",
@@ -5296,7 +5296,7 @@
 			{
 				"index": 12
 			},
-			"emissiveFactor": [ 15, 15, 15, 15 ]
+			"emissiveFactor": [ 15, 15, 15 ]
 		},
 		{
 			"name": "Backpack_1_mat_22",
@@ -5319,7 +5319,7 @@
 			{
 				"index": 112
 			},
-			"emissiveFactor": [ 15, 15, 15, 15 ]
+			"emissiveFactor": [ 15, 15, 15 ]
 		},
 		{
 			"name": "MI_ShoulderCover_23",
@@ -5342,7 +5342,7 @@
 			{
 				"index": 117
 			},
-			"emissiveFactor": [ 15, 15, 15, 15 ]
+			"emissiveFactor": [ 15, 15, 15 ]
 		},
 		{
 			"name": "MI_Stopwatch_24",
@@ -5365,7 +5365,7 @@
 			{
 				"index": 122
 			},
-			"emissiveFactor": [ 15, 15, 15, 15 ]
+			"emissiveFactor": [ 15, 15, 15 ]
 		},
 		{
 			"name": "Armor_mat_25",
@@ -5388,7 +5388,7 @@
 			{
 				"index": 127
 			},
-			"emissiveFactor": [ 5, 5, 5, 5 ]
+			"emissiveFactor": [ 5, 5, 5 ]
 		},
 		{
 			"name": "SkullMaterial_26",
@@ -5411,7 +5411,7 @@
 			{
 				"index": 132
 			},
-			"emissiveFactor": [ 5, 5, 5, 5 ]
+			"emissiveFactor": [ 5, 5, 5 ]
 		},
 		{
 			"name": "Face Stuff_27",
@@ -5437,7 +5437,7 @@
 			{
 				"index": 137
 			},
-			"emissiveFactor": [ 15, 15, 15, 15 ]
+			"emissiveFactor": [ 15, 15, 15 ]
 		},
 		{
 			"name": "Raven_Armor_Mat_18",
@@ -5460,7 +5460,7 @@
 			{
 				"index": 92
 			},
-			"emissiveFactor": [ 5, 5, 5, 5 ]
+			"emissiveFactor": [ 5, 5, 5 ]
 		},
 		{
 			"name": "MI_Cap_19",
@@ -5483,7 +5483,7 @@
 			{
 				"index": 97
 			},
-			"emissiveFactor": [ 15, 15, 15, 15 ]
+			"emissiveFactor": [ 15, 15, 15 ]
 		},
 		{
 			"name": "Material_20",
@@ -5506,7 +5506,7 @@
 			{
 				"index": 102
 			},
-			"emissiveFactor": [ 0, 0, 0, 0 ]
+			"emissiveFactor": [ 0, 0, 0 ]
 		},
 		{
 			"name": "Horns_material_21",
@@ -5529,7 +5529,7 @@
 			{
 				"index": 107
 			},
-			"emissiveFactor": [ 100, 100, 100, 100 ]
+			"emissiveFactor": [ 100, 100, 100 ]
 		},
 		{
 			"name": "MI_ShieldBase",
@@ -5556,7 +5556,7 @@
 			{
 				"index": 142
 			},
-			"emissiveFactor": [ 2.880000114440918, 2.880000114440918, 2.880000114440918, 2.880000114440918 ]
+			"emissiveFactor": [ 2.880000114440918, 2.880000114440918, 2.880000114440918 ]
 		},
 		{
 			"name": "MI_ShieldEffect",
@@ -5579,7 +5579,7 @@
 			{
 				"index": 147
 			},
-			"emissiveFactor": [ 10, 10, 10, 10 ]
+			"emissiveFactor": [ 10, 10, 10 ]
 		},
 		{
 			"name": "Jump_pack_mat",
@@ -5602,7 +5602,7 @@
 			{
 				"index": 152
 			},
-			"emissiveFactor": [ 0, 0, 0, 0 ]
+			"emissiveFactor": [ 0, 0, 0 ]
 		}
 	],
 	"meshes": [
