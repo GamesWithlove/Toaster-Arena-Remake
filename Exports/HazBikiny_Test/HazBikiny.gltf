@@ -5606,7 +5606,7 @@
 			"name": "MI_GLTF_MI_Ava_icon",
 			"pbrMetallicRoughness": {},
 			"occlusionTexture": {
-				"index": 0
+				"index": -1
 			}
 		},
 		{
