@@ -3,7 +3,7 @@
 #################################
 /[Bb]uild
 /[Bb]uilds
-/Binaries
+#Binaries
 /DerivedDataCache
 /Intermediate
 /Saved
@@ -60,3 +60,9 @@ Content/Export
 *_BuiltData.uasset
 *.txt
 Image.png
+Binaries/Win64/Toaster_reboot.exe
+Binaries/Win64/Toaster_rebootServer.exe
+Binaries/Linux/Toaster_rebootServer
+Binaries/Linux/Toaster_rebootServer.debug
+Binaries/Linux/Toaster_rebootServer.sym
+Binaries/Win64/Toaster_reboot-Win64-Shipping.exe
