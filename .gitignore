@@ -59,6 +59,7 @@ Content/Export
 # Built data for maps
 *_BuiltData.uasset
 *.txt
+*.uproject
 Image.png
 Binaries/Win64/Toaster_reboot.exe
 Binaries/Win64/Toaster_rebootServer.exe
