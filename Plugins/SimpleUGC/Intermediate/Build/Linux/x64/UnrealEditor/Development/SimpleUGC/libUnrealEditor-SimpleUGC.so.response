@@ -1,0 +1,6 @@
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/SimpleUGC/Intermediate/Build/Linux/x64/UnrealEditor/Development/SimpleUGC/Module.SimpleUGC.cpp.o"
+ -soname="libUnrealEditor-SimpleUGC.so"
+ -rpath-link="E:\Ue4_projects\Toaster-Arena-Remake\Plugins\SimpleUGC\Binaries\Linux"
+ -L"D:/Unreal engine/UE_TA_5.2/UnrealEngine/Engine/Binaries/Linux"
+ --start-group
+ --end-group

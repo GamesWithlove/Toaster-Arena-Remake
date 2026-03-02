@@ -1,0 +1,13 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\toaster_mod_plugin\\intermediate\\build\\win64\\unrealgame\\inc\\toastergame\\uht\\toastergame.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\ue4_projects\\toaster-arena-remake\\intermediate\\build\\win64\\x64\\toaster_reboot\\shipping\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\toaster_mod_plugin\\intermediate\\build\\win64\\x64\\unrealgame\\shipping\\toastergame\\definitions.toastergame.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

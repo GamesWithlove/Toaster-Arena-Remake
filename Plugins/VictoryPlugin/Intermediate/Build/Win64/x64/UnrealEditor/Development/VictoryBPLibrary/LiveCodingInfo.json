@@ -1,0 +1,14 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.VictoryBPLibrary.cpp.obj": [
+			"RamaColorPicker.gen.cpp.obj",
+			"VictoryBPFunctionLibrary.gen.cpp.obj",
+			"VictoryBPLibrary.init.gen.cpp.obj",
+			"VictoryBPLibrary.cpp.obj",
+			"RamaColorPicker.cpp.obj",
+			"VictoryBPFunctionLibrary.cpp.obj",
+			"VictoryBPFunctionLibrary_WinOS.cpp.obj"
+		]
+	}
+}

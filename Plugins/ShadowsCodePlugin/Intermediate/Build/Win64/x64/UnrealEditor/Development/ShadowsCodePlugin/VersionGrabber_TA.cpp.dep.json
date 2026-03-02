@@ -1,0 +1,15 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\private\\versiongrabber_ta.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\ue4_projects\\toaster-arena-remake\\intermediate\\build\\win64\\x64\\toaster_rebooteditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\shadowscodeplugin\\definitions.shadowscodeplugin.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\source\\shadowscodeplugin\\public\\versiongrabber_ta.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\shadowscodeplugin\\intermediate\\build\\win64\\unrealeditor\\inc\\shadowscodeplugin\\uht\\versiongrabber_ta.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

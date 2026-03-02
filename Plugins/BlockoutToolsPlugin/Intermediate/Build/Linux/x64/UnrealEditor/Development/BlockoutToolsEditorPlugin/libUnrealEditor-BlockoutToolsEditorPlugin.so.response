@@ -1,0 +1,7 @@
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/BlockoutToolsPlugin/Intermediate/Build/Linux/x64/UnrealEditor/Development/BlockoutToolsEditorPlugin/BlockoutToolsEditorPlugin.cpp.o"
+ -soname="libUnrealEditor-BlockoutToolsEditorPlugin.so"
+ -rpath-link="E:\Ue4_projects\Toaster-Arena-Remake\Plugins\BlockoutToolsPlugin\Binaries\Linux"
+ -L"D:/Unreal engine/UE_TA_5.2/UnrealEngine/Engine/Binaries/Linux"
+ -L"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/BlockoutToolsPlugin/Binaries/Linux"
+ --start-group
+ --end-group

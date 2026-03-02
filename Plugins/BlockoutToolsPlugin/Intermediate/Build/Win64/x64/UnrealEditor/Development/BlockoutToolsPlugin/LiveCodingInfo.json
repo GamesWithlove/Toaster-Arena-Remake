@@ -1,0 +1,13 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.BlockoutToolsPlugin.cpp.obj": [
+			"BlockoutToolsParent.gen.cpp.obj",
+			"BlockoutToolsPlugin.init.gen.cpp.obj",
+			"BlockoutToolsSettings.gen.cpp.obj",
+			"BlockoutToolsParent.cpp.obj",
+			"BlockoutToolsPlugin.cpp.obj",
+			"BlockoutToolsSettings.cpp.obj"
+		]
+	}
+}

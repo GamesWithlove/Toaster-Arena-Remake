@@ -1,0 +1,13 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.SimpleUGCEditor.cpp.obj": [
+			"SimpleUGCCreator.cpp.obj",
+			"SimpleUGCEditor.cpp.obj",
+			"SimpleUGCEditorCommands.cpp.obj",
+			"SimpleUGCEditorStyle.cpp.obj",
+			"SimpleUGCPackager.cpp.obj",
+			"SimpleUGCPluginWizardDefinition.cpp.obj"
+		]
+	}
+}

@@ -3,13 +3,11 @@
 #################################
 /[Bb]uild
 /[Bb]uilds
-#Binaries
 /DerivedDataCache
 /Intermediate
 /Saved
 /Releases
 /Mods
-Plugins/*/Intermediate
 /Exports/*
 
 #################################
@@ -37,6 +35,8 @@ Plugins/*/Intermediate
 *.pdb
 *.o
 *.obj
+*.pch
+*.gch
 
 ###################################
 # JetBrains Rider Generated Files #

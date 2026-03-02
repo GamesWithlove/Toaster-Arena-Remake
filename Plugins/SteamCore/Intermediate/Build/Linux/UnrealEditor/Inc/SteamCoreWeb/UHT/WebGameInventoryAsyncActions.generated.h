@@ -1,0 +1,366 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "GameInventory/WebGameInventoryAsyncActions.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UObject;
+class USteamCoreWebAsyncActionGetHistoryCommandDetails;
+class USteamCoreWebAsyncActionGetUserHistory;
+class USteamCoreWebAsyncActionHistoryExecuteCommand;
+class USteamCoreWebAsyncActionSupportGetAssetHistory;
+#ifdef STEAMCOREWEB_WebGameInventoryAsyncActions_generated_h
+#error "WebGameInventoryAsyncActions.generated.h already included, missing '#pragma once' in WebGameInventoryAsyncActions.h"
+#endif
+#define STEAMCOREWEB_WebGameInventoryAsyncActions_generated_h
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetHistoryCommandDetailsAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetHistoryCommandDetailsAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetHistoryCommandDetails(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetHistoryCommandDetails_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetHistoryCommandDetails, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetHistoryCommandDetails)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetHistoryCommandDetails(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetHistoryCommandDetails_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetHistoryCommandDetails, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetHistoryCommandDetails)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetHistoryCommandDetails(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetHistoryCommandDetails) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetHistoryCommandDetails); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetHistoryCommandDetails); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetHistoryCommandDetails(USteamCoreWebAsyncActionGetHistoryCommandDetails&&); \
+	NO_API USteamCoreWebAsyncActionGetHistoryCommandDetails(const USteamCoreWebAsyncActionGetHistoryCommandDetails&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionGetHistoryCommandDetails();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetHistoryCommandDetails(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetHistoryCommandDetails(USteamCoreWebAsyncActionGetHistoryCommandDetails&&); \
+	NO_API USteamCoreWebAsyncActionGetHistoryCommandDetails(const USteamCoreWebAsyncActionGetHistoryCommandDetails&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetHistoryCommandDetails); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetHistoryCommandDetails); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetHistoryCommandDetails) \
+	NO_API virtual ~USteamCoreWebAsyncActionGetHistoryCommandDetails();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_23_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_26_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionGetHistoryCommandDetails>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGetUserHistoryAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGetUserHistoryAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetUserHistory(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetUserHistory_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetUserHistory, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetUserHistory)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionGetUserHistory(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionGetUserHistory_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionGetUserHistory, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionGetUserHistory)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetUserHistory(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetUserHistory) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetUserHistory); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetUserHistory); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetUserHistory(USteamCoreWebAsyncActionGetUserHistory&&); \
+	NO_API USteamCoreWebAsyncActionGetUserHistory(const USteamCoreWebAsyncActionGetUserHistory&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionGetUserHistory();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionGetUserHistory(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionGetUserHistory(USteamCoreWebAsyncActionGetUserHistory&&); \
+	NO_API USteamCoreWebAsyncActionGetUserHistory(const USteamCoreWebAsyncActionGetUserHistory&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionGetUserHistory); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionGetUserHistory); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionGetUserHistory) \
+	NO_API virtual ~USteamCoreWebAsyncActionGetUserHistory();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_45_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_48_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionGetUserHistory>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execHistoryExecuteCommandAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execHistoryExecuteCommandAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionHistoryExecuteCommand(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionHistoryExecuteCommand_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionHistoryExecuteCommand, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionHistoryExecuteCommand)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionHistoryExecuteCommand(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionHistoryExecuteCommand_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionHistoryExecuteCommand, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionHistoryExecuteCommand)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionHistoryExecuteCommand(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionHistoryExecuteCommand) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionHistoryExecuteCommand); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionHistoryExecuteCommand); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionHistoryExecuteCommand(USteamCoreWebAsyncActionHistoryExecuteCommand&&); \
+	NO_API USteamCoreWebAsyncActionHistoryExecuteCommand(const USteamCoreWebAsyncActionHistoryExecuteCommand&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionHistoryExecuteCommand();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionHistoryExecuteCommand(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionHistoryExecuteCommand(USteamCoreWebAsyncActionHistoryExecuteCommand&&); \
+	NO_API USteamCoreWebAsyncActionHistoryExecuteCommand(const USteamCoreWebAsyncActionHistoryExecuteCommand&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionHistoryExecuteCommand); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionHistoryExecuteCommand); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionHistoryExecuteCommand) \
+	NO_API virtual ~USteamCoreWebAsyncActionHistoryExecuteCommand();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_67_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_70_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionHistoryExecuteCommand>();
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_SPARSE_DATA
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execSupportGetAssetHistoryAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execSupportGetAssetHistoryAsync);
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_ACCESSORS
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionSupportGetAssetHistory(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionSupportGetAssetHistory_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionSupportGetAssetHistory, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionSupportGetAssetHistory)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_INCLASS \
+private: \
+	static void StaticRegisterNativesUSteamCoreWebAsyncActionSupportGetAssetHistory(); \
+	friend struct Z_Construct_UClass_USteamCoreWebAsyncActionSupportGetAssetHistory_Statics; \
+public: \
+	DECLARE_CLASS(USteamCoreWebAsyncActionSupportGetAssetHistory, USteamCoreWebAsyncAction, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SteamCoreWeb"), NO_API) \
+	DECLARE_SERIALIZER(USteamCoreWebAsyncActionSupportGetAssetHistory)
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionSupportGetAssetHistory(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionSupportGetAssetHistory) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionSupportGetAssetHistory); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionSupportGetAssetHistory); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionSupportGetAssetHistory(USteamCoreWebAsyncActionSupportGetAssetHistory&&); \
+	NO_API USteamCoreWebAsyncActionSupportGetAssetHistory(const USteamCoreWebAsyncActionSupportGetAssetHistory&); \
+public: \
+	NO_API virtual ~USteamCoreWebAsyncActionSupportGetAssetHistory();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API USteamCoreWebAsyncActionSupportGetAssetHistory(); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API USteamCoreWebAsyncActionSupportGetAssetHistory(USteamCoreWebAsyncActionSupportGetAssetHistory&&); \
+	NO_API USteamCoreWebAsyncActionSupportGetAssetHistory(const USteamCoreWebAsyncActionSupportGetAssetHistory&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USteamCoreWebAsyncActionSupportGetAssetHistory); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USteamCoreWebAsyncActionSupportGetAssetHistory); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(USteamCoreWebAsyncActionSupportGetAssetHistory) \
+	NO_API virtual ~USteamCoreWebAsyncActionSupportGetAssetHistory();
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_88_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_SPARSE_DATA \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_ACCESSORS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h_91_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> STEAMCOREWEB_API UClass* StaticClass<class USteamCoreWebAsyncActionSupportGetAssetHistory>();
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_SteamCore_Source_SteamCoreWeb_Public_GameInventory_WebGameInventoryAsyncActions_h
+
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -1,0 +1,33 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockouttoolsplugin\\intermediate\\build\\win64\\x64\\unrealgame\\development\\blockouttoolsplugin\\module.blockouttoolsplugin.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\ue4_projects\\toaster-arena-remake\\intermediate\\build\\win64\\x64\\toaster_reboot\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockouttoolsplugin\\intermediate\\build\\win64\\x64\\unrealgame\\development\\blockouttoolsplugin\\definitions.blockouttoolsplugin.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockouttoolsplugin\\intermediate\\build\\win64\\unrealgame\\inc\\blockouttoolsplugin\\uht\\blockouttoolsparent.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockouttoolsplugin\\source\\blockouttoolsplugin\\private\\blockouttoolsparent.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\components\\billboardcomponent.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealgame\\inc\\engine\\uht\\billboardcomponent.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockouttoolsplugin\\intermediate\\build\\win64\\unrealgame\\inc\\blockouttoolsplugin\\uht\\blockouttoolsparent.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockouttoolsplugin\\intermediate\\build\\win64\\unrealgame\\inc\\blockouttoolsplugin\\uht\\blockouttoolsplugin.init.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockouttoolsplugin\\intermediate\\build\\win64\\unrealgame\\inc\\blockouttoolsplugin\\uht\\blockouttoolssettings.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockouttoolsplugin\\source\\blockouttoolsplugin\\public\\blockouttoolssettings.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\source\\runtime\\coreuobject\\public\\uobject\\noexporttypes.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\source\\runtime\\core\\public\\math\\unitconversion.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
+            "d:\\unreal engine\\ue_5.2\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\source\\runtime\\coreuobject\\public\\assetregistry\\arfilter.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockouttoolsplugin\\intermediate\\build\\win64\\unrealgame\\inc\\blockouttoolsplugin\\uht\\blockouttoolssettings.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockouttoolsplugin\\source\\blockouttoolsplugin\\private\\blockouttoolsparent.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockouttoolsplugin\\source\\blockouttoolsplugin\\private\\blockouttoolsplugin.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockouttoolsplugin\\source\\blockouttoolsplugin\\public\\blockouttoolsplugin.h",
+            "d:\\unreal engine\\ue_5.2\\engine\\source\\developer\\settings\\public\\isettingsmodule.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockouttoolsplugin\\source\\blockouttoolsplugin\\private\\blockouttoolssettings.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

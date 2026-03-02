@@ -1,0 +1,223 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+#include "UObject/GeneratedCppIncludes.h"
+#include "KB_Multi_Thread_E/Public/KB_Multi_Thread_E_AsyncNode2.h"
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+void EmptyLinkFunctionForGeneratedCodeKB_Multi_Thread_E_AsyncNode2() {}
+// Cross Module References
+	ENGINE_API UClass* Z_Construct_UClass_UBlueprintAsyncActionBase();
+	KB_MULTI_THREAD_E_API UClass* Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2();
+	KB_MULTI_THREAD_E_API UClass* Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_NoRegister();
+	KB_MULTI_THREAD_E_API UFunction* Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature();
+	UPackage* Z_Construct_UPackage__Script_KB_Multi_Thread_E();
+// End Cross Module References
+	struct Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics
+	{
+		struct _Script_KB_Multi_Thread_E_eventTaskOutput2_Parms
+		{
+			bool OnFinished;
+			float TimeItTook;
+		};
+		static void NewProp_OnFinished_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_OnFinished;
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_TimeItTook;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::NewProp_OnFinished_SetBit(void* Obj)
+	{
+		((_Script_KB_Multi_Thread_E_eventTaskOutput2_Parms*)Obj)->OnFinished = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::NewProp_OnFinished = { "OnFinished", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(_Script_KB_Multi_Thread_E_eventTaskOutput2_Parms), &Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::NewProp_OnFinished_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::NewProp_TimeItTook = { "TimeItTook", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(_Script_KB_Multi_Thread_E_eventTaskOutput2_Parms, TimeItTook), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::NewProp_OnFinished,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::NewProp_TimeItTook,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/KB_Multi_Thread_E_AsyncNode2.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::FuncParams = { (UObject*(*)())Z_Construct_UPackage__Script_KB_Multi_Thread_E, nullptr, "TaskOutput2__DelegateSignature", nullptr, nullptr, sizeof(Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::_Script_KB_Multi_Thread_E_eventTaskOutput2_Parms), Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00120004, 0, 0, METADATA_PARAMS(Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+void FTaskOutput2_DelegateWrapper(const FScriptDelegate& TaskOutput2, bool OnFinished, float TimeItTook)
+{
+	struct _Script_KB_Multi_Thread_E_eventTaskOutput2_Parms
+	{
+		bool OnFinished;
+		float TimeItTook;
+	};
+	_Script_KB_Multi_Thread_E_eventTaskOutput2_Parms Parms;
+	Parms.OnFinished=OnFinished ? true : false;
+	Parms.TimeItTook=TimeItTook;
+	TaskOutput2.ProcessDelegate<UObject>(&Parms);
+}
+	DEFINE_FUNCTION(UKB_Multi_Thread_E_AsyncNode2::execBAS_MTE_MultiThreadNode)
+	{
+		P_GET_PROPERTY_REF(FDelegateProperty,Z_Param_Out_DelegateFL);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(UKB_Multi_Thread_E_AsyncNode2**)Z_Param__Result=UKB_Multi_Thread_E_AsyncNode2::BAS_MTE_MultiThreadNode(FTaskOutput2(Z_Param_Out_DelegateFL));
+		P_NATIVE_END;
+	}
+	void UKB_Multi_Thread_E_AsyncNode2::StaticRegisterNativesUKB_Multi_Thread_E_AsyncNode2()
+	{
+		UClass* Class = UKB_Multi_Thread_E_AsyncNode2::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "BAS_MTE_MultiThreadNode", &UKB_Multi_Thread_E_AsyncNode2::execBAS_MTE_MultiThreadNode },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics
+	{
+		struct KB_Multi_Thread_E_AsyncNode2_eventBAS_MTE_MultiThreadNode_Parms
+		{
+			FScriptDelegate DelegateFL;
+			UKB_Multi_Thread_E_AsyncNode2* ReturnValue;
+		};
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DelegateFL_MetaData[];
+#endif
+		static const UECodeGen_Private::FDelegatePropertyParams NewProp_DelegateFL;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::NewProp_DelegateFL_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif
+	const UECodeGen_Private::FDelegatePropertyParams Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::NewProp_DelegateFL = { "DelegateFL", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Delegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(KB_Multi_Thread_E_AsyncNode2_eventBAS_MTE_MultiThreadNode_Parms, DelegateFL), Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature, METADATA_PARAMS(Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::NewProp_DelegateFL_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::NewProp_DelegateFL_MetaData)) }; // 4172382420
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(KB_Multi_Thread_E_AsyncNode2_eventBAS_MTE_MultiThreadNode_Parms, ReturnValue), Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::NewProp_DelegateFL,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::Function_MetaDataParams[] = {
+		{ "AutoCreateRefTerm", "DelegateFL" },
+		{ "BlueprintInternalUseOnly", "true" },
+		{ "Category", "Multi Thread Extension" },
+		{ "DisplayName", "Multi Thread Task by Delegate" },
+		{ "Keywords", "Async Multi Thread Delegate" },
+		{ "ModuleRelativePath", "Public/KB_Multi_Thread_E_AsyncNode2.h" },
+		{ "ToolTip", "Allows for multi threading any blueprint code by a delegate" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2, nullptr, "BAS_MTE_MultiThreadNode", nullptr, nullptr, sizeof(Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::KB_Multi_Thread_E_AsyncNode2_eventBAS_MTE_MultiThreadNode_Parms), Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04422401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UKB_Multi_Thread_E_AsyncNode2);
+	UClass* Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_NoRegister()
+	{
+		return UKB_Multi_Thread_E_AsyncNode2::StaticClass();
+	}
+	struct Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics
+	{
+		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
+#endif
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_LocalDelegateFL_MetaData[];
+#endif
+		static const UECodeGen_Private::FDelegatePropertyParams NewProp_LocalDelegateFL;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
+		static const UECodeGen_Private::FClassParams ClassParams;
+	};
+	UObject* (*const Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::DependentSingletons[])() = {
+		(UObject* (*)())Z_Construct_UClass_UBlueprintAsyncActionBase,
+		(UObject* (*)())Z_Construct_UPackage__Script_KB_Multi_Thread_E,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UKB_Multi_Thread_E_AsyncNode2_BAS_MTE_MultiThreadNode, "BAS_MTE_MultiThreadNode" }, // 4257850854
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::Class_MetaDataParams[] = {
+		{ "IncludePath", "KB_Multi_Thread_E_AsyncNode2.h" },
+		{ "ModuleRelativePath", "Public/KB_Multi_Thread_E_AsyncNode2.h" },
+	};
+#endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::NewProp_LocalDelegateFL_MetaData[] = {
+		{ "ModuleRelativePath", "Public/KB_Multi_Thread_E_AsyncNode2.h" },
+	};
+#endif
+	const UECodeGen_Private::FDelegatePropertyParams Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::NewProp_LocalDelegateFL = { "LocalDelegateFL", nullptr, (EPropertyFlags)0x0010000000080000, UECodeGen_Private::EPropertyGenFlags::Delegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UKB_Multi_Thread_E_AsyncNode2, LocalDelegateFL), Z_Construct_UDelegateFunction_KB_Multi_Thread_E_TaskOutput2__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::NewProp_LocalDelegateFL_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::NewProp_LocalDelegateFL_MetaData)) }; // 4172382420
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::NewProp_LocalDelegateFL,
+	};
+	const FCppClassTypeInfoStatic Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::StaticCppClassTypeInfo = {
+		TCppClassTypeTraits<UKB_Multi_Thread_E_AsyncNode2>::IsAbstract,
+	};
+	const UECodeGen_Private::FClassParams Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::ClassParams = {
+		&UKB_Multi_Thread_E_AsyncNode2::StaticClass,
+		nullptr,
+		&StaticCppClassTypeInfo,
+		DependentSingletons,
+		FuncInfo,
+		Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::PropPointers,
+		nullptr,
+		UE_ARRAY_COUNT(DependentSingletons),
+		UE_ARRAY_COUNT(FuncInfo),
+		UE_ARRAY_COUNT(Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::PropPointers),
+		0,
+		0x009000A0u,
+		METADATA_PARAMS(Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::Class_MetaDataParams))
+	};
+	UClass* Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2()
+	{
+		if (!Z_Registration_Info_UClass_UKB_Multi_Thread_E_AsyncNode2.OuterSingleton)
+		{
+			UECodeGen_Private::ConstructUClass(Z_Registration_Info_UClass_UKB_Multi_Thread_E_AsyncNode2.OuterSingleton, Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2_Statics::ClassParams);
+		}
+		return Z_Registration_Info_UClass_UKB_Multi_Thread_E_AsyncNode2.OuterSingleton;
+	}
+	template<> KB_MULTI_THREAD_E_API UClass* StaticClass<UKB_Multi_Thread_E_AsyncNode2>()
+	{
+		return UKB_Multi_Thread_E_AsyncNode2::StaticClass();
+	}
+	UKB_Multi_Thread_E_AsyncNode2::UKB_Multi_Thread_E_AsyncNode2(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
+	DEFINE_VTABLE_PTR_HELPER_CTOR(UKB_Multi_Thread_E_AsyncNode2);
+	UKB_Multi_Thread_E_AsyncNode2::~UKB_Multi_Thread_E_AsyncNode2() {}
+	struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_KB_Multi_Thread_E_Source_KB_Multi_Thread_E_Public_KB_Multi_Thread_E_AsyncNode2_h_Statics
+	{
+		static const FClassRegisterCompiledInInfo ClassInfo[];
+	};
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_KB_Multi_Thread_E_Source_KB_Multi_Thread_E_Public_KB_Multi_Thread_E_AsyncNode2_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UKB_Multi_Thread_E_AsyncNode2, UKB_Multi_Thread_E_AsyncNode2::StaticClass, TEXT("UKB_Multi_Thread_E_AsyncNode2"), &Z_Registration_Info_UClass_UKB_Multi_Thread_E_AsyncNode2, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UKB_Multi_Thread_E_AsyncNode2), 1744009898U) },
+	};
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_KB_Multi_Thread_E_Source_KB_Multi_Thread_E_Public_KB_Multi_Thread_E_AsyncNode2_h_248046864(TEXT("/Script/KB_Multi_Thread_E"),
+		Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_KB_Multi_Thread_E_Source_KB_Multi_Thread_E_Public_KB_Multi_Thread_E_AsyncNode2_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_KB_Multi_Thread_E_Source_KB_Multi_Thread_E_Public_KB_Multi_Thread_E_AsyncNode2_h_Statics::ClassInfo),
+		nullptr, 0,
+		nullptr, 0);
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

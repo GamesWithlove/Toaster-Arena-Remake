@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-KB_Multi_Thread_E.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\KB_Multi_Thread_E\Intermediate\Build\Win64\x64\UnrealEditor\Development\KB_Multi_Thread_E\Module.KB_Multi_Thread_E.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\KB_Multi_Thread_E\Intermediate\Build\Win64\x64\UnrealEditor\Development\KB_Multi_Thread_E\Default.rc2.res"
+/OUT:"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\KB_Multi_Thread_E\Intermediate\Build\Win64\x64\UnrealEditor\Development\KB_Multi_Thread_E\UnrealEditor-KB_Multi_Thread_E.lib"
