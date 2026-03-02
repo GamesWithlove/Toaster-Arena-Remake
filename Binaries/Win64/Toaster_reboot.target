@@ -17,7 +17,7 @@
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
 		"BranchName": "UE5",
-		"BuildId": "b8bbb928-98ff-42d8-a9e9-bca65d571e46"
+		"BuildId": "caa9f9e6-ebec-4030-8e98-53734ed6fc53"
 	},
 	"BuildProducts": [
 		{
@@ -3448,6 +3448,10 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/VaRest/VaRest.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/VictoryPlugin/VictoryBPLibrary.uplugin",
 			"Type": "UFS"
 		},
 		{
