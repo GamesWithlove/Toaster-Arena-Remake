@@ -6,7 +6,7 @@
 /NAME:"UnrealEditor-ToasterGameEditor.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.obj"
 "E:\Ue4_projects\Toaster-Arena-Remake\Plugins\Toaster_mod_plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\ToasterGameEditor\Module.ToasterGameEditor.cpp.obj"
-"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Default.rc2.res"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\Toaster_mod_plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\ToasterGameEditor\Default.rc2.res"
 /OUT:"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\Toaster_mod_plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\ToasterGameEditor\UnrealEditor-ToasterGameEditor.lib"

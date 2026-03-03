@@ -6,7 +6,7 @@
 /NAME:"UnrealEditor-SimpleUGCEditor.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.obj"
 "E:\Ue4_projects\Toaster-Arena-Remake\Plugins\SimpleUGC\Intermediate\Build\Win64\x64\UnrealEditor\Development\SimpleUGCEditor\Module.SimpleUGCEditor.cpp.obj"
-"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\SimpleUGC\Intermediate\Build\Win64\x64\UnrealEditor\Development\SimpleUGCEditor\Default.rc2.res"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Default.rc2.res"
 /OUT:"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\SimpleUGC\Intermediate\Build\Win64\x64\UnrealEditor\Development\SimpleUGCEditor\UnrealEditor-SimpleUGCEditor.lib"

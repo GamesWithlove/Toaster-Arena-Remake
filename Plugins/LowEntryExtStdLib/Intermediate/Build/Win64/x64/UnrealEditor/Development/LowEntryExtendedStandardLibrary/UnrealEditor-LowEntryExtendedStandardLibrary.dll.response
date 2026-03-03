@@ -19,7 +19,7 @@
 /ignore:4099
 /DELAYLOAD:"d3d12.dll"
 /DELAYLOAD:"DBGHELP.DLL"
-/LIBPATH:"E:\VisualStudio\install\VC\Tools\MSVC\14.29.30133\lib\x64"
+/LIBPATH:"E:\VisualStudio\install_2022\VC\Tools\MSVC\14.34.31933\lib\x64"
 /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.18362.0\ucrt\x64"
 /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.18362.0\um\x64"
 /NODEFAULTLIB:"LIBCMT"
@@ -88,7 +88,7 @@
 "E:\Ue4_projects\Toaster-Arena-Remake\Plugins\LowEntryExtStdLib\Intermediate\Build\Win64\x64\UnrealEditor\Development\LowEntryExtendedStandardLibrary\LowEntryDouble.cpp.obj"
 "E:\Ue4_projects\Toaster-Arena-Remake\Plugins\LowEntryExtStdLib\Intermediate\Build\Win64\x64\UnrealEditor\Development\LowEntryExtendedStandardLibrary\LowEntryLong.cpp.obj"
 "E:\Ue4_projects\Toaster-Arena-Remake\Plugins\LowEntryExtStdLib\Intermediate\Build\Win64\x64\UnrealEditor\Development\LowEntryExtendedStandardLibrary\LowEntryExtendedStandardLibraryModule.cpp.obj"
-"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\LowEntryExtStdLib\Intermediate\Build\Win64\x64\UnrealEditor\Development\LowEntryExtendedStandardLibrary\Default.rc2.res"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Default.rc2.res"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\UnrealEditor-Engine.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Core\UnrealEditor-Core.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\ApplicationCore\UnrealEditor-ApplicationCore.lib"

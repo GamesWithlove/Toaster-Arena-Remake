@@ -19,7 +19,7 @@
 /ignore:4099
 /DELAYLOAD:"d3d12.dll"
 /DELAYLOAD:"DBGHELP.DLL"
-/LIBPATH:"E:\VisualStudio\install_2022\VC\Tools\MSVC\14.34.31933\lib\x64"
+/LIBPATH:"E:\VisualStudio\install\VC\Tools\MSVC\14.29.30133\lib\x64"
 /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.18362.0\ucrt\x64"
 /LIBPATH:"C:\Program Files (x86)\Windows Kits\10\lib\10.0.18362.0\um\x64"
 /NODEFAULTLIB:"LIBCMT"
@@ -53,7 +53,7 @@
 "E:\Ue4_projects\Toaster-Arena-Remake\Plugins\LowEntryExtStdLib\Intermediate\Build\Win64\x64\UnrealEditor\Development\LowEntryExtendedStandardLibraryEditor\K2Node_LowEntry_MergeBytesPure.cpp.obj"
 "E:\Ue4_projects\Toaster-Arena-Remake\Plugins\LowEntryExtStdLib\Intermediate\Build\Win64\x64\UnrealEditor\Development\LowEntryExtendedStandardLibraryEditor\K2Node_LowEntry_PurePrint.cpp.obj"
 "E:\Ue4_projects\Toaster-Arena-Remake\Plugins\LowEntryExtStdLib\Intermediate\Build\Win64\x64\UnrealEditor\Development\LowEntryExtendedStandardLibraryEditor\LowEntryExtendedStandardLibraryEditorModule.cpp.obj"
-"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Default.rc2.res"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\LowEntryExtStdLib\Intermediate\Build\Win64\x64\UnrealEditor\Development\LowEntryExtendedStandardLibraryEditor\Default.rc2.res"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\EditorStyle\UnrealEditor-EditorStyle.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\KismetCompiler\UnrealEditor-KismetCompiler.lib"
 "..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\UnrealEditor-UnrealEd.lib"

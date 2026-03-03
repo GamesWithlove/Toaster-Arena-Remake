@@ -6,7 +6,7 @@
 /NAME:"UnrealEditor-EasyMultiSave.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_0.h.obj"
 "E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EasyMultiSave\Intermediate\Build\Win64\x64\UnrealEditor\Development\EasyMultiSave\Module.EasyMultiSave.cpp.obj"
-"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EasyMultiSave\Intermediate\Build\Win64\x64\UnrealEditor\Development\EasyMultiSave\Default.rc2.res"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Default.rc2.res"
 /OUT:"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EasyMultiSave\Intermediate\Build\Win64\x64\UnrealEditor\Development\EasyMultiSave\UnrealEditor-EasyMultiSave.lib"

@@ -281,18 +281,19 @@ E:\Ue4_projects\Toaster-Arena-Remake\Plugins\PCG\Intermediate\Build\Win64\x64\Un
 /I ..\Plugins\Experimental\StructUtils\Intermediate\Build\Win64\UnrealEditor\Inc\StructUtils\UHT
 /I ..\Plugins\Experimental\StructUtils\Source\StructUtils\Public
 /I ..\Plugins\Experimental\StructUtils\Source
-/I ThirdParty\mimalloc\include
-/I ThirdParty\LibTiff\Source\Win64
-/I ThirdParty\LibTiff\Source
-/I E:\VisualStudio\install\VC\Tools\MSVC\14.29.30133\INCLUDE
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/FI"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h"
+/external:W0
+/external:I ThirdParty\mimalloc\include
+/external:I ThirdParty\LibTiff\Source\Win64
+/external:I ThirdParty\LibTiff\Source
+/external:I E:\VisualStudio\install_2022\VC\Tools\MSVC\14.34.31933\INCLUDE
+/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"
+/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
+/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
+/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
+/FI"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h"
 /FI"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\PCG\Intermediate\Build\Win64\x64\UnrealEditor\Development\PCG\Definitions.PCG.h"
-/Yu"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h"
-/Fp"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.pch"
+/Yu"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h"
+/Fp"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.InclOrderUnreal5_0.h.pch"
 /Fo"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\PCG\Intermediate\Build\Win64\x64\UnrealEditor\Development\PCG\Module.PCG.2_of_5.cpp.obj"
 /sourceDependencies E:\Ue4_projects\Toaster-Arena-Remake\Plugins\PCG\Intermediate\Build\Win64\x64\UnrealEditor\Development\PCG\Module.PCG.2_of_5.cpp.dep.json
 /Zc:inline

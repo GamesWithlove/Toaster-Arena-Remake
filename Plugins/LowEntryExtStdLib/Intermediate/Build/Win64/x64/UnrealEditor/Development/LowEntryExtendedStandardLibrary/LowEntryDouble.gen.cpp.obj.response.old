@@ -294,15 +294,14 @@ E:\Ue4_projects\Toaster-Arena-Remake\Plugins\LowEntryExtStdLib\Intermediate\Buil
 /I Runtime\MediaAssets\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\MediaUtils\UHT
 /I Runtime\MediaUtils\Public
-/external:W0
-/external:I ThirdParty\mimalloc\include
-/external:I ThirdParty\LibTiff\Source\Win64
-/external:I ThirdParty\LibTiff\Source
-/external:I E:\VisualStudio\install_2022\VC\Tools\MSVC\14.34.31933\INCLUDE
-/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"
-/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
-/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
-/external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
+/I ThirdParty\mimalloc\include
+/I ThirdParty\LibTiff\Source\Win64
+/I ThirdParty\LibTiff\Source
+/I E:\VisualStudio\install\VC\Tools\MSVC\14.29.30133\INCLUDE
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
 /FI"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\LowEntryExtStdLib\Intermediate\Build\Win64\x64\UnrealEditor\Development\LowEntryExtendedStandardLibrary\Definitions.h"
 /Fo"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\LowEntryExtStdLib\Intermediate\Build\Win64\x64\UnrealEditor\Development\LowEntryExtendedStandardLibrary\LowEntryDouble.gen.cpp.obj"
 /sourceDependencies E:\Ue4_projects\Toaster-Arena-Remake\Plugins\LowEntryExtStdLib\Intermediate\Build\Win64\x64\UnrealEditor\Development\LowEntryExtendedStandardLibrary\LowEntryDouble.gen.cpp.dep.json
