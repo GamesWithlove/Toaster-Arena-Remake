@@ -10,7 +10,7 @@
 	"DocsURL": "https://kibibytecompany.com/Plugins/Multi-Thread-Extension/",
 	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/61e5b2f5c9164a13906bf074a8af56d9",
 	"SupportURL": "https://discord.gg/UfYfuFAVae",
-	"EngineVersion": "5.2.0",
+	"EngineVersion": "5.7.0",
 	"CanContainContent": false,
 	"Installed": true,
 	"Modules": [

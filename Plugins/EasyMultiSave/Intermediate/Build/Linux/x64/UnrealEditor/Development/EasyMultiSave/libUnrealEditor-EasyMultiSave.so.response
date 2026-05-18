@@ -1,6 +1,0 @@
-"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/EasyMultiSave/Intermediate/Build/Linux/x64/UnrealEditor/Development/EasyMultiSave/Module.EasyMultiSave.cpp.o"
- -soname="libUnrealEditor-EasyMultiSave.so"
- -rpath-link="E:\Ue4_projects\Toaster-Arena-Remake\Plugins\EasyMultiSave\Binaries\Linux"
- -L"D:/Unreal engine/UE_TA_5.2/UnrealEngine/Engine/Binaries/Linux"
- --start-group
- --end-group
