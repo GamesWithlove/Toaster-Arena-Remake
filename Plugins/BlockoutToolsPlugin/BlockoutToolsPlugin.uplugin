@@ -10,7 +10,7 @@
 	"DocsURL": "https://dmkarpukhin.com/blockout-tools-plugin/documentation/",
 	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/d337b97aca8947a893526964e179acfd",
 	"SupportURL": "mailto:skxdoom@gmail.com",
-	"EngineVersion": "5.2.0",
+	"EngineVersion": "5.7.0",
 	"CanContainContent": true,
 	"Installed": true,
 	"Modules": [
