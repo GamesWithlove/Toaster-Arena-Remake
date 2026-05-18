@@ -9,6 +9,7 @@
 			"UGCBlueprintLibrary.gen.cpp.obj",
 			"UGCRegistry.gen.cpp.obj",
 			"UGCSubsystem.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
 			"MakeReplaceableActorComponent.cpp.obj",
 			"ReplacementActorComponent.cpp.obj",
 			"SimpleUGC.cpp.obj",

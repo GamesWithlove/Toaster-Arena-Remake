@@ -5,94 +5,59 @@
 ===========================================================================*/
 
 // IWYU pragma: private, include "SMMTypes.h"
-#include "UObject/ObjectMacros.h"
-#include "UObject/ScriptMacros.h"
 
-PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #ifdef SKELETALMESHMERGER_SMMTypes_generated_h
 #error "SMMTypes.generated.h already included, missing '#pragma once' in SMMTypes.h"
 #endif
 #define SKELETALMESHMERGER_SMMTypes_generated_h
 
-#define FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_SPARSE_DATA
-#define FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_RPC_WRAPPERS
-#define FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_ACCESSORS
-#define FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_INCLASS_NO_PURE_DECLS \
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+
+// ********** Begin Class USMMTypes ****************************************************************
+struct Z_Construct_UClass_USMMTypes_Statics;
+SKELETALMESHMERGER_API UClass* Z_Construct_UClass_USMMTypes_NoRegister();
+
+#define FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUSMMTypes(); \
-	friend struct Z_Construct_UClass_USMMTypes_Statics; \
+	friend struct ::Z_Construct_UClass_USMMTypes_Statics; \
+	static UClass* GetPrivateStaticClass(); \
+	friend SKELETALMESHMERGER_API UClass* ::Z_Construct_UClass_USMMTypes_NoRegister(); \
 public: \
-	DECLARE_CLASS(USMMTypes, UObject, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SkeletalMeshMerger"), NO_API) \
+	DECLARE_CLASS2(USMMTypes, UObject, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SkeletalMeshMerger"), Z_Construct_UClass_USMMTypes_NoRegister) \
 	DECLARE_SERIALIZER(USMMTypes)
 
 
-#define FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_INCLASS \
-private: \
-	static void StaticRegisterNativesUSMMTypes(); \
-	friend struct Z_Construct_UClass_USMMTypes_Statics; \
-public: \
-	DECLARE_CLASS(USMMTypes, UObject, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/SkeletalMeshMerger"), NO_API) \
-	DECLARE_SERIALIZER(USMMTypes)
-
-
-#define FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_STANDARD_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API USMMTypes(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USMMTypes) \
-	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USMMTypes); \
-	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USMMTypes); \
-private: \
-	/** Private move- and copy-constructors, should never be used */ \
-	NO_API USMMTypes(USMMTypes&&); \
-	NO_API USMMTypes(const USMMTypes&); \
-public: \
-	NO_API virtual ~USMMTypes();
-
-
-#define FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API USMMTypes(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
-private: \
-	/** Private move- and copy-constructors, should never be used */ \
-	NO_API USMMTypes(USMMTypes&&); \
-	NO_API USMMTypes(const USMMTypes&); \
-public: \
+	/** Deleted move- and copy-constructors, should never be used */ \
+	USMMTypes(USMMTypes&&) = delete; \
+	USMMTypes(const USMMTypes&) = delete; \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, USMMTypes); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(USMMTypes); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(USMMTypes) \
 	NO_API virtual ~USMMTypes();
 
 
-#define FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_11_PROLOG
-#define FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_GENERATED_BODY_LEGACY \
+#define FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_11_PROLOG
+#define FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_SPARSE_DATA \
-	FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_RPC_WRAPPERS \
-	FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_ACCESSORS \
-	FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_INCLASS \
-	FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_STANDARD_CONSTRUCTORS \
-public: \
-PRAGMA_ENABLE_DEPRECATION_WARNINGS
-
-
-#define FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_SPARSE_DATA \
-	FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_ACCESSORS \
-	FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_INCLASS_NO_PURE_DECLS \
-	FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-template<> SKELETALMESHMERGER_API UClass* StaticClass<class USMMTypes>();
+class USMMTypes;
+
+// ********** End Class USMMTypes ******************************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_build_U5M_Marketplace_Sync_LocalBuilds_PluginTemp_HostProject_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h
-
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

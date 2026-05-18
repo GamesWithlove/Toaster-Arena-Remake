@@ -5,7 +5,7 @@
 #include "Animation/Skeleton.h"
 #include "AssetRegistry/AssetRegistryModule.h"
 #include "ClothingAsset.h"
-#include "ClothingSystemRuntimeInterface/Public/ClothingAssetBase.h"
+#include "ClothingAssetBase.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Engine/SkeletalMesh.h"
 #include "Engine/SkeletalMeshLODSettings.h"

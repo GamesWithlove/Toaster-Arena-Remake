@@ -1,6 +1,0 @@
-"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/SmoothSync/Intermediate/Build/Linux/x64/UnrealEditor/Development/SmoothSyncPlugin/Module.SmoothSyncPlugin.cpp.o"
- -soname="libUnrealEditor-SmoothSyncPlugin.so"
- -rpath-link="E:\Ue4_projects\Toaster-Arena-Remake\Plugins\SmoothSync\Binaries\Linux"
- -L"D:/Unreal engine/UE_TA_5.2/UnrealEngine/Engine/Binaries/Linux"
- --start-group
- --end-group

@@ -1,0 +1,37 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\skeletalmeshmerger\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\skeletalmeshmerger\\module.skeletalmeshmerger.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\ue4_projects\\toaster-arena-remake 5.7\\intermediate\\build\\win64\\x64\\toaster_rebooteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\skeletalmeshmerger\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\skeletalmeshmerger\\definitions.skeletalmeshmerger.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\skeletalmeshmerger\\intermediate\\build\\win64\\unrealeditor\\inc\\skeletalmeshmerger\\uht\\skeletalmeshmerger.init.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\skeletalmeshmerger\\intermediate\\build\\win64\\unrealeditor\\inc\\skeletalmeshmerger\\uht\\smmskeletalmeshmergersubsystem.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\skeletalmeshmerger\\source\\skeletalmeshmerger\\public\\smmskeletalmeshmergersubsystem.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\skeletalmeshmerger\\source\\skeletalmeshmerger\\public\\smmtypes.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\runtime\\engine\\public\\skeletalmeshmerge.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\skeletalmeshmerge.generated.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\runtime\\coreuobject\\public\\uobject\\noexporttypes.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\coreuobject\\uht\\propertyaccessutil.generated.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\runtime\\coreuobject\\public\\serialization\\testundeclaredscriptstructobjectreferences.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\coreuobject\\uht\\testundeclaredscriptstructobjectreferences.generated.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\runtime\\core\\public\\math\\unitconversion.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\skeletalmeshmerger\\intermediate\\build\\win64\\unrealeditor\\inc\\skeletalmeshmerger\\uht\\smmtypes.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\skeletalmeshmerger\\intermediate\\build\\win64\\unrealeditor\\inc\\skeletalmeshmerger\\uht\\smmskeletalmeshmergersubsystem.generated.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\plugins\\runtime\\skeletalmerging\\source\\skeletalmerging\\public\\skeletalmerginglibrary.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\plugins\\runtime\\skeletalmerging\\intermediate\\build\\win64\\unrealeditor\\inc\\skeletalmerging\\uht\\skeletalmerginglibrary.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\skeletalmeshmerger\\intermediate\\build\\win64\\unrealeditor\\inc\\skeletalmeshmerger\\uht\\smmtypes.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\skeletalmeshmerger\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\skeletalmeshmerger\\permoduleinline.gen.cpp",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\skeletalmeshmerger\\source\\skeletalmeshmerger\\private\\skeletalmeshmerger.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\skeletalmeshmerger\\source\\skeletalmeshmerger\\public\\skeletalmeshmerger.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\skeletalmeshmerger\\source\\skeletalmeshmerger\\private\\smmtypes.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

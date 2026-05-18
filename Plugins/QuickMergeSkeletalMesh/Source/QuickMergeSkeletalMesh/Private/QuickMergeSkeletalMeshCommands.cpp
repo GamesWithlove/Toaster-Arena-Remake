@@ -6,7 +6,7 @@
 
 void FQuickMergeSkeletalMeshCommands::RegisterCommands()
 {
-	UI_COMMAND(PluginAction, "QuickMergeSkeletalMesh", "Execute QuickMergeSkeletalMesh action", EUserInterfaceActionType::Button, FInputGesture());
+	UI_COMMAND(PluginAction, "QuickMergeSkeletalMesh", "Execute QuickMergeSkeletalMesh action", EUserInterfaceActionType::Button, FInputChord());
 }
 
 #undef LOCTEXT_NAMESPACE

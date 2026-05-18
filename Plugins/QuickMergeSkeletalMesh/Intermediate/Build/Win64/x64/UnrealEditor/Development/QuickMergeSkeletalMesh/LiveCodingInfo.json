@@ -2,9 +2,10 @@
 	"RemapUnityFiles": 
 	{
 		"Module.QuickMergeSkeletalMesh.cpp.obj": [
+			"PerModuleInline.gen.cpp.obj",
+			"QuickMergeSkeletalMeshStyle.cpp.obj",
 			"QuickMergeSkeletalMesh.cpp.obj",
-			"QuickMergeSkeletalMeshCommands.cpp.obj",
-			"QuickMergeSkeletalMeshStyle.cpp.obj"
+			"QuickMergeSkeletalMeshCommands.cpp.obj"
 		]
 	}
 }

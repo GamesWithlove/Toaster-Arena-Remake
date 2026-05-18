@@ -2,6 +2,7 @@
 	"RemapUnityFiles": 
 	{
 		"Module.SimpleUGCEditor.cpp.obj": [
+			"PerModuleInline.gen.cpp.obj",
 			"SimpleUGCCreator.cpp.obj",
 			"SimpleUGCEditor.cpp.obj",
 			"SimpleUGCEditorCommands.cpp.obj",

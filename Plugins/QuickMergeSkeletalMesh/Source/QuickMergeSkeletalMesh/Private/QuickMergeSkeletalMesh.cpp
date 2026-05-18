@@ -162,6 +162,7 @@ void FQuickMergeSkeletalMeshModule::RegenerateImportedModel(USkeletalMesh* Skele
 		LODInfo->ReductionSettings.NumOfTrianglesPercentage = 1.0f;
 		LODInfo->ReductionSettings.NumOfVertPercentage = 1.0f;
 	}
+	SkeletalMesh->PostLoad();
 #endif
 }
 
@@ -237,11 +238,9 @@ TSharedRef<FExtender> FQuickMergeSkeletalMeshModule::OnExtendContentBrowserAsset
 									                           else
 									                           {
 										                           meshName += TEXT("Different Skeleton : ") + skeletalMesh->GetName() + TEXT("\n");
-										                           FString error = TEXT("Merge Skeletal Mesh Error: Different Skeleton  but will merge anyways : ") + skeleton->GetPathName() + TEXT(" -> ") + skeletonNew->GetPathName();
+										                           FString error = TEXT("Merge Skeletal Mesh Error: Different Skeleton : ") + skeleton->GetPathName() + TEXT(" -> ") + skeletonNew->GetPathName();
 										                           UE_LOG(LogTemp, Log, TEXT("%s"), *error);
-									                           	   mergeList.Add(skeletalMesh);
-									                           	   meshName += TEXT("Merge : ") + skeletalMesh->GetName() + TEXT("\n");
-										                           }
+									                           }
 								                           }
 								                           else
 								                           {

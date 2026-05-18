@@ -10,7 +10,7 @@
 	"DocsURL": "https://www.wikiful.com/@ACF/ascent-combat-framework-wiki/skeletal-mesh-merger",
 	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/c64f52f6fa974f1daca7a416397001de",
 	"SupportURL": "https://discord.com/invite/ahqhXnJ",
-	"EngineVersion": "5.2.0",
+	"EngineVersion": "5.7.0",
 	"CanContainContent": true,
 	"Installed": true,
 	"Modules": [

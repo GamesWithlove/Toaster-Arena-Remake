@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\quickmergeskeletalmesh\\source\\quickmergeskeletalmesh\\private\\quickmergeskeletalmeshcommands.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\ue4_projects\\toaster-arena-remake 5.7\\intermediate\\build\\win64\\x64\\toaster_rebooteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\quickmergeskeletalmesh\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\quickmergeskeletalmesh\\definitions.quickmergeskeletalmesh.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\quickmergeskeletalmesh\\source\\quickmergeskeletalmesh\\public\\quickmergeskeletalmeshcommands.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\quickmergeskeletalmesh\\source\\quickmergeskeletalmesh\\public\\quickmergeskeletalmeshstyle.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

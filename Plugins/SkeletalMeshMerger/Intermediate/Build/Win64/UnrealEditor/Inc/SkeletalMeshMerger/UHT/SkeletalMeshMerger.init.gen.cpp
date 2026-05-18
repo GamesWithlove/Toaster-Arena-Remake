@@ -7,23 +7,23 @@
 #include "UObject/GeneratedCppIncludes.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSkeletalMeshMerger_init() {}
-	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_SkeletalMeshMerger;
+static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compiled with !UE_WITH_CONSTINIT_OBJECT");	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_SkeletalMeshMerger;
 	FORCENOINLINE UPackage* Z_Construct_UPackage__Script_SkeletalMeshMerger()
 	{
 		if (!Z_Registration_Info_UPackage__Script_SkeletalMeshMerger.OuterSingleton)
 		{
-			static const UECodeGen_Private::FPackageParams PackageParams = {
-				"/Script/SkeletalMeshMerger",
-				nullptr,
-				0,
-				PKG_CompiledIn | 0x00000040,
-				0x6FC7EA10,
-				0xDFC17653,
-				METADATA_PARAMS(nullptr, 0)
-			};
-			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_SkeletalMeshMerger.OuterSingleton, PackageParams);
-		}
-		return Z_Registration_Info_UPackage__Script_SkeletalMeshMerger.OuterSingleton;
+		static const UECodeGen_Private::FPackageParams PackageParams = {
+			"/Script/SkeletalMeshMerger",
+			nullptr,
+			0,
+			PKG_CompiledIn | 0x00000040,
+			0xA116D878,
+			0x45621B69,
+			METADATA_PARAMS(0, nullptr)
+		};
+		UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_SkeletalMeshMerger.OuterSingleton, PackageParams);
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_SkeletalMeshMerger(Z_Construct_UPackage__Script_SkeletalMeshMerger, TEXT("/Script/SkeletalMeshMerger"), Z_Registration_Info_UPackage__Script_SkeletalMeshMerger, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x6FC7EA10, 0xDFC17653));
+	return Z_Registration_Info_UPackage__Script_SkeletalMeshMerger.OuterSingleton;
+}
+static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_SkeletalMeshMerger(Z_Construct_UPackage__Script_SkeletalMeshMerger, TEXT("/Script/SkeletalMeshMerger"), Z_Registration_Info_UPackage__Script_SkeletalMeshMerger, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xA116D878, 0x45621B69));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
