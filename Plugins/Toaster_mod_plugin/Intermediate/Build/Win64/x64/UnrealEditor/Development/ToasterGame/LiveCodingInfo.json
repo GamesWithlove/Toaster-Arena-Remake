@@ -10,6 +10,7 @@
 			"ToasterGameModeBase.gen.cpp.obj",
 			"ToasterGameplayStatics.gen.cpp.obj",
 			"ToasterGameStateBase.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
 			"ActorPool.cpp.obj",
 			"HitscanImpactDefinition.cpp.obj",
 			"HitscanTracerDefinition.cpp.obj",

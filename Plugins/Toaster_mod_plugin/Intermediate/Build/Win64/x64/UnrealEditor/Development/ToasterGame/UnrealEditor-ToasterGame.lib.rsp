@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-ToasterGame.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGame/Module.ToasterGame.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGame/Default.rc2.res"
+/OUT:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGame/UnrealEditor-ToasterGame.lib"

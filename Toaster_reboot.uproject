@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{7426580F-4308-3A51-C356-5698A14442DF}",
+	"EngineAssociation": "5.7",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -93,11 +93,6 @@
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/ce01648a2cde41338991bb855a624ffa"
 		},
 		{
-			"Name": "ReplaySystem",
-			"Enabled": false,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/1b0cbe31111d482baaf531d187651e7f"
-		},
-		{
 			"Name": "SoundUtilities",
 			"Enabled": true
 		},
@@ -122,47 +117,7 @@
 			"Enabled": true
 		},
 		{
-			"Name": "AppleImageUtils",
-			"Enabled": false
-		},
-		{
-			"Name": "AlembicImporter",
-			"Enabled": false
-		},
-		{
-			"Name": "AppleMoviePlayer",
-			"Enabled": false
-		},
-		{
-			"Name": "AvfMedia",
-			"Enabled": false
-		},
-		{
-			"Name": "CLionSourceCodeAccess",
-			"Enabled": false
-		},
-		{
 			"Name": "CodeLiteSourceCodeAccess",
-			"Enabled": false
-		},
-		{
-			"Name": "CryptoKeys",
-			"Enabled": false
-		},
-		{
-			"Name": "DatasmithContent",
-			"Enabled": false
-		},
-		{
-			"Name": "GoogleCloudMessaging",
-			"Enabled": false
-		},
-		{
-			"Name": "GooglePAD",
-			"Enabled": false
-		},
-		{
-			"Name": "LauncherChunkInstaller",
 			"Enabled": false
 		},
 		{
@@ -229,15 +184,15 @@
 		},
 		{
 			"Name": "ModelingToolsEditorMode",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "ScriptableToolsEditorMode",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "ScriptableToolsFramework",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "StaticMeshEditorModeling",
@@ -342,24 +297,12 @@
 			]
 		},
 		{
-			"Name": "PlasticSourceControl",
-			"Enabled": false
-		},
-		{
-			"Name": "PlatformCrypto",
-			"Enabled": false
-		},
-		{
 			"Name": "VirtualHeightfieldMesh",
 			"Enabled": true
 		},
 		{
 			"Name": "CommonUI",
 			"Enabled": true
-		},
-		{
-			"Name": "EditorDiscordRichPresence",
-			"Enabled": false
 		},
 		{
 			"Name": "LowEntryExtStdLib",
@@ -370,11 +313,6 @@
 			"Name": "QuickMergeSkeletalMesh",
 			"Enabled": true,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/46b05d77fa164177918c5476a26bc408"
-		},
-		{
-			"Name": "SkeletalMeshMerger",
-			"Enabled": false,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/c64f52f6fa974f1daca7a416397001de"
 		},
 		{
 			"Name": "PhysicsControl",
@@ -409,12 +347,11 @@
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/d2ed3709933d4608a3a8dd746cbc045d"
 		},
 		{
-			"Name": "EasyFileDialog",
-			"Enabled": false,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/bcf64fe2e00c48189d8385a9c39b6e61"
+			"Name": "VictoryBPLibrary",
+			"Enabled": true
 		},
 		{
-			"Name": "VictoryBPLibrary",
+			"Name": "VaRest",
 			"Enabled": true
 		}
 	]

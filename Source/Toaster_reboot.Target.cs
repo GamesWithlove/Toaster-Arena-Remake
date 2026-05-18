@@ -8,7 +8,7 @@ public class Toaster_rebootTarget : TargetRules
 	public Toaster_rebootTarget( TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
-		DefaultBuildSettings = BuildSettingsVersion.V2;
+		DefaultBuildSettings = BuildSettingsVersion.V6;
 		ExtraModuleNames.AddRange( new string[] { "Toaster_reboot" } );
 	}
 }

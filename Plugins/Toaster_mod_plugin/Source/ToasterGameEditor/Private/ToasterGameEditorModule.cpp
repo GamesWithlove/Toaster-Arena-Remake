@@ -1,6 +1,6 @@
 #include "ToasterGameEditorModule.h"
 #include "HitscanAssetTypeActions.h"
-#include "AssetRegistryModule.h"
+#include "AssetRegistry/AssetRegistryModule.h"
 #include "IAssetTypeActions.h"
 #include "IAssetTools.h"
 
