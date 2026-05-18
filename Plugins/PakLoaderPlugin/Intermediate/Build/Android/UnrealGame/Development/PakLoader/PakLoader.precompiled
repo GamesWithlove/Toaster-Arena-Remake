@@ -1,6 +1,8 @@
 {
 	"OutputFiles": [
 		"..\\..\\..\\a\\UnrealGame\\Development\\PakLoader\\Module.PakLoader.cpp.o",
-		"..\\..\\..\\a\\UnrealGame\\Development\\PakLoader\\Module.PakLoader.cpp.o"
+		"..\\..\\..\\a\\UnrealGame\\Development\\PakLoader\\Module.PakLoader.cpp.o",
+		"..\\..\\..\\x\\UnrealGame\\Development\\PakLoader\\Module.PakLoader.cpp.o",
+		"..\\..\\..\\x\\UnrealGame\\Development\\PakLoader\\Module.PakLoader.cpp.o"
 	]
 }

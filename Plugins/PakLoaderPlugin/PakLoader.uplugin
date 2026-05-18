@@ -10,7 +10,7 @@
 	"DocsURL": "https://drive.google.com/file/d/1DeS0DlwLTue_jLNqjGHVHz6AHs89rDUM/view?usp=sharing",
 	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/fb9820b9b5c24f8ba178b2a11a61063f",
 	"SupportURL": "unreal.mp@bluemountains.io",
-	"EngineVersion": "5.2.0",
+	"EngineVersion": "5.7.0",
 	"CanContainContent": false,
 	"Installed": true,
 	"Modules": [

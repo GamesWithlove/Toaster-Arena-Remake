@@ -22,6 +22,8 @@
  ******************************************************************************/
 
 #include "OVRLipSyncPlaybackActorComponent.h"
+#include "Sound/SoundWave.h"
+#include "GameFramework/Actor.h"
 
 UAudioComponent *UOVRLipSyncPlaybackActorComponent::FindAutoplayAudioComponent() const
 {

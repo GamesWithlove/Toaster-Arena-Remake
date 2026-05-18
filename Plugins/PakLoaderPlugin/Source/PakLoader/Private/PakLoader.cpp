@@ -349,19 +349,10 @@ TArray<FString> FPakLoader::GetFilesInPak(const FString &PakFilename, bool bUAss
 	if (Pak->IsValid())
 	{
 #if ENGINE_MINOR_VERSION <= 25 && ENGINE_MAJOR_VERSION == 4
-		TArray<FPakFile::FFileIterator> Records;
-
 		for (FPakFile::FFileIterator It(PakFile, false); It; ++It)
 #else
-		TArray<FPakFile::FFilenameIterator> Records;
-
 		for (FPakFile::FFilenameIterator It(*Pak, false); It; ++It)
 #endif
-		{
-			Records.Add(It);
-		}
-
-		for (auto &It : Records)
 		{
 			if (bUAssetOnly)
 			{
@@ -374,7 +365,6 @@ TArray<FString> FPakLoader::GetFilesInPak(const FString &PakFilename, bool bUAss
 			{
 				PakItemsNames.Add(It.Filename());
 			}
-
 		}
 	}
 

@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "IPlatformFilePak.h"
-#include "HAL/PlatformFilemanager.h"
+#include "HAL/PlatformFileManager.h"
 #include "Runtime/Launch/Resources/Version.h"
 #include "Misc/PackageName.h"
 

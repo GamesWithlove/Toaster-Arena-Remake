@@ -6,12 +6,13 @@
 			"PakLoader.init.gen.cpp.obj",
 			"PakLoaderLibrary.gen.cpp.obj",
 			"PakLoaderSubsystem.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
 			"LogHelper.cpp.obj",
 			"PakDownloader.cpp.obj",
-			"PakLoader.cpp.obj",
 			"PakLoaderLibrary.cpp.obj",
 			"PakLoaderModule.cpp.obj",
-			"PakLoaderSubsystem.cpp.obj"
+			"PakLoaderSubsystem.cpp.obj",
+			"PakLoader.cpp.obj"
 		]
 	}
 }
