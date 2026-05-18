@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\blockouttoolsplugin\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\blockouttoolseditorplugin\\module.blockouttoolseditorplugin.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\ue4_projects\\toaster-arena-remake 5.7\\intermediate\\build\\win64\\x64\\toaster_rebooteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\blockouttoolsplugin\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\blockouttoolseditorplugin\\definitions.blockouttoolseditorplugin.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\blockouttoolsplugin\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\blockouttoolseditorplugin\\permoduleinline.gen.cpp",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

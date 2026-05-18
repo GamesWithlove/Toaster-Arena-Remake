@@ -6,6 +6,7 @@
 			"ColorWheelPlugin.init.gen.cpp.obj",
 			"ColorWidget.gen.cpp.obj",
 			"SWColorWheel.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
 			"ColorWheelHelper.cpp.obj",
 			"ColorWheelPlugin.cpp.obj",
 			"ColorWidget.cpp.obj",

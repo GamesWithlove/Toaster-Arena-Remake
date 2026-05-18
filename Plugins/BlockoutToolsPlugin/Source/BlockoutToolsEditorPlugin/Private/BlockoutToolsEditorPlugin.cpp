@@ -1,7 +1,7 @@
 // Copyright 2024 Dmitry Karpukhin. All Rights Reserved.
 
 #include "BlockoutToolsEditorPlugin.h"
-#include "PlacementMode/Public/IPlacementModeModule.h"
+#include "IPlacementModeModule.h"
 #include "ActorFactories/ActorFactoryBlueprint.h"
 #include "Interfaces/IPluginManager.h"
 #include "Runtime/Launch/Resources/Version.h"

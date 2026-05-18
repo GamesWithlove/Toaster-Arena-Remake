@@ -41,6 +41,7 @@ public class BlockoutToolsEditorPlugin : ModuleRules
 				"SlateCore",
                 "UnrealEd",
                 "Projects",
+                "PlacementMode",
                 "BlockoutToolsPlugin",
 				// ... add private dependencies that you statically link with here ...	
 			}

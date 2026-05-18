@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Components/BillboardComponent.h"
-#include "Runtime/Engine/Classes/Materials/MaterialInstanceDynamic.h"
+#include "Materials/MaterialInstanceDynamic.h"
 #include "Runtime/Engine/Classes/Components/StaticMeshComponent.h"
 
 #include "BlockoutToolsParent.generated.h"
