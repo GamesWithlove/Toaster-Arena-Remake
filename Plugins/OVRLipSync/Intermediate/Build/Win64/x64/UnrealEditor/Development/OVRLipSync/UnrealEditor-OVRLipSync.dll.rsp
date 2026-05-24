@@ -37,13 +37,10 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 /NOEXP
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/OVRLipSync/Intermediate/Build/Win64/x64/UnrealEditor/Development/OVRLipSync/Module.OVRLipSync.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/OVRLipSync/Intermediate/Build/Win64/x64/UnrealEditor/Development/OVRLipSync/OVRLipSyncContextWrapper.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/OVRLipSync/Intermediate/Build/Win64/x64/UnrealEditor/Development/OVRLipSync/OVRLipSyncLiveActorComponent.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/OVRLipSync/Intermediate/Build/Win64/x64/UnrealEditor/Development/OVRLipSync/OVRLipSyncPlaybackActorComponent.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/OVRLipSync/Intermediate/Build/Win64/x64/UnrealEditor/Development/OVRLipSync/Default.rc2.res"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/OVRLipSync/ThirdParty/Lib/Win64/OVRLipSyncShim.lib"
+"E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/OVRLipSync/Intermediate/Build/Win64/x64/UnrealEditor/Development/OVRLipSync/Module.OVRLipSync.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/OVRLipSync/Intermediate/Build/Win64/x64/UnrealEditor/Development/OVRLipSync/Default.rc2.res"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/OVRLipSync/ThirdParty/Lib/Win64/OVRLipSyncShim.lib"
 "../Plugins/Runtime/AndroidPermission/Intermediate/Build/Win64/x64/UnrealEditor/Development/AndroidPermission/UnrealEditor-AndroidPermission.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Core/UnrealEditor-Core.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/CoreUObject/UnrealEditor-CoreUObject.lib"
@@ -74,6 +71,6 @@
 "synchronization.lib"
 "dwmapi.lib"
 "imm32.lib"
-/OUT:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/OVRLipSync/Binaries/Win64/UnrealEditor-OVRLipSync.dll"
-/PDB:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/OVRLipSync/Binaries/Win64/UnrealEditor-OVRLipSync.pdb"
+/OUT:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/OVRLipSync/Binaries/Win64/UnrealEditor-OVRLipSync.dll"
+/PDB:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/OVRLipSync/Binaries/Win64/UnrealEditor-OVRLipSync.pdb"
 /ignore:4078

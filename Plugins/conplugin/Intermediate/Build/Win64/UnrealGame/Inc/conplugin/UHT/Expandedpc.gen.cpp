@@ -428,15 +428,15 @@ AExpandedpc::~AExpandedpc() {}
 // ********** End Class AExpandedpc ****************************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h__Script_conplugin_Statics
+struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h__Script_conplugin_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_AExpandedpc, AExpandedpc::StaticClass, TEXT("AExpandedpc"), &Z_Registration_Info_UClass_AExpandedpc, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AExpandedpc), 1539389548U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h__Script_conplugin_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h__Script_conplugin_1516004291{
+}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h__Script_conplugin_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h__Script_conplugin_1516004291{
 	TEXT("/Script/conplugin"),
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h__Script_conplugin_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h__Script_conplugin_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h__Script_conplugin_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h__Script_conplugin_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0,
 };

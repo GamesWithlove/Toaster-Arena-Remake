@@ -38,9 +38,10 @@
 /NOEXP
 /NATVIS:"../Intermediate/Build/Win64/x64/UnrealEditor/Development/RenderCore/RenderCore.natvis"
 /NATVIS:"../Plugins/FX/Niagara/Intermediate/Build/Win64/x64/UnrealEditor/Development/Niagara/Niagara.natvis"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGame/Module.ToasterGame.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGame/Default.rc2.res"
+"E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGame/Module.ToasterGame.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGame/ToasterGameModule.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGame/Default.rc2.res"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/HTTP/UnrealEditor-HTTP.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/PakFile/UnrealEditor-PakFile.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/StreamingFile/UnrealEditor-StreamingFile.lib"
@@ -77,6 +78,6 @@
 "synchronization.lib"
 "dwmapi.lib"
 "imm32.lib"
-/OUT:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/Toaster_mod_plugin/Binaries/Win64/UnrealEditor-ToasterGame.dll"
-/PDB:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/Toaster_mod_plugin/Binaries/Win64/UnrealEditor-ToasterGame.pdb"
+/OUT:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Binaries/Win64/UnrealEditor-ToasterGame.dll"
+/PDB:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Binaries/Win64/UnrealEditor-ToasterGame.pdb"
 /ignore:4078

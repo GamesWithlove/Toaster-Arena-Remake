@@ -25,7 +25,7 @@ static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compi
 			SingletonFuncArray,
 			UE_ARRAY_COUNT(SingletonFuncArray),
 			PKG_CompiledIn | 0x00000000,
-			0x0B45AA13,
+			0xFE6E1DB8,
 			0x8F303D2A,
 			METADATA_PARAMS(0, nullptr)
 		};
@@ -33,5 +33,5 @@ static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compi
 	}
 	return Z_Registration_Info_UPackage__Script_ColorWheelPlugin.OuterSingleton;
 }
-static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_ColorWheelPlugin(Z_Construct_UPackage__Script_ColorWheelPlugin, TEXT("/Script/ColorWheelPlugin"), Z_Registration_Info_UPackage__Script_ColorWheelPlugin, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x0B45AA13, 0x8F303D2A));
+static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_ColorWheelPlugin(Z_Construct_UPackage__Script_ColorWheelPlugin, TEXT("/Script/ColorWheelPlugin"), Z_Registration_Info_UPackage__Script_ColorWheelPlugin, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xFE6E1DB8, 0x8F303D2A));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

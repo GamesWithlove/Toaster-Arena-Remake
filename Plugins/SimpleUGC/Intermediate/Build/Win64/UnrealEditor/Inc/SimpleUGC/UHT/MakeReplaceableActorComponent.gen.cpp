@@ -125,15 +125,15 @@ UMakeReplaceableActorComponent::~UMakeReplaceableActorComponent() {}
 // ********** End Class UMakeReplaceableActorComponent *********************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h__Script_SimpleUGC_Statics
+struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h__Script_SimpleUGC_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UMakeReplaceableActorComponent, UMakeReplaceableActorComponent::StaticClass, TEXT("UMakeReplaceableActorComponent"), &Z_Registration_Info_UClass_UMakeReplaceableActorComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMakeReplaceableActorComponent), 2001207485U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h__Script_SimpleUGC_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h__Script_SimpleUGC_1163739206{
+}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h__Script_SimpleUGC_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h__Script_SimpleUGC_1163739206{
 	TEXT("/Script/SimpleUGC"),
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h__Script_SimpleUGC_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h__Script_SimpleUGC_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h__Script_SimpleUGC_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h__Script_SimpleUGC_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0,
 };

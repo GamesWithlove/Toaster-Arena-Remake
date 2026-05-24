@@ -36,9 +36,9 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 /NOEXP
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/ShadowsCodePlugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ShadowsCodePlugin/Module.ShadowsCodePlugin.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/ShadowsCodePlugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ShadowsCodePlugin/Default.rc2.res"
+"E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/ShadowsCodePlugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ShadowsCodePlugin/Module.ShadowsCodePlugin.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/ShadowsCodePlugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ShadowsCodePlugin/Default.rc2.res"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/CoreUObject/UnrealEditor-CoreUObject.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Engine/UnrealEditor-Engine.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Slate/UnrealEditor-Slate.lib"
@@ -69,6 +69,6 @@
 "synchronization.lib"
 "dwmapi.lib"
 "imm32.lib"
-/OUT:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/ShadowsCodePlugin/Binaries/Win64/UnrealEditor-ShadowsCodePlugin.dll"
-/PDB:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/ShadowsCodePlugin/Binaries/Win64/UnrealEditor-ShadowsCodePlugin.pdb"
+/OUT:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/ShadowsCodePlugin/Binaries/Win64/UnrealEditor-ShadowsCodePlugin.dll"
+/PDB:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/ShadowsCodePlugin/Binaries/Win64/UnrealEditor-ShadowsCodePlugin.pdb"
 /ignore:4078

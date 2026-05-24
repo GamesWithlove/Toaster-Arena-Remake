@@ -20,7 +20,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 struct Z_Construct_UClass_AToasterGameModeBase_Statics;
 TOASTERGAME_API UClass* Z_Construct_UClass_AToasterGameModeBase_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameModeBase_h_9_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameModeBase_h_9_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAToasterGameModeBase(); \
 	friend struct ::Z_Construct_UClass_AToasterGameModeBase_Statics; \
@@ -31,7 +31,7 @@ public: \
 	DECLARE_SERIALIZER(AToasterGameModeBase)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameModeBase_h_9_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameModeBase_h_9_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AToasterGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -43,12 +43,12 @@ public: \
 	NO_API virtual ~AToasterGameModeBase();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameModeBase_h_6_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameModeBase_h_9_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameModeBase_h_6_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameModeBase_h_9_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameModeBase_h_9_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameModeBase_h_9_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameModeBase_h_9_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameModeBase_h_9_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -58,6 +58,6 @@ class AToasterGameModeBase;
 // ********** End Class AToasterGameModeBase *******************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameModeBase_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameModeBase_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

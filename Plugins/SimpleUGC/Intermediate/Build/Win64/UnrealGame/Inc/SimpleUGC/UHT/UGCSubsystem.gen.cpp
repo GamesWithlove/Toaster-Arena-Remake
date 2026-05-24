@@ -238,15 +238,15 @@ UUGCSubsystem::~UUGCSubsystem() {}
 // ********** End Class UUGCSubsystem **************************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCSubsystem_h__Script_SimpleUGC_Statics
+struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCSubsystem_h__Script_SimpleUGC_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UUGCSubsystem, UUGCSubsystem::StaticClass, TEXT("UUGCSubsystem"), &Z_Registration_Info_UClass_UUGCSubsystem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UUGCSubsystem), 2190517467U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCSubsystem_h__Script_SimpleUGC_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCSubsystem_h__Script_SimpleUGC_3435922364{
+}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCSubsystem_h__Script_SimpleUGC_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCSubsystem_h__Script_SimpleUGC_3435922364{
 	TEXT("/Script/SimpleUGC"),
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCSubsystem_h__Script_SimpleUGC_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCSubsystem_h__Script_SimpleUGC_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCSubsystem_h__Script_SimpleUGC_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCSubsystem_h__Script_SimpleUGC_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0,
 };

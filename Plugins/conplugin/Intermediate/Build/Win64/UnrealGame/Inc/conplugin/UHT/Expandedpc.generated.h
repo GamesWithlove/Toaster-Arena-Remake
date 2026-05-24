@@ -17,7 +17,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin Class AExpandedpc **************************************************************
-#define FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
 	virtual void ClientUpdateWorldTime_Implementation(float ClientTimestamp, float ServerTimestamp); \
 	virtual void ServerRequestWorldTime_Implementation(float ClientTimestamp); \
 	virtual void PawnLeavingGame_Implementation(); \
@@ -28,11 +28,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execPawnLeavingGame);
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_CALLBACK_WRAPPERS
+#define FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_CALLBACK_WRAPPERS
 struct Z_Construct_UClass_AExpandedpc_Statics;
 CONPLUGIN_API UClass* Z_Construct_UClass_AExpandedpc_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAExpandedpc(); \
 	friend struct ::Z_Construct_UClass_AExpandedpc_Statics; \
@@ -43,7 +43,7 @@ public: \
 	DECLARE_SERIALIZER(AExpandedpc)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AExpandedpc(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -55,14 +55,14 @@ public: \
 	NO_API virtual ~AExpandedpc();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_12_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_12_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_CALLBACK_WRAPPERS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_CALLBACK_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -72,6 +72,6 @@ class AExpandedpc;
 // ********** End Class AExpandedpc ****************************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_conplugin_Source_conplugin_Public_Expandedpc_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -20,7 +20,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 struct Z_Construct_UClass_USMMTypes_Statics;
 SKELETALMESHMERGER_API UClass* Z_Construct_UClass_USMMTypes_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUSMMTypes(); \
 	friend struct ::Z_Construct_UClass_USMMTypes_Statics; \
@@ -31,7 +31,7 @@ public: \
 	DECLARE_SERIALIZER(USMMTypes)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API USMMTypes(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -43,12 +43,12 @@ public: \
 	NO_API virtual ~USMMTypes();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_11_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_11_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h_13_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -58,6 +58,6 @@ class USMMTypes;
 // ********** End Class USMMTypes ******************************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMTypes_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

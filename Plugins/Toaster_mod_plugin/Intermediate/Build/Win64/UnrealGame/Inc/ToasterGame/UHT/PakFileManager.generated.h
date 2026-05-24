@@ -18,7 +18,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class UPakFileManager;
 
 // ********** Begin Class UPakFileManager **********************************************************
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execUnmount); \
 	DECLARE_FUNCTION(execMount); \
 	DECLARE_FUNCTION(execGet);
@@ -27,7 +27,7 @@ class UPakFileManager;
 struct Z_Construct_UClass_UPakFileManager_Statics;
 TOASTERGAME_API UClass* Z_Construct_UClass_UPakFileManager_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_11_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_11_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUPakFileManager(); \
 	friend struct ::Z_Construct_UClass_UPakFileManager_Statics; \
@@ -38,7 +38,7 @@ public: \
 	DECLARE_SERIALIZER(UPakFileManager)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_11_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_11_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	UPakFileManager(UPakFileManager&&) = delete; \
 	UPakFileManager(const UPakFileManager&) = delete; \
@@ -47,13 +47,13 @@ public: \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UPakFileManager)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_8_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_11_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_8_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_11_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_11_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_11_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_11_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h_11_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -63,6 +63,6 @@ class UPakFileManager;
 // ********** End Class UPakFileManager ************************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_PakFileManager_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

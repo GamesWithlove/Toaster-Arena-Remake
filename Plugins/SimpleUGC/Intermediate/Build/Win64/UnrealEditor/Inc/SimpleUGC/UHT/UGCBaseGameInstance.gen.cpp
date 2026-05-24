@@ -127,15 +127,15 @@ UUGCBaseGameInstance::~UUGCBaseGameInstance() {}
 // ********** End Class UUGCBaseGameInstance *******************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBaseGameInstance_h__Script_SimpleUGC_Statics
+struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBaseGameInstance_h__Script_SimpleUGC_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UUGCBaseGameInstance, UUGCBaseGameInstance::StaticClass, TEXT("UUGCBaseGameInstance"), &Z_Registration_Info_UClass_UUGCBaseGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UUGCBaseGameInstance), 4011605572U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBaseGameInstance_h__Script_SimpleUGC_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBaseGameInstance_h__Script_SimpleUGC_3503696192{
+}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBaseGameInstance_h__Script_SimpleUGC_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBaseGameInstance_h__Script_SimpleUGC_3503696192{
 	TEXT("/Script/SimpleUGC"),
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBaseGameInstance_h__Script_SimpleUGC_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBaseGameInstance_h__Script_SimpleUGC_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBaseGameInstance_h__Script_SimpleUGC_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBaseGameInstance_h__Script_SimpleUGC_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0,
 };

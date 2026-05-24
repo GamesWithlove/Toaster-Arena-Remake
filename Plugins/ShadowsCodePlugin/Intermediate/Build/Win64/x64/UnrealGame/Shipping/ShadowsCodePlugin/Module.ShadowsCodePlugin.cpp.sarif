@@ -10,13 +10,13 @@
                         "text": "'FGenericPlatformMisc::GetHashedMacAddressString': GetHasedMacAddressString is deprecated. It is not reliable on all platforms - Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile."
                     },
                     "analysisTarget": {
-                        "uri": "file:///E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/ShadowsCodePlugin/Intermediate/Build/Win64/x64/UnrealGame/Shipping/ShadowsCodePlugin/Module.ShadowsCodePlugin.cpp"
+                        "uri": "file:///E:/Ue4_projects/Toaster-Arena-Remake/Plugins/ShadowsCodePlugin/Intermediate/Build/Win64/x64/UnrealGame/Shipping/ShadowsCodePlugin/Module.ShadowsCodePlugin.cpp"
                     },
                     "locations": [
                         {
                             "physicalLocation": {
                                 "artifactLocation": {
-                                    "uri": "file:///E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/ShadowsCodePlugin/Source/ShadowsCodePlugin/Private/VersionGrabber_TA.cpp"
+                                    "uri": "file:///E:/Ue4_projects/Toaster-Arena-Remake/Plugins/ShadowsCodePlugin/Source/ShadowsCodePlugin/Private/VersionGrabber_TA.cpp"
                                 },
                                 "region": {
                                     "startLine": 21,

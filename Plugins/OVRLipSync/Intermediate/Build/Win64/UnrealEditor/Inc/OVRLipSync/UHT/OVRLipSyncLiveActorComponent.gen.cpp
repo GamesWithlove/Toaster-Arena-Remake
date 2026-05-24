@@ -464,7 +464,7 @@ UOVRLipSyncActorComponent::~UOVRLipSyncActorComponent() {}
 // ********** End Class UOVRLipSyncActorComponent **************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncLiveActorComponent_h__Script_OVRLipSync_Statics
+struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncLiveActorComponent_h__Script_OVRLipSync_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ OVRLipSyncProviderKind_StaticEnum, TEXT("OVRLipSyncProviderKind"), &Z_Registration_Info_UEnum_OVRLipSyncProviderKind, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 516832318U) },
@@ -472,12 +472,12 @@ struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Sou
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UOVRLipSyncActorComponent, UOVRLipSyncActorComponent::StaticClass, TEXT("UOVRLipSyncActorComponent"), &Z_Registration_Info_UClass_UOVRLipSyncActorComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UOVRLipSyncActorComponent), 1306560618U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncLiveActorComponent_h__Script_OVRLipSync_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncLiveActorComponent_h__Script_OVRLipSync_4124962653{
+}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncLiveActorComponent_h__Script_OVRLipSync_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncLiveActorComponent_h__Script_OVRLipSync_4124962653{
 	TEXT("/Script/OVRLipSync"),
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncLiveActorComponent_h__Script_OVRLipSync_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncLiveActorComponent_h__Script_OVRLipSync_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncLiveActorComponent_h__Script_OVRLipSync_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncLiveActorComponent_h__Script_OVRLipSync_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncLiveActorComponent_h__Script_OVRLipSync_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncLiveActorComponent_h__Script_OVRLipSync_Statics::EnumInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncLiveActorComponent_h__Script_OVRLipSync_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncLiveActorComponent_h__Script_OVRLipSync_Statics::EnumInfo),
 };
 // ********** End Registration *********************************************************************
 

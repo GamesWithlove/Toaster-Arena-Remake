@@ -17,7 +17,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin Class UVersionGrabber_TA *******************************************************
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetHardwareID); \
 	DECLARE_FUNCTION(execGetProjectVersion);
 
@@ -25,7 +25,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 struct Z_Construct_UClass_UVersionGrabber_TA_Statics;
 SHADOWSCODEPLUGIN_API UClass* Z_Construct_UClass_UVersionGrabber_TA_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUVersionGrabber_TA(); \
 	friend struct ::Z_Construct_UClass_UVersionGrabber_TA_Statics; \
@@ -36,7 +36,7 @@ public: \
 	DECLARE_SERIALIZER(UVersionGrabber_TA)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UVersionGrabber_TA(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -48,13 +48,13 @@ public: \
 	NO_API virtual ~UVersionGrabber_TA();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_13_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_13_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -64,6 +64,6 @@ class UVersionGrabber_TA;
 // ********** End Class UVersionGrabber_TA *********************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_ShadowsCodePlugin_Source_ShadowsCodePlugin_Public_VersionGrabber_TA_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -20,7 +20,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 struct Z_Construct_UClass_UK2Node_SpawnPooledActor_Statics;
 TOASTERGAMEEDITOR_API UClass* Z_Construct_UClass_UK2Node_SpawnPooledActor_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_K2Node_SpawnPooledActor_h_14_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_K2Node_SpawnPooledActor_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUK2Node_SpawnPooledActor(); \
 	friend struct ::Z_Construct_UClass_UK2Node_SpawnPooledActor_Statics; \
@@ -31,7 +31,7 @@ public: \
 	DECLARE_SERIALIZER(UK2Node_SpawnPooledActor)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_K2Node_SpawnPooledActor_h_14_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_K2Node_SpawnPooledActor_h_14_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	UK2Node_SpawnPooledActor(UK2Node_SpawnPooledActor&&) = delete; \
 	UK2Node_SpawnPooledActor(const UK2Node_SpawnPooledActor&) = delete; \
@@ -41,12 +41,12 @@ public: \
 	NO_API virtual ~UK2Node_SpawnPooledActor();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_K2Node_SpawnPooledActor_h_11_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_K2Node_SpawnPooledActor_h_14_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_K2Node_SpawnPooledActor_h_11_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_K2Node_SpawnPooledActor_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_K2Node_SpawnPooledActor_h_14_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_K2Node_SpawnPooledActor_h_14_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_K2Node_SpawnPooledActor_h_14_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_K2Node_SpawnPooledActor_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -56,6 +56,6 @@ class UK2Node_SpawnPooledActor;
 // ********** End Class UK2Node_SpawnPooledActor ***************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_K2Node_SpawnPooledActor_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_K2Node_SpawnPooledActor_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

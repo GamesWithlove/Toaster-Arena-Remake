@@ -19,7 +19,7 @@ struct FColor;
 struct FLinearColor;
 
 // ********** Begin Class UColorWheelHelper ********************************************************
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetColorUnderCursor); \
 	DECLARE_FUNCTION(execRandomColor); \
 	DECLARE_FUNCTION(execRandomLinearColor); \
@@ -34,7 +34,7 @@ struct FLinearColor;
 struct Z_Construct_UClass_UColorWheelHelper_Statics;
 COLORWHEELPLUGIN_API UClass* Z_Construct_UClass_UColorWheelHelper_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_22_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_22_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUColorWheelHelper(); \
 	friend struct ::Z_Construct_UClass_UColorWheelHelper_Statics; \
@@ -45,7 +45,7 @@ public: \
 	DECLARE_SERIALIZER(UColorWheelHelper)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_22_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_22_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UColorWheelHelper(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -57,13 +57,13 @@ public: \
 	NO_API virtual ~UColorWheelHelper();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_17_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_22_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_17_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_22_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_22_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_22_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_22_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h_22_ENHANCED_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -73,6 +73,6 @@ class UColorWheelHelper;
 // ********** End Class UColorWheelHelper **********************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWheelHelper_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

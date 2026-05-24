@@ -18,21 +18,21 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class UAsyncPakDownloader;
 
 // ********** Begin Delegate FDownloadPakDelegate **************************************************
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_12_DELEGATE \
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_12_DELEGATE \
 PAKLOADER_API void FDownloadPakDelegate_DelegateWrapper(const FMulticastScriptDelegate& DownloadPakDelegate, int32 HttpResponseCode, int64 ContentLength, const FString& SavePath, int64 BytesReceived);
 
 
 // ********** End Delegate FDownloadPakDelegate ****************************************************
 
 // ********** Begin Class UAsyncPakDownloader ******************************************************
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_RPC_WRAPPERS \
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_RPC_WRAPPERS \
 	DECLARE_FUNCTION(execDownloadPak);
 
 
 struct Z_Construct_UClass_UAsyncPakDownloader_Statics;
 PAKLOADER_API UClass* Z_Construct_UClass_UAsyncPakDownloader_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_INCLASS \
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_INCLASS \
 private: \
 	static void StaticRegisterNativesUAsyncPakDownloader(); \
 	friend struct ::Z_Construct_UClass_UAsyncPakDownloader_Statics; \
@@ -43,7 +43,7 @@ public: \
 	DECLARE_SERIALIZER(UAsyncPakDownloader)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_STANDARD_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UAsyncPakDownloader(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UAsyncPakDownloader) \
@@ -55,13 +55,13 @@ public: \
 	NO_API virtual ~UAsyncPakDownloader();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_14_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_GENERATED_BODY_LEGACY \
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_14_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_RPC_WRAPPERS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_INCLASS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_STANDARD_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_RPC_WRAPPERS \
+	FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_INCLASS \
+	FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h_17_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -71,6 +71,6 @@ class UAsyncPakDownloader;
 // ********** End Class UAsyncPakDownloader ********************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakDownloader_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

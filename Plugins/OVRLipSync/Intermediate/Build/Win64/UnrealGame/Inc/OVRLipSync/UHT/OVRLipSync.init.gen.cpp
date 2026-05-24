@@ -21,7 +21,7 @@ static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compi
 			SingletonFuncArray,
 			UE_ARRAY_COUNT(SingletonFuncArray),
 			PKG_CompiledIn | 0x00000000,
-			0xFF6FE79C,
+			0xC561E0A8,
 			0x36E7F1A2,
 			METADATA_PARAMS(0, nullptr)
 		};
@@ -29,5 +29,5 @@ static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compi
 	}
 	return Z_Registration_Info_UPackage__Script_OVRLipSync.OuterSingleton;
 }
-static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_OVRLipSync(Z_Construct_UPackage__Script_OVRLipSync, TEXT("/Script/OVRLipSync"), Z_Registration_Info_UPackage__Script_OVRLipSync, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xFF6FE79C, 0x36E7F1A2));
+static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_OVRLipSync(Z_Construct_UPackage__Script_OVRLipSync, TEXT("/Script/OVRLipSync"), Z_Registration_Info_UPackage__Script_OVRLipSync, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xC561E0A8, 0x36E7F1A2));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

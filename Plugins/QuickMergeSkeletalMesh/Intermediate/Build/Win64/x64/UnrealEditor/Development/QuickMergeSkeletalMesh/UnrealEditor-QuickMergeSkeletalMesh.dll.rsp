@@ -36,11 +36,9 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 /NOEXP
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/QuickMergeSkeletalMesh/Intermediate/Build/Win64/x64/UnrealEditor/Development/QuickMergeSkeletalMesh/Module.QuickMergeSkeletalMesh.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/QuickMergeSkeletalMesh/Intermediate/Build/Win64/x64/UnrealEditor/Development/QuickMergeSkeletalMesh/QuickMergeSkeletalMesh.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/QuickMergeSkeletalMesh/Intermediate/Build/Win64/x64/UnrealEditor/Development/QuickMergeSkeletalMesh/QuickMergeSkeletalMeshCommands.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/QuickMergeSkeletalMesh/Intermediate/Build/Win64/x64/UnrealEditor/Development/QuickMergeSkeletalMesh/Default.rc2.res"
+"E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/QuickMergeSkeletalMesh/Intermediate/Build/Win64/x64/UnrealEditor/Development/QuickMergeSkeletalMesh/Module.QuickMergeSkeletalMesh.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/QuickMergeSkeletalMesh/Intermediate/Build/Win64/x64/UnrealEditor/Development/QuickMergeSkeletalMesh/Default.rc2.res"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Projects/UnrealEditor-Projects.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/InputCore/UnrealEditor-InputCore.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/UnrealEditor-UnrealEd.lib"
@@ -75,6 +73,6 @@
 "synchronization.lib"
 "dwmapi.lib"
 "imm32.lib"
-/OUT:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/QuickMergeSkeletalMesh/Binaries/Win64/UnrealEditor-QuickMergeSkeletalMesh.dll"
-/PDB:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/QuickMergeSkeletalMesh/Binaries/Win64/UnrealEditor-QuickMergeSkeletalMesh.pdb"
+/OUT:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/QuickMergeSkeletalMesh/Binaries/Win64/UnrealEditor-QuickMergeSkeletalMesh.dll"
+/PDB:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/QuickMergeSkeletalMesh/Binaries/Win64/UnrealEditor-QuickMergeSkeletalMesh.pdb"
 /ignore:4078

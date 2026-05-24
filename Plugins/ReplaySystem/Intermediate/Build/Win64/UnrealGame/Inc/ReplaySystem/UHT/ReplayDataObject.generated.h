@@ -17,7 +17,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin Class UReplayDataObject ********************************************************
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execLoadReplayMetaDataFromString); \
 	DECLARE_FUNCTION(execSaveReplayMetaDataToString); \
 	DECLARE_FUNCTION(execGetTransformData); \
@@ -69,7 +69,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 struct Z_Construct_UClass_UReplayDataObject_Statics;
 REPLAYSYSTEM_API UClass* Z_Construct_UClass_UReplayDataObject_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_19_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_19_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUReplayDataObject(); \
 	friend struct ::Z_Construct_UClass_UReplayDataObject_Statics; \
@@ -80,7 +80,7 @@ public: \
 	DECLARE_SERIALIZER(UReplayDataObject)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_19_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_19_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UReplayDataObject(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -92,13 +92,13 @@ public: \
 	NO_API virtual ~UReplayDataObject();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_15_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_19_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_15_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_19_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_19_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_19_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_19_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_19_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h_19_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -108,6 +108,6 @@ class UReplayDataObject;
 // ********** End Class UReplayDataObject **********************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayDataObject_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

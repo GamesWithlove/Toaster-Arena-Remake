@@ -187,16 +187,16 @@ UHitscanImpactDefinitionFactory::~UHitscanImpactDefinitionFactory() {}
 // ********** End Class UHitscanImpactDefinitionFactory ********************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_HitscanAssetFactories_h__Script_ToasterGameEditor_Statics
+struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_HitscanAssetFactories_h__Script_ToasterGameEditor_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UHitscanTracerDefinitionFactory, UHitscanTracerDefinitionFactory::StaticClass, TEXT("UHitscanTracerDefinitionFactory"), &Z_Registration_Info_UClass_UHitscanTracerDefinitionFactory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHitscanTracerDefinitionFactory), 1571312663U) },
 		{ Z_Construct_UClass_UHitscanImpactDefinitionFactory, UHitscanImpactDefinitionFactory::StaticClass, TEXT("UHitscanImpactDefinitionFactory"), &Z_Registration_Info_UClass_UHitscanImpactDefinitionFactory, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHitscanImpactDefinitionFactory), 1108223692U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_HitscanAssetFactories_h__Script_ToasterGameEditor_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_HitscanAssetFactories_h__Script_ToasterGameEditor_2376496275{
+}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_HitscanAssetFactories_h__Script_ToasterGameEditor_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_HitscanAssetFactories_h__Script_ToasterGameEditor_2376496275{
 	TEXT("/Script/ToasterGameEditor"),
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_HitscanAssetFactories_h__Script_ToasterGameEditor_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_HitscanAssetFactories_h__Script_ToasterGameEditor_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_HitscanAssetFactories_h__Script_ToasterGameEditor_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGameEditor_Private_HitscanAssetFactories_h__Script_ToasterGameEditor_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0,
 };

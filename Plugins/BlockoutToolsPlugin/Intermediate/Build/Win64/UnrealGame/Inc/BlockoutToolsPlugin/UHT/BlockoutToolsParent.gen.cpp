@@ -491,7 +491,7 @@ ABlockoutToolsParent::~ABlockoutToolsParent() {}
 // ********** End Class ABlockoutToolsParent *******************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_BlockoutToolsPlugin_Source_BlockoutToolsPlugin_Private_BlockoutToolsParent_h__Script_BlockoutToolsPlugin_Statics
+struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_BlockoutToolsPlugin_Source_BlockoutToolsPlugin_Private_BlockoutToolsParent_h__Script_BlockoutToolsPlugin_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ EBlockoutMaterialType_StaticEnum, TEXT("EBlockoutMaterialType"), &Z_Registration_Info_UEnum_EBlockoutMaterialType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3963201204U) },
@@ -499,12 +499,12 @@ struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_BlockoutToolsP
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_ABlockoutToolsParent, ABlockoutToolsParent::StaticClass, TEXT("ABlockoutToolsParent"), &Z_Registration_Info_UClass_ABlockoutToolsParent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABlockoutToolsParent), 2052639376U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_BlockoutToolsPlugin_Source_BlockoutToolsPlugin_Private_BlockoutToolsParent_h__Script_BlockoutToolsPlugin_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_BlockoutToolsPlugin_Source_BlockoutToolsPlugin_Private_BlockoutToolsParent_h__Script_BlockoutToolsPlugin_700568569{
+}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_BlockoutToolsPlugin_Source_BlockoutToolsPlugin_Private_BlockoutToolsParent_h__Script_BlockoutToolsPlugin_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_BlockoutToolsPlugin_Source_BlockoutToolsPlugin_Private_BlockoutToolsParent_h__Script_BlockoutToolsPlugin_700568569{
 	TEXT("/Script/BlockoutToolsPlugin"),
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_BlockoutToolsPlugin_Source_BlockoutToolsPlugin_Private_BlockoutToolsParent_h__Script_BlockoutToolsPlugin_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_BlockoutToolsPlugin_Source_BlockoutToolsPlugin_Private_BlockoutToolsParent_h__Script_BlockoutToolsPlugin_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_BlockoutToolsPlugin_Source_BlockoutToolsPlugin_Private_BlockoutToolsParent_h__Script_BlockoutToolsPlugin_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_BlockoutToolsPlugin_Source_BlockoutToolsPlugin_Private_BlockoutToolsParent_h__Script_BlockoutToolsPlugin_Statics::ClassInfo),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_BlockoutToolsPlugin_Source_BlockoutToolsPlugin_Private_BlockoutToolsParent_h__Script_BlockoutToolsPlugin_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_BlockoutToolsPlugin_Source_BlockoutToolsPlugin_Private_BlockoutToolsParent_h__Script_BlockoutToolsPlugin_Statics::EnumInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_BlockoutToolsPlugin_Source_BlockoutToolsPlugin_Private_BlockoutToolsParent_h__Script_BlockoutToolsPlugin_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_BlockoutToolsPlugin_Source_BlockoutToolsPlugin_Private_BlockoutToolsParent_h__Script_BlockoutToolsPlugin_Statics::EnumInfo),
 };
 // ********** End Registration *********************************************************************
 

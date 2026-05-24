@@ -22,7 +22,7 @@ struct FUGCPackage;
 
 // ********** Begin ScriptStruct FUGCPackage *******************************************************
 struct Z_Construct_UScriptStruct_FUGCPackage_Statics;
-#define FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_16_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_16_GENERATED_BODY \
 	friend struct ::Z_Construct_UScriptStruct_FUGCPackage_Statics; \
 	SIMPLEUGC_API static class UScriptStruct* StaticStruct();
 
@@ -31,7 +31,7 @@ struct FUGCPackage;
 // ********** End ScriptStruct FUGCPackage *********************************************************
 
 // ********** Begin Class UUGCRegistry *************************************************************
-#define FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_42_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_42_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetOverrideForActorClass); \
 	DECLARE_FUNCTION(execClearOverrideForClass); \
 	DECLARE_FUNCTION(execRegisterOverrideForClass); \
@@ -46,7 +46,7 @@ struct FUGCPackage;
 struct Z_Construct_UClass_UUGCRegistry_Statics;
 SIMPLEUGC_API UClass* Z_Construct_UClass_UUGCRegistry_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_42_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_42_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUUGCRegistry(); \
 	friend struct ::Z_Construct_UClass_UUGCRegistry_Statics; \
@@ -57,7 +57,7 @@ public: \
 	DECLARE_SERIALIZER(UUGCRegistry)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_42_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_42_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UUGCRegistry(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -69,13 +69,13 @@ public: \
 	NO_API virtual ~UUGCRegistry();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_39_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_42_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_39_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_42_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_42_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_42_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_42_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_42_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_42_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h_42_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -85,6 +85,6 @@ class UUGCRegistry;
 // ********** End Class UUGCRegistry ***************************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCRegistry_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

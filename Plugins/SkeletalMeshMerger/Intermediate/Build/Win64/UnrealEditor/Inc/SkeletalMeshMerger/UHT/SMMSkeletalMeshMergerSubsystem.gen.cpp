@@ -510,15 +510,15 @@ USMMSkeletalMeshMergerSubsystem::~USMMSkeletalMeshMergerSubsystem() {}
 // ********** End Class USMMSkeletalMeshMergerSubsystem ********************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMSkeletalMeshMergerSubsystem_h__Script_SkeletalMeshMerger_Statics
+struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMSkeletalMeshMergerSubsystem_h__Script_SkeletalMeshMerger_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_USMMSkeletalMeshMergerSubsystem, USMMSkeletalMeshMergerSubsystem::StaticClass, TEXT("USMMSkeletalMeshMergerSubsystem"), &Z_Registration_Info_UClass_USMMSkeletalMeshMergerSubsystem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USMMSkeletalMeshMergerSubsystem), 2662246704U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMSkeletalMeshMergerSubsystem_h__Script_SkeletalMeshMerger_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMSkeletalMeshMergerSubsystem_h__Script_SkeletalMeshMerger_716368546{
+}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMSkeletalMeshMergerSubsystem_h__Script_SkeletalMeshMerger_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMSkeletalMeshMergerSubsystem_h__Script_SkeletalMeshMerger_716368546{
 	TEXT("/Script/SkeletalMeshMerger"),
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMSkeletalMeshMergerSubsystem_h__Script_SkeletalMeshMerger_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMSkeletalMeshMergerSubsystem_h__Script_SkeletalMeshMerger_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMSkeletalMeshMergerSubsystem_h__Script_SkeletalMeshMerger_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SkeletalMeshMerger_Source_SkeletalMeshMerger_Public_SMMSkeletalMeshMergerSubsystem_h__Script_SkeletalMeshMerger_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0,
 };

@@ -3381,6 +3381,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Experimental/Animation/Locomotor/Locomotor.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Experimental/AutomationUtils/AutomationUtils.uplugin",
 			"Type": "UFS"
 		},
@@ -3414,6 +3418,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/CharacterAI/CharacterAI.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/ControlRigPhysics/ControlRigPhysics.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -3570,6 +3578,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Marketplace/SteamCorbeefec99226cV12/SteamCore.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Marketplace/VaRestRe6959ebc28060V9/VaRest.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -4002,6 +4014,7 @@
 		"ContentBrowserClassDataSource",
 		"ControlRig",
 		"ControlRigModules",
+		"ControlRigPhysics",
 		"ControlRigSpline",
 		"CryptoKeys",
 		"CurveEditorTools",
@@ -4063,6 +4076,7 @@
 		"LightMixer",
 		"LinuxDeviceProfileSelector",
 		"LocalizableMessage",
+		"Locomotor",
 		"LowEntryExtStdLib",
 		"MacGraphicsSwitching",
 		"MakeCookedEditorAsDLC",
@@ -4160,6 +4174,7 @@
 		"UVEditor",
 		"UbaController",
 		"UdpMessaging",
+		"VaRest",
 		"VariantManager",
 		"VariantManagerContent",
 		"VictoryBPLibrary",

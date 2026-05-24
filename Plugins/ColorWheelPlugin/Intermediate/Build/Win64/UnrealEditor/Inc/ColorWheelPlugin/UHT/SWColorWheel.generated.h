@@ -19,7 +19,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_SWColorWheel_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_SWColorWheel_h
 
 // ********** Begin Enum EWheelBrushTarget *********************************************************
 #define FOREACH_ENUM_EWHEELBRUSHTARGET(op) \

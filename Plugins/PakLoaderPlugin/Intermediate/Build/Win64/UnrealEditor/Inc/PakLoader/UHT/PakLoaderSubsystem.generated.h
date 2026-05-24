@@ -17,14 +17,14 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 // ********** Begin Delegate FPakLoaderOnContentPathMounted ****************************************
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_9_DELEGATE \
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_9_DELEGATE \
 PAKLOADER_API void FPakLoaderOnContentPathMounted_DelegateWrapper(const FMulticastScriptDelegate& PakLoaderOnContentPathMounted, const FString& AssetPath, const FString& ContentPath);
 
 
 // ********** End Delegate FPakLoaderOnContentPathMounted ******************************************
 
 // ********** Begin Delegate FOnPakFileMounted2 ****************************************************
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_10_DELEGATE \
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_10_DELEGATE \
 PAKLOADER_API void FOnPakFileMounted2_DelegateWrapper(const FMulticastScriptDelegate& OnPakFileMounted2, const FString& PakFilename, const FString& MountPoint, int32 NumFiles);
 
 
@@ -34,7 +34,7 @@ PAKLOADER_API void FOnPakFileMounted2_DelegateWrapper(const FMulticastScriptDele
 struct Z_Construct_UClass_UPakLoaderSubsystem_Statics;
 PAKLOADER_API UClass* Z_Construct_UClass_UPakLoaderSubsystem_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_18_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUPakLoaderSubsystem(); \
 	friend struct ::Z_Construct_UClass_UPakLoaderSubsystem_Statics; \
@@ -45,7 +45,7 @@ public: \
 	DECLARE_SERIALIZER(UPakLoaderSubsystem)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_18_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_18_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UPakLoaderSubsystem(); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -57,12 +57,12 @@ public: \
 	NO_API virtual ~UPakLoaderSubsystem();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_15_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_18_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_15_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_18_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_18_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_18_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -72,6 +72,6 @@ class UPakLoaderSubsystem;
 // ********** End Class UPakLoaderSubsystem ********************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderSubsystem_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

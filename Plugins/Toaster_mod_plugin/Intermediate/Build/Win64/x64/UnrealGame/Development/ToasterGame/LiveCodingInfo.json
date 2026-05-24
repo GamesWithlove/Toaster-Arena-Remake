@@ -15,9 +15,9 @@
 			"HitscanTracerDefinition.cpp.obj",
 			"PakFileManager.cpp.obj",
 			"ToasterGameModeBase.cpp.obj",
-			"ToasterGameModule.cpp.obj",
 			"ToasterGameplayStatics.cpp.obj",
-			"ToasterGameStateBase.cpp.obj"
+			"ToasterGameStateBase.cpp.obj",
+			"ToasterGameModule.cpp.obj"
 		]
 	}
 }

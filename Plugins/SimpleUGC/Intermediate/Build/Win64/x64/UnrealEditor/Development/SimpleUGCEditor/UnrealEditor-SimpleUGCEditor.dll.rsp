@@ -36,9 +36,9 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 /NOEXP
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealEditor/Development/SimpleUGCEditor/Module.SimpleUGCEditor.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealEditor/Development/SimpleUGCEditor/Default.rc2.res"
+"E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealEditor/Development/SimpleUGCEditor/Module.SimpleUGCEditor.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealEditor/Development/SimpleUGCEditor/Default.rc2.res"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Projects/UnrealEditor-Projects.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/InputCore/UnrealEditor-InputCore.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/UnrealEditor-UnrealEd.lib"
@@ -74,6 +74,6 @@
 "synchronization.lib"
 "dwmapi.lib"
 "imm32.lib"
-/OUT:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/SimpleUGC/Binaries/Win64/UnrealEditor-SimpleUGCEditor.dll"
-/PDB:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/SimpleUGC/Binaries/Win64/UnrealEditor-SimpleUGCEditor.pdb"
+/OUT:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/SimpleUGC/Binaries/Win64/UnrealEditor-SimpleUGCEditor.dll"
+/PDB:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/SimpleUGC/Binaries/Win64/UnrealEditor-SimpleUGCEditor.pdb"
 /ignore:4078

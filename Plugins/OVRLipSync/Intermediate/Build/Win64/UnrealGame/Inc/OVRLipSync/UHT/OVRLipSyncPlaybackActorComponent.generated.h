@@ -19,7 +19,7 @@ class UAudioComponent;
 class UOVRLipSyncFrameSequence;
 
 // ********** Begin Class UOVRLipSyncPlaybackActorComponent ****************************************
-#define FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_35_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_35_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execSetPlaybackSequence); \
 	DECLARE_FUNCTION(execStop); \
 	DECLARE_FUNCTION(execStart);
@@ -28,7 +28,7 @@ class UOVRLipSyncFrameSequence;
 struct Z_Construct_UClass_UOVRLipSyncPlaybackActorComponent_Statics;
 OVRLIPSYNC_API UClass* Z_Construct_UClass_UOVRLipSyncPlaybackActorComponent_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_35_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_35_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUOVRLipSyncPlaybackActorComponent(); \
 	friend struct ::Z_Construct_UClass_UOVRLipSyncPlaybackActorComponent_Statics; \
@@ -39,7 +39,7 @@ public: \
 	DECLARE_SERIALIZER(UOVRLipSyncPlaybackActorComponent)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_35_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_35_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UOVRLipSyncPlaybackActorComponent(); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -51,13 +51,13 @@ public: \
 	NO_API virtual ~UOVRLipSyncPlaybackActorComponent();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_32_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_35_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_32_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_35_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_35_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_35_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_35_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_35_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_35_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h_35_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -67,6 +67,6 @@ class UOVRLipSyncPlaybackActorComponent;
 // ********** End Class UOVRLipSyncPlaybackActorComponent ******************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncPlaybackActorComponent_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

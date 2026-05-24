@@ -20,7 +20,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 struct Z_Construct_UClass_UDeleteReplayObject_Statics;
 REPLAYSYSTEM_API UClass* Z_Construct_UClass_UDeleteReplayObject_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_DeleteReplayObject_h_20_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_DeleteReplayObject_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUDeleteReplayObject(); \
 	friend struct ::Z_Construct_UClass_UDeleteReplayObject_Statics; \
@@ -31,7 +31,7 @@ public: \
 	DECLARE_SERIALIZER(UDeleteReplayObject)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_DeleteReplayObject_h_20_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_DeleteReplayObject_h_20_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UDeleteReplayObject(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -43,12 +43,12 @@ public: \
 	NO_API virtual ~UDeleteReplayObject();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_DeleteReplayObject_h_16_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_DeleteReplayObject_h_20_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_DeleteReplayObject_h_16_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_DeleteReplayObject_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_DeleteReplayObject_h_20_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_DeleteReplayObject_h_20_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_DeleteReplayObject_h_20_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_DeleteReplayObject_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -58,6 +58,6 @@ class UDeleteReplayObject;
 // ********** End Class UDeleteReplayObject ********************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_DeleteReplayObject_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_DeleteReplayObject_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

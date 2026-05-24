@@ -524,15 +524,15 @@ UColorWidget::~UColorWidget() {}
 // ********** End Class UColorWidget ***************************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWidget_h__Script_ColorWheelPlugin_Statics
+struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWidget_h__Script_ColorWheelPlugin_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UColorWidget, UColorWidget::StaticClass, TEXT("UColorWidget"), &Z_Registration_Info_UClass_UColorWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UColorWidget), 2399472203U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWidget_h__Script_ColorWheelPlugin_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWidget_h__Script_ColorWheelPlugin_2124817162{
+}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWidget_h__Script_ColorWheelPlugin_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWidget_h__Script_ColorWheelPlugin_2124817162{
 	TEXT("/Script/ColorWheelPlugin"),
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWidget_h__Script_ColorWheelPlugin_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWidget_h__Script_ColorWheelPlugin_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWidget_h__Script_ColorWheelPlugin_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_ColorWidget_h__Script_ColorWheelPlugin_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0,
 };

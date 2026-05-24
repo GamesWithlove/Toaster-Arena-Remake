@@ -1,0 +1,16 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\toaster_mod_plugin\\source\\toastergame\\private\\toastergamemodule.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\ue4_projects\\toaster-arena-remake\\intermediate\\build\\win64\\x64\\toaster_rebooteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\toaster_mod_plugin\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\toastergame\\definitions.toastergame.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\toaster_mod_plugin\\source\\toastergame\\public\\toastergamemodule.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\toaster_mod_plugin\\source\\toastergame\\public\\pakfilemanager.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\toaster_mod_plugin\\intermediate\\build\\win64\\unrealeditor\\inc\\toastergame\\uht\\pakfilemanager.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

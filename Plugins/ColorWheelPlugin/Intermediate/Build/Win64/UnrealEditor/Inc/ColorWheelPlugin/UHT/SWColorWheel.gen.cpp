@@ -82,17 +82,17 @@ UEnum* Z_Construct_UEnum_ColorWheelPlugin_EWheelBrushTarget()
 // ********** End Enum EWheelBrushTarget ***********************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_SWColorWheel_h__Script_ColorWheelPlugin_Statics
+struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_SWColorWheel_h__Script_ColorWheelPlugin_Statics
 {
 	static constexpr FEnumRegisterCompiledInInfo EnumInfo[] = {
 		{ EWheelBrushTarget_StaticEnum, TEXT("EWheelBrushTarget"), &Z_Registration_Info_UEnum_EWheelBrushTarget, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3144247793U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_SWColorWheel_h__Script_ColorWheelPlugin_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_SWColorWheel_h__Script_ColorWheelPlugin_1910778215{
+}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_SWColorWheel_h__Script_ColorWheelPlugin_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_SWColorWheel_h__Script_ColorWheelPlugin_1910778215{
 	TEXT("/Script/ColorWheelPlugin"),
 	nullptr, 0,
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_SWColorWheel_h__Script_ColorWheelPlugin_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_SWColorWheel_h__Script_ColorWheelPlugin_Statics::EnumInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_SWColorWheel_h__Script_ColorWheelPlugin_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ColorWheelPlugin_Source_ColorWheelPlugin_Public_SWColorWheel_h__Script_ColorWheelPlugin_Statics::EnumInfo),
 };
 // ********** End Registration *********************************************************************
 

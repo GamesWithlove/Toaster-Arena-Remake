@@ -206,15 +206,15 @@ UHitscanTracerDefinition::~UHitscanTracerDefinition() {}
 // ********** End Class UHitscanTracerDefinition ***************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_HitscanTracerDefinition_h__Script_ToasterGame_Statics
+struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_HitscanTracerDefinition_h__Script_ToasterGame_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UHitscanTracerDefinition, UHitscanTracerDefinition::StaticClass, TEXT("UHitscanTracerDefinition"), &Z_Registration_Info_UClass_UHitscanTracerDefinition, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UHitscanTracerDefinition), 1716699780U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_HitscanTracerDefinition_h__Script_ToasterGame_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_HitscanTracerDefinition_h__Script_ToasterGame_3593525538{
+}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_HitscanTracerDefinition_h__Script_ToasterGame_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_HitscanTracerDefinition_h__Script_ToasterGame_3593525538{
 	TEXT("/Script/ToasterGame"),
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_HitscanTracerDefinition_h__Script_ToasterGame_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_HitscanTracerDefinition_h__Script_ToasterGame_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_HitscanTracerDefinition_h__Script_ToasterGame_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_HitscanTracerDefinition_h__Script_ToasterGame_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0,
 };

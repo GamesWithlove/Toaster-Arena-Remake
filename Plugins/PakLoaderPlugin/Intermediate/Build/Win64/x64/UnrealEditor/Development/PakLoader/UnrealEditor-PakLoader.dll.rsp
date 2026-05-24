@@ -37,10 +37,9 @@
 /NOIMPLIB
 /NOEXP
 /NATVIS:"../Intermediate/Build/Win64/x64/UnrealEditor/Development/RenderCore/RenderCore.natvis"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/PakLoaderPlugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/PakLoader/Module.PakLoader.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/PakLoaderPlugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/PakLoader/PakLoader.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/PakLoaderPlugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/PakLoader/Default.rc2.res"
+"E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/PakLoaderPlugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/PakLoader/Module.PakLoader.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/PakLoaderPlugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/PakLoader/Default.rc2.res"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Core/UnrealEditor-Core.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/CoreUObject/UnrealEditor-CoreUObject.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Engine/UnrealEditor-Engine.lib"
@@ -73,6 +72,6 @@
 "synchronization.lib"
 "dwmapi.lib"
 "imm32.lib"
-/OUT:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/PakLoaderPlugin/Binaries/Win64/UnrealEditor-PakLoader.dll"
-/PDB:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/PakLoaderPlugin/Binaries/Win64/UnrealEditor-PakLoader.pdb"
+/OUT:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/PakLoaderPlugin/Binaries/Win64/UnrealEditor-PakLoader.dll"
+/PDB:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/PakLoaderPlugin/Binaries/Win64/UnrealEditor-PakLoader.pdb"
 /ignore:4078

@@ -193,7 +193,7 @@ UOVRLipSyncFrameSequence::~UOVRLipSyncFrameSequence() {}
 // ********** End Class UOVRLipSyncFrameSequence ***************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncFrame_h__Script_OVRLipSync_Statics
+struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncFrame_h__Script_OVRLipSync_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
 		{ FOVRLipSyncFrame::StaticStruct, Z_Construct_UScriptStruct_FOVRLipSyncFrame_Statics::NewStructOps, TEXT("OVRLipSyncFrame"),&Z_Registration_Info_UScriptStruct_FOVRLipSyncFrame, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FOVRLipSyncFrame), 3196240642U) },
@@ -201,11 +201,11 @@ struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Sou
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UOVRLipSyncFrameSequence, UOVRLipSyncFrameSequence::StaticClass, TEXT("UOVRLipSyncFrameSequence"), &Z_Registration_Info_UClass_UOVRLipSyncFrameSequence, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UOVRLipSyncFrameSequence), 3875738951U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncFrame_h__Script_OVRLipSync_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncFrame_h__Script_OVRLipSync_2364968321{
+}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncFrame_h__Script_OVRLipSync_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncFrame_h__Script_OVRLipSync_2364968321{
 	TEXT("/Script/OVRLipSync"),
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncFrame_h__Script_OVRLipSync_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncFrame_h__Script_OVRLipSync_Statics::ClassInfo),
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncFrame_h__Script_OVRLipSync_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncFrame_h__Script_OVRLipSync_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncFrame_h__Script_OVRLipSync_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncFrame_h__Script_OVRLipSync_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncFrame_h__Script_OVRLipSync_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_OVRLipSync_Source_OVRLipSync_Public_OVRLipSyncFrame_h__Script_OVRLipSync_Statics::ScriptStructInfo),
 	nullptr, 0,
 };
 // ********** End Registration *********************************************************************

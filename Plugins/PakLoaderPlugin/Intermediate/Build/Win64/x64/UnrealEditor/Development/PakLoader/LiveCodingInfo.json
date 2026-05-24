@@ -9,10 +9,10 @@
 			"PerModuleInline.gen.cpp.obj",
 			"LogHelper.cpp.obj",
 			"PakDownloader.cpp.obj",
+			"PakLoader.cpp.obj",
 			"PakLoaderLibrary.cpp.obj",
 			"PakLoaderModule.cpp.obj",
-			"PakLoaderSubsystem.cpp.obj",
-			"PakLoader.cpp.obj"
+			"PakLoaderSubsystem.cpp.obj"
 		]
 	}
 }

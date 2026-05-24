@@ -1,12 +1,12 @@
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealGame/Shipping/SimpleUGC/Module.SimpleUGC.cpp"
-@"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealGame/Shipping/SimpleUGC/SimpleUGC.Shared.rsp"
-/FI"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Intermediate/Build/Win64/x64/Toaster_reboot/Shipping/Engine/SharedPCH.Engine.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h"
-/FI"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealGame/Shipping/SimpleUGC/Definitions.SimpleUGC.h"
-/Yu"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Intermediate/Build/Win64/x64/Toaster_reboot/Shipping/Engine/SharedPCH.Engine.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h"
-/Fp"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Intermediate/Build/Win64/x64/Toaster_reboot/Shipping/Engine/SharedPCH.Engine.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.pch"
-/Fo"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealGame/Shipping/SimpleUGC/Module.SimpleUGC.cpp.obj"
-/experimental:log "E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealGame/Shipping/SimpleUGC/Module.SimpleUGC.cpp.sarif"
-/sourceDependencies "E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealGame/Shipping/SimpleUGC/Module.SimpleUGC.cpp.dep.json"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealGame/Shipping/SimpleUGC/Module.SimpleUGC.cpp"
+@"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealGame/Shipping/SimpleUGC/SimpleUGC.Shared.rsp"
+/FI"E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_reboot/Shipping/Engine/SharedPCH.Engine.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h"
+/FI"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealGame/Shipping/SimpleUGC/Definitions.SimpleUGC.h"
+/Yu"E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_reboot/Shipping/Engine/SharedPCH.Engine.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h"
+/Fp"E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_reboot/Shipping/Engine/SharedPCH.Engine.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.pch"
+/Fo"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealGame/Shipping/SimpleUGC/Module.SimpleUGC.cpp.obj"
+/experimental:log "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealGame/Shipping/SimpleUGC/Module.SimpleUGC.cpp.sarif"
+/sourceDependencies "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealGame/Shipping/SimpleUGC/Module.SimpleUGC.cpp.dep.json"
 /nologo
 /Oi
 /FC

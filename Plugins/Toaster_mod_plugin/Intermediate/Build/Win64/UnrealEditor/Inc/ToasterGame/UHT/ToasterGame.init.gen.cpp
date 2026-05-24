@@ -17,7 +17,7 @@ static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compi
 			nullptr,
 			0,
 			PKG_CompiledIn | 0x00000000,
-			0x4EF2B8A1,
+			0x4B8A9754,
 			0x5D4B5C65,
 			METADATA_PARAMS(0, nullptr)
 		};
@@ -25,5 +25,5 @@ static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compi
 	}
 	return Z_Registration_Info_UPackage__Script_ToasterGame.OuterSingleton;
 }
-static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_ToasterGame(Z_Construct_UPackage__Script_ToasterGame, TEXT("/Script/ToasterGame"), Z_Registration_Info_UPackage__Script_ToasterGame, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x4EF2B8A1, 0x5D4B5C65));
+static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_ToasterGame(Z_Construct_UPackage__Script_ToasterGame, TEXT("/Script/ToasterGame"), Z_Registration_Info_UPackage__Script_ToasterGame, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x4B8A9754, 0x5D4B5C65));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

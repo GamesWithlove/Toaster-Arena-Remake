@@ -176,15 +176,15 @@ UUGCBlueprintLibrary::~UUGCBlueprintLibrary() {}
 // ********** End Class UUGCBlueprintLibrary *******************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBlueprintLibrary_h__Script_SimpleUGC_Statics
+struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBlueprintLibrary_h__Script_SimpleUGC_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
 		{ Z_Construct_UClass_UUGCBlueprintLibrary, UUGCBlueprintLibrary::StaticClass, TEXT("UUGCBlueprintLibrary"), &Z_Registration_Info_UClass_UUGCBlueprintLibrary, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UUGCBlueprintLibrary), 1050117371U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBlueprintLibrary_h__Script_SimpleUGC_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBlueprintLibrary_h__Script_SimpleUGC_3156139124{
+}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBlueprintLibrary_h__Script_SimpleUGC_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBlueprintLibrary_h__Script_SimpleUGC_3156139124{
 	TEXT("/Script/SimpleUGC"),
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBlueprintLibrary_h__Script_SimpleUGC_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBlueprintLibrary_h__Script_SimpleUGC_Statics::ClassInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBlueprintLibrary_h__Script_SimpleUGC_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_UGCBlueprintLibrary_h__Script_SimpleUGC_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0,
 };

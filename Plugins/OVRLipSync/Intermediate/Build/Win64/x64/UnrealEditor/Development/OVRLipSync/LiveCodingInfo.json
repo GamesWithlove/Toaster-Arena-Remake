@@ -9,9 +9,9 @@
 			"OVRLipSyncPlaybackActorComponent.gen.cpp.obj",
 			"PerModuleInline.gen.cpp.obj",
 			"OVRLipSyncActorComponentBase.cpp.obj",
-			"OVRLipSyncModule.cpp.obj",
 			"OVRLipSyncContextWrapper.cpp.obj",
 			"OVRLipSyncLiveActorComponent.cpp.obj",
+			"OVRLipSyncModule.cpp.obj",
 			"OVRLipSyncPlaybackActorComponent.cpp.obj"
 		]
 	}

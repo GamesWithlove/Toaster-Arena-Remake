@@ -19,7 +19,7 @@ class APooledActor;
 class UClass;
 
 // ********** Begin Class AToasterGameStateBase ****************************************************
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execInitActorPools); \
 	DECLARE_FUNCTION(execSpawnActorFromPoolDefer); \
 	DECLARE_FUNCTION(execSpawnActorFromPool);
@@ -28,7 +28,7 @@ class UClass;
 struct Z_Construct_UClass_AToasterGameStateBase_Statics;
 TOASTERGAME_API UClass* Z_Construct_UClass_AToasterGameStateBase_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAToasterGameStateBase(); \
 	friend struct ::Z_Construct_UClass_AToasterGameStateBase_Statics; \
@@ -39,7 +39,7 @@ public: \
 	DECLARE_SERIALIZER(AToasterGameStateBase)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AToasterGameStateBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -51,13 +51,13 @@ public: \
 	NO_API virtual ~AToasterGameStateBase();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_8_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_8_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h_11_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -67,6 +67,6 @@ class AToasterGameStateBase;
 // ********** End Class AToasterGameStateBase ******************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_Toaster_mod_plugin_Source_ToasterGame_Public_ToasterGameStateBase_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

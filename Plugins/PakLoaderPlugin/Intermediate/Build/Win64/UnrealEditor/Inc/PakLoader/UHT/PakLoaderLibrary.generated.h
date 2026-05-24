@@ -26,7 +26,7 @@ class UStaticMesh;
 class UTexture2D;
 
 // ********** Begin Class UPakLoaderLibrary ********************************************************
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_24_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_24_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execGetPakFileText); \
 	DECLARE_FUNCTION(execGetPakFileAnimSequence); \
 	DECLARE_FUNCTION(execGetPakFileMaterialInstanceConstant); \
@@ -62,7 +62,7 @@ class UTexture2D;
 struct Z_Construct_UClass_UPakLoaderLibrary_Statics;
 PAKLOADER_API UClass* Z_Construct_UClass_UPakLoaderLibrary_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_24_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_24_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUPakLoaderLibrary(); \
 	friend struct ::Z_Construct_UClass_UPakLoaderLibrary_Statics; \
@@ -73,7 +73,7 @@ public: \
 	DECLARE_SERIALIZER(UPakLoaderLibrary)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_24_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_24_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UPakLoaderLibrary(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -85,13 +85,13 @@ public: \
 	NO_API virtual ~UPakLoaderLibrary();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_21_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_24_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_21_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_24_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_24_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_24_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_24_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_24_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_24_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h_24_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -101,6 +101,6 @@ class UPakLoaderLibrary;
 // ********** End Class UPakLoaderLibrary **********************************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_PakLoaderPlugin_Source_PakLoader_Public_PakLoaderLibrary_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

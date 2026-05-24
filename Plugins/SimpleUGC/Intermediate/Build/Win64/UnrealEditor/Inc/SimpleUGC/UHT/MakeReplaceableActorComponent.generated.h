@@ -20,7 +20,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 struct Z_Construct_UClass_UMakeReplaceableActorComponent_Statics;
 SIMPLEUGC_API UClass* Z_Construct_UClass_UMakeReplaceableActorComponent_NoRegister();
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h_12_INCLASS_NO_PURE_DECLS \
+#define FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUMakeReplaceableActorComponent(); \
 	friend struct ::Z_Construct_UClass_UMakeReplaceableActorComponent_Statics; \
@@ -31,7 +31,7 @@ public: \
 	DECLARE_SERIALIZER(UMakeReplaceableActorComponent)
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h_12_ENHANCED_CONSTRUCTORS \
+#define FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h_12_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	UMakeReplaceableActorComponent(UMakeReplaceableActorComponent&&) = delete; \
 	UMakeReplaceableActorComponent(const UMakeReplaceableActorComponent&) = delete; \
@@ -41,12 +41,12 @@ public: \
 	NO_API virtual ~UMakeReplaceableActorComponent();
 
 
-#define FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h_9_PROLOG
-#define FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h_12_GENERATED_BODY \
+#define FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h_9_PROLOG
+#define FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h_12_INCLASS_NO_PURE_DECLS \
-	FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h_12_ENHANCED_CONSTRUCTORS \
+	FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h_12_INCLASS_NO_PURE_DECLS \
+	FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -56,6 +56,6 @@ class UMakeReplaceableActorComponent;
 // ********** End Class UMakeReplaceableActorComponent *********************************************
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_5_7_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h
+#define CURRENT_FILE_ID FID_Toaster_Arena_Remake_Plugins_SimpleUGC_Source_SimpleUGC_Public_MakeReplaceableActorComponent_h
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -7,8 +7,8 @@
 			"SMMTypes.gen.cpp.obj",
 			"PerModuleInline.gen.cpp.obj",
 			"SkeletalMeshMerger.cpp.obj",
-			"SMMTypes.cpp.obj",
-			"SMMSkeletalMeshMergerSubsystem.cpp.obj"
+			"SMMSkeletalMeshMergerSubsystem.cpp.obj",
+			"SMMTypes.cpp.obj"
 		]
 	}
 }

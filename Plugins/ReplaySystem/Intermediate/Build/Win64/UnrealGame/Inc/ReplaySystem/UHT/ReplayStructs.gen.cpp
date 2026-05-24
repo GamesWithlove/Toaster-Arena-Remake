@@ -1273,7 +1273,7 @@ UScriptStruct* Z_Construct_UScriptStruct_FReplayObjectData()
 // ********** End ScriptStruct FReplayObjectData ***************************************************
 
 // ********** Begin Registration *******************************************************************
-struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayStructs_h__Script_ReplaySystem_Statics
+struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayStructs_h__Script_ReplaySystem_Statics
 {
 	static constexpr FStructRegisterCompiledInInfo ScriptStructInfo[] = {
 		{ FReplayInfo::StaticStruct, Z_Construct_UScriptStruct_FReplayInfo_Statics::NewStructOps, TEXT("ReplayInfo"),&Z_Registration_Info_UScriptStruct_FReplayInfo, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FReplayInfo), 2733030706U) },
@@ -1292,11 +1292,11 @@ struct Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_S
 		{ FReplayTransformData::StaticStruct, Z_Construct_UScriptStruct_FReplayTransformData_Statics::NewStructOps, TEXT("ReplayTransformData"),&Z_Registration_Info_UScriptStruct_FReplayTransformData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FReplayTransformData), 3311700228U) },
 		{ FReplayObjectData::StaticStruct, Z_Construct_UScriptStruct_FReplayObjectData_Statics::NewStructOps, TEXT("ReplayObjectData"),&Z_Registration_Info_UScriptStruct_FReplayObjectData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FReplayObjectData), 108414102U) },
 	};
-}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayStructs_h__Script_ReplaySystem_Statics 
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayStructs_h__Script_ReplaySystem_3205726883{
+}; // Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayStructs_h__Script_ReplaySystem_Statics 
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayStructs_h__Script_ReplaySystem_3205726883{
 	TEXT("/Script/ReplaySystem"),
 	nullptr, 0,
-	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayStructs_h__Script_ReplaySystem_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_5_7_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayStructs_h__Script_ReplaySystem_Statics::ScriptStructInfo),
+	Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayStructs_h__Script_ReplaySystem_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Toaster_Arena_Remake_Plugins_ReplaySystem_Source_ReplaySystem_Public_ReplayStructs_h__Script_ReplaySystem_Statics::ScriptStructInfo),
 	nullptr, 0,
 };
 // ********** End Registration *********************************************************************
