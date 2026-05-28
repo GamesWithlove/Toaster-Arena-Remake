@@ -12,5 +12,6 @@
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Source/ToasterGame/Private/HitscanTracerDefinition.cpp"
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Source/ToasterGame/Private/PakFileManager.cpp"
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Source/ToasterGame/Private/ToasterGameModeBase.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Source/ToasterGame/Private/ToasterGameModule.cpp"
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Source/ToasterGame/Private/ToasterGameplayStatics.cpp"
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Source/ToasterGame/Private/ToasterGameStateBase.cpp"

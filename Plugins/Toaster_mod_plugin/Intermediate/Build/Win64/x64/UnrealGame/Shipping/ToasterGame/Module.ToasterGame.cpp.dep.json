@@ -50,6 +50,8 @@
             "d:\\unreal engine\\ue_5.7\\engine\\source\\runtime\\core\\public\\misc\\ienginecrypto.h",
             "d:\\unreal engine\\ue_5.7\\engine\\source\\runtime\\rsa\\public\\rsa.h",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\toaster_mod_plugin\\source\\toastergame\\private\\toastergamemodebase.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\toaster_mod_plugin\\source\\toastergame\\private\\toastergamemodule.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\toaster_mod_plugin\\source\\toastergame\\public\\toastergamemodule.h",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\toaster_mod_plugin\\source\\toastergame\\private\\toastergameplaystatics.cpp",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\toaster_mod_plugin\\source\\toastergame\\private\\toastergamestatebase.cpp"
         ],
