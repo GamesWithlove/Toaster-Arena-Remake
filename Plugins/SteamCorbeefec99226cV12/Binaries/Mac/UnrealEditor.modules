@@ -1,0 +1,8 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"SteamCore": "UnrealEditor-SteamCore.dylib",
+		"SteamCoreWeb": "UnrealEditor-SteamCoreWeb.dylib"
+	}
+}

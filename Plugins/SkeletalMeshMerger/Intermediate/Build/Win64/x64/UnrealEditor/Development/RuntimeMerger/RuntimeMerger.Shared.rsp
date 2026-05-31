@@ -37,6 +37,7 @@
 /I "Runtime/InputCore/Classes"
 /I "Runtime/InputCore/Public"
 /I "Runtime/ApplicationCore/Public"
+/I "../Intermediate/Build/Win64/x64/UnrealEditor/Development/RHI/Gen"
 /I "Runtime/RHI/Public"
 /I "../Intermediate/Build/Win64/UnrealEditor/Inc/Slate/UHT"
 /I "Runtime/Slate/Public"
@@ -290,7 +291,7 @@
 /I "Editor/SceneDepthPickerMode/Public"
 /I "../Intermediate/Build/Win64/UnrealEditor/Inc/AnimationEditMode/UHT"
 /I "Editor/AnimationEditMode/Public"
-/I "E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd"
+/I "../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd"
 /external:W0
 /external:I "ThirdParty/GuidelinesSupportLibrary/GSL-1144/include"
 /external:I "ThirdParty/AtomicQueue"

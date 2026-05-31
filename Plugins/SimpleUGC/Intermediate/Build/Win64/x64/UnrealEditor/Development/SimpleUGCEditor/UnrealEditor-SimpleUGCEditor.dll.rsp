@@ -36,9 +36,9 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 /NOEXP
-"E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
 "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealEditor/Development/SimpleUGCEditor/Module.SimpleUGCEditor.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/SimpleUGC/Intermediate/Build/Win64/x64/UnrealEditor/Development/SimpleUGCEditor/Default.rc2.res"
+"../Intermediate/Build/Win64/x64/UnrealEditor/Development/Default.rc2.res"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Projects/UnrealEditor-Projects.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/InputCore/UnrealEditor-InputCore.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/UnrealEditor-UnrealEd.lib"
