@@ -1,0 +1,14 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\victorybplibrary57\\source\\victorybplibrary\\private\\victorybplibrary.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\victorybplibrary57\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\victorybplibrary\\definitions.victorybplibrary.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\victorybplibrary57\\source\\victorybplibrary\\public\\victorybplibrary.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

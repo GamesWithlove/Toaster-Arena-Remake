@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-VaRestEditor.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/SharedPCH.UnrealEd.Cpp20.h.obj"
+"../Plugins/Marketplace/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/x64/UnrealEditor/Development/VaRestEditor/Module.VaRestEditor.cpp.obj"
+"../Plugins/Marketplace/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/x64/UnrealEditor/Development/VaRestEditor/VaRestEditor.cpp.obj"
+"../Plugins/Marketplace/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/x64/UnrealEditor/Development/VaRestEditor/VaRest_BreakJson.cpp.obj"
+"../Intermediate/Build/Win64/x64/UnrealEditor/Development/Default.rc2.res"
+/OUT:"../Plugins/Marketplace/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/x64/UnrealEditor/Development/VaRestEditor/UnrealEditor-VaRestEditor.lib"

@@ -1,0 +1,12 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.VaRestEditor.cpp.obj": [
+			"VaRestEditor.init.gen.cpp.obj",
+			"VaRest_BreakJson.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"VaRestEditor.cpp.obj",
+			"VaRest_BreakJson.cpp.obj"
+		]
+	}
+}

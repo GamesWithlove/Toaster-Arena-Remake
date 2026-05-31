@@ -1,0 +1,16 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-VictoryBPLibrary.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/SharedPCH.UnrealEd.Cpp20.h.obj"
+"../Plugins/Marketplace/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/Module.VictoryBPLibrary.cpp.obj"
+"../Plugins/Marketplace/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/VictoryBPLibrary.cpp.obj"
+"../Plugins/Marketplace/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/RamaColorPicker.cpp.obj"
+"../Plugins/Marketplace/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/VictoryBPFunctionLibrary.cpp.obj"
+"../Plugins/Marketplace/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/VictoryBPFunctionLibrary_WinOS.cpp.obj"
+"../Intermediate/Build/Win64/x64/UnrealEditor/Development/Default.rc2.res"
+/OUT:"../Plugins/Marketplace/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/UnrealEditor-VictoryBPLibrary.lib"

@@ -1,0 +1,32 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\varestre6959ebc28060v9\\source\\varesteditor\\private\\varest_breakjson.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\varestre6959ebc28060v9\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\varesteditor\\definitions.varesteditor.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\varestre6959ebc28060v9\\source\\varesteditor\\public\\varest_breakjson.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\varestre6959ebc28060v9\\intermediate\\build\\win64\\unrealeditor\\inc\\varesteditor\\uht\\varest_breakjson.generated.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\editor\\blueprintgraph\\public\\blueprintactiondatabaseregistrar.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\editor\\blueprintgraph\\public\\blueprintactiondatabase.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\editor\\blueprintgraph\\public\\blueprintnodespawner.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\blueprintgraph\\uht\\blueprintnodespawner.generated.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\editor\\unrealed\\public\\edgraphutilities.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\editor\\unrealed\\public\\editorcategoryutils.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\editor\\kismetcompiler\\public\\kismetcompiler.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\editor\\kismetcompiler\\public\\bpterminal.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\editor\\kismetcompiler\\public\\edgraphcompilerutilities.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\editor\\blueprintgraph\\classes\\k2node_event.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\editor\\blueprintgraph\\classes\\k2node_eventnodeinterface.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\blueprintgraph\\uht\\k2node_eventnodeinterface.generated.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\editor\\kismetcompiler\\public\\kismetcompilermisc.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\editor\\kismetcompiler\\public\\blueprintcompiledstatement.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\blueprintgraph\\uht\\k2node_event.generated.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\editor\\kismetcompiler\\public\\kismetcompiledfunctioncontext.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\editor\\kismetcompiler\\public\\kismetcastingutils.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\varestre6959ebc28060v9\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\varesteditor\\module.varesteditor.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\varestre6959ebc28060v9\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\varesteditor\\definitions.varesteditor.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\varestre6959ebc28060v9\\intermediate\\build\\win64\\unrealeditor\\inc\\varesteditor\\uht\\varesteditor.init.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\varestre6959ebc28060v9\\intermediate\\build\\win64\\unrealeditor\\inc\\varesteditor\\uht\\varest_breakjson.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\varestre6959ebc28060v9\\source\\varesteditor\\public\\varest_breakjson.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\varestre6959ebc28060v9\\intermediate\\build\\win64\\unrealeditor\\inc\\varesteditor\\uht\\varest_breakjson.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\varestre6959ebc28060v9\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\varesteditor\\permoduleinline.gen.cpp",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

@@ -1,0 +1,24 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.VaRest.cpp.obj": [
+			"VaRest.init.gen.cpp.obj",
+			"VaRestJsonObject.gen.cpp.obj",
+			"VaRestJsonValue.gen.cpp.obj",
+			"VaRestLibrary.gen.cpp.obj",
+			"VaRestRequestJSON.gen.cpp.obj",
+			"VaRestSettings.gen.cpp.obj",
+			"VaRestSubsystem.gen.cpp.obj",
+			"VaRestTypes.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"VaRest.cpp.obj",
+			"VaRestJsonObject.cpp.obj",
+			"VaRestJsonParser.cpp.obj",
+			"VaRestJsonValue.cpp.obj",
+			"VaRestLibrary.cpp.obj",
+			"VaRestRequestJSON.cpp.obj",
+			"VaRestSettings.cpp.obj",
+			"VaRestSubsystem.cpp.obj"
+		]
+	}
+}
