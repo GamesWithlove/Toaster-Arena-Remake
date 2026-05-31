@@ -37,10 +37,9 @@
 /NOIMPLIB
 /NOEXP
 /NATVIS:"../Plugins/FX/Niagara/Intermediate/Build/Win64/x64/UnrealEditor/Development/Niagara/Niagara.natvis"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGameEditor/Module.ToasterGameEditor.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGameEditor/ToasterGameEditorModule.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGameEditor/Default.rc2.res"
+"E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGameEditor/Module.ToasterGameEditor.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGameEditor/Default.rc2.res"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/ApplicationCore/UnrealEditor-ApplicationCore.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/UnrealEditor-UnrealEd.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/SlateCore/UnrealEditor-SlateCore.lib"
@@ -49,7 +48,7 @@
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/PropertyEditor/UnrealEditor-PropertyEditor.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/AssetRegistry/UnrealEditor-AssetRegistry.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/AssetTools/UnrealEditor-AssetTools.lib"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGame/UnrealEditor-ToasterGame.lib"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ToasterGame/UnrealEditor-ToasterGame.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Kismet/UnrealEditor-Kismet.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/KismetCompiler/UnrealEditor-KismetCompiler.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/BlueprintGraph/UnrealEditor-BlueprintGraph.lib"
@@ -84,6 +83,6 @@
 "imm32.lib"
 "uiautomationcore.lib"
 "DXGI.lib"
-/OUT:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/Toaster_mod_plugin/Binaries/Win64/UnrealEditor-ToasterGameEditor.dll"
-/PDB:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/Toaster_mod_plugin/Binaries/Win64/UnrealEditor-ToasterGameEditor.pdb"
+/OUT:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Binaries/Win64/UnrealEditor-ToasterGameEditor.dll"
+/PDB:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Binaries/Win64/UnrealEditor-ToasterGameEditor.pdb"
 /ignore:4078

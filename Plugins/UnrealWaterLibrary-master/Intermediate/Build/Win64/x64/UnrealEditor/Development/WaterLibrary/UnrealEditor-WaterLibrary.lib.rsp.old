@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-WaterLibrary.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Dev\Unreal\Build55\Intermediate\Build\Win64\x64\Build55Editor\Development\UnrealEd\SharedPCH.UnrealEd.Project.ValApi.Cpp20.h.obj"
+"C:\Dev\Unreal\Build55\Plugins\UnrealWaterLibrary\Intermediate\Build\Win64\x64\UnrealEditor\Development\WaterLibrary\Module.WaterLibrary.cpp.obj"
+"C:\Dev\Unreal\Build55\Plugins\UnrealWaterLibrary\Intermediate\Build\Win64\x64\UnrealEditor\Development\WaterLibrary\WaterLibrary.cpp.obj"
+"C:\Dev\Unreal\Build55\Plugins\UnrealWaterLibrary\Intermediate\Build\Win64\x64\UnrealEditor\Development\WaterLibrary\WaterLibraryBP.cpp.obj"
+"C:\Dev\Unreal\Build55\Plugins\UnrealWaterLibrary\Intermediate\Build\Win64\x64\UnrealEditor\Development\WaterLibrary\Default.rc2.res"
+/OUT:"C:\Dev\Unreal\Build55\Plugins\UnrealWaterLibrary\Intermediate\Build\Win64\x64\UnrealEditor\Development\WaterLibrary\UnrealEditor-WaterLibrary.lib"

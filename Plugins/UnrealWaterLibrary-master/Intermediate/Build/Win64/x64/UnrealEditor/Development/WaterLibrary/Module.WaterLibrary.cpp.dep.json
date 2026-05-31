@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\unrealwaterlibrary-master\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\waterlibrary\\module.waterlibrary.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\unrealwaterlibrary-master\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\waterlibrary\\definitions.waterlibrary.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\unrealwaterlibrary-master\\intermediate\\build\\win64\\unrealeditor\\inc\\waterlibrary\\uht\\waterlibrary.init.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\unrealwaterlibrary-master\\intermediate\\build\\win64\\unrealeditor\\inc\\waterlibrary\\uht\\waterlibrarybp.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\unrealwaterlibrary-master\\source\\waterlibrary\\public\\waterlibrarybp.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\unrealwaterlibrary-master\\intermediate\\build\\win64\\unrealeditor\\inc\\waterlibrary\\uht\\waterlibrarybp.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\unrealwaterlibrary-master\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\waterlibrary\\permoduleinline.gen.cpp",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

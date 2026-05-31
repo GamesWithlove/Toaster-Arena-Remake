@@ -14,6 +14,7 @@
 /I "Runtime/Net/Common/Public"
 /I "../Intermediate/Build/Win64/UnrealEditor/Inc/RenderCore/UHT"
 /I "Runtime/RenderCore/Public"
+/I "../Intermediate/Build/Win64/x64/UnrealEditor/Development/RHI/Gen"
 /I "Runtime/RHI/Public"
 /I "../Intermediate/Build/Win64/UnrealEditor/Inc/CoreUObject/UHT"
 /I "../Intermediate/Build/Win64/UnrealEditor/Inc/CoreUObject/VerseVMBytecode"
@@ -301,7 +302,7 @@
 /I "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Intermediate/Build/Win64/UnrealEditor/Inc/ToasterGame/UHT"
 /I "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Source"
 /I "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Source/ToasterGame/Public"
-/I "E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd"
+/I "../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd"
 /external:W0
 /external:I "ThirdParty/GuidelinesSupportLibrary/GSL-1144/include"
 /external:I "ThirdParty/AtomicQueue"

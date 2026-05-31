@@ -1,0 +1,1033 @@
+/**
+* Copyright (C) 2017-2025 eelDev AB
+*
+* Official Steamworks Documentation: https://partner.steamgames.com/doc/api/ISteamInput
+*/
+
+#include "SteamInput/SteamInput.h"
+#include "SteamCorePluginPrivatePCH.h"
+
+const char* EnumToString(EInputActionOrigin Origin)
+{
+#if WITH_STEAMCORE
+	switch (Origin)
+	{
+	case k_EInputActionOrigin_None: return "k_EInputActionOrigin_None";
+	case k_EInputActionOrigin_SteamController_A: return "k_EInputActionOrigin_SteamController_A";
+	case k_EInputActionOrigin_SteamController_B: return "k_EInputActionOrigin_SteamController_B";
+	case k_EInputActionOrigin_SteamController_X: return "k_EInputActionOrigin_SteamController_X";
+	case k_EInputActionOrigin_SteamController_Y: return "k_EInputActionOrigin_SteamController_Y";
+	case k_EInputActionOrigin_SteamController_LeftBumper: return "k_EInputActionOrigin_SteamController_LeftBumper";
+	case k_EInputActionOrigin_SteamController_RightBumper: return "k_EInputActionOrigin_SteamController_RightBumper";
+	case k_EInputActionOrigin_SteamController_LeftGrip: return "k_EInputActionOrigin_SteamController_LeftGrip";
+	case k_EInputActionOrigin_SteamController_RightGrip: return "k_EInputActionOrigin_SteamController_RightGrip";
+	case k_EInputActionOrigin_SteamController_Start: return "k_EInputActionOrigin_SteamController_Start";
+	case k_EInputActionOrigin_SteamController_Back: return "k_EInputActionOrigin_SteamController_Back";
+	case k_EInputActionOrigin_SteamController_LeftPad_Touch: return "k_EInputActionOrigin_SteamController_LeftPad_Touch";
+	case k_EInputActionOrigin_SteamController_LeftPad_Swipe: return "k_EInputActionOrigin_SteamController_LeftPad_Swipe";
+	case k_EInputActionOrigin_SteamController_LeftPad_Click: return "k_EInputActionOrigin_SteamController_LeftPad_Click";
+	case k_EInputActionOrigin_SteamController_LeftPad_DPadNorth: return "k_EInputActionOrigin_SteamController_LeftPad_DPadNorth";
+	case k_EInputActionOrigin_SteamController_LeftPad_DPadSouth: return "k_EInputActionOrigin_SteamController_LeftPad_DPadSouth";
+	case k_EInputActionOrigin_SteamController_LeftPad_DPadWest: return "k_EInputActionOrigin_SteamController_LeftPad_DPadWest";
+	case k_EInputActionOrigin_SteamController_LeftPad_DPadEast: return "k_EInputActionOrigin_SteamController_LeftPad_DPadEast";
+	case k_EInputActionOrigin_SteamController_RightPad_Touch: return "k_EInputActionOrigin_SteamController_RightPad_Touch";
+	case k_EInputActionOrigin_SteamController_RightPad_Swipe: return "k_EInputActionOrigin_SteamController_RightPad_Swipe";
+	case k_EInputActionOrigin_SteamController_RightPad_Click: return "k_EInputActionOrigin_SteamController_RightPad_Click";
+	case k_EInputActionOrigin_SteamController_RightPad_DPadNorth: return "k_EInputActionOrigin_SteamController_RightPad_DPadNorth";
+	case k_EInputActionOrigin_SteamController_RightPad_DPadSouth: return "k_EInputActionOrigin_SteamController_RightPad_DPadSouth";
+	case k_EInputActionOrigin_SteamController_RightPad_DPadWest: return "k_EInputActionOrigin_SteamController_RightPad_DPadWest";
+	case k_EInputActionOrigin_SteamController_RightPad_DPadEast: return "k_EInputActionOrigin_SteamController_RightPad_DPadEast";
+	case k_EInputActionOrigin_SteamController_LeftTrigger_Pull: return "k_EInputActionOrigin_SteamController_LeftTrigger_Pull";
+	case k_EInputActionOrigin_SteamController_LeftTrigger_Click: return "k_EInputActionOrigin_SteamController_LeftTrigger_Click";
+	case k_EInputActionOrigin_SteamController_RightTrigger_Pull: return "k_EInputActionOrigin_SteamController_RightTrigger_Pull";
+	case k_EInputActionOrigin_SteamController_RightTrigger_Click: return "k_EInputActionOrigin_SteamController_RightTrigger_Click";
+	case k_EInputActionOrigin_SteamController_LeftStick_Move: return "k_EInputActionOrigin_SteamController_LeftStick_Move";
+	case k_EInputActionOrigin_SteamController_LeftStick_Click: return "k_EInputActionOrigin_SteamController_LeftStick_Click";
+	case k_EInputActionOrigin_SteamController_LeftStick_DPadNorth: return "k_EInputActionOrigin_SteamController_LeftStick_DPadNorth";
+	case k_EInputActionOrigin_SteamController_LeftStick_DPadSouth: return "k_EInputActionOrigin_SteamController_LeftStick_DPadSouth";
+	case k_EInputActionOrigin_SteamController_LeftStick_DPadWest: return "k_EInputActionOrigin_SteamController_LeftStick_DPadWest";
+	case k_EInputActionOrigin_SteamController_LeftStick_DPadEast: return "k_EInputActionOrigin_SteamController_LeftStick_DPadEast";
+	case k_EInputActionOrigin_SteamController_Gyro_Move: return "k_EInputActionOrigin_SteamController_Gyro_Move";
+	case k_EInputActionOrigin_SteamController_Gyro_Pitch: return "k_EInputActionOrigin_SteamController_Gyro_Pitch";
+	case k_EInputActionOrigin_SteamController_Gyro_Yaw: return "k_EInputActionOrigin_SteamController_Gyro_Yaw";
+	case k_EInputActionOrigin_SteamController_Gyro_Roll: return "k_EInputActionOrigin_SteamController_Gyro_Roll";
+	case k_EInputActionOrigin_SteamController_Reserved0: return "k_EInputActionOrigin_SteamController_Reserved0";
+	case k_EInputActionOrigin_SteamController_Reserved1: return "k_EInputActionOrigin_SteamController_Reserved1";
+	case k_EInputActionOrigin_SteamController_Reserved2: return "k_EInputActionOrigin_SteamController_Reserved2";
+	case k_EInputActionOrigin_SteamController_Reserved3: return "k_EInputActionOrigin_SteamController_Reserved3";
+	case k_EInputActionOrigin_SteamController_Reserved4: return "k_EInputActionOrigin_SteamController_Reserved4";
+	case k_EInputActionOrigin_SteamController_Reserved5: return "k_EInputActionOrigin_SteamController_Reserved5";
+	case k_EInputActionOrigin_SteamController_Reserved6: return "k_EInputActionOrigin_SteamController_Reserved6";
+	case k_EInputActionOrigin_SteamController_Reserved7: return "k_EInputActionOrigin_SteamController_Reserved7";
+	case k_EInputActionOrigin_SteamController_Reserved8: return "k_EInputActionOrigin_SteamController_Reserved8";
+	case k_EInputActionOrigin_SteamController_Reserved9: return "k_EInputActionOrigin_SteamController_Reserved9";
+	case k_EInputActionOrigin_SteamController_Reserved10: return "k_EInputActionOrigin_SteamController_Reserved10";
+	case k_EInputActionOrigin_PS4_X: return "k_EInputActionOrigin_PS4_X";
+	case k_EInputActionOrigin_PS4_Circle: return "k_EInputActionOrigin_PS4_Circle";
+	case k_EInputActionOrigin_PS4_Triangle: return "k_EInputActionOrigin_PS4_Triangle";
+	case k_EInputActionOrigin_PS4_Square: return "k_EInputActionOrigin_PS4_Square";
+	case k_EInputActionOrigin_PS4_LeftBumper: return "k_EInputActionOrigin_PS4_LeftBumper";
+	case k_EInputActionOrigin_PS4_RightBumper: return "k_EInputActionOrigin_PS4_RightBumper";
+	case k_EInputActionOrigin_PS4_Options: return "k_EInputActionOrigin_PS4_Options";
+	case k_EInputActionOrigin_PS4_Share: return "k_EInputActionOrigin_PS4_Share";
+	case k_EInputActionOrigin_PS4_LeftPad_Touch: return "k_EInputActionOrigin_PS4_LeftPad_Touch";
+	case k_EInputActionOrigin_PS4_LeftPad_Swipe: return "k_EInputActionOrigin_PS4_LeftPad_Swipe";
+	case k_EInputActionOrigin_PS4_LeftPad_Click: return "k_EInputActionOrigin_PS4_LeftPad_Click";
+	case k_EInputActionOrigin_PS4_LeftPad_DPadNorth: return "k_EInputActionOrigin_PS4_LeftPad_DPadNorth";
+	case k_EInputActionOrigin_PS4_LeftPad_DPadSouth: return "k_EInputActionOrigin_PS4_LeftPad_DPadSouth";
+	case k_EInputActionOrigin_PS4_LeftPad_DPadWest: return "k_EInputActionOrigin_PS4_LeftPad_DPadWest";
+	case k_EInputActionOrigin_PS4_LeftPad_DPadEast: return "k_EInputActionOrigin_PS4_LeftPad_DPadEast";
+	case k_EInputActionOrigin_PS4_RightPad_Touch: return "k_EInputActionOrigin_PS4_RightPad_Touch";
+	case k_EInputActionOrigin_PS4_RightPad_Swipe: return "k_EInputActionOrigin_PS4_RightPad_Swipe";
+	case k_EInputActionOrigin_PS4_RightPad_Click: return "k_EInputActionOrigin_PS4_RightPad_Click";
+	case k_EInputActionOrigin_PS4_RightPad_DPadNorth: return "k_EInputActionOrigin_PS4_RightPad_DPadNorth";
+	case k_EInputActionOrigin_PS4_RightPad_DPadSouth: return "k_EInputActionOrigin_PS4_RightPad_DPadSouth";
+	case k_EInputActionOrigin_PS4_RightPad_DPadWest: return "k_EInputActionOrigin_PS4_RightPad_DPadWest";
+	case k_EInputActionOrigin_PS4_RightPad_DPadEast: return "k_EInputActionOrigin_PS4_RightPad_DPadEast";
+	case k_EInputActionOrigin_PS4_CenterPad_Touch: return "k_EInputActionOrigin_PS4_CenterPad_Touch";
+	case k_EInputActionOrigin_PS4_CenterPad_Swipe: return "k_EInputActionOrigin_PS4_CenterPad_Swipe";
+	case k_EInputActionOrigin_PS4_CenterPad_Click: return "k_EInputActionOrigin_PS4_CenterPad_Click";
+	case k_EInputActionOrigin_PS4_CenterPad_DPadNorth: return "k_EInputActionOrigin_PS4_CenterPad_DPadNorth";
+	case k_EInputActionOrigin_PS4_CenterPad_DPadSouth: return "k_EInputActionOrigin_PS4_CenterPad_DPadSouth";
+	case k_EInputActionOrigin_PS4_CenterPad_DPadWest: return "k_EInputActionOrigin_PS4_CenterPad_DPadWest";
+	case k_EInputActionOrigin_PS4_CenterPad_DPadEast: return "k_EInputActionOrigin_PS4_CenterPad_DPadEast";
+	case k_EInputActionOrigin_PS4_LeftTrigger_Pull: return "k_EInputActionOrigin_PS4_LeftTrigger_Pull";
+	case k_EInputActionOrigin_PS4_LeftTrigger_Click: return "k_EInputActionOrigin_PS4_LeftTrigger_Click";
+	case k_EInputActionOrigin_PS4_RightTrigger_Pull: return "k_EInputActionOrigin_PS4_RightTrigger_Pull";
+	case k_EInputActionOrigin_PS4_RightTrigger_Click: return "k_EInputActionOrigin_PS4_RightTrigger_Click";
+	case k_EInputActionOrigin_PS4_LeftStick_Move: return "k_EInputActionOrigin_PS4_LeftStick_Move";
+	case k_EInputActionOrigin_PS4_LeftStick_Click: return "k_EInputActionOrigin_PS4_LeftStick_Click";
+	case k_EInputActionOrigin_PS4_LeftStick_DPadNorth: return "k_EInputActionOrigin_PS4_LeftStick_DPadNorth";
+	case k_EInputActionOrigin_PS4_LeftStick_DPadSouth: return "k_EInputActionOrigin_PS4_LeftStick_DPadSouth";
+	case k_EInputActionOrigin_PS4_LeftStick_DPadWest: return "k_EInputActionOrigin_PS4_LeftStick_DPadWest";
+	case k_EInputActionOrigin_PS4_LeftStick_DPadEast: return "k_EInputActionOrigin_PS4_LeftStick_DPadEast";
+	case k_EInputActionOrigin_PS4_RightStick_Move: return "k_EInputActionOrigin_PS4_RightStick_Move";
+	case k_EInputActionOrigin_PS4_RightStick_Click: return "k_EInputActionOrigin_PS4_RightStick_Click";
+	case k_EInputActionOrigin_PS4_RightStick_DPadNorth: return "k_EInputActionOrigin_PS4_RightStick_DPadNorth";
+	case k_EInputActionOrigin_PS4_RightStick_DPadSouth: return "k_EInputActionOrigin_PS4_RightStick_DPadSouth";
+	case k_EInputActionOrigin_PS4_RightStick_DPadWest: return "k_EInputActionOrigin_PS4_RightStick_DPadWest";
+	case k_EInputActionOrigin_PS4_RightStick_DPadEast: return "k_EInputActionOrigin_PS4_RightStick_DPadEast";
+	case k_EInputActionOrigin_PS4_DPad_North: return "k_EInputActionOrigin_PS4_DPad_North";
+	case k_EInputActionOrigin_PS4_DPad_South: return "k_EInputActionOrigin_PS4_DPad_South";
+	case k_EInputActionOrigin_PS4_DPad_West: return "k_EInputActionOrigin_PS4_DPad_West";
+	case k_EInputActionOrigin_PS4_DPad_East: return "k_EInputActionOrigin_PS4_DPad_East";
+	case k_EInputActionOrigin_PS4_Gyro_Move: return "k_EInputActionOrigin_PS4_Gyro_Move";
+	case k_EInputActionOrigin_PS4_Gyro_Pitch: return "k_EInputActionOrigin_PS4_Gyro_Pitch";
+	case k_EInputActionOrigin_PS4_Gyro_Yaw: return "k_EInputActionOrigin_PS4_Gyro_Yaw";
+	case k_EInputActionOrigin_PS4_Gyro_Roll: return "k_EInputActionOrigin_PS4_Gyro_Roll";
+	case k_EInputActionOrigin_PS4_DPad_Move: return "k_EInputActionOrigin_PS4_DPad_Move";
+	case k_EInputActionOrigin_PS4_Reserved1: return "k_EInputActionOrigin_PS4_Reserved1";
+	case k_EInputActionOrigin_PS4_Reserved2: return "k_EInputActionOrigin_PS4_Reserved2";
+	case k_EInputActionOrigin_PS4_Reserved3: return "k_EInputActionOrigin_PS4_Reserved3";
+	case k_EInputActionOrigin_PS4_Reserved4: return "k_EInputActionOrigin_PS4_Reserved4";
+	case k_EInputActionOrigin_PS4_Reserved5: return "k_EInputActionOrigin_PS4_Reserved5";
+	case k_EInputActionOrigin_PS4_Reserved6: return "k_EInputActionOrigin_PS4_Reserved6";
+	case k_EInputActionOrigin_PS4_Reserved7: return "k_EInputActionOrigin_PS4_Reserved7";
+	case k_EInputActionOrigin_PS4_Reserved8: return "k_EInputActionOrigin_PS4_Reserved8";
+	case k_EInputActionOrigin_PS4_Reserved9: return "k_EInputActionOrigin_PS4_Reserved9";
+	case k_EInputActionOrigin_PS4_Reserved10: return "k_EInputActionOrigin_PS4_Reserved10";
+	case k_EInputActionOrigin_XBoxOne_A: return "k_EInputActionOrigin_XBoxOne_A";
+	case k_EInputActionOrigin_XBoxOne_B: return "k_EInputActionOrigin_XBoxOne_B";
+	case k_EInputActionOrigin_XBoxOne_X: return "k_EInputActionOrigin_XBoxOne_X";
+	case k_EInputActionOrigin_XBoxOne_Y: return "k_EInputActionOrigin_XBoxOne_Y";
+	case k_EInputActionOrigin_XBoxOne_LeftBumper: return "k_EInputActionOrigin_XBoxOne_LeftBumper";
+	case k_EInputActionOrigin_XBoxOne_RightBumper: return "k_EInputActionOrigin_XBoxOne_RightBumper";
+	case k_EInputActionOrigin_XBoxOne_Menu: return "k_EInputActionOrigin_XBoxOne_Menu";
+	case k_EInputActionOrigin_XBoxOne_View: return "k_EInputActionOrigin_XBoxOne_View";
+	case k_EInputActionOrigin_XBoxOne_LeftTrigger_Pull: return "k_EInputActionOrigin_XBoxOne_LeftTrigger_Pull";
+	case k_EInputActionOrigin_XBoxOne_LeftTrigger_Click: return "k_EInputActionOrigin_XBoxOne_LeftTrigger_Click";
+	case k_EInputActionOrigin_XBoxOne_RightTrigger_Pull: return "k_EInputActionOrigin_XBoxOne_RightTrigger_Pull";
+	case k_EInputActionOrigin_XBoxOne_RightTrigger_Click: return "k_EInputActionOrigin_XBoxOne_RightTrigger_Click";
+	case k_EInputActionOrigin_XBoxOne_LeftStick_Move: return "k_EInputActionOrigin_XBoxOne_LeftStick_Move";
+	case k_EInputActionOrigin_XBoxOne_LeftStick_Click: return "k_EInputActionOrigin_XBoxOne_LeftStick_Click";
+	case k_EInputActionOrigin_XBoxOne_LeftStick_DPadNorth: return "k_EInputActionOrigin_XBoxOne_LeftStick_DPadNorth";
+	case k_EInputActionOrigin_XBoxOne_LeftStick_DPadSouth: return "k_EInputActionOrigin_XBoxOne_LeftStick_DPadSouth";
+	case k_EInputActionOrigin_XBoxOne_LeftStick_DPadWest: return "k_EInputActionOrigin_XBoxOne_LeftStick_DPadWest";
+	case k_EInputActionOrigin_XBoxOne_LeftStick_DPadEast: return "k_EInputActionOrigin_XBoxOne_LeftStick_DPadEast";
+	case k_EInputActionOrigin_XBoxOne_RightStick_Move: return "k_EInputActionOrigin_XBoxOne_RightStick_Move";
+	case k_EInputActionOrigin_XBoxOne_RightStick_Click: return "k_EInputActionOrigin_XBoxOne_RightStick_Click";
+	case k_EInputActionOrigin_XBoxOne_RightStick_DPadNorth: return "k_EInputActionOrigin_XBoxOne_RightStick_DPadNorth";
+	case k_EInputActionOrigin_XBoxOne_RightStick_DPadSouth: return "k_EInputActionOrigin_XBoxOne_RightStick_DPadSouth";
+	case k_EInputActionOrigin_XBoxOne_RightStick_DPadWest: return "k_EInputActionOrigin_XBoxOne_RightStick_DPadWest";
+	case k_EInputActionOrigin_XBoxOne_RightStick_DPadEast: return "k_EInputActionOrigin_XBoxOne_RightStick_DPadEast";
+	case k_EInputActionOrigin_XBoxOne_DPad_North: return "k_EInputActionOrigin_XBoxOne_DPad_North";
+	case k_EInputActionOrigin_XBoxOne_DPad_South: return "k_EInputActionOrigin_XBoxOne_DPad_South";
+	case k_EInputActionOrigin_XBoxOne_DPad_West: return "k_EInputActionOrigin_XBoxOne_DPad_West";
+	case k_EInputActionOrigin_XBoxOne_DPad_East: return "k_EInputActionOrigin_XBoxOne_DPad_East";
+	case k_EInputActionOrigin_XBoxOne_DPad_Move: return "k_EInputActionOrigin_XBoxOne_DPad_Move";
+#if STEAM_VERSION > 151
+	case k_EInputActionOrigin_XBoxOne_LeftGrip_Lower: return "k_EInputActionOrigin_XBoxOne_LeftGrip_Lower";
+	case k_EInputActionOrigin_XBoxOne_LeftGrip_Upper: return "k_EInputActionOrigin_XBoxOne_LeftGrip_Upper";
+	case k_EInputActionOrigin_XBoxOne_RightGrip_Lower: return "k_EInputActionOrigin_XBoxOne_RightGrip_Lower";
+	case k_EInputActionOrigin_XBoxOne_RightGrip_Upper: return "k_EInputActionOrigin_XBoxOne_RightGrip_Upper";
+	case k_EInputActionOrigin_XBoxOne_Share: return "k_EInputActionOrigin_XBoxOne_Share";
+#endif
+	case k_EInputActionOrigin_XBoxOne_Reserved6: return "k_EInputActionOrigin_XBoxOne_Reserved6";
+	case k_EInputActionOrigin_XBoxOne_Reserved7: return "k_EInputActionOrigin_XBoxOne_Reserved7";
+	case k_EInputActionOrigin_XBoxOne_Reserved8: return "k_EInputActionOrigin_XBoxOne_Reserved8";
+	case k_EInputActionOrigin_XBoxOne_Reserved9: return "k_EInputActionOrigin_XBoxOne_Reserved9";
+	case k_EInputActionOrigin_XBoxOne_Reserved10: return "k_EInputActionOrigin_XBoxOne_Reserved10";
+	case k_EInputActionOrigin_XBox360_A: return "k_EInputActionOrigin_XBox360_A";
+	case k_EInputActionOrigin_XBox360_B: return "k_EInputActionOrigin_XBox360_B";
+	case k_EInputActionOrigin_XBox360_X: return "k_EInputActionOrigin_XBox360_X";
+	case k_EInputActionOrigin_XBox360_Y: return "k_EInputActionOrigin_XBox360_Y";
+	case k_EInputActionOrigin_XBox360_LeftBumper: return "k_EInputActionOrigin_XBox360_LeftBumper";
+	case k_EInputActionOrigin_XBox360_RightBumper: return "k_EInputActionOrigin_XBox360_RightBumper";
+	case k_EInputActionOrigin_XBox360_Start: return "k_EInputActionOrigin_XBox360_Start";
+	case k_EInputActionOrigin_XBox360_Back: return "k_EInputActionOrigin_XBox360_Back";
+	case k_EInputActionOrigin_XBox360_LeftTrigger_Pull: return "k_EInputActionOrigin_XBox360_LeftTrigger_Pull";
+	case k_EInputActionOrigin_XBox360_LeftTrigger_Click: return "k_EInputActionOrigin_XBox360_LeftTrigger_Click";
+	case k_EInputActionOrigin_XBox360_RightTrigger_Pull: return "k_EInputActionOrigin_XBox360_RightTrigger_Pull";
+	case k_EInputActionOrigin_XBox360_RightTrigger_Click: return "k_EInputActionOrigin_XBox360_RightTrigger_Click";
+	case k_EInputActionOrigin_XBox360_LeftStick_Move: return "k_EInputActionOrigin_XBox360_LeftStick_Move";
+	case k_EInputActionOrigin_XBox360_LeftStick_Click: return "k_EInputActionOrigin_XBox360_LeftStick_Click";
+	case k_EInputActionOrigin_XBox360_LeftStick_DPadNorth: return "k_EInputActionOrigin_XBox360_LeftStick_DPadNorth";
+	case k_EInputActionOrigin_XBox360_LeftStick_DPadSouth: return "k_EInputActionOrigin_XBox360_LeftStick_DPadSouth";
+	case k_EInputActionOrigin_XBox360_LeftStick_DPadWest: return "k_EInputActionOrigin_XBox360_LeftStick_DPadWest";
+	case k_EInputActionOrigin_XBox360_LeftStick_DPadEast: return "k_EInputActionOrigin_XBox360_LeftStick_DPadEast";
+	case k_EInputActionOrigin_XBox360_RightStick_Move: return "k_EInputActionOrigin_XBox360_RightStick_Move";
+	case k_EInputActionOrigin_XBox360_RightStick_Click: return "k_EInputActionOrigin_XBox360_RightStick_Click";
+	case k_EInputActionOrigin_XBox360_RightStick_DPadNorth: return "k_EInputActionOrigin_XBox360_RightStick_DPadNorth";
+	case k_EInputActionOrigin_XBox360_RightStick_DPadSouth: return "k_EInputActionOrigin_XBox360_RightStick_DPadSouth";
+	case k_EInputActionOrigin_XBox360_RightStick_DPadWest: return "k_EInputActionOrigin_XBox360_RightStick_DPadWest";
+	case k_EInputActionOrigin_XBox360_RightStick_DPadEast: return "k_EInputActionOrigin_XBox360_RightStick_DPadEast";
+	case k_EInputActionOrigin_XBox360_DPad_North: return "k_EInputActionOrigin_XBox360_DPad_North";
+	case k_EInputActionOrigin_XBox360_DPad_South: return "k_EInputActionOrigin_XBox360_DPad_South";
+	case k_EInputActionOrigin_XBox360_DPad_West: return "k_EInputActionOrigin_XBox360_DPad_West";
+	case k_EInputActionOrigin_XBox360_DPad_East: return "k_EInputActionOrigin_XBox360_DPad_East";
+	case k_EInputActionOrigin_XBox360_DPad_Move: return "k_EInputActionOrigin_XBox360_DPad_Move";
+	case k_EInputActionOrigin_XBox360_Reserved1: return "k_EInputActionOrigin_XBox360_Reserved1";
+	case k_EInputActionOrigin_XBox360_Reserved2: return "k_EInputActionOrigin_XBox360_Reserved2";
+	case k_EInputActionOrigin_XBox360_Reserved3: return "k_EInputActionOrigin_XBox360_Reserved3";
+	case k_EInputActionOrigin_XBox360_Reserved4: return "k_EInputActionOrigin_XBox360_Reserved4";
+	case k_EInputActionOrigin_XBox360_Reserved5: return "k_EInputActionOrigin_XBox360_Reserved5";
+	case k_EInputActionOrigin_XBox360_Reserved6: return "k_EInputActionOrigin_XBox360_Reserved6";
+	case k_EInputActionOrigin_XBox360_Reserved7: return "k_EInputActionOrigin_XBox360_Reserved7";
+	case k_EInputActionOrigin_XBox360_Reserved8: return "k_EInputActionOrigin_XBox360_Reserved8";
+	case k_EInputActionOrigin_XBox360_Reserved9: return "k_EInputActionOrigin_XBox360_Reserved9";
+	case k_EInputActionOrigin_XBox360_Reserved10: return "k_EInputActionOrigin_XBox360_Reserved10";
+	case k_EInputActionOrigin_Switch_A: return "k_EInputActionOrigin_Switch_A";
+	case k_EInputActionOrigin_Switch_B: return "k_EInputActionOrigin_Switch_B";
+	case k_EInputActionOrigin_Switch_X: return "k_EInputActionOrigin_Switch_X";
+	case k_EInputActionOrigin_Switch_Y: return "k_EInputActionOrigin_Switch_Y";
+	case k_EInputActionOrigin_Switch_LeftBumper: return "k_EInputActionOrigin_Switch_LeftBumper";
+	case k_EInputActionOrigin_Switch_RightBumper: return "k_EInputActionOrigin_Switch_RightBumper";
+	case k_EInputActionOrigin_Switch_Plus: return "k_EInputActionOrigin_Switch_Plus";
+	case k_EInputActionOrigin_Switch_Minus: return "k_EInputActionOrigin_Switch_Minus";
+	case k_EInputActionOrigin_Switch_Capture: return "k_EInputActionOrigin_Switch_Capture";
+	case k_EInputActionOrigin_Switch_LeftTrigger_Pull: return "k_EInputActionOrigin_Switch_LeftTrigger_Pull";
+	case k_EInputActionOrigin_Switch_LeftTrigger_Click: return "k_EInputActionOrigin_Switch_LeftTrigger_Click";
+	case k_EInputActionOrigin_Switch_RightTrigger_Pull: return "k_EInputActionOrigin_Switch_RightTrigger_Pull";
+	case k_EInputActionOrigin_Switch_RightTrigger_Click: return "k_EInputActionOrigin_Switch_RightTrigger_Click";
+	case k_EInputActionOrigin_Switch_LeftStick_Move: return "k_EInputActionOrigin_Switch_LeftStick_Move";
+	case k_EInputActionOrigin_Switch_LeftStick_Click: return "k_EInputActionOrigin_Switch_LeftStick_Click";
+	case k_EInputActionOrigin_Switch_LeftStick_DPadNorth: return "k_EInputActionOrigin_Switch_LeftStick_DPadNorth";
+	case k_EInputActionOrigin_Switch_LeftStick_DPadSouth: return "k_EInputActionOrigin_Switch_LeftStick_DPadSouth";
+	case k_EInputActionOrigin_Switch_LeftStick_DPadWest: return "k_EInputActionOrigin_Switch_LeftStick_DPadWest";
+	case k_EInputActionOrigin_Switch_LeftStick_DPadEast: return "k_EInputActionOrigin_Switch_LeftStick_DPadEast";
+	case k_EInputActionOrigin_Switch_RightStick_Move: return "k_EInputActionOrigin_Switch_RightStick_Move";
+	case k_EInputActionOrigin_Switch_RightStick_Click: return "k_EInputActionOrigin_Switch_RightStick_Click";
+	case k_EInputActionOrigin_Switch_RightStick_DPadNorth: return "k_EInputActionOrigin_Switch_RightStick_DPadNorth";
+	case k_EInputActionOrigin_Switch_RightStick_DPadSouth: return "k_EInputActionOrigin_Switch_RightStick_DPadSouth";
+	case k_EInputActionOrigin_Switch_RightStick_DPadWest: return "k_EInputActionOrigin_Switch_RightStick_DPadWest";
+	case k_EInputActionOrigin_Switch_RightStick_DPadEast: return "k_EInputActionOrigin_Switch_RightStick_DPadEast";
+	case k_EInputActionOrigin_Switch_DPad_North: return "k_EInputActionOrigin_Switch_DPad_North";
+	case k_EInputActionOrigin_Switch_DPad_South: return "k_EInputActionOrigin_Switch_DPad_South";
+	case k_EInputActionOrigin_Switch_DPad_West: return "k_EInputActionOrigin_Switch_DPad_West";
+	case k_EInputActionOrigin_Switch_DPad_East: return "k_EInputActionOrigin_Switch_DPad_East";
+	case k_EInputActionOrigin_Switch_ProGyro_Move: return "k_EInputActionOrigin_Switch_ProGyro_Move";
+	case k_EInputActionOrigin_Switch_ProGyro_Pitch: return "k_EInputActionOrigin_Switch_ProGyro_Pitch";
+	case k_EInputActionOrigin_Switch_ProGyro_Yaw: return "k_EInputActionOrigin_Switch_ProGyro_Yaw";
+	case k_EInputActionOrigin_Switch_ProGyro_Roll: return "k_EInputActionOrigin_Switch_ProGyro_Roll";
+	case k_EInputActionOrigin_Switch_DPad_Move: return "k_EInputActionOrigin_Switch_DPad_Move";
+	case k_EInputActionOrigin_Switch_Reserved1: return "k_EInputActionOrigin_Switch_Reserved1";
+	case k_EInputActionOrigin_Switch_Reserved2: return "k_EInputActionOrigin_Switch_Reserved2";
+	case k_EInputActionOrigin_Switch_Reserved3: return "k_EInputActionOrigin_Switch_Reserved3";
+	case k_EInputActionOrigin_Switch_Reserved4: return "k_EInputActionOrigin_Switch_Reserved4";
+	case k_EInputActionOrigin_Switch_Reserved5: return "k_EInputActionOrigin_Switch_Reserved5";
+	case k_EInputActionOrigin_Switch_Reserved6: return "k_EInputActionOrigin_Switch_Reserved6";
+	case k_EInputActionOrigin_Switch_Reserved7: return "k_EInputActionOrigin_Switch_Reserved7";
+	case k_EInputActionOrigin_Switch_Reserved8: return "k_EInputActionOrigin_Switch_Reserved8";
+	case k_EInputActionOrigin_Switch_Reserved9: return "k_EInputActionOrigin_Switch_Reserved9";
+	case k_EInputActionOrigin_Switch_Reserved10: return "k_EInputActionOrigin_Switch_Reserved10";
+	case k_EInputActionOrigin_Switch_RightGyro_Move: return "k_EInputActionOrigin_Switch_RightGyro_Move";
+	case k_EInputActionOrigin_Switch_RightGyro_Pitch: return "k_EInputActionOrigin_Switch_RightGyro_Pitch";
+	case k_EInputActionOrigin_Switch_RightGyro_Yaw: return "k_EInputActionOrigin_Switch_RightGyro_Yaw";
+	case k_EInputActionOrigin_Switch_RightGyro_Roll: return "k_EInputActionOrigin_Switch_RightGyro_Roll";
+	case k_EInputActionOrigin_Switch_LeftGyro_Move: return "k_EInputActionOrigin_Switch_LeftGyro_Move";
+	case k_EInputActionOrigin_Switch_LeftGyro_Pitch: return "k_EInputActionOrigin_Switch_LeftGyro_Pitch";
+	case k_EInputActionOrigin_Switch_LeftGyro_Yaw: return "k_EInputActionOrigin_Switch_LeftGyro_Yaw";
+	case k_EInputActionOrigin_Switch_LeftGyro_Roll: return "k_EInputActionOrigin_Switch_LeftGyro_Roll";
+	case k_EInputActionOrigin_Switch_LeftGrip_Lower: return "k_EInputActionOrigin_Switch_LeftGrip_Lower";
+	case k_EInputActionOrigin_Switch_LeftGrip_Upper: return "k_EInputActionOrigin_Switch_LeftGrip_Upper";
+	case k_EInputActionOrigin_Switch_RightGrip_Lower: return "k_EInputActionOrigin_Switch_RightGrip_Lower";
+	case k_EInputActionOrigin_Switch_RightGrip_Upper: return "k_EInputActionOrigin_Switch_RightGrip_Upper";
+#if STEAM_VERSION > 153
+	case k_EInputActionOrigin_Switch_JoyConButton_N: return "k_EInputActionOrigin_Switch_JoyConButton_N";
+	case k_EInputActionOrigin_Switch_JoyConButton_E: return "k_EInputActionOrigin_Switch_JoyConButton_E";
+	case k_EInputActionOrigin_Switch_JoyConButton_S: return "k_EInputActionOrigin_Switch_JoyConButton_S";
+	case k_EInputActionOrigin_Switch_JoyConButton_W: return "k_EInputActionOrigin_Switch_JoyConButton_W";
+#endif
+	case k_EInputActionOrigin_Switch_Reserved15: return "k_EInputActionOrigin_Switch_Reserved15";
+	case k_EInputActionOrigin_Switch_Reserved16: return "k_EInputActionOrigin_Switch_Reserved16";
+	case k_EInputActionOrigin_Switch_Reserved17: return "k_EInputActionOrigin_Switch_Reserved17";
+	case k_EInputActionOrigin_Switch_Reserved18: return "k_EInputActionOrigin_Switch_Reserved18";
+	case k_EInputActionOrigin_Switch_Reserved19: return "k_EInputActionOrigin_Switch_Reserved19";
+	case k_EInputActionOrigin_Switch_Reserved20: return "k_EInputActionOrigin_Switch_Reserved20";
+#if STEAM_VERSION > 147
+	case k_EInputActionOrigin_PS5_X: return "k_EInputActionOrigin_PS5_X";
+	case k_EInputActionOrigin_PS5_Circle: return "k_EInputActionOrigin_PS5_Circle";
+	case k_EInputActionOrigin_PS5_Triangle: return "k_EInputActionOrigin_PS5_Triangle";
+	case k_EInputActionOrigin_PS5_Square: return "k_EInputActionOrigin_PS5_Square";
+	case k_EInputActionOrigin_PS5_LeftBumper: return "k_EInputActionOrigin_PS5_LeftBumper";
+	case k_EInputActionOrigin_PS5_RightBumper: return "k_EInputActionOrigin_PS5_RightBumper";
+	case k_EInputActionOrigin_PS5_Option: return "k_EInputActionOrigin_PS5_Option";
+	case k_EInputActionOrigin_PS5_Create: return "k_EInputActionOrigin_PS5_Create";
+	case k_EInputActionOrigin_PS5_Mute: return "k_EInputActionOrigin_PS5_Mute";
+	case k_EInputActionOrigin_PS5_LeftPad_Touch: return "k_EInputActionOrigin_PS5_LeftPad_Touch";
+	case k_EInputActionOrigin_PS5_LeftPad_Swipe: return "k_EInputActionOrigin_PS5_LeftPad_Swipe";
+	case k_EInputActionOrigin_PS5_LeftPad_Click: return "k_EInputActionOrigin_PS5_LeftPad_Click";
+	case k_EInputActionOrigin_PS5_LeftPad_DPadNorth: return "k_EInputActionOrigin_PS5_LeftPad_DPadNorth";
+	case k_EInputActionOrigin_PS5_LeftPad_DPadSouth: return "k_EInputActionOrigin_PS5_LeftPad_DPadSouth";
+	case k_EInputActionOrigin_PS5_LeftPad_DPadWest: return "k_EInputActionOrigin_PS5_LeftPad_DPadWest";
+	case k_EInputActionOrigin_PS5_LeftPad_DPadEast: return "k_EInputActionOrigin_PS5_LeftPad_DPadEast";
+	case k_EInputActionOrigin_PS5_RightPad_Touch: return "k_EInputActionOrigin_PS5_RightPad_Touch";
+	case k_EInputActionOrigin_PS5_RightPad_Swipe: return "k_EInputActionOrigin_PS5_RightPad_Swipe";
+	case k_EInputActionOrigin_PS5_RightPad_Click: return "k_EInputActionOrigin_PS5_RightPad_Click";
+	case k_EInputActionOrigin_PS5_RightPad_DPadNorth: return "k_EInputActionOrigin_PS5_RightPad_DPadNorth";
+	case k_EInputActionOrigin_PS5_RightPad_DPadSouth: return "k_EInputActionOrigin_PS5_RightPad_DPadSouth";
+	case k_EInputActionOrigin_PS5_RightPad_DPadWest: return "k_EInputActionOrigin_PS5_RightPad_DPadWest";
+	case k_EInputActionOrigin_PS5_RightPad_DPadEast: return "k_EInputActionOrigin_PS5_RightPad_DPadEast";
+	case k_EInputActionOrigin_PS5_CenterPad_Touch: return "k_EInputActionOrigin_PS5_CenterPad_Touch";
+	case k_EInputActionOrigin_PS5_CenterPad_Swipe: return "k_EInputActionOrigin_PS5_CenterPad_Swipe";
+	case k_EInputActionOrigin_PS5_CenterPad_Click: return "k_EInputActionOrigin_PS5_CenterPad_Click";
+	case k_EInputActionOrigin_PS5_CenterPad_DPadNorth: return "k_EInputActionOrigin_PS5_CenterPad_DPadNorth";
+	case k_EInputActionOrigin_PS5_CenterPad_DPadSouth: return "k_EInputActionOrigin_PS5_CenterPad_DPadSouth";
+	case k_EInputActionOrigin_PS5_CenterPad_DPadWest: return "k_EInputActionOrigin_PS5_CenterPad_DPadWest";
+	case k_EInputActionOrigin_PS5_CenterPad_DPadEast: return "k_EInputActionOrigin_PS5_CenterPad_DPadEast";
+	case k_EInputActionOrigin_PS5_LeftTrigger_Pull: return "k_EInputActionOrigin_PS5_LeftTrigger_Pull";
+	case k_EInputActionOrigin_PS5_LeftTrigger_Click: return "k_EInputActionOrigin_PS5_LeftTrigger_Click";
+	case k_EInputActionOrigin_PS5_RightTrigger_Pull: return "k_EInputActionOrigin_PS5_RightTrigger_Pull";
+	case k_EInputActionOrigin_PS5_RightTrigger_Click: return "k_EInputActionOrigin_PS5_RightTrigger_Click";
+	case k_EInputActionOrigin_PS5_LeftStick_Move: return "k_EInputActionOrigin_PS5_LeftStick_Move";
+	case k_EInputActionOrigin_PS5_LeftStick_Click: return "k_EInputActionOrigin_PS5_LeftStick_Click";
+	case k_EInputActionOrigin_PS5_LeftStick_DPadNorth: return "k_EInputActionOrigin_PS5_LeftStick_DPadNorth";
+	case k_EInputActionOrigin_PS5_LeftStick_DPadSouth: return "k_EInputActionOrigin_PS5_LeftStick_DPadSouth";
+	case k_EInputActionOrigin_PS5_LeftStick_DPadWest: return "k_EInputActionOrigin_PS5_LeftStick_DPadWest";
+	case k_EInputActionOrigin_PS5_LeftStick_DPadEast: return "k_EInputActionOrigin_PS5_LeftStick_DPadEast";
+	case k_EInputActionOrigin_PS5_RightStick_Move: return "k_EInputActionOrigin_PS5_RightStick_Move";
+	case k_EInputActionOrigin_PS5_RightStick_Click: return "k_EInputActionOrigin_PS5_RightStick_Click";
+	case k_EInputActionOrigin_PS5_RightStick_DPadNorth: return "k_EInputActionOrigin_PS5_RightStick_DPadNorth";
+	case k_EInputActionOrigin_PS5_RightStick_DPadSouth: return "k_EInputActionOrigin_PS5_RightStick_DPadSouth";
+	case k_EInputActionOrigin_PS5_RightStick_DPadWest: return "k_EInputActionOrigin_PS5_RightStick_DPadWest";
+	case k_EInputActionOrigin_PS5_RightStick_DPadEast: return "k_EInputActionOrigin_PS5_RightStick_DPadEast";
+	case k_EInputActionOrigin_PS5_DPad_North: return "k_EInputActionOrigin_PS5_DPad_North";
+	case k_EInputActionOrigin_PS5_DPad_South: return "k_EInputActionOrigin_PS5_DPad_South";
+	case k_EInputActionOrigin_PS5_DPad_West: return "k_EInputActionOrigin_PS5_DPad_West";
+	case k_EInputActionOrigin_PS5_DPad_East: return "k_EInputActionOrigin_PS5_DPad_East";
+	case k_EInputActionOrigin_PS5_Gyro_Move: return "k_EInputActionOrigin_PS5_Gyro_Move";
+	case k_EInputActionOrigin_PS5_Gyro_Pitch: return "k_EInputActionOrigin_PS5_Gyro_Pitch";
+	case k_EInputActionOrigin_PS5_Gyro_Yaw: return "k_EInputActionOrigin_PS5_Gyro_Yaw";
+	case k_EInputActionOrigin_PS5_Gyro_Roll: return "k_EInputActionOrigin_PS5_Gyro_Roll";
+	case k_EInputActionOrigin_PS5_DPad_Move: return "k_EInputActionOrigin_PS5_DPad_Move";
+#endif
+#if STEAM_VERSION > 153
+	case k_EInputActionOrigin_PS5_LeftGrip: return "k_EInputActionOrigin_PS5_LeftGrip";
+	case k_EInputActionOrigin_PS5_RightGrip: return "k_EInputActionOrigin_PS5_RightGrip";
+	case k_EInputActionOrigin_PS5_LeftFn: return "k_EInputActionOrigin_PS5_LeftFn";
+	case k_EInputActionOrigin_PS5_RightFn: return "k_EInputActionOrigin_PS5_RightFn";
+#endif
+#if STEAM_VERSION > 147
+	case k_EInputActionOrigin_PS5_Reserved5: return "k_EInputActionOrigin_PS5_Reserved5";
+	case k_EInputActionOrigin_PS5_Reserved6: return "k_EInputActionOrigin_PS5_Reserved6";
+	case k_EInputActionOrigin_PS5_Reserved7: return "k_EInputActionOrigin_PS5_Reserved7";
+	case k_EInputActionOrigin_PS5_Reserved8: return "k_EInputActionOrigin_PS5_Reserved8";
+	case k_EInputActionOrigin_PS5_Reserved9: return "k_EInputActionOrigin_PS5_Reserved9";
+	case k_EInputActionOrigin_PS5_Reserved10: return "k_EInputActionOrigin_PS5_Reserved10";
+	case k_EInputActionOrigin_PS5_Reserved11: return "k_EInputActionOrigin_PS5_Reserved11";
+	case k_EInputActionOrigin_PS5_Reserved12: return "k_EInputActionOrigin_PS5_Reserved12";
+	case k_EInputActionOrigin_PS5_Reserved13: return "k_EInputActionOrigin_PS5_Reserved13";
+	case k_EInputActionOrigin_PS5_Reserved14: return "k_EInputActionOrigin_PS5_Reserved14";
+	case k_EInputActionOrigin_PS5_Reserved15: return "k_EInputActionOrigin_PS5_Reserved15";
+	case k_EInputActionOrigin_PS5_Reserved16: return "k_EInputActionOrigin_PS5_Reserved16";
+	case k_EInputActionOrigin_PS5_Reserved17: return "k_EInputActionOrigin_PS5_Reserved17";
+	case k_EInputActionOrigin_PS5_Reserved18: return "k_EInputActionOrigin_PS5_Reserved18";
+	case k_EInputActionOrigin_PS5_Reserved19: return "k_EInputActionOrigin_PS5_Reserved19";
+	case k_EInputActionOrigin_PS5_Reserved20: return "k_EInputActionOrigin_PS5_Reserved20";
+#endif
+#if STEAM_VERSION > 151
+	case k_EInputActionOrigin_SteamDeck_A: return "k_EInputActionOrigin_SteamDeck_A";
+	case k_EInputActionOrigin_SteamDeck_B: return "k_EInputActionOrigin_SteamDeck_B";
+	case k_EInputActionOrigin_SteamDeck_X: return "k_EInputActionOrigin_SteamDeck_X";
+	case k_EInputActionOrigin_SteamDeck_Y: return "k_EInputActionOrigin_SteamDeck_Y";
+	case k_EInputActionOrigin_SteamDeck_L1: return "k_EInputActionOrigin_SteamDeck_L1";
+	case k_EInputActionOrigin_SteamDeck_R1: return "k_EInputActionOrigin_SteamDeck_R1";
+	case k_EInputActionOrigin_SteamDeck_Menu: return "k_EInputActionOrigin_SteamDeck_Menu";
+	case k_EInputActionOrigin_SteamDeck_View: return "k_EInputActionOrigin_SteamDeck_View";
+	case k_EInputActionOrigin_SteamDeck_LeftPad_Touch: return "k_EInputActionOrigin_SteamDeck_LeftPad_Touch";
+	case k_EInputActionOrigin_SteamDeck_LeftPad_Swipe: return "k_EInputActionOrigin_SteamDeck_LeftPad_Swipe";
+	case k_EInputActionOrigin_SteamDeck_LeftPad_Click: return "k_EInputActionOrigin_SteamDeck_LeftPad_Click";
+	case k_EInputActionOrigin_SteamDeck_LeftPad_DPadNorth: return "k_EInputActionOrigin_SteamDeck_LeftPad_DPadNorth";
+	case k_EInputActionOrigin_SteamDeck_LeftPad_DPadSouth: return "k_EInputActionOrigin_SteamDeck_LeftPad_DPadSouth";
+	case k_EInputActionOrigin_SteamDeck_LeftPad_DPadWest: return "k_EInputActionOrigin_SteamDeck_LeftPad_DPadWest";
+	case k_EInputActionOrigin_SteamDeck_LeftPad_DPadEast: return "k_EInputActionOrigin_SteamDeck_LeftPad_DPadEast";
+	case k_EInputActionOrigin_SteamDeck_RightPad_Touch: return "k_EInputActionOrigin_SteamDeck_RightPad_Touch";
+	case k_EInputActionOrigin_SteamDeck_RightPad_Swipe: return "k_EInputActionOrigin_SteamDeck_RightPad_Swipe";
+	case k_EInputActionOrigin_SteamDeck_RightPad_Click: return "k_EInputActionOrigin_SteamDeck_RightPad_Click";
+	case k_EInputActionOrigin_SteamDeck_RightPad_DPadNorth: return "k_EInputActionOrigin_SteamDeck_RightPad_DPadNorth";
+	case k_EInputActionOrigin_SteamDeck_RightPad_DPadSouth: return "k_EInputActionOrigin_SteamDeck_RightPad_DPadSouth";
+	case k_EInputActionOrigin_SteamDeck_RightPad_DPadWest: return "k_EInputActionOrigin_SteamDeck_RightPad_DPadWest";
+	case k_EInputActionOrigin_SteamDeck_RightPad_DPadEast: return "k_EInputActionOrigin_SteamDeck_RightPad_DPadEast";
+	case k_EInputActionOrigin_SteamDeck_L2_SoftPull: return "k_EInputActionOrigin_SteamDeck_L2_SoftPull";
+	case k_EInputActionOrigin_SteamDeck_L2: return "k_EInputActionOrigin_SteamDeck_L2";
+	case k_EInputActionOrigin_SteamDeck_R2_SoftPull: return "k_EInputActionOrigin_SteamDeck_R2_SoftPull";
+	case k_EInputActionOrigin_SteamDeck_R2: return "k_EInputActionOrigin_SteamDeck_R2";
+	case k_EInputActionOrigin_SteamDeck_LeftStick_Move: return "k_EInputActionOrigin_SteamDeck_LeftStick_Move";
+	case k_EInputActionOrigin_SteamDeck_L3: return "k_EInputActionOrigin_SteamDeck_L3";
+	case k_EInputActionOrigin_SteamDeck_LeftStick_DPadNorth: return "k_EInputActionOrigin_SteamDeck_LeftStick_DPadNorth";
+	case k_EInputActionOrigin_SteamDeck_LeftStick_DPadSouth: return "k_EInputActionOrigin_SteamDeck_LeftStick_DPadSouth";
+	case k_EInputActionOrigin_SteamDeck_LeftStick_DPadWest: return "k_EInputActionOrigin_SteamDeck_LeftStick_DPadWest";
+	case k_EInputActionOrigin_SteamDeck_LeftStick_DPadEast: return "k_EInputActionOrigin_SteamDeck_LeftStick_DPadEast";
+	case k_EInputActionOrigin_SteamDeck_LeftStick_Touch: return "k_EInputActionOrigin_SteamDeck_LeftStick_Touch";
+	case k_EInputActionOrigin_SteamDeck_RightStick_Move: return "k_EInputActionOrigin_SteamDeck_RightStick_Move";
+	case k_EInputActionOrigin_SteamDeck_R3: return "k_EInputActionOrigin_SteamDeck_R3";
+	case k_EInputActionOrigin_SteamDeck_RightStick_DPadNorth: return "k_EInputActionOrigin_SteamDeck_RightStick_DPadNorth";
+	case k_EInputActionOrigin_SteamDeck_RightStick_DPadSouth: return "k_EInputActionOrigin_SteamDeck_RightStick_DPadSouth";
+	case k_EInputActionOrigin_SteamDeck_RightStick_DPadWest: return "k_EInputActionOrigin_SteamDeck_RightStick_DPadWest";
+	case k_EInputActionOrigin_SteamDeck_RightStick_DPadEast: return "k_EInputActionOrigin_SteamDeck_RightStick_DPadEast";
+	case k_EInputActionOrigin_SteamDeck_RightStick_Touch: return "k_EInputActionOrigin_SteamDeck_RightStick_Touch";
+	case k_EInputActionOrigin_SteamDeck_L4: return "k_EInputActionOrigin_SteamDeck_L4";
+	case k_EInputActionOrigin_SteamDeck_R4: return "k_EInputActionOrigin_SteamDeck_R4";
+	case k_EInputActionOrigin_SteamDeck_L5: return "k_EInputActionOrigin_SteamDeck_L5";
+	case k_EInputActionOrigin_SteamDeck_R5: return "k_EInputActionOrigin_SteamDeck_R5";
+	case k_EInputActionOrigin_SteamDeck_DPad_Move: return "k_EInputActionOrigin_SteamDeck_DPad_Move";
+	case k_EInputActionOrigin_SteamDeck_DPad_North: return "k_EInputActionOrigin_SteamDeck_DPad_North";
+	case k_EInputActionOrigin_SteamDeck_DPad_South: return "k_EInputActionOrigin_SteamDeck_DPad_South";
+	case k_EInputActionOrigin_SteamDeck_DPad_West: return "k_EInputActionOrigin_SteamDeck_DPad_West";
+	case k_EInputActionOrigin_SteamDeck_DPad_East: return "k_EInputActionOrigin_SteamDeck_DPad_East";
+	case k_EInputActionOrigin_SteamDeck_Gyro_Move: return "k_EInputActionOrigin_SteamDeck_Gyro_Move";
+	case k_EInputActionOrigin_SteamDeck_Gyro_Pitch: return "k_EInputActionOrigin_SteamDeck_Gyro_Pitch";
+	case k_EInputActionOrigin_SteamDeck_Gyro_Yaw: return "k_EInputActionOrigin_SteamDeck_Gyro_Yaw";
+	case k_EInputActionOrigin_SteamDeck_Gyro_Roll: return "k_EInputActionOrigin_SteamDeck_Gyro_Roll";
+	case k_EInputActionOrigin_SteamDeck_Reserved1: return "k_EInputActionOrigin_SteamDeck_Reserved1";
+	case k_EInputActionOrigin_SteamDeck_Reserved2: return "k_EInputActionOrigin_SteamDeck_Reserved2";
+	case k_EInputActionOrigin_SteamDeck_Reserved3: return "k_EInputActionOrigin_SteamDeck_Reserved3";
+	case k_EInputActionOrigin_SteamDeck_Reserved4: return "k_EInputActionOrigin_SteamDeck_Reserved4";
+	case k_EInputActionOrigin_SteamDeck_Reserved5: return "k_EInputActionOrigin_SteamDeck_Reserved5";
+	case k_EInputActionOrigin_SteamDeck_Reserved6: return "k_EInputActionOrigin_SteamDeck_Reserved6";
+	case k_EInputActionOrigin_SteamDeck_Reserved7: return "k_EInputActionOrigin_SteamDeck_Reserved7";
+	case k_EInputActionOrigin_SteamDeck_Reserved8: return "k_EInputActionOrigin_SteamDeck_Reserved8";
+	case k_EInputActionOrigin_SteamDeck_Reserved9: return "k_EInputActionOrigin_SteamDeck_Reserved9";
+	case k_EInputActionOrigin_SteamDeck_Reserved10: return "k_EInputActionOrigin_SteamDeck_Reserved10";
+	case k_EInputActionOrigin_SteamDeck_Reserved11: return "k_EInputActionOrigin_SteamDeck_Reserved11";
+	case k_EInputActionOrigin_SteamDeck_Reserved12: return "k_EInputActionOrigin_SteamDeck_Reserved12";
+	case k_EInputActionOrigin_SteamDeck_Reserved13: return "k_EInputActionOrigin_SteamDeck_Reserved13";
+	case k_EInputActionOrigin_SteamDeck_Reserved14: return "k_EInputActionOrigin_SteamDeck_Reserved14";
+	case k_EInputActionOrigin_SteamDeck_Reserved15: return "k_EInputActionOrigin_SteamDeck_Reserved15";
+	case k_EInputActionOrigin_SteamDeck_Reserved16: return "k_EInputActionOrigin_SteamDeck_Reserved16";
+	case k_EInputActionOrigin_SteamDeck_Reserved17: return "k_EInputActionOrigin_SteamDeck_Reserved17";
+	case k_EInputActionOrigin_SteamDeck_Reserved18: return "k_EInputActionOrigin_SteamDeck_Reserved18";
+	case k_EInputActionOrigin_SteamDeck_Reserved19: return "k_EInputActionOrigin_SteamDeck_Reserved19";
+	case k_EInputActionOrigin_SteamDeck_Reserved20: return "k_EInputActionOrigin_SteamDeck_Reserved20";
+#endif
+	case k_EInputActionOrigin_Count: return "k_EInputActionOrigin_Count";
+	case k_EInputActionOrigin_MaximumPossibleValue: return "k_EInputActionOrigin_MaximumPossibleValue";
+	}
+#endif
+	return "INVALID";
+}
+
+void UInput::Initialize(FSubsystemCollectionBase& Collection)
+{
+	Super::Initialize(Collection);
+
+#if WITH_STEAMCORE
+	InputActionOrigin.Empty();
+	for (int32 i = 0; i < EInputActionOrigin::k_EInputActionOrigin_Count; i++)
+	{
+		EInputActionOrigin EnumValue = static_cast<EInputActionOrigin>(i);
+		InputActionOrigin.Add(i, EnumToString(EnumValue));
+	}
+#endif
+}
+
+void UInput::Deinitialize()
+{
+	Super::Deinitialize();
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+//		Steam API Functions
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ //
+bool UInput::Init()
+{
+	LogSteamCoreVerbose("");
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+#if UE_VERSION_NEWER_THAN(5, 0, 3)
+		return SteamInput()->Init(false);
+#else
+		return SteamInput()->Init();
+#endif
+	}
+
+#endif
+	return false;
+}
+
+bool UInput::Shutdown()
+{
+	LogSteamCoreVerbose("");
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		return SteamInput()->Shutdown();
+	}
+#endif
+
+	return false;
+}
+
+int32 UInput::GetConnectedControllers(TArray<FInputHandle>& OutHandles)
+{
+	LogSteamCoreVeryVerbose("");
+
+	OutHandles.Empty();
+	int32 Result = 0;
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		TArray<InputHandle_t> Handles;
+		Handles.SetNum(STEAM_INPUT_MAX_COUNT);
+
+		Result = SteamInput()->GetConnectedControllers(Handles.GetData());
+
+		for (int32 i = 0; i < Result; i++)
+		{
+			OutHandles.Add(Handles[i]);
+		}
+	}
+#endif
+
+	return Result;
+}
+
+FInputActionSetHandle UInput::GetActionSetHandle(FString ActionSetName)
+{
+	LogSteamCoreVeryVerbose("");
+
+	FInputActionSetHandle Handle;
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		Handle = SteamInput()->GetActionSetHandle(TCHAR_TO_UTF8(*ActionSetName));
+	}
+#endif
+
+	return Handle;
+}
+
+void UInput::ActivateActionSet(FInputHandle Handle, FInputActionSetHandle ActionSetHandle)
+{
+	LogSteamCoreVerbose("");
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		SteamInput()->ActivateActionSet(Handle, ActionSetHandle);
+	}
+#endif
+}
+
+FInputActionSetHandle UInput::GetCurrentActionSet(FInputHandle Handle)
+{
+	LogSteamCoreVeryVerbose("");
+
+	FInputActionSetHandle FHandle;
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		FHandle = SteamInput()->GetCurrentActionSet(Handle);
+	}
+#endif
+
+	return FHandle;
+}
+
+void UInput::ActivateActionSetLayer(FInputHandle Handle, FInputActionSetHandle ActionSetLayerHandle)
+{
+	LogSteamCoreVerbose("");
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		SteamInput()->ActivateActionSetLayer(Handle, ActionSetLayerHandle);
+	}
+#endif
+}
+
+void UInput::DeactivateActionSetLayer(FInputHandle Handle, FInputActionSetHandle ActionSetLayerHandle)
+{
+	LogSteamCoreVerbose("");
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		SteamInput()->DeactivateActionSetLayer(Handle, ActionSetLayerHandle);
+	}
+#endif
+}
+
+void UInput::DeactivateAllActionSetLayers(FInputHandle Handle)
+{
+	LogSteamCoreVerbose("");
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		SteamInput()->DeactivateAllActionSetLayers(Handle);
+	}
+#endif
+}
+
+int32 UInput::GetActiveActionSetLayers(FInputHandle Handle, TArray<FInputActionSetHandle>& OutData)
+{
+	LogSteamCoreVeryVerbose("");
+
+	int32 Result = 0;
+	OutData.Empty();
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		TArray<InputActionSetHandle_t> DataArray;
+		DataArray.SetNum(STEAM_INPUT_MAX_ACTIVE_LAYERS);
+
+		Result = SteamInput()->GetActiveActionSetLayers(Handle, DataArray.GetData());
+
+		for (int32 i = 0; i < Result; i++)
+		{
+			OutData.Add(DataArray[i]);
+		}
+	}
+#endif
+
+	return Result;
+}
+
+FInputDigitalActionHandle UInput::GetDigitalActionHandle(FString PszActionName)
+{
+	LogSteamCoreVeryVerbose("");
+
+	FInputDigitalActionHandle Handle;
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		Handle = SteamInput()->GetDigitalActionHandle(TCHAR_TO_UTF8(*PszActionName));
+	}
+#endif
+
+	return Handle;
+}
+
+FInputDigitalActionData UInput::GetDigitalActionData(FInputHandle Handle, FInputDigitalActionHandle DigitalActionHandle)
+{
+	LogSteamCoreVeryVerbose("");
+
+	FInputDigitalActionData FHandle = {};
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		FHandle = SteamInput()->GetDigitalActionData(Handle, DigitalActionHandle);
+	}
+#endif
+
+	return FHandle;
+}
+
+int32 UInput::GetDigitalActionOrigins(FInputHandle Handle, FInputActionSetHandle ActionSetHandle, FInputDigitalActionHandle DigitalActionHandle, TArray<int32>& OutOrigins)
+{
+	LogSteamCoreVeryVerbose("");
+
+	int32 Result = 0;
+	OutOrigins.Empty();
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		TArray<EInputActionOrigin> DataArray;
+		DataArray.SetNum(STEAM_INPUT_MAX_ORIGINS);
+
+		Result = SteamInput()->GetDigitalActionOrigins(Handle, ActionSetHandle, DigitalActionHandle, DataArray.GetData());
+
+		for (int32 i = 0; i < Result; i++)
+		{
+			OutOrigins.Add(static_cast<int32>(DataArray[i]));
+		}
+	}
+#endif
+
+	return Result;
+}
+
+FInputAnalogActionHandle UInput::GetAnalogActionHandle(FString PszActionName)
+{
+	LogSteamCoreVeryVerbose("");
+
+	FInputAnalogActionHandle Handle;
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		Handle = SteamInput()->GetAnalogActionHandle(TCHAR_TO_UTF8(*PszActionName));
+	}
+#endif
+
+	return Handle;
+}
+
+FInputAnalogActionData UInput::GetAnalogActionData(FInputHandle Handle, FInputAnalogActionHandle AnalogActionHandle)
+{
+	LogSteamCoreVeryVerbose("");
+
+	FInputAnalogActionData FHandle = {};
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		FHandle = SteamInput()->GetAnalogActionData(Handle, AnalogActionHandle);
+	}
+#endif
+	return FHandle;
+}
+
+int32 UInput::GetAnalogActionOrigins(FInputHandle Handle, FInputActionSetHandle ActionSetHandle, FInputAnalogActionHandle AnalogActionHandle, TArray<int32>& OutOrigins)
+{
+	LogSteamCoreVeryVerbose("");
+
+	int32 Result = 0;
+	OutOrigins.Empty();
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		TArray<EInputActionOrigin> DataArray;
+		DataArray.SetNum(STEAM_INPUT_MAX_ORIGINS);
+
+		Result = SteamInput()->GetAnalogActionOrigins(Handle, ActionSetHandle, AnalogActionHandle, DataArray.GetData());
+
+		for (int32 i = 0; i < Result; i++)
+		{
+			OutOrigins.Add(static_cast<int32>(DataArray[i]));
+		}
+	}
+#endif
+	return Result;
+}
+
+FString UInput::GetGlyphForActionOrigin(int32 Origin)
+{
+	LogSteamCoreVeryVerbose("");
+
+	FString Result;
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+#if UE_VERSION_NEWER_THAN(5,0,3)
+		Result = SteamInput()->GetGlyphForActionOrigin_Legacy(static_cast<EInputActionOrigin>(Origin));
+#else
+		Result = SteamInput()->GetGlyphForActionOrigin(static_cast<EInputActionOrigin>(Origin));
+#endif
+	}
+#endif
+
+	return Result;
+}
+
+FString UInput::GetStringForActionOrigin(int32 Origin)
+{
+	LogSteamCoreVeryVerbose("");
+
+#if WITH_STEAMCORE
+	return SteamInput() ? TCHAR_TO_UTF8(SteamInput()->GetStringForActionOrigin(static_cast<EInputActionOrigin>(Origin))) : "";
+#endif
+	return FString();
+}
+
+void UInput::StopAnalogActionMomentum(FInputHandle Handle, FInputAnalogActionHandle EAction)
+{
+	LogSteamCoreVeryVerbose("");
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		SteamInput()->StopAnalogActionMomentum(Handle, EAction);
+	}
+#endif
+}
+
+FInputMotionData UInput::GetMotionData(FInputHandle Handle)
+{
+	LogSteamCoreVeryVerbose("");
+
+	FInputMotionData FHandle = {};
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		FHandle = SteamInput()->GetMotionData(Handle);
+	}
+#endif
+
+	return FHandle;
+}
+
+void UInput::TriggerVibration(FInputHandle Handle, float LeftSpeed, float RightSpeed)
+{
+	LogSteamCoreVerbose("");
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		SteamInput()->TriggerVibration(Handle, LeftSpeed, RightSpeed);
+	}
+#endif
+}
+
+void UInput::SetLEDColor(FInputHandle Handle, uint8 ColorR, uint8 ColorG, uint8 ColorB, ESteamCoreInputLEDFlag Flags)
+{
+	LogSteamCoreVerbose("");
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		SteamInput()->SetLEDColor(Handle, ColorR, ColorG, ColorB, static_cast<int32>(Flags));
+	}
+#endif
+}
+
+void UInput::TriggerHapticPulse(FInputHandle Handle, ESteamCoreControllerPad TargetPad, float DurationMicroSec)
+{
+	LogSteamCoreVerbose("");
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+#if UE_VERSION_NEWER_THAN(5, 0, 3)
+		SteamInput()->Legacy_TriggerHapticPulse(Handle, static_cast<ESteamControllerPad>(TargetPad), DurationMicroSec);
+#else
+		SteamInput()->TriggerHapticPulse(Handle, static_cast<ESteamControllerPad>(TargetPad), DurationMicroSec);
+#endif
+	}
+#endif
+}
+
+void UInput::TriggerRepeatedHapticPulse(FInputHandle Handle, ESteamCoreControllerPad TargetPad, float DurationMicroSec, float OffMicroSec, int32 Repeat, uint8 Flags)
+{
+	LogSteamCoreVerbose("");
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+#if UE_VERSION_NEWER_THAN(5,0,3)
+		SteamInput()->Legacy_TriggerHapticPulse(Handle, static_cast<ESteamControllerPad>(TargetPad), DurationMicroSec);
+#else
+		SteamInput()->TriggerRepeatedHapticPulse(Handle, static_cast<ESteamControllerPad>(TargetPad), DurationMicroSec, OffMicroSec, Repeat, Flags);
+#endif
+	}
+#endif
+}
+
+bool UInput::ShowBindingPanel(FInputHandle Handle)
+{
+	LogSteamCoreVerbose("");
+
+	bool bResult = false;
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		bResult = SteamInput()->ShowBindingPanel(Handle);
+	}
+#endif
+
+	return bResult;
+}
+
+ESteamCoreInputType UInput::GetInputTypeForHandle(FInputHandle Handle)
+{
+	LogSteamCoreVeryVerbose("");
+
+	ESteamCoreInputType Result = ESteamCoreInputType::k_ESteamInputType_Unknown;
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		Result = static_cast<ESteamCoreInputType>(SteamInput()->GetInputTypeForHandle(Handle));
+	}
+#endif
+	return Result;
+}
+
+FInputHandle UInput::GetControllerForGamepadIndex(int32 Index)
+{
+	LogSteamCoreVeryVerbose("");
+
+	FInputHandle Handle;
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		Handle = SteamInput()->GetControllerForGamepadIndex(Index);
+	}
+#endif
+	return Handle;
+}
+
+int32 UInput::GetGamepadIndexForController(FInputHandle Handle)
+{
+	LogSteamCoreVeryVerbose("");
+
+	int32 Result = 0;
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		Result = SteamInput()->GetGamepadIndexForController(Handle);
+	}
+#endif
+
+	return Result;
+}
+
+FString UInput::GetStringForXboxOrigin(ESteamCoreXboxOrigin Origin)
+{
+	LogSteamCoreVeryVerbose("");
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		return UTF8_TO_TCHAR(SteamInput()->GetStringForXboxOrigin(static_cast<EXboxOrigin>(Origin)));
+	}
+#endif
+	return FString();
+}
+
+FString UInput::GetGlyphForXboxOrigin(ESteamCoreXboxOrigin Origin)
+{
+	LogSteamCoreVeryVerbose("");
+
+	FString Result;
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		Result = SteamInput()->GetGlyphForXboxOrigin(static_cast<EXboxOrigin>(Origin));
+	}
+#endif
+
+	return Result;
+}
+
+int32 UInput::GetActionOriginFromXboxOrigin(FInputHandle Handle, ESteamCoreXboxOrigin Origin)
+{
+	LogSteamCoreVeryVerbose("");
+
+	int32 Result = 0;
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		Result = static_cast<int32>(SteamInput()->GetActionOriginFromXboxOrigin(Handle, static_cast<EXboxOrigin>(Origin)));
+	}
+#endif
+	return Result;
+}
+
+int32 UInput::TranslateActionOrigin(ESteamCoreInputType DestinationInputType, int32 SourceOrigin)
+{
+	LogSteamCoreVerbose("");
+
+	int32 Result = 0;
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		Result = static_cast<int32>(SteamInput()->TranslateActionOrigin(static_cast<ESteamInputType>(DestinationInputType), static_cast<EInputActionOrigin>(SourceOrigin)));
+	}
+#endif
+	return Result;
+}
+
+bool UInput::GetDeviceBindingRevision(FInputHandle Handle, int32& OutMajor, int32& OutMinor)
+{
+	LogSteamCoreVeryVerbose("");
+
+	bool bResult = false;
+	OutMajor = 0;
+	OutMinor = 0;
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		bResult = SteamInput()->GetDeviceBindingRevision(Handle, &OutMajor, &OutMinor);
+	}
+#endif
+
+	return bResult;
+}
+
+int32 UInput::GetRemotePlaySessionID(FInputHandle Handle)
+{
+	LogSteamCoreVeryVerbose("");
+
+	int32 Result = 0;
+
+#if WITH_STEAMCORE
+	if (SteamInput())
+	{
+		Result = SteamInput()->GetRemotePlaySessionID(Handle);
+	}
+#endif
+
+	return Result;
+}
+
+TArray<FString> UInput::GetInputActionOrigins()
+{
+	TArray<FString> Result;
+
+#if WITH_STEAMCORE
+	for (int32 i = 0; i < EInputActionOrigin::k_EInputActionOrigin_Count; i++)
+	{
+		Result.Add(EnumToString(static_cast<EInputActionOrigin>(i)));
+	}
+#endif
+	
+	return Result;
+}
+
+int32 UInput::GetInputActionOriginAsInteger(FString Value)
+{
+	for (int32 i=0; i<InputActionOrigin.Num(); i++)
+	{
+		if (InputActionOrigin[i] == Value)
+			return i;
+	}
+
+	return INDEX_NONE;
+}
+
+FString UInput::GetInputActionOriginAsString(int32 Id)
+{
+#if WITH_STEAMCORE
+	return EnumToString(static_cast<EInputActionOrigin>(Id));
+#else
+	return ""
+#endif
+}
