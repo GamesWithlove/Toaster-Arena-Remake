@@ -37,9 +37,9 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 /NOEXP
-"E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
 "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/OVRLipSync/Intermediate/Build/Win64/x64/UnrealEditor/Development/OVRLipSyncEditor/Module.OVRLipSyncEditor.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/OVRLipSync/Intermediate/Build/Win64/x64/UnrealEditor/Development/OVRLipSyncEditor/Default.rc2.res"
+"../Intermediate/Build/Win64/x64/UnrealEditor/Development/Default.rc2.res"
 "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/OVRLipSync/ThirdParty/Lib/Win64/OVRLipSyncShim.lib"
 "../Plugins/Runtime/AndroidPermission/Intermediate/Build/Win64/x64/UnrealEditor/Development/AndroidPermission/UnrealEditor-AndroidPermission.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Core/UnrealEditor-Core.lib"

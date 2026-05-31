@@ -1,0 +1,32 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloadec3a1d9fa54a9v13\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\pakloader\\module.pakloader.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloadec3a1d9fa54a9v13\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\pakloader\\definitions.pakloader.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloadec3a1d9fa54a9v13\\intermediate\\build\\win64\\unrealeditor\\inc\\pakloader\\uht\\pakdownloader.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloadec3a1d9fa54a9v13\\source\\pakloader\\public\\pakdownloader.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\engine\\classes\\kismet\\blueprintasyncactionbase.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\blueprintasyncactionbase.generated.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\online\\http\\public\\interfaces\\ihttprequest.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\online\\http\\public\\interfaces\\ihttpbase.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\online\\http\\public\\interfaces\\ihttpresponse.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\online\\http\\public\\interfaces\\ihttpresponsecodes.inl",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\online\\http\\public\\interfaces\\ihttpresponsecodes.inl",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloadec3a1d9fa54a9v13\\intermediate\\build\\win64\\unrealeditor\\inc\\pakloader\\uht\\pakdownloader.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloadec3a1d9fa54a9v13\\intermediate\\build\\win64\\unrealeditor\\inc\\pakloader\\uht\\pakloader.init.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloadec3a1d9fa54a9v13\\intermediate\\build\\win64\\unrealeditor\\inc\\pakloader\\uht\\pakloaderlibrary.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloadec3a1d9fa54a9v13\\source\\pakloader\\public\\pakloaderlibrary.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloadec3a1d9fa54a9v13\\intermediate\\build\\win64\\unrealeditor\\inc\\pakloader\\uht\\pakloaderlibrary.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloadec3a1d9fa54a9v13\\intermediate\\build\\win64\\unrealeditor\\inc\\pakloader\\uht\\pakloadersubsystem.gen.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloadec3a1d9fa54a9v13\\source\\pakloader\\public\\pakloadersubsystem.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloadec3a1d9fa54a9v13\\intermediate\\build\\win64\\unrealeditor\\inc\\pakloader\\uht\\pakloadersubsystem.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\pakloadec3a1d9fa54a9v13\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\pakloader\\permoduleinline.gen.cpp",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
