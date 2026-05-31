@@ -1,0 +1,10 @@
+{
+	"OutputFiles": [
+		"../../../arm64/UnrealGame/Development/EasyMultiSave/Module.EasyMultiSave.1.cpp.o",
+		"../../../arm64/UnrealGame/Development/EasyMultiSave/Module.EasyMultiSave.2.cpp.o",
+		"../../../arm64/UnrealGame/Development/EasyMultiSave/Module.EasyMultiSave.3.cpp.o",
+		"../../../arm64/UnrealGame/Development/EasyMultiSave/Module.EasyMultiSave.1.cpp.o",
+		"../../../arm64/UnrealGame/Development/EasyMultiSave/Module.EasyMultiSave.2.cpp.o",
+		"../../../arm64/UnrealGame/Development/EasyMultiSave/Module.EasyMultiSave.3.cpp.o"
+	]
+}

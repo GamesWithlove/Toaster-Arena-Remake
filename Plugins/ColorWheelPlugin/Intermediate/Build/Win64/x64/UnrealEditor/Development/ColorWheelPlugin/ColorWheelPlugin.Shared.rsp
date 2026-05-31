@@ -6,6 +6,7 @@
 /I "../Intermediate/Build/Win64/UnrealEditor/Inc/ImageCore/UHT"
 /I "Runtime/ImageCore/Public"
 /I "Runtime/ApplicationCore/Public"
+/I "../Intermediate/Build/Win64/x64/UnrealEditor/Development/RHI/Gen"
 /I "Runtime/RHI/Public"
 /I "../Intermediate/Build/Win64/UnrealEditor/Inc/CoreUObject/UHT"
 /I "../Intermediate/Build/Win64/UnrealEditor/Inc/CoreUObject/VerseVMBytecode"
@@ -287,7 +288,7 @@
 /I "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/ColorWheelPlugin/Intermediate/Build/Win64/UnrealEditor/Inc/ColorWheelPlugin/UHT"
 /I "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/ColorWheelPlugin/Source/ColorWheelPlugin/Public"
 /I "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/ColorWheelPlugin/Source"
-/I "E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd"
+/I "../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd"
 /external:W0
 /external:I "ThirdParty/GuidelinesSupportLibrary/GSL-1144/include"
 /external:I "ThirdParty/AtomicQueue"

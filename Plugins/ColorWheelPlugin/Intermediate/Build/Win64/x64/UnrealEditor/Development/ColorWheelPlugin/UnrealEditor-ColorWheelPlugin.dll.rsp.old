@@ -36,9 +36,9 @@
 /FUNCTIONPADMIN:6
 /NOIMPLIB
 /NOEXP
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/ColorWheelPlugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ColorWheelPlugin/Module.ColorWheelPlugin.cpp.obj"
-"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/ColorWheelPlugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ColorWheelPlugin/Default.rc2.res"
+"E:/Ue4_projects/Toaster-Arena-Remake/Intermediate/Build/Win64/x64/Toaster_rebootEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/ColorWheelPlugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ColorWheelPlugin/Module.ColorWheelPlugin.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/ColorWheelPlugin/Intermediate/Build/Win64/x64/UnrealEditor/Development/ColorWheelPlugin/Default.rc2.res"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Core/UnrealEditor-Core.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/ApplicationCore/UnrealEditor-ApplicationCore.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/CoreUObject/UnrealEditor-CoreUObject.lib"
@@ -74,6 +74,6 @@
 "imm32.lib"
 "uiautomationcore.lib"
 "DXGI.lib"
-/OUT:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/ColorWheelPlugin/Binaries/Win64/UnrealEditor-ColorWheelPlugin.dll"
-/PDB:"E:/Ue4_projects/Toaster-Arena-Remake 5.7/Plugins/ColorWheelPlugin/Binaries/Win64/UnrealEditor-ColorWheelPlugin.pdb"
+/OUT:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/ColorWheelPlugin/Binaries/Win64/UnrealEditor-ColorWheelPlugin.dll"
+/PDB:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/ColorWheelPlugin/Binaries/Win64/UnrealEditor-ColorWheelPlugin.pdb"
 /ignore:4078
