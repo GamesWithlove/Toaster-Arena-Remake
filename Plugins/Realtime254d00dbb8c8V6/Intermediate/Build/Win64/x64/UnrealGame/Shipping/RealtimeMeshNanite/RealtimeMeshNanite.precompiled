@@ -1,0 +1,10 @@
+{
+	"OutputFiles": [
+		"Module.RealtimeMeshNanite.cpp.obj",
+		"RealtimeMeshNaniteISPC.ispc_avx512skx.obj",
+		"RealtimeMeshNaniteISPC.ispc_avx2.obj",
+		"RealtimeMeshNaniteISPC.ispc_avx.obj",
+		"RealtimeMeshNaniteISPC.ispc_sse4.obj",
+		"RealtimeMeshNaniteISPC.ispc.obj"
+	]
+}

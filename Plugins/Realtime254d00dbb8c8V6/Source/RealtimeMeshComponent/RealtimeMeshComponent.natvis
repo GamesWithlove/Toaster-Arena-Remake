@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+	<Type Name="RealtimeMesh::FRealtimeMeshElementType">
+		<DisplayString Condition="NumDatums &lt; 1 || NumDatums &gt; 8 || Type == ERealtimeMeshDatumType::Unknown">Invalid</DisplayString>
+		<DisplayString Condition="NumDatums == 1 &amp;&amp; Type == ERealtimeMeshDatumType::RGB10A2">RGB10A2</DisplayString>
+		<DisplayString>{Type,en}{(int32)NumDatums}</DisplayString>
+	</Type>
+	<Type Name="RealtimeMesh::FRealtimeMeshBufferLayout">
+		<DisplayString Condition="ElementType.NumDatums &lt; 1 || ElementType.NumDatums &gt; 8 || ElementType.Type == ERealtimeMeshDatumType::Unknown || NumElements &lt; 1">Invalid</DisplayString>
+		<DisplayString>{ElementType}x{NumElements}</DisplayString>
+	</Type>
+	<Type Name="RealtimeMesh::FRealtimeMeshElementTypeDefinition">
+		<DisplayString Condition="bIsValid">{VertexType,en} | {IndexType,en} | {PixelFormat,en}</DisplayString>
+		<DisplayString>Invalid</DisplayString>
+	</Type>
+	<Type Name="RealtimeMesh::FRealtimeMeshBufferLayoutDefinition">
+		<DisplayString Condition="bIsValid">{Layout,en} ({TypeDefinition,en})</DisplayString>
+		<DisplayString>Invalid</DisplayString>
+	</Type>
+	<Type Name="FRealtimeMeshStreamKey">
+		<DisplayString Condition="StreamName.ComparisonIndex.Value != 0 || StreamType != ERealtimeMeshStreamType::Unknown">{StreamName}({StreamType,en})</DisplayString>
+		<DisplayString>Invalid</DisplayString>
+	</Type>
+	
+	<Type Name="RealtimeMesh::NatVisHelpers::TRawVisualizer&lt;*,2&gt;">
+		<DisplayString>{{X:{X}, Y:{Y}}}</DisplayString>
+	</Type>
+	<Type Name="RealtimeMesh::NatVisHelpers::TRawVisualizer&lt;*,3&gt;">
+		<DisplayString>{{X:{X}, Y:{Y}, Z:{Z}}}</DisplayString>
+	</Type>
+	<Type Name="RealtimeMesh::NatVisHelpers::TRawVisualizer&lt;*,4&gt;">
+		<DisplayString>{{X:{X}, Y:{Y}, Z:{Z}, W:{W}}}</DisplayString>
+	</Type>
+
+	<Type Name="RealtimeMesh::NatVisHelpers::TRowVisualizer&lt;*,*&gt;">
+		<DisplayString>{Elements},na</DisplayString>
+	</Type>
+
+	<Type Name="RealtimeMesh::FRealtimeMeshStream">
+		<Intrinsic Name="GetNumDatums" Expression="LayoutDefinition.Layout.ElementType.NumDatums" />
+		<Intrinsic Name="GetNumElements" Expression="LayoutDefinition.Layout.NumElements" />
+
+		<Intrinsic Name="IsUInt8Base" Expression="LayoutDefinition.Layout.ElementType.Type == ERealtimeMeshDatumType::UInt8" />
+		<Intrinsic Name="IsInt8Base" Expression="LayoutDefinition.Layout.ElementType.Type == ERealtimeMeshDatumType::Int8" />
+		<Intrinsic Name="Is8BitBase" Expression="IsUInt8Base() || IsInt8Base()" />
+
+		<Intrinsic Name="IsUInt16Base" Expression="LayoutDefinition.Layout.ElementType.Type == ERealtimeMeshDatumType::UInt16" />
+		<Intrinsic Name="IsInt16Base" Expression="LayoutDefinition.Layout.ElementType.Type == ERealtimeMeshDatumType::Int16" />
+		<Intrinsic Name="Is16BitBase" Expression="IsUInt16Base() || IsInt16Base()" />
+
+		<Intrinsic Name="IsUInt32Base" Expression="LayoutDefinition.Layout.ElementType.Type == ERealtimeMeshDatumType::UInt32" />
+		<Intrinsic Name="IsInt32Base" Expression="LayoutDefinition.Layout.ElementType.Type == ERealtimeMeshDatumType::Int32" />
+		<Intrinsic Name="Is32BitBase" Expression="IsUInt32Base() || IsInt32Base()" />
+		
+		<Intrinsic Name="IsHalfBase" Expression="LayoutDefinition.Layout.ElementType.Type == ERealtimeMeshDatumType::Half" />
+		<Intrinsic Name="IsFloatBase" Expression="LayoutDefinition.Layout.ElementType.Type == ERealtimeMeshDatumType::Float" />
+		<Intrinsic Name="IsDoubleBase" Expression="LayoutDefinition.Layout.ElementType.Type == ERealtimeMeshDatumType::Double" />
+		<Intrinsic Name="IsFloatingPoint" Expression="IsHalfBase() || IsFloatBase() || IsDoubleBase()" />
+
+
+		
+		<DisplayString Condition="!LayoutDefinition.bIsValid">Invalid</DisplayString>
+		<DisplayString Condition="ArrayNum &lt; 0">Invalid</DisplayString>
+		<DisplayString Condition="ArrayMax &lt; ArrayNum">Invalid</DisplayString>
+		<DisplayString Condition="ArrayNum == 0">Type:{LayoutDefinition.Layout} Empty</DisplayString>
+		<DisplayString Condition="ArrayMax &gt;= ArrayNum">{StreamKey} Type:{LayoutDefinition.Layout} Num:{ArrayNum}</DisplayString>
+
+		<Expand>
+			<CustomListItems>
+				<Variable Name="RowIndex" InitialValue="0"/>
+				<Variable Name="ElementIndex" InitialValue="0"/>
+				<Variable Name="CurrentRowPtr" InitialValue="Allocator.Data"/>
+				<Loop>
+					<Break Condition="RowIndex == ArrayNum"/>
+					<Exec>CurrentRowPtr = Allocator.Data + (RowIndex * LayoutDefinition.Stride)</Exec>
+					<Item>RealtimeMesh::GetRowAsString(*this, RowIndex)</Item>
+					<Exec>RowIndex += 1</Exec>
+				</Loop>
+			</CustomListItems>
+		</Expand>
+	
+
+
+
+	</Type>
+
+	<Type Name="FRealtimeMeshStreamRange">
+			<DisplayString Condition="Vertices.IsEmpty() && Indices.IsEmpty()">Empty</DisplayString>
+			<DisplayString>V[{GetMinVertex()}..{GetMaxVertex()}] I[{GetMinIndex()}..{GetMaxIndex()}]</DisplayString>
+	</Type>
+
+	<Type Name="RealtimeMesh::FRealtimeMeshBounds">
+			<DisplayString Condition="!HasBounds()">Invalid</DisplayString>
+			<DisplayString>Origin:{GetBounds().Origin} Extent:{GetBounds().BoxExtent}</DisplayString>
+	</Type>
+
+	<Type Name="FRealtimeMeshLODKey">
+			<DisplayString Condition="Index() &lt; 0">Invalid</DisplayString>
+			<DisplayString>{ToString()}</DisplayString>
+	</Type>
+
+	<Type Name="FRealtimeMeshSectionGroupKey">
+			<DisplayString Condition="!IsValid()">Invalid</DisplayString>
+			<DisplayString>{ToString()}</DisplayString>
+	</Type>
+
+	<Type Name="FRealtimeMeshSectionKey">
+			<DisplayString Condition="!IsValid()">Invalid</DisplayString>
+			<DisplayString>{ToString()}</DisplayString>
+	</Type>
+
+	<Type Name="RealtimeMesh::FRealtimeMeshSection">
+			<DisplayString>{Key.ToString()} Range:{StreamRange}</DisplayString>
+	</Type>
+
+	<Type Name="RealtimeMesh::FRealtimeMeshSectionGroup">
+			<DisplayString>{Key.ToString()} Streams:{Streams.Num()} Sections:{Sections.Num()}</DisplayString>
+	</Type>
+
+	<Type Name="RealtimeMesh::FRealtimeMeshLOD">
+			<DisplayString>{Key.ToString()} SectionGroups:{SectionGroups.Num()}</DisplayString>
+	</Type>
+
+	<Type Name="RealtimeMesh::FRealtimeMesh">
+			<DisplayString>LODs:{LODs.Num()}</DisplayString>
+	</Type>	
+</AutoVisualizer>
