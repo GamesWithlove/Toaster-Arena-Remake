@@ -1,0 +1,12 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.conplugin.cpp.obj": [
+			"conplugin.init.gen.cpp.obj",
+			"Expandedpc.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"conplugin.cpp.obj",
+			"Expandedpc.cpp.obj"
+		]
+	}
+}

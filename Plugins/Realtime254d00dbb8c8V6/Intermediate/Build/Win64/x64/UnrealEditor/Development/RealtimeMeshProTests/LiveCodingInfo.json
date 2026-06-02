@@ -1,0 +1,12 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.RealtimeMeshProTests.gen.cpp.obj": [
+			"RealtimeMeshProTests.init.gen.cpp.obj",
+			"RealtimeMeshProTest_NaniteBasicRawData.gen.cpp.obj",
+			"RealtimeMeshProTest_NaniteFrequentUpdates.gen.cpp.obj",
+			"RealtimeMeshProTest_NaniteManualClusters.gen.cpp.obj",
+			"RealtimeMeshProTest_NanitePrebuiltData.gen.cpp.obj"
+		]
+	}
+}

@@ -1,0 +1,8 @@
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Toaster_mod_plugin/Intermediate/Build/Linux/x64/UnrealEditor/Development/ToasterGame/Module.ToasterGame.cpp.o"
+ -soname="libUnrealEditor-ToasterGame.so"
+ -rpath="${ORIGIN}/../../../Engine/Plugins/FX/Niagara/Binaries/Linux"
+ -rpath-link="E:\Ue4_projects\Toaster-Arena-Remake\Plugins\Toaster_mod_plugin\Binaries\Linux"
+ -L"D:/Unreal engine/UE_TA_5.2/UnrealEngine/Engine/Binaries/Linux"
+ -L"D:/Unreal engine/UE_TA_5.2/UnrealEngine/Engine/Plugins/FX/Niagara/Binaries/Linux"
+ --start-group
+ --end-group

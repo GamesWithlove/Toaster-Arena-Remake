@@ -1,0 +1,14 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.RealtimeMeshNanite.cpp.obj": [
+			"PerModuleInline.gen.cpp.obj",
+			"RealtimeMeshNanite.cpp.obj",
+			"RealtimeMeshNaniteBuilder.cpp.obj",
+			"RealtimeMeshNaniteCluster.cpp.obj",
+			"RealtimeMeshNaniteIndexEncoder.cpp.obj",
+			"RealtimeMeshNaniteProxy.cpp.obj",
+			"RealtimeMeshNaniteResources.cpp.obj"
+		]
+	}
+}

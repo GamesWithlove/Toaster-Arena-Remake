@@ -1,0 +1,58 @@
+{
+	"FileVersion": 3,
+	"Version": 50,
+	"VersionName": "5.3.2",
+	"FriendlyName": "Realtime Mesh Component Pro",
+	"Description": "A component allowing for rendering and interacting with runtime generated geometry.",
+	"Category": "Rendering",
+	"CreatedBy": "Chris Conway (Koderz)",
+	"CreatedByURL": "https://github.com/Koderz",
+	"DocsURL": "https://realtimemesh.koderz.io/",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/b8fb43b8e89648fbb44797b3851317fb",
+	"SupportURL": "https://github.com/TriAxis-Games/RealtimeMeshComponent/issues",
+	"EngineVersion": "5.7.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "RealtimeMeshComponent",
+			"Type": "Runtime",
+			"LoadingPhase": "PostConfigInit"
+		},
+		{
+			"Name": "RealtimeMeshExt",
+			"Type": "Runtime",
+			"LoadingPhase": "PostConfigInit"
+		},
+		{
+			"Name": "RealtimeMeshTests",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "RealtimeMeshEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "RealtimeMeshExamples",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "RealtimeMeshSpatial",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "RealtimeMeshNanite",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "RealtimeMeshProTests",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}

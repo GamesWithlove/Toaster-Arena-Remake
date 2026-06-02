@@ -1,0 +1,27 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.RealtimeMeshComponent.gen.1.cpp.obj": [
+			"RealtimeMesh.gen.cpp.obj",
+			"RealtimeMeshActor.gen.cpp.obj",
+			"RealtimeMeshBasicShapeTools.gen.cpp.obj",
+			"RealtimeMeshCardRepresentation.gen.cpp.obj",
+			"RealtimeMeshCollisionLibrary.gen.cpp.obj"
+		],
+		"Module.RealtimeMeshComponent.gen.2.cpp.obj": [
+			"RealtimeMeshComponent.gen.cpp.obj",
+			"RealtimeMeshComponent.init.gen.cpp.obj",
+			"RealtimeMeshDistanceField.gen.cpp.obj",
+			"RealtimeMeshLibrary.gen.cpp.obj",
+			"RealtimeMeshNoExportTypes.gen.cpp.obj",
+			"RealtimeMeshSimple.gen.cpp.obj"
+		],
+		"Module.RealtimeMeshComponent.gen.3.cpp.obj": [
+			"RealtimeMeshSubsystem.gen.cpp.obj",
+			"RealtimeMeshThreadingSubsystem.gen.cpp.obj"
+		],
+		"Module.RealtimeMeshComponent.gen.4.cpp.obj": [
+			"RealtimeMeshBlueprintMeshBuilder.gen.cpp.obj"
+		]
+	}
+}

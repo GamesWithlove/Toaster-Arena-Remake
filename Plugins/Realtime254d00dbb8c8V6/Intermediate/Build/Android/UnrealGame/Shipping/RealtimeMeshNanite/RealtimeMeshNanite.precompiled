@@ -1,0 +1,12 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\a\\UnrealGame\\Shipping\\RealtimeMeshNanite\\Module.RealtimeMeshNanite.cpp.o",
+		"..\\..\\..\\a\\UnrealGame\\Shipping\\RealtimeMeshNanite\\Module.RealtimeMeshNanite.cpp.o",
+		"..\\..\\..\\x\\UnrealGame\\Shipping\\RealtimeMeshNanite\\Module.RealtimeMeshNanite.cpp.o",
+		"..\\..\\..\\x\\UnrealGame\\Shipping\\RealtimeMeshNanite\\Module.RealtimeMeshNanite.cpp.o",
+		"..\\..\\..\\a\\UnrealGame\\Shipping\\RealtimeMeshNanite\\RealtimeMeshNaniteISPC.ispc.o",
+		"..\\..\\..\\a\\UnrealGame\\Shipping\\RealtimeMeshNanite\\RealtimeMeshNaniteISPC.ispc.o",
+		"..\\..\\..\\x\\UnrealGame\\Shipping\\RealtimeMeshNanite\\RealtimeMeshNaniteISPC.ispc.o",
+		"..\\..\\..\\x\\UnrealGame\\Shipping\\RealtimeMeshNanite\\RealtimeMeshNaniteISPC.ispc.o"
+	]
+}

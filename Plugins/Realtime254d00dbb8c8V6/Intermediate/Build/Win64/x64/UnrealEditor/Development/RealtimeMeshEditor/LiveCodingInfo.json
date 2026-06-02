@@ -1,0 +1,11 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.RealtimeMeshEditor.cpp.obj": [
+			"PerModuleInline.gen.cpp.obj",
+			"RealtimeMeshComponentDetailsCustomization.cpp.obj",
+			"RealtimeMeshEditor.cpp.obj",
+			"RealtimeMeshMenuExtension.cpp.obj"
+		]
+	}
+}

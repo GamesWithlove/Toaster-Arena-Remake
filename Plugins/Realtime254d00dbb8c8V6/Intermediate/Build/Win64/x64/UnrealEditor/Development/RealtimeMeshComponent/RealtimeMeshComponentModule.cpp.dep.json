@@ -1,0 +1,24 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\private\\realtimemeshcomponentmodule.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\realtimemeshcomponent\\definitions.realtimemeshcomponent.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\realtimemeshcomponentmodule.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\projects\\public\\interfaces\\ipluginmanager.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\projects\\public\\plugindescriptor.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\projects\\public\\custombuildsteps.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\projects\\public\\localizationdescriptor.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\projects\\public\\moduledescriptor.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\projects\\public\\plugindisalloweddescriptor.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\projects\\public\\pluginreferencedescriptor.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\projects\\public\\versescope.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\realtimemeshcore.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\interface\\core\\realtimemeshinterfacefwd.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

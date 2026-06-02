@@ -1,0 +1,30 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\private\\renderproxy\\realtimemeshvertexfactory.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\realtimemeshcomponent\\definitions.realtimemeshcomponent.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\renderproxy\\realtimemeshvertexfactory.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\renderproxy\\realtimemeshgpubuffer.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\interface\\core\\realtimemeshdatatypes.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\interface\\core\\realtimemeshinterfacefwd.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\interface\\core\\realtimemeshdatastream.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\interface\\core\\realtimemeshstreamrange.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\interface\\core\\realtimemeshdataconversion.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\templates\\makeunsigned.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\engine\\public\\speedtreewind.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\renderer\\public\\meshmaterialshader.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\renderer\\public\\materialshader.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\realtimemeshcomponentmodule.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\profilingdebugging\\loadtimetracker.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\profilingdebugging\\scopedtimers.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\serialization\\loadtimetrace.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\renderproxy\\realtimemeshproxyshared.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\renderer\\public\\meshdrawshaderbindings.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

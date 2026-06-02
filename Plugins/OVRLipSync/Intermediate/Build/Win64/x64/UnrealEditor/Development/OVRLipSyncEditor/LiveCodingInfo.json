@@ -1,0 +1,9 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.OVRLipSyncEditor.cpp.obj": [
+			"PerModuleInline.gen.cpp.obj",
+			"OVRLipSyncEditorModule.cpp.obj"
+		]
+	}
+}

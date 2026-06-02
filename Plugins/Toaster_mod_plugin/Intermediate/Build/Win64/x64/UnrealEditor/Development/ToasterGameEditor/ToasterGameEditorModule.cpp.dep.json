@@ -1,0 +1,37 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\toaster_mod_plugin\\source\\toastergameeditor\\private\\toastergameeditormodule.cpp",
+        "ProvidedModule": "",
+        "PCH": "e:\\ue4_projects\\toaster-arena-remake 5.7\\intermediate\\build\\win64\\x64\\toaster_rebooteditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\toaster_mod_plugin\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\toastergameeditor\\definitions.toastergameeditor.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\toaster_mod_plugin\\source\\toastergameeditor\\public\\toastergameeditormodule.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\toaster_mod_plugin\\source\\toastergameeditor\\private\\hitscanassettypeactions.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\developer\\assettools\\public\\assettypeactions_base.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\developer\\assettools\\public\\iassettools.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\developer\\assettools\\public\\assettypecategories.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\developer\\assettools\\public\\iassettypeactions.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\developer\\merge\\public\\merge.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\editor\\unrealed\\classes\\thumbnailrendering\\thumbnailmanager.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\editor\\unrealed\\classes\\thumbnailrendering\\thumbnailrenderer.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\thumbnailrenderer.generated.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\thumbnailmanager.generated.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\editor\\unrealed\\public\\automatedassetimportdata.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealed\\uht\\automatedassetimportdata.generated.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\assettools\\uht\\iassettools.generated.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\developer\\assettools\\public\\assettoolsmodule.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\editor\\unrealed\\public\\toolkits\\simpleasseteditor.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\toaster_mod_plugin\\source\\toastergame\\public\\hitscantracerdefinition.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\toaster_mod_plugin\\intermediate\\build\\win64\\unrealeditor\\inc\\toastergame\\uht\\hitscantracerdefinition.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\toaster_mod_plugin\\source\\toastergame\\public\\hitscanimpactdefinition.h",
+            "e:\\ue4_projects\\toaster-arena-remake 5.7\\plugins\\toaster_mod_plugin\\intermediate\\build\\win64\\unrealeditor\\inc\\toastergame\\uht\\hitscanimpactdefinition.generated.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\runtime\\assetregistry\\public\\assetregistry\\assetregistrymodule.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\runtime\\assetregistry\\public\\assetregistry\\iassetregistry.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\source\\runtime\\coreuobject\\public\\misc\\assetregistryinterface.h",
+            "d:\\unreal engine\\ue_5.7\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\assetregistry\\uht\\iassetregistry.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

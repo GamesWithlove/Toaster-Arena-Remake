@@ -1,0 +1,42 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.2",
+	"FriendlyName": "SkeletalMeshMerger",
+	"Description": "",
+	"Category": "ACF Tools",
+	"CreatedBy": "Pask",
+	"CreatedByURL": "www.darktowerinteractive.com",
+	"DocsURL": "https://www.wikiful.com/@ACF/ascent-combat-framework-wiki/skeletal-mesh-merger",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/c64f52f6fa974f1daca7a416397001de",
+	"SupportURL": "https://discord.com/invite/ahqhXnJ",
+	"EngineVersion": "5.7.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "SkeletalMeshMerger",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac"
+			]
+		},
+		{
+			"Name": "RuntimeMerger",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "SkeletalMerging",
+			"Enabled": true
+		}
+	]
+}

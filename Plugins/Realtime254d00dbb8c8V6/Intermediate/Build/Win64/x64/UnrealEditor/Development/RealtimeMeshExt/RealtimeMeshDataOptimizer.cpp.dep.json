@@ -1,0 +1,28 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshext\\private\\realtimemeshdataoptimizer.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\realtimemeshext\\definitions.realtimemeshext.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshext\\public\\realtimemeshdataoptimizer.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\interface\\core\\realtimemeshdatastream.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\interface\\core\\realtimemeshstreamrange.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\interface\\core\\realtimemeshdatatypes.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\interface\\core\\realtimemeshinterfacefwd.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\interface\\core\\realtimemeshdataconversion.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\templates\\makeunsigned.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\unrealeditor\\inc\\realtimemeshext\\uht\\realtimemeshdataoptimizer.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\realtimemeshcomponentmodule.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\mesh\\realtimemeshblueprintmeshbuilder.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\interface\\core\\realtimemeshbuilder.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\templates\\chooseclass.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\unrealeditor\\inc\\realtimemeshcomponent\\uht\\realtimemeshblueprintmeshbuilder.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\thirdparty\\meshoptimizer\\meshoptimizer.h",
+            "c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\ucrt\\assert.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

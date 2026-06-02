@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "5.2",
+	"EngineAssociation": "{7426580F-4308-3A51-C356-5698A14442DF}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -11,7 +11,8 @@
 			"AdditionalDependencies": [
 				"Engine",
 				"CoreUObject",
-				"UMG"
+				"UMG",
+				"Water"
 			]
 		}
 	],
@@ -93,11 +94,6 @@
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/ce01648a2cde41338991bb855a624ffa"
 		},
 		{
-			"Name": "ReplaySystem",
-			"Enabled": false,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/1b0cbe31111d482baaf531d187651e7f"
-		},
-		{
 			"Name": "SoundUtilities",
 			"Enabled": true
 		},
@@ -122,47 +118,7 @@
 			"Enabled": true
 		},
 		{
-			"Name": "AppleImageUtils",
-			"Enabled": false
-		},
-		{
-			"Name": "AlembicImporter",
-			"Enabled": false
-		},
-		{
-			"Name": "AppleMoviePlayer",
-			"Enabled": false
-		},
-		{
-			"Name": "AvfMedia",
-			"Enabled": false
-		},
-		{
-			"Name": "CLionSourceCodeAccess",
-			"Enabled": false
-		},
-		{
 			"Name": "CodeLiteSourceCodeAccess",
-			"Enabled": false
-		},
-		{
-			"Name": "CryptoKeys",
-			"Enabled": false
-		},
-		{
-			"Name": "DatasmithContent",
-			"Enabled": false
-		},
-		{
-			"Name": "GoogleCloudMessaging",
-			"Enabled": false
-		},
-		{
-			"Name": "GooglePAD",
-			"Enabled": false
-		},
-		{
-			"Name": "LauncherChunkInstaller",
 			"Enabled": false
 		},
 		{
@@ -229,15 +185,15 @@
 		},
 		{
 			"Name": "ModelingToolsEditorMode",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "ScriptableToolsEditorMode",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "ScriptableToolsFramework",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "StaticMeshEditorModeling",
@@ -342,14 +298,6 @@
 			]
 		},
 		{
-			"Name": "PlasticSourceControl",
-			"Enabled": false
-		},
-		{
-			"Name": "PlatformCrypto",
-			"Enabled": false
-		},
-		{
 			"Name": "VirtualHeightfieldMesh",
 			"Enabled": true
 		},
@@ -358,7 +306,61 @@
 			"Enabled": true
 		},
 		{
-			"Name": "EditorDiscordRichPresence",
+			"Name": "LowEntryExtStdLib",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/846c2ad08f164f45b0335ecebf85361e"
+		},
+		{
+			"Name": "QuickMergeSkeletalMesh",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/46b05d77fa164177918c5476a26bc408"
+		},
+		{
+			"Name": "PhysicsControl",
+			"Enabled": true
+		},
+		{
+			"Name": "RawInput",
+			"Enabled": true
+		},
+		{
+			"Name": "KB_Multi_Thread_E",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/61e5b2f5c9164a13906bf074a8af56d9"
+		},
+		{
+			"Name": "AnimationBudgetAllocator",
+			"Enabled": true
+		},
+		{
+			"Name": "EasyMultiSave",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/7232621c23174bbbbb64c7bfb6583f6f"
+		},
+		{
+			"Name": "BlockoutToolsPlugin",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/d337b97aca8947a893526964e179acfd"
+		},
+		{
+			"Name": "glTFRuntime",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/d2ed3709933d4608a3a8dd746cbc045d"
+		},
+		{
+			"Name": "VictoryBPLibrary",
+			"Enabled": true
+		},
+		{
+			"Name": "VaRest",
+			"Enabled": true
+		},
+		{
+			"Name": "Locomotor",
+			"Enabled": true
+		},
+		{
+			"Name": "ControlRigPhysics",
 			"Enabled": true
 		},
 		{

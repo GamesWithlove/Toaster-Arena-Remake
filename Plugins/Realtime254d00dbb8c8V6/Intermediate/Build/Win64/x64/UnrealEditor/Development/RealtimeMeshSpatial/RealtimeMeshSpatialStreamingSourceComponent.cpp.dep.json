@@ -1,0 +1,23 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshspatial\\private\\realtimemeshspatialstreamingsourcecomponent.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\realtimemeshspatial\\definitions.realtimemeshspatial.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshspatial\\public\\realtimemeshspatialstreamingsourcecomponent.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshspatial\\public\\realtimemeshspatialstreamingsource.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\unrealeditor\\inc\\realtimemeshspatial\\uht\\realtimemeshspatialstreamingsourcecomponent.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshspatial\\public\\realtimemeshspatialstreamingsubsystem.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshspatial\\public\\realtimemeshspatialstreamingstate.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshspatial\\public\\realtimemeshspatialcomponentlocation.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\unrealeditor\\inc\\realtimemeshspatial\\uht\\realtimemeshspatialcomponentlocation.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\interface\\core\\realtimemeshfuture.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\unrealeditor\\inc\\realtimemeshspatial\\uht\\realtimemeshspatialstreamingstate.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\unrealeditor\\inc\\realtimemeshspatial\\uht\\realtimemeshspatialstreamingsubsystem.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

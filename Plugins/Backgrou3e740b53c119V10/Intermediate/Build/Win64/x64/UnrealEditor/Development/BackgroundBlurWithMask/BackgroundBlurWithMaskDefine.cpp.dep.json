@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\backgrou3e740b53c119v10\\source\\backgroundfblurwithmask\\private\\backgroundblurwithmaskdefine.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\backgrou3e740b53c119v10\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\backgroundblurwithmask\\definitions.backgroundblurwithmask.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\backgrou3e740b53c119v10\\source\\backgroundfblurwithmask\\public\\backgroundblurwithmaskdefine.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\backgrou3e740b53c119v10\\intermediate\\build\\win64\\unrealeditor\\inc\\backgroundblurwithmask\\uht\\backgroundblurwithmaskdefine.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

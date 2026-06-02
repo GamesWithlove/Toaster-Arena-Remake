@@ -1,0 +1,14 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.KB_Multi_Thread_E.cpp.obj": [
+			"KB_Multi_Thread_E.init.gen.cpp.obj",
+			"KB_Multi_Thread_E_AsyncNode1.gen.cpp.obj",
+			"KB_Multi_Thread_E_AsyncNode2.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"KB_Multi_Thread_E.cpp.obj",
+			"KB_Multi_Thread_E_AsyncNode1.cpp.obj",
+			"KB_Multi_Thread_E_AsyncNode2.cpp.obj"
+		]
+	}
+}

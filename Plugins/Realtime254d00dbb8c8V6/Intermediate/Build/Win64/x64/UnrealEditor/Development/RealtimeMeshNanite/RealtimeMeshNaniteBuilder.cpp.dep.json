@@ -1,0 +1,42 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshnanite\\private\\realtimemeshnanitebuilder.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\realtimemeshnanite\\definitions.realtimemeshnanite.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshnanite\\public\\realtimemeshnanitebuilder.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshnanite\\public\\realtimemeshnaniteresources.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\mesh\\realtimemeshnaniteresourcesinterface.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\realtimemeshcore.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\interface\\core\\realtimemeshinterfacefwd.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\engine\\public\\rendering\\naniteresources.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\engine\\public\\growonlyspanallocator.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\rendercore\\public\\unifiedbuffer.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\rendercore\\public\\rendergraphresources.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\rhi\\public\\rhitransientresourceallocator.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\rendercore\\public\\rendergraphparameter.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\rendercore\\public\\rendergraphresources.inl",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\misc\\memoryreadstream.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\shaders\\shared\\nanitedefinitions.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\realtimemeshcomponentmodule.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\algo\\foreach.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\math\\bounds.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshnanite\\private\\realtimemeshgeometryencoding.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshnanite\\private\\realtimemeshnanitebuildercore.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshnanite\\private\\realtimemeshnanitecluster.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshnanite\\public\\realtimemeshnaniteindexencoder.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshnanite\\public\\realtimemeshnaniteutilities.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshnanite\\private\\realtimemeshnanitezigzagstream.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshnanite\\private\\realtimemeshnanitebitwriter.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshnanite\\private\\realtimemeshnanitematerialencoding.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshnanite\\private\\realtimemeshnanitepagewriter.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\containers\\staticbitarray.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\engine\\internal\\nanite\\nanitefixupchunk.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\realtimemeshnanite\\realtimemeshnaniteispc.ispc.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

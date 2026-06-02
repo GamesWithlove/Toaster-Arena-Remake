@@ -1,0 +1,16 @@
+{
+	"OutputFiles": [
+		"..\\..\\..\\a\\UnrealGame\\Development\\EasyMultiSave\\Module.EasyMultiSave.1.cpp.o",
+		"..\\..\\..\\a\\UnrealGame\\Development\\EasyMultiSave\\Module.EasyMultiSave.2.cpp.o",
+		"..\\..\\..\\a\\UnrealGame\\Development\\EasyMultiSave\\Module.EasyMultiSave.3.cpp.o",
+		"..\\..\\..\\a\\UnrealGame\\Development\\EasyMultiSave\\Module.EasyMultiSave.1.cpp.o",
+		"..\\..\\..\\a\\UnrealGame\\Development\\EasyMultiSave\\Module.EasyMultiSave.2.cpp.o",
+		"..\\..\\..\\a\\UnrealGame\\Development\\EasyMultiSave\\Module.EasyMultiSave.3.cpp.o",
+		"..\\..\\..\\x\\UnrealGame\\Development\\EasyMultiSave\\Module.EasyMultiSave.1.cpp.o",
+		"..\\..\\..\\x\\UnrealGame\\Development\\EasyMultiSave\\Module.EasyMultiSave.2.cpp.o",
+		"..\\..\\..\\x\\UnrealGame\\Development\\EasyMultiSave\\Module.EasyMultiSave.3.cpp.o",
+		"..\\..\\..\\x\\UnrealGame\\Development\\EasyMultiSave\\Module.EasyMultiSave.1.cpp.o",
+		"..\\..\\..\\x\\UnrealGame\\Development\\EasyMultiSave\\Module.EasyMultiSave.2.cpp.o",
+		"..\\..\\..\\x\\UnrealGame\\Development\\EasyMultiSave\\Module.EasyMultiSave.3.cpp.o"
+	]
+}

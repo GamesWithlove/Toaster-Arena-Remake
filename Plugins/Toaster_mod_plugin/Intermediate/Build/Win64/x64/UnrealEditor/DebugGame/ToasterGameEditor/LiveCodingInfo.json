@@ -1,0 +1,13 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.ToasterGameEditor.cpp.obj": [
+			"HitscanAssetFactories.gen.cpp.obj",
+			"K2Node_SpawnPooledActor.gen.cpp.obj",
+			"ToasterGameEditor.init.gen.cpp.obj",
+			"HitscanAssetFactories.cpp.obj",
+			"K2Node_SpawnPooledActor.cpp.obj",
+			"ToasterGameEditorModule.cpp.obj"
+		]
+	}
+}

@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-ToasterGameEditor-Win64-DebugGame.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"E:\Ue4_projects\Toaster-Arena-Remake\Intermediate\Build\Win64\x64\Toaster_rebootEditor\DebugGame\UnrealEd\SharedPCH.UnrealEd.NonOptimized.ShadowErrors.InclOrderUnreal5_0.h.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\Toaster_mod_plugin\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ToasterGameEditor\Module.ToasterGameEditor.cpp.obj"
+"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\Toaster_mod_plugin\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ToasterGameEditor\Default.rc2.res"
+/OUT:"E:\Ue4_projects\Toaster-Arena-Remake\Plugins\Toaster_mod_plugin\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\ToasterGameEditor\UnrealEditor-ToasterGameEditor-Win64-DebugGame.lib"

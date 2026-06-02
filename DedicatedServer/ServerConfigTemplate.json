@@ -1,0 +1,40 @@
+{
+	"DedicatedServerName": "My New Dedicated Server",
+	"DedicatedServerPassword": "",
+	"DedicatedServerOwner": "Server Host ",
+	"DedicatedServerLimits": "",
+	"DedicatedServerMaxPlayers": 32,
+	"BannedPlayersSteamID": [
+		"0",
+		"1",
+		"2"
+	],
+	"ModeratorsSteamID": [
+		"0",
+		"1",
+		"2"
+	],
+	"AdminsSteamID": [
+		"0",
+		"1",
+		"2"
+	],
+	"AllowWhiteListedMaps": false,
+	"WhitelistedMaps": [
+		"Empty",
+		"Empty",
+		"Empty"
+	],
+	"AllowWhiteListedModes": false,
+	"WhitelistedModes": [
+		"Empty",
+		"Empty",
+		"Empty"
+	],
+	"LobbyUMap": "LVL_Lobby",
+	"LobbyBuilderMap": "",
+	"MOTD": "Welcome to the Toaster Arena Dedicated Server",
+	"MOTDTimerSeconds": 1800,
+	"Rules": "Behave and keep it friendly |Respect others |No Toxic behaviour |Have Fun",
+	"TickRate": "60"
+}
