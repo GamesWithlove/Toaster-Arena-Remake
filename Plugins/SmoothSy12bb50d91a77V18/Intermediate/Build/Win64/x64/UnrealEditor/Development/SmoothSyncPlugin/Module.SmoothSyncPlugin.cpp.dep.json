@@ -50,7 +50,14 @@
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\smoothsy12bb50d91a77v18\\intermediate\\build\\win64\\unrealeditor\\inc\\smoothsyncplugin\\uht\\smoothsync.generated.h",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\smoothsy12bb50d91a77v18\\intermediate\\build\\win64\\unrealeditor\\inc\\smoothsyncplugin\\uht\\smoothsyncplugin.init.gen.cpp",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\smoothsy12bb50d91a77v18\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\smoothsyncplugin\\permoduleinline.gen.cpp",
-            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl"
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\smoothsy12bb50d91a77v18\\source\\smoothsyncplugin\\private\\smoothsync.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\smoothsy12bb50d91a77v18\\source\\smoothsyncplugin\\public\\state.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\engine\\classes\\engine\\worldcomposition.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\worldcomposition.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\smoothsy12bb50d91a77v18\\source\\smoothsyncplugin\\private\\smoothsyncplugin.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\smoothsy12bb50d91a77v18\\source\\smoothsyncplugin\\public\\smoothsyncplugin.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\smoothsy12bb50d91a77v18\\source\\smoothsyncplugin\\private\\state.cpp"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

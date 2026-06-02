@@ -37,12 +37,12 @@
 /NOIMPLIB
 /NOEXP
 /NATVIS:"../Intermediate/Build/Win64/x64/UnrealEditor/Development/GeometryCore/GeometryCore.natvis"
-"../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/SharedPCH.UnrealEd.Cpp20.h.obj"
-"../Plugins/Marketplace/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/Module.VictoryBPLibrary.cpp.obj"
-"../Plugins/Marketplace/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/VictoryBPLibrary.cpp.obj"
-"../Plugins/Marketplace/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/RamaColorPicker.cpp.obj"
-"../Plugins/Marketplace/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/VictoryBPFunctionLibrary.cpp.obj"
-"../Plugins/Marketplace/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/VictoryBPFunctionLibrary_WinOS.cpp.obj"
+"../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/Module.VictoryBPLibrary.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/VictoryBPLibrary.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/RamaColorPicker.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/VictoryBPFunctionLibrary.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/VictoryBPFunctionLibrary_WinOS.cpp.obj"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Default.rc2.res"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/CoreUObject/UnrealEditor-CoreUObject.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Engine/UnrealEditor-Engine.lib"
@@ -89,6 +89,6 @@
 "imm32.lib"
 "uiautomationcore.lib"
 "DXGI.lib"
-/OUT:"../Plugins/Marketplace/VictoryBPLibrary57/Binaries/Win64/UnrealEditor-VictoryBPLibrary.dll"
-/PDB:"../Plugins/Marketplace/VictoryBPLibrary57/Binaries/Win64/UnrealEditor-VictoryBPLibrary.pdb"
+/OUT:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VictoryBPLibrary57/Binaries/Win64/UnrealEditor-VictoryBPLibrary.dll"
+/PDB:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VictoryBPLibrary57/Binaries/Win64/UnrealEditor-VictoryBPLibrary.pdb"
 /ignore:4078

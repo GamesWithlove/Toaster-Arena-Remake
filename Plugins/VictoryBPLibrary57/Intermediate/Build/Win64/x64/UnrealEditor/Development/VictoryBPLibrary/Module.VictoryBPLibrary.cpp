@@ -3,3 +3,7 @@
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VictoryBPLibrary57/Intermediate/Build/Win64/UnrealEditor/Inc/VictoryBPLibrary/UHT/VictoryBPFunctionLibrary.gen.cpp"
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VictoryBPLibrary57/Intermediate/Build/Win64/UnrealEditor/Inc/VictoryBPLibrary/UHT/VictoryBPLibrary.init.gen.cpp"
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VictoryBPLibrary57/Intermediate/Build/Win64/x64/UnrealEditor/Development/VictoryBPLibrary/PerModuleInline.gen.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VictoryBPLibrary57/Source/VictoryBPLibrary/Private/VictoryBPLibrary.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VictoryBPLibrary57/Source/VictoryBPLibrary/Public/RamaColorPicker.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VictoryBPLibrary57/Source/VictoryBPLibrary/Public/VictoryBPFunctionLibrary.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VictoryBPLibrary57/Source/VictoryBPLibrary/Public/VictoryBPFunctionLibrary_WinOS.cpp"

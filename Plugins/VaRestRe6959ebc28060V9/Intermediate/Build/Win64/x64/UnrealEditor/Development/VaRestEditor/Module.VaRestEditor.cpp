@@ -2,3 +2,5 @@
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/UnrealEditor/Inc/VaRestEditor/UHT/VaRestEditor.init.gen.cpp"
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/UnrealEditor/Inc/VaRestEditor/UHT/VaRest_BreakJson.gen.cpp"
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/x64/UnrealEditor/Development/VaRestEditor/PerModuleInline.gen.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VaRestRe6959ebc28060V9/Source/VaRestEditor/Private/VaRestEditor.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VaRestRe6959ebc28060V9/Source/VaRestEditor/Private/VaRest_BreakJson.cpp"

@@ -37,10 +37,10 @@
 /NOIMPLIB
 /NOEXP
 /NATVIS:"../Intermediate/Build/Win64/x64/UnrealEditor/Development/RenderCore/RenderCore.natvis"
-"../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/SharedPCH.UnrealEd.Cpp20.h.obj"
-"../Plugins/Marketplace/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/x64/UnrealEditor/Development/VaRestEditor/Module.VaRestEditor.cpp.obj"
-"../Plugins/Marketplace/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/x64/UnrealEditor/Development/VaRestEditor/VaRestEditor.cpp.obj"
-"../Plugins/Marketplace/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/x64/UnrealEditor/Development/VaRestEditor/VaRest_BreakJson.cpp.obj"
+"../Intermediate/Build/Win64/x64/UnrealEditor/Development/UnrealEd/SharedPCH.UnrealEd.Project.ValApi.ValExpApi.Cpp20.InclOrderUnreal5_4.h.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/x64/UnrealEditor/Development/VaRestEditor/Module.VaRestEditor.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/x64/UnrealEditor/Development/VaRestEditor/VaRestEditor.cpp.obj"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/x64/UnrealEditor/Development/VaRestEditor/VaRest_BreakJson.cpp.obj"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Default.rc2.res"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/CoreUObject/UnrealEditor-CoreUObject.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Engine/UnrealEditor-Engine.lib"
@@ -61,7 +61,7 @@
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Settings/UnrealEditor-Settings.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/RenderCore/UnrealEditor-RenderCore.lib"
 "../Intermediate/Build/Win64/x64/UnrealEditor/Development/Core/UnrealEditor-Core.lib"
-"../Plugins/Marketplace/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/x64/UnrealEditor/Development/VaRest/UnrealEditor-VaRest.lib"
+"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VaRestRe6959ebc28060V9/Intermediate/Build/Win64/x64/UnrealEditor/Development/VaRest/UnrealEditor-VaRest.lib"
 "delayimp.lib"
 "wininet.lib"
 "rpcrt4.lib"
@@ -87,6 +87,6 @@
 "synchronization.lib"
 "dwmapi.lib"
 "imm32.lib"
-/OUT:"../Plugins/Marketplace/VaRestRe6959ebc28060V9/Binaries/Win64/UnrealEditor-VaRestEditor.dll"
-/PDB:"../Plugins/Marketplace/VaRestRe6959ebc28060V9/Binaries/Win64/UnrealEditor-VaRestEditor.pdb"
+/OUT:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VaRestRe6959ebc28060V9/Binaries/Win64/UnrealEditor-VaRestEditor.dll"
+/PDB:"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/VaRestRe6959ebc28060V9/Binaries/Win64/UnrealEditor-VaRestEditor.pdb"
 /ignore:4078

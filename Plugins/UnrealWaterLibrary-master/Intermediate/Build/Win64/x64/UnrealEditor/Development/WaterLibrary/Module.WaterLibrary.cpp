@@ -2,3 +2,5 @@
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/UnrealWaterLibrary-master/Intermediate/Build/Win64/UnrealEditor/Inc/WaterLibrary/UHT/WaterLibrary.init.gen.cpp"
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/UnrealWaterLibrary-master/Intermediate/Build/Win64/UnrealEditor/Inc/WaterLibrary/UHT/WaterLibraryBP.gen.cpp"
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/UnrealWaterLibrary-master/Intermediate/Build/Win64/x64/UnrealEditor/Development/WaterLibrary/PerModuleInline.gen.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/UnrealWaterLibrary-master/Source/WaterLibrary/Private/WaterLibrary.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/UnrealWaterLibrary-master/Source/WaterLibrary/Private/WaterLibraryBP.cpp"
