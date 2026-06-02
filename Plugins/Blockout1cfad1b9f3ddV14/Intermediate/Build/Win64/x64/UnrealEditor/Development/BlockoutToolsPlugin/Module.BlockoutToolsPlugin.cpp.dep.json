@@ -24,7 +24,12 @@
             "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockout1cfad1b9f3ddv14\\intermediate\\build\\win64\\unrealeditor\\inc\\blockouttoolsplugin\\uht\\blockouttoolssettings.generated.h",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockout1cfad1b9f3ddv14\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\blockouttoolsplugin\\permoduleinline.gen.cpp",
-            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl"
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockout1cfad1b9f3ddv14\\source\\blockouttoolsplugin\\private\\blockouttoolsparent.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockout1cfad1b9f3ddv14\\source\\blockouttoolsplugin\\private\\blockouttoolsplugin.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockout1cfad1b9f3ddv14\\source\\blockouttoolsplugin\\public\\blockouttoolsplugin.h",
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\developer\\settings\\public\\isettingsmodule.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\blockout1cfad1b9f3ddv14\\source\\blockouttoolsplugin\\private\\blockouttoolssettings.cpp"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

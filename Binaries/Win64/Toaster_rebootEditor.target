@@ -2628,6 +2628,14 @@
 			"Type": "SymbolFile"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-PluginWarden.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-PluginWarden.pdb",
+			"Type": "SymbolFile"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-PortalMessages.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -8281,6 +8289,74 @@
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/QuickMer003c58260629V6/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshComponent.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshComponent.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshEditor.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshExamples.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshExamples.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshExt.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshExt.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshNanite.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshNanite.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshProTests.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshProTests.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshSpatial.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshSpatial.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshTests.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor-RealtimeMeshTests.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/Binaries/Win64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		},
 		{
@@ -33470,6 +33546,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/RealtimeMeshComponent.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/ShadowsCodePlugin/ShadowsCodePlugin.uplugin",
 			"Type": "UFS"
 		},
@@ -33698,6 +33778,7 @@
 		"PythonScriptPlugin",
 		"QuickMergeSkeletalMesh",
 		"RawInput",
+		"RealtimeMeshComponent",
 		"RenderGraphInsights",
 		"ResonanceAudio",
 		"RiderSourceCodeAccess",

@@ -1,0 +1,14 @@
+{
+	"BuildId": "47537391",
+	"Modules": 
+	{
+		"RealtimeMeshComponent": "UnrealEditor-RealtimeMeshComponent.dylib",
+		"RealtimeMeshEditor": "UnrealEditor-RealtimeMeshEditor.dylib",
+		"RealtimeMeshExamples": "UnrealEditor-RealtimeMeshExamples.dylib",
+		"RealtimeMeshExt": "UnrealEditor-RealtimeMeshExt.dylib",
+		"RealtimeMeshNanite": "UnrealEditor-RealtimeMeshNanite.dylib",
+		"RealtimeMeshProTests": "UnrealEditor-RealtimeMeshProTests.dylib",
+		"RealtimeMeshSpatial": "UnrealEditor-RealtimeMeshSpatial.dylib",
+		"RealtimeMeshTests": "UnrealEditor-RealtimeMeshTests.dylib"
+	}
+}

@@ -1,0 +1,44 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.EasyMultiSave.1.cpp.obj": [
+			"EasyMultiSave.init.gen.cpp.obj",
+			"EMSActorLoader.gen.cpp.obj",
+			"EMSActorSaveInterface.gen.cpp.obj",
+			"EMSAsyncCheck.gen.cpp.obj",
+			"EMSAsyncLoadGame.gen.cpp.obj",
+			"EMSAsyncSaveGame.gen.cpp.obj",
+			"EMSAsyncStream.gen.cpp.obj",
+			"EMSAsyncWait.gen.cpp.obj",
+			"EMSCompSaveInterface.gen.cpp.obj",
+			"EMSCustomSaveGame.gen.cpp.obj",
+			"EMSData.gen.cpp.obj",
+			"EMSFunctionLibrary.gen.cpp.obj"
+		],
+		"Module.EasyMultiSave.2.cpp.obj": [
+			"EMSInfoSaveGame.gen.cpp.obj",
+			"EMSObject.gen.cpp.obj",
+			"EMSObjectAdv.gen.cpp.obj",
+			"EMSObjectBase.gen.cpp.obj",
+			"EMSPluginSettings.gen.cpp.obj",
+			"EMSTypes.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"EMSActorLoader.cpp.obj",
+			"EMSAsyncCheck.cpp.obj",
+			"EMSAsyncLoadGame.cpp.obj",
+			"EMSAsyncSaveGame.cpp.obj",
+			"EMSAsyncStream.cpp.obj",
+			"EMSAsyncWait.cpp.obj",
+			"EMSFunctionLibrary.cpp.obj",
+			"EMSModule.cpp.obj",
+			"EMSActors.cpp.obj",
+			"EMSData.cpp.obj",
+			"EMSLevel.cpp.obj",
+			"EMSMisc.cpp.obj",
+			"EMSPaths.cpp.obj",
+			"EMSVersion.cpp.obj",
+			"EMSObject.cpp.obj",
+			"EMSObjectAdv.cpp.obj"
+		]
+	}
+}

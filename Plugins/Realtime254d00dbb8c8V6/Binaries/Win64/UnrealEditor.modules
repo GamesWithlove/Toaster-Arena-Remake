@@ -1,0 +1,14 @@
+{
+	"BuildId": "450d3744-2927-4460-b362-b3ca2c5c0237",
+	"Modules": 
+	{
+		"RealtimeMeshComponent": "UnrealEditor-RealtimeMeshComponent.dll",
+		"RealtimeMeshEditor": "UnrealEditor-RealtimeMeshEditor.dll",
+		"RealtimeMeshExamples": "UnrealEditor-RealtimeMeshExamples.dll",
+		"RealtimeMeshExt": "UnrealEditor-RealtimeMeshExt.dll",
+		"RealtimeMeshNanite": "UnrealEditor-RealtimeMeshNanite.dll",
+		"RealtimeMeshProTests": "UnrealEditor-RealtimeMeshProTests.dll",
+		"RealtimeMeshSpatial": "UnrealEditor-RealtimeMeshSpatial.dll",
+		"RealtimeMeshTests": "UnrealEditor-RealtimeMeshTests.dll"
+	}
+}

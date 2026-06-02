@@ -3,3 +3,6 @@
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Blockout1cfad1b9f3ddV14/Intermediate/Build/Win64/UnrealEditor/Inc/BlockoutToolsPlugin/UHT/BlockoutToolsPlugin.init.gen.cpp"
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Blockout1cfad1b9f3ddV14/Intermediate/Build/Win64/UnrealEditor/Inc/BlockoutToolsPlugin/UHT/BlockoutToolsSettings.gen.cpp"
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Blockout1cfad1b9f3ddV14/Intermediate/Build/Win64/x64/UnrealEditor/Development/BlockoutToolsPlugin/PerModuleInline.gen.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Blockout1cfad1b9f3ddV14/Source/BlockoutToolsPlugin/Private/BlockoutToolsParent.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Blockout1cfad1b9f3ddV14/Source/BlockoutToolsPlugin/Private/BlockoutToolsPlugin.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/Blockout1cfad1b9f3ddV14/Source/BlockoutToolsPlugin/Private/BlockoutToolsSettings.cpp"

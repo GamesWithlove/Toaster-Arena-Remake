@@ -39,6 +39,9 @@
 			"EMSVersion.cpp.obj",
 			"EMSObject.cpp.obj",
 			"EMSObjectAdv.cpp.obj"
+		],
+		"Module.EasyMultiSave.3.cpp.obj": [
+			"EMSObjectBase.cpp.obj"
 		]
 	}
 }

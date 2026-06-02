@@ -19,7 +19,7 @@
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
 		"BranchName": "UE5",
-		"BuildId": "d1f488b2-8136-4d2d-bd1f-777423f2f85a"
+		"BuildId": "147a1b7d-35b7-4579-8b8e-a27b9121f909"
 	},
 	"BuildProducts": [
 		{
@@ -3917,6 +3917,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/RealtimeMeshComponent.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/ShadowsCodePlugin/ShadowsCodePlugin.uplugin",
 			"Type": "UFS"
 		},
@@ -4141,6 +4145,7 @@
 		"PythonScriptPlugin",
 		"QuickMergeSkeletalMesh",
 		"RawInput",
+		"RealtimeMeshComponent",
 		"RenderGraphInsights",
 		"ResonanceAudio",
 		"RiderSourceCodeAccess",
