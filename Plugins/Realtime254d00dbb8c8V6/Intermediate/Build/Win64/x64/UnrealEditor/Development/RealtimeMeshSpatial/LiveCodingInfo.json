@@ -1,0 +1,27 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.RealtimeMeshSpatial.cpp.obj": [
+			"RealtimeMeshHeightmapFactory.gen.cpp.obj",
+			"RealtimeMeshSpatial.init.gen.cpp.obj",
+			"RealtimeMeshSpatialComponentLocation.gen.cpp.obj",
+			"RealtimeMeshSpatialStreamingCellState.gen.cpp.obj",
+			"RealtimeMeshSpatialStreamingSource.gen.cpp.obj",
+			"RealtimeMeshSpatialStreamingSourceComponent.gen.cpp.obj",
+			"RealtimeMeshSpatialStreamingState.gen.cpp.obj",
+			"RealtimeMeshSpatialStreamingSubsystem.gen.cpp.obj",
+			"RealtimeMeshStreamingPolicyInterface.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"RealtimeMeshHeightmap.cpp.obj",
+			"RealtimeMeshHeightmapFactory.cpp.obj",
+			"RealtimeMeshSpatialManagerInterfaceImpl.cpp.obj",
+			"RealtimeMeshSpatialPlaneParamProvider.cpp.obj",
+			"RealtimeMeshSpatial.cpp.obj",
+			"RealtimeMeshSpatialFactoryComponent.cpp.obj",
+			"RealtimeMeshSpatialStreamingSource.cpp.obj",
+			"RealtimeMeshSpatialStreamingSourceComponent.cpp.obj",
+			"RealtimeMeshSpatialStreamingState.cpp.obj",
+			"RealtimeMeshSpatialStreamingSubsystem.cpp.obj"
+		]
+	}
+}
