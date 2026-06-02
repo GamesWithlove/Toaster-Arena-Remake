@@ -1,0 +1,8 @@
+{
+	"OutputFiles": [
+		"../../../arm64/UnrealGame/Development/RealtimeMeshExamples/Module.RealtimeMeshExamples.cpp.o",
+		"../../../arm64/UnrealGame/Development/RealtimeMeshExamples/Module.RealtimeMeshExamples.cpp.o",
+		"../../../x64/UnrealGame/Development/RealtimeMeshExamples/Module.RealtimeMeshExamples.cpp.o",
+		"../../../x64/UnrealGame/Development/RealtimeMeshExamples/Module.RealtimeMeshExamples.cpp.o"
+	]
+}

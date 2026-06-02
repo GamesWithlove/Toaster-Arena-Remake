@@ -1,0 +1,8 @@
+{
+	"OutputFiles": [
+		"../../../arm64/UnrealGame/Shipping/RealtimeMeshSpatial/Module.RealtimeMeshSpatial.cpp.o",
+		"../../../arm64/UnrealGame/Shipping/RealtimeMeshSpatial/Module.RealtimeMeshSpatial.cpp.o",
+		"../../../x64/UnrealGame/Shipping/RealtimeMeshSpatial/Module.RealtimeMeshSpatial.cpp.o",
+		"../../../x64/UnrealGame/Shipping/RealtimeMeshSpatial/Module.RealtimeMeshSpatial.cpp.o"
+	]
+}

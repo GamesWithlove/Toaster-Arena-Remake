@@ -1,0 +1,29 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+#include "UObject/GeneratedCppIncludes.h"
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+void EmptyLinkFunctionForGeneratedCodeRealtimeMeshExt_init() {}
+static_assert(!UE_WITH_CONSTINIT_UOBJECT, "This generated code can only be compiled with !UE_WITH_CONSTINIT_OBJECT");	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_RealtimeMeshExt;
+	FORCENOINLINE UPackage* Z_Construct_UPackage__Script_RealtimeMeshExt()
+	{
+		if (!Z_Registration_Info_UPackage__Script_RealtimeMeshExt.OuterSingleton)
+		{
+		static const UECodeGen_Private::FPackageParams PackageParams = {
+			"/Script/RealtimeMeshExt",
+			nullptr,
+			0,
+			PKG_CompiledIn | 0x00000000,
+			0x6CFB2924,
+			0xF3D98312,
+			METADATA_PARAMS(0, nullptr)
+		};
+		UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_RealtimeMeshExt.OuterSingleton, PackageParams);
+	}
+	return Z_Registration_Info_UPackage__Script_RealtimeMeshExt.OuterSingleton;
+}
+static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_RealtimeMeshExt(Z_Construct_UPackage__Script_RealtimeMeshExt, TEXT("/Script/RealtimeMeshExt"), Z_Registration_Info_UPackage__Script_RealtimeMeshExt, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x6CFB2924, 0xF3D98312));
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
