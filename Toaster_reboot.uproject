@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{7426580F-4308-3A51-C356-5698A14442DF}",
+	"EngineAssociation": "5.7",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -363,10 +363,5 @@
 			"Name": "ControlRigPhysics",
 			"Enabled": true
 		},
-		{
-			"Name": "SkinnedDecalComponent",
-			"Enabled": true,
-			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/05b6b0f2f8f049aaa469a1da4e09275c"
-		}
 	]
 }
