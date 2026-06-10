@@ -3,7 +3,7 @@
 	"Platform": "Win64",
 	"Configuration": "Development",
 	"BuildSettingsVersion": "V6",
-	"TargetBuildEnvironment": "Shared",
+	"TargetBuildEnvironment": "Unique",
 	"TargetType": "Game",
 	"IsTestTarget": false,
 	"Architecture": "x64",
@@ -14,12 +14,12 @@
 		"MajorVersion": 5,
 		"MinorVersion": 7,
 		"PatchVersion": 4,
-		"Changelist": 51494982,
+		"Changelist": 0,
 		"CompatibleChangelist": 47537391,
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
-		"BranchName": "++UE5+Release-5.7",
-		"BuildId": "47537391"
+		"BranchName": "UE5",
+		"BuildId": "b265b2b9-d969-4e5a-9be0-2d58a016c212"
 	},
 	"BuildProducts": [
 		{
@@ -3585,34 +3585,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/Backgrou3e740b53c119V10/BackgroundBlurWithMask.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/EasyMult2811e0ac3e79V17/EasyMultiSave.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/LEExtend7b5bed5a4575V27/LowEntryExtStdLib.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/SmoothSy12bb50d91a77V18/SmoothSyncPlugin.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/SteamCorbeefec99226cV12/SteamCore.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/VaRestRe6959ebc28060V9/VaRest.uplugin",
-			"Type": "UFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/Marketplace/VictoryBPLibrary57/VictoryBPLibrary.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Media/AvfMedia/AvfMedia.uplugin",
 			"Type": "UFS"
 		},
@@ -3917,7 +3889,11 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/BlockoutToolsPlugin/BlockoutToolsPlugin.uplugin",
+			"Path": "$(ProjectDir)/Plugins/Backgrou3e740b53c119V10/BackgroundBlurWithMask.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/Blockout1cfad1b9f3ddV14/BlockoutToolsPlugin.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -3933,7 +3909,15 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/EasyMult2811e0ac3e79V17/EasyMultiSave.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/KB_Multi_Thread_E/KB_Multi_Thread_E.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/LEExtend7b5bed5a4575V27/LowEntryExtStdLib.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -3945,15 +3929,15 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/PakLoaderPlugin/PakLoader.uplugin",
+			"Path": "$(ProjectDir)/Plugins/PakLoadec3a1d9fa54a9V13/PakLoader.uplugin",
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/QuickMergeSkeletalMesh/QuickMergeSkeletalMesh.uplugin",
+			"Path": "$(ProjectDir)/Plugins/QuickMer003c58260629V6/QuickMergeSkeletalMesh.uplugin",
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/ReplaySystem/ReplaySystem.uplugin",
+			"Path": "$(ProjectDir)/Plugins/Realtime254d00dbb8c8V6/RealtimeMeshComponent.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -3969,7 +3953,27 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/SmoothSy12bb50d91a77V18/SmoothSyncPlugin.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/SteamCorbeefec99226cV12/SteamCore.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/Toaster_mod_plugin/Toaster_mod_plugin.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/UnrealWaterLibrary-master/WaterLibrary.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/VaRestRe6959ebc28060V9/VaRest.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/VictoryBPLibrary57/VictoryBPLibrary.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -4161,8 +4165,8 @@
 		"PythonScriptPlugin",
 		"QuickMergeSkeletalMesh",
 		"RawInput",
+		"RealtimeMeshComponent",
 		"RenderGraphInsights",
-		"ReplaySystem",
 		"ResonanceAudio",
 		"RiderSourceCodeAccess",
 		"RigLogic",
@@ -4211,6 +4215,7 @@
 		"VisualStudioSourceCodeAccess",
 		"Volumetrics",
 		"Water",
+		"WaterLibrary",
 		"WaveTable",
 		"WebMMedia",
 		"WebMMoviePlayer",

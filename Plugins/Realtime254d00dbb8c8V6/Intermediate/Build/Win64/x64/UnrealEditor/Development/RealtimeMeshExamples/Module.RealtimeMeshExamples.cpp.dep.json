@@ -214,7 +214,18 @@
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshexamples\\public\\realtimemeshmultipleuvs.h",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\unrealeditor\\inc\\realtimemeshexamples\\uht\\realtimemeshmultipleuvs.generated.h",
             "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\realtimemeshexamples\\permoduleinline.gen.cpp",
-            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl"
+            "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\source\\runtime\\core\\public\\hal\\permoduleinline.inl",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshexamples\\private\\realtimemeshbasic.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\realtimemeshsimple.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\unrealeditor\\inc\\realtimemeshcomponent\\uht\\realtimemeshsimple.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshexamples\\private\\realtimemeshbystreambuilder.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshexamples\\private\\realtimemeshdirect.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshexamples\\private\\realtimemeshexamples.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshexamples\\public\\realtimemeshexamples.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshexamples\\private\\realtimemeshlodexample.cpp",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshcomponent\\public\\mesh\\realtimemeshbasicshapetools.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\intermediate\\build\\win64\\unrealeditor\\inc\\realtimemeshcomponent\\uht\\realtimemeshbasicshapetools.generated.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\realtime254d00dbb8c8v6\\source\\realtimemeshexamples\\private\\realtimemeshmultipleuvs.cpp"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

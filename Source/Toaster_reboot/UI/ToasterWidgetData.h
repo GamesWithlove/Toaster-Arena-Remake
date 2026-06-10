@@ -106,8 +106,8 @@ FString URLString;
     FToasterWidgetData()
         : Text(FText::FromString(TEXT("Button"))),
           FontSize(18),
-          TransformPolicy(ETextTransformPolicy::None),
           ClickedSound(),
+        TransformPolicy(ETextTransformPolicy::None),
           Index(0),
           IsDisabled(false),
           IsBackButton(false),
