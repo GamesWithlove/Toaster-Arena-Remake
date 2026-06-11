@@ -1,14 +1,14 @@
 {
-	"TargetName": "Toaster_rebootServer",
-	"Platform": "Linux",
-	"Configuration": "Development",
+	"TargetName": "Toaster_reboot",
+	"Platform": "Win64",
+	"Configuration": "DebugGame",
 	"BuildSettingsVersion": "V6",
 	"TargetBuildEnvironment": "Unique",
-	"TargetType": "Server",
+	"TargetType": "Game",
 	"IsTestTarget": false,
 	"Architecture": "x64",
 	"Project": "../../Toaster_reboot.uproject",
-	"Launch": "$(ProjectDir)/Binaries/Linux/Toaster_rebootServer",
+	"Launch": "$(ProjectDir)/Binaries/Win64/Toaster_reboot-Win64-DebugGame.exe",
 	"Version": 
 	{
 		"MajorVersion": 5,
@@ -19,33 +19,73 @@
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
 		"BranchName": "UE5",
-		"BuildId": "c07539e5-3fac-4168-8972-e55aabde6cb5"
+		"BuildId": "425efcf7-63ab-41d9-980b-74dd7494ba87"
 	},
 	"BuildProducts": [
 		{
-			"Path": "$(ProjectDir)/Binaries/Linux/Toaster_rebootServer",
+			"Path": "$(ProjectDir)/Binaries/Win64/D3D12/x64/D3D12Core.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/D3D12/x64/d3d12SDKLayers.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/DML/x64/DirectML.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/Toaster_reboot-Win64-DebugGame.exe",
 			"Type": "Executable"
 		},
 		{
-			"Path": "$(ProjectDir)/Binaries/Linux/Toaster_rebootServer.debug",
+			"Path": "$(ProjectDir)/Binaries/Win64/Toaster_reboot-Win64-DebugGame.pdb",
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(ProjectDir)/Binaries/Linux/Toaster_rebootServer.sym",
-			"Type": "SymbolFile"
+			"Path": "$(ProjectDir)/Binaries/Win64/tbb12.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/tbbmalloc.dll",
+			"Type": "DynamicLibrary"
 		}
 	],
 	"RuntimeDependencies": [
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/MsQuic/v220/linux/libmsquic.so",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/DbgHelp/dbghelp.dll",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/MsQuic/v220/linux/libmsquic.so.2",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/MsQuic/v220/win64/msquic.dll",
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/ThirdParty/Steamworks/Steamv161/x86_64-unknown-linux-gnu/libsteam_api.so",
+			"Path": "$(EngineDir)/Binaries/ThirdParty/NVIDIA/NVaftermath/Win64/GFSDK_Aftermath_Lib.x64.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Ogg/Win64/VS2015/libogg_64.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Steamworks/Steamv161/Win64/steam_api64.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Vorbis/Win64/VS2015/libvorbis_64.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Vorbis/Win64/VS2015/libvorbisfile_64.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64/WinPixEventRuntime.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/ThirdParty/Windows/XAudio2_9/x64/xaudio2_9redist.dll",
 			"Type": "NonUFS"
 		},
 		{
@@ -723,6 +763,10 @@
 		{
 			"Path": "$(EngineDir)/Content/Slate/CrashTracker/Record.png",
 			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Content/Slate/Cursor/invisible.cur",
+			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(EngineDir)/Content/Slate/Docking/AppTabContentArea.png",
@@ -3229,7 +3273,15 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Developer/GPUReshape/GPUReshape.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Developer/NamingTokens/NamingTokens.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Developer/PixWinPlugin/PixWinPlugin.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -3553,6 +3605,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Media/WmfMedia/WmfMedia.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/MeshPainting/MeshPainting.uplugin",
 			"Type": "UFS"
 		},
@@ -3593,11 +3649,7 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/NNE/NNERuntimeORT/Binaries/ThirdParty/Onnxruntime/Linux/libonnxruntime.so",
-			"Type": "NonUFS"
-		},
-		{
-			"Path": "$(EngineDir)/Plugins/NNE/NNERuntimeORT/Binaries/ThirdParty/Onnxruntime/Linux/libonnxruntime.so.1.20",
+			"Path": "$(EngineDir)/Plugins/NNE/NNERuntimeORT/Binaries/ThirdParty/Onnxruntime/Win64/onnxruntime.dll",
 			"Type": "NonUFS"
 		},
 		{
@@ -3717,10 +3769,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(EngineDir)/Plugins/Runtime/LinuxDeviceProfileSelector/LinuxDeviceProfileSelector.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(EngineDir)/Plugins/Runtime/MeshModelingToolset/MeshModelingToolset.uplugin",
 			"Type": "UFS"
 		},
@@ -3789,6 +3837,22 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Runtime/WebMMoviePlayer/WebMMoviePlayer.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/WindowsDeviceProfileSelector/WindowsDeviceProfileSelector.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/WindowsMoviePlayer/WindowsMoviePlayer.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Runtime/Windows/XInputDevice/XInputDevice.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Tests/InterchangeTests/InterchangeTests.uplugin",
 			"Type": "UFS"
 		},
@@ -3803,6 +3867,26 @@
 		{
 			"Path": "$(EngineDir)/Plugins/WorldMetrics/WorldMetrics.uplugin",
 			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/D3D12/x64/D3D12Core.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/D3D12/x64/d3d12SDKLayers.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/DML/x64/DirectML.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/tbb12.dll",
+			"Type": "NonUFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Binaries/Win64/tbbmalloc.dll",
+			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/Backgrou3e740b53c119V10/BackgroundBlurWithMask.uplugin",
@@ -3839,6 +3923,10 @@
 		{
 			"Path": "$(ProjectDir)/Plugins/OVRLipSync/OVRLipSync.uplugin",
 			"Type": "UFS"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/OVRLipSync/ThirdParty/Lib/Win64/OVRLipSync.dll",
+			"Type": "NonUFS"
 		},
 		{
 			"Path": "$(ProjectDir)/Plugins/PakLoadec3a1d9fa54a9V13/PakLoader.uplugin",
@@ -3986,6 +4074,7 @@
 		"Fracture",
 		"FullBodyIK",
 		"GLTFExporter",
+		"GPUReshape",
 		"GameplayCameras",
 		"GameplayStateTree",
 		"GameplayTagsEditor",
@@ -4060,6 +4149,7 @@
 		"Paper2D",
 		"PerforceSourceControl",
 		"PhysicsControl",
+		"PixWinPlugin",
 		"PlanarCut",
 		"PlasticSourceControl",
 		"PlatformCrypto",
@@ -4135,6 +4225,7 @@
 		"WorldMetrics",
 		"WorldPartitionHLODUtilities",
 		"XGEController",
+		"XInputDevice",
 		"conplugin",
 		"glTFRuntime"
 	],

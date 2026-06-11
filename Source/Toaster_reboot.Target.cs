@@ -10,5 +10,10 @@ public class Toaster_rebootTarget : TargetRules
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V6;
 		ExtraModuleNames.AddRange( new string[] { "Toaster_reboot" } );
+        
+        	 
+	     // Added lines
+	     BuildEnvironment = TargetBuildEnvironment.Unique;
+	     bUseLoggingInShipping = true;
 	}
 }

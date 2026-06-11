@@ -66,3 +66,4 @@ Binaries/Linux/Toaster_rebootServer
 Binaries/Linux/Toaster_rebootServer.debug
 Binaries/Linux/Toaster_rebootServer.sym
 Binaries/Win64/Toaster_reboot-Win64-Shipping.exe
+Binaries/Win64/Toaster_reboot-Win64-DebugGame.exe
