@@ -8140,18 +8140,6 @@
 			"Type": "RequiredResource"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/Backgrou3e740b53c119V10/Binaries/Win64/UnrealEditor-BackgroundBlurWithMask.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Backgrou3e740b53c119V10/Binaries/Win64/UnrealEditor-BackgroundBlurWithMask.pdb",
-			"Type": "SymbolFile"
-		},
-		{
-			"Path": "$(ProjectDir)/Plugins/Backgrou3e740b53c119V10/Binaries/Win64/UnrealEditor.modules",
-			"Type": "RequiredResource"
-		},
-		{
 			"Path": "$(ProjectDir)/Plugins/Blockout1cfad1b9f3ddV14/Binaries/Win64/UnrealEditor-BlockoutToolsEditorPlugin.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -33498,10 +33486,6 @@
 			"Type": "UFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/Backgrou3e740b53c119V10/BackgroundBlurWithMask.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(ProjectDir)/Plugins/Blockout1cfad1b9f3ddV14/BlockoutToolsPlugin.uplugin",
 			"Type": "UFS"
 		},
@@ -33622,7 +33606,6 @@
 		"AutomationUtils",
 		"AvfMedia",
 		"BackChannel",
-		"BackgroundBlurWithMask",
 		"BaseCharacterFXEditor",
 		"BaseMaterial",
 		"BlendSpaceMotionAnalysis",

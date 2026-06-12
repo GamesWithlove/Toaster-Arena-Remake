@@ -135,7 +135,7 @@
 		},
 		{
 			"Name": "BackgroundBlurWithMask",
-			"Enabled": true,
+			"Enabled": false,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/595231118c4e43508f006da5eed02bbd"
 		},
 		{
