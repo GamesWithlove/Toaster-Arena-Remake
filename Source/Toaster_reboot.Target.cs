@@ -14,6 +14,6 @@ public class Toaster_rebootTarget : TargetRules
         	 
 	     // Added lines
 	     BuildEnvironment = TargetBuildEnvironment.Unique;
-	     bUseLoggingInShipping = true;
+	     bUseLoggingInShipping = false;
 	}
 }
