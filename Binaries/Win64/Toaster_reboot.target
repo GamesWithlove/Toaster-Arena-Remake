@@ -19,7 +19,7 @@
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
 		"BranchName": "UE5",
-		"BuildId": "b265b2b9-d969-4e5a-9be0-2d58a016c212"
+		"BuildId": "d894ed05-7f4f-4163-9527-d8ed840edb2a"
 	},
 	"BuildProducts": [
 		{
@@ -3889,10 +3889,6 @@
 			"Type": "NonUFS"
 		},
 		{
-			"Path": "$(ProjectDir)/Plugins/Backgrou3e740b53c119V10/BackgroundBlurWithMask.uplugin",
-			"Type": "UFS"
-		},
-		{
 			"Path": "$(ProjectDir)/Plugins/Blockout1cfad1b9f3ddV14/BlockoutToolsPlugin.uplugin",
 			"Type": "UFS"
 		},
@@ -4013,7 +4009,6 @@
 		"AutomationUtils",
 		"AvfMedia",
 		"BackChannel",
-		"BackgroundBlurWithMask",
 		"BaseMaterial",
 		"BlendSpaceMotionAnalysis",
 		"BlockoutToolsPlugin",
