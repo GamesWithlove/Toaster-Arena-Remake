@@ -362,6 +362,10 @@
 		{
 			"Name": "ControlRigPhysics",
 			"Enabled": true
+		},
+		{
+			"Name": "Mover",
+			"Enabled": true
 		}
 	]
 }
