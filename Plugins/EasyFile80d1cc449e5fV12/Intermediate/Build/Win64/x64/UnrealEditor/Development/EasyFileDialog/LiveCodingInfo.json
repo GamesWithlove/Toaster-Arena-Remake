@@ -1,0 +1,16 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.EasyFileDialog.cpp.obj": [
+			"EasyFileDialog.init.gen.cpp.obj",
+			"EasyFileDialogBPLibrary.gen.cpp.obj",
+			"EFDCore.gen.cpp.obj",
+			"EFDFunctionLibrary.gen.cpp.obj",
+			"PerModuleInline.gen.cpp.obj",
+			"EasyFileDialog.cpp.obj",
+			"EasyFileDialogBPLibrary.cpp.obj",
+			"EFDCore.cpp.obj",
+			"EFDFunctionLibrary.cpp.obj"
+		]
+	}
+}

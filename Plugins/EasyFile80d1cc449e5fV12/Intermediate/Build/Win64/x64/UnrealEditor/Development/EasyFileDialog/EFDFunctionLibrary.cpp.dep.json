@@ -1,0 +1,16 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "e:\\ue4_projects\\toaster-arena-remake\\plugins\\easyfile80d1cc449e5fv12\\source\\easyfiledialog\\private\\efdfunctionlibrary.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\unreal engine\\ue_ta_5.2\\unrealengine\\engine\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealed\\sharedpch.unrealed.project.valapi.valexpapi.cpp20.inclorderunreal5_4.h.pch",
+        "Includes": [
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\easyfile80d1cc449e5fv12\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\easyfiledialog\\definitions.easyfiledialog.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\easyfile80d1cc449e5fv12\\source\\easyfiledialog\\public\\efdfunctionlibrary.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\easyfile80d1cc449e5fv12\\source\\easyfiledialog\\public\\efdcore.h",
+            "e:\\ue4_projects\\toaster-arena-remake\\plugins\\easyfile80d1cc449e5fv12\\intermediate\\build\\win64\\unrealeditor\\inc\\easyfiledialog\\uht\\efdfunctionlibrary.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

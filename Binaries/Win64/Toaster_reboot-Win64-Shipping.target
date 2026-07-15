@@ -19,7 +19,7 @@
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
 		"BranchName": "UE5",
-		"BuildId": "2c6def70-5604-44f2-9f1c-739275b85120"
+		"BuildId": "3bbccc0f-e6fc-4944-8531-4ea3010f8326"
 	},
 	"BuildProducts": [
 		{
@@ -3905,6 +3905,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/EasyFile80d1cc449e5fV12/EasyFileDialog.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/EasyMult2811e0ac3e79V17/EasyMultiSave.uplugin",
 			"Type": "UFS"
 		},
@@ -4054,6 +4058,7 @@
 		"DeformerGraph",
 		"DlgSystem",
 		"EaseCurveTool",
+		"EasyFileDialog",
 		"EasyMultiSave",
 		"EditorDataStorage",
 		"EditorDataStorageFeatures",

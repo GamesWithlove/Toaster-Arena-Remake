@@ -19,7 +19,7 @@
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
 		"BranchName": "UE5",
-		"BuildId": "d894ed05-7f4f-4163-9527-d8ed840edb2a"
+		"BuildId": "36af6a3d-e63a-42a3-a75f-b4fd879567c5"
 	},
 	"BuildProducts": [
 		{
@@ -3193,6 +3193,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Animation/BlendStack/BlendStack.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Animation/ControlRigModules/ControlRigModules.uplugin",
 			"Type": "UFS"
 		},
@@ -3213,7 +3217,19 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Animation/GameplayInsights/GameplayInsights.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Animation/IKRig/IKRig.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Animation/MotionWarping/MotionWarping.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Animation/PoseSearch/PoseSearch.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -3258,6 +3274,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/ChaosVD/ChaosVD.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Chooser/Chooser.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -3498,6 +3518,10 @@
 		},
 		{
 			"Path": "$(EngineDir)/Plugins/Experimental/MeshModelingToolsetExp/MeshModelingToolsetExp.uplugin",
+			"Type": "UFS"
+		},
+		{
+			"Path": "$(EngineDir)/Plugins/Experimental/Mover/Mover.uplugin",
 			"Type": "UFS"
 		},
 		{
@@ -3781,6 +3805,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(EngineDir)/Plugins/Runtime/NetworkPrediction/NetworkPrediction.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(EngineDir)/Plugins/Runtime/ProceduralMeshComponent/ProceduralMeshComponent.uplugin",
 			"Type": "UFS"
 		},
@@ -3905,6 +3933,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/EasyFile80d1cc449e5fV12/EasyFileDialog.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/EasyMult2811e0ac3e79V17/EasyMultiSave.uplugin",
 			"Type": "UFS"
 		},
@@ -4011,6 +4043,7 @@
 		"BackChannel",
 		"BaseMaterial",
 		"BlendSpaceMotionAnalysis",
+		"BlendStack",
 		"BlockoutToolsPlugin",
 		"BlueprintExtraMath",
 		"BlueprintFileUtils",
@@ -4030,6 +4063,7 @@
 		"ChaosVD",
 		"ChaosVehiclesPlugin",
 		"CharacterAI",
+		"Chooser",
 		"ChunkDownloader",
 		"CmdLinkServer",
 		"ColorGrading",
@@ -4052,6 +4086,7 @@
 		"DeformerGraph",
 		"DlgSystem",
 		"EaseCurveTool",
+		"EasyFileDialog",
 		"EasyMultiSave",
 		"EditorDataStorage",
 		"EditorDataStorageFeatures",
@@ -4071,6 +4106,7 @@
 		"GLTFExporter",
 		"GPUReshape",
 		"GameplayCameras",
+		"GameplayInsights",
 		"GameplayStateTree",
 		"GameplayTagsEditor",
 		"GeometryCache",
@@ -4120,12 +4156,15 @@
 		"Metasound",
 		"MobileLauncherProfileWizard",
 		"ModelingToolsEditorMode",
+		"MotionWarping",
+		"Mover",
 		"MsQuic",
 		"N10XSourceCodeAccess",
 		"NFORDenoise",
 		"NNEDenoiser",
 		"NNERuntimeORT",
 		"NamingTokens",
+		"NetworkPrediction",
 		"Niagara",
 		"NiagaraPreviewContent",
 		"NiagaraSimCaching",
@@ -4151,6 +4190,7 @@
 		"PluginBrowser",
 		"PluginUtils",
 		"PortableObjectFileDataSource",
+		"PoseSearch",
 		"ProceduralMeshComponent",
 		"ProjectLauncher",
 		"PropertyAccessEditor",
