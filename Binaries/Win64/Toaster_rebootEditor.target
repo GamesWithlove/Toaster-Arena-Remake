@@ -8400,6 +8400,26 @@
 			"Type": "RequiredResource"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/NiagaraTextToolkit/Binaries/Win64/UnrealEditor-NiagaraTextToolkit.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/NiagaraTextToolkit/Binaries/Win64/UnrealEditor-NiagaraTextToolkit.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/NiagaraTextToolkit/Binaries/Win64/UnrealEditor-NiagaraTextToolkitEditor.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/NiagaraTextToolkit/Binaries/Win64/UnrealEditor-NiagaraTextToolkitEditor.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(ProjectDir)/Plugins/NiagaraTextToolkit/Binaries/Win64/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/OVRLipSync/Binaries/Win64/UnrealEditor-OVRLipSync.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -33706,6 +33726,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/NiagaraTextToolkit/NiagaraTextToolkit.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/OVRLipSync/OVRLipSync.uplugin",
 			"Type": "UFS"
 		},
@@ -33928,6 +33952,7 @@
 		"Niagara",
 		"NiagaraPreviewContent",
 		"NiagaraSimCaching",
+		"NiagaraTextToolkit",
 		"NullSourceCodeAccess",
 		"OVRLipSync",
 		"ObjectMixer",

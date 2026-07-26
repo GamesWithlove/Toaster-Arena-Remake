@@ -1,0 +1,254 @@
+// Property of Lucian Tranc
+
+// When using a template ush file, we need the _{ParameterName} appendix on
+// global functions and parameters, because the template can be included multiple
+// times for different data interfaces in a system.
+
+StructuredBuffer<float> {ParameterName}_PackedBuffer;
+
+uint {ParameterName}_Offset_UVs;
+uint {ParameterName}_Offset_Sizes;
+uint {ParameterName}_Offset_Unicode;
+uint {ParameterName}_Offset_Positions;
+uint {ParameterName}_Offset_LineStart;
+uint {ParameterName}_Offset_LineCount;
+uint {ParameterName}_Offset_WordStart;
+uint {ParameterName}_Offset_WordCount;
+
+uint {ParameterName}_NumRects;
+uint {ParameterName}_NumChars;                               // Total spawnable character count
+uint {ParameterName}_NumLines;                               // Total lines
+uint {ParameterName}_NumWords;                               // Total words
+uint {ParameterName}_bFilterWhitespaceCharactersValue;       // 1 if filtering whitespace characters, 0 otherwise
+float {ParameterName}_TotalTextHeight;                       // Total text height
+
+
+void GetCharacterUV_{ParameterName}(in int In_CharacterIndex, out float Out_USize, out float Out_VSize, out float Out_UStart, out float Out_VStart)
+{
+	int NumChars = int({ParameterName}_NumChars);
+	if (NumChars > 0)
+	{
+		In_CharacterIndex = In_CharacterIndex % NumChars;
+	}
+
+	int UnicodeBase = {ParameterName}_Offset_Unicode + In_CharacterIndex;
+	int Unicode = asint({ParameterName}_PackedBuffer[UnicodeBase]);
+
+	if (Unicode >= 0 && Unicode < {ParameterName}_NumRects)
+	{
+		int Base = {ParameterName}_Offset_UVs + Unicode * 4;
+		Out_USize  = {ParameterName}_PackedBuffer[Base + 0];
+		Out_VSize  = {ParameterName}_PackedBuffer[Base + 1];
+		Out_UStart = {ParameterName}_PackedBuffer[Base + 2];
+		Out_VStart = {ParameterName}_PackedBuffer[Base + 3];
+	}
+	else
+	{
+		Out_USize = 0.0f;
+		Out_VSize = 0.0f;
+		Out_UStart = 0.0f;
+		Out_VStart = 0.0f;
+	}
+}
+
+// Returns the character position (Position/float3) at In_CharacterIndex relative to the center of the text.
+// Positions are stored in UE coordinate space (X=forward, Y=left, Z=up). The conversion from internal
+// layout space (X=right, Y=down) happened at ProcessText time on the CPU.
+void GetCharacterPosition_{ParameterName}(in int In_CharacterIndex, out float3 Out_CharacterPosition)
+{
+	if ({ParameterName}_NumChars == 0)
+	{
+		Out_CharacterPosition = float3(0.0f, 0.0f, 0.0f);
+		return;
+	}
+
+	int idx = In_CharacterIndex % int({ParameterName}_NumChars);
+
+	int Base = {ParameterName}_Offset_Positions + idx * 3;
+	Out_CharacterPosition = float3(
+		{ParameterName}_PackedBuffer[Base + 0],
+		{ParameterName}_PackedBuffer[Base + 1],
+		{ParameterName}_PackedBuffer[Base + 2]
+	);
+}
+
+// Returns the sprite size in pixels (Width, Height) for the given character index
+void GetCharacterSpriteSize_{ParameterName}(in int In_CharacterIndex, out float2 Out_SpriteSize)
+{
+	int NumChars = int({ParameterName}_NumChars);
+	if (NumChars > 0)
+	{
+		In_CharacterIndex = In_CharacterIndex % NumChars;
+	}
+
+	int UnicodeBase = {ParameterName}_Offset_Unicode + In_CharacterIndex;
+	int Unicode = asint({ParameterName}_PackedBuffer[UnicodeBase]);
+
+	if (Unicode >= 0 && Unicode < {ParameterName}_NumRects)
+	{
+		int Base = {ParameterName}_Offset_Sizes + Unicode * 2;
+		float Width  = {ParameterName}_PackedBuffer[Base + 0];
+		float Height = {ParameterName}_PackedBuffer[Base + 1];
+		Out_SpriteSize = float2(Width, Height);
+	}
+	else
+	{
+		Out_SpriteSize = float2(0.0f, 0.0f);
+	}
+}
+
+// Returns the number of characters in InputText
+void GetTextCharacterCount_{ParameterName}(out int Out_CharacterCount)
+{
+	Out_CharacterCount = int({ParameterName}_NumChars);
+}
+
+// Returns the total number of lines in InputText
+void GetTextLineCount_{ParameterName}(out int Out_LineCount)
+{
+	Out_LineCount = int({ParameterName}_NumLines);
+}
+
+// Returns the number of characters in the specified line index
+void GetLineCharacterCount_{ParameterName}(in int In_LineIndex, out int Out_LineCharacterCount)
+{
+	if (In_LineIndex >= 0 && In_LineIndex < int({ParameterName}_NumLines))
+	{
+		int Base = {ParameterName}_Offset_LineCount + In_LineIndex;
+		Out_LineCharacterCount = asint({ParameterName}_PackedBuffer[Base]);
+	}
+	else
+	{
+		Out_LineCharacterCount = 0;
+	}
+}
+
+// Returns the total number of words in InputText
+void GetTextWordCount_{ParameterName}(out int Out_WordCount)
+{
+	Out_WordCount = int({ParameterName}_NumWords);
+}
+
+// Returns the number of characters in the specified word index
+void GetWordCharacterCount_{ParameterName}(in int In_WordIndex, out int Out_WordCharacterCount)
+{
+	if (In_WordIndex >= 0 && In_WordIndex < int({ParameterName}_NumWords))
+	{
+		int Base = {ParameterName}_Offset_WordCount + In_WordIndex;
+		Out_WordCharacterCount = asint({ParameterName}_PackedBuffer[Base]);
+	}
+	else
+	{
+		Out_WordCharacterCount = 0;
+	}
+}
+
+// Returns the number of whitespace characters after the specified word index
+void GetWordTrailingWhitespaceCount_{ParameterName}(in int In_WordIndex, out int Out_TrailingWhitespaceCount)
+{
+	int NumWords = int({ParameterName}_NumWords);
+	
+	if (In_WordIndex >= 0 && In_WordIndex < NumWords)
+	{
+		int StartIdxBase = {ParameterName}_Offset_WordStart + In_WordIndex;
+		int CountBase = {ParameterName}_Offset_WordCount + In_WordIndex;
+
+		int StartIndex = asint({ParameterName}_PackedBuffer[StartIdxBase]);
+		int Count = asint({ParameterName}_PackedBuffer[CountBase]);
+		int EndIndex = StartIndex + Count;
+		
+		int NextStartIndex = int({ParameterName}_NumChars);
+		
+		// If not last word
+		if (In_WordIndex < NumWords - 1)
+		{
+			int NextStartIdxBase = {ParameterName}_Offset_WordStart + (In_WordIndex + 1);
+			NextStartIndex = asint({ParameterName}_PackedBuffer[NextStartIdxBase]);
+		}
+		
+		int Gap = NextStartIndex - EndIndex;
+		Out_TrailingWhitespaceCount = max(0, Gap);
+	}
+	else
+	{
+		Out_TrailingWhitespaceCount = 0;
+	}
+}
+
+// Returns true if this DI is filtering whitespace characters, false otherwise
+void GetFilterWhitespaceCharacters_{ParameterName}(out bool Out_FilterWhitespaceCharacters)
+{
+	Out_FilterWhitespaceCharacters = ({ParameterName}_bFilterWhitespaceCharactersValue != 0);
+}
+
+// Returns the total number of characters between StartWordIndex and EndWordIndex (inclusive).
+// When whitespace filtering is disabled, trailing whitespace after each word in the range is also included.
+void GetCharacterCountInWordRange_{ParameterName}(in int In_StartWordIndex, in int In_EndWordIndex, out int Out_CharacterCountInRange)
+{
+	int NumWords = int({ParameterName}_NumWords);
+	int TotalInRange = 0;
+
+	if (NumWords > 0)
+	{
+		int Delta = In_EndWordIndex - In_StartWordIndex;
+		In_StartWordIndex = In_StartWordIndex % NumWords;
+		In_EndWordIndex = In_StartWordIndex + Delta;
+
+		int StartIndex = In_StartWordIndex;
+		int EndIndex   = clamp(In_EndWordIndex, 0, NumWords - 1);
+
+		if (StartIndex <= EndIndex)
+		{
+			for (int WordIndex = StartIndex; WordIndex <= EndIndex; ++WordIndex)
+			{
+				int CharCount = 0;
+				GetWordCharacterCount_{ParameterName}(WordIndex, CharCount);
+				TotalInRange += CharCount;
+
+				if ({ParameterName}_bFilterWhitespaceCharactersValue == 0)
+				{
+					int TrailingSpace = 0;
+					GetWordTrailingWhitespaceCount_{ParameterName}(WordIndex, TrailingSpace);
+					TotalInRange += TrailingSpace;
+				}
+			}
+		}
+	}
+
+	Out_CharacterCountInRange = TotalInRange;
+}
+
+// Returns the total number of characters between StartLineIndex and EndLineIndex (inclusive).
+void GetCharacterCountInLineRange_{ParameterName}(in int In_StartLineIndex, in int In_EndLineIndex, out int Out_CharacterCountInLineRange)
+{
+	int NumLines = int({ParameterName}_NumLines);
+	int TotalInRange = 0;
+
+	if (NumLines > 0)
+	{
+		int Delta = In_EndLineIndex - In_StartLineIndex;
+		In_StartLineIndex = In_StartLineIndex % NumLines;
+		In_EndLineIndex = In_StartLineIndex + Delta;
+
+		int StartIndex = In_StartLineIndex;
+		int EndIndex   = clamp(In_EndLineIndex, 0, NumLines - 1);
+
+		if (StartIndex <= EndIndex)
+		{
+			for (int LineIndex = StartIndex; LineIndex <= EndIndex; ++LineIndex)
+			{
+				int LineCharCount = 0;
+				GetLineCharacterCount_{ParameterName}(LineIndex, LineCharCount);
+				TotalInRange += LineCharCount;
+			}
+		}
+	}
+
+	Out_CharacterCountInLineRange = TotalInRange;
+}
+
+// Returns the total height of the text block from the top of the first line to the bottom of the last line.
+void GetTextHeight_{ParameterName}(out float Out_TextHeight)
+{
+	Out_TextHeight = {ParameterName}_TotalTextHeight;
+}

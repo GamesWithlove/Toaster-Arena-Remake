@@ -1,0 +1,69 @@
+.DS_Store
+Thumbs.db
+
+# --- IDE Files ---
+.vs/
+.vscode/
+*.code-workspace
+*.suo
+*.sln
+*.opensdf
+*.sdf
+*.sln.docstates
+*.VC.db
+*.VC.opendb
+
+# --- Unreal Build Artifacts ---
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+
+# --- Object & Build Cache ---
+*.pdb
+*.obj
+*.log
+*.tlog
+*.cache
+*.tmp
+*.db
+*.opendb
+*.mdb
+
+# --- Auto-generated project files ---
+*.xcodeproj
+*.xcworkspace
+*.xcconfig
+*.xcuserstate
+
+# --- Build Configs produced by UBT ---
+*.target
+*.module
+*.manifest
+*.receipt
+
+# --- UHT / UBT Generated Code ---
+*.generated.cpp
+*.generated.h
+
+# --- Compiled Shader Caches ---
+Shaders/DerivedDataCache/
+
+# --- Backup / Autosave Files ---
+*_Backup.*
+*.bak
+*.tmp
+*.old
+*.orig
+*.backup
+*.autosave
+*.swp
+
+# --- Python Virtual Environments (if any) ---
+.venv/
+venv/
+env/
+
+# --- Packaged Artifacts ---
+Build/
+Dist/

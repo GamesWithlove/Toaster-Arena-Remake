@@ -19,7 +19,7 @@
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 0,
 		"BranchName": "UE5",
-		"BuildId": "1326094f-70e0-474b-831b-dba121b88618"
+		"BuildId": "2c63f31b-59dc-4057-9545-88455440f1e8"
 	},
 	"BuildProducts": [
 		{
@@ -3921,6 +3921,10 @@
 			"Type": "UFS"
 		},
 		{
+			"Path": "$(ProjectDir)/Plugins/NiagaraTextToolkit/NiagaraTextToolkit.uplugin",
+			"Type": "UFS"
+		},
+		{
 			"Path": "$(ProjectDir)/Plugins/OVRLipSync/OVRLipSync.uplugin",
 			"Type": "UFS"
 		},
@@ -4140,6 +4144,7 @@
 		"Niagara",
 		"NiagaraPreviewContent",
 		"NiagaraSimCaching",
+		"NiagaraTextToolkit",
 		"NullSourceCodeAccess",
 		"OVRLipSync",
 		"ObjectMixer",

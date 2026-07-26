@@ -4,3 +4,7 @@
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/EasyFile80d1cc449e5fV12/Intermediate/Build/Win64/UnrealEditor/Inc/EasyFileDialog/UHT/EFDCore.gen.cpp"
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/EasyFile80d1cc449e5fV12/Intermediate/Build/Win64/UnrealEditor/Inc/EasyFileDialog/UHT/EFDFunctionLibrary.gen.cpp"
 #include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/EasyFile80d1cc449e5fV12/Intermediate/Build/Win64/x64/UnrealEditor/Development/EasyFileDialog/PerModuleInline.gen.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/EasyFile80d1cc449e5fV12/Source/EasyFileDialog/Private/EasyFileDialog.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/EasyFile80d1cc449e5fV12/Source/EasyFileDialog/Private/EasyFileDialogBPLibrary.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/EasyFile80d1cc449e5fV12/Source/EasyFileDialog/Private/EFDCore.cpp"
+#include "E:/Ue4_projects/Toaster-Arena-Remake/Plugins/EasyFile80d1cc449e5fV12/Source/EasyFileDialog/Private/EFDFunctionLibrary.cpp"

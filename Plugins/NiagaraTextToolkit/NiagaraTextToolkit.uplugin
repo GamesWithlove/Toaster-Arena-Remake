@@ -1,0 +1,35 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "NiagaraTextToolkit",
+	"Description": "A plugin for animating text on a per character basis with Niagara",
+	"Category": "Niagara",
+	"CreatedBy": "Lucian Tranc",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Plugins": [
+		{
+			"Name": "Niagara",
+			"Enabled": true
+		}
+	],
+	"Modules": [
+		{
+			"Name": "NiagaraTextToolkit",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "NiagaraTextToolkitEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}
