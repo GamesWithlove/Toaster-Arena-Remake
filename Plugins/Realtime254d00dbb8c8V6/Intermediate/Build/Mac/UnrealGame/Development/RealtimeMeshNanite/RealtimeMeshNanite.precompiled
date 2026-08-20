@@ -1,8 +1,0 @@
-{
-	"OutputFiles": [
-		"../../../arm64/UnrealGame/Development/RealtimeMeshNanite/Module.RealtimeMeshNanite.cpp.o",
-		"../../../arm64/UnrealGame/Development/RealtimeMeshNanite/Module.RealtimeMeshNanite.cpp.o",
-		"../../../x64/UnrealGame/Development/RealtimeMeshNanite/Module.RealtimeMeshNanite.cpp.o",
-		"../../../x64/UnrealGame/Development/RealtimeMeshNanite/Module.RealtimeMeshNanite.cpp.o"
-	]
-}

@@ -1,9 +1,0 @@
-{
-	"RemapUnityFiles": 
-	{
-		"Module.BlockoutToolsEditorPlugin.cpp.obj": [
-			"PerModuleInline.gen.cpp.obj",
-			"BlockoutToolsEditorPlugin.cpp.obj"
-		]
-	}
-}
