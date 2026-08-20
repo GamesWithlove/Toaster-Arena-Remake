@@ -4,11 +4,15 @@
 /[Bb]uild
 /[Bb]uilds
 /DerivedDataCache
-/Intermediate
 /Saved
 /Releases
 /Mods
 /Exports/*
+# https://github.com/github/gitignore/blob/main/UnrealEngine.gitignore
+Binaries/*
+Plugins/**/Binaries/*
+Intermediate/*
+Plugins/**/Intermediate/*
 
 #################################
 # Visual Studio Generated Files #
