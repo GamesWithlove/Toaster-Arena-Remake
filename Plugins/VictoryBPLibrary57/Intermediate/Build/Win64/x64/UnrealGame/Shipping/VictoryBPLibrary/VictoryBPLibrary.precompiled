@@ -1,9 +1,0 @@
-{
-	"OutputFiles": [
-		"Module.VictoryBPLibrary.cpp.obj",
-		"VictoryBPLibrary.cpp.obj",
-		"RamaColorPicker.cpp.obj",
-		"VictoryBPFunctionLibrary.cpp.obj",
-		"VictoryBPFunctionLibrary_WinOS.cpp.obj"
-	]
-}

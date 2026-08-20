@@ -1,6 +1,0 @@
-"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/ShadowsCodePlugin/Intermediate/Build/Linux/x64/UnrealEditor/Development/ShadowsCodePlugin/Module.ShadowsCodePlugin.cpp.o"
- -soname="libUnrealEditor-ShadowsCodePlugin.so"
- -rpath-link="E:\Ue4_projects\Toaster-Arena-Remake\Plugins\ShadowsCodePlugin\Binaries\Linux"
- -L"D:/Unreal engine/UE_TA_5.2/UnrealEngine/Engine/Binaries/Linux"
- --start-group
- --end-group

@@ -1,6 +1,0 @@
-"E:/Ue4_projects/Toaster-Arena-Remake/Plugins/conplugin/Intermediate/Build/Linux/x64/UnrealEditor/Development/conplugin/Module.conplugin.cpp.o"
- -soname="libUnrealEditor-conplugin.so"
- -rpath-link="E:\Ue4_projects\Toaster-Arena-Remake\Plugins\conplugin\Binaries\Linux"
- -L"D:/Unreal engine/UE_TA_5.2/UnrealEngine/Engine/Binaries/Linux"
- --start-group
- --end-group

@@ -1,8 +1,0 @@
-{
-	"OutputFiles": [
-		"../../../arm64/UnrealGame/Development/PakLoader/Module.PakLoader.cpp.o",
-		"../../../arm64/UnrealGame/Development/PakLoader/Module.PakLoader.cpp.o",
-		"../../../x64/UnrealGame/Development/PakLoader/Module.PakLoader.cpp.o",
-		"../../../x64/UnrealGame/Development/PakLoader/Module.PakLoader.cpp.o"
-	]
-}

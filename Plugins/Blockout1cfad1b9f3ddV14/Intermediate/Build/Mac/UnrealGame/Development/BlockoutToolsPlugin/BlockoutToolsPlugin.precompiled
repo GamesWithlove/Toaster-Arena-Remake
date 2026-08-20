@@ -1,8 +1,0 @@
-{
-	"OutputFiles": [
-		"../../../arm64/UnrealGame/Development/BlockoutToolsPlugin/Module.BlockoutToolsPlugin.cpp.o",
-		"../../../arm64/UnrealGame/Development/BlockoutToolsPlugin/Module.BlockoutToolsPlugin.cpp.o",
-		"../../../x64/UnrealGame/Development/BlockoutToolsPlugin/Module.BlockoutToolsPlugin.cpp.o",
-		"../../../x64/UnrealGame/Development/BlockoutToolsPlugin/Module.BlockoutToolsPlugin.cpp.o"
-	]
-}
