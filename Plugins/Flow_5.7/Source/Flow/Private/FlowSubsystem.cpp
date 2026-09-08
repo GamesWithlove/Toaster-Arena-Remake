@@ -1,0 +1,772 @@
+// Copyright https://github.com/MothCocoon/FlowGraph/graphs/contributors
+
+#include "FlowSubsystem.h"
+
+#include "FlowAsset.h"
+#include "FlowComponent.h"
+#include "FlowLogChannels.h"
+#include "FlowSave.h"
+#include "FlowSettings.h"
+#include "Interfaces/FlowExecutionGate.h"
+#include "Nodes/Graph/FlowNode_SubGraph.h"
+
+#include "Engine/GameInstance.h"
+#include "Engine/World.h"
+#include "Logging/MessageLog.h"
+#include "Misc/Paths.h"
+#include "UObject/UObjectHash.h"
+
+#include UE_INLINE_GENERATED_CPP_BY_NAME(FlowSubsystem)
+
+#if !UE_BUILD_SHIPPING
+FNativeFlowAssetEvent UFlowSubsystem::OnInstancedTemplateAdded;
+FNativeFlowAssetEvent UFlowSubsystem::OnInstancedTemplateRemoved;
+#endif
+
+#define LOCTEXT_NAMESPACE "FlowSubsystem"
+
+UFlowSubsystem::UFlowSubsystem()
+	: LoadedSaveGame(nullptr)
+{
+}
+
+bool UFlowSubsystem::ShouldCreateSubsystem(UObject* Outer) const
+{
+	// Only create an instance if there is no override implementation defined elsewhere
+	TArray<UClass*> ChildClasses;
+	GetDerivedClasses(GetClass(), ChildClasses, false);
+	if (ChildClasses.Num() > 0)
+	{
+		return false;
+	}
+
+	// in this case, we simply create subsystem for every instance of the game
+	if (GetDefault<UFlowSettings>()->bCreateFlowSubsystemOnClients)
+	{
+		return true;
+	}
+
+	return Outer->GetWorld()->GetNetMode() < NM_Client;
+}
+
+UWorld* UFlowSubsystem::GetWorld() const
+{
+	return GetGameInstance()->GetWorld();
+}
+
+void UFlowSubsystem::Deinitialize()
+{
+	AbortActiveFlows();
+	ClearLoadedSaveGame();
+}
+
+void UFlowSubsystem::AbortActiveFlows()
+{
+	if (InstancedTemplates.Num() > 0)
+	{
+		for (int32 i = InstancedTemplates.Num() - 1; i >= 0; i--)
+		{
+			if (InstancedTemplates.IsValidIndex(i) && InstancedTemplates[i])
+			{
+				InstancedTemplates[i]->ClearInstances();
+			}
+		}
+	}
+
+	InstancedTemplates.Empty();
+	InstancedSubFlows.Empty();
+
+	RootInstances.Empty();
+}
+
+void UFlowSubsystem::StartRootFlow(UObject* Owner, UFlowAsset* FlowAsset, const TScriptInterface<IFlowDataPinValueSupplierInterface> DataPinValueSupplier, const bool bAllowMultipleInstances)
+{
+	if (FlowAsset)
+	{
+		if (UFlowAsset* NewFlow = CreateRootFlow(Owner, FlowAsset, bAllowMultipleInstances))
+		{
+			NewFlow->StartFlow(DataPinValueSupplier.GetInterface());
+		}
+	}
+#if WITH_EDITOR
+	else
+	{
+		FMessageLog("PIE").Error(LOCTEXT("StartRootFlowNullAsset", "Attempted to start Root Flow with a null asset."))
+		                  ->AddToken(FUObjectToken::Create(Owner));
+	}
+#endif
+}
+
+UFlowAsset* UFlowSubsystem::CreateRootFlow(UObject* Owner, UFlowAsset* FlowAsset, const bool bAllowMultipleInstances, const FString& NewInstanceName)
+{
+	for (const TPair<UFlowAsset*, TWeakObjectPtr<UObject>>& RootInstance : ObjectPtrDecay(RootInstances))
+	{
+		if (Owner == RootInstance.Value.Get() && FlowAsset == RootInstance.Key->GetTemplateAsset())
+		{
+			UE_LOG(LogFlow, Warning, TEXT("Attempted to start Root Flow for the same Owner again. Owner: %s. Flow Asset: %s."), *Owner->GetName(), *FlowAsset->GetName());
+			return nullptr;
+		}
+	}
+
+	if (!bAllowMultipleInstances && InstancedTemplates.Contains(FlowAsset))
+	{
+		UE_LOG(LogFlow, Warning, TEXT("Attempted to start Root Flow, although there can be only a single instance. Owner: %s. Flow Asset: %s."), *Owner->GetName(), *FlowAsset->GetName());
+		return nullptr;
+	}
+
+	UFlowAsset* NewFlow = CreateFlowInstance(Owner, FlowAsset, NewInstanceName);
+	if (NewFlow)
+	{
+		RootInstances.Add(NewFlow, Owner);
+	}
+
+	return NewFlow;
+}
+
+void UFlowSubsystem::FinishRootFlow(UObject* Owner, UFlowAsset* TemplateAsset, const EFlowFinishPolicy FinishPolicy)
+{
+	UFlowAsset* InstanceToFinish = nullptr;
+
+	for (TPair<TObjectPtr<UFlowAsset>, TWeakObjectPtr<UObject>>& RootInstance : RootInstances)
+	{
+		if (Owner && Owner == RootInstance.Value.Get() && RootInstance.Key && RootInstance.Key->GetTemplateAsset() == TemplateAsset)
+		{
+			InstanceToFinish = RootInstance.Key;
+			break;
+		}
+	}
+
+	if (InstanceToFinish)
+	{
+		RootInstances.Remove(InstanceToFinish);
+		InstanceToFinish->FinishFlow(FinishPolicy);
+	}
+}
+
+void UFlowSubsystem::FinishAllRootFlows(UObject* Owner, const EFlowFinishPolicy FinishPolicy)
+{
+	TArray<UFlowAsset*> InstancesToFinish;
+
+	for (TPair<TObjectPtr<UFlowAsset>, TWeakObjectPtr<UObject>>& RootInstance : RootInstances)
+	{
+		if (Owner && Owner == RootInstance.Value.Get() && RootInstance.Key)
+		{
+			InstancesToFinish.Emplace(RootInstance.Key);
+		}
+	}
+
+	for (UFlowAsset* InstanceToFinish : InstancesToFinish)
+	{
+		RootInstances.Remove(InstanceToFinish);
+		InstanceToFinish->FinishFlow(FinishPolicy);
+	}
+}
+
+UFlowAsset* UFlowSubsystem::CreateSubFlow(UFlowNode_SubGraph* SubGraphNode, const FString& SavedInstanceName, const bool bPreloading /* = false */)
+{
+	UFlowAsset* AssetInstance = nullptr;
+
+	if (!InstancedSubFlows.Contains(SubGraphNode))
+	{
+		const TWeakObjectPtr<UObject> Owner = SubGraphNode->GetFlowAsset() ? SubGraphNode->GetFlowAsset()->GetOwner() : nullptr;
+		AssetInstance = CreateFlowInstance(Owner, SubGraphNode->Asset.LoadSynchronous(), SavedInstanceName);
+
+		if (AssetInstance)
+		{
+			InstancedSubFlows.Add(SubGraphNode, AssetInstance);
+		}
+	}
+
+	if (InstancedSubFlows.Contains(SubGraphNode) && !bPreloading)
+	{
+		// get instanced asset from map - in case it was already instanced by calling CreateSubFlow() with bPreloading == true
+		AssetInstance = InstancedSubFlows[SubGraphNode];
+
+		AssetInstance->NodeOwningThisAssetInstance = SubGraphNode;
+		SubGraphNode->GetFlowAsset()->ActiveSubGraphs.Add(SubGraphNode, AssetInstance);
+
+		// don't activate Start Node if we're loading Sub Graph from SaveGame
+		if (SavedInstanceName.IsEmpty())
+		{
+			AssetInstance->StartFlow(SubGraphNode);
+		}
+	}
+
+	return AssetInstance;
+}
+
+void UFlowSubsystem::RemoveSubFlow(UFlowNode_SubGraph* SubGraphNode, const EFlowFinishPolicy FinishPolicy)
+{
+	if (InstancedSubFlows.Contains(SubGraphNode))
+	{
+		UFlowAsset* AssetInstance = InstancedSubFlows[SubGraphNode];
+
+		SubGraphNode->GetFlowAsset()->ActiveSubGraphs.Remove(SubGraphNode);
+		InstancedSubFlows.Remove(SubGraphNode);
+
+		AssetInstance->FinishFlow(FinishPolicy);
+
+		// Make sure to set the NodeOwningThisAssetInstance after the FinishFlow call, as it may be needed in the FinishFlow method
+		AssetInstance->NodeOwningThisAssetInstance = nullptr;
+	}
+}
+
+UFlowAsset* UFlowSubsystem::CreateFlowInstance(const TWeakObjectPtr<UObject> Owner, UFlowAsset* LoadedFlowAsset, FString NewInstanceName)
+{
+	if (LoadedFlowAsset == nullptr)
+	{
+		return nullptr;
+	}
+
+	AddInstancedTemplate(LoadedFlowAsset);
+
+#if WITH_EDITOR
+	if (GetWorld()->WorldType != EWorldType::Game)
+	{
+		// Fix connections - even in packaged game if assets haven't been re-saved in the editor after changing node's definition
+		LoadedFlowAsset->HarvestNodeConnections();
+	}
+#endif
+
+	// it won't be empty, if we're restoring Flow Asset instance from the SaveGame
+	if (NewInstanceName.IsEmpty())
+	{
+		NewInstanceName = MakeUniqueObjectName(this, UFlowAsset::StaticClass(), *FPaths::GetBaseFilename(LoadedFlowAsset->GetPathName())).ToString();
+	}
+
+	UFlowAsset* NewInstance = NewObject<UFlowAsset>(this, LoadedFlowAsset->GetClass(), *NewInstanceName, RF_Transient, LoadedFlowAsset, false, nullptr);
+	NewInstance->InitializeInstance(Owner, *LoadedFlowAsset);
+
+	LoadedFlowAsset->AddInstance(NewInstance);
+
+	return NewInstance;
+}
+
+void UFlowSubsystem::AddInstancedTemplate(UFlowAsset* Template)
+{
+	if (!InstancedTemplates.Contains(Template))
+	{
+		InstancedTemplates.Add(Template);
+
+#if WITH_EDITOR
+		Template->RuntimeLog = MakeShareable(new FFlowMessageLog());
+		OnInstancedTemplateAdded.ExecuteIfBound(Template);
+#endif
+	}
+}
+
+void UFlowSubsystem::RemoveInstancedTemplate(UFlowAsset* Template)
+{
+#if WITH_EDITOR
+	OnInstancedTemplateRemoved.ExecuteIfBound(Template);
+	Template->RuntimeLog.Reset();
+#endif
+
+	InstancedTemplates.Remove(Template);
+}
+
+bool UFlowSubsystem::TryFlushAllDeferredTriggerScopes() const
+{
+	// Flush deferred triggers on all active runtime instances.
+	// Flush order follows InstancedTemplates iteration + per-template ActiveInstances.
+	// This provides reasonable per-asset FIFO but is not a strict global FIFO across assets.
+	// A more precise global queue could be implemented later if cross-asset ordering becomes critical.
+	const TArray<UFlowAsset*> CapturedInstancedTemplates = InstancedTemplates;
+	for (const UFlowAsset* Template : CapturedInstancedTemplates)
+	{
+		if (!IsValid(Template))
+		{
+			continue;
+		}
+
+		for (UFlowAsset* Instance : Template->GetActiveInstances())
+		{
+			if (FFlowExecutionGate::IsHalted())
+			{
+				break;
+			}
+
+			if (IsValid(Instance))
+			{
+				const bool bFlushed = Instance->TryFlushAllDeferredTriggerScopes();
+
+				// The only case where we allow a flush to stop before completing
+				// is if we hit an execution gate halt
+				check(bFlushed || FFlowExecutionGate::IsHalted());
+			}
+		}
+	}
+
+	// The only case where we allow a flush to stop before completing
+	// is if we hit an execution gate halt
+	const bool bCompletedFlushAll = !FFlowExecutionGate::IsHalted();
+	return bCompletedFlushAll;
+}
+
+void UFlowSubsystem::ClearAllDeferredTriggerScopes()
+{
+	for (const UFlowAsset* Template : InstancedTemplates)
+	{
+		if (!IsValid(Template))
+		{
+			continue;
+		}
+
+		for (UFlowAsset* Instance : Template->GetActiveInstances())
+		{
+			if (IsValid(Instance))
+			{
+				Instance->ClearAllDeferredTriggerScopes();
+			}
+		}
+	}
+}
+
+TMap<UObject*, UFlowAsset*> UFlowSubsystem::GetRootInstances() const
+{
+	TMap<UObject*, UFlowAsset*> Result;
+	for (const TPair<UFlowAsset*, TWeakObjectPtr<UObject>>& RootInstance : ObjectPtrDecay(RootInstances))
+	{
+		Result.Emplace(RootInstance.Value.Get(), RootInstance.Key);
+	}
+	return Result;
+}
+
+TSet<UFlowAsset*> UFlowSubsystem::GetRootInstancesByOwner(const UObject* Owner) const
+{
+	TSet<UFlowAsset*> Result;
+	for (const TPair<UFlowAsset*, TWeakObjectPtr<UObject>>& RootInstance : ObjectPtrDecay(RootInstances))
+	{
+		if (Owner && RootInstance.Value == Owner)
+		{
+			Result.Emplace(RootInstance.Key);
+		}
+	}
+	return Result;
+}
+
+UFlowAsset* UFlowSubsystem::GetRootFlow(const UObject* Owner) const
+{
+	const TSet<UFlowAsset*> Result = GetRootInstancesByOwner(Owner);
+	if (Result.Num() > 0)
+	{
+		return Result.Array()[0];
+	}
+
+	return nullptr;
+}
+
+void UFlowSubsystem::OnGameSaved(UFlowSaveGame* SaveGame)
+{
+	if (SaveGame)
+	{
+		OnGameSaved(SaveGame->FlowComponents, SaveGame->FlowInstances);
+	}
+}
+
+void UFlowSubsystem::OnGameSaved(TArray<FFlowComponentSaveData>& FlowComponents, TArray<FFlowAssetSaveData>& FlowInstances)
+{
+	// Clear existing data, in case we received data from a reused Save container.
+	// We only remove data for the current world, and Flow Graph instances are not bound to any world.
+	// We keep data bound to other worlds.
+	if (GetWorld())
+	{
+		const FString& WorldName = GetWorld()->GetName();
+
+		for (int32 i = FlowInstances.Num() - 1; i >= 0; i--)
+		{
+			if (FlowInstances[i].WorldName.IsEmpty() || FlowInstances[i].WorldName == WorldName)
+			{
+				FlowInstances.RemoveAt(i);
+			}
+		}
+
+		for (int32 i = FlowComponents.Num() - 1; i >= 0; i--)
+		{
+			if (FlowComponents[i].WorldName.IsEmpty() || FlowComponents[i].WorldName == WorldName)
+			{
+				FlowComponents.RemoveAt(i);
+			}
+		}
+	}
+
+	// Save Flow Graphs.
+	for (const TPair<UFlowAsset*, TWeakObjectPtr<UObject>>& RootInstance : ObjectPtrDecay(RootInstances))
+	{
+		if (RootInstance.Key && RootInstance.Value.IsValid())
+		{
+			if (UFlowComponent* FlowComponent = Cast<UFlowComponent>(RootInstance.Value))
+			{
+				if (FlowComponent->CanSave())
+				{
+					FlowComponent->SaveRootFlow(FlowInstances);
+				}				
+			}
+			else
+			{
+				RootInstance.Key->SaveInstance(FlowInstances);
+			}
+		}
+	}
+
+	// Save Flow Components.
+	{
+		// Retrieve all registered components.
+		TArray<TWeakObjectPtr<UFlowComponent>> ComponentsArray;
+		FlowComponentRegistry.GenerateValueArray(ComponentsArray);
+
+		// Ensure uniqueness of entries.
+		const TSet<TWeakObjectPtr<UFlowComponent>> RegisteredComponents = TSet<TWeakObjectPtr<UFlowComponent>>(ComponentsArray);
+
+		for (const TWeakObjectPtr<UFlowComponent> RegisteredComponent : RegisteredComponents)
+		{
+			if (RegisteredComponent->CanSave())
+			{
+				FlowComponents.Emplace(RegisteredComponent->SaveInstance());
+			}		
+		}
+	}
+}
+
+void UFlowSubsystem::OnGameLoaded(UFlowSaveGame* SaveGame)
+{
+	// Receive a standard Flow Save data container.
+	LoadedSaveGame = SaveGame;
+
+	// Here's an opportunity to apply loaded data to custom systems.
+	// Do this by overriding this method in the subclass.
+}
+
+void UFlowSubsystem::OnGameLoaded(TArray<FFlowComponentSaveData>& FlowComponents, TArray<FFlowAssetSaveData>& FlowInstances)
+{
+	// Create an object to store Flow Save data loaded from the custom data container. 
+	LoadedSaveGame = NewObject<UFlowSaveGame>(GetTransientPackage(), UFlowSaveGame::StaticClass());
+	LoadedSaveGame->FlowComponents = FlowComponents;
+	LoadedSaveGame->FlowInstances = FlowInstances;
+}
+
+void UFlowSubsystem::LoadRootFlow(UObject* Owner, UFlowAsset* FlowAsset, const FString& SavedAssetInstanceName, const bool bAllowMultipleInstances)
+{
+	if (FlowAsset == nullptr || SavedAssetInstanceName.IsEmpty())
+	{
+		return;
+	}
+
+	if (const FFlowAssetSaveData* AssetRecord = GetLoadedAssetRecord(Owner, FlowAsset, SavedAssetInstanceName))
+	{
+		if (UFlowAsset* LoadedInstance = CreateRootFlow(Owner, FlowAsset, bAllowMultipleInstances))
+		{
+			LoadedInstance->LoadInstance(*AssetRecord);
+		}
+	}
+}
+
+void UFlowSubsystem::LoadSubFlow(UFlowNode_SubGraph* SubGraphNode, const FString& SavedAssetInstanceName)
+{
+	ensureAlways(SubGraphNode);
+
+	const UFlowAsset* SubGraphAsset = SubGraphNode->Asset.LoadSynchronous();
+	if (SubGraphAsset == nullptr || SavedAssetInstanceName.IsEmpty())
+	{
+		return;
+	}
+
+	if (const FFlowAssetSaveData* AssetRecord = GetLoadedAssetRecord(SubGraphNode, SubGraphAsset, SavedAssetInstanceName))
+	{
+		UFlowAsset* LoadedInstance = CreateSubFlow(SubGraphNode, SavedAssetInstanceName);
+		if (LoadedInstance)
+		{
+			LoadedInstance->LoadInstance(*AssetRecord);
+		}
+	}
+}
+
+const FFlowComponentSaveData* UFlowSubsystem::GetLoadedComponentRecord(const UFlowComponent* Component) const
+{
+	if (LoadedSaveGame)
+	{
+		const FString WorldName = Component->GetWorld()->GetName();
+		const FString ActorName = Component->GetOwner()->GetName();
+		
+		for (const FFlowComponentSaveData& ComponentRecord : LoadedSaveGame->FlowComponents)
+		{
+			if (ComponentRecord.WorldName == WorldName && ComponentRecord.ActorInstanceName == ActorName)
+			{
+				return &ComponentRecord;
+			}
+		}
+	}
+
+	return nullptr;
+}
+
+const FFlowAssetSaveData* UFlowSubsystem::GetLoadedAssetRecord(const UObject* Owner, const UFlowAsset* Asset, const FString& SavedAssetInstanceName) const
+{
+	if (LoadedSaveGame)
+	{
+		const FName& WorldName = GetWorld()->GetFName();
+		const bool bAssetBoundToWorld = Asset->IsBoundToWorld();
+		
+		for (const FFlowAssetSaveData& AssetRecord : LoadedSaveGame->FlowInstances)
+		{
+			if (AssetRecord.InstanceName == SavedAssetInstanceName && (!bAssetBoundToWorld || AssetRecord.WorldName == WorldName))
+			{
+				return &AssetRecord;
+			}
+		}
+	}
+
+	return nullptr;
+}
+
+void UFlowSubsystem::ClearLoadedSaveGame()
+{
+	LoadedSaveGame = nullptr;
+}
+
+void UFlowSubsystem::RegisterComponent(UFlowComponent* Component)
+{
+	for (const FGameplayTag& Tag : Component->IdentityTags)
+	{
+		if (Tag.IsValid())
+		{
+			FlowComponentRegistry.Emplace(Tag, Component);
+		}
+	}
+
+	OnComponentRegistered.Broadcast(Component);
+}
+
+void UFlowSubsystem::OnIdentityTagAdded(UFlowComponent* Component, const FGameplayTag& AddedTag)
+{
+	FlowComponentRegistry.Emplace(AddedTag, Component);
+
+	// broadcast OnComponentRegistered only if this component wasn't present in the registry previously
+	if (Component->IdentityTags.Num() > 1)
+	{
+		OnComponentTagAdded.Broadcast(Component, FGameplayTagContainer(AddedTag));
+	}
+	else
+	{
+		OnComponentRegistered.Broadcast(Component);
+	}
+}
+
+void UFlowSubsystem::OnIdentityTagsAdded(UFlowComponent* Component, const FGameplayTagContainer& AddedTags)
+{
+	for (const FGameplayTag& Tag : AddedTags)
+	{
+		FlowComponentRegistry.Emplace(Tag, Component);
+	}
+
+	// broadcast OnComponentRegistered only if this component wasn't present in the registry previously
+	if (Component->IdentityTags.Num() > AddedTags.Num())
+	{
+		OnComponentTagAdded.Broadcast(Component, AddedTags);
+	}
+	else
+	{
+		OnComponentRegistered.Broadcast(Component);
+	}
+}
+
+void UFlowSubsystem::UnregisterComponent(UFlowComponent* Component)
+{
+	for (const FGameplayTag& Tag : Component->IdentityTags)
+	{
+		if (Tag.IsValid())
+		{
+			FlowComponentRegistry.Remove(Tag, Component);
+		}
+	}
+
+	OnComponentUnregistered.Broadcast(Component);
+}
+
+void UFlowSubsystem::OnIdentityTagRemoved(UFlowComponent* Component, const FGameplayTag& RemovedTag)
+{
+	FlowComponentRegistry.Remove(RemovedTag, Component);
+
+	// broadcast OnComponentUnregistered only if this component isn't present in the registry anymore
+	if (Component->IdentityTags.Num() > 0)
+	{
+		OnComponentTagRemoved.Broadcast(Component, FGameplayTagContainer(RemovedTag));
+	}
+	else
+	{
+		OnComponentUnregistered.Broadcast(Component);
+	}
+}
+
+void UFlowSubsystem::OnIdentityTagsRemoved(UFlowComponent* Component, const FGameplayTagContainer& RemovedTags)
+{
+	for (const FGameplayTag& Tag : RemovedTags)
+	{
+		FlowComponentRegistry.Remove(Tag, Component);
+	}
+
+	// broadcast OnComponentUnregistered only if this component isn't present in the registry anymore
+	if (Component->IdentityTags.Num() > 0)
+	{
+		OnComponentTagRemoved.Broadcast(Component, RemovedTags);
+	}
+	else
+	{
+		OnComponentUnregistered.Broadcast(Component);
+	}
+}
+
+TSet<UFlowComponent*> UFlowSubsystem::GetFlowComponentsByTag(const FGameplayTag Tag, const TSubclassOf<UFlowComponent> ComponentClass, const bool bExactMatch) const
+{
+	TArray<TWeakObjectPtr<UFlowComponent>> FoundComponents;
+	FindComponents(Tag, bExactMatch, FoundComponents);
+
+	TSet<UFlowComponent*> Result;
+	for (const TWeakObjectPtr<UFlowComponent>& Component : FoundComponents)
+	{
+		if (Component.IsValid() && Component->GetClass()->IsChildOf(ComponentClass))
+		{
+			Result.Emplace(Component.Get());
+		}
+	}
+
+	return Result;
+}
+
+TSet<UFlowComponent*> UFlowSubsystem::GetFlowComponentsByTags(const FGameplayTagContainer Tags, const EGameplayContainerMatchType MatchType, const TSubclassOf<UFlowComponent> ComponentClass, const bool bExactMatch) const
+{
+	TSet<TWeakObjectPtr<UFlowComponent>> FoundComponents;
+	FindComponents(Tags, MatchType, bExactMatch, FoundComponents);
+
+	TSet<UFlowComponent*> Result;
+	for (const TWeakObjectPtr<UFlowComponent>& Component : FoundComponents)
+	{
+		if (Component.IsValid() && Component->GetClass()->IsChildOf(ComponentClass))
+		{
+			Result.Emplace(Component.Get());
+		}
+	}
+
+	return Result;
+}
+
+TSet<AActor*> UFlowSubsystem::GetFlowActorsByTag(const FGameplayTag Tag, const TSubclassOf<AActor> ActorClass, const bool bExactMatch) const
+{
+	TArray<TWeakObjectPtr<UFlowComponent>> FoundComponents;
+	FindComponents(Tag, bExactMatch, FoundComponents);
+
+	TSet<AActor*> Result;
+	for (const TWeakObjectPtr<UFlowComponent>& Component : FoundComponents)
+	{
+		if (Component.IsValid() && Component->GetOwner()->GetClass()->IsChildOf(ActorClass))
+		{
+			Result.Emplace(Component->GetOwner());
+		}
+	}
+
+	return Result;
+}
+
+TSet<AActor*> UFlowSubsystem::GetFlowActorsByTags(const FGameplayTagContainer Tags, const EGameplayContainerMatchType MatchType, const TSubclassOf<AActor> ActorClass, const bool bExactMatch) const
+{
+	TSet<TWeakObjectPtr<UFlowComponent>> FoundComponents;
+	FindComponents(Tags, MatchType, bExactMatch, FoundComponents);
+
+	TSet<AActor*> Result;
+	for (const TWeakObjectPtr<UFlowComponent>& Component : FoundComponents)
+	{
+		if (Component.IsValid() && Component->GetOwner()->GetClass()->IsChildOf(ActorClass))
+		{
+			Result.Emplace(Component->GetOwner());
+		}
+	}
+
+	return Result;
+}
+
+TMap<AActor*, UFlowComponent*> UFlowSubsystem::GetFlowActorsAndComponentsByTag(const FGameplayTag Tag, const TSubclassOf<AActor> ActorClass, const bool bExactMatch) const
+{
+	TArray<TWeakObjectPtr<UFlowComponent>> FoundComponents;
+	FindComponents(Tag, bExactMatch, FoundComponents);
+
+	TMap<AActor*, UFlowComponent*> Result;
+	for (const TWeakObjectPtr<UFlowComponent>& Component : FoundComponents)
+	{
+		if (Component.IsValid() && Component->GetOwner()->GetClass()->IsChildOf(ActorClass))
+		{
+			Result.Emplace(Component->GetOwner(), Component.Get());
+		}
+	}
+
+	return Result;
+}
+
+TMap<AActor*, UFlowComponent*> UFlowSubsystem::GetFlowActorsAndComponentsByTags(const FGameplayTagContainer Tags, const EGameplayContainerMatchType MatchType, const TSubclassOf<AActor> ActorClass, const bool bExactMatch) const
+{
+	TSet<TWeakObjectPtr<UFlowComponent>> FoundComponents;
+	FindComponents(Tags, MatchType, bExactMatch, FoundComponents);
+
+	TMap<AActor*, UFlowComponent*> Result;
+	for (const TWeakObjectPtr<UFlowComponent>& Component : FoundComponents)
+	{
+		if (Component.IsValid() && Component->GetOwner()->GetClass()->IsChildOf(ActorClass))
+		{
+			Result.Emplace(Component->GetOwner(), Component.Get());
+		}
+	}
+
+	return Result;
+}
+
+void UFlowSubsystem::FindComponents(const FGameplayTag& Tag, const bool bExactMatch, TArray<TWeakObjectPtr<UFlowComponent>>& OutComponents) const
+{
+	if (bExactMatch)
+	{
+		FlowComponentRegistry.MultiFind(Tag, OutComponents);
+	}
+	else
+	{
+		for (TMultiMap<FGameplayTag, TWeakObjectPtr<UFlowComponent>>::TConstIterator It(FlowComponentRegistry); It; ++It)
+		{
+			if (It.Key().MatchesTag(Tag))
+			{
+				OutComponents.Emplace(It.Value());
+			}
+		}
+	}
+}
+
+void UFlowSubsystem::FindComponents(const FGameplayTagContainer& Tags, const EGameplayContainerMatchType MatchType, const bool bExactMatch, TSet<TWeakObjectPtr<UFlowComponent>>& OutComponents) const
+{
+	if (MatchType == EGameplayContainerMatchType::Any)
+	{
+		for (const FGameplayTag& Tag : Tags)
+		{
+			TArray<TWeakObjectPtr<UFlowComponent>> ComponentsPerTag;
+			FindComponents(Tag, bExactMatch, ComponentsPerTag);
+			OutComponents.Append(ComponentsPerTag);
+		}
+	}
+	else // EGameplayContainerMatchType::All
+	{
+		TSet<TWeakObjectPtr<UFlowComponent>> ComponentsWithAnyTag;
+		for (const FGameplayTag& Tag : Tags)
+		{
+			TArray<TWeakObjectPtr<UFlowComponent>> ComponentsPerTag;
+			FindComponents(Tag, bExactMatch, ComponentsPerTag);
+			ComponentsWithAnyTag.Append(ComponentsPerTag);
+			break;
+		}
+
+		for (const TWeakObjectPtr<UFlowComponent>& Component : ComponentsWithAnyTag)
+		{
+			if (Component.IsValid() && 
+				(bExactMatch ? Component->IdentityTags.HasAllExact(Tags) : Component->IdentityTags.HasAll(Tags)))
+			{
+				OutComponents.Emplace(Component);
+			}
+		}
+	}
+}
+
+#undef LOCTEXT_NAMESPACE
