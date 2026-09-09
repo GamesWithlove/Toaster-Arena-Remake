@@ -189,11 +189,11 @@
 		},
 		{
 			"Name": "ScriptableToolsEditorMode",
-			"Enabled": false
+			"Enabled": true
 		},
 		{
 			"Name": "ScriptableToolsFramework",
-			"Enabled": false
+			"Enabled": true
 		},
 		{
 			"Name": "StaticMeshEditorModeling",
@@ -365,6 +365,10 @@
 		},
 		{
 			"Name": "Mover",
+			"Enabled": true
+		},
+		{
+			"Name": "GeometryScripting",
 			"Enabled": true
 		}
 	]
