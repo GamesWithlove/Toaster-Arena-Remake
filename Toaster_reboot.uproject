@@ -188,14 +188,6 @@
 			"Enabled": false
 		},
 		{
-			"Name": "ScriptableToolsEditorMode",
-			"Enabled": false
-		},
-		{
-			"Name": "ScriptableToolsFramework",
-			"Enabled": false
-		},
-		{
 			"Name": "StaticMeshEditorModeling",
 			"Enabled": true
 		},

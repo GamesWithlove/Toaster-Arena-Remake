@@ -1,0 +1,106 @@
+// Copyright https://github.com/MothCocoon/FlowGraph/graphs/contributors
+#pragma once
+
+#include "Nodes/FlowNodeBase.h"
+#include "Nodes/FlowPin.h"
+
+#include "FlowNodeAddOn.generated.h"
+
+class UFlowNode;
+
+/**
+ * A Flow Node AddOn allows user to extend given node instance in the graph with additional logic.
+ */
+UCLASS(Abstract, MinimalApi, EditInlineNew, Blueprintable)
+class UFlowNodeAddOn : public UFlowNodeBase
+{
+	GENERATED_BODY()
+
+public:
+	FLOW_API UFlowNodeAddOn();
+	
+protected:
+	/* The Flow Node that contains this AddOn.
+	 * Accessible only when initialized, runtime only. */
+	UPROPERTY(Transient)
+	TObjectPtr<UFlowNode> FlowNode;
+
+	/* Input pins to add to the owning Flow Node.
+	 * If defined, ExecuteInput will only be executed for these inputs. */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FlowNodeAddOn")
+	TArray<FFlowPin> InputPins;
+
+#if WITH_EDITORONLY_DATA
+	/* Output pins to add to the owning Flow Node. */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "FlowNodeAddOn")
+	TArray<FFlowPin> OutputPins;
+#endif
+
+public:
+	// UFlowNodeBase
+
+	/* AddOns may opt in to be eligible for a given parent.
+	 * - ParentTemplate - the template of the FlowNode or FlowNodeAddOn that is being considered as a potential parent.
+	 * - AdditionalAddOnsToAssumeAreChildren - other AddOns to assume that are already child AddOns for the purposes of this test.
+	 * This list will be populated with the 'other' AddOns in a multi-paste operation in the editor,
+	 * because some paste-targets can only accept a certain mix of addons, so we must know the rest of the set being pasted
+	 * to make the correct decision about whether to allow AddOnTemplate to be added.
+	 * See: https://forums.unrealengine.com/t/default-parameters-with-tarrays/330225 for details on AutoCreateRefTerm. */
+	UFUNCTION(BlueprintNativeEvent, BlueprintPure, Category = "FlowNodeAddOn", meta = (AutoCreateRefTerm = AdditionalAddOnsToAssumeAreChildren))
+	FLOW_API EFlowAddOnAcceptResult AcceptFlowNodeAddOnParent(const UFlowNodeBase* ParentTemplate, const TArray<UFlowNodeAddOn*>& AdditionalAddOnsToAssumeAreChildren) const;
+
+	FLOW_API virtual UFlowNode* GetFlowNodeSelfOrOwner() override { return FlowNode; }
+	FLOW_API virtual bool IsSupportedInputPinName(const FName& PinName) const override;
+
+	FLOW_API virtual void TriggerFirstOutput(const bool bFinish) override;
+	FLOW_API virtual void TriggerOutput(const FName PinName, const bool bFinish = false, const EFlowPinActivationType ActivationType = EFlowPinActivationType::Default) override;
+	FLOW_API virtual void Finish() override;
+	// --
+
+	// IFlowCoreExecutableInterface
+	FLOW_API virtual void InitializeInstance() override;
+	FLOW_API virtual void DeinitializeInstance() override;
+	// --
+
+	// UFlowNodeAddOn
+
+	/* The FlowNode that contains this AddOn.
+	 * Accessible only when initialized, runtime only. */
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "FlowNodeAddon", DisplayName = "Get Flow Node")
+	FLOW_API UFlowNode* GetFlowNode() const;
+
+	/* Will crawl the hierarchy until it finds a flow node (addons can be attached to other add-ons). */
+	FLOW_API UFlowNode* FindOwningFlowNode() const;
+	// --
+
+	/* Returns a random seed suitable for this AddOn.
+	 * By default, uses the seed for the Flow Node that this addon is attached to. */
+	FLOW_API virtual int32 GetRandomSeed() const override;
+
+	/* Called when this AddOn's async preloading finishes (i.e. PreloadContent returned PreloadInProgress).
+	 * Async C++ addons call this from their completion delegate; async Blueprint addons call it on self.
+	 * Delegates to the owning FlowNode's NotifyPreloadComplete(). */
+	UFUNCTION(BlueprintCallable, Category = "Preload Content")
+	FLOW_API void NotifyPreloadComplete();
+
+#if WITH_EDITOR
+	// IFlowContextPinSupplierInterface
+	FLOW_API virtual bool SupportsContextPins() const override { return Super::SupportsContextPins() || (!InputPins.IsEmpty() || !OutputPins.IsEmpty()); }
+	FLOW_API virtual TArray<FFlowPin> GetContextInputs() const override;
+	FLOW_API virtual TArray<FFlowPin> GetContextOutputs() const override;
+	// --
+
+	FLOW_API void RequestReconstructionOnOwningFlowNode() const;
+
+	/* Editor-only method to set the FlowNode for any follow-up operations 
+	 * that the addon will need a reliable FlowNode pointer at editor-time */
+	void SetFlowNodeForEditor(UFlowNode* FlowNodeOwner) { FlowNode = FlowNodeOwner; }
+#endif // WITH_EDITOR
+
+protected:
+	void CacheFlowNode();
+
+#if WITH_EDITOR
+	TArray<FFlowPin> GetPinsForContext(const TArray<FFlowPin>& Context) const;
+#endif
+};
